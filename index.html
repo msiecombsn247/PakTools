@@ -1,79 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>PakTools - Pakistan's No.1 Free Tools</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PakTools - Pakistan's No.1 Free Online Tools</title>
+<meta name="description" content="Pakistan's No.1 Free Online Tools - 130+ tools for developers and creators">
 <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-body{background:#020a1f; font-family:Inter,sans-serif; overflow-x:hidden}
-.stars{position:absolute; inset:0}
-.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%; animation:twinkle 3s infinite}
-@keyframes twinkle{0%,100%{opacity:.2}50%{opacity:1; transform:scale(1.6)}}
-.galaxy{position:absolute; width:900px; height:900px; border-radius:50%; filter:blur(90px); opacity:.65; animation:float 20s infinite alternate}
-@keyframes float{0%{transform:translate(-10%,-10%)}100%{transform:translate(10%,10%) scale(1.2)}}
-/* SHINING DARK BLUE BOX */
+body{background:#020a1f; font-family:'Inter',sans-serif; overflow-x:hidden; color:white;}
+.stars{position:absolute; inset:0; pointer-events:none;}
+.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%; animation:twinkle 3s infinite;}
+@keyframes twinkle{0%,100%{opacity:.2} 50%{opacity:1; transform:scale(1.8)}}
+.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.6; animation:float 20s infinite alternate;}
+@keyframes float{0%{transform:translate(-10%,-10%)} 100%{transform:translate(10%,10%) scale(1.15)}}
+/* SHINING DARK BLUE BOX - FINAL */
 .tool-card{
-background: linear-gradient(145deg, #0d1b4a 0%, #08123a 50%, #050d2e 100%);
-border:1px solid rgba(59,130,246,0.35);
-box-shadow: 0 0 20px rgba(37,99,235,0.25), inset 0 1px 0 rgba(100,180,255,0.15);
+background: linear-gradient(145deg, #10205e 0%, #0a1744 40%, #070f30 100%);
+border: 1px solid rgba(59,130,246,0.4);
+box-shadow: 0 0 22px rgba(37,99,235,0.3), inset 0 1px 0 rgba(150,200,255,0.15);
+backdrop-filter: blur(12px);
+transition: all 0.35s ease;
 }
 .tool-card:hover{
-border-color: rgba(56,189,248,0.8);
-box-shadow: 0 0 30px rgba(6,182,214,0.6), 0 0 60px rgba(37,99,235,0.3);
-transform: translateY(-5px);
+border-color: rgba(56,189,248,0.9);
+box-shadow: 0 0 35px rgba(6,182,214,0.7), 0 0 70px rgba(37,99,235,0.35), inset 0 1px 0 rgba(255,255,255,0.2);
+transform: translateY(-6px) scale(1.02);
 }
 </style>
 </head>
 <body>
 
-<!-- HERO - DARK SHINING BLUE GALAXY - NO GOLD -->
-<section class="relative text-center pt-24 pb-16 px-6 text-white overflow-hidden">
-<div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-200px] left-[15%]"></div>
-<div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-250px] right-[10%]" style="animation-delay:-5s"></div>
+<!-- NAVBAR - WITH 4 PAGES -->
+<header class="relative z-20 w-full border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl sticky top-0">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center font-black">P</div>
+<a href="index.html" class="font-black text-xl tracking-wide">PakTools</a>
+</div>
+<nav class="hidden md:flex gap-6 text-sm text-gray-300">
+<a href="index.html" class="hover:text-cyan-300">Home</a>
+<a href="about.html" class="hover:text-cyan-300">About</a>
+<a href="contact.html" class="hover:text-cyan-300">Contact</a>
+<a href="privacy-policy.html" class="hover:text-cyan-300">Privacy Policy</a>
+<a href="terms.html" class="hover:text-cyan-300">Terms</a>
+</nav>
+<!-- Mobile Menu -->
+<nav class="flex md:hidden gap-3 text-xs text-gray-300">
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy-policy.html">Privacy</a>
+</nav>
+</div>
+</header>
+
+<!-- HERO - DARK SHINING BLUE GALAXY (NO GOLD) -->
+<section class="relative text-center pt-20 pb-14 px-6 overflow-hidden">
+<div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-180px] left-[15%]"></div>
+<div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-220px] right-[10%]" style="animation-delay:-6s"></div>
 <div class="stars" id="stars"></div>
 
 <div class="relative z-10 max-w-4xl mx-auto">
-<h1 class="text-5xl md:text-6xl font-black">130+ Free Online Tools for<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Developers & Creators</span></h1>
+<h1 class="text-5xl md:text-6xl font-black leading-tight">130+ Free Online Tools for<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Developers & Creators</span></h1>
+<p class="mt-4 text-gray-400">No Sign Up Required - 100% Free Forever</p>
 
-<!-- SEARCH BAR -->
+<!-- SEARCH BAR - WORKING -->
 <div class="mt-8 max-w-2xl mx-auto">
-<div class="flex items-center bg-white/[0.08] backdrop-blur border border-blue-400/30 rounded-2xl px-5 py-4 focus-within:border-cyan-400">
-<span class="mr-3">🔍</span>
+<div class="flex items-center bg-white/[0.08] backdrop-blur border border-blue-400/30 rounded-2xl px-5 py-4 focus-within:border-cyan-400 transition">
+<span class="mr-3 text-lg">🔍</span>
 <input id="searchInput" onkeyup="searchTools()" placeholder="Search any tool... e.g. Background, QR, Age, Bio..." class="w-full bg-transparent outline-none text-white placeholder-gray-400">
 </div>
 </div>
 </div>
 </section>
 
-<!-- TOOLS - CORRECT NAMES & LINKS FROM YOUR GITHUB -->
-<section id="tools" class="max-w-7xl mx-auto px-6 py-12">
-<h2 class="text-white text-2xl font-black">All Tools (10 Live) ✨</h2>
-<div id="toolsGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-8">
+<!-- TOOLS GRID - CORRECT LINKS FROM YOUR GITHUB -->
+<section class="max-w-7xl mx-auto px-6 py-10 relative z-10">
+<h2 class="text-2xl font-black flex items-center gap-2">All Tools (10 Live) <span class="text-cyan-300">✨</span></h2>
 
-<a href="background-remover.html" data-name="background remover" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">Background Remover</h3><p class="text-xs text-blue-300/70 mt-1">HD AI Tool</p></a>
+<div id="toolsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-8">
 
-<a href="youtube-thumbnail-downloader.html" data-name="youtube thumbnail downloader" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">YouTube Thumbnail Downloader</h3><p class="text-xs text-blue-300/70 mt-1">HD Quality</p></a>
+<a href="background-remover.html" data-name="background remover hd ai" class="tool-card rounded-[1.4rem] p-6">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center font-black text-white shadow-lg shadow-cyan-500/30">BG</div>
+<h3 class="font-bold mt-4">Background Remover</h3><p class="text-xs text-blue-300/70 mt-1">HD AI Tool</p>
+</a>
 
-<a href="youtube-tags.html" data-name="youtube tags extractor" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">YouTube Tags Extractor</h3><p class="text-xs text-blue-300/70 mt-1">Viral Tags</p></a>
+<a href="youtube-thumbnail-downloader.html" data-name="youtube thumbnail downloader hd" class="tool-card rounded-[1.4rem] p-6">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center font-black">YT</div>
+<h3 class="font-bold mt-4">YouTube Thumbnail Downloader</h3><p class="text-xs text-blue-300/70 mt-1">HD Quality</p>
+</a>
 
-<a href="image-compressor.html" data-name="image compressor 20kb" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">Image Compressor 20KB</h3><p class="text-xs text-blue-300/70 mt-1">Small Size</p></a>
+<a href="youtube-tags.html" data-name="youtube tags extractor viral" class="tool-card rounded-[1.4rem] p-6">
+<div class="w-12 h-12 rounded-xl bg-white/10 border border-cyan-400/20 flex items-center justify-center">🏷️</div>
+<h3 class="font-bold mt-4">YouTube Tags Extractor</h3><p class="text-xs text-blue-300/70 mt-1">Viral Tags Finder</p>
+</a>
 
-<a href="qr-code-generator.html" data-name="qr code generator" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">QR Code Generator</h3></a>
+<a href="image-compressor.html" data-name="image compressor 20kb" class="tool-card rounded-[1.4rem] p-6">
+<div class="w-12 h-12 rounded-xl bg-white/10 border border-cyan-400/20 flex items-center justify-center">🖼️</div>
+<h3 class="font-bold mt-4">Image Compressor 20KB</h3>
+</a>
 
-<a href="password-generator.html" data-name="password generator" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">Password Generator</h3></a>
+<a href="qr-code-generator.html" data-name="qr code generator" class="tool-card rounded-[1.4rem] p-6">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center">🔗</div>
+<h3 class="font-bold mt-4">QR Code Generator</h3>
+</a>
 
-<a href="word-counter.html" data-name="word counter" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">Word Counter</h3></a>
+<a href="password-generator.html" data-name="password generator" class="tool-card rounded-[1.4rem] p-6">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center">🔐</div>
+<h3 class="font-bold mt-4">Password Generator</h3>
+</a>
 
-<a href="age-calculator.html" data-name="age calculator" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">Age Calculator</h3></a>
+<a href="word-counter.html" data-name="word counter" class="tool-card rounded-[1.4rem] p-6">
+<div class="w-12 h-12 rounded-xl bg-white/10 border border-cyan-400/20 flex items-center justify-center">📝</div>
+<h3 class="font-bold mt-4">Word Counter</h3>
+</a>
 
-<a href="ai-bio-generator.html" data-name="ai bio generator" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">AI Bio Generator</h3></a>
+<a href="age-calculator.html" data-name="age calculator dob" class="tool-card rounded-[1.4rem] p-6">
+<div class="w-12 h-12 rounded-xl bg-white/10 border border-cyan-400/20 flex items-center justify-center">🎂</div>
+<h3 class="font-bold mt-4">Age Calculator</h3>
+</a>
 
-<a href="pdf-to-jpg.html" data-name="pdf to jpg converter" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">PDF to JPG</h3></a>
+<a href="ai-bio-generator.html" data-name="ai bio generator instagram" class="tool-card rounded-[1.4rem] p-6">
+<div class="w-12 h-12 rounded-xl bg-white/10 border border-cyan-400/20 flex items-center justify-center">🤖</div>
+<h3 class="font-bold mt-4">AI Bio Generator</h3>
+</a>
+
+<a href="pdf-to-jpg.html" data-name="pdf to jpg converter" class="tool-card rounded-[1.4rem] p-6">
+<div class="w-12 h-12 rounded-xl bg-white/10 border border-cyan-400/20 flex items-center justify-center">📄</div>
+<h3 class="font-bold mt-4">PDF to JPG Converter</h3>
+</a>
 
 </div>
-<p id="noResult" class="hidden text-center text-gray-400 mt-10">No tools found!</p>
-</div>
+
+<p id="noResult" class="hidden text-center text-gray-400 mt-10">No tools found for your search!</p>
 </section>
+
+<!-- FOOTER FOR ADSENSE -->
+<footer class="border-t border-white/10 mt-10 py-8 text-center text-sm text-gray-500">
+<div class="flex justify-center gap-6 mb-3">
+<a href="about.html" class="hover:text-cyan-300">About</a>
+<a href="contact.html" class="hover:text-cyan-300">Contact</a>
+<a href="privacy-policy.html" class="hover:text-cyan-300">Privacy Policy</a>
+<a href="terms.html" class="hover:text-cyan-300">Terms</a>
+</div>
+<p>© 2026 PakTools - Made in Pakistan with ❤️ - Lahore</p>
+</footer>
 
 <script>
 const s=document.getElementById('stars');
@@ -81,7 +152,10 @@ for(let i=0;i<180;i++){let d=document.createElement('div');d.className='star';d.
 function searchTools(){
 let q=document.getElementById('searchInput').value.toLowerCase();
 let cards=document.querySelectorAll('.tool-card'); let f=0;
-cards.forEach(c=>{let t=c.getAttribute('data-name')+c.innerText.toLowerCase(); if(t.includes(q)){c.style.display='block';f++;}else{c.style.display='none';}});
+cards.forEach(c=>{
+let t=(c.getAttribute('data-name')+' '+c.innerText).toLowerCase();
+if(t.includes(q)){c.style.display='block'; f++;}else{c.style.display='none';}
+});
 document.getElementById('noResult').style.display=f==0?'block':'none';
 }
 </script>
