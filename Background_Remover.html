@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Background Remover - PakTools</title><script src="https://cdn.tailwindcss.com"></script></head><body class="bg-[#0b1220] p-6"><a href="index.html" class="bg-white px-5 py-2 rounded-full font-bold">← Back</a><div class="max-w-xl mx-auto bg-white rounded-[2rem] p-8 mt-6 text-center"><h1 class="text-3xl font-black">Background Remover</h1><p class="text-gray-500">100% Free - No API Key</p><input type="file" id="file" accept="image/*" class="w-full border-2 border-dashed p-4 rounded-xl mt-6"><p id="status" class="mt-4 font-bold text-blue-600"></p><canvas id="canvas" class="mt-4 max-w-full mx-auto rounded-xl hidden"></canvas><br><a id="down" class="hidden bg-black text-white px-6 py-3 rounded-full mt-4 inline-block font-bold">Download PNG</a></div><script type="module">
+import {removeBackground} from "https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.5/dist/index.mjs";
+const fileInput=document.getElementById('file');
+fileInput.onchange=async(e=>{
+  let f=e.target.files[0];
+  if(!f)return;
+  status.innerText="⏳ Removing Background... 10 sec wait...";
+  try{
+    let blob=await removeBackground(f);
+    let url=URL.createObjectURL(blob);
+    let img=new Image();img.src=url;
+    img.onload=()=>{
+      let c=document.getElementById('canvas');
+      c.width=img.width;c.height=img.height;
+      c.getContext('2d').drawImage(img,0,0);
+      c.classList.remove('hidden');
+      let a=document.getElementById('down');
+      a.href=url;a.download="paktools-no-bg.png";a.classList.remove('hidden');
+      status.innerText="✅ Done! HD Background Removed";
+    }
+  }catch(err){status.innerText="Error, Try another image";console.log(err)}
+}
+</script></body></html>
