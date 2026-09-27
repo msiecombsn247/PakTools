@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Age Calculator - DOB Calculator - PakTools</title>
+<title>Age Calculator - Exact Age Calculator in Years, Months, Days | PakTools</title>
+<meta name="description" content="Free Age Calculator - Calculate your exact age in years, months, days, weeks, hours. DOB calculator with total days lived. 100% Free & Accurate.">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 body{background:#020a1f; color:white; font-family:Inter,sans-serif; overflow-x:hidden;}
@@ -13,53 +14,70 @@ body{background:#020a1f; color:white; font-family:Inter,sans-serif; overflow-x:h
 .tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 30px rgba(37,99,235,0.35), inset 0 1px 0 rgba(150,200,255,0.18); backdrop-filter:blur(15px);}
 .input-box{background:rgba(0,0,0,0.35); border:1px solid rgba(59,130,246,0.3);}
 .result-card{background:rgba(255,255,255,0.06); border:1px solid rgba(56,189,248,0.25);}
+.content-box{background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(10px);}
 </style>
 </head>
 <body class="relative min-h-screen">
 <div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-250px] left-[10%]"></div>
 <div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-300px] right-[5%]"></div>
 <div class="stars" id="stars"></div>
-
 <header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl">
 <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 <a href="index.html" class="font-black text-xl flex items-center gap-2"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center">P</div>PakTools</a>
 <a href="index.html" class="text-sm bg-white/10 border border-white/20 px-4 py-2 rounded-lg">← Home</a>
 </div>
 </header>
-
 <main class="relative z-10 max-w-4xl mx-auto px-6 py-12">
 <div class="text-center">
 <h1 class="text-4xl md:text-5xl font-black">Age <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Calculator</span></h1>
-<p class="mt-3 text-gray-400">Calculate Your Exact Age in Years, Months, Days</p>
+<p class="mt-3 text-gray-400">Calculate Your Exact Age in Years, Months, Days - Free & Accurate</p>
 </div>
-
 <div class="tool-box rounded-[2rem] p-8 md:p-10 mt-10">
 <div class="grid md:grid-cols-2 gap-6">
 <div><label class="text-sm text-gray-300">Your Date of Birth</label><input type="date" id="dob" class="input-box w-full mt-2 rounded-xl p-4 text-sm outline-none"></div>
 <div><label class="text-sm text-gray-300">Calculate Till (Today)</label><input type="date" id="today" class="input-box w-full mt-2 rounded-xl p-4 text-sm outline-none"></div>
 </div>
 <button onclick="calcAge()" class="w-full mt-6 bg-gradient-to-r from-cyan-400 to-blue-600 text-black font-black py-4 rounded-xl shadow-[0_0_20px_rgba(56,189,248,0.5)]">🎂 Calculate Age</button>
-
 <div id="result" class="hidden mt-8 grid grid-cols-3 gap-4 text-center">
 <div class="result-card rounded-xl p-5"><p class="text-3xl font-black text-cyan-300" id="y">0</p><p class="text-xs text-gray-400 mt-1">Years</p></div>
 <div class="result-card rounded-xl p-5"><p class="text-3xl font-black text-blue-400" id="m">0</p><p class="text-xs text-gray-400 mt-1">Months</p></div>
 <div class="result-card rounded-xl p-5"><p class="text-3xl font-black text-indigo-300" id="d">0</p><p class="text-xs text-gray-400 mt-1">Days</p></div>
 </div>
-
 <div id="details" class="hidden mt-6 bg-black/30 rounded-xl p-5 border border-white/10 text-sm leading-6 text-gray-300"></div>
 </div>
+<div class="content-box rounded-[1.5rem] p-8 mt-10">
+<h2 class="text-2xl font-bold">What is Age Calculator?</h2>
+<p class="mt-4 text-[14px] leading-7 text-gray-300">Our free Age Calculator is a powerful and accurate online tool that helps you calculate your exact chronological age in years, months, and days. Whether you need to know your age for official documents, school admission, job applications, retirement planning, or just out of curiosity, this tool provides instant and precise results. Unlike simple year subtraction, our calculator considers leap years, different month lengths, and exact dates to give you the most accurate age possible. It is widely used in Pakistan, India, and worldwide for calculating age for CNIC, passport, and other legal requirements. The tool is 100% free, requires no signup, and works on all devices including mobile, tablet, and desktop. All calculations are done locally in your browser, so your date of birth is never stored or shared, ensuring complete privacy and security.</p>
+<h2 class="text-xl font-bold mt-8">How to Use?</h2>
+<ul class="mt-3 list-decimal pl-5 text-[14px] leading-7 text-gray-300 space-y-1">
+<li>Select your Date of Birth (DOB).</li>
+<li>Second date is today by default.</li>
+<li>Click Calculate Age.</li>
+<li>See years, months, days + total days lived.</li>
+</ul>
+<h2 class="text-xl font-bold mt-8">Key Features</h2>
+<ul class="mt-3 list-disc pl-5 text-[14px] leading-7 text-gray-300 space-y-1">
+<li><b class="text-white">Exact Calculation:</b> Leap years included.</li>
+<li><b class="text-white">Total Time:</b> Shows days, weeks, hours.</li>
+<li><b class="text-white">Privacy:</b> No data saved.</li>
+<li><b class="text-white">Free Forever:</b> Unlimited use.</li>
+</ul>
+<h2 class="text-xl font-bold mt-8">FAQs</h2>
+<div class="mt-3 space-y-4 text-[14px] leading-7 text-gray-300">
+<p><b class="text-white">Q: Is it accurate?</b><br>Yes, it uses precise algorithms.</p>
+<p><b class="text-white">Q: Is my DOB stored?</b><br>No, all client-side.</p>
+</div>
+</div>
 </main>
-
 <script>
 const stars=document.getElementById('stars');
 for(let i=0;i<150;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.animationDelay=Math.random()*3+'s';stars.appendChild(d);}
-
 document.getElementById('today').valueAsDate=new Date();
 function calcAge(){
 let dob=document.getElementById('dob').value;
 let todayVal=document.getElementById('today').value;
 if(!dob){alert('Select DOB!'); return;}
-let b=new Date(dob); let t=todayVal?new Date(todayVal):new Date();
+let b=new Date(dob); let t=todayVal? new Date(todayVal): new Date();
 let years=t.getFullYear()-b.getFullYear();
 let months=t.getMonth()-b.getMonth();
 let days=t.getDate()-b.getDate();
