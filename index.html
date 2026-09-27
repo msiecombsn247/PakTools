@@ -10,15 +10,14 @@
 <style>
 *{font-family:'Inter',sans-serif}
 body{margin:0;background:#05020a;color:white;overflow-x:hidden}
-.hero{position:relative;min-height:85vh;background:#05020a;overflow:hidden}
+.hero{position:relative;min-height:90vh;background:#05020a;overflow:hidden}
 .hero::before{
   content:'';position:absolute;inset:0;z-index:0;
   background:
-    radial-gradient(ellipse 600px 250px at 18% 55%, rgba(180,70,255,0.9) 0%, transparent 65%),
-    radial-gradient(ellipse 480px 200px at 38% 52%, rgba(220,80,255,0.85) 0%, transparent 65%),
-    radial-gradient(ellipse 700px 280px at 62% 58%, rgba(190,60,255,0.8) 0%, transparent 70%),
-    radial-gradient(ellipse 350px 150px at 82% 60%, rgba(140,40,220,0.6) 0%, transparent 60%),
-    radial-gradient(ellipse 250px 100px at 30% 48%, rgba(255,255,255,0.95) 0%, transparent 45%);
+    radial-gradient(ellipse 600px 280px at 20% 55%, rgba(180,70,255,0.9) 0%, transparent 65%),
+    radial-gradient(ellipse 500px 220px at 42% 52%, rgba(220,80,255,0.85) 0%, transparent 65%),
+    radial-gradient(ellipse 750px 300px at 65% 58%, rgba(190,60,255,0.8) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 130px at 32% 48%, rgba(255,255,255,0.9) 0%, transparent 50%);
 }
 .glass{background:rgba(255,255,255,0.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.15)}
 .glow-btn{background:linear-gradient(90deg,#22d3ee,#a855f7);box-shadow:0 0 30px rgba(168,85,247,0.7)}
@@ -31,12 +30,65 @@ body{margin:0;background:#05020a;color:white;overflow-x:hidden}
 .tool-icon{width:78px;height:78px;margin:0 auto 12px;border-radius:20px;background:linear-gradient(135deg,#22d3ee 0%, #a855f7 100%);display:flex;align-items:center;justify-content:center;font-size:38px;box-shadow:0 0 20px rgba(168,85,247,0.6), inset 0 1px 3px rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.3)}
 .star{position:absolute;border-radius:50%;animation:twinkle var(--dur) infinite ease-in-out}
 @keyframes twinkle{0%,100%{opacity:0.2;transform:scale(0.8)}50%{opacity:1;transform:scale(1.4)}}
+
+/* 3D GLOSSY FLOATING ICONS - RIGHT SIDE */
+.floating-wrap{position:absolute;right:0;top:0;width:55%;height:100%;z-index:2;pointer-events:none}
+.f-icon{
+  position:absolute;
+  width:72px;height:72px;
+  border-radius:22px;
+  background:linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.08) 30%, rgba(168,85,247,0.4) 100%);
+  backdrop-filter:blur(12px);
+  border:1.5px solid rgba(255,255,255,0.35);
+  display:flex;align-items:center;justify-content:center;
+  font-size:34px;
+  box-shadow:
+    0 8px 32px rgba(168,85,247,0.4),
+    0 0 0 1px rgba(255,255,255,0.2) inset,
+    0 2px 8px rgba(255,255,255,0.6) inset,
+    0 -4px 12px rgba(0,0,0,0.3) inset;
+  transition:transform 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+  pointer-events:none;
+  animation: floatY var(--floatDur) ease-in-out infinite;
+  user-select:none;
+}
+.f-icon::after{
+  content:'';
+  position:absolute;
+  top:8px;left:10px;right:18px;height:18px;
+  background:linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%);
+  border-radius:10px;
+  filter:blur(1px);
+}
+@keyframes floatY{0%,100%{transform:translateY(0px) rotate(var(--rot))}50%{transform:translateY(-18px) rotate(var(--rot))}}
+
+/* Positions - Desktop */
+.f-icon:nth-child(1){left:10%;top:18%;--rot:-8deg;--floatDur:3.2s}
+.f-icon:nth-child(2){left:35%;top:12%;--rot:12deg;--floatDur:3.8s}
+.f-icon:nth-child(3){left:65%;top:20%;--rot:-5deg;--floatDur:4.1s}
+.f-icon:nth-child(4){left:15%;top:52%;--rot:10deg;--floatDur:3.5s}
+.f-icon:nth-child(5){left:48%;top:58%;--rot:-12deg;--floatDur:4.3s}
+.f-icon:nth-child(6){left:75%;top:55%;--rot:6deg;--floatDur:3s}
+
+@media(max-width:768px){
+ .floating-wrap{display:none}
+}
 </style>
 </head>
 <body>
 
-<div class="hero">
+<div class="hero" id="heroArea">
 <div id="stars" class="absolute inset-0 z-0 pointer-events-none"></div>
+
+<!-- FLOATING 3D ICONS RIGHT SIDE -->
+<div class="floating-wrap" id="floatingWrap">
+  <div class="f-icon">✂️</div>
+  <div class="f-icon">📐</div>
+  <div class="f-icon">🔳</div>
+  <div class="f-icon">%</div>
+  <div class="f-icon">🪪</div>
+  <div class="f-icon">⚖️</div>
+</div>
 
 <header class="relative z-20 max-w-7xl mx-auto px-3 md:px-4 pt-3 md:pt-4">
 <div class="glass rounded-full px-3 md:px-6 py-2.5 md:py-3 flex justify-between items-center">
@@ -53,8 +105,8 @@ body{margin:0;background:#05020a;color:white;overflow-x:hidden}
 </div>
 </header>
 
-<!-- FIXED HERO TEXT SECTION -->
-<section class="relative z-10 max-w-7xl mx-auto px-5 md:px-8 pt-14 md:pt-20 pb-10">
+<section class="relative z-10 max-w-7xl mx-auto px-5 md:px-8 pt-14 md:pt-24 pb-10 flex">
+<div class="w-full md:w-[48%]">
 <h1 class="text-[44px] md:text-[68px] font-black leading-[0.9] tracking-tight">
 <span class="text-white">All in One</span><br>
 <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-purple-300 to-purple-400">Premium Tools</span>
@@ -66,15 +118,15 @@ body{margin:0;background:#05020a;color:white;overflow-x:hidden}
 <input id="searchInput" type="text" placeholder="🔍 Search any tool... (e.g. Resize, CNIC, BMI)" class="w-full glass rounded-full px-6 py-3.5 text-sm text-white placeholder-gray-400 outline-none border border-white/20">
 </div>
 <div class="mt-7 flex gap-3 flex-wrap items-center"><a href="#tools" style="text-decoration:none" class="glow-btn text-white font-bold px-7 py-3 rounded-full inline-block text-sm">Explore Top Tools →</a><p class="text-[11px] text-gray-400">🔥 Top Ranked First</p></div>
+</div>
+<div class="hidden md:block w-[52%]"></div>
 </section>
 </div>
 
 <section id="tools" class="bg-[#0a0620] py-14">
 <div class="max-w-7xl mx-auto px-4">
 <div class="flex justify-between items-center"><h2 class="text-2xl md:text-3xl font-black">Top 15 Tools - Ranked</h2><p id="resultCount" class="text-purple-300 text-sm">15 Tools Found</p></div>
-
 <div id="toolsGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
-
 <a href="background-remover.html" class="tool-card top-rank" data-name="bg remover background remove"><div class="tool-icon">✂️</div><p class="font-bold text-[13px]">BG Remover</p><p class="text-[11px] text-cyan-300 mt-1">#1 Trending</p></a>
 <a href="image-compressor.html" class="tool-card top-rank" data-name="image compressor compress 20kb 100kb"><div class="tool-icon">🗜️</div><p class="font-bold text-[13px]">Image Compressor</p><p class="text-[11px] text-cyan-300 mt-1">#2 Popular</p></a>
 <a href="image-resizer.html" class="tool-card top-rank" data-name="image resizer passport size 300x300 resize cnic photo"><div class="tool-icon">📐</div><p class="font-bold text-[13px]">Image Resizer</p><p class="text-[11px] text-cyan-300 mt-1">#3 Passport Size</p></a>
@@ -90,7 +142,6 @@ body{margin:0;background:#05020a;color:white;overflow-x:hidden}
 <a href="password-generator.html" class="tool-card" data-name="password generator strong pass"><div class="tool-icon">🔐</div><p class="font-bold text-[13px]">Password Gen</p><p class="text-[11px] text-gray-400 mt-1">Strong Pass</p></a>
 <a href="pdf-to-jpg.html" class="tool-card" data-name="pdf to jpg converter"><div class="tool-icon">📄</div><p class="font-bold text-[13px]">PDF to JPG</p><p class="text-[11px] text-gray-400 mt-1">High Quality</p></a>
 <a href="ai-bio-generator.html" class="tool-card" data-name="ai bio generator instagram bio"><div class="tool-icon">🤖</div><p class="font-bold text-[13px]">AI Bio Generator</p><p class="text-[11px] text-gray-400 mt-1">Viral Bio</p></a>
-
 </div>
 <p id="noResult" class="hidden text-center mt-10 text-gray-400">No tools found 😔</p>
 </div>
@@ -99,9 +150,10 @@ body{margin:0;background:#05020a;color:white;overflow-x:hidden}
 <footer class="bg-[#05020a] border-t border-white/10 py-5 text-center text-xs text-gray-500">© 2026 PakTools - 15 Premium Tools | <a href="privacy-policy.html" style="color:#a78bfa">Privacy</a> | <a href="about.html" style="color:#a78bfa">About</a> | <a href="contact.html" style="color:#a78bfa">Contact</a></footer>
 
 <script>
+// Stars
 const starContainer=document.getElementById('stars');
 const colors=['#ffffff','#22d3ee','#a855f7','#f472b6','#fde047'];
-for(let i=0;i<300;i++){
+for(let i=0;i<280;i++){
   let d=document.createElement('div');d.className='star';
   let size=Math.random()*2.5+1;
   d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';
@@ -112,6 +164,8 @@ for(let i=0;i<300;i++){
   d.style.animationDelay=Math.random()*3+'s';
   starContainer.appendChild(d);
 }
+
+// Search
 const searchInput=document.getElementById('searchInput');
 const cards=document.querySelectorAll('.tool-card');
 const noResult=document.getElementById('noResult');
@@ -126,6 +180,52 @@ searchInput.addEventListener('input',function(){
   });
   count.textContent=visible+' Tools Found';
   noResult.classList.toggle('hidden',visible>0);
+});
+
+// 3D ICONS - CURSOR SE DOOR BHAGNA + NO CLICK
+const hero = document.getElementById('heroArea');
+const icons = document.querySelectorAll('.f-icon');
+let mouseX = -1000, mouseY = -1000;
+
+hero.addEventListener('mousemove', (e)=>{
+  const rect = hero.getBoundingClientRect();
+  mouseX = e.clientX - rect.left;
+  mouseY = e.clientY - rect.top;
+});
+hero.addEventListener('mouseleave', ()=>{
+  mouseX = -1000; mouseY = -1000;
+  icons.forEach(ic=>{ ic.style.transform = `translate(0px, 0px) rotate(${ic.style.getPropertyValue('--rot')||'0deg'})`; });
+});
+
+function animateIcons(){
+  icons.forEach(icon=>{
+    const rect = icon.getBoundingClientRect();
+    const heroRect = hero.getBoundingClientRect();
+    const iconCenterX = icon.offsetLeft + 36;
+    const iconCenterY = icon.offsetTop + 36;
+
+    const dx = mouseX - iconCenterX;
+    const dy = mouseY - iconCenterY;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    const repelRadius = 160;
+
+    if(dist < repelRadius){
+      const force = (repelRadius - dist) / repelRadius;
+      const moveX = -dx * force * 0.8;
+      const moveY = -dy * force * 0.8;
+      icon.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${icon.style.getPropertyValue('--rot')||'0deg'}) scale(${1+force*0.15})`;
+    } else {
+      icon.style.transform = `translate(0px, 0px) rotate(${icon.style.getPropertyValue('--rot')||'0deg'})`;
+    }
+  });
+  requestAnimationFrame(animateIcons);
+}
+animateIcons();
+
+// Prevent click/drag
+icons.forEach(i=>{
+  i.addEventListener('click', e=>{ e.preventDefault(); e.stopPropagation(); return false; });
+  i.addEventListener('mousedown', e=>{ e.preventDefault(); });
 });
 </script>
 </body>
