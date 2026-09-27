@@ -1,33 +1,40 @@
-name: PakTools Dark Texture Bot
-on:
-  workflow_dispatch:
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-      - name: Apply Dark Texture To All Tools
-        run: |
-          python3 << 'PY'
-          import os, glob
-          for file in glob.glob("*.html"):
-              if file == "index.html": continue
-              if "generator" in file or "calculator" in file or "compressor" in file or "counter" in file or "downloader" in file or "to-jpg" in file:
-                  with open(file, 'r', encoding='utf-8') as f:
-                      content = f.read()
-                  # Inject dark texture style if not already
-                  if "0f172a" not in content:
-                      new_content = content.replace("<body", "<body style='background:#0f172a;background-image:radial-gradient(at 20% 30%, rgba(56,189,248,0.15) 0px, transparent 50%), radial-gradient(at 80% 20%, rgba(139,92,246,0.18) 0px, transparent 50%);min-height:100vh'")
-                      with open(file, 'w', encoding='utf-8') as f:
-                          f.write(new_content)
-          print("Dark texture applied to inner tools")
-          PY
-      - name: Push
-        run: |
-          git config user.name "Dark Bot"
-          git config user.email "dark@paktools.pk"
-          git add.
-          git commit -m "Dark texture premium applied to all tools" || echo "no change"
-          git push
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PakTools - Pakistan's No.1 Free Tools</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap');
+body{font-family:'Plus Jakarta Sans',sans-serif; background:#0f172a; background-image: radial-gradient(at 20% 30%, rgba(56,189,248,0.18) 0, transparent 50%), radial-gradient(at 80% 20%, rgba(139,92,246,0.20) 0, transparent 50%), radial-gradient(at 50% 90%, rgba(236,72,153,0.15) 0, transparent 50%); min-height:100vh;}
+.tool-card{transition:all.3s ease; border:1px solid rgba(255,255,255,0.7)}
+.tool-card:hover{transform:translateY(-7px); box-shadow:0 25px 50px -12px rgba(0,0,0,0.25)}
+</style>
+</head>
+<body>
+<header class="bg-white/90 backdrop-blur-xl sticky top-0 z-50 border-b">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<a class="font-black text-2xl">Pak<span class="text-blue-600">Tools</span>.pk <span class="ml-2 bg-slate-900 text-white text-[10px] px-3 py-1 rounded-full">DARK PRO</span></a>
+<div class="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-5 py-2 rounded-full text-sm font-bold">10+ Live Tools</div>
+</div>
+</header>
+
+<div class="max-w-7xl mx-auto px-6 mt-12 text-center">
+<h1 class="text-5xl font-black text-white tracking-tight">Tools that <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">actually work</span></h1>
+<p class="text-slate-400 mt-4 text-lg">Dark premium texture • Eye-friendly • 100% Free</p>
+</div>
+
+<main class="max-w-7xl mx-auto px-6 mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+<a href="qr-code-generator.html" class="tool-card bg-gradient-to-br from-blue-50 to-white p-6 rounded-[1.8rem] shadow-xl"><div class="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center"><i class="fa fa-qrcode"></i></div><h3 class="font-extrabold mt-5">QR Code Generator</h3><p class="text-xs text-slate-500 mt-1">Real QR + Download</p></a>
+<a href="password-generator.html" class="tool-card bg-gradient-to-br from-violet-50 to-white p-6 rounded-[1.8rem] shadow-xl"><div class="w-12 h-12 bg-violet-600 text-white rounded-2xl flex items-center justify-center"><i class="fa fa-key"></i></div><h3 class="font-extrabold mt-5">Password Generator</h3><p class="text-xs text-slate-500 mt-1">Strong & Secure</p></a>
+<a href="fancy-text-generator.html" class="tool-card bg-gradient-to-br from-pink-50 to-white p-6 rounded-[1.8rem] shadow-xl"><div class="w-12 h-12 bg-pink-600 text-white rounded-2xl flex items-center justify-center"><i class="fa fa-font"></i></div><h3 class="font-extrabold mt-5">Fancy Text</h3><p class="text-xs text-slate-500">Stylish Fonts</p></a>
+<a href="hashtag-generator.html" class="tool-card bg-gradient-to-br from-orange-50 to-white p-6 rounded-[1.8rem] shadow-xl"><div class="w-12 h-12 bg-orange-500 text-white rounded-2xl flex items-center justify-center"><i class="fa fa-hashtag"></i></div><h3 class="font-extrabold mt-5">Hashtag Generator</h3><p class="text-xs text-slate-500">Viral Hashtags</p></a>
+<a href="ai-bio-generator.html" class="tool-card bg-white p-6 rounded-[1.8rem] shadow-xl"><div class="w-12 h-12 bg-cyan-600 text-white rounded-2xl flex items-center justify-center"><i class="fa fa-robot"></i></div><h3 class="font-extrabold mt-5">AI Bio Generator</h3><p class="text-xs text-slate-500">Insta Bio</p></a>
+<a href="age-calculator.html" class="tool-card bg-white p-6 rounded-[1.8rem] shadow-xl"><div class="w-12 h-12 bg-emerald-600 text-white rounded-2xl flex items-center justify-center"><i class="fa fa-cake"></i></div><h3 class="font-extrabold mt-5">Age Calculator</h3><p class="text-xs text-slate-500">Exact Age</p></a>
+<a href="image-compressor.html" class="tool-card bg-white p-6 rounded-[1.8rem] shadow-xl"><div class="w-12 h-12 bg-amber-500 text-white rounded-2xl flex items-center justify-center"><i class="fa fa-compress"></i></div><h3 class="font-extrabold mt-5">Image Compressor</h3><p class="text-xs text-slate-500">20KB in 1 Sec</p></a>
+<a href="word-counter.html" class="tool-card bg-white p-6 rounded-[1.8rem] shadow-xl"><div class="w-12 h-12 bg-slate-800 text-white rounded-2xl flex items-center justify-center"><i class="fa fa-file"></i></div><h3 class="font-extrabold mt-5">Word Counter</h3><p class="text-xs text-slate-500">Count Words</p></a>
+</main>
+<footer class="text-center py-12 text-slate-500 text-sm">© 2026 PakTools.pk • Dark Premium Texture • Made in Pakistan</footer>
+</body>
+</html>
