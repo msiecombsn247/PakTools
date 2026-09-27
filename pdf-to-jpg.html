@@ -1,1 +1,103 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>PDF to JPG</title><script src="https://cdn.tailwindcss.com"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script></head><body class="bg-[#0b1220] p-6"><a href="index.html" class="bg-white px-5 py-2 rounded-full font-bold">← Back</a><div class="max-w-xl mx-auto bg-white rounded-[2rem] p-8 mt-6 text-center"><h1 class="text-3xl font-black">PDF to JPG</h1><p class="text-gray-500">Convert Fast</p><input type="file" id="pdf" accept="application/pdf" class="mt-6 w-full"><div id="preview" class="mt-6"></div><p class="text-xs text-gray-400 mt-4">Note: First page will be converted to JPG</p></div><script>pdf.onchange=async(e=>{let file=e.target.files[0];let reader=new FileReader();reader.onload=async()=>{let pdfjs=window['pdfjs-dist/build/pdf'];pdfjs.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';let doc=await pdfjs.getDocument(reader.result).promise;let page=await doc.getPage(1);let viewport=page.getViewport({scale:2});let canvas=document.createElement('canvas');canvas.width=viewport.width;canvas.height=viewport.height;await page.render({canvasContext:canvas.getContext('2d'),viewport}).promise;preview.innerHTML="";preview.appendChild(canvas);let a=document.createElement('a');a.innerText="Download JPG";a.href=canvas.toDataURL("image/jpeg");a.download="converted.jpg";a.className="bg-black text-white px-6 py-2 rounded-full mt-4 inline-block font-bold";preview.appendChild(a)};reader.readAsArrayBuffer(file)}</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PDF to JPG Converter - PakTools</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<style>
+body{background:#020a1f; color:white; font-family:Inter,sans-serif; overflow-x:hidden;}
+.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55; animation:float 20s infinite alternate;}
+@keyframes float{0%{transform:translate(-10%,-10%)}100%{transform:translate(10%,10%) scale(1.15)}}
+.stars{position:absolute; inset:0; pointer-events:none;}
+.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%; animation:twinkle 3s infinite;}
+.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 30px rgba(37,99,235,0.35), inset 0 1px 0 rgba(150,200,255,0.18); backdrop-filter:blur(15px);}
+.upload-area{background:rgba(255,255,255,0.06); border:2px dashed rgba(56,189,248,0.5);}
+</style>
+</head>
+<body class="relative min-h-screen">
+<div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-250px] left-[10%]"></div>
+<div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-300px] right-[5%]"></div>
+<div class="stars" id="stars"></div>
+
+<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<a href="index.html" class="font-black text-xl flex items-center gap-2"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center">P</div>PakTools</a>
+<a href="index.html" class="text-sm bg-white/10 border border-white/20 px-4 py-2 rounded-lg">← Home</a>
+</div>
+</header>
+
+<main class="relative z-10 max-w-5xl mx-auto px-6 py-12">
+<div class="text-center">
+<h1 class="text-4xl md:text-5xl font-black">PDF to <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">JPG</span></h1>
+<p class="mt-3 text-gray-400">Convert PDF Pages to High Quality JPG Images</p>
+</div>
+
+<div class="tool-box rounded-[2rem] p-8 md:p-10 mt-10">
+<div id="dropZone" class="upload-area rounded-2xl p-10 text-center cursor-pointer">
+<input type="file" id="fileInput" accept=".pdf" class="hidden">
+<div class="text-5xl">📄➡️🖼️</div>
+<p class="mt-4 font-bold">Click to Upload PDF</p>
+<p class="text-xs text-gray-400 mt-1">100% Browser Side - Secure</p>
+</div>
+
+<div id="info" class="hidden mt-6 flex justify-between items-center bg-black/30 rounded-xl p-4 border border-white/10 text-sm">
+<span id="fileName" class="font-bold"></span>
+<span id="pageCount" class="text-cyan-300"></span>
+</div>
+
+<button id="convertBtn" class="hidden w-full mt-6 bg-gradient-to-r from-cyan-400 to-blue-600 text-black font-black py-4 rounded-xl shadow-[0_0_20px_rgba(56,189,248,0.5)]">⚡ Convert to JPG</button>
+
+<div id="results" class="hidden grid grid-cols-2 md:grid-cols-3 gap-4 mt-8"></div>
+<button id="downloadAll" class="hidden w-full mt-6 bg-white/10 border border-cyan-400/40 py-3 rounded-xl font-bold">⬇️ Download All as ZIP</button>
+<p id="status" class="text-center text-sm text-gray-400 mt-4"></p>
+</div>
+</main>
+
+<script>
+const stars=document.getElementById('stars');
+for(let i=0;i<150;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.animationDelay=Math.random()*3+'s';stars.appendChild(d);}
+
+pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+let pdfFile=null, images=[];
+const fileInput=document.getElementById('fileInput'), dropZone=document.getElementById('dropZone');
+
+dropZone.onclick=()=>fileInput.click();
+fileInput.onchange=e=>{ pdfFile=e.target.files[0]; handleFile(); };
+
+async function handleFile(){
+if(!pdfFile) return;
+document.getElementById('fileName').innerText=pdfFile.name;
+document.getElementById('info').classList.remove('hidden');
+document.getElementById('convertBtn').classList.remove('hidden');
+let buf=await pdfFile.arrayBuffer();
+let pdf=await pdfjsLib.getDocument(buf).promise;
+document.getElementById('pageCount').innerText=pdf.numPages+' Pages';
+}
+
+document.getElementById('convertBtn').onclick=async()=>{
+if(!pdfFile) return;
+let btn=document.getElementById('convertBtn'); btn.innerText='⏳ Converting...'; btn.disabled=true;
+let buf=await pdfFile.arrayBuffer();
+let pdf=await pdfjsLib.getDocument(buf).promise;
+let container=document.getElementById('results'); container.innerHTML=''; container.classList.remove('hidden');
+images=[];
+for(let i=1;i<=pdf.numPages;i++){
+document.getElementById('status').innerText='Converting page '+i+'/'+pdf.numPages;
+let page=await pdf.getPage(i);
+let viewport=page.getViewport({scale:2});
+let canvas=document.createElement('canvas'); canvas.width=viewport.width; canvas.height=viewport.height;
+let ctx=canvas.getContext('2d');
+await page.render({canvasContext:ctx, viewport}).promise;
+let dataUrl=canvas.toDataURL('image/jpeg',0.9);
+images.push({url:dataUrl, name:`page-${i}.jpg`});
+let div=document.createElement('div'); div.className='bg-black/40 rounded-xl p-2 border border-white/10';
+div.innerHTML=`<img src="${dataUrl}" class="rounded-lg w-full"><div class="flex justify-between items-center mt-2"><span class="text-xs">Page ${i}</span><a href="${dataUrl}" download="page-${i}.jpg" class="text-xs bg-cyan-400 text-black px-2 py-1 rounded font-bold">Download</a></div>`;
+container.appendChild(div);
+}
+document.getElementById('status').innerText='✅ All pages converted!';
+btn.innerText='✅ Done - '+pdf.numPages+' Images';
+}
+</script>
+</body>
+</html>
