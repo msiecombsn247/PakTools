@@ -2,23 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Unit Converter - Length, Weight, Temperature, Currency - PakTools</title>
-<meta name="description" content="Free All-in-One Unit Converter - Convert Length, Weight, Temperature, Area, Speed, Data, Time, Currency.">
+<title>Unit Converter - Length, Weight, Temperature | PakTools</title>
+<meta name="description" content="Free All-in-One Unit Converter - Convert Length, Weight, Temperature, Area, Speed, Data, Time.">
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
-*{font-family:'Inter',sans-serif}
+*{font-family:Inter,sans-serif}
 body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
-.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55; animation:float 20s infinite alternate;}
-@keyframes float{0%{transform:translate(-10%,-10%)}100%{transform:translate(10%,10%) scale(1.15)}}
-.stars{position:absolute; inset:0; pointer-events:none; z-index:1;}
-.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%; animation:twinkle 3s infinite;}
-@keyframes twinkle{0%,100%{opacity:0.2}50%{opacity:1}}
-.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 40px rgba(37,99,235,0.35), inset 0 1px 0 rgba(150,200,255,0.18); backdrop-filter:blur(15px);}
-.result-card{background:rgba(255,255,255,0.06); border:1px solid rgba(56,189,248,0.25);}
-.glow-btn{background:linear-gradient(90deg,#22d3ee,#3b82f6); box-shadow:0 0 25px rgba(59,130,246,0.6)}
+.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55;}
+.stars{position:absolute; inset:0; pointer-events:none;}
+.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%;}
+.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 30px rgba(37,99,235,0.35); backdrop-filter:blur(15px);}
+.result-card{background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08);}
 .input-box{background:rgba(0,0,0,0.35); border:1px solid rgba(59,130,246,0.3);}
-.tab{padding:10px 18px; border-radius:999px; font-size:13px; font-weight:700; cursor:pointer; border:1px solid rgba(255,255,255,0.15); background:rgba(0,0,0,0.3); transition:0.2s;}
+.content-box{background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(8px);}
+.tab{padding:7px 14px; border-radius:999px; font-size:11px; font-weight:700; cursor:pointer; border:1px solid rgba(255,255,255,0.15); background:rgba(0,0,0,0.3); transition:0.2s;}
 .tab.active{background:linear-gradient(90deg,#22d3ee,#3b82f6); color:black; border-color:transparent;}
 </style>
 </head>
@@ -26,148 +23,73 @@ body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
 <div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-250px] left-[10%]"></div>
 <div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-300px] right-[5%]"></div>
 <div class="stars" id="stars"></div>
-
 <header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl">
-<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-<a href="index.html" style="text-decoration:none;color:white" class="font-black text-xl flex items-center gap-2"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black">P</div>PakTools</a>
-<a href="index.html" style="text-decoration:none;color:white" class="text-sm bg-white/10 border border-white/20 px-4 py-2 rounded-lg">← Home</a>
+<div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+<a href="index.html" class="font-black text-[15px] flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black text-xs">P</div>PakTools</a>
+<a href="index.html" class="text-[11px] bg-white/10 border border-white/20 px-3 py-1.5 rounded-full">← Home</a>
 </div>
 </header>
-
-<main class="relative z-10 max-w-5xl mx-auto px-6 py-10">
+<main class="relative z-10 max-w-4xl mx-auto px-6 py-6">
 <div class="text-center">
-<h1 class="text-4xl md:text-5xl font-black">Unit <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Converter</span></h1>
-<p class="mt-3 text-gray-400 text-[14px]">Length, Weight, Temperature, Data, Time, Speed, Area, Currency</p>
-<p class="mt-2 text-[11px] text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 inline-block px-3 py-1 rounded-full">🔥 #23 World Evergreen - 20M+ Searches/Month - Never Dies</p>
+<h1 class="text-3xl md:text-4xl font-black">Unit <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Converter</span></h1>
+<p class="mt-2 text-gray-400 text-[12px]">Length, Weight, Temperature, Data, Time, Speed, Area</p>
+<p class="mt-2 text-[10px] text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 inline-block px-2.5 py-1 rounded-full">🔥 20M+ Searches/Month - Evergreen Tool</p>
 </div>
-
-<div class="tool-box rounded-[2rem] p-6 md:p-10 mt-8">
-
-<div class="flex flex-wrap gap-2 justify-center mb-8" id="tabs"></div>
-
-<div class="grid md:grid-cols-[1fr_50px_1fr] gap-4 items-end">
+<div class="tool-box rounded-[1.5rem] p-5 mt-6">
+<div class="flex flex-wrap gap-1.5 justify-center mb-5" id="tabs"></div>
+<div class="grid md:grid-cols-[1fr_40px_1fr] gap-3 items-end">
 <div>
-<label class="text-[12px] text-gray-400 font-bold">From:</label>
-<select id="fromUnit" class="w-full mt-2 input-box rounded-xl px-4 py-4 text-sm outline-none"></select>
-<input id="fromVal" type="number" value="1" class="w-full mt-3 input-box rounded-xl px-4 py-4 text-lg font-bold outline-none" oninput="convert()">
+<label class="text-[10px] text-gray-400 font-bold">From:</label>
+<select id="fromUnit" class="w-full mt-1 input-box rounded-xl px-3 py-3 text-[11px] outline-none"></select>
+<input id="fromVal" type="number" value="1" class="w-full mt-2 input-box rounded-xl px-3 py-3 text-[13px] font-bold outline-none" oninput="convert()">
 </div>
-<div class="flex justify-center">
-<button onclick="swapUnits()" class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-lg hover:bg-white/20 transition">⇄</button>
-</div>
+<div class="flex justify-center"><button onclick="swapUnits()" class="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[14px]">⇄</button></div>
 <div>
-<label class="text-[12px] text-gray-400 font-bold">To:</label>
-<select id="toUnit" class="w-full mt-2 input-box rounded-xl px-4 py-4 text-sm outline-none"></select>
-<input id="toVal" type="number" readonly class="w-full mt-3 input-box rounded-xl px-4 py-4 text-lg font-bold outline-none bg-cyan-500/10 border-cyan-400/30">
+<label class="text-[10px] text-gray-400 font-bold">To:</label>
+<select id="toUnit" class="w-full mt-1 input-box rounded-xl px-3 py-3 text-[11px] outline-none"></select>
+<input id="toVal" type="number" readonly class="w-full mt-2 input-box rounded-xl px-3 py-3 text-[13px] font-bold outline-none bg-cyan-500/10 border-cyan-400/30">
+</div>
+</div>
+<div class="mt-4 result-card rounded-xl p-3 text-center">
+<p class="text-[10px] text-gray-400">Result:</p>
+<p id="resultText" class="text-[14px] md:text-[16px] font-black text-cyan-300 mt-1">1 Meter = 3.28084 Feet</p>
+<p class="text-[10px] text-gray-500 mt-1">Formula: <span id="formula">multiply by 3.28084</span></p>
+</div>
+<div class="mt-4 grid grid-cols-4 gap-1.5 text-[10px]">
+<button onclick="quickSet('length','m','ft')" class="bg-white/5 border border-white/10 rounded-xl py-2.5">m → ft</button>
+<button onclick="quickSet('weight','kg','lb')" class="bg-white/5 border border-white/10 rounded-xl py-2.5">kg → lb</button>
+<button onclick="quickSet('temperature','c','f')" class="bg-white/5 border border-white/10 rounded-xl py-2.5">°C → °F</button>
+<button onclick="quickSet('data','gb','mb')" class="bg-white/5 border border-white/10 rounded-xl py-2.5">GB → MB</button>
+<button onclick="quickSet('length','inch','cm')" class="bg-white/5 border border-white/10 rounded-xl py-2.5">inch → cm</button>
+<button onclick="quickSet('area','acre','m2')" class="bg-white/5 border border-white/10 rounded-xl py-2.5">acre → m²</button>
+<button onclick="quickSet('speed','kmh','mph')" class="bg-white/5 border border-white/10 rounded-xl py-2.5">km/h → mph</button>
+<button onclick="quickSet('time','hour','min')" class="bg-white/5 border border-white/10 rounded-xl py-2.5">hour → min</button>
 </div>
 </div>
 
-<div class="mt-6 result-card rounded-xl p-4 text-center">
-<p class="text-[12px] text-gray-400">Result:</p>
-<p id="resultText" class="text-xl md:text-2xl font-black text-cyan-300 mt-1">1 Meter = 3.28084 Feet</p>
-<p class="text-[11px] text-gray-500 mt-2">Formula used: <span id="formula">multiply by 3.28084</span></p>
+<!-- SMALL SEO -->
+<div class="content-box rounded-xl p-5 mt-5">
+<h2 class="text-[13px] font-bold">About Unit Converter</h2>
+<p class="mt-2 text-[11px] leading-5 text-gray-400">PakTools Free All-in-One Unit Converter converts all daily life units instantly. Length: meter, feet, inch, km, mile, yard. Weight: kg, pounds, gram, ounce. Temperature: Celsius, Fahrenheit, Kelvin. Data: GB, MB, KB, TB. Time: seconds, minutes, hours, days. Speed: km/h, mph, knot. Area: acre, m², hectare. Most searched evergreen tool with 20M+ monthly searches worldwide. 100% accurate formulas, fast, mobile friendly, no signup, free unlimited conversions.</p>
+<div class="grid md:grid-cols-2 gap-3 mt-3">
+<div><h3 class="text-[11px] font-bold">How to Use?</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>Select category: Length/Weight etc</li><li>Choose From & To units</li><li>Enter value, see instant result</li><li>Swap or use quick buttons</li></ul></div>
+<div><h3 class="text-[11px] font-bold">Features</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>7 categories, 40+ units</li><li>Accurate formulas, instant</li><li>Quick presets: m→ft, kg→lb etc</li><li>Free, fast, no limit</li></ul></div>
 </div>
-
-<div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-[11px]">
-<button onclick="quickSet('length','m','ft')" class="bg-white/5 border border-white/10 rounded-xl py-3 hover:bg-white/10">m → ft</button>
-<button onclick="quickSet('weight','kg','lb')" class="bg-white/5 border border-white/10 rounded-xl py-3 hover:bg-white/10">kg → lb</button>
-<button onclick="quickSet('temperature','c','f')" class="bg-white/5 border border-white/10 rounded-xl py-3 hover:bg-white/10">°C → °F</button>
-<button onclick="quickSet('data','gb','mb')" class="bg-white/5 border border-white/10 rounded-xl py-3 hover:bg-white/10">GB → MB</button>
-<button onclick="quickSet('length','inch','cm')" class="bg-white/5 border border-white/10 rounded-xl py-3 hover:bg-white/10">inch → cm</button>
-<button onclick="quickSet('area','acre','m2')" class="bg-white/5 border border-white/10 rounded-xl py-3 hover:bg-white/10">acre → m²</button>
-<button onclick="quickSet('speed','kmh','mph')" class="bg-white/5 border border-white/10 rounded-xl py-3 hover:bg-white/10">km/h → mph</button>
-<button onclick="quickSet('time','hour','min')" class="bg-white/5 border border-white/10 rounded-xl py-3 hover:bg-white/10">hour → min</button>
 </div>
-
-</div>
-
-<div class="mt-8 result-card rounded-2xl p-6 text-[13px] leading-6 text-gray-400">
-<h3 class="text-white font-bold mb-2">What is Unit Converter?</h3>
-<p>PakTools Unit Converter converts all daily units - Length (meter, feet, inch, km), Weight (kg, pounds, gram), Temperature (Celsius, Fahrenheit), Data Storage (GB, MB), Time, Speed, Area. Instant, accurate, free. Most searched tool worldwide with 20M+ monthly searches.</p>
-</div>
-
 </main>
-
+<footer class="text-center py-5 text-[10px] text-gray-500">© 2025 PakTools</footer>
 <script>
 const stars=document.getElementById('stars');
-for(let i=0;i<150;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.animationDelay=Math.random()*3+'s';stars.appendChild(d);}
-
-const units={
-  length:{name:"📏 Length", base:"m", units:{m:1, km:1000, cm:0.01, mm:0.001, ft:0.3048, inch:0.0254, yard:0.9144, mile:1609.34}},
-  weight:{name:"⚖️ Weight", base:"kg", units:{kg:1, g:0.001, mg:0.000001, lb:0.453592, oz:0.0283495, ton:1000}},
-  temperature:{name:"🌡️ Temperature", base:"c", units:{c:1, f:1, k:1}},
-  area:{name:"📐 Area", base:"m2", units:{m2:1, km2:1000000, ft2:0.092903, inch2:0.00064516, acre:4046.86, hectare:10000}},
-  data:{name:"💾 Data", base:"byte", units:{byte:1, kb:1024, mb:1048576, gb:1073741824, tb:1099511627776}},
-  time:{name:"⏱️ Time", base:"sec", units:{sec:1, min:60, hour:3600, day:86400, week:604800, month:2629746, year:31556952}},
-  speed:{name:"🚀 Speed", base:"ms", units:{ms:1, kmh:0.277778, mph:0.44704, knot:0.514444, fts:0.3048}}
-};
-
+for(let i=0;i<80;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';stars.appendChild(d);}
+const units={length:{name:"📏 Length",base:"m",units:{m:1,km:1000,cm:0.01,mm:0.001,ft:0.3048,inch:0.0254,yard:0.9144,mile:1609.34}},weight:{name:"⚖️ Weight",base:"kg",units:{kg:1,g:0.001,mg:0.000001,lb:0.453592,oz:0.0283495,ton:1000}},temperature:{name:"🌡️ Temp",base:"c",units:{c:1,f:1,k:1}},area:{name:"📐 Area",base:"m2",units:{m2:1,km2:1000000,ft2:0.092903,inch2:0.00064516,acre:4046.86,hectare:10000}},data:{name:"💾 Data",base:"byte",units:{byte:1,kb:1024,mb:1048576,gb:1073741824,tb:1099511627776}},time:{name:"⏱️ Time",base:"sec",units:{sec:1,min:60,hour:3600,day:86400,week:604800,month:2629746,year:31556952}},speed:{name:"🚀 Speed",base:"ms",units:{ms:1,kmh:0.277778,mph:0.44704,knot:0.514444,fts:0.3048}}};
 let currentCat='length';
-
-function renderTabs(){
-  let wrap=document.getElementById('tabs'); wrap.innerHTML='';
-  Object.keys(units).forEach(cat=>{
-    let b=document.createElement('button'); b.className='tab'+(cat===currentCat?' active':''); b.innerText=units[cat].name;
-    b.onclick=()=>{currentCat=cat; renderTabs(); loadUnits(); convert();};
-    wrap.appendChild(b);
-  });
-}
-
-function loadUnits(){
-  let fromSel=document.getElementById('fromUnit');
-  let toSel=document.getElementById('toUnit');
-  fromSel.innerHTML=''; toSel.innerHTML='';
-  Object.keys(units[currentCat].units).forEach(u=>{
-    let o1=document.createElement('option'); o1.value=u; o1.textContent=u.toUpperCase();
-    let o2=document.createElement('option'); o2.value=u; o2.textContent=u.toUpperCase();
-    fromSel.appendChild(o1); toSel.appendChild(o2);
-  });
-  // default second unit
-  if(toSel.options.length>1) toSel.selectedIndex=1;
-}
-
-function convert(){
-  let fromU=document.getElementById('fromUnit').value;
-  let toU=document.getElementById('toUnit').value;
-  let fromV=parseFloat(document.getElementById('fromVal').value)||0;
-  let toInput=document.getElementById('toVal');
-  let resText=document.getElementById('resultText');
-  let formula=document.getElementById('formula');
-
-  let result=0;
-  if(currentCat==='temperature'){
-    // special
-    if(fromU==='c' && toU==='f') result=(fromV*9/5)+32;
-    else if(fromU==='f' && toU==='c') result=(fromV-32)*5/9;
-    else if(fromU==='c' && toU==='k') result=fromV+273.15;
-    else if(fromU==='k' && toU==='c') result=fromV-273.15;
-    else if(fromU==='f' && toU==='k') result=(fromV-32)*5/9+273.15;
-    else if(fromU==='k' && toU==='f') result=(fromV-273.15)*9/5+32;
-    else result=fromV;
-  } else {
-    let baseVal=fromV*units[currentCat].units[fromU];
-    result=baseVal/units[currentCat].units[toU];
-  }
-
-  toInput.value=Number(result.toFixed(6)).toString();
-  resText.innerText=`${fromV} ${fromU.toUpperCase()} = ${Number(result.toFixed(6))} ${toU.toUpperCase()}`;
-  formula.innerText=currentCat==='temperature'? `${fromU} to ${toU} formula applied` : `multiply by ${(units[currentCat].units[fromU]/units[currentCat].units[toU]).toFixed(5)}`;
-}
-
-function swapUnits(){
-  let f=document.getElementById('fromUnit'); let t=document.getElementById('toUnit');
-  let fv=f.value; f.value=t.value; t.value=fv;
-  convert();
-}
-function quickSet(cat,from,to){
-  currentCat=cat; renderTabs(); loadUnits();
-  document.getElementById('fromUnit').value=from; document.getElementById('toUnit').value=to;
-  convert();
-}
-
-document.getElementById('fromUnit').addEventListener('change',convert);
-document.getElementById('toUnit').addEventListener('change',convert);
-
-renderTabs(); loadUnits(); convert();
+function renderTabs(){let wrap=document.getElementById('tabs');wrap.innerHTML='';Object.keys(units).forEach(cat=>{let b=document.createElement('button');b.className='tab'+(cat===currentCat?' active':'');b.innerText=units[cat].name;b.onclick=()=>{currentCat=cat;renderTabs();loadUnits();convert();};wrap.appendChild(b);});}
+function loadUnits(){let fromSel=document.getElementById('fromUnit'),toSel=document.getElementById('toUnit');fromSel.innerHTML='';toSel.innerHTML='';Object.keys(units[currentCat].units).forEach(u=>{let o1=document.createElement('option');o1.value=u;o1.textContent=u.toUpperCase();let o2=document.createElement('option');o2.value=u;o2.textContent=u.toUpperCase();fromSel.appendChild(o1);toSel.appendChild(o2);});if(toSel.options.length>1)toSel.selectedIndex=1;}
+function convert(){let fromU=document.getElementById('fromUnit').value,toU=document.getElementById('toUnit').value,fromV=parseFloat(document.getElementById('fromVal').value)||0,toInput=document.getElementById('toVal'),resText=document.getElementById('resultText'),formula=document.getElementById('formula');let result=0;if(currentCat==='temperature'){if(fromU==='c'&&toU==='f')result=(fromV*9/5)+32;else if(fromU==='f'&&toU==='c')result=(fromV-32)*5/9;else if(fromU==='c'&&toU==='k')result=fromV+273.15;else if(fromU==='k'&&toU==='c')result=fromV-273.15;else if(fromU==='f'&&toU==='k')result=(fromV-32)*5/9+273.15;else if(fromU==='k'&&toU==='f')result=(fromV-273.15)*9/5+32;else result=fromV;}else{let baseVal=fromV*units[currentCat].units[fromU];result=baseVal/units[currentCat].units[toU];}toInput.value=Number(result.toFixed(6)).toString();resText.innerText=`${fromV} ${fromU.toUpperCase()} = ${Number(result.toFixed(6))} ${toU.toUpperCase()}`;formula.innerText=currentCat==='temperature'?`${fromU} to ${toU} formula`:`× ${(units[currentCat].units[fromU]/units[currentCat].units[toU]).toFixed(5)}`;}
+function swapUnits(){let f=document.getElementById('fromUnit'),t=document.getElementById('toUnit'),fv=f.value;f.value=t.value;t.value=fv;convert();}
+function quickSet(cat,from,to){currentCat=cat;renderTabs();loadUnits();document.getElementById('fromUnit').value=from;document.getElementById('toUnit').value=to;convert();}
+document.getElementById('fromUnit').addEventListener('change',convert);document.getElementById('toUnit').addEventListener('change',convert);
+renderTabs();loadUnits();convert();
 </script>
 </body>
 </html>
