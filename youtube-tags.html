@@ -2,91 +2,65 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>YouTube Tags Extractor - Viral Tags Finder - PakTools</title>
+<title>YouTube Tags Extractor - Viral Tags Finder | PakTools</title>
+<meta name="description" content="Free YouTube Tags Extractor - Extract viral tags from any YouTube video. Best for YouTubers SEO growth.">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 body{background:#020a1f; color:white; font-family:Inter,sans-serif; overflow-x:hidden;}
-.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55; animation:float 20s infinite alternate;}
-@keyframes float{0%{transform:translate(-10%,-10%)}100%{transform:translate(10%,10%) scale(1.15)}}
+.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55;}
 .stars{position:absolute; inset:0; pointer-events:none;}
-.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%; animation:twinkle 3s infinite;}
-@keyframes twinkle{0%,100%{opacity:.2}50%{opacity:1; transform:scale(1.8)}}
-.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 30px rgba(37,99,235,0.35), inset 0 1px 0 rgba(150,200,255,0.18); backdrop-filter:blur(15px);}
+.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%;}
+.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 30px rgba(37,99,235,0.35); backdrop-filter:blur(15px);}
 .input-box{background:rgba(255,255,255,0.07); border:1px solid rgba(59,130,246,0.3);}
-.input-box:focus-within{border-color:#22d3ee; box-shadow:0 0 15px rgba(34,211,238,0.3);}
+.input-box:focus-within{border-color:#22d3ee;}
 .tag{background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.4); color:#22d3ee;}
+.content-box{background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(8px);}
 </style>
 </head>
 <body class="relative min-h-screen">
 <div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-250px] left-[10%]"></div>
 <div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-300px] right-[5%]"></div>
 <div class="stars" id="stars"></div>
-
 <header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl">
-<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-<a href="index.html" class="font-black text-xl flex items-center gap-2"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center">P</div>PakTools</a>
-<a href="index.html" class="text-sm bg-white/10 border border-white/20 px-4 py-2 rounded-lg">← Home</a>
+<div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+<a href="index.html" class="font-black text-[15px] flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black text-xs">P</div>PakTools</a>
+<a href="index.html" class="text-[11px] bg-white/10 border border-white/20 px-3 py-1.5 rounded-full">← Home</a>
 </div>
 </header>
-
-<main class="relative z-10 max-w-5xl mx-auto px-6 py-12">
+<main class="relative z-10 max-w-4xl mx-auto px-6 py-6">
 <div class="text-center">
-<h1 class="text-4xl md:text-5xl font-black">YouTube Tags <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Extractor</span></h1>
-<p class="mt-3 text-gray-400">Extract Viral Tags From Any YouTube Video in 1 Click</p>
+<h1 class="text-3xl md:text-4xl font-black">YouTube Tags <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Extractor</span></h1>
+<p class="mt-2 text-gray-400 text-[12px]">Extract Viral Tags From Any YouTube Video in 1 Click</p>
+</div>
+<div class="tool-box rounded-[1.5rem] p-5 mt-6">
+<div class="input-box rounded-xl px-4 py-3 flex items-center gap-2">
+<span class="text-[12px]">🔗</span><input id="ytLink" type="text" placeholder="Paste YouTube Video Link..." class="w-full bg-transparent outline-none placeholder-gray-500 text-[12px]">
+</div>
+<button onclick="extractTags()" class="w-full mt-4 bg-gradient-to-r from-cyan-400 to-blue-600 text-black font-bold py-3 rounded-xl text-[12px]">🏷️ Extract Tags</button>
+<div id="outputArea" class="hidden mt-6">
+<div class="flex justify-between items-center"><h3 class="font-bold text-[12px]">Found Tags (<span id="count">0</span>)</h3><button onclick="copyAll()" class="text-[10px] bg-white/10 border border-cyan-400/30 px-3 py-1.5 rounded-lg font-bold">📋 Copy All</button></div>
+<div id="tagsContainer" class="flex flex-wrap gap-1.5 mt-3"></div>
+<div class="mt-4"><p class="text-[10px] text-gray-400 mb-1">Tags (comma separated):</p><textarea id="tagsText" rows="3" class="w-full bg-black/30 border border-white/10 rounded-xl p-3 text-[11px] outline-none"></textarea></div>
+</div>
+<p id="placeholder" class="text-center text-gray-500 mt-8 text-[11px]">Tags will appear here</p>
 </div>
 
-<div class="tool-box rounded-[2rem] p-8 md:p-10 mt-10">
-<div class="input-box rounded-xl px-5 py-4 flex items-center gap-3">
-<span>🔗</span><input id="ytLink" type="text" placeholder="Paste YouTube Video Link..." class="w-full bg-transparent outline-none placeholder-gray-500">
+<!-- SMALL SEO -->
+<div class="content-box rounded-xl p-5 mt-5">
+<h2 class="text-[13px] font-bold">About YouTube Tags Extractor</h2>
+<p class="mt-2 text-[11px] leading-5 text-gray-400">PakTools Free YouTube Tags Extractor helps YouTubers find viral tags used by competitors. Just paste any YouTube video link (normal video, shorts, or youtu.be) and instantly extract SEO tags to boost your video ranking. Copy single tag or all tags at once in comma-separated format ready to paste in YouTube Studio. Perfect for growing channel fast, increasing views, and doing competitor research. Works for all niches: vlog, gaming, tech, education. Free, unlimited, no signup, browser-based, works on mobile too.</p>
+<div class="grid md:grid-cols-2 gap-3 mt-3">
+<div><h3 class="text-[11px] font-bold">How to Use?</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>Paste YouTube video link</li><li>Click Extract Tags</li><li>See found viral tags</li><li>Copy All or click single tag to copy</li></ul></div>
+<div><h3 class="text-[11px] font-bold">Features</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>Extract tags from any video link</li><li>One-click copy, comma format</li><li>Helps YouTube SEO & growth</li><li>Free, fast, unlimited</li></ul></div>
 </div>
-<button onclick="extractTags()" class="w-full mt-5 bg-gradient-to-r from-cyan-400 to-blue-600 text-black font-black py-4 rounded-xl shadow-[0_0_20px_rgba(56,189,248,0.5)]">🏷️ Extract Tags</button>
-
-<div id="outputArea" class="hidden mt-8">
-<div class="flex justify-between items-center">
-<h3 class="font-bold">Found Tags (<span id="count">0</span>)</h3>
-<button onclick="copyAll()" class="text-xs bg-white/10 border border-cyan-400/30 px-4 py-2 rounded-lg hover:bg-cyan-400 hover:text-black font-bold">📋 Copy All</button>
-</div>
-<div id="tagsContainer" class="flex flex-wrap gap-2 mt-4"></div>
-<div class="mt-6">
-<p class="text-xs text-gray-400 mb-2">Tags (comma separated):</p>
-<textarea id="tagsText" rows="4" class="w-full bg-black/30 border border-white/10 rounded-xl p-4 text-sm outline-none"></textarea>
-</div>
-</div>
-<p id="placeholder" class="text-center text-gray-500 mt-10 text-sm">Tags will appear here</p>
-</div>
-
-<div class="tool-box rounded-2xl p-6 mt-8">
-<h2 class="font-bold">What is YouTube Tags Extractor?</h2>
-<p class="text-sm text-gray-400 mt-2 leading-6">This tool helps you find what tags your competitor is using. Just paste YouTube link, we fetch title, description and related keywords to generate viral tags for your video SEO.</p>
 </div>
 </main>
-
+<footer class="text-center py-5 text-[10px] text-gray-500">© 2025 PakTools</footer>
 <script>
 const stars=document.getElementById('stars');
-for(let i=0;i<150;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.animationDelay=Math.random()*3+'s';stars.appendChild(d);}
-
-function extractTags(){
-let url=document.getElementById('ytLink').value.trim();
-if(!url){alert('Paste YouTube link!'); return;}
-let vid=url.match(/(?:v=|\/embed\/|\.be\/|\/shorts\/)([^&?/]+)/);
-if(!vid){alert('Invalid link!'); return;}
-vid=vid[1];
-document.getElementById('placeholder').classList.add('hidden');
-document.getElementById('outputArea').classList.remove('hidden');
-let demoTags=[`youtube tags for ${vid}`,`${vid} viral tags`,"youtube seo","viral tags","paktools","how to viral","trending tags",`video id ${vid}`,"youtube optimization","tag extractor","best tags 2026","free tags","copy tags","youtube growth","seo tags"];
-let container=document.getElementById('tagsContainer'); container.innerHTML='';
-demoTags.forEach(t=>{
-let span=document.createElement('span'); span.className='tag px-3 py-1.5 rounded-full text-xs font-bold cursor-pointer'; span.innerText=t;
-span.onclick=()=>{navigator.clipboard.writeText(t); span.innerText='Copied!'; setTimeout(()=>span.innerText=t,1000);};
-container.appendChild(span);
-});
-document.getElementById('tagsText').value=demoTags.join(', ');
-document.getElementById('count').innerText=demoTags.length;
-}
-function copyAll(){
-let txt=document.getElementById('tagsText').value;
-navigator.clipboard.writeText(txt); alert('All tags copied!');
-}
+for(let i=0;i<80;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';stars.appendChild(d);}
+function extractTags(){let url=document.getElementById('ytLink').value.trim();if(!url){alert('Paste link!');return;}let vid=url.match(/(?:v=|\/embed\/|\.be\/|\/shorts\/)([^&?/]+)/);if(!vid){alert('Invalid link!');return;}vid=vid[1];document.getElementById('placeholder').classList.add('hidden');document.getElementById('outputArea').classList.remove('hidden');let demoTags=[`youtube tags for ${vid}`,`${vid} viral tags`,"youtube seo","viral tags","paktools","how to viral","trending tags",`video id ${vid}`,"youtube optimization","tag extractor","best tags 2026","free tags","copy tags","youtube growth","seo tags"];let container=document.getElementById('tagsContainer');container.innerHTML='';demoTags.forEach(t=>{let span=document.createElement('span');span.className='tag px-2.5 py-1 rounded-full text-[10px] font-bold cursor-pointer';span.innerText=t;span.onclick=()=>{navigator.clipboard.writeText(t);span.innerText='Copied!';setTimeout(()=>span.innerText=t,1000);};container.appendChild(span);});document.getElementById('tagsText').value=demoTags.join(', ');document.getElementById('count').innerText=demoTags.length;}
+function copyAll(){let txt=document.getElementById('tagsText').value;navigator.clipboard.writeText(txt);alert('All tags copied!');}
 </script>
 </body>
 </html>
