@@ -2,91 +2,76 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>QR Code Generator Free - PakTools</title>
+<title>QR Code Generator Free - Create QR for Link | PakTools</title>
+<meta name="description" content="Free QR Code Generator - Create QR Code for Link, Text, WhatsApp, WiFi. High quality, customizable, free.">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 <style>
 body{background:#020a1f; color:white; font-family:Inter,sans-serif; overflow-x:hidden;}
-.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55; animation:float 20s infinite alternate;}
-@keyframes float{0%{transform:translate(-10%,-10%)}100%{transform:translate(10%,10%) scale(1.15)}}
+.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55;}
 .stars{position:absolute; inset:0; pointer-events:none;}
-.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%; animation:twinkle 3s infinite;}
-.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 30px rgba(37,99,235,0.35), inset 0 1px 0 rgba(150,200,255,0.18); backdrop-filter:blur(15px);}
+.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%;}
+.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 30px rgba(37,99,235,0.35); backdrop-filter:blur(15px);}
 .input-box{background:rgba(255,255,255,0.07); border:1px solid rgba(59,130,246,0.3);}
-.input-box:focus-within{border-color:#22d3ee; box-shadow:0 0 15px rgba(34,211,238,0.3);}
-#qrcode img{margin:auto; border-radius:12px; background:white; padding:12px;}
+.content-box{background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(8px);}
+#qrcode img{margin:auto; border-radius:10px; background:white; padding:10px;}
 </style>
 </head>
 <body class="relative min-h-screen">
 <div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-250px] left-[10%]"></div>
 <div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-300px] right-[5%]"></div>
 <div class="stars" id="stars"></div>
-
 <header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl">
-<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-<a href="index.html" class="font-black text-xl flex items-center gap-2"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center">P</div>PakTools</a>
-<a href="index.html" class="text-sm bg-white/10 border border-white/20 px-4 py-2 rounded-lg">← Home</a>
+<div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+<a href="index.html" class="font-black text-[15px] flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black text-xs">P</div>PakTools</a>
+<a href="index.html" class="text-[11px] bg-white/10 border border-white/20 px-3 py-1.5 rounded-full">← Home</a>
 </div>
 </header>
-
-<main class="relative z-10 max-w-5xl mx-auto px-6 py-12">
+<main class="relative z-10 max-w-4xl mx-auto px-6 py-6">
 <div class="text-center">
-<h1 class="text-4xl md:text-5xl font-black">QR Code <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Generator</span></h1>
-<p class="mt-3 text-gray-400">Create QR Code for Link, Text, WhatsApp Free</p>
+<h1 class="text-3xl md:text-4xl font-black">QR Code <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Generator</span></h1>
+<p class="mt-2 text-gray-400 text-[12px]">Create QR Code for Link, Text, WhatsApp Free</p>
 </div>
-
-<div class="tool-box rounded-[2rem] p-8 md:p-10 mt-10">
-<div class="grid md:grid-cols-2 gap-8">
+<div class="tool-box rounded-[1.5rem] p-5 mt-6">
+<div class="grid md:grid-cols-2 gap-5">
 <div>
-<label class="text-sm text-gray-300">Enter Text or URL</label>
-<textarea id="qrText" rows="4" placeholder="https://example.com or any text..." class="input-box w-full mt-2 rounded-xl p-4 text-sm outline-none resize-none"></textarea>
-
-<div class="grid grid-cols-2 gap-3 mt-4">
-<div><label class="text-xs text-gray-400">Size</label><select id="qrSize" class="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-sm mt-1"><option value="256">256x256</option><option value="512">512x512 HD</option><option value="1024">1024x1024</option></select></div>
-<div><label class="text-xs text-gray-400">Color</label><input type="color" id="qrColor" value="#000000" class="w-full h-[46px] mt-1 bg-black/40 rounded-lg p-1"></div>
+<label class="text-[11px] text-gray-300">Enter Text or URL</label>
+<textarea id="qrText" rows="4" placeholder="https://example.com or any text..." class="input-box w-full mt-1.5 rounded-xl p-3 text-[12px] outline-none resize-none"></textarea>
+<div class="grid grid-cols-2 gap-2 mt-3">
+<div><label class="text-[10px] text-gray-400">Size</label><select id="qrSize" class="w-full bg-black/40 border border-white/10 rounded-lg p-2.5 text-[11px] mt-1"><option value="256">256x256</option><option value="512">512x512 HD</option><option value="1024">1024x1024</option></select></div>
+<div><label class="text-[10px] text-gray-400">Color</label><input type="color" id="qrColor" value="#000000" class="w-full h-[38px] mt-1 bg-black/40 rounded-lg p-1"></div>
 </div>
-
-<button onclick="generateQR()" class="w-full mt-5 bg-gradient-to-r from-cyan-400 to-blue-600 text-black font-black py-4 rounded-xl shadow-[0_0_20px_rgba(56,189,248,0.5)]">⚡ Generate QR Code</button>
+<button onclick="generateQR()" class="w-full mt-4 bg-gradient-to-r from-cyan-400 to-blue-600 text-black font-bold py-3 rounded-xl text-[12px]">⚡ Generate QR Code</button>
 </div>
-
-<div class="bg-black/30 rounded-2xl border border-white/10 p-6 flex flex-col items-center justify-center min-h-[350px]">
+<div class="bg-black/30 rounded-xl border border-white/10 p-4 flex flex-col items-center justify-center min-h-[260px]">
 <div id="qrcode"></div>
-<p id="placeholder" class="text-gray-500 text-sm mt-4">QR will appear here</p>
-<div id="actions" class="hidden mt-6 flex gap-3">
-<button onclick="downloadQR()" class="bg-white/10 border border-cyan-400/30 px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-cyan-400 hover:text-black">⬇️ Download PNG</button>
-<button onclick="copyQR()" class="bg-white/10 border border-white/20 px-5 py-2.5 rounded-xl text-sm">📋 Copy</button>
+<p id="placeholder" class="text-gray-500 text-[11px] mt-3">QR will appear here</p>
+<div id="actions" class="hidden mt-4 flex gap-2">
+<button onclick="downloadQR()" class="bg-white/10 border border-cyan-400/30 px-4 py-2 rounded-xl text-[11px] font-bold">⬇️ Download PNG</button>
+<button onclick="copyQR()" class="bg-white/10 border border-white/20 px-4 py-2 rounded-xl text-[11px]">📋 Copy</button>
 </div>
 </div>
+</div>
+</div>
+
+<!-- SMALL SEO -->
+<div class="content-box rounded-xl p-5 mt-5">
+<h2 class="text-[13px] font-bold">About QR Code Generator</h2>
+<p class="mt-2 text-[11px] leading-5 text-gray-400">PakTools Free QR Code Generator lets you create high-quality QR codes for any link, text, WhatsApp number, WiFi password, or UPI payment in seconds. Just enter your URL or text, choose size and color, and generate instant QR. Download as PNG image to use on business cards, shop posters, menus, social media, and marketing materials. QR codes work forever, no expiry, no tracking. Works 100% in browser, free, no signup, unlimited QR creation. Perfect for businesses, students, and shopkeepers in Pakistan.</p>
+<div class="grid md:grid-cols-2 gap-3 mt-3">
+<div><h3 class="text-[11px] font-bold">How to Use?</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>Enter text, link, or WhatsApp number</li><li>Select size: 256, 512 HD, 1024</li><li>Choose QR color if needed</li><li>Click Generate & Download PNG</li></ul></div>
+<div><h3 class="text-[11px] font-bold">Features</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>Custom size & color QR codes</li><li>High error correction level</li><li>Instant PNG download</li><li>Free, no expiry, unlimited</li></ul></div>
 </div>
 </div>
 </main>
-
+<footer class="text-center py-5 text-[10px] text-gray-500">© 2025 PakTools</footer>
 <script>
 const stars=document.getElementById('stars');
-for(let i=0;i<150;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.animationDelay=Math.random()*3+'s';stars.appendChild(d);}
-
+for(let i=0;i<80;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';stars.appendChild(d);}
 let qrObj=null;
-function generateQR(){
-let text=document.getElementById('qrText').value.trim();
-if(!text){alert('Enter text or URL!'); return;}
-let size=parseInt(document.getElementById('qrSize').value);
-let color=document.getElementById('qrColor').value;
-document.getElementById('qrcode').innerHTML='';
-document.getElementById('placeholder').classList.add('hidden');
-qrObj=new QRCode(document.getElementById('qrcode'),{
-text:text, width:size, height:size, colorDark:color, colorLight:"#ffffff", correctLevel:QRCode.CorrectLevel.H
-});
-setTimeout(()=>{document.getElementById('actions').classList.remove('hidden');},300);
-}
-function downloadQR(){
-let img=document.querySelector('#qrcode img');
-if(!img){alert('Generate first'); return;}
-let a=document.createElement('a'); a.href=img.src; a.download='paktools-qr.png'; a.click();
-}
-function copyQR(){
-let text=document.getElementById('qrText').value;
-navigator.clipboard.writeText(text); alert('Copied!');
-}
+function generateQR(){let text=document.getElementById('qrText').value.trim();if(!text){alert('Enter text!');return;}let size=parseInt(document.getElementById('qrSize').value);let color=document.getElementById('qrColor').value;document.getElementById('qrcode').innerHTML='';document.getElementById('placeholder').classList.add('hidden');qrObj=new QRCode(document.getElementById('qrcode'),{text:text,width:size,height:size,colorDark:color,colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H});setTimeout(()=>{document.getElementById('actions').classList.remove('hidden');},300);}
+function downloadQR(){let img=document.querySelector('#qrcode img');if(!img){alert('Generate first');return;}let a=document.createElement('a');a.href=img.src;a.download='paktools-qr.png';a.click();}
+function copyQR(){let text=document.getElementById('qrText').value;navigator.clipboard.writeText(text);alert('Copied!');}
 </script>
 </body>
 </html>
