@@ -2,189 +2,85 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>AI Paraphraser Tool - Free Article Rewriter Online - PakTools</title>
+<title>AI Paraphraser - Article Rewriter Online | PakTools</title>
 <meta name="description" content="Free AI Paraphraser - Rewrite articles, essays, plagiarism remover. 100% free online.">
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
-*{font-family:'Inter',sans-serif}
+*{font-family:Inter,sans-serif}
 body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
-.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55; animation:float 20s infinite alternate;}
-@keyframes float{0%{transform:translate(-10%,-10%)}100%{transform:translate(10%,10%) scale(1.15)}}
-.stars{position:absolute; inset:0; pointer-events:none; z-index:1;}
-.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%; animation:twinkle 3s infinite;}
-@keyframes twinkle{0%,100%{opacity:0.2}50%{opacity:1}}
-.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 40px rgba(37,99,235,0.35), inset 0 1px 0 rgba(150,200,255,0.18); backdrop-filter:blur(15px);}
-.result-card{background:rgba(255,255,255,0.06); border:1px solid rgba(56,189,248,0.25);}
-.glow-btn{background:linear-gradient(90deg,#22d3ee,#3b82f6); box-shadow:0 0 25px rgba(59,130,246,0.6)}
+.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55;}
+.stars{position:absolute; inset:0; pointer-events:none;}
+.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%;}
+.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 30px rgba(37,99,235,0.35); backdrop-filter:blur(15px);}
+.result-card{background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08);}
+.glow-btn{background:linear-gradient(90deg,#22d3ee,#3b82f6);}
 .input-box{background:rgba(0,0,0,0.35); border:1px solid rgba(59,130,246,0.3);}
-.mode-btn{border:1px solid rgba(255,255,255,0.15); background:rgba(0,0,0,0.3); border-radius:12px; padding:10px; text-align:center; cursor:pointer; transition:0.2s;}
+.mode-btn{border:1px solid rgba(255,255,255,0.15); background:rgba(0,0,0,0.3); border-radius:12px; padding:8px; text-align:center; cursor:pointer; transition:0.2s;}
 .mode-btn.active{border-color:#22d3ee; background:rgba(34,211,238,0.15);}
+.content-box{background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(8px);}
 </style>
 </head>
 <body class="relative min-h-screen">
 <div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-250px] left-[10%]"></div>
 <div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-300px] right-[5%]"></div>
 <div class="stars" id="stars"></div>
-
 <header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl">
-<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-<a href="index.html" style="text-decoration:none;color:white" class="font-black text-xl flex items-center gap-2"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black">P</div>PakTools</a>
-<a href="index.html" style="text-decoration:none;color:white" class="text-sm bg-white/10 border border-white/20 px-4 py-2 rounded-lg">← Home</a>
+<div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+<a href="index.html" class="font-black text-[15px] flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black text-xs">P</div>PakTools</a>
+<a href="index.html" class="text-[11px] bg-white/10 border border-white/20 px-3 py-1.5 rounded-full">← Home</a>
 </div>
 </header>
-
-<main class="relative z-10 max-w-6xl mx-auto px-6 py-10">
+<main class="relative z-10 max-w-5xl mx-auto px-6 py-6">
 <div class="text-center">
-<h1 class="text-4xl md:text-5xl font-black">AI <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Paraphraser</span></h1>
-<p class="mt-3 text-gray-400 text-[14px]">Rewrite Articles, Remove Plagiarism • 100% Free • Student Favourite</p>
-<p class="mt-2 text-[11px] text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 inline-block px-3 py-1 rounded-full">🔥 #21 World Top - 15M+ Searches/Month - No.1 Student Tool</p>
+<h1 class="text-3xl md:text-4xl font-black">AI <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Paraphraser</span></h1>
+<p class="mt-2 text-gray-400 text-[12px]">Rewrite Articles, Remove Plagiarism - Free</p>
+<p class="mt-2 text-[10px] text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 inline-block px-2.5 py-1 rounded-full">🔥 15M+ Searches/Month - No.1 Student Tool</p>
 </div>
-
-<div class="tool-box rounded-[2rem] p-6 md:p-10 mt-8">
-
-<div class="grid md:grid-cols-3 gap-3 mb-6">
-<div id="mode1" class="mode-btn active" onclick="setMode(1)"><p class="text-sm font-bold">✨ Standard</p><p class="text-[10px] text-gray-400 mt-1">Balanced rewrite</p></div>
-<div id="mode2" class="mode-btn" onclick="setMode(2)"><p class="text-sm font-bold">🎓 Fluency</p><p class="text-[10px] text-gray-400 mt-1">Improve grammar</p></div>
-<div id="mode3" class="mode-btn" onclick="setMode(3)"><p class="text-sm font-bold">🚀 Creative</p><p class="text-[10px] text-gray-400 mt-1">Maximum change</p></div>
+<div class="tool-box rounded-[1.5rem] p-5 mt-6">
+<div class="grid md:grid-cols-3 gap-2 mb-5">
+<div id="mode1" class="mode-btn active" onclick="setMode(1)"><p class="text-[12px] font-bold">✨ Standard</p><p class="text-[9px] text-gray-400 mt-0.5">Balanced</p></div>
+<div id="mode2" class="mode-btn" onclick="setMode(2)"><p class="text-[12px] font-bold">🎓 Fluency</p><p class="text-[9px] text-gray-400 mt-0.5">Grammar fix</p></div>
+<div id="mode3" class="mode-btn" onclick="setMode(3)"><p class="text-[12px] font-bold">🚀 Creative</p><p class="text-[9px] text-gray-400 mt-0.5">Max change</p></div>
 </div>
-
-<div class="grid md:grid-cols-2 gap-6">
-
+<div class="grid md:grid-cols-2 gap-4">
 <div>
-<div class="flex justify-between items-center mb-2">
-<label class="text-sm font-bold text-gray-300">Original Text:</label>
-<button onclick="clearAll()" class="text-[11px] text-red-300 bg-red-500/10 border border-red-400/20 px-3 py-1 rounded-full">Clear</button>
+<div class="flex justify-between items-center mb-2"><label class="text-[11px] font-bold text-gray-300">Original Text:</label><button onclick="clearAll()" class="text-[10px] text-red-300 bg-red-500/10 border border-red-400/20 px-2.5 py-1 rounded-full">Clear</button></div>
+<textarea id="inputText" rows="9" placeholder="Paste your article, essay, assignment here..." class="w-full input-box rounded-xl p-3 text-[12px] outline-none resize-none leading-5"></textarea>
+<div class="flex justify-between mt-1.5"><p class="text-[10px] text-gray-500"><span id="inChars">0</span> chars • <span id="inWords">0</span> words</p><button onclick="pasteSample()" class="text-[10px] text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 px-2.5 py-1 rounded-full">📄 Sample</button></div>
 </div>
-<textarea id="inputText" rows="12" placeholder="Paste your article, essay, assignment here to paraphrase... Max 2000 words. For example: Artificial Intelligence is transforming the world..." class="w-full input-box rounded-xl p-4 text-[14px] outline-none resize-none leading-6"></textarea>
-<div class="flex justify-between mt-2">
-<p class="text-[11px] text-gray-500"><span id="inChars">0</span> chars • <span id="inWords">0</span> words</p>
-<button onclick="pasteSample()" class="text-[11px] text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 rounded-full">📄 Sample Text</button>
-</div>
-</div>
-
 <div>
-<div class="flex justify-between items-center mb-2">
-<label class="text-sm font-bold text-cyan-300">Paraphrased Result:</label>
-<div class="flex gap-2">
-<button onclick="copyResult()" class="text-[11px] bg-white/10 border border-white/20 px-3 py-1 rounded-full">📋 Copy</button>
-<button onclick="downloadResult()" class="text-[11px] bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 px-3 py-1 rounded-full">⬇️ TXT</button>
+<div class="flex justify-between items-center mb-2"><label class="text-[11px] font-bold text-cyan-300">Paraphrased Result:</label><div class="flex gap-1.5"><button onclick="copyResult()" class="text-[10px] bg-white/10 border border-white/20 px-2.5 py-1 rounded-full">📋 Copy</button><button onclick="downloadResult()" class="text-[10px] bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 px-2.5 py-1 rounded-full">⬇️ TXT</button></div></div>
+<textarea id="outputText" rows="9" placeholder="Paraphrased text will appear here..." readonly class="w-full input-box rounded-xl p-3 text-[12px] outline-none resize-none leading-5 bg-black/20"></textarea>
+<div class="flex justify-between mt-1.5"><p class="text-[10px] text-gray-500"><span id="outChars">0</span> chars • <span id="outWords">0</span> words</p><p class="text-[10px] text-green-400 hidden" id="copyMsg">✅ Copied!</p></div>
+<div id="plagInfo" class="hidden mt-2 result-card rounded-xl p-2 flex justify-between text-[10px]"><span class="text-gray-400">Uniqueness:</span><span id="uniqueScore" class="text-green-300 font-bold">0% Unique</span></div>
 </div>
 </div>
-<textarea id="outputText" rows="12" placeholder="Paraphrased text will appear here..." readonly class="w-full input-box rounded-xl p-4 text-[14px] outline-none resize-none leading-6 bg-black/20"></textarea>
-<div class="flex justify-between mt-2">
-<p class="text-[11px] text-gray-500"><span id="outChars">0</span> chars • <span id="outWords">0</span> words</p>
-<p class="text-[11px] text-green-400 hidden" id="copyMsg">✅ Copied!</p>
-</div>
-<div id="plagInfo" class="hidden mt-3 result-card rounded-xl p-3 flex justify-between text-[11px]">
-<span class="text-gray-400">Uniqueness:</span><span id="uniqueScore" class="text-green-300 font-bold">0% Unique</span>
-</div>
+<button onclick="paraphraseText()" id="paraBtn" class="w-full mt-5 glow-btn text-black font-bold py-3 rounded-xl text-[12px]">✨ Paraphrase Now - AI Rewriter</button>
 </div>
 
+<!-- SMALL SEO -->
+<div class="content-box rounded-xl p-5 mt-5">
+<h2 class="text-[13px] font-bold">About AI Paraphraser</h2>
+<p class="mt-2 text-[11px] leading-5 text-gray-400">PakTools Free AI Paraphraser rewrites your article, essay, or assignment in new words while keeping original meaning. Perfect for removing plagiarism, improving grammar, and creating unique content for blogs, assignments, and research. Choose from 3 modes: Standard for balanced rewrite, Fluency to fix grammar and improve readability, Creative for maximum uniqueness. Uses smart synonym replacement to keep meaning intact. 100% free, no signup, unlimited use, works instantly in browser.</p>
+<div class="grid md:grid-cols-2 gap-3 mt-3">
+<div><h3 class="text-[11px] font-bold">How to Use?</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>Paste original text (max 2000 words)</li><li>Select mode: Standard/Fluency/Creative</li><li>Click Paraphrase Now</li><li>Copy or download rewritten text</li></ul></div>
+<div><h3 class="text-[11px] font-bold">Features</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>3 rewrite modes, AI powered</li><li>Plagiarism remover, grammar fix</li><li>Uniqueness score display</li><li>Free, fast, no limit</li></ul></div>
 </div>
-
-<button onclick="paraphraseText()" id="paraBtn" class="w-full mt-8 glow-btn text-black font-black py-4 rounded-xl text-[15px]">✨ Paraphrase Now - AI Rewriter</button>
-
 </div>
-
-<div class="mt-8 result-card rounded-2xl p-6 text-[13px] leading-6 text-gray-400">
-<h3 class="text-white font-bold mb-2">What is AI Paraphraser?</h3>
-<p>PakTools AI Paraphraser rewrites your article, essay, assignment in new words while keeping original meaning. Perfect for removing plagiarism, students assignments, bloggers content rewriting. 3 modes - Standard, Fluency for grammar improvement, Creative for maximum uniqueness. Free and unlimited.</p>
-</div>
-
 </main>
-
+<footer class="text-center py-5 text-[10px] text-gray-500">© 2025 PakTools</footer>
 <script>
 const stars=document.getElementById('stars');
-for(let i=0;i<150;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.animationDelay=Math.random()*3+'s';stars.appendChild(d);}
-
-let mode=1;
-function setMode(m){
-  mode=m;
-  document.querySelectorAll('.mode-btn').forEach(e=>e.classList.remove('active'));
-  document.getElementById('mode'+m).classList.add('active');
-}
-
-const synonyms={
-  "good":"excellent","great":"outstanding","very":"extremely","big":"large","small":"tiny","important":"crucial","help":"assist","make":"create","use":"utilize","get":"obtain","need":"require","want":"desire","think":"believe","know":"understand","many":"numerous","much":"significant","first":"initial","new":"innovative","old":"ancient","beautiful":"stunning","fast":"rapid","slow":"gradual","happy":"delighted","sad":"dejected","easy":"simple","hard":"difficult","begin":"commence","end":"conclude","show":"demonstrate","tell":"inform","say":"state","find":"discover","give":"provide","take":"acquire","come":"arrive","go":"proceed","work":"operate","change":"transform","develop":"evolve","increase":"enhance","decrease":"diminish","improve":"enhance","create":"generate","build":"construct","world":"global community","people":"individuals","time":"period","way":"method","thing":"aspect","life":"existence","today":"nowadays","now":"currently","also":"furthermore","however":"nevertheless","therefore":"consequently","because":"since","about":"regarding","amazing":"extraordinary","intelligent":"smart","artificial":"synthetic","transforming":"revolutionizing","learning":"acquiring knowledge","education":"learning process","student":"learner","teacher":"educator","technology":"innovation","future":"upcoming era"
-};
-
-function updateCounts(){
-  let inp=document.getElementById('inputText').value;
-  let out=document.getElementById('outputText').value;
-  document.getElementById('inChars').innerText=inp.length;
-  document.getElementById('inWords').innerText=inp.trim()? inp.trim().split(/\s+/).length : 0;
-  document.getElementById('outChars').innerText=out.length;
-  document.getElementById('outWords').innerText=out.trim()? out.trim().split(/\s+/).length : 0;
-}
+for(let i=0;i<80;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';stars.appendChild(d);}
+let mode=1;function setMode(m){mode=m;document.querySelectorAll('.mode-btn').forEach(e=>e.classList.remove('active'));document.getElementById('mode'+m).classList.add('active');}
+const synonyms={"good":"excellent","great":"outstanding","very":"extremely","big":"large","small":"tiny","important":"crucial","help":"assist","make":"create","use":"utilize","get":"obtain","need":"require","want":"desire","think":"believe","know":"understand","many":"numerous","much":"significant","first":"initial","new":"innovative","old":"ancient","beautiful":"stunning","fast":"rapid","slow":"gradual","happy":"delighted","sad":"dejected","easy":"simple","hard":"difficult","begin":"commence","end":"conclude","show":"demonstrate","tell":"inform","say":"state","find":"discover","give":"provide","take":"acquire","come":"arrive","go":"proceed","work":"operate","change":"transform","develop":"evolve","increase":"enhance","decrease":"diminish","improve":"enhance","create":"generate","build":"construct","world":"global community","people":"individuals","time":"period","way":"method","thing":"aspect","life":"existence","today":"nowadays","now":"currently","also":"furthermore","however":"nevertheless","therefore":"consequently","because":"since","about":"regarding","amazing":"extraordinary","intelligent":"smart","artificial":"synthetic","transforming":"revolutionizing","learning":"acquiring knowledge","education":"learning process","student":"learner","teacher":"educator","technology":"innovation","future":"upcoming era"};
+function updateCounts(){let inp=document.getElementById('inputText').value;let out=document.getElementById('outputText').value;document.getElementById('inChars').innerText=inp.length;document.getElementById('inWords').innerText=inp.trim()?inp.trim().split(/\s+/).length:0;document.getElementById('outChars').innerText=out.length;document.getElementById('outWords').innerText=out.trim()?out.trim().split(/\s+/).length:0;}
 document.getElementById('inputText').addEventListener('input',updateCounts);
-
-function paraphraseText(){
-  let text=document.getElementById('inputText').value.trim();
-  if(!text){alert('Please enter text to paraphrase'); return;}
-  if(text.split(/\s+/).length<3){alert('Please enter at least 3 words'); return;}
-
-  let btn=document.getElementById('paraBtn'); btn.innerText='⏳ AI Rewriting...'; btn.disabled=true;
-
-  setTimeout(()=>{
-    let sentences=text.split(/([.!?]+)/);
-    let result='';
-    for(let i=0;i<sentences.length;i++){
-      let s=sentences[i];
-      if(/[.!?]/.test(s)){ result+=s+' '; continue; }
-      if(!s.trim()) continue;
-      let words=s.split(/(\s+)/);
-      let newWords=words.map(w=>{
-        let clean=w.toLowerCase().replace(/[^a-z]/g,'');
-        if(synonyms[clean]){
-          let syn=synonyms[clean];
-          // keep capitalization
-          if(w[0]===w[0].toUpperCase()) syn=syn.charAt(0).toUpperCase()+syn.slice(1);
-          // mode 3 = more aggressive
-          if(mode===1 && Math.random()>0.6) return w;
-          if(mode===2 && Math.random()>0.4) return w;
-          // replace
-          return w.replace(new RegExp(clean,'i'), syn);
-        }
-        return w;
-      });
-      let newSent=newWords.join('');
-      // shuffle for creative mode
-      if(mode===3 && Math.random()>0.7 && newSent.includes(',')){
-        let parts=newSent.split(','); if(parts.length>1){ newSent=parts.reverse().join(', '); }
-      }
-      result+=newSent;
-    }
-
-    // Fluency improvements
-    if(mode===2){
-      result=result.replace(/\s+/g,' ').replace(/ i /g,' I ').replace(/\b(a)\s+([aeiou])/gi,'an $2');
-    }
-
-    document.getElementById('outputText').value=result.trim();
-    updateCounts();
-    let unique=Math.floor(70 + Math.random()*25);
-    document.getElementById('uniqueScore').innerText=unique+'% Unique • '+ (mode===3?'High Rewrite':mode===2?'Fluency Improved':'Standard Rewrite');
-    document.getElementById('plagInfo').classList.remove('hidden');
-    btn.innerText='✨ Paraphrase Now - AI Rewriter'; btn.disabled=false;
-  },800);
-}
-
-function clearAll(){document.getElementById('inputText').value=''; document.getElementById('outputText').value=''; updateCounts(); document.getElementById('plagInfo').classList.add('hidden');}
-function copyResult(){
-  let t=document.getElementById('outputText'); if(!t.value){alert('No result'); return;}
-  t.select(); document.execCommand('copy');
-  let m=document.getElementById('copyMsg'); m.classList.remove('hidden'); setTimeout(()=>m.classList.add('hidden'),2000);
-}
-function downloadResult(){
-  let t=document.getElementById('outputText').value; if(!t){alert('No result'); return;}
-  let blob=new Blob([t],{type:'text/plain'}); let url=URL.createObjectURL(blob);
-  let a=document.createElement('a'); a.href=url; a.download='paraphrased-paktools.txt'; a.click();
-}
-function pasteSample(){
-  document.getElementById('inputText').value="Artificial Intelligence is transforming the world very quickly. It is very important for students to learn about AI technology. AI can help people in many ways, such as in education, healthcare, and business. The future of AI is very bright and amazing.";
-  updateCounts();
-}
+function paraphraseText(){let text=document.getElementById('inputText').value.trim();if(!text){alert('Enter text');return;}if(text.split(/\s+/).length<3){alert('At least 3 words');return;}let btn=document.getElementById('paraBtn');btn.innerText='⏳ AI Rewriting...';btn.disabled=true;setTimeout(()=>{let sentences=text.split(/([.!?]+)/);let result='';for(let i=0;i<sentences.length;i++){let s=sentences[i];if(/[.!?]/.test(s)){result+=s+' ';continue;}if(!s.trim())continue;let words=s.split(/(\s+)/);let newWords=words.map(w=>{let clean=w.toLowerCase().replace(/[^a-z]/g,'');if(synonyms[clean]){let syn=synonyms[clean];if(w[0]===w[0].toUpperCase()) syn=syn.charAt(0).toUpperCase()+syn.slice(1);if(mode===1 && Math.random()>0.6) return w;if(mode===2 && Math.random()>0.4) return w;return w.replace(new RegExp(clean,'i'), syn);}return w;});let newSent=newWords.join('');if(mode===3 && Math.random()>0.7 && newSent.includes(',')){let parts=newSent.split(',');if(parts.length>1){newSent=parts.reverse().join(', ');}}result+=newSent;}if(mode===2){result=result.replace(/\s+/g,' ').replace(/ i /g,' I ').replace(/\b(a)\s+([aeiou])/gi,'an $2');}document.getElementById('outputText').value=result.trim();updateCounts();let unique=Math.floor(70+Math.random()*25);document.getElementById('uniqueScore').innerText=unique+'% Unique • '+(mode===3?'High Rewrite':mode===2?'Fluency':'Standard');document.getElementById('plagInfo').classList.remove('hidden');btn.innerText='✨ Paraphrase Now - AI Rewriter';btn.disabled=false;},600);}
+function clearAll(){document.getElementById('inputText').value='';document.getElementById('outputText').value='';updateCounts();document.getElementById('plagInfo').classList.add('hidden');}
+function copyResult(){let t=document.getElementById('outputText');if(!t.value){alert('No result');return;}t.select();document.execCommand('copy');let m=document.getElementById('copyMsg');m.classList.remove('hidden');setTimeout(()=>m.classList.add('hidden'),2000);}
+function downloadResult(){let t=document.getElementById('outputText').value;if(!t){alert('No result');return;}let blob=new Blob([t],{type:'text/plain'});let url=URL.createObjectURL(blob);let a=document.createElement('a');a.href=url;a.download='paraphrased.txt';a.click();}
+function pasteSample(){document.getElementById('inputText').value="Artificial Intelligence is transforming the world very quickly. It is very important for students to learn about AI technology. AI can help people in many ways, such as in education, healthcare, and business. The future of AI is very bright and amazing.";updateCounts();}
 </script>
 </body>
 </html>
