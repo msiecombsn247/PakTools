@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://msiecombsn247.github.io/PakTools/sitemap.xml
+
+# Allow all tools
+Allow: /background-remover.html
+Allow: /image-compressor.html
+Allow: /qr-code-generator.html
+Allow: /age-calculator.html
+Allow: /word-counter.html
+Allow: /password-generator.html
+Allow: /pdf-to-jpg.html
+Allow: /ai-bio-generator.html
+Allow: /youtube-tags.html
+Allow: /youtube-thumbnail-downloader.html
