@@ -2,101 +2,87 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>PakTools - Free Online Tools for Creators</title>
+<title>PakTools - Pakistan's No.1 Free Tools</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-body{font-family:Inter,sans-serif; background:#020712; overflow-x:hidden}
-.stars{position:absolute; inset:0; overflow:hidden}
+body{background:#020a1f; font-family:Inter,sans-serif; overflow-x:hidden}
+.stars{position:absolute; inset:0}
 .star{position:absolute; width:2px; height:2px; background:white; border-radius:50%; animation:twinkle 3s infinite}
-@keyframes twinkle{0%,100%{opacity:0.2; transform:scale(1)}50%{opacity:1; transform:scale(1.5)}}
-.galaxy{position:absolute; width:900px; height:900px; border-radius:50%; filter:blur(90px); opacity:0.7; animation:float 20s infinite alternate}
-@keyframes float{0%{transform:translate(-10%,-10%) scale(1)}100%{transform:translate(10%,10%) scale(1.2)}}
+@keyframes twinkle{0%,100%{opacity:.2}50%{opacity:1; transform:scale(1.6)}}
+.galaxy{position:absolute; width:900px; height:900px; border-radius:50%; filter:blur(90px); opacity:.65; animation:float 20s infinite alternate}
+@keyframes float{0%{transform:translate(-10%,-10%)}100%{transform:translate(10%,10%) scale(1.2)}}
+/* SHINING DARK BLUE BOX */
+.tool-card{
+background: linear-gradient(145deg, #0d1b4a 0%, #08123a 50%, #050d2e 100%);
+border:1px solid rgba(59,130,246,0.35);
+box-shadow: 0 0 20px rgba(37,99,235,0.25), inset 0 1px 0 rgba(100,180,255,0.15);
+}
+.tool-card:hover{
+border-color: rgba(56,189,248,0.8);
+box-shadow: 0 0 30px rgba(6,182,214,0.6), 0 0 60px rgba(37,99,235,0.3);
+transform: translateY(-5px);
+}
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="sticky top-0 z-50 bg-[#020712]/80 backdrop-blur-xl border-b border-white/10">
-<div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center text-white">
-<div class="font-black text-2xl flex gap-2"><span class="text-cyan-400">🔧</span> PakTools</div>
-<div class="hidden md:flex gap-8 font-semibold text-gray-400">
-<a href="#" class="text-white border-b-2 border-cyan-400">Home</a><a href="#tools">Tools</a><a href="#">Downloads</a><a href="#">Blogs</a>
-</div>
-<div class="flex gap-3">
-<a href="#tools" class="bg-cyan-400 text-black px-5 py-2 rounded-lg font-black">Get Started</a>
-</div>
-</div>
-</nav>
-
-<!-- HERO - DARK SHINING BLUE GALAXY -->
-<section class="relative text-center pt-20 pb-16 px-6 text-white overflow-hidden">
-<!-- Dark Shining Blue Galaxy - NO GOLD -->
-<div class="galaxy bg-gradient-to-br from-cyan-600 via-blue-700 to-indigo-800 top-[-200px] left-[15%]"></div>
-<div class="galaxy bg-gradient-to-br from-blue-900 via-[#0a1931] to-cyan-800 bottom-[-300px] right-[10%]" style="animation-delay:-6s"></div>
-<div class="galaxy bg-gradient-to-br from-slate-900 via-blue-800 to-cyan-600 top-[30%] right-[30%] w-[600px] h-[600px] opacity-40" style="animation-delay:-3s"></div>
-
+<!-- HERO - DARK SHINING BLUE GALAXY - NO GOLD -->
+<section class="relative text-center pt-24 pb-16 px-6 text-white overflow-hidden">
+<div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-200px] left-[15%]"></div>
+<div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-250px] right-[10%]" style="animation-delay:-5s"></div>
 <div class="stars" id="stars"></div>
 
 <div class="relative z-10 max-w-4xl mx-auto">
-<h1 class="text-5xl md:text-7xl font-black leading-[1.1]">130+ Free Online Tools for<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Developers & Creators</span></h1>
-<p class="mt-5 text-gray-400">No sign-up. No subscription. Just fast, free tools.</p>
+<h1 class="text-5xl md:text-6xl font-black">130+ Free Online Tools for<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Developers & Creators</span></h1>
 
 <!-- SEARCH BAR -->
-<div class="mt-8 max-w-2xl mx-auto relative">
-<div class="flex items-center bg-white/[0.08] backdrop-blur-xl border border-white/20 rounded-2xl px-5 py-4 focus-within:border-cyan-400 focus-within:bg-white/[0.12] transition">
-<span class="text-xl mr-3">🔍</span>
-<input id="searchInput" onkeyup="searchTools()" placeholder="Search any tool... e.g. Background, YouTube, QR, PDF..." class="w-full bg-transparent outline-none text-white placeholder-gray-500 text-[15px]">
+<div class="mt-8 max-w-2xl mx-auto">
+<div class="flex items-center bg-white/[0.08] backdrop-blur border border-blue-400/30 rounded-2xl px-5 py-4 focus-within:border-cyan-400">
+<span class="mr-3">🔍</span>
+<input id="searchInput" onkeyup="searchTools()" placeholder="Search any tool... e.g. Background, QR, Age, Bio..." class="w-full bg-transparent outline-none text-white placeholder-gray-400">
 </div>
-<p class="text-xs text-gray-500 mt-2">Try: "background", "thumbnail", "compress", "password"</p>
-</div>
-
-<div class="mt-8 flex justify-center gap-4">
-<a href="#tools" class="bg-white text-black px-8 py-3 rounded-xl font-black hover:scale-105 transition">Explore Tools →</a>
 </div>
 </div>
 </section>
 
-<!-- TOOLS GRID -->
-<section id="tools" class="relative max-w-7xl mx-auto px-6 py-12">
-<h2 class="text-white text-2xl font-black relative">Popular Tools ✨</h2>
-<div id="toolsGrid" class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-6 relative">
+<!-- TOOLS - CORRECT NAMES & LINKS FROM YOUR GITHUB -->
+<section id="tools" class="max-w-7xl mx-auto px-6 py-12">
+<h2 class="text-white text-2xl font-black">All Tools (10 Live) ✨</h2>
+<div id="toolsGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-8">
 
-<a href="background-remover.html" data-name="background remover bg erase" class="tool-card group bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-[1.5rem] p-6 hover:bg-white/[0.1] hover:-translate-y-1 transition"><div class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center font-black text-white">BG</div><h3 class="text-white font-bold mt-4">Background Remover</h3><p class="text-xs text-gray-400">AI HD Tool</p></a>
+<a href="background-remover.html" data-name="background remover" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">Background Remover</h3><p class="text-xs text-blue-300/70 mt-1">HD AI Tool</p></a>
 
-<a href="youtube-tags.html" data-name="youtube thumbnail downloader yt tags" class="tool-card group bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-[1.5rem] p-6 hover:bg-white/[0.1] transition"><div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center font-black text-white">YT</div><h3 class="text-white font-bold mt-4">YouTube Thumbnail</h3><p class="text-xs text-gray-400">Downloader</p></a>
+<a href="youtube-thumbnail-downloader.html" data-name="youtube thumbnail downloader" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">YouTube Thumbnail Downloader</h3><p class="text-xs text-blue-300/70 mt-1">HD Quality</p></a>
 
-<a href="qr-generator.html" data-name="qr generator code" class="tool-card bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-[1.5rem] p-6 hover:bg-white/[0.1] transition"><div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">🔗</div><h3 class="text-white font-bold mt-4">QR Generator</h3></a>
+<a href="youtube-tags.html" data-name="youtube tags extractor" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">YouTube Tags Extractor</h3><p class="text-xs text-blue-300/70 mt-1">Viral Tags</p></a>
 
-<a href="password-generator.html" data-name="password generator security" class="tool-card bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-[1.5rem] p-6"><div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">🔐</div><h3 class="text-white font-bold mt-4">Password Generator</h3></a>
+<a href="image-compressor.html" data-name="image compressor 20kb" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">Image Compressor 20KB</h3><p class="text-xs text-blue-300/70 mt-1">Small Size</p></a>
 
-<a href="image-compressor.html" data-name="image compressor resize photo" class="tool-card bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-[1.5rem] p-6"><div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">🖼️</div><h3 class="text-white font-bold mt-4">Image Compressor</h3></a>
+<a href="qr-code-generator.html" data-name="qr code generator" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">QR Code Generator</h3></a>
 
-<a href="word-counter.html" data-name="word counter text" class="tool-card bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-[1.5rem] p-6"><div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">📝</div><h3 class="text-white font-bold mt-4">Word Counter</h3></a>
+<a href="password-generator.html" data-name="password generator" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">Password Generator</h3></a>
 
-<a href="json-formatter.html" data-name="json formatter code" class="tool-card bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-[1.5rem] p-6"><div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">{ }</div><h3 class="text-white font-bold mt-4">JSON Formatter</h3></a>
+<a href="word-counter.html" data-name="word counter" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">Word Counter</h3></a>
 
-<a href="pdf-tools.html" data-name="pdf tools editor merge" class="tool-card bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-[1.5rem] p-6"><div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">📄</div><h3 class="text-white font-bold mt-4">PDF Tools</h3></a>
+<a href="age-calculator.html" data-name="age calculator" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">Age Calculator</h3></a>
+
+<a href="ai-bio-generator.html" data-name="ai bio generator" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">AI Bio Generator</h3></a>
+
+<a href="pdf-to-jpg.html" data-name="pdf to jpg converter" class="tool-card rounded-2xl p-5"><h3 class="text-white font-bold">PDF to JPG</h3></a>
 
 </div>
-<p id="noResult" class="hidden text-center text-gray-500 mt-10">No tools found! Try different keyword.</p>
+<p id="noResult" class="hidden text-center text-gray-400 mt-10">No tools found!</p>
+</div>
 </section>
 
 <script>
-// Stars
 const s=document.getElementById('stars');
-for(let i=0;i<180;i++){let star=document.createElement('div');star.className='star';star.style.left=Math.random()*100+'%';star.style.top=Math.random()*100+'%';star.style.animationDelay=Math.random()*3+'s';star.style.animationDuration=(2+Math.random()*3)+'s';s.appendChild(star);}
-
-// Search Function
+for(let i=0;i<180;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.animationDelay=Math.random()*3+'s';s.appendChild(d);}
 function searchTools(){
-let input=document.getElementById('searchInput').value.toLowerCase();
-let cards=document.querySelectorAll('.tool-card');
-let found=0;
-cards.forEach(card=>{
-let name=card.getAttribute('data-name').toLowerCase() + card.innerText.toLowerCase();
-if(name.includes(input)){card.style.display='block';found++;}else{card.style.display='none';}
-});
-document.getElementById('noResult').style.display=found===0?'block':'none';
+let q=document.getElementById('searchInput').value.toLowerCase();
+let cards=document.querySelectorAll('.tool-card'); let f=0;
+cards.forEach(c=>{let t=c.getAttribute('data-name')+c.innerText.toLowerCase(); if(t.includes(q)){c.style.display='block';f++;}else{c.style.display='none';}});
+document.getElementById('noResult').style.display=f==0?'block':'none';
 }
 </script>
 </body>
