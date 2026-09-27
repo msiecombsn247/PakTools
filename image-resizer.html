@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Image Resizer - Passport 300x300 & Custom Size | PakTools</title>
+<meta name="description" content="Resize Image to Passport Size 300x300, 600x600, Instagram, YouTube. Free Online Image Resizer - No Upload, 100% Secure.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@800;900&display=swap" rel="stylesheet">
+<style>
+*{font-family:'Inter',sans-serif}
+body{margin:0;background:#05020a;color:white}
+.glass{background:rgba(255,255,255,0.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.15)}
+.tool-icon{width:78px;height:78px;margin:0 auto 12px;border-radius:20px;background:linear-gradient(135deg,#22d3ee,#a855f7);display:flex;align-items:center;justify-content:center;font-size:38px;box-shadow:0 0 20px rgba(168,85,247,0.6), inset 0 1px 3px rgba(255,255,255,0.9)}
+.hero-bg{position:relative;background:#05020a;overflow:hidden}
+.hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 250px at 20% 50%, rgba(180,70,255,0.8) 0%, transparent 60%),radial-gradient(ellipse 500px 200px at 70% 55%, rgba(120,40,200,0.6) 0%, transparent 60%)}
+.preset{border:1px solid rgba(255,255,255,0.15);transition:0.2s;cursor:pointer}
+.preset.active{border-color:#22d3ee;background:linear-gradient(90deg,rgba(34,211,238,0.2),rgba(168,85,247,0.2));box-shadow:0 0 20px rgba(34,211,238,0.4)}
+</style>
+</head>
+<body>
+<!-- SAME HEADER AS YOUR OLD TOOLS -->
+<header class="relative z-20 max-w-7xl mx-auto px-3 md:px-4 pt-4">
+<div class="glass rounded-full px-4 md:px-6 py-3 flex justify-between items-center">
+<a href="index.html" style="text-decoration:none;color:white" class="font-black text-xl flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-black">P</div> PakTools</a>
+<div class="flex gap-2 items-center"><a href="index.html" style="text-decoration:none;color:white" class="hidden md:block text-sm text-gray-300">Home</a><a href="index.html#tools" style="text-decoration:none" class="bg-white text-black font-bold px-5 py-2 rounded-full text-sm whitespace-nowrap">All Tools</a></div>
+</div>
+</header>
+
+<div class="hero-bg"><div class="relative z-10 max-w-5xl mx-auto px-4 py-10">
+<div class="text-center">
+<div class="tool-icon">📐</div>
+<h1 class="text-4xl md:text-5xl font-black mt-3">Image Resizer</h1>
+<p class="text-gray-400 mt-3 text-sm md:text-base">Resize to Passport Size, 300x300, Instagram, YouTube - 100% Free</p>
+</div>
+
+<div class="glass rounded-[22px] p-5 md:p-7 mt-8">
+<div id="dropArea" class="border-2 border-dashed border-white/20 rounded-2xl p-8 md:p-12 text-center cursor-pointer hover:border-cyan-400">
+<input type="file" id="fileInput" accept="image/*" class="hidden">
+<div id="uploadPrompt"><div class="text-5xl mb-2">🖼️</div><p class="font-bold">Click or Drag Image Here</p><p class="text-xs text-gray-400 mt-1">JPG, PNG, WEBP</p></div>
+<img id="preview" class="hidden max-h-[320px] mx-auto rounded-xl">
+</div>
+
+<p class="text-sm font-bold mt-6 text-cyan-300">Quick Size - 1 Click:</p>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2 mt-3">
+<div class="preset active rounded-xl py-3 px-3 text-center" data-w="300" data-h="300"><p class="font-bold text-xs">Passport</p><p class="text-[11px] text-gray-400">300x300</p></div>
+<div class="preset rounded-xl py-3 px-3 text-center" data-w="600" data-h="600"><p class="font-bold text-xs">Square</p><p class="text-[11px] text-gray-400">600x600</p></div>
+<div class="preset rounded-xl py-3 px-3 text-center" data-w="1080" data-h="1080"><p class="font-bold text-xs">Instagram</p><p class="text-[11px] text-gray-400">1080x1080</p></div>
+<div class="preset rounded-xl py-3 px-3 text-center" data-w="1280" data-h="720"><p class="font-bold text-xs">YouTube</p><p class="text-[11px] text-gray-400">1280x720</p></div>
+<div class="preset rounded-xl py-3 px-3 text-center" data-w="1080" data-h="1920"><p class="font-bold text-xs">Story</p><p class="text-[11px] text-gray-400">1080x1920</p></div>
+<div class="preset rounded-xl py-3 px-3 text-center" data-w="492" data-h="633"><p class="font-bold text-xs">CNIC Size</p><p class="text-[11px] text-gray-400">492x633</p></div>
+</div>
+
+<div class="grid grid-cols-2 gap-3 mt-6">
+<div><label class="text-xs text-gray-400">Width (px)</label><input id="widthInput" type="number" value="300" class="w-full mt-1 glass rounded-xl px-4 py-3 text-sm outline-none"></div>
+<div><label class="text-xs text-gray-400">Height (px)</label><input id="heightInput" type="number" value="300" class="w-full mt-1 glass rounded-xl px-4 py-3 text-sm outline-none"></div>
+</div>
+
+<div class="flex items-center gap-3 mt-4">
+<label class="flex items-center gap-2 text-xs text-gray-300"><input type="checkbox" id="lockAspect" checked class="accent-cyan-400"> 🔒 Lock Ratio</label>
+<select id="formatSelect" class="ml-auto glass rounded-full px-4 py-2 text-xs"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WEBP</option></select>
+</div>
+
+<button id="resizeBtn" class="w-full mt-6 bg-gradient-to-r from-cyan-400 to-purple-500 text-white font-black py-4 rounded-full shadow-[0_0_30px_rgba(168,85,247,0.6)]">Resize & Download →</button>
+<p id="sizeInfo" class="text-center text-xs text-gray-500 mt-3">Original: Upload image first</p>
+<canvas id="canvas" class="hidden"></canvas>
+</div>
+</div></div>
+
+<footer class="text-center py-6 text-xs text-gray-500">© 2026 PakTools - Made in Pakistan</footer>
+
+<script>
+let originalImage=null, aspectRatio=1;
+const fileInput=document.getElementById('fileInput'), dropArea=document.getElementById('dropArea'), preview=document.getElementById('preview'), uploadPrompt=document.getElementById('uploadPrompt'), widthInput=document.getElementById('widthInput'), heightInput=document.getElementById('heightInput');
+dropArea.addEventListener('click',()=>fileInput.click());
+fileInput.addEventListener('change',e=>handleFile(e.target.files[0]));
+dropArea.addEventListener('dragover',e=>{e.preventDefault();dropArea.style.borderColor='#22d3ee'});
+dropArea.addEventListener('drop',e=>{e.preventDefault();handleFile(e.dataTransfer.files[0])});
+function handleFile(file){if(!file)return;const r=new FileReader();r.onload=e=>{originalImage=new Image();originalImage.onload=()=>{aspectRatio=originalImage.width/originalImage.height;preview.src=e.target.result;preview.classList.remove('hidden');uploadPrompt.classList.add('hidden');document.getElementById('sizeInfo').innerText=`Original: ${originalImage.width}x${originalImage.height}`;};originalImage.src=e.target.result;};r.readAsDataURL(file);}
+widthInput.addEventListener('input',()=>{if(document.getElementById('lockAspect').checked&&originalImage)heightInput.value=Math.round(widthInput.value/aspectRatio);});
+heightInput.addEventListener('input',()=>{if(document.getElementById('lockAspect').checked&&originalImage)widthInput.value=Math.round(heightInput.value*aspectRatio);});
+document.querySelectorAll('.preset').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.preset').forEach(x=>x.classList.remove('active'));b.classList.add('active');widthInput.value=b.dataset.w;heightInput.value=b.dataset.h;});});
+document.getElementById('resizeBtn').addEventListener('click',()=>{if(!originalImage){alert('Pehle image upload karo!');return}const w=parseInt(widthInput.value),h=parseInt(heightInput.value);const c=document.getElementById('canvas');c.width=w;c.height=h;const ctx=c.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);ctx.drawImage(originalImage,0,0,w,h);const fmt=document.getElementById('formatSelect').value;const ext=fmt==='image/png'?'png':fmt==='image/webp'?'webp':'jpg';const a=document.createElement('a');a.download=`PakTools-${w}x${h}.${ext}`;a.href=c.toDataURL(fmt,0.92);a.click();document.getElementById('sizeInfo').innerText=`✅ Downloaded ${w}x${h}`;});
+</script>
+</body>
+</html>
