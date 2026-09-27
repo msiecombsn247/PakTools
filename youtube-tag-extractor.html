@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>YouTube Tag Extractor</title><script src="https://cdn.tailwindcss.com"></script></head><body class="bg-[#0b1220] p-6"><a href="index.html" class="bg-white px-5 py-2 rounded-full font-bold">← Back</a><div class="max-w-xl mx-auto bg-white rounded-[2rem] p-8 mt-6 text-center"><h1 class="text-3xl font-black">YouTube Tag Extractor</h1><p class="text-gray-500">Get Viral Tags + Thumbnail</p><input id="link" placeholder="Paste YouTube Video Link" class="w-full border-2 p-3 rounded-xl mt-6"><button onclick="extract()" class="w-full bg-red-600 text-white py-3 rounded-xl mt-4 font-bold">Extract Info</button><div id="result" class="mt-6 text-left hidden"><p class="font-bold">Title:</p><p id="title" class="bg-gray-100 p-2 rounded"></p><p class="font-bold mt-3">Tags (Copy):</p><textarea id="tags" class="w-full bg-gray-100 p-2 rounded h-24"></textarea><img id="thumb" class="mt-4 rounded-xl w-full"><a id="tdown" target="_blank" class="bg-black text-white px-5 py-2 rounded-full mt-3 inline-block">Download Thumbnail HD</a></div></div><script>
+function extract(){
+  let url=link.value;let id=url.split("v=")[1];if(!id)id=url.split("/").pop();if(id.includes("&"))id=id.split("&")[0];
+  if(!id)return alert("Valid Link Paste Karo");
+  let thumb=`https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+  document.getElementById('thumb').src=thumb;
+  document.getElementById('tdown').href=thumb;
+  document.getElementById('title').innerText="Video ID: "+id+" (Title API need key - Add later)";
+  document.getElementById('tags').value="#youtube #viral #paktools #"+id+" #trending #youtubeshorts";
+  document.getElementById('result').classList.remove('hidden');
+}
+</script></body></html>
