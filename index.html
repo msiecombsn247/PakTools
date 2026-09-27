@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>PakTools - 23 Free Online Tools - All in One Toolkit</title>
-<meta name="description" content="PakTools - Pakistan's No.1 Free Online Tools. 23+ Tools: BG Remover, Image Compressor, PDF Tools, AI Tools, Text to Speech, Image to Text, Paraphraser & more.">
+<meta name="description" content="PakTools - Pakistan's No.1 Free Online Tools. 23+ Tools: BG Remover, Image Compressor, PDF Tools, AI Tools, Text to Speech, Image to Text & more.">
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -17,7 +17,6 @@ body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
 .tool-card{background:linear-gradient(145deg,rgba(16,32,94,0.9) 0%,rgba(10,23,68,0.9) 100%); border:1px solid rgba(59,130,246,0.25); box-shadow:0 0 20px rgba(37,99,235,0.15), inset 0 1px 0 rgba(150,200,255,0.1); backdrop-filter:blur(12px); border-radius:1.5rem; padding:20px; transition:0.3s; position:relative; overflow:hidden; cursor:pointer; display:block; text-decoration:none; color:white;}
 .tool-card:hover{transform:translateY(-6px) scale(1.02); border-color:rgba(34,211,238,0.6); box-shadow:0 0 35px rgba(59,130,246,0.45);}
 .tool-card.new::after{content:"NEW"; position:absolute; top:12px; right:12px; background:linear-gradient(90deg,#22d3ee,#3b82f6); color:black; font-size:9px; font-weight:900; padding:3px 8px; border-radius:999px;}
-.glow-btn{background:linear-gradient(90deg,#22d3ee,#3b82f6); box-shadow:0 0 25px rgba(59,130,246,0.6)}
 .filter-btn{padding:8px 16px; border-radius:999px; font-size:12px; font-weight:700; border:1px solid rgba(255,255,255,0.15); background:rgba(0,0,0,0.3); cursor:pointer; transition:0.2s;}
 .filter-btn.active{background:linear-gradient(90deg,#22d3ee,#3b82f6); color:black; border-color:transparent;}
 .search-box{background:rgba(0,0,0,0.4); border:1px solid rgba(59,130,246,0.3); backdrop-filter:blur(10px);}
@@ -31,7 +30,10 @@ body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
 <header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/80 backdrop-blur-xl">
 <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 <div class="font-black text-xl flex items-center gap-2"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black">P</div>PakTools</div>
+<div class="flex items-center gap-3">
 <div class="hidden md:flex items-center gap-2 text-[11px] bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 rounded-full text-cyan-300"><span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span><span id="toolCountHead">23</span> Tools Online</div>
+<a href="contact.html" style="text-decoration:none;color:white" class="text-[12px] bg-white/10 border border-white/20 px-4 py-2 rounded-full">Contact</a>
+</div>
 </div>
 </header>
 
@@ -40,13 +42,11 @@ body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
 <div class="text-center max-w-3xl mx-auto">
 <h1 class="text-4xl md:text-6xl font-black leading-tight">Pakistan's No.1<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">All-in-One Toolkit</span></h1>
 <p class="mt-4 text-gray-400 text-[14px] md:text-[15px]">23 Free Online Tools - Image Tools, PDF Tools, AI Tools, YouTube Tools, Calculators & More - 100% Free, No Signup</p>
-
-<div class="mt-6 flex justify-center gap-3">
+<div class="mt-6 flex justify-center">
 <div class="search-box rounded-full px-5 py-3 flex items-center gap-3 w-full max-w-md">
-<span>🔍</span><input id="searchInput" oninput="filterTools()" type="text" placeholder="Search 23 tools... e.g. BG Remover, PDF, AI" class="bg-transparent outline-none text-sm w-full placeholder:text-gray-500">
+<span>🔍</span><input id="searchInput" oninput="filterTools()" type="text" placeholder="Search 23 tools... bg remover, pdf, ocr" class="bg-transparent outline-none text-sm w-full placeholder:text-gray-500">
 </div>
 </div>
-
 <div class="mt-6 grid grid-cols-3 gap-3 max-w-lg mx-auto">
 <div class="bg-white/5 border border-white/10 rounded-xl py-3"><p class="text-xl font-black text-cyan-300" id="countTools">23</p><p class="text-[10px] text-gray-400">Total Tools</p></div>
 <div class="bg-white/5 border border-white/10 rounded-xl py-3"><p class="text-xl font-black text-cyan-300">100%</p><p class="text-[10px] text-gray-400">Free Forever</p></div>
@@ -56,79 +56,107 @@ body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
 
 <div class="mt-10 flex flex-wrap gap-2 justify-center" id="filterWrap">
 <button class="filter-btn active" onclick="setFilter('all',this)">All Tools</button>
-<button class="filter-btn" onclick="setFilter('image',this)">🖼️ Image Tools</button>
-<button class="filter-btn" onclick="setFilter('pdf',this)">📄 PDF Tools</button>
+<button class="filter-btn" onclick="setFilter('image',this)">🖼️ Image</button>
+<button class="filter-btn" onclick="setFilter('pdf',this)">📄 PDF</button>
 <button class="filter-btn" onclick="setFilter('ai',this)">🤖 AI Tools</button>
-<button class="filter-btn" onclick="setFilter('text',this)">📝 Text Tools</button>
+<button class="filter-btn" onclick="setFilter('text',this)">📝 Text</button>
 <button class="filter-btn" onclick="setFilter('youtube',this)">▶️ YouTube</button>
-<button class="filter-btn" onclick="setFilter('calc',this)">🧮 Calculators</button>
+<button class="filter-btn" onclick="setFilter('calc',this)">🧮 Calculator</button>
 <button class="filter-btn" onclick="setFilter('design',this)">🎨 Design</button>
 </div>
 
 <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" id="toolsGrid">
 
-<!-- IMAGE TOOLS -->
-<a href="bg-remover.html" class="tool-card" data-cat="image" data-name="background remover bg remover"><div class="text-3xl">🪄</div><h3 class="mt-3 font-bold text-[15px]">BG Remover</h3><p class="text-[12px] text-gray-400 mt-1">Remove background from image instantly</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Image Tool</span></a>
+<a href="bg-remover.html" class="tool-card" data-cat="image ai" data-name="bg remover background remover"><div class="text-3xl">🪄</div><h3 class="mt-3 font-bold text-[15px]">BG Remover</h3><p class="text-[12px] text-gray-400 mt-1">Remove background from image instantly</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Image Tool</span></a>
 
-<a href="image-compressor.html" class="tool-card" data-cat="image" data-name="image compressor compress"><div class="text-3xl">🗜️</div><h3 class="mt-3 font-bold text-[15px]">Image Compressor</h3><p class="text-[12px] text-gray-400 mt-1">Compress JPG, PNG without quality loss</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Image Tool</span></a>
+<a href="image-compressor.html" class="tool-card" data-cat="image" data-name="image compressor compress jpg png"><div class="text-3xl">🗜️</div><h3 class="mt-3 font-bold text-[15px]">Image Compressor</h3><p class="text-[12px] text-gray-400 mt-1">Compress JPG, PNG without quality loss</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Image Tool</span></a>
 
-<a href="image-resizer.html" class="tool-card" data-cat="image" data-name="image resizer resize"><div class="text-3xl">📐</div><h3 class="mt-3 font-bold text-[15px]">Image Resizer</h3><p class="text-[12px] text-gray-400 mt-1">Resize image to any size in KB & pixels</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Image Tool</span></a>
+<a href="image-resizer.html" class="tool-card" data-cat="image" data-name="image resizer resize kb pixel"><div class="text-3xl">📐</div><h3 class="mt-3 font-bold text-[15px]">Image Resizer</h3><p class="text-[12px] text-gray-400 mt-1">Resize image to any size in KB & pixels</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Image Tool</span></a>
 
-<a href="jpg-to-png.html" class="tool-card" data-cat="image" data-name="jpg to png converter"><div class="text-3xl">🔄</div><h3 class="mt-3 font-bold text-[15px]">JPG to PNG Converter</h3><p class="text-[12px] text-gray-400 mt-1">Convert JPG to PNG transparent</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Image Tool</span></a>
+<a href="jpg-to-png.html" class="tool-card" data-cat="image" data-name="jpg to png converter convert"><div class="text-3xl">🔄</div><h3 class="mt-3 font-bold text-[15px]">JPG to PNG</h3><p class="text-[12px] text-gray-400 mt-1">Convert JPG to PNG transparent</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Image Tool</span></a>
 
-<a href="image-upscaler.html" class="tool-card new" data-cat="image ai" data-name="ai image upscaler enhance hd"><div class="text-3xl">🔍</div><h3 class="mt-3 font-bold text-[15px]">AI Image Upscaler</h3><p class="text-[12px] text-gray-400 mt-1">Enhance & upscale image to 4K HD</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • AI Tool</span></a>
+<a href="image-upscaler.html" class="tool-card new" data-cat="image ai" data-name="ai image upscaler enhance hd 4k"><div class="text-3xl">🔍</div><h3 class="mt-3 font-bold text-[15px]">AI Image Upscaler</h3><p class="text-[12px] text-gray-400 mt-1">Enhance & upscale image to 4K HD</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • AI Tool</span></a>
 
-<a href="object-remover.html" class="tool-card new" data-cat="image ai" data-name="object remover watermark remover clean"><div class="text-3xl">🧹</div><h3 class="mt-3 font-bold text-[15px]">Object Remover</h3><p class="text-[12px] text-gray-400 mt-1">Remove object, watermark, text from photo</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • AI Tool</span></a>
+<a href="object-remover.html" class="tool-card new" data-cat="image ai" data-name="object remover watermark remover eraser clean"><div class="text-3xl">🧹</div><h3 class="mt-3 font-bold text-[15px]">Object Remover</h3><p class="text-[12px] text-gray-400 mt-1">Remove object, watermark from photo</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • AI Tool</span></a>
 
-<a href="image-to-text.html" class="tool-card new" data-cat="image ai text" data-name="image to text ocr extract text from image"><div class="text-3xl">📸</div><h3 class="mt-3 font-bold text-[15px]">Image to Text OCR</h3><p class="text-[12px] text-gray-400 mt-1">Extract text from image, screenshot, doc</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • 12M+ Search</span></a>
+<a href="image-to-text.html" class="tool-card new" data-cat="image ai text" data-name="image to text ocr extract text photo"><div class="text-3xl">📸</div><h3 class="mt-3 font-bold text-[15px]">Image to Text OCR</h3><p class="text-[12px] text-gray-400 mt-1">Extract text from image, screenshot</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • OCR Tool</span></a>
 
-<!-- PDF TOOLS -->
-<a href="pdf-to-jpg.html" class="tool-card" data-cat="pdf" data-name="pdf to jpg converter"><div class="text-3xl">📄</div><h3 class="mt-3 font-bold text-[15px]">PDF to JPG</h3><p class="text-[12px] text-gray-400 mt-1">Convert PDF pages to JPG images</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">PDF Tool</span></a>
+<a href="pdf-to-jpg.html" class="tool-card" data-cat="pdf" data-name="pdf to jpg converter pdf"><div class="text-3xl">📄</div><h3 class="mt-3 font-bold text-[15px]">PDF to JPG</h3><p class="text-[12px] text-gray-400 mt-1">Convert PDF pages to JPG images</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">PDF Tool</span></a>
 
-<a href="pdf-merge-split.html" class="tool-card new" data-cat="pdf" data-name="pdf merge split combine"><div class="text-3xl">📚</div><h3 class="mt-3 font-bold text-[15px]">PDF Merge & Split</h3><p class="text-[12px] text-gray-400 mt-1">Merge multiple PDFs or split PDF pages</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • PDF Tool</span></a>
+<a href="pdf-merge-split.html" class="tool-card new" data-cat="pdf" data-name="pdf merge split combine"><div class="text-3xl">📚</div><h3 class="mt-3 font-bold text-[15px]">PDF Merge & Split</h3><p class="text-[12px] text-gray-400 mt-1">Merge multiple PDFs or split pages</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • PDF Tool</span></a>
 
-<!-- AI TOOLS -->
-<a href="ai-bio-generator.html" class="tool-card" data-cat="ai text" data-name="ai bio generator instagram bio"><div class="text-3xl">✨</div><h3 class="mt-3 font-bold text-[15px]">AI Bio Generator</h3><p class="text-[12px] text-gray-400 mt-1">Generate Instagram, TikTok bio with AI</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">AI Tool</span></a>
+<a href="ai-bio-generator.html" class="tool-card" data-cat="ai text" data-name="ai bio generator instagram tiktok bio"><div class="text-3xl">✨</div><h3 class="mt-3 font-bold text-[15px]">AI Bio Generator</h3><p class="text-[12px] text-gray-400 mt-1">Generate Instagram, TikTok bio with AI</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">AI Tool</span></a>
 
-<a href="text-to-speech.html" class="tool-card new" data-cat="ai text" data-name="text to speech tts voice generator"><div class="text-3xl">🔊</div><h3 class="mt-3 font-bold text-[15px]">Text to Speech</h3><p class="text-[12px] text-gray-400 mt-1">Convert text to natural AI voice - 100+ voices</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • AI Tool</span></a>
+<a href="text-to-speech.html" class="tool-card new" data-cat="ai text" data-name="text to speech tts voice generator audio"><div class="text-3xl">🔊</div><h3 class="mt-3 font-bold text-[15px]">Text to Speech</h3><p class="text-[12px] text-gray-400 mt-1">Convert text to natural AI voice</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • AI Tool</span></a>
 
-<a href="paraphraser-tool.html" class="tool-card new" data-cat="ai text" data-name="paraphraser rewriter plagiarism remover article"><div class="text-3xl">📝</div><h3 class="mt-3 font-bold text-[15px]">AI Paraphraser</h3><p class="text-[12px] text-gray-400 mt-1">Rewrite article, remove plagiarism - Student No.1</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • 15M+ Search</span></a>
+<a href="paraphraser-tool.html" class="tool-card new" data-cat="ai text" data-name="paraphraser rewriter article plagiarism remover"><div class="text-3xl">📝</div><h3 class="mt-3 font-bold text-[15px]">AI Paraphraser</h3><p class="text-[12px] text-gray-400 mt-1">Rewrite article, remove plagiarism</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • 15M+ Search</span></a>
 
-<!-- YOUTUBE TOOLS -->
-<a href="yt-thumbnail-downloader.html" class="tool-card" data-cat="youtube" data-name="youtube thumbnail downloader yt"><div class="text-3xl">🖼️</div><h3 class="mt-3 font-bold text-[15px]">YT Thumbnail Downloader</h3><p class="text-[12px] text-gray-400 mt-1">Download YouTube thumbnail in HD</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">YouTube Tool</span></a>
+<a href="yt-thumbnail-downloader.html" class="tool-card" data-cat="youtube" data-name="youtube thumbnail downloader yt thumb"><div class="text-3xl">🖼️</div><h3 class="mt-3 font-bold text-[15px]">YT Thumbnail Downloader</h3><p class="text-[12px] text-gray-400 mt-1">Download YouTube thumbnail in HD</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">YouTube Tool</span></a>
 
-<a href="yt-tags-extractor.html" class="tool-card" data-cat="youtube" data-name="youtube tags extractor yt tags"><div class="text-3xl">🏷️</div><h3 class="mt-3 font-bold text-[15px]">YT Tags Extractor</h3><p class="text-[12px] text-gray-400 mt-1">Extract tags from any YouTube video</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">YouTube Tool</span></a>
+<a href="yt-tags-extractor.html" class="tool-card" data-cat="youtube" data-name="youtube tags extractor yt tags seo"><div class="text-3xl">🏷️</div><h3 class="mt-3 font-bold text-[15px]">YT Tags Extractor</h3><p class="text-[12px] text-gray-400 mt-1">Extract tags from any YouTube video</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">YouTube Tool</span></a>
 
-<!-- TEXT TOOLS -->
 <a href="word-counter.html" class="tool-card" data-cat="text" data-name="word counter character count"><div class="text-3xl">🔢</div><h3 class="mt-3 font-bold text-[15px]">Word Counter</h3><p class="text-[12px] text-gray-400 mt-1">Count words, characters, sentences</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Text Tool</span></a>
 
-<a href="qr-generator.html" class="tool-card" data-cat="text design" data-name="qr code generator"><div class="text-3xl">📱</div><h3 class="mt-3 font-bold text-[15px]">QR Generator</h3><p class="text-[12px] text-gray-400 mt-1">Create QR code for link, text, WiFi</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Design Tool</span></a>
+<a href="qr-generator.html" class="tool-card" data-cat="text design" data-name="qr code generator qr"><div class="text-3xl">📱</div><h3 class="mt-3 font-bold text-[15px]">QR Generator</h3><p class="text-[12px] text-gray-400 mt-1">Create QR code for link, text, WiFi</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Design Tool</span></a>
 
-<a href="password-generator.html" class="tool-card" data-cat="text" data-name="password generator strong"><div class="text-3xl">🔐</div><h3 class="mt-3 font-bold text-[15px]">Password Generator</h3><p class="text-[12px] text-gray-400 mt-1">Generate strong secure passwords</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Security Tool</span></a>
+<a href="password-generator.html" class="tool-card" data-cat="text" data-name="password generator strong secure"><div class="text-3xl">🔐</div><h3 class="mt-3 font-bold text-[15px]">Password Generator</h3><p class="text-[12px] text-gray-400 mt-1">Generate strong secure passwords</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Security Tool</span></a>
 
-<!-- CALCULATORS -->
-<a href="percentage-calculator.html" class="tool-card" data-cat="calc" data-name="percentage calculator"><div class="text-3xl">%</div><h3 class="mt-3 font-bold text-[15px]">Percentage Calculator</h3><p class="text-[12px] text-gray-400 mt-1">Calculate percentage easily</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Calculator</span></a>
+<a href="percentage-calculator.html" class="tool-card" data-cat="calc" data-name="percentage calculator percent"><div class="text-3xl">%</div><h3 class="mt-3 font-bold text-[15px]">Percentage Calculator</h3><p class="text-[12px] text-gray-400 mt-1">Calculate percentage easily</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Calculator</span></a>
 
-<a href="bmi-calculator.html" class="tool-card" data-cat="calc" data-name="bmi calculator body mass"><div class="text-3xl">⚖️</div><h3 class="mt-3 font-bold text-[15px]">BMI Calculator</h3><p class="text-[12px] text-gray-400 mt-1">Calculate Body Mass Index</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Health Tool</span></a>
+<a href="bmi-calculator.html" class="tool-card" data-cat="calc" data-name="bmi calculator body mass index"><div class="text-3xl">⚖️</div><h3 class="mt-3 font-bold text-[15px]">BMI Calculator</h3><p class="text-[12px] text-gray-400 mt-1">Calculate Body Mass Index</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Health Tool</span></a>
 
-<a href="age-calculator.html" class="tool-card" data-cat="calc" data-name="age calculator"><div class="text-3xl">🎂</div><h3 class="mt-3 font-bold text-[15px]">Age Calculator</h3><p class="text-[12px] text-gray-400 mt-1">Calculate exact age in years, months, days</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Calculator</span></a>
+<a href="age-calculator.html" class="tool-card" data-cat="calc" data-name="age calculator birthday"><div class="text-3xl">🎂</div><h3 class="mt-3 font-bold text-[15px]">Age Calculator</h3><p class="text-[12px] text-gray-400 mt-1">Calculate exact age in years, months, days</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Calculator</span></a>
 
-<a href="cnic-info.html" class="tool-card" data-cat="calc" data-name="cnic info check pakistan"><div class="text-3xl">🪪</div><h3 class="mt-3 font-bold text-[15px]">CNIC Info Check</h3><p class="text-[12px] text-gray-400 mt-1">Get info from CNIC number - Pakistan</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Pakistan Tool</span></a>
+<a href="cnic-info.html" class="tool-card" data-cat="calc" data-name="cnic info check pakistan id"><div class="text-3xl">🪪</div><h3 class="mt-3 font-bold text-[15px]">CNIC Info Check</h3><p class="text-[12px] text-gray-400 mt-1">Get info from CNIC number - Pakistan</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Pakistan Tool</span></a>
 
-<a href="unit-converter.html" class="tool-card new" data-cat="calc" data-name="unit converter length weight temperature currency"><div class="text-3xl">🔄</div><h3 class="mt-3 font-bold text-[15px]">Unit Converter</h3><p class="text-[12px] text-gray-400 mt-1">Length, Weight, Temp, Data, Speed & more</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • 20M+ Search</span></a>
+<a href="unit-converter.html" class="tool-card new" data-cat="calc" data-name="unit converter length weight temperature"><div class="text-3xl">🔄</div><h3 class="mt-3 font-bold text-[15px]">Unit Converter</h3><p class="text-[12px] text-gray-400 mt-1">Length, Weight, Temp, Data, Speed & more</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • 20M+ Search</span></a>
 
-<!-- DESIGN TOOLS -->
-<a href="color-palette-generator.html" class="tool-card new" data-cat="design" data-name="color palette generator picker gradient"><div class="text-3xl">🎨</div><h3 class="mt-3 font-bold text-[15px]">Color Palette Generator</h3><p class="text-[12px] text-gray-400 mt-1">Generate palettes, extract from image</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • Designer Fav</span></a>
+<a href="color-palette-generator.html" class="tool-card new" data-cat="design" data-name="color palette generator picker gradient design"><div class="text-3xl">🎨</div><h3 class="mt-3 font-bold text-[15px]">Color Palette Generator</h3><p class="text-[12px] text-gray-400 mt-1">Generate palettes, extract from image</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • Designer Fav</span></a>
 
 </div>
 
-<div id="noResult" class="hidden text-center mt-10 text-gray-500 text-sm">No tools found for your search 😢 Try another keyword</div>
+<div id="noResult" class="hidden text-center mt-10 text-gray-500 text-sm">No tools found 😢 Try another keyword</div>
 
 </main>
 
-<footer class="relative z-10 border-t border-white/10 mt-16 py-8 text-center text-[12px] text-gray-500">
+<footer class="relative z-10 border-t border-white/10 mt-16 py-10">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-4 gap-8 text-left">
+<div>
+<div class="font-black text-lg flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black">P</div>PakTools</div>
+<p class="text-[12px] text-gray-500 mt-3 leading-5">Pakistan's No.1 All-in-One Toolkit. 23 Free Online Tools - Fast, Secure, Free Forever. No Signup Needed.</p>
+</div>
+<div>
+<p class="font-bold text-sm">Quick Links</p>
+<div class="mt-3 flex flex-col gap-2 text-[12px] text-gray-400">
+<a href="index.html" class="hover:text-cyan-300">Home</a>
+<a href="about.html" class="hover:text-cyan-300">About Us</a>
+<a href="contact.html" class="hover:text-cyan-300">Contact Us</a>
+</div>
+</div>
+<div>
+<p class="font-bold text-sm">Legal Pages</p>
+<div class="mt-3 flex flex-col gap-2 text-[12px] text-gray-400">
+<a href="privacy-policy.html" class="hover:text-cyan-300">Privacy Policy</a>
+<a href="terms.html" class="hover:text-cyan-300">Terms & Conditions</a>
+<a href="contact.html" class="hover:text-cyan-300">DMCA / Complaint</a>
+</div>
+</div>
+<div>
+<p class="font-bold text-sm">Popular Tools</p>
+<div class="mt-3 flex flex-col gap-2 text-[12px] text-gray-400">
+<a href="bg-remover.html" class="hover:text-cyan-300">BG Remover</a>
+<a href="image-to-text.html" class="hover:text-cyan-300">Image to Text OCR</a>
+<a href="paraphraser-tool.html" class="hover:text-cyan-300">AI Paraphraser</a>
+<a href="unit-converter.html" class="hover:text-cyan-300">Unit Converter</a>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 mt-8 pt-6 text-center text-[12px] text-gray-500">
 <p>© 2025 PakTools - Made with ❤️ in Pakistan - 23 Free Tools - All Rights Reserved</p>
-<p class="mt-2">Fast • Secure • Free Forever • No Signup Needed</p>
+<p class="mt-2">Fast • Secure • Free Forever • AdSense Ready • SSL Secured</p>
+</div>
+</div>
 </footer>
 
 <script>
@@ -143,17 +171,19 @@ function setFilter(cat,btn){
   filterTools();
 }
 function filterTools(){
-  let search=document.getElementById('searchInput').value.toLowerCase();
+  let search=document.getElementById('searchInput').value.toLowerCase().trim();
   let cards=document.querySelectorAll('.tool-card');
   let visible=0;
   cards.forEach(card=>{
-    let cat=card.dataset.cat;
-    let name=card.dataset.name;
+    let cat=card.getAttribute('data-cat') || '';
+    let name=card.getAttribute('data-name') || '';
+    let text=card.innerText.toLowerCase();
     let matchCat=currentFilter==='all' || cat.includes(currentFilter);
-    let matchSearch=!search || name.includes(search) || card.innerText.toLowerCase().includes(search);
+    let matchSearch=!search || name.includes(search) || text.includes(search);
     if(matchCat && matchSearch){card.style.display='block'; visible++;} else {card.style.display='none';}
   });
   document.getElementById('countTools').innerText=visible;
+  document.getElementById('toolCountHead').innerText=visible;
   document.getElementById('noResult').classList.toggle('hidden', visible>0);
 }
 </script>
