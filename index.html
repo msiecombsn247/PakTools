@@ -1,39 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PakTools.pk - Pakistan's No.1 Free Tools</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PakTools - Free Online Tools for Developers & Creators</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-body{background:#0b1220;background-image:radial-gradient(at 20% 25%, rgba(34,211,238,0.20) 0px, transparent 50%), radial-gradient(at 80% 15%, rgba(139,92,246,0.22) 0px, transparent 50%);min-height:100vh;font-family:sans-serif}
-.card{background:white;border-radius:28px;padding:28px;box-shadow:0 20px 40px rgba(0,0,0,0.3);display:block;transition:0.3s;text-decoration:none;color:#000}
-.card:hover{transform:translateY(-8px)}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>body{font-family:Inter,sans-serif}</style>
 </head>
-<body>
-<header class="bg-white sticky top-0 p-4 flex justify-between max-w-7xl mx-auto"><b class="text-2xl">Pak<span class="text-blue-600">Tools</span>.pk</b><span class="bg-black text-white px-4 py-1 rounded-full text-sm">DARK PRO</span></header>
-<div class="text-center mt-14"><h1 class="text-5xl font-black text-white">Tools that <span class="text-cyan-300">actually work</span></h1><p class="text-slate-400 mt-3">Dark Texture • Eye-Friendly • No Sad Feel</p></div>
-<div class="max-w-7xl mx-auto px-6 mt-10 grid grid-cols-1 md:grid-cols-4 gap-6">
-<a href="word-counter.html" class="card"><div class="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center"><i class="fa fa-file"></i></div><h3 class="font-bold mt-4">Word Counter</h3><p class="text-xs text-gray-500">Count Words</p></a>
-<a href="qr-code-generator.html" class="card"><div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center"><i class="fa fa-qrcode"></i></div><h3 class="font-bold mt-4">QR Generator</h3><p class="text-xs text-gray-500">Gen + Download</p></a>
-<a href="password-generator.html" class="card"><div class="w-12 h-12 bg-violet-600 text-white rounded-xl flex items-center justify-center"><i class="fa fa-key"></i></div><h3 class="font-bold mt-4">Password Generator</h3><p class="text-xs text-gray-500">Strong & Secure</p></a>
-<a href="background-remover.html" class="bg-white rounded-[2rem] p-6 block hover:scale-105 transition">
-  <div class="w-12 h-12 bg-pink-500 rounded-xl flex items-center justify-center text-white font-bold">BG</div>
-  <h3 class="font-black mt-4">Background Remover</h3>
-  <p class="text-xs text-gray-500">Remove BG HD</p>
-</a>
-<a href="youtube-tags.html" class="bg-white rounded-[2rem] p-6 block hover:scale-105 transition">
-  <div class="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center text-white font-bold">YT</div>
-  <h3 class="font-black mt-4">YouTube Tags</h3>
-  <p class="text-xs text-gray-500">Thumbnail + Tags</p>
-</a>
-<a href="ai-bio-generator.html" class="card"><div class="w-12 h-12 bg-cyan-600 text-white rounded-xl flex items-center justify-center"><i class="fa fa-robot"></i></div><h3 class="font-bold mt-4">AI Bio Generator</h3><p class="text-xs text-gray-500">Insta Bio AI</p></a>
-<a href="age-calculator.html" class="card"><div class="w-12 h-12 bg-emerald-600 text-white rounded-xl flex items-center justify-center"><i class="fa fa-cake"></i></div><h3 class="font-bold mt-4">Age Calculator</h3><p class="text-xs text-gray-500">Exact Age</p></a>
-<a href="image-compressor.html" class="card"><div class="w-12 h-12 bg-amber-500 text-white rounded-xl flex items-center justify-center"><i class="fa fa-compress"></i></div><h3 class="font-bold mt-4">Image Compressor</h3><p class="text-xs text-gray-500">20KB Compressor</p></a>
-<a href="youtube-thumbnail-downloader.html" class="card"><div class="w-12 h-12 bg-red-600 text-white rounded-xl flex items-center justify-center"><i class="fa-brands fa-youtube"></i></div><h3 class="font-bold mt-4">YT Thumbnail</h3><p class="text-xs text-gray-500">Download HD</p></a>
-<a href="pdf-to-jpg.html" class="card"><div class="w-12 h-12 bg-zinc-800 text-white rounded-xl flex items-center justify-center"><i class="fa fa-file-pdf"></i></div><h3 class="font-bold mt-4">PDF to JPG</h3><p class="text-xs text-gray-500">Convert Fast</p></a>
+<body class="bg-white">
+
+<!-- NAVBAR LIKE SCREENSHOT -->
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
+<div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+<div class="flex items-center gap-2 font-black text-2xl"><span class="text-emerald-600">🔧</span> PKTools</div>
+<div class="hidden md:flex gap-8 font-semibold text-gray-600">
+<a href="#" class="text-emerald-600 border-b-2 border-emerald-600 pb-1">Home</a>
+<a href="#tools">Tools</a><a href="#">Downloads</a><a href="#">Blogs</a><a href="#">About Us</a>
 </div>
-<footer class="text-center py-10 text-slate-500 text-sm">© 2026 PakTools.pk - Dark Premium</footer>
+<div class="flex gap-3">
+<a href="contact.html" class="border-2 border-emerald-600 text-emerald-700 px-5 py-2 rounded-lg font-bold">Contact</a>
+<a href="#tools" class="bg-emerald-600 text-white px-5 py-2 rounded-lg font-bold">Get Started</a>
+</div>
+</div>
+</nav>
+
+<!-- HERO SECTION SAME AS YOUR SCREENSHOT - ADVANCE VERSION -->
+<section class="relative bg-[#0a0a0f] text-white text-center pt-24 pb-20 px-6 overflow-hidden">
+<!-- Gradient Blob -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-to-br from-purple-600 via-fuchsia-500 to-blue-600 rounded-full blur-[80px] opacity-60"></div>
+<div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+
+<div class="relative max-w-4xl mx-auto">
+<h1 class="text-5xl md:text-7xl font-black leading-tight">130+ Free Online Tools for<br>Developers & Creators</h1>
+<p class="mt-6 text-gray-300 text-lg">No sign-up. No subscription. Just fast, free tools — password generators, PDF editors, JSON formatters, QR codes & more.</p>
+<div class="mt-8 flex justify-center gap-4">
+<a href="#tools" class="bg-[#8b7cff] hover:bg-[#7a6af0] px-8 py-3 rounded-lg font-bold">Explore Tools</a>
+<a href="#tools" class="border border-[#8b7cff] text-[#8b7cff] px-8 py-3 rounded-lg font-bold">View Solutions</a>
+</div>
+<div class="mt-16 flex justify-center gap-16">
+<div><div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mx-auto">🔧</div><p class="mt-2 font-bold text-[#8b7cff]">130+</p></div>
+<div><div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mx-auto">👥</div><p class="mt-2 font-bold text-[#8b7cff]">10K+</p></div>
+<div><div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mx-auto">⚡</div><p class="mt-2 font-bold text-[#8b7cff]">99.9%</p></div>
+</div>
+</div>
+</section>
+
+<!-- TOOLS GRID -->
+<section id="tools" class="max-w-7xl mx-auto px-6 py-16">
+<h2 class="text-3xl font-black">Popular Tools</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+
+<a href="background-remover.html" class="border rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition bg-white"><div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center">🎨</div><h3 class="font-bold mt-3">Background Remover</h3><p class="text-xs text-gray-500">HD AI Tool</p></a>
+
+<a href="youtube-tags.html" class="border rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition bg-white"><div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">▶️</div><h3 class="font-bold mt-3">YouTube Thumbnail</h3><p class="text-xs text-gray-500">HD Downloader</p></a>
+
+<a href="qr-generator.html" class="border rounded-2xl p-6 hover:shadow-xl transition bg-white"><div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">🔗</div><h3 class="font-bold mt-3">QR Generator</h3></a>
+
+<a href="password-generator.html" class="border rounded-2xl p-6 hover:shadow-xl transition bg-white"><div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">🔐</div><h3 class="font-bold mt-3">Password Gen</h3></a>
+
+<a href="image-compressor.html" class="border rounded-2xl p-6 hover:shadow-xl transition bg-white"><div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">🖼️</div><h3 class="font-bold mt-3">Image Compressor</h3></a>
+
+<a href="word-counter.html" class="border rounded-2xl p-6 hover:shadow-xl transition bg-white"><div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center">📝</div><h3 class="font-bold mt-3">Word Counter</h3></a>
+
+<a href="json-formatter.html" class="border rounded-2xl p-6 hover:shadow-xl transition bg-white"><div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">{ }</div><h3 class="font-bold mt-3">JSON Formatter</h3></a>
+
+<a href="pdf-tools.html" class="border rounded-2xl p-6 hover:shadow-xl transition bg-white"><div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">📄</div><h3 class="font-bold mt-3">PDF Tools</h3></a>
+
+</div>
+</section>
+
+<footer class="text-center py-8 text-gray-400 border-t">© 2026 PakTools - Pakistan's No.1 Tools</footer>
 </body>
 </html>
