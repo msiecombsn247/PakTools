@@ -3,143 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PakTools - All in One Premium Tools for Developers and Creators</title>
+<title>PakTools - All in One Premium Tools</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{font-family:'Inter',sans-serif}
-body{background:#020617;overflow-x:hidden;min-height:100vh}
-
-/* GALAXY BACKGROUND - 100% ORIGINAL CSS - NO COPYRIGHT */
-.galaxy-bg{position:fixed;inset:0;z-index:0;pointer-events:none}
-.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:0.8}
-.star{position:absolute;width:2px;height:2px;background:white;border-radius:50%;opacity:0.7}
-
-/* NEON 3D CARDS */
-.neon-card{
-  background:linear-gradient(145deg,rgba(23,42,121,0.65),rgba(12,29,86,0.55));
-  border:1px solid rgba(56,189,248,0.35);
-  backdrop-filter:blur(16px);
-  border-radius:18px;
-  padding:20px 14px;
-  text-align:center;
-  transition:all 0.3s ease;
+body{
+  background:#020617 url('hero-bg.jpg') no-repeat top center / cover;
+  background-attachment:fixed;
+  min-height:100vh;
   position:relative;
 }
-.neon-card:hover{
-  transform:translateY(-6px) scale(1.02);
-  border-color:#22d3ee;
-  box-shadow:0 0 30px rgba(34,211,238,0.5), inset 0 1px 1px rgba(255,255,255,0.2);
+body::after{
+  content:''; position:fixed; inset:0;
+  background:radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0) 40%, rgba(2,6,23,0.6) 100%);
+  pointer-events:none; z-index:0;
 }
+.glass{
+  background:rgba(255,255,255,0.07);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.12);
+}
+.glow-btn{
+  background:linear-gradient(90deg,#22d3ee,#0ea5e9);
+  box-shadow:0 0 25px rgba(34,211,238,0.6);
+}
+.neon-card{
+  background:linear-gradient(145deg,rgba(16,36,110,0.75),rgba(10,26,82,0.6));
+  border:1px solid rgba(34,211,238,0.35);
+  backdrop-filter:blur(14px);
+  border-radius:16px; padding:18px; text-align:center;
+  transition:0.3s;
+}
+.neon-card:hover{transform:translateY(-5px); border-color:#22d3ee; box-shadow:0 0 28px rgba(34,211,238,0.5)}
 .icon-box{
-  width:72px;height:72px;margin:0 auto 14px;
+  width:62px;height:62px;margin:0 auto 10px;
   background:radial-gradient(circle at 30% 30%, rgba(34,211,238,0.35), rgba(59,130,246,0.15));
-  border:1px solid rgba(34,211,238,0.6);
-  border-radius:20px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:30px;
-  box-shadow:0 0 22px rgba(34,211,238,0.45), inset 0 1px 1px rgba(255,255,255,0.4);
+  border:1px solid rgba(34,211,238,0.6); border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 0 18px rgba(34,211,238,0.45), inset 0 1px 1px rgba(255,255,255,0.3);
+  font-size:26px;
 }
-
-.glass{background:rgba(255,255,255,0.07);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.13)}
-.glow-btn{background:linear-gradient(90deg,#22d3ee,#0ea5e9);box-shadow:0 0 20px rgba(34,211,238,0.6)}
+.shine{position:fixed; inset:0; pointer-events:none; z-index:1; overflow:hidden}
+.star-dot{position:absolute; width:2px; height:2px; background:white; border-radius:50%; animation:twinkle 3s infinite}
+@keyframes twinkle{0%,100%{opacity:0.2}50%{opacity:1}}
 </style>
 </head>
 <body class="text-white">
 
-<!-- GALAXY BACKGROUND - SAME AS YOUR IMAGE -->
-<div class="galaxy-bg">
-  <div class="blob w-[900px] h-[800px] bg-gradient-to-br from-blue-700 via-indigo-700 to-violet-800 -top-[200px] -left-[200px]"></div>
-  <div class="blob w-[700px] h-[700px] bg-gradient-to-br from-cyan-600 via-blue-800 to-[#020617] top-[15%] right-[-150px] opacity-60"></div>
-  <div class="blob w-[1000px] h-[500px] bg-gradient-to-r from-fuchsia-600/20 via-transparent to-cyan-400/25 bottom-[-100px] left-[10%] blur-[120px]"></div>
-  <div id="stars"></div>
-</div>
+<div class="shine" id="stars"></div>
 
-<!-- HEADER -->
+<!-- HEADER - AllinOne -> PakTools -->
 <header class="relative z-20 max-w-7xl mx-auto px-4 pt-4">
-  <div class="glass rounded-full px-6 py-3 flex justify-between items-center">
-    <div class="flex items-center gap-3 font-black text-xl"><div class="w-9 h-9 rounded-lg bg-cyan-400 flex items-center justify-center text-black">P</div> PakTools</div>
-    <div class="hidden md:flex gap-7 text-sm text-gray-400"><span class="text-white">Home</span><span>Tools</span><span>Docs</span><span>Contact</span></div>
-    <a href="#tools" class="glass px-5 py-2 rounded-full text-sm font-bold border border-cyan-400/40">Get Started</a>
+<div class="glass rounded-full px-3 md:px-6 py-3 flex justify-between items-center">
+  <div class="flex items-center gap-2 font-black text-xl md:text-2xl">
+    <div class="w-8 h-8 rounded-md bg-cyan-400/20 border border-cyan-400/50 flex items-center justify-center">◈</div>
+    PakTools
   </div>
+  <nav class="hidden md:flex gap-6 text-sm text-gray-300">
+    <span class="text-white border-b-2 border-cyan-400">Home</span><span>Features</span><span>Pricing</span><span>Solutions</span><span>Resources</span>
+  </nav>
+  <div class="flex gap-2">
+    <button class="glass px-4 py-2 rounded-full text-xs md:text-sm">👻 Sign In</button>
+    <a href="#tools" class="bg-cyan-400 text-black font-bold px-4 md:px-5 py-2 rounded-full text-xs md:text-sm">Get Started</a>
+  </div>
+</div>
 </header>
 
-<!-- HERO - SAME TEXT AS YOUR SELECTED IMAGE -->
-<section class="relative z-10 max-w-7xl mx-auto px-6 pt-16 pb-10 text-center">
-  <h1 class="text-4xl md:text-6xl font-black leading-tight">All Premium Tools</h1>
-  <p class="mt-3 text-cyan-200 font-semibold">Built Faster Create Smarter - 50+ AI Powered Tools</p>
+<!-- HERO SECTION - Same as Image -->
+<section class="relative z-10 max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16 grid md:grid-cols-2 gap-10 items-center">
+<div>
+  <h1 class="text-5xl md:text-6xl font-black leading-[1.05]">All in One<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-100 to-cyan-400">Premium Tools</span></h1>
+  <p class="mt-5 text-gray-300 max-w-lg">Supercharge your workflow with 50+ AI-powered tools for productivity, design, analytics & more — all in one platform.</p>
+  <div class="mt-8 flex gap-4 flex-wrap">
+    <a href="#tools" class="glow-btn text-black font-bold px-7 py-3 rounded-full flex items-center gap-2">Get Started Free ⊃</a>
+    <a class="glass px-7 py-3 rounded-full font-semibold flex items-center gap-2">Watch Demo ▶</a>
+  </div>
+  <div class="mt-10 grid grid-cols-3 gap-3 max-w-lg">
+    <div class="glass rounded-lg px-3 py-2.5 flex gap-2 items-center"><span class="text-cyan-400">🛡️</span><div><p class="text-[11px] font-bold leading-none">100+ Tools</p><p class="text-[9px] text-gray-400">Ready to use</p></div></div>
+    <div class="glass rounded-lg px-3 py-2.5 flex gap-2 items-center"><span class="text-cyan-400">✨</span><div><p class="text-[11px] font-bold leading-none">24/7 AI Powered</p><p class="text-[9px] text-gray-400">Always active</p></div></div>
+    <div class="glass rounded-lg px-3 py-2.5 flex gap-2 items-center"><span class="text-cyan-400">🔒</span><div><p class="text-[11px] font-bold leading-none">Secure & Reliable</p><p class="text-[9px] text-gray-400">Enterprise-grade</p></div></div>
+  </div>
+</div>
+<div class="hidden md:block"></div>
 </section>
 
-<!-- TOOLS GRID - NEON ICONS -->
-<section id="tools" class="relative z-10 max-w-7xl mx-auto px-4 pb-20">
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
+<!-- TOOLS - NEW NEON ICONS -->
+<section id="tools" class="relative z-10 bg-[#020617]/90 backdrop-blur-xl border-t border-white/10 py-14">
+<div class="max-w-7xl mx-auto px-4">
+<h2 class="text-2xl md:text-3xl font-black text-center">All Premium Tools</h2>
+<p class="text-center text-cyan-300 text-sm mt-2">Built Faster Create Smarter</p>
 
-<a href="bg-remover.html" class="neon-card">
-  <div class="icon-box">✂️</div>
-  <p class="font-bold text-[13px]">BG Remover</p><p class="text-[11px] text-gray-400 mt-1">Remove Background</p>
-</a>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
 
-<a href="image-to-pdf.html" class="neon-card">
-  <div class="icon-box">🖼️→📄</div>
-  <p class="font-bold text-[13px]">Image to PDF</p><p class="text-[11px] text-gray-400 mt-1">Convert Images</p>
-</a>
+<a href="bg-remover.html" class="neon-card"><div class="icon-box">✂️</div><p class="font-bold text-sm">BG Remover</p><p class="text-[11px] text-gray-400">Remove BG</p></a>
+<a href="image-to-pdf.html" class="neon-card"><div class="icon-box">🖼️➡️📄</div><p class="font-bold text-sm">Image to PDF</p><p class="text-[11px] text-gray-400">Convert</p></a>
+<a href="image-compressor.html" class="neon-card"><div class="icon-box">🗜️</div><p class="font-bold text-sm">Image Compressor</p><p class="text-[11px] text-gray-400">20KB 50KB</p></a>
+<a href="qr-code-generator.html" class="neon-card"><div class="icon-box">🔳</div><p class="font-bold text-sm">QR Generator</p><p class="text-[11px] text-gray-400">Create QR</p></a>
+<a href="password-generator.html" class="neon-card"><div class="icon-box">🔐</div><p class="font-bold text-sm">Password Lock</p><p class="text-[11px] text-gray-400">Strong Pass</p></a>
+<a href="word-counter.html" class="neon-card"><div class="icon-box">📝</div><p class="font-bold text-sm">Word Counter</p><p class="text-[11px] text-gray-400">Count</p></a>
+<a href="age-calculator.html" class="neon-card"><div class="icon-box">🎂</div><p class="font-bold text-sm">Age Calculator</p><p class="text-[11px] text-gray-400">Exact Age</p></a>
+<a href="ai-bio-generator.html" class="neon-card"><div class="icon-box">🤖</div><p class="font-bold text-sm">AI Bio</p><p class="text-[11px] text-gray-400">Viral Bio</p></a>
+<a href="pdf-to-jpg.html" class="neon-card"><div class="icon-box">📄→🖼️</div><p class="font-bold text-sm">PDF to JPG</p><p class="text-[11px] text-gray-400">High Quality</p></a>
 
-<a href="image-compressor.html" class="neon-card">
-  <div class="icon-box">🗜️</div>
-  <p class="font-bold text-[13px]">Image Compressor</p><p class="text-[11px] text-gray-400 mt-1">20KB, 50KB, 100KB</p>
-</a>
-
-<a href="qr-generator.html" class="neon-card">
-  <div class="icon-box">▢</div>
-  <p class="font-bold text-[13px]">QR Generator</p><p class="text-[11px] text-gray-400 mt-1">For Links & Text</p>
-</a>
-
-<a href="password-generator.html" class="neon-card">
-  <div class="icon-box">🔐</div>
-  <p class="font-bold text-[13px]">Password Gen</p><p class="text-[11px] text-gray-400 mt-1">Strong Passwords</p>
-</a>
-
-<a href="word-counter.html" class="neon-card">
-  <div class="icon-box">📝</div>
-  <p class="font-bold text-[13px]">Word Counter</p><p class="text-[11px] text-gray-400 mt-1">Count Words</p>
-</a>
-
-<a href="age-calculator.html" class="neon-card">
-  <div class="icon-box">🎂</div>
-  <p class="font-bold text-[13px]">Age Calculator</p><p class="text-[11px] text-gray-400 mt-1">Exact Age</p>
-</a>
-
-<a href="ai-bio-generator.html" class="neon-card">
-  <div class="icon-box">🤖</div>
-  <p class="font-bold text-[13px]">AI Bio Generator</p><p class="text-[11px] text-gray-400 mt-1">Viral Bios</p>
-</a>
-
-<a href="pdf-to-jpg.html" class="neon-card">
-  <div class="icon-box">📄→🖼️</div>
-  <p class="font-bold text-[13px]">PDF to JPG</p><p class="text-[11px] text-gray-400 mt-1">High Quality</p>
-</a>
-
-<div class="neon-card border-dashed!bg-transparent opacity-70">
-  <div class="icon-box!bg-transparent!shadow-none">+</div>
-  <p class="font-bold text-[13px] text-gray-400">More Coming</p><p class="text-[11px] text-gray-500 mt-1">Stay Tuned</p>
 </div>
-
 </div>
 </section>
-
-<footer class="relative z-10 border-t border-white/10 py-6 text-center text-xs text-gray-500">
-© 2026 PakTools - All in One Premium Tools - Made in Pakistan PK
-</footer>
 
 <script>
-// Stars Generator
-const s=document.getElementById('stars');
-for(let i=0;i<150;i++){
-  let d=document.createElement('div');d.className='star';
-  d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';
-  d.style.opacity=Math.random();d.style.width=d.style.height=(Math.random()*2+1)+'px';
-  s.appendChild(d);
-}
+const container=document.getElementById('stars');
+for(let i=0;i<120;i++){let d=document.createElement('div');d.className='star-dot';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.animationDelay=Math.random()*3+'s';container.appendChild(d);}
 </script>
 </body>
 </html>
