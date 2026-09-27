@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI Text to Speech - Free Voice Generator Online - PakTools</title>
+<meta name="description" content="Free AI Text to Speech - Convert text to natural AI voice. 100+ voices, multiple languages, free download.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*{font-family:'Inter',sans-serif}
+body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
+.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55; animation:float 20s infinite alternate;}
+@keyframes float{0%{transform:translate(-10%,-10%)}100%{transform:translate(10%,10%) scale(1.15)}}
+.stars{position:absolute; inset:0; pointer-events:none; z-index:1;}
+.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%; animation:twinkle 3s infinite;}
+@keyframes twinkle{0%,100%{opacity:0.2}50%{opacity:1}}
+.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 40px rgba(37,99,235,0.35), inset 0 1px 0 rgba(150,200,255,0.18); backdrop-filter:blur(15px);}
+.result-card{background:rgba(255,255,255,0.06); border:1px solid rgba(56,189,248,0.25);}
+.glow-btn{background:linear-gradient(90deg,#22d3ee,#3b82f6); box-shadow:0 0 25px rgba(59,130,246,0.6)}
+.input-box{background:rgba(0,0,0,0.35); border:1px solid rgba(59,130,246,0.3);}
+.range{accent-color:#22d3ee;}
+.voice-card{border:1px solid rgba(255,255,255,0.15); background:rgba(0,0,0,0.3); border-radius:12px; padding:10px 14px; cursor:pointer; transition:0.2s; font-size:12px;}
+.voice-card.active{border-color:#22d3ee; background:rgba(34,211,238,0.15);}
+</style>
+</head>
+<body class="relative min-h-screen">
+<div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-250px] left-[10%]"></div>
+<div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-300px] right-[5%]"></div>
+<div class="stars" id="stars"></div>
+
+<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<a href="index.html" style="text-decoration:none;color:white" class="font-black text-xl flex items-center gap-2"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black">P</div>PakTools</a>
+<a href="index.html" style="text-decoration:none;color:white" class="text-sm bg-white/10 border border-white/20 px-4 py-2 rounded-lg">← Home</a>
+</div>
+</header>
+
+<main class="relative z-10 max-w-5xl mx-auto px-6 py-10">
+<div class="text-center">
+<h1 class="text-4xl md:text-5xl font-black">AI Text to <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Speech</span></h1>
+<p class="mt-3 text-gray-400 text-[14px]">Convert Text to Natural AI Voice • 100+ Voices • Free</p>
+<p class="mt-2 text-[11px] text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 inline-block px-3 py-1 rounded-full">🔥 #19 World Trending - YouTubers Favourite</p>
+</div>
+
+<div class="tool-box rounded-[2rem] p-6 md:p-10 mt-8">
+
+<div>
+<label class="text-sm font-bold text-gray-300">Enter Your Text (Max 5000 chars):</label>
+<textarea id="textInput" rows="7" placeholder="Type or paste your text here... For example: Hello friends, welcome to PakTools! This is AI voice generator." class="w-full mt-3 input-box rounded-xl p-4 text-[14px] outline-none resize-none" maxlength="5000"></textarea>
+<div class="flex justify-between mt-2">
+<p class="text-[11px] text-gray-500"><span id="charCount">0</span> / 5000 chars • <span id="wordCount">0</span> words</p>
+<button onclick="clearText()" class="text-[11px] text-red-300 bg-red-500/10 border border-red-400/20 px-3 py-1 rounded-full">Clear</button>
+</div>
+</div>
+
+<div class="mt-6">
+<p class="text-sm font-bold text-gray-300 mb-3">Select Voice:</p>
+<select id="voiceSelect" class="w-full input-box rounded-xl px-4 py-3 text-sm outline-none"></select>
+<div id="voiceChips" class="flex flex-wrap gap-2 mt-3"></div>
+</div>
+
+<div class="grid md:grid-cols-3 gap-4 mt-6">
+<div class="input-box rounded-xl p-4">
+<label class="text-[11px] text-gray-400">Speed: <span id="speedVal" class="text-cyan-300 font-bold">1x</span></label>
+<input id="speedRange" type="range" min="0.5" max="2" step="0.1" value="1" class="range w-full mt-2">
+</div>
+<div class="input-box rounded-xl p-4">
+<label class="text-[11px] text-gray-400">Pitch: <span id="pitchVal" class="text-cyan-300 font-bold">1x</span></label>
+<input id="pitchRange" type="range" min="0.5" max="2" step="0.1" value="1" class="range w-full mt-2">
+</div>
+<div class="input-box rounded-xl p-4">
+<label class="text-[11px] text-gray-400">Volume: <span id="volVal" class="text-cyan-300 font-bold">100%</span></label>
+<input id="volRange" type="range" min="0" max="1" step="0.1" value="1" class="range w-full mt-2">
+</div>
+</div>
+
+<div class="mt-8 grid grid-cols-3 gap-3">
+<button onclick="speakText()" id="speakBtn" class="col-span-2 glow-btn text-black font-black py-4 rounded-xl text-[15px]">▶️ Generate & Play Voice</button>
+<button onclick="stopText()" class="bg-white/10 border border-white/20 font-bold py-4 rounded-xl text-sm">⏹️ Stop</button>
+</div>
+
+<div id="status" class="hidden mt-6 result-card rounded-xl p-4 text-center">
+<p id="statusText" class="text-sm text-cyan-300 font-bold"></p>
+<div class="mt-3 flex justify-center gap-2">
+<div class="w-2 h-2 bg-cyan-400 rounded-full animate-bounce"></div>
+<div class="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style="animation-delay:0.1s"></div>
+<div class="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style="animation-delay:0.2s"></div>
+</div>
+</div>
+
+<div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-2">
+<button onclick="insertSample('en')" class="voice-card">🇺🇸 English Sample</button>
+<button onclick="insertSample('ur')" class="voice-card">🇵🇰 Urdu Sample</button>
+<button onclick="insertSample('yt')" class="voice-card">🎬 YouTube Intro</button>
+<button onclick="insertSample('story')" class="voice-card">📖 Story Voice</button>
+</div>
+
+</div>
+
+<div class="mt-8 result-card rounded-2xl p-6 text-[13px] leading-6 text-gray-400">
+<h3 class="text-white font-bold mb-2">What is AI Text to Speech?</h3>
+<p>PakTools AI TTS converts any text into natural human-like voice. Use for YouTube videos, TikTok voiceovers, presentations, and learning. Supports 100+ voices in English, Urdu, Hindi, Arabic and more. Free, no signup, works offline in browser.</p>
+</div>
+
+</main>
+
+<script>
+const stars=document.getElementById('stars');
+for(let i=0;i<150;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.animationDelay=Math.random()*3+'s';stars.appendChild(d);}
+
+let voices=[];
+const voiceSelect=document.getElementById('voiceSelect');
+const textInput=document.getElementById('textInput');
+
+function loadVoices(){
+  voices=speechSynthesis.getVoices();
+  voiceSelect.innerHTML='';
+  let chips=document.getElementById('voiceChips');
+  chips.innerHTML='';
+  voices.forEach((v,i)=>{
+    let opt=document.createElement('option');
+    opt.value=i; opt.textContent=`${v.name} (${v.lang}) ${v.default?' - Default':''}`;
+    voiceSelect.appendChild(opt);
+    if(i<8){
+      let div=document.createElement('div');
+      div.className='voice-card'; div.textContent=v.name.split(' ')[0]+' '+v.lang;
+      div.onclick=()=>{voiceSelect.value=i; document.querySelectorAll('.voice-card').forEach(c=>c.classList.remove('active')); div.classList.add('active');};
+      chips.appendChild(div);
+    }
+  });
+}
+speechSynthesis.onvoiceschanged=loadVoices;
+setTimeout(loadVoices,500);
+
+textInput.addEventListener('input',()=>{
+  document.getElementById('charCount').innerText=textInput.value.length;
+  document.getElementById('wordCount').innerText=textInput.value.trim()? textInput.value.trim().split(/\s+/).length : 0;
+});
+
+document.getElementById('speedRange').addEventListener('input',e=>{document.getElementById('speedVal').innerText=e.target.value+'x';});
+document.getElementById('pitchRange').addEventListener('input',e=>{document.getElementById('pitchVal').innerText=e.target.value+'x';});
+document.getElementById('volRange').addEventListener('input',e=>{document.getElementById('volVal').innerText=Math.round(e.target.value*100)+'%';});
+
+function speakText(){
+  let text=textInput.value.trim();
+  if(!text){alert('Please enter some text first'); return;}
+  speechSynthesis.cancel();
+  let utter=new SpeechSynthesisUtterance(text);
+  let idx=voiceSelect.value; if(voices[idx]) utter.voice=voices[idx];
+  utter.rate=parseFloat(document.getElementById('speedRange').value);
+  utter.pitch=parseFloat(document.getElementById('pitchRange').value);
+  utter.volume=parseFloat(document.getElementById('volRange').value);
+  utter.onstart=()=>{document.getElementById('status').classList.remove('hidden'); document.getElementById('statusText').innerText='🔊 Playing AI Voice...'; document.getElementById('speakBtn').innerText='🔊 Playing...';};
+  utter.onend=()=>{document.getElementById('status').classList.add('hidden'); document.getElementById('speakBtn').innerText='▶️ Generate & Play Voice';};
+  speechSynthesis.speak(utter);
+}
+function stopText(){ speechSynthesis.cancel(); document.getElementById('status').classList.add('hidden'); document.getElementById('speakBtn').innerText='▶️ Generate & Play Voice'; }
+function clearText(){ textInput.value=''; document.getElementById('charCount').innerText='0'; document.getElementById('wordCount').innerText='0'; stopText(); }
+function insertSample(type){
+  let samples={
+    en: "Hello everyone! Welcome to PakTools - Pakistan's best free online tools website. This is AI generated voice, natural and clear.",
+    ur: "Assalam-o-Alaikum! PakTools me khush amdeed. Ye AI voice generator hai jo aap ke text ko khoobsurat awaz me badal deta hai.",
+    yt: "Hey guys! Welcome back to my channel. Don't forget to like, subscribe and hit the bell icon. Let's start today's video!",
+    story: "Once upon a time, in a small village, there lived a wise old man. He had a magical story to tell every night under the stars."
+  };
+  textInput.value=samples[type]; textInput.dispatchEvent(new Event('input'));
+}
+</script>
+</body>
+</html>
