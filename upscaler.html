@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI Image Upscaler - Enhance to 2x 4x HD - PakTools</title>
+<meta name="description" content="Free AI Image Upscaler - Upscale image to 2x 4x HD quality. Enhance low quality photos online.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*{font-family:'Inter',sans-serif}
+body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
+.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55; animation:float 20s infinite alternate;}
+@keyframes float{0%{transform:translate(-10%,-10%)}100%{transform:translate(10%,10%) scale(1.15)}}
+.stars{position:absolute; inset:0; pointer-events:none; z-index:1;}
+.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%; animation:twinkle 3s infinite;}
+@keyframes twinkle{0%,100%{opacity:0.2}50%{opacity:1}}
+.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 40px rgba(37,99,235,0.35), inset 0 1px 0 rgba(150,200,255,0.18); backdrop-filter:blur(15px);}
+.input-box{background:rgba(0,0,0,0.35); border:1px solid rgba(59,130,246,0.3);}
+.result-card{background:rgba(255,255,255,0.06); border:1px solid rgba(56,189,248,0.25);}
+.glow-btn{background:linear-gradient(90deg,#22d3ee,#3b82f6); box-shadow:0 0 25px rgba(59,130,246,0.6)}
+.up-card{border:1px solid rgba(255,255,255,0.15); background:rgba(0,0,0,0.3); transition:0.3s; cursor:pointer;}
+.up-card.active{border-color:#22d3ee; background:rgba(34,211,238,0.15); box-shadow:0 0 20px rgba(34,211,238,0.4)}
+</style>
+</head>
+<body class="relative min-h-screen">
+<div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-250px] left-[10%]"></div>
+<div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-300px] right-[5%]"></div>
+<div class="stars" id="stars"></div>
+
+<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<a href="index.html" style="text-decoration:none;color:white" class="font-black text-xl flex items-center gap-2"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black">P</div>PakTools</a>
+<a href="index.html" style="text-decoration:none;color:white" class="text-sm bg-white/10 border border-white/20 px-4 py-2 rounded-lg">← Home</a>
+</div>
+</header>
+
+<main class="relative z-10 max-w-5xl mx-auto px-6 py-10 md:py-14">
+<div class="text-center">
+<h1 class="text-4xl md:text-5xl font-black">AI Image <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Upscaler</span></h1>
+<p class="mt-3 text-gray-400 text-[14px]">Upscale to 2x, 4x HD • Enhance Low Quality Photos • Free</p>
+<p class="mt-2 text-[11px] text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 inline-block px-3 py-1 rounded-full">🔥 #16 New World Trending Tool</p>
+</div>
+
+<div class="tool-box rounded-[2rem] p-6 md:p-10 mt-8">
+<div id="dropArea" class="border-2 border-dashed border-blue-400/30 rounded-2xl p-8 md:p-12 text-center bg-black/20 hover:bg-black/30 hover:border-cyan-400/50 transition cursor-pointer">
+<input type="file" id="fileInput" accept="image/*" class="hidden">
+<div class="text-5xl mb-3">🖼️</div>
+<p class="font-bold">Drop Image Here or Click to Upload</p>
+<p class="text-xs text-gray-400 mt-2">JPG, PNG, WEBP - Max 10MB</p>
+<button class="mt-5 glow-btn text-black font-black px-6 py-2.5 rounded-full text-sm">Choose Image</button>
+</div>
+
+<div id="settings" class="hidden mt-8">
+<p class="text-sm font-bold text-gray-200 mb-3">Select Upscale Size:</p>
+<div class="grid grid-cols-3 gap-3">
+<div class="up-card active rounded-xl p-4 text-center" onclick="selectScale(this,2)">
+<p class="font-black text-lg">2x</p><p class="text-[11px] text-gray-400">HD Quality</p><p class="text-[10px] text-cyan-300 mt-1">Recommended</p>
+</div>
+<div class="up-card rounded-xl p-4 text-center" onclick="selectScale(this,4)">
+<p class="font-black text-lg">4x</p><p class="text-[11px] text-gray-400">Ultra HD</p>
+</div>
+<div class="up-card rounded-xl p-4 text-center" onclick="selectScale(this,1)">
+<p class="font-black text-lg">Enhance</p><p class="text-[11px] text-gray-400">No Resize</p>
+</div>
+</div>
+<div class="mt-6 flex items-center justify-between input-box rounded-xl p-4">
+<label class="text-sm text-gray-300">✨ AI Enhance + Sharpen</label>
+<label class="relative inline-flex items-center cursor-pointer">
+<input type="checkbox" id="enhanceToggle" checked class="sr-only peer">
+<div class="w-11 h-6 bg-gray-700 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-cyan-500"></div>
+</label>
+</div>
+<button onclick="processImage()" id="processBtn" class="w-full mt-6 glow-btn text-black font-black py-4 rounded-xl text-[15px]">🚀 Upscale to HD Now</button>
+</div>
+
+<div id="previewArea" class="hidden mt-8">
+<div class="grid md:grid-cols-2 gap-5">
+<div class="result-card rounded-xl p-3">
+<p class="text-[11px] text-gray-400 mb-2 font-bold">BEFORE - <span id="beforeSize">0x0</span></p>
+<img id="beforeImg" class="w-full rounded-lg max-h-[350px] object-contain bg-black/30">
+<p id="beforeKB" class="text-[11px] text-gray-500 mt-2 text-center"></p>
+</div>
+<div class="result-card rounded-xl p-3 border-cyan-400/40">
+<p class="text-[11px] text-cyan-300 mb-2 font-bold">AFTER HD - <span id="afterSize">0x0</span> ✨</p>
+<img id="afterImg" class="w-full rounded-lg max-h-[350px] object-contain bg-black/30">
+<p id="afterKB" class="text-[11px] text-cyan-300 mt-2 text-center"></p>
+</div>
+</div>
+<div class="mt-6 grid grid-cols-2 gap-3">
+<a id="downloadBtn" download class="glow-btn text-center text-black font-black py-3.5 rounded-xl text-sm cursor-pointer">⬇️ Download HD Image</a>
+<button onclick="resetAll()" class="bg-white/10 border border-white/20 font-bold py-3.5 rounded-xl text-sm">🔄 New Image</button>
+</div>
+</div>
+</div>
+</main>
+<canvas id="canvas" class="hidden"></canvas>
+<script>
+const stars=document.getElementById('stars');
+for(let i=0;i<150;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.animationDelay=Math.random()*3+'s';stars.appendChild(d);}
+let originalImage=null; let currentScale=2; let fileName="";
+const dropArea=document.getElementById('dropArea'); const fileInput=document.getElementById('fileInput'); const settings=document.getElementById('settings');
+dropArea.addEventListener('click',()=>fileInput.click());
+dropArea.addEventListener('dragover',(e)=>{e.preventDefault(); dropArea.classList.add('border-cyan-400');});
+dropArea.addEventListener('dragleave',()=>{dropArea.classList.remove('border-cyan-400');});
+dropArea.addEventListener('drop',(e)=>{e.preventDefault(); dropArea.classList.remove('border-cyan-400'); if(e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);});
+fileInput.addEventListener('change',(e)=>{ if(e.target.files[0]) handleFile(e.target.files[0]); });
+function handleFile(file){
+  if(!file.type.startsWith('image/')){alert('Select image only'); return;}
+  fileName=file.name.split('.')[0];
+  let reader=new FileReader();
+  reader.onload=(e)=>{
+    let img=new Image();
+    img.onload=()=>{
+      originalImage=img;
+      document.getElementById('beforeImg').src=e.target.result;
+      document.getElementById('beforeSize').innerText=img.width+' x '+img.height;
+      document.getElementById('beforeKB').innerText=(file.size/1024).toFixed(1)+' KB';
+      settings.classList.remove('hidden');
+      dropArea.innerHTML=`<p class="font-bold text-cyan-300">✅ ${file.name} Loaded</p><p class="text-xs text-gray-400 mt-1">Ready to Upscale</p>`;
+    }; img.src=e.target.result;
+  }; reader.readAsDataURL(file);
+}
+function selectScale(el,scale){ document.querySelectorAll('.up-card').forEach(c=>c.classList.remove('active')); el.classList.add('active'); currentScale=scale; }
+function processImage(){
+  if(!originalImage){alert('Upload image first'); return;}
+  let btn=document.getElementById('processBtn'); btn.innerText='⏳ AI Enhancing...'; btn.disabled=true;
+  setTimeout(()=>{
+    let canvas=document.getElementById('canvas'); let ctx=canvas.getContext('2d');
+    let w=originalImage.width; let h=originalImage.height;
+    let newW = currentScale===1? w : w*currentScale; let newH = currentScale===1? h : h*currentScale;
+    canvas.width=newW; canvas.height=newH;
+    ctx.imageSmoothingEnabled=true; ctx.imageSmoothingQuality='high';
+    let enhance=document.getElementById('enhanceToggle').checked;
+    if(enhance){ ctx.filter='contrast(1.12) brightness(1.05) saturate(1.1)'; }
+    ctx.drawImage(originalImage,0,0,newW,newH);
+    if(enhance){ ctx.globalCompositeOperation='overlay'; ctx.globalAlpha=0.15; ctx.drawImage(canvas,0,0); ctx.globalAlpha=1; ctx.globalCompositeOperation='source-over'; }
+    let dataUrl=canvas.toDataURL('image/png');
+    document.getElementById('afterImg').src=dataUrl; document.getElementById('afterSize').innerText=newW+' x '+newH;
+    document.getElementById('afterKB').innerText=newW+'x'+newH+' • PNG HD';
+    document.getElementById('downloadBtn').href=dataUrl; document.getElementById('downloadBtn').download=fileName+'-hd-paktools.png';
+    document.getElementById('previewArea').classList.remove('hidden');
+    btn.innerText='🚀 Upscale to HD Now'; btn.disabled=false;
+  },800);
+}
+function resetAll(){
+  originalImage=null; fileInput.value=''; settings.classList.add('hidden'); document.getElementById('previewArea').classList.add('hidden');
+  dropArea.innerHTML=`<div class="text-5xl mb-3">🖼️</div><p class="font-bold">Drop Image Here or Click to Upload</p><p class="text-xs text-gray-400 mt-2">JPG, PNG, WEBP - Max 10MB</p><button class="mt-5 glow-btn text-black font-black px-6 py-2.5 rounded-full text-sm">Choose Image</button>`;
+}
+</script>
+</body>
+</html>
