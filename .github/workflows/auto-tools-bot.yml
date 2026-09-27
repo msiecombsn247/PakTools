@@ -1,8 +1,6 @@
 name: PakTools ULTRA PRO Bot
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 5 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,59 +8,26 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Build ULTRA PRO Tools
+      - name: Build Real Tools
         run: |
           python3 << 'PY'
           import os
+          # QR Code Real Working
+          qr_html = "<!DOCTYPE html><html><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>QR Code Generator - PakTools</title><script src='https://cdn.tailwindcss.com'></script><script src='https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js'></script></head><body class='bg-slate-50'><header class='bg-white p-4 shadow flex justify-between'><a href='index.html' class='font-black text-blue-600'>PakTools.pk</a><span class='bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs'>REAL WORKING</span></header><main class='max-w-xl mx-auto mt-10 bg-white p-8 rounded-3xl shadow-2xl'><h1 class='text-3xl font-black text-center'>QR Code Generator</h1><input id='t' class='w-full mt-6 p-4 border-2 rounded-xl' placeholder='Enter URL or Text'><button onclick='make()' class='w-full mt-4 bg-blue-600 text-white py-3 rounded-xl font-bold'>Generate QR</button><div id='q' class='flex justify-center mt-6'></div></main><script>function make(){let v=document.getElementById('t').value;if(!v)return alert('Enter text');document.getElementById('q').innerHTML='';new QRCode(document.getElementById('q'),{text:v,width:200,height:200})}</script></body></html>"
+          with open('qr-code-generator.html','w',encoding='utf-8') as f:
+              f.write(qr_html)
 
-          def get_ultra_html(slug, title):
-              if "qr-code" in slug:
-                  body = """
-                  <div class='mt-6'><input id='qrtext' class='w-full border-2 p-4 rounded-xl' placeholder='Enter URL or Text'><button onclick='makeQR()' class='w-full mt-4 bg-blue-600 text-white py-3 rounded-xl font-black'>Generate QR Code</button><div id='qrcode' class='flex justify-center mt-6'></div><button id='dl' class='hidden w-full mt-4 bg-black text-white py-2 rounded-xl' onclick='downloadQR()'>Download QR</button></div>
-                  <script src='https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js'></script>
-                  <script>let qr;function makeQR(){let t=document.getElementById('qrtext').value;if(!t)return alert('Enter text');document.getElementById('qrcode').innerHTML='';qr=new QRCode(document.getElementById('qrcode'),{text:t,width:200,height:200});document.getElementById('dl').classList.remove('hidden')}function downloadQR(){let img=document.querySelector('#qrcode img');if(img){let a=document.createElement('a');a.href=img.src;a.download='paktools-qr.png';a.click()}}</script>
-                  """
-              elif "password" in slug:
-                  body = """
-                  <div class='mt-6'><label>Password Length: <span id='lenVal'>16</span></label><input type='range' id='plen' min='6' max='32' value='16' class='w-full' oninput='document.getElementById("lenVal").innerText=this.value'><button onclick='genPass()' class='w-full mt-4 bg-blue-600 text-white py-3 rounded-xl font-black'>Generate Strong Password</button><div id='passOut' class='mt-6 p-4 bg-gray-900 text-green-400 font-mono text-xl rounded-xl text-center hidden'></div></div>
-                  <script>function genPass(){let len=document.getElementById('plen').value;let chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';let p='';for(let i=0;i<len;i++)p+=chars[Math.floor(Math.random()*chars.length)];let o=document.getElementById('passOut');o.classList.remove('hidden');o.innerText=p}</script>
-                  """
-              elif "fancy-text" in slug:
-                  body = """
-                  <div class='mt-6'><input id='ftext' class='w-full border-2 p-4 rounded-xl' placeholder='Enter Your Name'><div id='fancyOut' class='mt-6 space-y-3'></div></div>
-                  <script>const maps=[{n:'Bold',f:t=>t.split('').map(c=>String.fromCharCode(120276+c.charCodeAt(0)-65)).join('')}];document.getElementById('ftext').addEventListener('input',function(){let v=this.value;let out=document.getElementById('fancyOut');out.innerHTML='';if(!v)return;let styles=['𝓕𝓪𝓷𝓬𝔂','𝔽𝔸ℕℂ𝕐','𝐹𝒶𝓃𝒸𝓎','𝙵𝚊𝚗𝚌𝚢','🅵🅰🅽🅲🆈'];styles.forEach(s=>{let d=document.createElement('div');d.className='p-3 bg-gray-50 rounded-xl flex justify-between';d.innerHTML=`<span>${s} Style: ${v} ${s}</span><button class='bg-black text-white px-2 rounded' onclick='navigator.clipboard.writeText(this.parentElement.innerText)'>Copy</button>`;out.appendChild(d)})})</script>
-                  """
-              else:
-                  body = f"""
-                  <div class='mt-6'><textarea id='inp' class='w-full border-2 p-4 rounded-xl' rows='4' placeholder='Enter for {title}'></textarea><button onclick='document.getElementById("out").innerText=document.getElementById("inp").value + " - Generated by PakTools PRO";document.getElementById("out").classList.remove("hidden")' class='w-full mt-4 bg-blue-600 text-white py-3 rounded-xl font-black'>Generate {title}</button><div id='out' class='hidden mt-6 p-4 bg-gray-50 rounded-xl'></div></div>
-                  """
+          # Password Real Working
+          pass_html = "<!DOCTYPE html><html><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width'><title>Password Generator - PakTools</title><script src='https://cdn.tailwindcss.com'></script></head><body class='bg-slate-50'><header class='bg-white p-4 shadow'><a href='index.html' class='font-black text-blue-600'>PakTools.pk</a></header><main class='max-w-xl mx-auto mt-10 bg-white p-8 rounded-3xl shadow-2xl'><h1 class='text-3xl font-black text-center'>Password Generator</h1><button onclick='gen()' class='w-full mt-6 bg-blue-600 text-white py-3 rounded-xl font-bold'>Generate Strong Password</button><div id='o' class='mt-6 p-4 bg-black text-green-400 rounded-xl text-center font-mono text-xl'></div></main><script>function gen(){let c='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$';let p='';for(let i=0;i<16;i++)p+=c[Math.floor(Math.random()*c.length)];document.getElementById('o').innerText=p}</script></body></html>"
+          with open('password-generator.html','w',encoding='utf-8') as f:
+              f.write(pass_html)
 
-              return f"""<!DOCTYPE html><html><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width'><title>{title} - PakTools.pk</title><script src='https://cdn.tailwindcss.com'></script></head><body class='bg-[#f8fafc]'><header class='bg-white shadow p-4 flex justify-between'><a href='index.html' class='font-black text-blue-600 text-xl'>PakTools.pk</a><span class='bg-gradient-to-r from-purple-600 to-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold'>ULTRA PRO</span></header><main class='max-w-3xl mx-auto mt-8 p-6 bg-white rounded-[2rem] shadow-2xl border'><h1 class='text-4xl font-black text-center'>{title}</h1><p class='text-center text-gray-500 mt-2'>Pakistan's No.1 Free {title} - 100% Working</p>{body}</main></body></html>"""
-
-          tools = ["qr-code-generator","password-generator","fancy-text-generator","hashtag-generator","ai-bio-generator"]
-          for slug in tools:
-              fname = slug + ".html"
-              title = slug.replace("-"," ").title()
-              html = get_ultra_html(slug, title)
-              with open(fname, "w", encoding="utf-8") as f:
-                  f.write(html)
-              print(f"Upgraded {fname} to ULTRA PRO")
-
-          # Also create 2 brand new viral tools
-          new_tools = ["insta-font-generator","youtube-tag-generator"]
-          for slug in new_tools:
-              fname = slug + ".html"
-              if not os.path.exists(fname):
-                  title = slug.replace("-"," ").title()
-                  with open(fname, "w", encoding="utf-8") as f:
-                      f.write(get_ultra_html(slug, title))
-                  print(f"Created NEW {fname}")
+          print('ULTRA PRO Tools Upgraded Successfully')
           PY
-
-      - name: Push ULTRA PRO
+      - name: Push
         run: |
-          git config user.name "ULTRA PRO Bot"
+          git config user.name "ULTRA Bot"
           git config user.email "ultra@paktools.pk"
-          git add.
-          git commit -m "ULTRA PRO: Tools with Real Working Functions 🔥" || echo "no change"
+          git add .
+          git commit -m "ULTRA PRO Fixed - Real QR and Password Working" || echo "no change"
           git push
