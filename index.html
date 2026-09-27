@@ -4,11 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PakTools - All in One Premium Tools | Free Online Tools</title>
-<meta name="description" content="PakTools - 10+ Free All in One Premium Tools. BG Remover, Image Compressor, QR Generator, Age Calculator, Word Counter, PDF to JPG, AI Bio, YouTube Tools. Fast & Secure - Made in Pakistan.">
-<meta name="keywords" content="PakTools, All in One Tools, BG Remover, Image Compressor, QR Code Generator, Age Calculator, Pakistan Tools, Free Tools">
-<meta name="author" content="PakTools">
+<meta name="description" content="PakTools - 10+ Free All in One Premium Tools. Fast & Secure - Made in Pakistan.">
 <link rel="canonical" href="https://msiecombsn247.github.io/PakTools/">
-<meta property="og:title" content="PakTools - All in One Premium Tools">
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -26,22 +23,13 @@ body{margin:0;background:#05020a;color:white;overflow-x:hidden}
 }
 .glass{background:rgba(255,255,255,0.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.15)}
 .glow-btn{background:linear-gradient(90deg,#22d3ee,#a855f7);box-shadow:0 0 30px rgba(168,85,247,0.7)}
-.float{animation:float 6s ease-in-out infinite}
-.float2{animation:float 7.5s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
-.icon3d{
-  position:absolute;display:flex;align-items:center;justify-content:center;
-  background:radial-gradient(circle at 30% 30%, rgba(34,211,238,0.5), rgba(168,85,247,0.3));
-  border:1px solid rgba(34,211,238,0.8);box-shadow:0 0 28px rgba(34,211,238,0.6), inset 0 1px 2px rgba(255,255,255,0.8);
-  backdrop-filter:blur(8px);border-radius:20px;
-}
 .tool-card{
   background:linear-gradient(145deg,rgba(40,20,90,0.85),rgba(20,10,60,0.9));
   border:1px solid rgba(168,85,247,0.35);border-radius:18px;padding:18px;text-align:center;transition:0.3s;display:block;text-decoration:none;color:white
 }
-.tool-card:hover{transform:translateY(-6px) scale(1.02);border-color:#22d3ee;box-shadow:0 0 30px rgba(34,211,238,0.5)}
+.tool-card:hover{transform:translateY(-6px);border-color:#22d3ee;box-shadow:0 0 30px rgba(34,211,238,0.5)}
 .tool-icon{width:78px;height:78px;margin:0 auto 12px;border-radius:20px;background:linear-gradient(135deg,#22d3ee 0%, #a855f7 100%);display:flex;align-items:center;justify-content:center;font-size:38px;box-shadow:0 0 20px rgba(168,85,247,0.6), inset 0 1px 3px rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.3)}
-.star{position:absolute;border-radius:50%;animation:twinkle var(--dur) infinite ease-in-out;box-shadow:0 0 6px var(--color), 0 0 12px var(--color)}
+.star{position:absolute;border-radius:50%;animation:twinkle var(--dur) infinite ease-in-out}
 @keyframes twinkle{0%,100%{opacity:0.2;transform:scale(0.8)}50%{opacity:1;transform:scale(1.4)}}
 </style>
 </head>
@@ -50,69 +38,51 @@ body{margin:0;background:#05020a;color:white;overflow-x:hidden}
 <div class="hero">
 <div id="stars" class="absolute inset-0 z-0 pointer-events-none"></div>
 
-<header class="relative z-20 max-w-7xl mx-auto px-4 pt-4">
-<div class="glass rounded-full px-6 py-3 flex justify-between items-center">
-<a href="index.html" style="text-decoration:none;color:white" class="font-black text-2xl flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-black">P</div> PakTools</a>
+<!-- MOBILE FIXED HEADER -->
+<header class="relative z-20 max-w-7xl mx-auto px-3 md:px-4 pt-3 md:pt-4">
+<div class="glass rounded-full px-3 md:px-6 py-2.5 md:py-3 flex justify-between items-center">
+<a href="index.html" style="text-decoration:none;color:white" class="font-black text-[20px] md:text-2xl flex items-center gap-2 shrink-0"><div class="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-black text-sm">P</div> PakTools</a>
+
 <nav class="hidden md:flex gap-6 text-sm">
 <a href="index.html" style="text-decoration:none" class="text-white border-b-2 border-cyan-400 pb-1">Home</a>
 <a href="#tools" style="text-decoration:none" class="text-gray-300 hover:text-white">Tools</a>
 <a href="contact.html" style="text-decoration:none" class="text-gray-300 hover:text-white">Contact</a>
 </nav>
-<div class="flex gap-2">
-<a href="contact.html" style="text-decoration:none;color:white" class="glass px-4 py-2 rounded-full text-sm">Contact</a>
-<a href="#tools" style="text-decoration:none" class="bg-white text-black font-bold px-5 py-2 rounded-full text-sm">Get Started</a>
+
+<div class="flex gap-2 items-center shrink-0">
+<!-- Contact - Sirf Desktop par dikhega, Mobile par hide -->
+<a href="contact.html" style="text-decoration:none;color:white" class="hidden md:block glass px-4 py-2 rounded-full text-sm">Contact</a>
+<!-- Get Started - Mobile par single line, no wrap -->
+<a href="#tools" style="text-decoration:none;white-space:nowrap" class="bg-white text-black font-bold px-4 md:px-5 py-2 md:py-2 rounded-full text-[13px] md:text-sm">Get Started</a>
 </div>
 </div>
 </header>
 
-<section class="relative z-10 max-w-7xl mx-auto px-6 pt-14 pb-10 grid md:grid-cols-2 gap-8 items-center">
-<div>
-<h1 class="text-5xl md:text-6xl font-black leading-[0.95]">All in One<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-purple-400">Premium Tools</span></h1>
-<p class="mt-5 text-gray-300 max-w-lg">50+ Free AI Tools - Search any tool instantly below.</p>
+<section class="relative z-10 max-w-7xl mx-auto px-6 pt-14 pb-10">
+<h1 class="text-[42px] md:text-6xl font-black leading-[0.95]">All in One<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-purple-400">Premium Tools</span></h1>
+<p class="mt-5 text-gray-300 max-w-lg text-[15px] md:text-base">50+ Free AI Tools - Search any tool instantly below.</p>
 <div class="mt-6 relative max-w-md">
-<input id="searchInput" type="text" placeholder="🔍 Search any tool... (e.g. QR, PDF, BG Remover)" class="w-full glass rounded-full px-6 py-3.5 text-sm text-white placeholder-gray-400 outline-none focus:border-cyan-400 border border-white/20">
+<input id="searchInput" type="text" placeholder="🔍 Search any tool... (e.g. QR, PDF, BG Remover)" class="w-full glass rounded-full px-6 py-3.5 text-sm text-white placeholder-gray-400 outline-none border border-white/20">
 </div>
-<div class="mt-7 flex gap-3 flex-wrap"><a href="#tools" style="text-decoration:none" class="glow-btn text-white font-bold px-7 py-3 rounded-full inline-block">Explore Tools →</a></div>
-</div>
-<div class="relative h-[420px] hidden md:block">
-<div class="icon3d float w-[100px] h-[100px] top-5 right-[180px] text-4xl">🛡️</div>
-<div class="icon3d float2 w-[120px] h-[85px] top-[130px] right-[30px] text-3xl">☁️</div>
-<div class="icon3d float w-[95px] h-[95px] top-[250px] right-[15px] rounded-full text-4xl">⚙️</div>
-<div class="icon3d float2 w-[90px] h-[90px] bottom-10 right-[90px] text-3xl">🧠</div>
-</div>
+<div class="mt-7"><a href="#tools" style="text-decoration:none" class="glow-btn text-white font-bold px-7 py-3 rounded-full inline-block">Explore Tools →</a></div>
 </section>
 </div>
 
 <section id="tools" class="bg-[#0a0620] py-14">
 <div class="max-w-7xl mx-auto px-4">
 <div class="flex justify-between items-center"><h2 class="text-3xl font-black">All Premium Tools</h2><p id="resultCount" class="text-purple-300 text-sm">10 Tools Found</p></div>
-
 <div id="toolsGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
-
-<!-- FIXED CLEAR ICONS -->
-<a href="background-remover.html" class="tool-card" data-name="bg remover background"><div class="tool-icon">✂️</div><p class="font-bold text-[13px]">BG Remover</p><p class="text-[11px] text-gray-400 mt-1">Remove Background</p></a>
-
+<a href="background-remover.html" class="tool-card" data-name="bg remover"><div class="tool-icon">✂️</div><p class="font-bold text-[13px]">BG Remover</p><p class="text-[11px] text-gray-400 mt-1">Remove Background</p></a>
 <a href="image-compressor.html" class="tool-card" data-name="image compressor"><div class="tool-icon">🗜️</div><p class="font-bold text-[13px]">Image Compressor</p><p class="text-[11px] text-gray-400 mt-1">20KB - 100KB</p></a>
-
-<a href="qr-code-generator.html" class="tool-card" data-name="qr code generator"><div class="tool-icon">🔳</div><p class="font-bold text-[13px]">QR Generator</p><p class="text-[11px] text-gray-400 mt-1">Create QR</p></a>
-
+<a href="qr-code-generator.html" class="tool-card" data-name="qr code"><div class="tool-icon">🔳</div><p class="font-bold text-[13px]">QR Generator</p><p class="text-[11px] text-gray-400 mt-1">Create QR</p></a>
 <a href="age-calculator.html" class="tool-card" data-name="age calculator"><div class="tool-icon">🎂</div><p class="font-bold text-[13px]">Age Calculator</p><p class="text-[11px] text-gray-400 mt-1">Exact Age</p></a>
-
 <a href="word-counter.html" class="tool-card" data-name="word counter"><div class="tool-icon">📝</div><p class="font-bold text-[13px]">Word Counter</p><p class="text-[11px] text-gray-400 mt-1">Count Words</p></a>
-
 <a href="password-generator.html" class="tool-card" data-name="password generator"><div class="tool-icon">🔐</div><p class="font-bold text-[13px]">Password Generator</p><p class="text-[11px] text-gray-400 mt-1">Strong Pass</p></a>
-
-<!-- PDF TO JPG - NOW SINGLE CLEAR ICON -->
 <a href="pdf-to-jpg.html" class="tool-card" data-name="pdf to jpg"><div class="tool-icon">📄</div><p class="font-bold text-[13px]">PDF to JPG</p><p class="text-[11px] text-gray-400 mt-1">High Quality</p></a>
-
-<a href="ai-bio-generator.html" class="tool-card" data-name="ai bio generator"><div class="tool-icon">🤖</div><p class="font-bold text-[13px]">AI Bio Generator</p><p class="text-[11px] text-gray-400 mt-1">Viral Bio</p></a>
-
+<a href="ai-bio-generator.html" class="tool-card" data-name="ai bio"><div class="tool-icon">🤖</div><p class="font-bold text-[13px]">AI Bio Generator</p><p class="text-[11px] text-gray-400 mt-1">Viral Bio</p></a>
 <a href="youtube-tags.html" class="tool-card" data-name="youtube tags"><div class="tool-icon">🏷️</div><p class="font-bold text-[13px]">YouTube Tags</p><p class="text-[11px] text-gray-400 mt-1">Extractor</p></a>
-
-<a href="youtube-thumbnail-downloader.html" class="tool-card" data-name="youtube thumbnail downloader"><div class="tool-icon">⬇️</div><p class="font-bold text-[13px]">YT Thumbnail</p><p class="text-[11px] text-gray-400 mt-1">Downloader</p></a>
-
+<a href="youtube-thumbnail-downloader.html" class="tool-card" data-name="youtube thumbnail"><div class="tool-icon">⬇️</div><p class="font-bold text-[13px]">YT Thumbnail</p><p class="text-[11px] text-gray-400 mt-1">Downloader</p></a>
 </div>
-<p id="noResult" class="hidden text-center mt-10 text-gray-400">No tools found 😔</p>
 </div>
 </section>
 
@@ -126,16 +96,14 @@ for(let i=0;i<320;i++){
   let size=Math.random()*2.5+1;
   d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';
   d.style.width=size+'px';d.style.height=size+'px';
-  d.style.setProperty('--color',colors[Math.floor(Math.random()*colors.length)]);
-  d.style.background=d.style.getPropertyValue('--color');
+  let c=colors[Math.floor(Math.random()*colors.length)];
+  d.style.background=c; d.style.boxShadow=`0 0 6px ${c}, 0 0 12px ${c}`;
   d.style.setProperty('--dur',(Math.random()*2+1.5)+'s');
   d.style.animationDelay=Math.random()*3+'s';
   starContainer.appendChild(d);
 }
 const searchInput=document.getElementById('searchInput');
 const cards=document.querySelectorAll('.tool-card');
-const noResult=document.getElementById('noResult');
-const count=document.getElementById('resultCount');
 searchInput.addEventListener('input',function(){
   let q=this.value.toLowerCase().trim();
   let visible=0;
@@ -144,8 +112,7 @@ searchInput.addEventListener('input',function(){
     if(name.includes(q)){card.style.display='block';visible++;}
     else{card.style.display='none';}
   });
-  count.textContent=visible+' Tools Found';
-  noResult.classList.toggle('hidden',visible>0);
+  document.getElementById('resultCount').textContent=visible+' Tools Found';
 });
 </script>
 </body>
