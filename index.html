@@ -1,40 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PakTools - Pakistan's No.1 Free Tools</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap');
-body{font-family:'Plus Jakarta Sans',sans-serif; background:#0f172a; background-image: radial-gradient(at 20% 30%, rgba(56,189,248,0.18) 0, transparent 50%), radial-gradient(at 80% 20%, rgba(139,92,246,0.20) 0, transparent 50%), radial-gradient(at 50% 90%, rgba(236,72,153,0.15) 0, transparent 50%); min-height:100vh;}
-.tool-card{transition:all.3s ease; border:1px solid rgba(255,255,255,0.7)}
-.tool-card:hover{transform:translateY(-7px); box-shadow:0 25px 50px -12px rgba(0,0,0,0.25)}
-</style>
-</head>
-<body>
-<header class="bg-white/90 backdrop-blur-xl sticky top-0 z-50 border-b">
-<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-<a class="font-black text-2xl">Pak<span class="text-blue-600">Tools</span>.pk <span class="ml-2 bg-slate-900 text-white text-[10px] px-3 py-1 rounded-full">DARK PRO</span></a>
-<div class="bg-gradient-to-r from-blue-600 to-violet-600 text-white px-5 py-2 rounded-full text-sm font-bold">10+ Live Tools</div>
-</div>
-</header>
+name: PakTools Full Dark Restore
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore All Tools With Dark Texture
+        run: |
+          python3 << 'PY'
+          import os
+          def make_page(title, inner_html, script=""):
+            return f"""<!DOCTYPE html>
+          <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>{title} - PakTools</title>
+          <script src="https://cdn.tailwindcss.com"></script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+          <style>@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap');
+          body{{font-family:'Plus Jakarta Sans',sans-serif;background:#0f172a;background-image:radial-gradient(at 20% 30%, rgba(56,189,248,0.18) 0px, transparent 50%), radial-gradient(at 80% 20%, rgba(139,92,246,0.20) 0px, transparent 50%), radial-gradient(at 50% 90%, rgba(236,72,153,0.15) 0px, transparent 50%);min-height:100vh}}
+          </style></head>
+          <body class="p-6">
+          <a href="index.html" class="inline-block bg-white px-5 py-2 rounded-full font-bold mb-6"><i class="fa fa-arrow-left"></i> Back to PakTools</a>
+          <div class="max-w-2xl mx-auto bg-white rounded-[2rem] shadow-2xl p-8">
+          <h1 class="text-3xl font-black text-center mb-6">{title}</h1>
+          {inner_html}
+          </div>
+          <script>{script}</script>
+          </body></html>"""
 
-<div class="max-w-7xl mx-auto px-6 mt-12 text-center">
-<h1 class="text-5xl font-black text-white tracking-tight">Tools that <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">actually work</span></h1>
-<p class="text-slate-400 mt-4 text-lg">Dark premium texture • Eye-friendly • 100% Free</p>
-</div>
+          tools = {}
 
-<main class="max-w-7xl mx-auto px-6 mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-<a href="qr-code-generator.html" class="tool-card bg-gradient-to-br from-blue-50 to-white p-6 rounded-[1.8rem] shadow-xl"><div class="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center"><i class="fa fa-qrcode"></i></div><h3 class="font-extrabold mt-5">QR Code Generator</h3><p class="text-xs text-slate-500 mt-1">Real QR + Download</p></a>
-<a href="password-generator.html" class="tool-card bg-gradient-to-br from-violet-50 to-white p-6 rounded-[1.8rem] shadow-xl"><div class="w-12 h-12 bg-violet-600 text-white rounded-2xl flex items-center justify-center"><i class="fa fa-key"></i></div><h3 class="font-extrabold mt-5">Password Generator</h3><p class="text-xs text-slate-500 mt-1">Strong & Secure</p></a>
-<a href="fancy-text-generator.html" class="tool-card bg-gradient-to-br from-pink-50 to-white p-6 rounded-[1.8rem] shadow-xl"><div class="w-12 h-12 bg-pink-600 text-white rounded-2xl flex items-center justify-center"><i class="fa fa-font"></i></div><h3 class="font-extrabold mt-5">Fancy Text</h3><p class="text-xs text-slate-500">Stylish Fonts</p></a>
-<a href="hashtag-generator.html" class="tool-card bg-gradient-to-br from-orange-50 to-white p-6 rounded-[1.8rem] shadow-xl"><div class="w-12 h-12 bg-orange-500 text-white rounded-2xl flex items-center justify-center"><i class="fa fa-hashtag"></i></div><h3 class="font-extrabold mt-5">Hashtag Generator</h3><p class="text-xs text-slate-500">Viral Hashtags</p></a>
-<a href="ai-bio-generator.html" class="tool-card bg-white p-6 rounded-[1.8rem] shadow-xl"><div class="w-12 h-12 bg-cyan-600 text-white rounded-2xl flex items-center justify-center"><i class="fa fa-robot"></i></div><h3 class="font-extrabold mt-5">AI Bio Generator</h3><p class="text-xs text-slate-500">Insta Bio</p></a>
-<a href="age-calculator.html" class="tool-card bg-white p-6 rounded-[1.8rem] shadow-xl"><div class="w-12 h-12 bg-emerald-600 text-white rounded-2xl flex items-center justify-center"><i class="fa fa-cake"></i></div><h3 class="font-extrabold mt-5">Age Calculator</h3><p class="text-xs text-slate-500">Exact Age</p></a>
-<a href="image-compressor.html" class="tool-card bg-white p-6 rounded-[1.8rem] shadow-xl"><div class="w-12 h-12 bg-amber-500 text-white rounded-2xl flex items-center justify-center"><i class="fa fa-compress"></i></div><h3 class="font-extrabold mt-5">Image Compressor</h3><p class="text-xs text-slate-500">20KB in 1 Sec</p></a>
-<a href="word-counter.html" class="tool-card bg-white p-6 rounded-[1.8rem] shadow-xl"><div class="w-12 h-12 bg-slate-800 text-white rounded-2xl flex items-center justify-center"><i class="fa fa-file"></i></div><h3 class="font-extrabold mt-5">Word Counter</h3><p class="text-xs text-slate-500">Count Words</p></a>
-</main>
-<footer class="text-center py-12 text-slate-500 text-sm">© 2026 PakTools.pk • Dark Premium Texture • Made in Pakistan</footer>
-</body>
-</html>
+          tools["word-counter.html"] = make_page("Word Counter",
+          '<textarea id="txt" class="w-full h-40 border-2 p-4 rounded-xl" placeholder="Type here..."></textarea><div class="grid grid-cols-3 gap-3 mt-4"><div class="bg-blue-50 p-4 rounded-xl text-center"><b id="w">0</b><p class="text-xs">Words</p></div><div class="bg-violet-50 p-4 rounded-xl text-center"><b id="c">0</b><p class="text-xs">Chars</p></div><div class="bg-pink-50 p-4 rounded-xl text-center"><b id="l">0</b><p class="text-xs">Lines</p></div></div>',
+          'txt=document.getElementById("txt");txt.addEventListener("input",()=>{let t=txt.value;document.getElementById("w").innerText=t.trim()?t.trim().split(/\\s+/).length:0;document.getElementById("c").innerText=t.length;document.getElementById("l").innerText=t?t.split("\\n").length:0})')
+
+          tools["qr-code-generator.html"] = make_page("QR Code Generator",
+          '<input id="qrtext" class="w-full border-2 p-4 rounded-xl" placeholder="Enter text or link"><button onclick="genQR()" class="w-full mt-4 bg-blue-600 text-white p-4 rounded-xl font-bold">Generate QR</button><div id="qrcode" class="flex justify-center mt-6"></div>',
+          'function genQR(){document.getElementById("qrcode").innerHTML="";let s=document.createElement("script");s.src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js";s.onload=()=>{new QRCode(document.getElementById("qrcode"),document.getElementById("qrtext").value)};document.body.appendChild(s)}')
+
+          tools["password-generator.html"] = make_page("Password Generator",
+          '<div class="flex gap-2"><input id="pass" class="flex-1 border-2 p-4 rounded-xl font-mono" readonly><button onclick="copyP()" class="bg-slate-900 text-white px-6 rounded-xl">Copy</button></div><input type="range" id="len" min="6" max="32" value="16" class="w-full mt-4"><button onclick="genPass()" class="w-full mt-4 bg-violet-600 text-white p-4 rounded-xl font-bold">Generate Strong Password</button>',
+          'function genPass(){let l=document.getElementById("len").value,chars="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*",p="";for(let i=0;i<l;i++)p+=chars[Math.floor(Math.random()*chars.length)];document.getElementById("pass").value=p}function copyP(){navigator.clipboard.writeText(document.getElementById("pass").value);alert("Copied!")}genPass()')
+
+          tools["fancy-text-generator.html"] = make_page("Fancy Text Generator",
+          '<textarea id="ftxt" class="w-full border-2 p-4 rounded-xl" placeholder="Muhammad">Muhammad</textarea><button onclick="genFancy()" class="w-full mt-4 bg-blue-600 text-white p-4 rounded-xl font-bold">Generate</button><div id="fancyout" class="mt-4 space-y-2"></div>',
+          'function genFancy(){let t=document.getElementById("ftxt").value;let map={"a":"𝓪","b":"𝓫","c":"𝓬"};let fancy=t.split("").map(c=>map[c.toLowerCase()]||c).join("");document.getElementById("fancyout").innerHTML=`<div class="bg-slate-50 p-3 rounded-xl">${t} - Bold</div><div class="bg-slate-50 p-3 rounded-xl">${fancy} - Fancy by PakTools</div>`}genFancy()')
+
+          tools["hashtag-generator.html"] = make_page("Hashtag Generator",
+          '<input id="htag" class="w-full border-2 p-4 rounded-xl" placeholder="Enter topic e.g. cricket"><button onclick="genHash()" class="w-full mt-4 bg-orange-500 text-white p-4 rounded-xl font-bold">Generate Hashtags</button><div id="hout" class="mt-4 bg-slate-50 p-4 rounded-xl"></div>',
+          'function genHash(){let t=document.getElementById("htag").value||"viral";document.getElementById("hout").innerText=`#${t} #${t}love #${t}viral #${t}pakistan #${t}trending #${t}2026 #instagood #paktools`}')
+
+          tools["ai-bio-generator.html"] = make_page("AI Bio Generator",
+          '<input id="bioname" class="w-full border-2 p-4 rounded-xl" placeholder="Your name"><button onclick="genBio()" class="w-full mt-4 bg-cyan-600 text-white p-4 rounded-xl font-bold">Generate Bio</button><div id="bout" class="mt-4 bg-slate-50 p-4 rounded-xl"></div>',
+          'function genBio(){let n=document.getElementById("bioname").value||"Pak";document.getElementById("bout").innerText=`✨ ${n} | Dreamer | Creator | Pakistan ❤️ | Living my best life | PakTools.pk`}')
+
+          tools["age-calculator.html"] = make_page("Age Calculator",
+          '<input id="dob" type="date" class="w-full border-2 p-4 rounded-xl"><button onclick="calcAge()" class="w-full mt-4 bg-emerald-600 text-white p-4 rounded-xl font-bold">Calculate</button><div id="aout" class="mt-4 text-center font-bold text-xl"></div>',
+          'function calcAge(){let dob=new Date(document.getElementById("dob").value);let diff=Date.now()-dob.getTime();let age=new Date(diff);document.getElementById("aout").innerText=`You are ${Math.abs(age.getUTCFullYear()-1970)} years old`}')
+
+          tools["image-compressor.html"] = make_page("Image Compressor",
+          '<input type="file" id="img" accept="image/*" class="w-full"><canvas id="can" class="hidden"></canvas><button onclick="compress()" class="w-full mt-4 bg-amber-500 text-white p-4 rounded-xl font-bold">Compress to 20KB</button><div id="cout" class="mt-4"></div>',
+          'function compress(){let file=document.getElementById("img").files[0];let img=new Image();img.onload=()=>{let c=document.getElementById("can");c.width=img.width*0.5;c.height=img.height*0.5;c.getContext("2d").drawImage(img,0,0,c.width,c.height);let link=document.createElement("a");link.download="compressed.jpg";link.href=c.toDataURL("image/jpeg",0.2);link.innerText="Download Compressed";link.className="bg-green-600 text-white px-4 py-2 rounded-xl inline-block";document.getElementById("cout").appendChild(link)};img.src=URL.createObjectURL(file)}')
+
+          tools["youtube-thumbnail-downloader.html"] = make_page("YouTube Thumbnail Downloader",
+          '<input id="yt" class="w-full border-2 p-4 rounded-xl" placeholder="Paste YouTube Link"><button onclick="getThumb()" class="w-full mt-4 bg-red-600 text-white p-4 rounded-xl font-bold">Get Thumbnail</button><div id="yout" class="mt-4"></div>',
+          'function getThumb(){let url=document.getElementById("yt").value;let id=url.split("v=")[1]?.split("&")[0]||url.split("/").pop();document.getElementById("yout").innerHTML=`<img src="https://img.youtube.com/vi/${id}/maxresdefault.jpg" class="rounded-xl"><a href="https://img.youtube.com/vi/${id}/maxresdefault.jpg" download class="bg-slate-900 text-white px-4 py-2 rounded-xl mt-2 inline-block">Download HD</a>`}')
+
+          tools["pdf-to-jpg.html"] = make_page("PDF to JPG",
+          '<input type="file" class="w-full border-2 p-4 rounded-xl"><p class="mt-4 text-center text-slate-500">Upload PDF and we will convert (Demo - Full feature coming)</p><button class="w-full mt-4 bg-zinc-800 text-white p-4 rounded-xl font-bold">Convert Now</button>','')
+
+          for name, html in tools.items():
+              with open(name, 'w', encoding='utf-8') as f:
+                  f.write(html)
+              print(f"Fixed {name}")
+          PY
+      - name: Push
+        run: |
+          git config user.name "PakTools Bot"
+          git config user.email "bot@paktools.pk"
+          git add.
+          git commit -m "Fix all tools with Dark Texture Pro design" || echo "no changes"
+          git push
