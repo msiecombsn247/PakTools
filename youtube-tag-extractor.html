@@ -1,12 +1,19 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>YouTube Tag Extractor</title><script src="https://cdn.tailwindcss.com"></script></head><body class="bg-[#0b1220] p-6"><a href="index.html" class="bg-white px-5 py-2 rounded-full font-bold">← Back</a><div class="max-w-xl mx-auto bg-white rounded-[2rem] p-8 mt-6 text-center"><h1 class="text-3xl font-black">YouTube Tag Extractor</h1><p class="text-gray-500">Get Viral Tags + Thumbnail</p><input id="link" placeholder="Paste YouTube Video Link" class="w-full border-2 p-3 rounded-xl mt-6"><button onclick="extract()" class="w-full bg-red-600 text-white py-3 rounded-xl mt-4 font-bold">Extract Info</button><div id="result" class="mt-6 text-left hidden"><p class="font-bold">Title:</p><p id="title" class="bg-gray-100 p-2 rounded"></p><p class="font-bold mt-3">Tags (Copy):</p><textarea id="tags" class="w-full bg-gray-100 p-2 rounded h-24"></textarea><img id="thumb" class="mt-4 rounded-xl w-full"><a id="tdown" target="_blank" class="bg-black text-white px-5 py-2 rounded-full mt-3 inline-block">Download Thumbnail HD</a></div></div><script>
-function extract(){
-  let url=link.value;let id=url.split("v=")[1];if(!id)id=url.split("/").pop();if(id.includes("&"))id=id.split("&")[0];
-  if(!id)return alert("Valid Link Paste Karo");
-  let thumb=`https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
-  document.getElementById('thumb').src=thumb;
-  document.getElementById('tdown').href=thumb;
-  document.getElementById('title').innerText="Video ID: "+id+" (Title API need key - Add later)";
-  document.getElementById('tags').value="#youtube #viral #paktools #"+id+" #trending #youtubeshorts";
-  document.getElementById('result').classList.remove('hidden');
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>YouTube Tools</title><script src="https://cdn.tailwindcss.com"></script></head><body class="bg-[#0b1220] p-6"><a href="index.html" class="bg-white px-5 py-2 rounded-full font-bold">← Back</a><div class="max-w-xl mx-auto bg-white rounded-[2rem] p-8 mt-6 text-center"><h1 class="text-3xl font-black">YouTube Thumbnail & Info</h1><input id="link" placeholder="https://youtube.com/watch?v=..." class="w-full border-2 p-3 rounded-xl mt-6"><button onclick="go()" class="w-full bg-red-600 text-white py-3 rounded-xl mt-4 font-bold">Get Data</button><div id="box" class="hidden mt-6"><img id="thumb" class="w-full rounded-xl"><p id="vid" class="mt-3 font-mono text-sm bg-gray-100 p-2 rounded"></p><a id="d1" target="_blank" class="bg-black text-white px-5 py-2 rounded-full mt-3 inline-block w-full">Download HD Thumbnail</a><a id="d2" target="_blank" class="bg-blue-600 text-white px-5 py-2 rounded-full mt-2 inline-block w-full">Download SD Thumbnail</a></div></div><script>
+function go(){
+  let url=document.getElementById('link').value.trim();
+  if(!url){alert("Link Paste Karo");return;}
+  let id="";
+  if(url.includes("v=")){id=url.split("v=")[1].split("&")[0];}
+  else if(url.includes("youtu.be/")){id=url.split("youtu.be/")[1].split("?")[0];}
+  else if(url.includes("shorts/")){id=url.split("shorts/")[1].split("?")[0];}
+  else{id=url;}
+  if(!id){alert("Valid YouTube Link Daalo");return;}
+  let max="https://img.youtube.com/vi/"+id+"/maxresdefault.jpg";
+  let sd="https://img.youtube.com/vi/"+id+"/hqdefault.jpg";
+  document.getElementById('thumb').src=max;
+  document.getElementById('d1').href=max;
+  document.getElementById('d2').href=sd;
+  document.getElementById('vid').innerText="Video ID: "+id;
+  document.getElementById('box').classList.remove('hidden');
 }
 </script></body></html>
