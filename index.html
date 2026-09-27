@@ -9,8 +9,6 @@
 <meta name="author" content="PakTools">
 <link rel="canonical" href="https://msiecombsn247.github.io/PakTools/">
 <meta property="og:title" content="PakTools - All in One Premium Tools">
-<meta property="og:description" content="50+ Free AI Tools - Search any tool instantly. Made in Pakistan.">
-<meta property="og:url" content="https://msiecombsn247.github.io/PakTools/">
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -42,7 +40,7 @@ body{margin:0;background:#05020a;color:white;overflow-x:hidden}
   border:1px solid rgba(168,85,247,0.35);border-radius:18px;padding:18px;text-align:center;transition:0.3s;display:block;text-decoration:none;color:white
 }
 .tool-card:hover{transform:translateY(-6px) scale(1.02);border-color:#22d3ee;box-shadow:0 0 30px rgba(34,211,238,0.5)}
-.tool-icon{width:72px;height:72px;margin:0 auto 10px;border-radius:18px;background:linear-gradient(135deg,#22d3ee,#a855f7);display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 0 20px rgba(168,85,247,0.6), inset 0 1px 2px rgba(255,255,255,0.8)}
+.tool-icon{width:78px;height:78px;margin:0 auto 12px;border-radius:20px;background:linear-gradient(135deg,#22d3ee 0%, #a855f7 100%);display:flex;align-items:center;justify-content:center;font-size:38px;box-shadow:0 0 20px rgba(168,85,247,0.6), inset 0 1px 3px rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.3)}
 .star{position:absolute;border-radius:50%;animation:twinkle var(--dur) infinite ease-in-out;box-shadow:0 0 6px var(--color), 0 0 12px var(--color)}
 @keyframes twinkle{0%,100%{opacity:0.2;transform:scale(0.8)}50%{opacity:1;transform:scale(1.4)}}
 </style>
@@ -78,7 +76,7 @@ body{margin:0;background:#05020a;color:white;overflow-x:hidden}
 </div>
 <div class="relative h-[420px] hidden md:block">
 <div class="icon3d float w-[100px] h-[100px] top-5 right-[180px] text-4xl">🛡️</div>
-<div class="icon3d float2 w-[120px] h-[85px] top-[130px] right-[30px] text-3xl">☁️📊</div>
+<div class="icon3d float2 w-[120px] h-[85px] top-[130px] right-[30px] text-3xl">☁️</div>
 <div class="icon3d float w-[95px] h-[95px] top-[250px] right-[15px] rounded-full text-4xl">⚙️</div>
 <div class="icon3d float2 w-[90px] h-[90px] bottom-10 right-[90px] text-3xl">🧠</div>
 </div>
@@ -87,23 +85,34 @@ body{margin:0;background:#05020a;color:white;overflow-x:hidden}
 
 <section id="tools" class="bg-[#0a0620] py-14">
 <div class="max-w-7xl mx-auto px-4">
-<div class="flex flex-col md:flex-row justify-between items-center gap-4">
-<h2 class="text-3xl font-black">All Premium Tools</h2>
-<p id="resultCount" class="text-purple-300 text-sm">10 Tools Found</p>
-</div>
+<div class="flex justify-between items-center"><h2 class="text-3xl font-black">All Premium Tools</h2><p id="resultCount" class="text-purple-300 text-sm">10 Tools Found</p></div>
+
 <div id="toolsGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
-<a href="background-remover.html" class="tool-card" data-name="bg remover background remover"><div class="tool-icon">✂️</div><p class="font-bold text-[13px]">BG Remover</p><p class="text-[11px] text-gray-400 mt-1">Remove Background</p></a>
-<a href="image-compressor.html" class="tool-card" data-name="image compressor compress 20kb 50kb"><div class="tool-icon">🗜️</div><p class="font-bold text-[13px]">Image Compressor</p><p class="text-[11px] text-gray-400 mt-1">20KB - 100KB</p></a>
+
+<!-- FIXED CLEAR ICONS -->
+<a href="background-remover.html" class="tool-card" data-name="bg remover background"><div class="tool-icon">✂️</div><p class="font-bold text-[13px]">BG Remover</p><p class="text-[11px] text-gray-400 mt-1">Remove Background</p></a>
+
+<a href="image-compressor.html" class="tool-card" data-name="image compressor"><div class="tool-icon">🗜️</div><p class="font-bold text-[13px]">Image Compressor</p><p class="text-[11px] text-gray-400 mt-1">20KB - 100KB</p></a>
+
 <a href="qr-code-generator.html" class="tool-card" data-name="qr code generator"><div class="tool-icon">🔳</div><p class="font-bold text-[13px]">QR Generator</p><p class="text-[11px] text-gray-400 mt-1">Create QR</p></a>
-<a href="age-calculator.html" class="tool-card" data-name="age calculator birthday"><div class="tool-icon">🎂</div><p class="font-bold text-[13px]">Age Calculator</p><p class="text-[11px] text-gray-400 mt-1">Exact Age</p></a>
-<a href="word-counter.html" class="tool-card" data-name="word counter text"><div class="tool-icon">📝</div><p class="font-bold text-[13px]">Word Counter</p><p class="text-[11px] text-gray-400 mt-1">Count Words</p></a>
-<a href="password-generator.html" class="tool-card" data-name="password generator lock strong"><div class="tool-icon">🔐</div><p class="font-bold text-[13px]">Password Generator</p><p class="text-[11px] text-gray-400 mt-1">Strong Pass</p></a>
-<a href="pdf-to-jpg.html" class="tool-card" data-name="pdf to jpg convert"><div class="tool-icon">📄➡️🖼️</div><p class="font-bold text-[13px]">PDF to JPG</p><p class="text-[11px] text-gray-400 mt-1">High Quality</p></a>
-<a href="ai-bio-generator.html" class="tool-card" data-name="ai bio generator robot"><div class="tool-icon">🤖</div><p class="font-bold text-[13px]">AI Bio Generator</p><p class="text-[11px] text-gray-400 mt-1">Viral Bio</p></a>
-<a href="youtube-tags.html" class="tool-card" data-name="youtube tags extractor yt"><div class="tool-icon">🏷️</div><p class="font-bold text-[13px]">YouTube Tags</p><p class="text-[11px] text-gray-400 mt-1">Extractor</p></a>
-<a href="youtube-thumbnail-downloader.html" class="tool-card" data-name="youtube thumbnail downloader yt image"><div class="tool-icon">🖼️⬇️</div><p class="font-bold text-[13px]">YT Thumbnail</p><p class="text-[11px] text-gray-400 mt-1">Downloader</p></a>
+
+<a href="age-calculator.html" class="tool-card" data-name="age calculator"><div class="tool-icon">🎂</div><p class="font-bold text-[13px]">Age Calculator</p><p class="text-[11px] text-gray-400 mt-1">Exact Age</p></a>
+
+<a href="word-counter.html" class="tool-card" data-name="word counter"><div class="tool-icon">📝</div><p class="font-bold text-[13px]">Word Counter</p><p class="text-[11px] text-gray-400 mt-1">Count Words</p></a>
+
+<a href="password-generator.html" class="tool-card" data-name="password generator"><div class="tool-icon">🔐</div><p class="font-bold text-[13px]">Password Generator</p><p class="text-[11px] text-gray-400 mt-1">Strong Pass</p></a>
+
+<!-- PDF TO JPG - NOW SINGLE CLEAR ICON -->
+<a href="pdf-to-jpg.html" class="tool-card" data-name="pdf to jpg"><div class="tool-icon">📄</div><p class="font-bold text-[13px]">PDF to JPG</p><p class="text-[11px] text-gray-400 mt-1">High Quality</p></a>
+
+<a href="ai-bio-generator.html" class="tool-card" data-name="ai bio generator"><div class="tool-icon">🤖</div><p class="font-bold text-[13px]">AI Bio Generator</p><p class="text-[11px] text-gray-400 mt-1">Viral Bio</p></a>
+
+<a href="youtube-tags.html" class="tool-card" data-name="youtube tags"><div class="tool-icon">🏷️</div><p class="font-bold text-[13px]">YouTube Tags</p><p class="text-[11px] text-gray-400 mt-1">Extractor</p></a>
+
+<a href="youtube-thumbnail-downloader.html" class="tool-card" data-name="youtube thumbnail downloader"><div class="tool-icon">⬇️</div><p class="font-bold text-[13px]">YT Thumbnail</p><p class="text-[11px] text-gray-400 mt-1">Downloader</p></a>
+
 </div>
-<p id="noResult" class="hidden text-center mt-10 text-gray-400">No tools found for your search 😔</p>
+<p id="noResult" class="hidden text-center mt-10 text-gray-400">No tools found 😔</p>
 </div>
 </section>
 
