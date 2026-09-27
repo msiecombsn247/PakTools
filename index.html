@@ -1,232 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PakTools - 15+ Free Premium Tools | All in One Tools Pakistan</title>
-<meta name="description" content="PakTools - 15+ Free Premium Tools. BG Remover, Image Resizer, JPG to PNG, Percentage Calculator, BMI, CNIC Info, QR Generator, YouTube Tools.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PakTools - 23 Free Online Tools - All in One Toolkit</title>
+<meta name="description" content="PakTools - Pakistan's No.1 Free Online Tools. 23+ Tools: BG Remover, Image Compressor, PDF Tools, AI Tools, Text to Speech, Image to Text, Paraphraser & more.">
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{font-family:'Inter',sans-serif}
-body{margin:0;background:#05020a;color:white;overflow-x:hidden}
-.hero{position:relative;min-height:90vh;background:#05020a;overflow:hidden}
-.hero::before{
-  content:'';position:absolute;inset:0;z-index:0;
-  background:
-    radial-gradient(ellipse 600px 280px at 20% 55%, rgba(180,70,255,0.9) 0%, transparent 65%),
-    radial-gradient(ellipse 500px 220px at 42% 52%, rgba(220,80,255,0.85) 0%, transparent 65%),
-    radial-gradient(ellipse 750px 300px at 65% 58%, rgba(190,60,255,0.8) 0%, transparent 70%),
-    radial-gradient(ellipse 300px 130px at 32% 48%, rgba(255,255,255,0.9) 0%, transparent 50%);
-}
-.glass{background:rgba(255,255,255,0.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.15)}
-.glow-btn{background:linear-gradient(90deg,#22d3ee,#a855f7);box-shadow:0 0 30px rgba(168,85,247,0.7)}
-.tool-card{
-  background:linear-gradient(145deg,rgba(40,20,90,0.85),rgba(20,10,60,0.9));
-  border:1px solid rgba(168,85,247,0.35);border-radius:18px;padding:18px;text-align:center;transition:0.3s;display:block;text-decoration:none;color:white;position:relative;overflow:hidden
-}
-.tool-card:hover{transform:translateY(-6px) scale(1.02);border-color:#22d3ee;box-shadow:0 0 30px rgba(34,211,238,0.5)}
-.tool-card.top-rank::after{content:'🔥 TOP';position:absolute;top:8px;right:8px;background:linear-gradient(90deg,#ff6a00,#ee0979);font-size:8px;font-weight:900;padding:2px 6px;border-radius:20px}
-.tool-icon{width:78px;height:78px;margin:0 auto 12px;border-radius:20px;background:linear-gradient(135deg,#22d3ee 0%, #a855f7 100%);display:flex;align-items:center;justify-content:center;font-size:38px;box-shadow:0 0 20px rgba(168,85,247,0.6), inset 0 1px 3px rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.3)}
-.star{position:absolute;border-radius:50%;animation:twinkle var(--dur) infinite ease-in-out}
-@keyframes twinkle{0%,100%{opacity:0.2;transform:scale(0.8)}50%{opacity:1;transform:scale(1.4)}}
-
-/* 3D GLOSSY FLOATING ICONS - RIGHT SIDE */
-.floating-wrap{position:absolute;right:0;top:0;width:55%;height:100%;z-index:2;pointer-events:none}
-.f-icon{
-  position:absolute;
-  width:72px;height:72px;
-  border-radius:22px;
-  background:linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.08) 30%, rgba(168,85,247,0.4) 100%);
-  backdrop-filter:blur(12px);
-  border:1.5px solid rgba(255,255,255,0.35);
-  display:flex;align-items:center;justify-content:center;
-  font-size:34px;
-  box-shadow:
-    0 8px 32px rgba(168,85,247,0.4),
-    0 0 0 1px rgba(255,255,255,0.2) inset,
-    0 2px 8px rgba(255,255,255,0.6) inset,
-    0 -4px 12px rgba(0,0,0,0.3) inset;
-  transition:transform 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
-  pointer-events:none;
-  animation: floatY var(--floatDur) ease-in-out infinite;
-  user-select:none;
-}
-.f-icon::after{
-  content:'';
-  position:absolute;
-  top:8px;left:10px;right:18px;height:18px;
-  background:linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%);
-  border-radius:10px;
-  filter:blur(1px);
-}
-@keyframes floatY{0%,100%{transform:translateY(0px) rotate(var(--rot))}50%{transform:translateY(-18px) rotate(var(--rot))}}
-
-/* Positions - Desktop */
-.f-icon:nth-child(1){left:10%;top:18%;--rot:-8deg;--floatDur:3.2s}
-.f-icon:nth-child(2){left:35%;top:12%;--rot:12deg;--floatDur:3.8s}
-.f-icon:nth-child(3){left:65%;top:20%;--rot:-5deg;--floatDur:4.1s}
-.f-icon:nth-child(4){left:15%;top:52%;--rot:10deg;--floatDur:3.5s}
-.f-icon:nth-child(5){left:48%;top:58%;--rot:-12deg;--floatDur:4.3s}
-.f-icon:nth-child(6){left:75%;top:55%;--rot:6deg;--floatDur:3s}
-
-@media(max-width:768px){
- .floating-wrap{display:none}
-}
+body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
+.galaxy{position:absolute; width:900px; height:900px; border-radius:50%; filter:blur(100px); opacity:.5; animation:float 20s infinite alternate;}
+@keyframes float{0%{transform:translate(-10%,-10%)}100%{transform:translate(10%,10%) scale(1.15)}}
+.stars{position:absolute; inset:0; pointer-events:none; z-index:1;}
+.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%; animation:twinkle 3s infinite;}
+@keyframes twinkle{0%,100%{opacity:0.2}50%{opacity:1}}
+.tool-card{background:linear-gradient(145deg,rgba(16,32,94,0.9) 0%,rgba(10,23,68,0.9) 100%); border:1px solid rgba(59,130,246,0.25); box-shadow:0 0 20px rgba(37,99,235,0.15), inset 0 1px 0 rgba(150,200,255,0.1); backdrop-filter:blur(12px); border-radius:1.5rem; padding:20px; transition:0.3s; position:relative; overflow:hidden; cursor:pointer; display:block; text-decoration:none; color:white;}
+.tool-card:hover{transform:translateY(-6px) scale(1.02); border-color:rgba(34,211,238,0.6); box-shadow:0 0 35px rgba(59,130,246,0.45);}
+.tool-card.new::after{content:"NEW"; position:absolute; top:12px; right:12px; background:linear-gradient(90deg,#22d3ee,#3b82f6); color:black; font-size:9px; font-weight:900; padding:3px 8px; border-radius:999px;}
+.glow-btn{background:linear-gradient(90deg,#22d3ee,#3b82f6); box-shadow:0 0 25px rgba(59,130,246,0.6)}
+.filter-btn{padding:8px 16px; border-radius:999px; font-size:12px; font-weight:700; border:1px solid rgba(255,255,255,0.15); background:rgba(0,0,0,0.3); cursor:pointer; transition:0.2s;}
+.filter-btn.active{background:linear-gradient(90deg,#22d3ee,#3b82f6); color:black; border-color:transparent;}
+.search-box{background:rgba(0,0,0,0.4); border:1px solid rgba(59,130,246,0.3); backdrop-filter:blur(10px);}
 </style>
 </head>
-<body>
+<body class="relative min-h-screen">
+<div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-300px] left-[5%]"></div>
+<div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-400px] right-[0%]"></div>
+<div class="stars" id="stars"></div>
 
-<div class="hero" id="heroArea">
-<div id="stars" class="absolute inset-0 z-0 pointer-events-none"></div>
-
-<!-- FLOATING 3D ICONS RIGHT SIDE -->
-<div class="floating-wrap" id="floatingWrap">
-  <div class="f-icon">✂️</div>
-  <div class="f-icon">📐</div>
-  <div class="f-icon">🔳</div>
-  <div class="f-icon">%</div>
-  <div class="f-icon">🪪</div>
-  <div class="f-icon">⚖️</div>
-</div>
-
-<header class="relative z-20 max-w-7xl mx-auto px-3 md:px-4 pt-3 md:pt-4">
-<div class="glass rounded-full px-3 md:px-6 py-2.5 md:py-3 flex justify-between items-center">
-<a href="index.html" style="text-decoration:none;color:white" class="font-black text-[20px] md:text-2xl flex items-center gap-2 shrink-0"><div class="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-black text-sm">P</div> PakTools</a>
-<nav class="hidden md:flex gap-6 text-sm">
-<a href="index.html" style="text-decoration:none" class="text-white border-b-2 border-cyan-400 pb-1">Home</a>
-<a href="#tools" style="text-decoration:none" class="text-gray-300 hover:text-white">Tools</a>
-<a href="contact.html" style="text-decoration:none" class="text-gray-300 hover:text-white">Contact</a>
-</nav>
-<div class="flex gap-2 items-center shrink-0">
-<a href="contact.html" style="text-decoration:none;color:white" class="hidden md:block glass px-4 py-2 rounded-full text-sm">Contact</a>
-<a href="#tools" style="text-decoration:none;white-space:nowrap" class="bg-white text-black font-bold px-4 md:px-5 py-2 rounded-full text-[13px] md:text-sm">Get Started</a>
-</div>
+<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/80 backdrop-blur-xl">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<div class="font-black text-xl flex items-center gap-2"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black">P</div>PakTools</div>
+<div class="hidden md:flex items-center gap-2 text-[11px] bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 rounded-full text-cyan-300"><span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span><span id="toolCountHead">23</span> Tools Online</div>
 </div>
 </header>
 
-<section class="relative z-10 max-w-7xl mx-auto px-5 md:px-8 pt-14 md:pt-24 pb-10 flex">
-<div class="w-full md:w-[48%]">
-<h1 class="text-[44px] md:text-[68px] font-black leading-[0.9] tracking-tight">
-<span class="text-white">All in One</span><br>
-<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-purple-300 to-purple-400">Premium Tools</span>
-</h1>
-<p class="mt-5 text-gray-300 max-w-lg text-[14px] md:text-[16px] leading-6">
-15+ Free Tools Ranked by Popularity - Search any tool instantly below.
-</p>
-<div class="mt-6 relative max-w-[360px]">
-<input id="searchInput" type="text" placeholder="🔍 Search any tool... (e.g. Resize, CNIC, BMI)" class="w-full glass rounded-full px-6 py-3.5 text-sm text-white placeholder-gray-400 outline-none border border-white/20">
+<main class="relative z-10 max-w-7xl mx-auto px-6 py-10">
+
+<div class="text-center max-w-3xl mx-auto">
+<h1 class="text-4xl md:text-6xl font-black leading-tight">Pakistan's No.1<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">All-in-One Toolkit</span></h1>
+<p class="mt-4 text-gray-400 text-[14px] md:text-[15px]">23 Free Online Tools - Image Tools, PDF Tools, AI Tools, YouTube Tools, Calculators & More - 100% Free, No Signup</p>
+
+<div class="mt-6 flex justify-center gap-3">
+<div class="search-box rounded-full px-5 py-3 flex items-center gap-3 w-full max-w-md">
+<span>🔍</span><input id="searchInput" oninput="filterTools()" type="text" placeholder="Search 23 tools... e.g. BG Remover, PDF, AI" class="bg-transparent outline-none text-sm w-full placeholder:text-gray-500">
 </div>
-<div class="mt-7 flex gap-3 flex-wrap items-center"><a href="#tools" style="text-decoration:none" class="glow-btn text-white font-bold px-7 py-3 rounded-full inline-block text-sm">Explore Top Tools →</a><p class="text-[11px] text-gray-400">🔥 Top Ranked First</p></div>
-</div>
-<div class="hidden md:block w-[52%]"></div>
-</section>
 </div>
 
-<section id="tools" class="bg-[#0a0620] py-14">
-<div class="max-w-7xl mx-auto px-4">
-<div class="flex justify-between items-center"><h2 class="text-2xl md:text-3xl font-black">Top 15 Tools - Ranked</h2><p id="resultCount" class="text-purple-300 text-sm">15 Tools Found</p></div>
-<div id="toolsGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
-<a href="background-remover.html" class="tool-card top-rank" data-name="bg remover background remove"><div class="tool-icon">✂️</div><p class="font-bold text-[13px]">BG Remover</p><p class="text-[11px] text-cyan-300 mt-1">#1 Trending</p></a>
-<a href="image-compressor.html" class="tool-card top-rank" data-name="image compressor compress 20kb 100kb"><div class="tool-icon">🗜️</div><p class="font-bold text-[13px]">Image Compressor</p><p class="text-[11px] text-cyan-300 mt-1">#2 Popular</p></a>
-<a href="image-resizer.html" class="tool-card top-rank" data-name="image resizer passport size 300x300 resize cnic photo"><div class="tool-icon">📐</div><p class="font-bold text-[13px]">Image Resizer</p><p class="text-[11px] text-cyan-300 mt-1">#3 Passport Size</p></a>
-<a href="jpg-to-png.html" class="tool-card top-rank" data-name="jpg to png png to jpg converter image convert"><div class="tool-icon">🔄</div><p class="font-bold text-[13px]">JPG to PNG</p><p class="text-[11px] text-cyan-300 mt-1">#4 Converter</p></a>
-<a href="percentage-calculator.html" class="tool-card top-rank" data-name="percentage calculator marks percent discount"><div class="tool-icon">%</div><p class="font-bold text-[13px]">Percentage Calc</p><p class="text-[11px] text-cyan-300 mt-1">#5 Students</p></a>
-<a href="bmi-calculator.html" class="tool-card top-rank" data-name="bmi calculator body mass index weight health"><div class="tool-icon">⚖️</div><p class="font-bold text-[13px]">BMI Calculator</p><p class="text-[11px] text-cyan-300 mt-1">#6 Health</p></a>
-<a href="age-calculator.html" class="tool-card" data-name="age calculator dob exact age"><div class="tool-icon">🎂</div><p class="font-bold text-[13px]">Age Calculator</p><p class="text-[11px] text-gray-400 mt-1">Exact Age</p></a>
-<a href="cnic-information.html" class="tool-card" data-name="cnic information checker validator nadra cnic"><div class="tool-icon">🪪</div><p class="font-bold text-[13px]">CNIC Info</p><p class="text-[11px] text-gray-400 mt-1">Validator</p></a>
-<a href="qr-code-generator.html" class="tool-card" data-name="qr code generator create qr"><div class="tool-icon">🔳</div><p class="font-bold text-[13px]">QR Generator</p><p class="text-[11px] text-gray-400 mt-1">Create QR</p></a>
-<a href="youtube-thumbnail-downloader.html" class="tool-card" data-name="youtube thumbnail downloader yt thumb"><div class="tool-icon">⬇️</div><p class="font-bold text-[13px]">YT Thumbnail</p><p class="text-[11px] text-gray-400 mt-1">Downloader</p></a>
-<a href="youtube-tags.html" class="tool-card" data-name="youtube tags extractor seo"><div class="tool-icon">🏷️</div><p class="font-bold text-[13px]">YouTube Tags</p><p class="text-[11px] text-gray-400 mt-1">Extractor</p></a>
-<a href="word-counter.html" class="tool-card" data-name="word counter character count text"><div class="tool-icon">📝</div><p class="font-bold text-[13px]">Word Counter</p><p class="text-[11px] text-gray-400 mt-1">Count Words</p></a>
-<a href="password-generator.html" class="tool-card" data-name="password generator strong pass"><div class="tool-icon">🔐</div><p class="font-bold text-[13px]">Password Gen</p><p class="text-[11px] text-gray-400 mt-1">Strong Pass</p></a>
-<a href="pdf-to-jpg.html" class="tool-card" data-name="pdf to jpg converter"><div class="tool-icon">📄</div><p class="font-bold text-[13px]">PDF to JPG</p><p class="text-[11px] text-gray-400 mt-1">High Quality</p></a>
-<a href="ai-bio-generator.html" class="tool-card" data-name="ai bio generator instagram bio"><div class="tool-icon">🤖</div><p class="font-bold text-[13px]">AI Bio Generator</p><p class="text-[11px] text-gray-400 mt-1">Viral Bio</p></a>
+<div class="mt-6 grid grid-cols-3 gap-3 max-w-lg mx-auto">
+<div class="bg-white/5 border border-white/10 rounded-xl py-3"><p class="text-xl font-black text-cyan-300" id="countTools">23</p><p class="text-[10px] text-gray-400">Total Tools</p></div>
+<div class="bg-white/5 border border-white/10 rounded-xl py-3"><p class="text-xl font-black text-cyan-300">100%</p><p class="text-[10px] text-gray-400">Free Forever</p></div>
+<div class="bg-white/5 border border-white/10 rounded-xl py-3"><p class="text-xl font-black text-cyan-300">1M+</p><p class="text-[10px] text-gray-400">Users</p></div>
 </div>
-<p id="noResult" class="hidden text-center mt-10 text-gray-400">No tools found 😔</p>
 </div>
-</section>
 
-<footer class="bg-[#05020a] border-t border-white/10 py-5 text-center text-xs text-gray-500">© 2026 PakTools - 15 Premium Tools | <a href="privacy-policy.html" style="color:#a78bfa">Privacy</a> | <a href="about.html" style="color:#a78bfa">About</a> | <a href="contact.html" style="color:#a78bfa">Contact</a></footer>
+<div class="mt-10 flex flex-wrap gap-2 justify-center" id="filterWrap">
+<button class="filter-btn active" onclick="setFilter('all',this)">All Tools</button>
+<button class="filter-btn" onclick="setFilter('image',this)">🖼️ Image Tools</button>
+<button class="filter-btn" onclick="setFilter('pdf',this)">📄 PDF Tools</button>
+<button class="filter-btn" onclick="setFilter('ai',this)">🤖 AI Tools</button>
+<button class="filter-btn" onclick="setFilter('text',this)">📝 Text Tools</button>
+<button class="filter-btn" onclick="setFilter('youtube',this)">▶️ YouTube</button>
+<button class="filter-btn" onclick="setFilter('calc',this)">🧮 Calculators</button>
+<button class="filter-btn" onclick="setFilter('design',this)">🎨 Design</button>
+</div>
+
+<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" id="toolsGrid">
+
+<!-- IMAGE TOOLS -->
+<a href="bg-remover.html" class="tool-card" data-cat="image" data-name="background remover bg remover"><div class="text-3xl">🪄</div><h3 class="mt-3 font-bold text-[15px]">BG Remover</h3><p class="text-[12px] text-gray-400 mt-1">Remove background from image instantly</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Image Tool</span></a>
+
+<a href="image-compressor.html" class="tool-card" data-cat="image" data-name="image compressor compress"><div class="text-3xl">🗜️</div><h3 class="mt-3 font-bold text-[15px]">Image Compressor</h3><p class="text-[12px] text-gray-400 mt-1">Compress JPG, PNG without quality loss</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Image Tool</span></a>
+
+<a href="image-resizer.html" class="tool-card" data-cat="image" data-name="image resizer resize"><div class="text-3xl">📐</div><h3 class="mt-3 font-bold text-[15px]">Image Resizer</h3><p class="text-[12px] text-gray-400 mt-1">Resize image to any size in KB & pixels</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Image Tool</span></a>
+
+<a href="jpg-to-png.html" class="tool-card" data-cat="image" data-name="jpg to png converter"><div class="text-3xl">🔄</div><h3 class="mt-3 font-bold text-[15px]">JPG to PNG Converter</h3><p class="text-[12px] text-gray-400 mt-1">Convert JPG to PNG transparent</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Image Tool</span></a>
+
+<a href="image-upscaler.html" class="tool-card new" data-cat="image ai" data-name="ai image upscaler enhance hd"><div class="text-3xl">🔍</div><h3 class="mt-3 font-bold text-[15px]">AI Image Upscaler</h3><p class="text-[12px] text-gray-400 mt-1">Enhance & upscale image to 4K HD</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • AI Tool</span></a>
+
+<a href="object-remover.html" class="tool-card new" data-cat="image ai" data-name="object remover watermark remover clean"><div class="text-3xl">🧹</div><h3 class="mt-3 font-bold text-[15px]">Object Remover</h3><p class="text-[12px] text-gray-400 mt-1">Remove object, watermark, text from photo</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • AI Tool</span></a>
+
+<a href="image-to-text.html" class="tool-card new" data-cat="image ai text" data-name="image to text ocr extract text from image"><div class="text-3xl">📸</div><h3 class="mt-3 font-bold text-[15px]">Image to Text OCR</h3><p class="text-[12px] text-gray-400 mt-1">Extract text from image, screenshot, doc</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • 12M+ Search</span></a>
+
+<!-- PDF TOOLS -->
+<a href="pdf-to-jpg.html" class="tool-card" data-cat="pdf" data-name="pdf to jpg converter"><div class="text-3xl">📄</div><h3 class="mt-3 font-bold text-[15px]">PDF to JPG</h3><p class="text-[12px] text-gray-400 mt-1">Convert PDF pages to JPG images</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">PDF Tool</span></a>
+
+<a href="pdf-merge-split.html" class="tool-card new" data-cat="pdf" data-name="pdf merge split combine"><div class="text-3xl">📚</div><h3 class="mt-3 font-bold text-[15px]">PDF Merge & Split</h3><p class="text-[12px] text-gray-400 mt-1">Merge multiple PDFs or split PDF pages</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • PDF Tool</span></a>
+
+<!-- AI TOOLS -->
+<a href="ai-bio-generator.html" class="tool-card" data-cat="ai text" data-name="ai bio generator instagram bio"><div class="text-3xl">✨</div><h3 class="mt-3 font-bold text-[15px]">AI Bio Generator</h3><p class="text-[12px] text-gray-400 mt-1">Generate Instagram, TikTok bio with AI</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">AI Tool</span></a>
+
+<a href="text-to-speech.html" class="tool-card new" data-cat="ai text" data-name="text to speech tts voice generator"><div class="text-3xl">🔊</div><h3 class="mt-3 font-bold text-[15px]">Text to Speech</h3><p class="text-[12px] text-gray-400 mt-1">Convert text to natural AI voice - 100+ voices</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • AI Tool</span></a>
+
+<a href="paraphraser-tool.html" class="tool-card new" data-cat="ai text" data-name="paraphraser rewriter plagiarism remover article"><div class="text-3xl">📝</div><h3 class="mt-3 font-bold text-[15px]">AI Paraphraser</h3><p class="text-[12px] text-gray-400 mt-1">Rewrite article, remove plagiarism - Student No.1</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • 15M+ Search</span></a>
+
+<!-- YOUTUBE TOOLS -->
+<a href="yt-thumbnail-downloader.html" class="tool-card" data-cat="youtube" data-name="youtube thumbnail downloader yt"><div class="text-3xl">🖼️</div><h3 class="mt-3 font-bold text-[15px]">YT Thumbnail Downloader</h3><p class="text-[12px] text-gray-400 mt-1">Download YouTube thumbnail in HD</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">YouTube Tool</span></a>
+
+<a href="yt-tags-extractor.html" class="tool-card" data-cat="youtube" data-name="youtube tags extractor yt tags"><div class="text-3xl">🏷️</div><h3 class="mt-3 font-bold text-[15px]">YT Tags Extractor</h3><p class="text-[12px] text-gray-400 mt-1">Extract tags from any YouTube video</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">YouTube Tool</span></a>
+
+<!-- TEXT TOOLS -->
+<a href="word-counter.html" class="tool-card" data-cat="text" data-name="word counter character count"><div class="text-3xl">🔢</div><h3 class="mt-3 font-bold text-[15px]">Word Counter</h3><p class="text-[12px] text-gray-400 mt-1">Count words, characters, sentences</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Text Tool</span></a>
+
+<a href="qr-generator.html" class="tool-card" data-cat="text design" data-name="qr code generator"><div class="text-3xl">📱</div><h3 class="mt-3 font-bold text-[15px]">QR Generator</h3><p class="text-[12px] text-gray-400 mt-1">Create QR code for link, text, WiFi</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Design Tool</span></a>
+
+<a href="password-generator.html" class="tool-card" data-cat="text" data-name="password generator strong"><div class="text-3xl">🔐</div><h3 class="mt-3 font-bold text-[15px]">Password Generator</h3><p class="text-[12px] text-gray-400 mt-1">Generate strong secure passwords</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Security Tool</span></a>
+
+<!-- CALCULATORS -->
+<a href="percentage-calculator.html" class="tool-card" data-cat="calc" data-name="percentage calculator"><div class="text-3xl">%</div><h3 class="mt-3 font-bold text-[15px]">Percentage Calculator</h3><p class="text-[12px] text-gray-400 mt-1">Calculate percentage easily</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Calculator</span></a>
+
+<a href="bmi-calculator.html" class="tool-card" data-cat="calc" data-name="bmi calculator body mass"><div class="text-3xl">⚖️</div><h3 class="mt-3 font-bold text-[15px]">BMI Calculator</h3><p class="text-[12px] text-gray-400 mt-1">Calculate Body Mass Index</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Health Tool</span></a>
+
+<a href="age-calculator.html" class="tool-card" data-cat="calc" data-name="age calculator"><div class="text-3xl">🎂</div><h3 class="mt-3 font-bold text-[15px]">Age Calculator</h3><p class="text-[12px] text-gray-400 mt-1">Calculate exact age in years, months, days</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Calculator</span></a>
+
+<a href="cnic-info.html" class="tool-card" data-cat="calc" data-name="cnic info check pakistan"><div class="text-3xl">🪪</div><h3 class="mt-3 font-bold text-[15px]">CNIC Info Check</h3><p class="text-[12px] text-gray-400 mt-1">Get info from CNIC number - Pakistan</p><span class="mt-3 inline-block text-[11px] bg-white/10 px-3 py-1 rounded-full">Pakistan Tool</span></a>
+
+<a href="unit-converter.html" class="tool-card new" data-cat="calc" data-name="unit converter length weight temperature currency"><div class="text-3xl">🔄</div><h3 class="mt-3 font-bold text-[15px]">Unit Converter</h3><p class="text-[12px] text-gray-400 mt-1">Length, Weight, Temp, Data, Speed & more</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • 20M+ Search</span></a>
+
+<!-- DESIGN TOOLS -->
+<a href="color-palette-generator.html" class="tool-card new" data-cat="design" data-name="color palette generator picker gradient"><div class="text-3xl">🎨</div><h3 class="mt-3 font-bold text-[15px]">Color Palette Generator</h3><p class="text-[12px] text-gray-400 mt-1">Generate palettes, extract from image</p><span class="mt-3 inline-block text-[11px] bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">NEW • Designer Fav</span></a>
+
+</div>
+
+<div id="noResult" class="hidden text-center mt-10 text-gray-500 text-sm">No tools found for your search 😢 Try another keyword</div>
+
+</main>
+
+<footer class="relative z-10 border-t border-white/10 mt-16 py-8 text-center text-[12px] text-gray-500">
+<p>© 2025 PakTools - Made with ❤️ in Pakistan - 23 Free Tools - All Rights Reserved</p>
+<p class="mt-2">Fast • Secure • Free Forever • No Signup Needed</p>
+</footer>
 
 <script>
-// Stars
-const starContainer=document.getElementById('stars');
-const colors=['#ffffff','#22d3ee','#a855f7','#f472b6','#fde047'];
-for(let i=0;i<280;i++){
-  let d=document.createElement('div');d.className='star';
-  let size=Math.random()*2.5+1;
-  d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';
-  d.style.width=size+'px';d.style.height=size+'px';
-  let c=colors[Math.floor(Math.random()*colors.length)];
-  d.style.background=c; d.style.boxShadow=`0 0 6px ${c}, 0 0 12px ${c}`;
-  d.style.setProperty('--dur',(Math.random()*2+1.5)+'s');
-  d.style.animationDelay=Math.random()*3+'s';
-  starContainer.appendChild(d);
-}
+const stars=document.getElementById('stars');
+for(let i=0;i<180;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.animationDelay=Math.random()*3+'s';stars.appendChild(d);}
 
-// Search
-const searchInput=document.getElementById('searchInput');
-const cards=document.querySelectorAll('.tool-card');
-const noResult=document.getElementById('noResult');
-const count=document.getElementById('resultCount');
-searchInput.addEventListener('input',function(){
-  let q=this.value.toLowerCase().trim();
+let currentFilter='all';
+function setFilter(cat,btn){
+  currentFilter=cat;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  filterTools();
+}
+function filterTools(){
+  let search=document.getElementById('searchInput').value.toLowerCase();
+  let cards=document.querySelectorAll('.tool-card');
   let visible=0;
   cards.forEach(card=>{
-    let name=card.getAttribute('data-name')+' '+card.innerText.toLowerCase();
-    if(name.includes(q)){card.style.display='block';visible++;}
-    else{card.style.display='none';}
+    let cat=card.dataset.cat;
+    let name=card.dataset.name;
+    let matchCat=currentFilter==='all' || cat.includes(currentFilter);
+    let matchSearch=!search || name.includes(search) || card.innerText.toLowerCase().includes(search);
+    if(matchCat && matchSearch){card.style.display='block'; visible++;} else {card.style.display='none';}
   });
-  count.textContent=visible+' Tools Found';
-  noResult.classList.toggle('hidden',visible>0);
-});
-
-// 3D ICONS - CURSOR SE DOOR BHAGNA + NO CLICK
-const hero = document.getElementById('heroArea');
-const icons = document.querySelectorAll('.f-icon');
-let mouseX = -1000, mouseY = -1000;
-
-hero.addEventListener('mousemove', (e)=>{
-  const rect = hero.getBoundingClientRect();
-  mouseX = e.clientX - rect.left;
-  mouseY = e.clientY - rect.top;
-});
-hero.addEventListener('mouseleave', ()=>{
-  mouseX = -1000; mouseY = -1000;
-  icons.forEach(ic=>{ ic.style.transform = `translate(0px, 0px) rotate(${ic.style.getPropertyValue('--rot')||'0deg'})`; });
-});
-
-function animateIcons(){
-  icons.forEach(icon=>{
-    const rect = icon.getBoundingClientRect();
-    const heroRect = hero.getBoundingClientRect();
-    const iconCenterX = icon.offsetLeft + 36;
-    const iconCenterY = icon.offsetTop + 36;
-
-    const dx = mouseX - iconCenterX;
-    const dy = mouseY - iconCenterY;
-    const dist = Math.sqrt(dx*dx + dy*dy);
-    const repelRadius = 160;
-
-    if(dist < repelRadius){
-      const force = (repelRadius - dist) / repelRadius;
-      const moveX = -dx * force * 0.8;
-      const moveY = -dy * force * 0.8;
-      icon.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${icon.style.getPropertyValue('--rot')||'0deg'}) scale(${1+force*0.15})`;
-    } else {
-      icon.style.transform = `translate(0px, 0px) rotate(${icon.style.getPropertyValue('--rot')||'0deg'})`;
-    }
-  });
-  requestAnimationFrame(animateIcons);
+  document.getElementById('countTools').innerText=visible;
+  document.getElementById('noResult').classList.toggle('hidden', visible>0);
 }
-animateIcons();
-
-// Prevent click/drag
-icons.forEach(i=>{
-  i.addEventListener('click', e=>{ e.preventDefault(); e.stopPropagation(); return false; });
-  i.addEventListener('mousedown', e=>{ e.preventDefault(); });
-});
 </script>
 </body>
 </html>
