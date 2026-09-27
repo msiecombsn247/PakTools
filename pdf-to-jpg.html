@@ -2,102 +2,124 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>PDF to JPG Converter - PakTools</title>
+<title>PDF Merge + Split Tool - Merge PDF Online | PakTools</title>
+<meta name="description" content="Free PDF Merger - Merge multiple PDFs into one, Split PDF online. No signup, 100% free.">
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 <style>
-body{background:#020a1f; color:white; font-family:Inter,sans-serif; overflow-x:hidden;}
-.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55; animation:float 20s infinite alternate;}
-@keyframes float{0%{transform:translate(-10%,-10%)}100%{transform:translate(10%,10%) scale(1.15)}}
+*{font-family:Inter,sans-serif}
+body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
+.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55;}
 .stars{position:absolute; inset:0; pointer-events:none;}
-.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%; animation:twinkle 3s infinite;}
-.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 30px rgba(37,99,235,0.35), inset 0 1px 0 rgba(150,200,255,0.18); backdrop-filter:blur(15px);}
-.upload-area{background:rgba(255,255,255,0.06); border:2px dashed rgba(56,189,248,0.5);}
+.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%;}
+.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 30px rgba(37,99,235,0.35); backdrop-filter:blur(15px);}
+.result-card{background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08);}
+.glow-btn{background:linear-gradient(90deg,#22d3ee,#3b82f6);}
+.content-box{background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(8px);}
+.tab.active{background:linear-gradient(90deg,#22d3ee,#3b82f6); color:black; font-weight:900;}
+.pdf-item{background:rgba(0,0,0,0.35); border:1px solid rgba(59,130,246,0.3); border-radius:10px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;}
 </style>
 </head>
 <body class="relative min-h-screen">
 <div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-250px] left-[10%]"></div>
 <div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-300px] right-[5%]"></div>
 <div class="stars" id="stars"></div>
-
 <header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl">
-<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-<a href="index.html" class="font-black text-xl flex items-center gap-2"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center">P</div>PakTools</a>
-<a href="index.html" class="text-sm bg-white/10 border border-white/20 px-4 py-2 rounded-lg">← Home</a>
+<div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+<a href="index.html" class="font-black text-[15px] flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black text-xs">P</div>PakTools</a>
+<a href="index.html" class="text-[11px] bg-white/10 border border-white/20 px-3 py-1.5 rounded-full">← Home</a>
 </div>
 </header>
-
-<main class="relative z-10 max-w-5xl mx-auto px-6 py-12">
+<main class="relative z-10 max-w-4xl mx-auto px-6 py-6">
 <div class="text-center">
-<h1 class="text-4xl md:text-5xl font-black">PDF to <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">JPG</span></h1>
-<p class="mt-3 text-gray-400">Convert PDF Pages to High Quality JPG Images</p>
+<h1 class="text-3xl md:text-4xl font-black">PDF <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Merge & Split</span></h1>
+<p class="mt-2 text-gray-400 text-[12px]">Merge Multiple PDFs • Split PDF • Free & Offline</p>
+<p class="mt-2 text-[10px] text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 inline-block px-2.5 py-1 rounded-full">🔥 Most Searched PDF Tool</p>
+</div>
+<div class="tool-box rounded-[1.5rem] p-5 mt-6">
+<div class="flex gap-2 p-1 bg-black/30 rounded-xl w-fit mx-auto mb-5 border border-white/10">
+<button id="tabMerge" class="tab active px-5 py-1.5 rounded-lg text-[12px] transition" onclick="switchTab('merge')">Merge PDF</button>
+<button id="tabSplit" class="tab px-5 py-1.5 rounded-lg text-[12px] text-gray-400 transition" onclick="switchTab('split')">Split PDF</button>
 </div>
 
-<div class="tool-box rounded-[2rem] p-8 md:p-10 mt-10">
-<div id="dropZone" class="upload-area rounded-2xl p-10 text-center cursor-pointer">
-<input type="file" id="fileInput" accept=".pdf" class="hidden">
-<div class="text-5xl">📄➡️🖼️</div>
-<p class="mt-4 font-bold">Click to Upload PDF</p>
-<p class="text-xs text-gray-400 mt-1">100% Browser Side - Secure</p>
+<!-- MERGE -->
+<div id="mergeSection">
+<div id="dropArea" class="border-2 border-dashed border-blue-400/30 rounded-xl p-6 text-center bg-black/20 hover:border-cyan-400/50 cursor-pointer">
+<input type="file" id="fileInput" accept="application/pdf" multiple class="hidden">
+<div class="text-3xl mb-2">📄</div>
+<p class="font-bold text-[12px]">Drop PDFs Here or Click to Upload</p>
+<p class="text-[10px] text-gray-400 mt-1">Select 2+ PDFs to merge</p>
+<button class="mt-3 glow-btn text-black font-bold px-5 py-2 rounded-full text-[11px]">Choose PDFs</button>
+</div>
+<div id="fileList" class="mt-4 hidden">
+<p class="text-[11px] font-bold mb-2 text-gray-300">Selected PDFs (<span id="count">0</span>):</p>
+<div id="listContainer"></div>
+<div class="flex gap-2 mt-4">
+<button onclick="mergePDFs()" id="mergeBtn" class="flex-1 glow-btn text-black font-bold py-3 rounded-xl text-[12px]">🔗 Merge All Now</button>
+<button onclick="resetMerge()" class="bg-white/10 border border-white/20 px-4 py-3 rounded-xl text-[11px] font-bold">Clear</button>
+</div>
+</div>
+<div id="mergeResult" class="hidden mt-4 result-card rounded-xl p-4 text-center border-cyan-400/30">
+<p class="text-cyan-300 font-bold text-[12px]">✅ Merged Successfully!</p>
+<p id="mergeInfo" class="text-[10px] text-gray-400 mt-1"></p>
+<a id="downloadMerge" download="merged-paktools.pdf" class="mt-3 inline-block glow-btn text-black font-bold px-6 py-2.5 rounded-xl text-[11px] cursor-pointer">⬇️ Download Merged PDF</a>
+</div>
 </div>
 
-<div id="info" class="hidden mt-6 flex justify-between items-center bg-black/30 rounded-xl p-4 border border-white/10 text-sm">
-<span id="fileName" class="font-bold"></span>
-<span id="pageCount" class="text-cyan-300"></span>
+<!-- SPLIT -->
+<div id="splitSection" class="hidden">
+<div id="dropAreaSplit" class="border-2 border-dashed border-blue-400/30 rounded-xl p-6 text-center bg-black/20 hover:border-cyan-400/50 cursor-pointer">
+<input type="file" id="fileInputSplit" accept="application/pdf" class="hidden">
+<div class="text-3xl mb-2">✂️</div>
+<p class="font-bold text-[12px]">Upload PDF to Split</p>
+<p class="text-[10px] text-gray-400 mt-1">Extract pages from PDF</p>
+<button class="mt-3 glow-btn text-black font-bold px-5 py-2 rounded-full text-[11px]">Choose PDF</button>
+</div>
+<div id="splitControls" class="hidden mt-4">
+<p id="splitFileName" class="text-[11px] text-cyan-300 font-bold"></p>
+<p id="totalPagesInfo" class="text-[10px] text-gray-400 mt-1"></p>
+<div class="grid grid-cols-2 gap-2 mt-3">
+<input id="fromPage" type="number" placeholder="From (e.g. 1)" class="bg-black/40 border border-blue-400/30 rounded-xl px-3 py-2.5 text-[11px] outline-none">
+<input id="toPage" type="number" placeholder="To (e.g. 5)" class="bg-black/40 border border-blue-400/30 rounded-xl px-3 py-2.5 text-[11px] outline-none">
+</div>
+<button onclick="splitPDF()" id="splitBtn" class="w-full mt-3 glow-btn text-black font-bold py-3 rounded-xl text-[12px]">✂️ Split & Download</button>
+<div id="splitResult" class="hidden mt-3 result-card rounded-xl p-3 text-center"><a id="downloadSplit" download class="glow-btn text-black font-bold px-5 py-2 rounded-full text-[11px] inline-block cursor-pointer">⬇️ Download Split PDF</a></div>
+</div>
+</div>
 </div>
 
-<button id="convertBtn" class="hidden w-full mt-6 bg-gradient-to-r from-cyan-400 to-blue-600 text-black font-black py-4 rounded-xl shadow-[0_0_20px_rgba(56,189,248,0.5)]">⚡ Convert to JPG</button>
-
-<div id="results" class="hidden grid grid-cols-2 md:grid-cols-3 gap-4 mt-8"></div>
-<button id="downloadAll" class="hidden w-full mt-6 bg-white/10 border border-cyan-400/40 py-3 rounded-xl font-bold">⬇️ Download All as ZIP</button>
-<p id="status" class="text-center text-sm text-gray-400 mt-4"></p>
+<!-- SMALL SEO -->
+<div class="content-box rounded-xl p-5 mt-5">
+<h2 class="text-[13px] font-bold">About PDF Merge & Split Tool</h2>
+<p class="mt-2 text-[11px] leading-5 text-gray-400">PakTools Free PDF Merger & Splitter is world's fastest browser-based PDF tool. No upload to server, 100% works offline, so your documents stay private and secure. Merge multiple PDFs into one file for job applications, bank statements, assignments, and official documents. Or split large PDF into small parts by extracting specific page ranges. Perfect for students, job seekers, and offices in Pakistan. Uses PDF-Lib for high-quality processing, no quality loss, keeps original formatting. Free, unlimited, no signup, no watermark.</p>
+<div class="grid md:grid-cols-2 gap-3 mt-3">
+<div><h3 class="text-[11px] font-bold">How to Use?</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>Merge: Upload 2+ PDFs → Merge Now</li><li>Split: Upload PDF → Enter page range</li><li>Download result instantly</li><li>Works offline, private & secure</li></ul></div>
+<div><h3 class="text-[11px] font-bold">Features</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>Merge 2+ PDFs into one</li><li>Split PDF by page range</li><li>100% offline, no upload</li><li>Free, no limit, instant</li></ul></div>
+</div>
 </div>
 </main>
-
+<footer class="text-center py-5 text-[10px] text-gray-500">© 2025 PakTools</footer>
 <script>
 const stars=document.getElementById('stars');
-for(let i=0;i<150;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.animationDelay=Math.random()*3+'s';stars.appendChild(d);}
-
-pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-let pdfFile=null, images=[];
-const fileInput=document.getElementById('fileInput'), dropZone=document.getElementById('dropZone');
-
-dropZone.onclick=()=>fileInput.click();
-fileInput.onchange=e=>{ pdfFile=e.target.files[0]; handleFile(); };
-
-async function handleFile(){
-if(!pdfFile) return;
-document.getElementById('fileName').innerText=pdfFile.name;
-document.getElementById('info').classList.remove('hidden');
-document.getElementById('convertBtn').classList.remove('hidden');
-let buf=await pdfFile.arrayBuffer();
-let pdf=await pdfjsLib.getDocument(buf).promise;
-document.getElementById('pageCount').innerText=pdf.numPages+' Pages';
-}
-
-document.getElementById('convertBtn').onclick=async()=>{
-if(!pdfFile) return;
-let btn=document.getElementById('convertBtn'); btn.innerText='⏳ Converting...'; btn.disabled=true;
-let buf=await pdfFile.arrayBuffer();
-let pdf=await pdfjsLib.getDocument(buf).promise;
-let container=document.getElementById('results'); container.innerHTML=''; container.classList.remove('hidden');
-images=[];
-for(let i=1;i<=pdf.numPages;i++){
-document.getElementById('status').innerText='Converting page '+i+'/'+pdf.numPages;
-let page=await pdf.getPage(i);
-let viewport=page.getViewport({scale:2});
-let canvas=document.createElement('canvas'); canvas.width=viewport.width; canvas.height=viewport.height;
-let ctx=canvas.getContext('2d');
-await page.render({canvasContext:ctx, viewport}).promise;
-let dataUrl=canvas.toDataURL('image/jpeg',0.9);
-images.push({url:dataUrl, name:`page-${i}.jpg`});
-let div=document.createElement('div'); div.className='bg-black/40 rounded-xl p-2 border border-white/10';
-div.innerHTML=`<img src="${dataUrl}" class="rounded-lg w-full"><div class="flex justify-between items-center mt-2"><span class="text-xs">Page ${i}</span><a href="${dataUrl}" download="page-${i}.jpg" class="text-xs bg-cyan-400 text-black px-2 py-1 rounded font-bold">Download</a></div>`;
-container.appendChild(div);
-}
-document.getElementById('status').innerText='✅ All pages converted!';
-btn.innerText='✅ Done - '+pdf.numPages+' Images';
-}
+for(let i=0;i<80;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';stars.appendChild(d);}
+let pdfFiles=[]; let splitFileBytes=null, splitTotalPages=0;
+const dropArea=document.getElementById('dropArea'), fileInput=document.getElementById('fileInput');
+dropArea.addEventListener('click',()=>fileInput.click());
+dropArea.addEventListener('dragover',e=>{e.preventDefault();});
+dropArea.addEventListener('drop',e=>{e.preventDefault(); handleFiles(e.dataTransfer.files);});
+fileInput.addEventListener('change',e=>handleFiles(e.target.files));
+function handleFiles(files){for(let f of files){ if(f.type==='application/pdf') pdfFiles.push(f); }renderList();}
+function renderList(){if(pdfFiles.length===0){document.getElementById('fileList').classList.add('hidden');return;}document.getElementById('fileList').classList.remove('hidden');document.getElementById('count').innerText=pdfFiles.length;let html='';pdfFiles.forEach((f,i)=>{html+=`<div class="pdf-item"><div><p class="text-[11px] font-bold">📄 ${f.name}</p><p class="text-[10px] text-gray-500">${(f.size/1024).toFixed(1)} KB</p></div><button onclick="removeFile(${i})" class="text-red-400 text-[10px] bg-red-500/10 px-2.5 py-1 rounded-full">Remove</button></div>`;});document.getElementById('listContainer').innerHTML=html;}
+function removeFile(i){pdfFiles.splice(i,1);renderList();}
+function resetMerge(){pdfFiles=[];renderList();document.getElementById('mergeResult').classList.add('hidden');}
+async function mergePDFs(){if(pdfFiles.length<2){alert('Select at least 2 PDFs');return;}let btn=document.getElementById('mergeBtn');btn.innerText='⏳ Merging...';btn.disabled=true;try{const mergedPdf=await PDFLib.PDFDocument.create();for(let file of pdfFiles){let bytes=await file.arrayBuffer();let pdf=await PDFLib.PDFDocument.load(bytes);let pages=await mergedPdf.copyPages(pdf, pdf.getPageIndices());pages.forEach(p=>mergedPdf.addPage(p));}let mergedBytes=await mergedPdf.save();let blob=new Blob([mergedBytes],{type:'application/pdf'});let url=URL.createObjectURL(blob);let a=document.getElementById('downloadMerge');a.href=url;document.getElementById('mergeInfo').innerText=`${pdfFiles.length} PDFs • ${mergedPdf.getPageCount()} pages`;document.getElementById('mergeResult').classList.remove('hidden');}catch(e){alert('Error: '+e.message);}btn.innerText='🔗 Merge All Now';btn.disabled=false;}
+function switchTab(t){document.getElementById('mergeSection').classList.toggle('hidden', t!=='merge');document.getElementById('splitSection').classList.toggle('hidden', t!=='split');document.getElementById('tabMerge').classList.toggle('active', t==='merge');document.getElementById('tabSplit').classList.toggle('active', t==='split');}
+const dropSplit=document.getElementById('dropAreaSplit'), fileInputSplit=document.getElementById('fileInputSplit');
+dropSplit.addEventListener('click',()=>fileInputSplit.click());
+dropSplit.addEventListener('dragover',e=>{e.preventDefault();}); dropSplit.addEventListener('drop',e=>{e.preventDefault(); if(e.dataTransfer.files[0]) handleSplitFile(e.dataTransfer.files[0]);});
+fileInputSplit.addEventListener('change',e=>{ if(e.target.files[0]) handleSplitFile(e.target.files[0]); });
+async function handleSplitFile(file){splitFileBytes=await file.arrayBuffer();let pdf=await PDFLib.PDFDocument.load(splitFileBytes);splitTotalPages=pdf.getPageCount();document.getElementById('splitControls').classList.remove('hidden');document.getElementById('splitFileName').innerText='📄 '+file.name;document.getElementById('totalPagesInfo').innerText='Total Pages: '+splitTotalPages;document.getElementById('fromPage').max=splitTotalPages;document.getElementById('toPage').max=splitTotalPages;}
+async function splitPDF(){let from=parseInt(document.getElementById('fromPage').value);let to=parseInt(document.getElementById('toPage').value);if(!from ||!to || from<1 || to>splitTotalPages || from>to){alert('Enter valid range');return;}let btn=document.getElementById('splitBtn');btn.innerText='⏳ Splitting...';try{let pdf=await PDFLib.PDFDocument.load(splitFileBytes);let newPdf=await PDFLib.PDFDocument.create();for(let i=from-1;i<to;i++){ let [p]=await newPdf.copyPages(pdf,[i]); newPdf.addPage(p); }let bytes=await newPdf.save();let blob=new Blob([bytes],{type:'application/pdf'});let url=URL.createObjectURL(blob);let a=document.getElementById('downloadSplit');a.href=url; a.download=`split-${from}-to-${to}.pdf`;document.getElementById('splitResult').classList.remove('hidden');}catch(e){alert(e.message);}btn.innerText='✂️ Split & Download';}
 </script>
 </body>
 </html>
