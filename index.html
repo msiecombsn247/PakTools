@@ -8,112 +8,109 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
 *{font-family:'Inter',sans-serif}
-body{margin:0;background:#050210;color:white;overflow-x:hidden}
-.hero-bg{position:relative;min-height:100vh;overflow:hidden;background:#050210;}
-/* PURPLE WAVY GALAXY - Same as your image - Built in Code */
-.hero-bg::before{
-  content:'';position:absolute;inset:0;z-index:0;
+body{margin:0;background:#05020a;color:white;overflow-x:hidden}
+.hero{position:relative;min-height:95vh;background:#05020a;overflow:hidden}
+.hero::before{
+  content:'';position:absolute;inset:0;
   background:
-    radial-gradient(ellipse 600px 250px at 15% 55%, rgba(180,60,255,0.85) 0%, rgba(120,20,180,0.4) 30%, transparent 70%),
-    radial-gradient(ellipse 500px 200px at 35% 50%, rgba(220,100,255,0.9) 0%, rgba(150,40,220,0.5) 40%, transparent 70%),
-    radial-gradient(ellipse 700px 300px at 65% 55%, rgba(200,80,255,0.8) 0%, rgba(130,30,200,0.45) 35%, transparent 70%),
-    radial-gradient(ellipse 400px 180px at 85% 60%, rgba(160,50,230,0.7) 0%, transparent 60%),
-    radial-gradient(ellipse 300px 150px at 28% 48%, rgba(255,255,255,0.9) 0%, rgba(200,100,255,0.6) 20%, transparent 50%),
-    radial-gradient(ellipse 200px 120px at 58% 58%, rgba(255,255,255,0.8) 0%, transparent 40%);
-  filter: blur(1px) contrast(1.2);
+    radial-gradient(ellipse 550px 220px at 18% 55%, rgba(180,70,255,0.9) 0%, transparent 65%),
+    radial-gradient(ellipse 480px 200px at 38% 52%, rgba(220,80,255,0.85) 0%, transparent 65%),
+    radial-gradient(ellipse 650px 280px at 62% 58%, rgba(190,60,255,0.8) 0%, transparent 70%),
+    radial-gradient(ellipse 350px 150px at 82% 60%, rgba(140,40,220,0.6) 0%, transparent 60%),
+    radial-gradient(ellipse 250px 100px at 30% 48%, rgba(255,255,255,0.9) 0%, transparent 50%);
+  filter:blur(0.5px);
 }
-.hero-bg::after{
-  content:'';position:absolute;inset:0;z-index:0;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 200 Q 150 100 300 200 T 600 200 T 1000 200' stroke='%23a855f7' stroke-width='80' fill='none' opacity='0.15' filter='blur(20px)'/%3E%3C/svg%3E") no-repeat center 55% / 100% 60%;
-  opacity:0.9;
-}
-.glass{background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.14)}
-.glow-btn{background:linear-gradient(90deg,#22d3ee,#a855f7);box-shadow:0 0 35px rgba(168,85,247,0.7)}
-.float{animation:float 6s ease-in-out infinite}.float2{animation:float 7.5s ease-in-out infinite}.float3{animation:float 5s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
-.icon-float{
-  position:absolute;display:flex;align-items:center;justify-content:center;z-index:5;
+.glass{background:rgba(255,255,255,0.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.15)}
+.glow-btn{background:linear-gradient(90deg,#22d3ee,#a855f7);box-shadow:0 0 30px rgba(168,85,247,0.7)}
+.float{animation:float 6s ease-in-out infinite}
+.float2{animation:float 7.5s ease-in-out infinite}
+.float3{animation:float 5.2s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+.icon3d{
+  position:absolute;display:flex;align-items:center;justify-content:center;
   background:radial-gradient(circle at 30% 30%, rgba(34,211,238,0.5), rgba(168,85,247,0.3));
-  border:1px solid rgba(34,211,238,0.8);backdrop-filter:blur(10px);
-  border-radius:22px;box-shadow:0 0 30px rgba(34,211,238,0.6), inset 0 1px 2px rgba(255,255,255,0.8);
+  border:1px solid rgba(34,211,238,0.8);box-shadow:0 0 28px rgba(34,211,238,0.6), inset 0 1px 2px rgba(255,255,255,0.8);
+  backdrop-filter:blur(8px);border-radius:20px;
 }
-.neon-card{
-  background:linear-gradient(145deg,rgba(28,20,80,0.85),rgba(15,10,50,0.9));
-  border:1px solid rgba(168,85,247,0.35);backdrop-filter:blur(14px);border-radius:18px;padding:20px;text-align:center;transition:0.3s
+.tool-card{
+  background:linear-gradient(145deg,rgba(40,20,90,0.85),rgba(20,10,60,0.9));
+  border:1px solid rgba(168,85,247,0.35);border-radius:18px;padding:18px;text-align:center;transition:0.3s;display:block;text-decoration:none;color:white
 }
-.neon-card:hover{transform:translateY(-6px);border-color:#22d3ee;box-shadow:0 0 30px rgba(168,85,247,0.5)}
-.neon-icon{
-  width:72px;height:72px;margin:0 auto 12px;border-radius:18px;
-  background:linear-gradient(135deg,#22d3ee,#a855f7);display:flex;align-items:center;justify-content:center;font-size:30px;
-  box-shadow:0 0 22px rgba(168,85,247,0.6), inset 0 1px 2px rgba(255,255,255,0.8)
-}
-.star{position:absolute;width:2px;height:2px;background:white;border-radius:50%;animation:twinkle 2.5s infinite;z-index:1}
-@keyframes twinkle{0%,100%{opacity:0.2}50%{opacity:1;box-shadow:0 0 6px white}}
+.tool-card:hover{transform:translateY(-6px) scale(1.02);border-color:#22d3ee;box-shadow:0 0 30px rgba(34,211,238,0.5)}
+.tool-icon{width:72px;height:72px;margin:0 auto 10px;border-radius:18px;background:linear-gradient(135deg,#22d3ee,#a855f7);display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 0 20px rgba(168,85,247,0.6), inset 0 1px 2px rgba(255,255,255,0.8)}
+.star{position:absolute;width:2px;height:2px;background:white;border-radius:50%;animation:twinkle 2.5s infinite}
+@keyframes twinkle{0%,100%{opacity:0.3}50%{opacity:1}}
 </style>
 </head>
 <body>
 
-<div class="hero-bg">
-<div id="stars" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+<div class="hero">
+<div id="stars" class="absolute inset-0 z-0 pointer-events-none"></div>
 
-<!-- NAVBAR PakTools -->
-<header class="relative z-30 max-w-7xl mx-auto px-4 pt-5">
-<div class="glass px-6 py-3 flex justify-between items-center rounded-full">
-<div class="flex items-center gap-2 font-black text-2xl"><span class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-black font-black">P</span> PakTools</div>
-<nav class="hidden md:flex gap-7 text-sm text-gray-300"><span class="text-white border-b-2 border-cyan-400 pb-1">Home</span><span>Features</span><span>Pricing</span><span>Solutions</span><span>Resources</span></nav>
-<div class="flex gap-2"><button class="glass px-4 py-2 rounded-full text-sm">Sign In</button><a href="#tools" class="bg-white text-black font-bold px-5 py-2 rounded-full text-sm">Get Started</a></div>
+<!-- Header PakTools -->
+<header class="relative z-20 max-w-7xl mx-auto px-4 pt-4">
+<div class="glass rounded-full px-6 py-3 flex justify-between items-center">
+<div class="font-black text-2xl flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-black">P</div> PakTools</div>
+<nav class="hidden md:flex gap-6 text-sm text-gray-300"><span class="text-white border-b-2 border-cyan-400 pb-1">Home</span><span>Features</span><span>Tools</span><span>Contact</span></nav>
+<div class="flex gap-2"><a href="contact.html" class="glass px-4 py-2 rounded-full text-sm">Contact</a><a href="#tools" class="bg-white text-black font-bold px-5 py-2 rounded-full text-sm">Get Started</a></div>
 </div>
 </header>
 
-<!-- HERO CONTENT -->
-<section class="relative z-20 max-w-7xl mx-auto px-6 pt-20 pb-28 grid md:grid-cols-2 gap-10 items-center">
-<div class="relative z-10">
-<h1 class="text-5xl md:text-7xl font-black leading-[0.95]">All in One<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-purple-400">Premium Tools</span></h1>
-<p class="mt-6 text-gray-200 max-w-lg leading-relaxed">Supercharge your workflow with 50+ AI-powered tools for productivity, design, analytics & more — all in one platform.</p>
-<div class="mt-8 flex gap-4 flex-wrap"><a href="#tools" class="glow-btn text-white font-bold px-8 py-3.5 rounded-full">Get Started Free →</a><button class="glass px-8 py-3.5 rounded-full font-bold">Watch Demo ▶</button></div>
-<div class="mt-10 flex gap-3 flex-wrap">
-<div class="glass px-4 py-2.5 flex gap-2 items-center rounded-xl"><span>🛡️</span><div><p class="text-xs font-bold">100+ Tools</p><p class="text-[10px] text-gray-400">Ready to use</p></div></div>
-<div class="glass px-4 py-2.5 flex gap-2 items-center rounded-xl"><span>✨</span><div><p class="text-xs font-bold">24/7 AI Powered</p><p class="text-[10px] text-gray-400">Always active</p></div></div>
-<div class="glass px-4 py-2.5 flex gap-2 items-center rounded-xl"><span>🔒</span><div><p class="text-xs font-bold">Secure & Reliable</p><p class="text-[10px] text-gray-400">Enterprise-grade</p></div></div>
-</div>
+<section class="relative z-10 max-w-7xl mx-auto px-6 pt-16 pb-16 grid md:grid-cols-2 gap-8 items-center">
+<div>
+<h1 class="text-5xl md:text-6xl font-black leading-[0.95]">All in One<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-purple-400">Premium Tools</span></h1>
+<p class="mt-5 text-gray-300 max-w-lg">Supercharge your workflow with 50+ AI-powered tools - all free, fast & secure. Built in Pakistan.</p>
+<div class="mt-7 flex gap-3 flex-wrap"><a href="#tools" class="glow-btn text-white font-bold px-7 py-3 rounded-full">Explore Tools →</a><a href="contact.html" class="glass px-7 py-3 rounded-full font-bold">Contact Us</a></div>
 </div>
 
-<!-- FLOATING NEON ICONS - Right Side -->
-<div class="relative h-[520px] hidden md:block z-10">
-<div class="icon-float float w-[110px] h-[110px] top-10 right-[180px] text-5xl">🛡️</div>
-<div class="icon-float float2 w-[130px] h-[90px] top-[150px] right-[30px] text-3xl">☁️📊</div>
-<div class="icon-float float3 w-[105px] h-[105px] top-[270px] right-[10px] rounded-full text-4xl">⚙️</div>
-<div class="icon-float float w-[95px] h-[95px] bottom-10 right-[90px] text-3xl">🧠</div>
-<div class="icon-float float2 w-[90px] h-[70px] bottom-20 right-[220px] text-2xl">📈</div>
+<!-- Floating Neon Icons like your galaxy image -->
+<div class="relative h-[460px] hidden md:block">
+<div class="icon3d float w-[100px] h-[100px] top-5 right-[180px] text-4xl">🛡️</div>
+<div class="icon3d float2 w-[120px] h-[85px] top-[130px] right-[30px] text-3xl">☁️📊</div>
+<div class="icon3d float3 w-[95px] h-[95px] top-[250px] right-[15px] rounded-full text-4xl">⚙️</div>
+<div class="icon3d float w-[90px] h-[90px] bottom-10 right-[90px] text-3xl">🧠</div>
+<div class="icon3d float2 w-[85px] h-[70px] bottom-20 right-[220px] text-2xl">📊</div>
 </div>
 </section>
 </div>
 
-<!-- TOOLS SECTION -->
-<section id="tools" class="bg-[#08051a] py-16 relative z-10">
+<!-- TOOLS GRID - 100% MATCH TO YOUR GITHUB FILES -->
+<section id="tools" class="bg-[#0a0620] py-14">
 <div class="max-w-7xl mx-auto px-4">
-<h2 class="text-3xl font-black text-center">PakTools - All Premium Tools</h2>
-<p class="text-center text-purple-300 mt-2">Built Faster Create Smarter</p>
+<h2 class="text-3xl font-black text-center">All Premium Tools</h2>
+<p class="text-center text-purple-300 mt-2 text-sm">Built Faster - Create Smarter - 10 Tools Live</p>
+
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-10">
-<a href="bg-remover.html" class="neon-card"><div class="neon-icon">✂️</div><p class="font-bold text-sm">BG Remover</p><p class="text-xs text-gray-400">Remove BG</p></a>
-<a href="image-compressor.html" class="neon-card"><div class="neon-icon">🗜️</div><p class="font-bold text-sm">Image Compressor</p><p class="text-xs text-gray-400">20KB, 50KB</p></a>
-<a href="qr-generator.html" class="neon-card"><div class="neon-icon">🔳</div><p class="font-bold text-sm">QR Generator</p><p class="text-xs text-gray-400">Generate QR</p></a>
-<a href="age-calculator.html" class="neon-card"><div class="neon-icon">🎂</div><p class="font-bold text-sm">Age Calculator</p><p class="text-xs text-gray-400">Exact Age</p></a>
-<a href="word-counter.html" class="neon-card"><div class="neon-icon">📝</div><p class="font-bold text-sm">Word Counter</p><p class="text-xs text-gray-400">Count Words</p></a>
-<a href="password-generator.html" class="neon-card"><div class="neon-icon">🔐</div><p class="font-bold text-sm">Password Lock</p><p class="text-xs text-gray-400">Strong Pass</p></a>
-<a href="image-to-pdf.html" class="neon-card"><div class="neon-icon">🖼️→📄</div><p class="font-bold text-sm">Image to PDF</p><p class="text-xs text-gray-400">Convert</p></a>
-<a href="pdf-to-jpg.html" class="neon-card"><div class="neon-icon">📄→🖼️</div><p class="font-bold text-sm">PDF to JPG</p><p class="text-xs text-gray-400">High Quality</p></a>
-<a href="ai-bio-generator.html" class="neon-card"><div class="neon-icon">🤖</div><p class="font-bold text-sm">AI Tools</p><p class="text-xs text-gray-400">Viral Bios</p></a>
+
+<a href="background-remover.html" class="tool-card"><div class="tool-icon">✂️</div><p class="font-bold text-[13px]">BG Remover</p><p class="text-[11px] text-gray-400 mt-1">Remove Background</p></a>
+
+<a href="image-compressor.html" class="tool-card"><div class="tool-icon">🗜️</div><p class="font-bold text-[13px]">Image Compressor</p><p class="text-[11px] text-gray-400 mt-1">20KB - 100KB</p></a>
+
+<a href="qr-code-generator.html" class="tool-card"><div class="tool-icon">🔳</div><p class="font-bold text-[13px]">QR Generator</p><p class="text-[11px] text-gray-400 mt-1">Create QR</p></a>
+
+<a href="age-calculator.html" class="tool-card"><div class="tool-icon">🎂</div><p class="font-bold text-[13px]">Age Calculator</p><p class="text-[11px] text-gray-400 mt-1">Exact Age</p></a>
+
+<a href="word-counter.html" class="tool-card"><div class="tool-icon">📝</div><p class="font-bold text-[13px]">Word Counter</p><p class="text-[11px] text-gray-400 mt-1">Count Words</p></a>
+
+<a href="password-generator.html" class="tool-card"><div class="tool-icon">🔐</div><p class="font-bold text-[13px]">Password Generator</p><p class="text-[11px] text-gray-400 mt-1">Strong Pass</p></a>
+
+<a href="pdf-to-jpg.html" class="tool-card"><div class="tool-icon">📄➡️🖼️</div><p class="font-bold text-[13px]">PDF to JPG</p><p class="text-[11px] text-gray-400 mt-1">High Quality</p></a>
+
+<a href="ai-bio-generator.html" class="tool-card"><div class="tool-icon">🤖</div><p class="font-bold text-[13px]">AI Bio Generator</p><p class="text-[11px] text-gray-400 mt-1">Viral Bio</p></a>
+
+<a href="youtube-tags.html" class="tool-card"><div class="tool-icon">🏷️</div><p class="font-bold text-[13px]">YouTube Tags</p><p class="text-[11px] text-gray-400 mt-1">Extractor</p></a>
+
+<a href="youtube-thumbnail-downloader.html" class="tool-card"><div class="tool-icon">🖼️⬇️</div><p class="font-bold text-[13px]">YT Thumbnail</p><p class="text-[11px] text-gray-400 mt-1">Downloader</p></a>
+
 </div>
 </div>
 </section>
 
-<footer class="bg-[#050210] border-t border-white/10 py-6 text-center text-xs text-gray-500">© 2026 PakTools - Made in Pakistan PK</footer>
+<footer class="bg-[#05020a] border-t border-white/10 py-5 text-center text-xs text-gray-500">© 2026 PakTools - Made in Pakistan - <a href="privacy-policy.html" class="underline">Privacy</a> | <a href="terms.html" class="underline">Terms</a> | <a href="contact.html" class="underline">Contact</a></footer>
 
 <script>
-// Shining Stars
-const s=document.getElementById('stars');
-for(let i=0;i<250;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.animationDelay=Math.random()*3+'s';d.style.opacity=Math.random();s.appendChild(d);}
+const c=document.getElementById('stars');
+for(let i=0;i<200;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.animationDelay=Math.random()*3+'s';c.appendChild(d);}
 </script>
 </body>
 </html>
