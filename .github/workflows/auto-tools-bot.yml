@@ -1,0 +1,40 @@
+name: PakTools Auto Bot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 5 * * *'
+
+jobs:
+  build-tools:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Auto Generate 5 Tools
+        run: |
+          python - << 'PY'
+          import os
+          tools = ["youtube-thumbnail-downloader","image-compressor","word-counter","age-calculator","pdf-to-jpg"]
+          for tool in tools:
+              path = f"{tool}.html"
+              if not os.path.exists(path):
+                  with open(path, 'w') as f:
+                      f.write(f"<h1>{tool} - Coming Soon on PakTools</h1>")
+                  print(f"Created {tool}")
+          PY
+          
+      - name: Commit Tools
+        run: |
+          git config user.name "PakTools Bot"
+          git config user.email "bot@paktools.com"
+          git add .
+          git commit -m "Bot: Added 5 new tools" || echo "No changes"
+          git push
