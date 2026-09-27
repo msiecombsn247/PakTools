@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Percentage Calculator - Fast & Easy | PakTools</title>
+<meta name="description" content="Free Percentage Calculator - Calculate Percentage, Increase, Decrease, Marks Percentage. Best for Students in Pakistan.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@800;900&display=swap" rel="stylesheet">
+<style>
+*{font-family:'Inter',sans-serif}
+body{margin:0;background:#05020a;color:white}
+.glass{background:rgba(255,255,255,0.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.15)}
+.tool-icon{width:78px;height:78px;margin:0 auto 12px;border-radius:20px;background:linear-gradient(135deg,#22d3ee,#a855f7);display:flex;align-items:center;justify-content:center;font-size:38px;box-shadow:0 0 20px rgba(168,85,247,0.6), inset 0 1px 3px rgba(255,255,255,0.9)}
+.hero-bg{position:relative;background:#05020a;overflow:hidden}
+.hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 250px at 20% 50%, rgba(180,70,255,0.8) 0%, transparent 60%),radial-gradient(ellipse 500px 200px at 70% 55%, rgba(120,40,200,0.6) 0%, transparent 60%)}
+.calc-input{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:14px 16px;outline:none;color:white}
+.calc-input:focus{border-color:#22d3ee}
+</style>
+</head>
+<body>
+<header class="relative z-20 max-w-7xl mx-auto px-3 md:px-4 pt-4">
+<div class="glass rounded-full px-4 md:px-6 py-3 flex justify-between items-center">
+<a href="index.html" style="text-decoration:none;color:white" class="font-black text-xl flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-black">P</div> PakTools</a>
+<div class="flex gap-2 items-center"><a href="index.html" style="text-decoration:none;color:white" class="hidden md:block text-sm text-gray-300">Home</a><a href="index.html#tools" style="text-decoration:none" class="bg-white text-black font-bold px-5 py-2 rounded-full text-sm whitespace-nowrap">All Tools</a></div>
+</div>
+</header>
+
+<div class="hero-bg"><div class="relative z-10 max-w-5xl mx-auto px-4 py-10">
+<div class="text-center">
+<div class="tool-icon">%</div>
+<h1 class="text-4xl md:text-5xl font-black mt-3">Percentage Calculator</h1>
+<p class="text-gray-400 mt-3 text-sm">For Students, Shopkeepers & Everyone - Fast & Accurate</p>
+</div>
+
+<div class="grid md:grid-cols-2 gap-6 mt-8">
+<!-- Main Calculator -->
+<div class="glass rounded-[22px] p-5 md:p-7">
+<div class="flex gap-2 mb-6">
+<button onclick="switchTab(1)" id="tab1" class="flex-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full py-2.5 text-sm font-bold">Simple %</button>
+<button onclick="switchTab(2)" id="tab2" class="flex-1 glass rounded-full py-2.5 text-sm font-bold">Marks %</button>
+<button onclick="switchTab(3)" id="tab3" class="flex-1 glass rounded-full py-2.5 text-sm font-bold">Increase</button>
+</div>
+
+<!-- Tab 1 -->
+<div id="box1">
+<p class="text-sm text-gray-300">What is <span class="text-cyan-300 font-bold">X% of Y?</span></p>
+<div class="grid grid-cols-2 gap-3 mt-3">
+<input id="p1" type="number" placeholder="e.g. 20" class="calc-input" oninput="calc1()">
+<input id="p2" type="number" placeholder="e.g. 500" class="calc-input" oninput="calc1()">
+</div>
+<div class="mt-5 glass rounded-2xl p-5 text-center bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-cyan-400/30">
+<p class="text-xs text-gray-400">Result</p><p id="res1" class="text-3xl font-black mt-1 text-cyan-300">0</p>
+</div>
+</div>
+
+<!-- Tab 2 -->
+<div id="box2" class="hidden">
+<p class="text-sm text-gray-300">Marks Percentage Calculator</p>
+<div class="mt-3 space-y-3">
+<input id="obt" type="number" placeholder="Obtained Marks e.g. 850" class="calc-input" oninput="calc2()">
+<input id="total" type="number" placeholder="Total Marks e.g. 1100" class="calc-input" oninput="calc2()">
+</div>
+<div class="mt-5 glass rounded-2xl p-5 text-center bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-cyan-400/30">
+<p class="text-xs text-gray-400">Your Percentage</p><p id="res2" class="text-3xl font-black mt-1 text-cyan-300">0%</p><p id="grade" class="text-xs mt-2 text-purple-300"></p>
+</div>
+</div>
+
+<!-- Tab 3 -->
+<div id="box3" class="hidden">
+<p class="text-sm text-gray-300">Increase / Discount Calculator</p>
+<div class="grid grid-cols-2 gap-3 mt-3">
+<input id="price" type="number" placeholder="Price e.g. 1000" class="calc-input" oninput="calc3()">
+<input id="percent" type="number" placeholder="Discount % e.g. 15" class="calc-input" oninput="calc3()">
+</div>
+<div class="mt-5 glass rounded-2xl p-5 text-center bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-cyan-400/30">
+<p class="text-xs text-gray-400">After Discount</p><p id="res3" class="text-3xl font-black mt-1 text-cyan-300">0</p><p id="save" class="text-xs mt-2 text-green-400"></p>
+</div>
+</div>
+
+</div>
+
+<!-- Info -->
+<div class="space-y-4">
+<div class="glass rounded-[20px] p-6">
+<h3 class="font-bold">For Students:</h3>
+<p class="text-sm text-gray-400 mt-2">Matric, FSC, University percentage yahan se 1 second me nikalo. 850/1100 = 77.27%<br><br>Grade: 80%+ = A+, 70%+ = A, 60%+ = B</p>
+</div>
+<div class="glass rounded-[20px] p-6">
+<h3 class="font-bold text-cyan-300">For Shopkeepers:</h3>
+<p class="text-sm text-gray-400 mt-2">15% discount on Rs.1000 = Rs.850<br>20% profit = Rs.1200</p>
+</div>
+</div>
+</div>
+
+</div></div>
+
+<footer class="text-center py-6 text-xs text-gray-500">© 2026 PakTools</footer>
+
+<script>
+function switchTab(n){
+ [1,2,3].forEach(i=>{
+  document.getElementById('box'+i).classList.add('hidden');
+  document.getElementById('tab'+i).className='flex-1 glass rounded-full py-2.5 text-sm font-bold';
+ });
+ document.getElementById('box'+n).classList.remove('hidden');
+ document.getElementById('tab'+n).className='flex-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full py-2.5 text-sm font-bold';
+}
+function calc1(){
+ let a=parseFloat(document.getElementById('p1').value)||0, b=parseFloat(document.getElementById('p2').value)||0;
+ document.getElementById('res1').innerText=(a/100*b).toFixed(2);
+}
+function calc2(){
+ let o=parseFloat(document.getElementById('obt').value)||0, t=parseFloat(document.getElementById('total').value)||0;
+ if(t==0){document.getElementById('res2').innerText='0%';return}
+ let per=(o/t*100).toFixed(2);
+ document.getElementById('res2').innerText=per+'%';
+ let g=per>=80?'Grade: A+ 🌟':per>=70?'Grade: A 👍':per>=60?'Grade: B':per>=50?'Grade: C':per>=40?'Grade: D':'Fail';
+ document.getElementById('grade').innerText=g;
+}
+function calc3(){
+ let pr=parseFloat(document.getElementById('price').value)||0, pc=parseFloat(document.getElementById('percent').value)||0;
+ let disc=pr*pc/100; let final=pr-disc;
+ document.getElementById('res3').innerText='Rs. '+final.toFixed(0);
+ document.getElementById('save').innerText='You Save: Rs. '+disc.toFixed(0);
+}
+</script>
+</body>
+</html>
