@@ -2,8 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Image Resizer - Passport 300x300 & Custom | PakTools</title>
-<meta name="description" content="Resize Image to Passport 300x300, 600x600, Instagram, YouTube. Free Online Resizer - No Upload, 100% Secure.">
+<title>Image Resizer - Passport 300x300, 600x600, Instagram | PakToolsOnline</title>
+<meta name="description" content="Free Image Resizer Pakistan - Resize to Passport 300x300, 600x600, Instagram 1080, YouTube 1280x720, CNIC 492x633. 100% Private, No Upload, Free.">
+<link rel="canonical" href="https://paktoolsonline.com/image-resizer.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="Image Resizer - Passport 300x300, Instagram, YouTube - Free">
+<meta property="og:description" content="Resize image to Passport 300x300, 600x600, Instagram 1080x1080, YouTube thumbnail, CNIC size. Private, free, no watermark.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paktoolsonline.com/image-resizer.html">
+<meta property="og:image" content="https://paktoolsonline.com/og-image-resizer.png">
+<meta property="og:site_name" content="PakToolsOnline">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Image Resizer - Passport 300x300 & Custom Sizes">
+<meta name="twitter:description" content="Resize to Passport, Instagram, YouTube sizes. Free & Private.">
+<meta name="twitter:image" content="https://paktoolsonline.com/og-image-resizer.png">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 *{font-family:Inter,sans-serif}
@@ -14,11 +26,14 @@ body{margin:0;background:#05020a;color:white;overflow-x:hidden}
 .preset{border:1px solid rgba(255,255,255,0.12);transition:0.2s;cursor:pointer}
 .preset.active{border-color:#22d3ee;background:linear-gradient(90deg,rgba(34,211,238,0.2),rgba(168,85,247,0.2));}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image Resizer","applicationCategory":"MultimediaApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free Image Resizer to resize images to Passport 300x300, 600x600, Instagram, YouTube, CNIC. Private browser-based.","url":"https://paktoolsonline.com/image-resizer.html","author":{"@type":"Organization","name":"PakToolsOnline"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How to resize image to passport size 300x300?","acceptedAnswer":{"@type":"Answer","text":"Upload image, click Passport 300x300 preset, choose JPG format and click Resize & Download."}},{"@type":"Question","name":"Can I resize to Instagram and YouTube sizes?","acceptedAnswer":{"@type":"Answer","text":"Yes, presets include Instagram 1080x1080, YouTube 1280x720, Story 1080x1920, CNIC 492x633 and custom size."}},{"@type":"Question","name":"Is my photo private?","acceptedAnswer":{"@type":"Answer","text":"Yes, all resizing happens in browser. No image is uploaded to server."}},{"@type":"Question","name":"Is image resizer free?","acceptedAnswer":{"@type":"Answer","text":"Yes, 100% free, no signup, no watermark, unlimited downloads."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paktoolsonline.com/"},{"@type":"ListItem","position":2,"name":"Image Resizer","item":"https://paktoolsonline.com/image-resizer.html"}]}</script>
 </head>
 <body>
 <header class="relative z-20 max-w-5xl mx-auto px-4 pt-3">
 <div class="glass rounded-full px-4 py-2.5 flex justify-between items-center">
-<a href="index.html" style="text-decoration:none;color:white" class="font-black text-[15px] flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-black text-xs">P</div> PakTools</a>
+<a href="index.html" style="text-decoration:none;color:white" class="font-black text-[15px] flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-black text-xs">P</div> PakToolsOnline</a>
 <a href="index.html" class="bg-white text-black font-bold px-4 py-1.5 rounded-full text-[11px]" style="text-decoration:none">All Tools</a>
 </div>
 </header>
@@ -26,13 +41,13 @@ body{margin:0;background:#05020a;color:white;overflow-x:hidden}
 <div class="text-center">
 <div class="tool-icon">📐</div>
 <h1 class="text-3xl font-black">Image Resizer</h1>
-<p class="text-gray-400 mt-1 text-[12px]">Resize to Passport 300x300, Instagram, YouTube - Free</p>
+<p class="text-gray-400 mt-1 text-[12px]">Resize to Passport 300x300, Instagram, YouTube - Private & Free</p>
 </div>
 <div class="glass rounded-[18px] p-4 mt-6">
-<div id="dropArea" class="border-2 border-dashed border-white/20 rounded-xl p-6 text-center cursor-pointer hover:border-cyan-400">
+<div id="dropArea" class="border-2 border-dashed border-white/20 rounded-xl p-6 text-center cursor-pointer hover:border-cyan-400 transition">
 <input type="file" id="fileInput" accept="image/*" class="hidden">
-<div id="uploadPrompt"><div class="text-3xl mb-1">🖼️</div><p class="font-bold text-[12px]">Click or Drag Image Here</p><p class="text-[10px] text-gray-400 mt-1">JPG, PNG, WEBP</p></div>
-<img id="preview" class="hidden max-h-[240px] mx-auto rounded-lg">
+<div id="uploadPrompt"><div class="text-3xl mb-1">🖼️</div><p class="font-bold text-[12px]">Click or Drag Image Here</p><p class="text-[10px] text-gray-400 mt-1">JPG, PNG, WEBP - 100% Secure</p></div>
+<img id="preview" class="hidden max-h-[240px] mx-auto rounded-lg" alt="Image preview for resizing to passport size">
 </div>
 <p class="text-[11px] font-bold mt-4 text-cyan-300">Quick Size - 1 Click:</p>
 <div class="grid grid-cols-3 gap-2 mt-2">
@@ -44,30 +59,47 @@ body{margin:0;background:#05020a;color:white;overflow-x:hidden}
 <div class="preset rounded-lg py-2.5 px-2 text-center" data-w="492" data-h="633"><p class="font-bold text-[11px]">CNIC</p><p class="text-[10px] text-gray-400">492x633</p></div>
 </div>
 <div class="grid grid-cols-2 gap-2 mt-4">
-<div><label class="text-[10px] text-gray-400">Width (px)</label><input id="widthInput" type="number" value="300" class="w-full mt-1 glass rounded-xl px-3 py-2.5 text-[12px] outline-none"></div>
-<div><label class="text-[10px] text-gray-400">Height (px)</label><input id="heightInput" type="number" value="300" class="w-full mt-1 glass rounded-xl px-3 py-2.5 text-[12px] outline-none"></div>
+<div><label for="widthInput" class="text-[10px] text-gray-400">Width (px)</label><input id="widthInput" type="number" value="300" class="w-full mt-1 glass rounded-xl px-3 py-2.5 text-[12px] outline-none"></div>
+<div><label for="heightInput" class="text-[10px] text-gray-400">Height (px)</label><input id="heightInput" type="number" value="300" class="w-full mt-1 glass rounded-xl px-3 py-2.5 text-[12px] outline-none"></div>
 </div>
 <div class="flex items-center gap-3 mt-3">
 <label class="flex items-center gap-1.5 text-[11px] text-gray-300"><input type="checkbox" id="lockAspect" checked class="accent-cyan-400"> 🔒 Lock Ratio</label>
-<select id="formatSelect" class="ml-auto glass rounded-full px-3 py-1.5 text-[11px]"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WEBP</option></select>
+<select id="formatSelect" class="ml-auto glass rounded-full px-3 py-1.5 text-[11px]" aria-label="Select output format"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WEBP</option></select>
 </div>
-<button id="resizeBtn" class="w-full mt-4 bg-gradient-to-r from-cyan-400 to-purple-500 text-white font-bold py-3 rounded-full text-[12px]">Resize & Download →</button>
+<button id="resizeBtn" class="w-full mt-4 bg-gradient-to-r from-cyan-400 to-purple-500 text-white font-bold py-3 rounded-full text-[12px] shadow-[0_0_15px_rgba(168,85,247,0.4)]">Resize & Download →</button>
 <p id="sizeInfo" class="text-center text-[10px] text-gray-500 mt-2">Original: Upload image first</p>
 <canvas id="canvas" class="hidden"></canvas>
 </div>
-
-<!-- SMALL SEO -->
 <div class="content-box rounded-xl p-5 mt-4">
-<h2 class="text-[13px] font-bold">About Image Resizer</h2>
-<p class="mt-2 text-[11px] leading-5 text-gray-400">PakTools Free Image Resizer helps you resize any image to exact dimensions like Passport Size 300x300, 600x600, Instagram 1080x1080, YouTube Thumbnail 1280x720, Story 1080x1920, and CNIC size 492x633. Perfect for Pakistan job forms, passport applications, social media posts. Works 100% offline in browser, no image upload to server, so your photos are safe. Choose JPG, PNG, or WEBP output, lock aspect ratio to avoid distortion, one-click presets for quick resize. 100% free, no signup, no watermark.</p>
+<h2 class="text-[13px] font-bold">About Image Resizer - Passport 300x300 Tool</h2>
+<p class="mt-2 text-[11px] leading-6 text-gray-400">PakTools Free Image Resizer helps you resize any image to exact dimensions like Passport Size 300x300, 600x600, Instagram Post 1080x1080, YouTube Thumbnail 1280x720, Instagram Story 1080x1920, and NADRA CNIC size 492x633. Perfect for Pakistan job forms, FPSC, PPSC, passport applications, university admissions, and social media posts. Works 100% offline in browser using HTML5 Canvas, no image upload to server, so your personal photos are safe and private. You can choose output format JPG, PNG, or WEBP, lock aspect ratio to avoid stretched faces, and use one-click presets for quick resize. For passport photos, use 300x300 JPG with white background for best result. 100% free, no signup, no watermark, unlimited downloads, mobile friendly.</p>
 <div class="grid md:grid-cols-2 gap-3 mt-3">
-<div><h3 class="text-[11px] font-bold">How to Use?</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>Upload image (click or drag)</li><li>Select preset or enter custom W/H</li><li>Choose format JPG/PNG/WEBP</li><li>Click Resize & Download</li></ul></div>
-<div><h3 class="text-[11px] font-bold">Features</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>Passport 300x300 & all sizes</li><li>Lock aspect ratio</li><li>Private, browser-based</li><li>Free, instant download</li></ul></div>
+<div><h3 class="text-[11px] font-bold">How to Resize Image to 300x300?</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-6 text-gray-400"><li>Upload image by clicking or drag & drop</li><li>Select preset Passport 300x300 or enter custom W/H</li><li>Choose format JPG/PNG/WEBP, lock ratio if needed</li><li>Click Resize & Download to save</li></ul></div>
+<div><h3 class="text-[11px] font-bold">Key Features</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-6 text-gray-400"><li>Passport 300x300 & all popular sizes preset</li><li>Custom width height, lock aspect ratio</li><li>Private, browser-based, no server upload</li><li>Free, instant download, no watermark</li></ul></div>
 </div>
-<p class="mt-3 text-[10px] text-gray-500 border-t border-white/10 pt-2">Tip: For passport, use 300x300 JPG with white background.</p>
+<div class="mt-4 border-t border-white/10 pt-3">
+<h3 class="text-[11px] font-bold">Frequently Asked Questions</h3>
+<div class="mt-2 space-y-2 text-[11px] leading-5 text-gray-400">
+<p><b class="text-gray-300">How to resize to 300x300 passport?</b> Click Passport preset, upload photo, download.</p>
+<p><b class="text-gray-300">Will image stretch?</b> Enable Lock Ratio to maintain original proportions.</p>
+<p><b class="text-gray-300">Is it free and private?</b> Yes, free unlimited, image never leaves your device.</p>
 </div>
 </div>
-<footer class="text-center py-5 text-[10px] text-gray-500">© 2025 PakTools</footer>
+<p class="mt-3 text-[10px] text-gray-500">Tip: For govt jobs, resize to 300x300 JPG then use Image Compressor 20KB tool.</p>
+</div>
+<div class="content-box rounded-xl p-4 mt-4">
+<h3 class="text-[12px] font-bold">Related Free Tools</h3>
+<div class="grid grid-cols-2 gap-2 mt-2 text-[11px]">
+<a href="image-compressor.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🗜️ Compressor 20KB</a>
+<a href="background-remover.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">✨ BG Remover</a>
+<a href="passport-photo-maker.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🖼️ Passport Maker</a>
+<a href="image-color-picker.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🎯 Color Picker</a>
+<a href="qr-generator.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🔳 QR Generator</a>
+<a href="color-palette-generator.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🎨 Color Palette</a>
+</div>
+</div>
+</div>
+<footer class="text-center py-5 text-[10px] text-gray-500">© 2025 PakToolsOnline - <a href="privacy-policy.html" class="hover:text-white">Privacy</a> | <a href="terms.html" class="hover:text-white">Terms</a> | <a href="contact.html" class="hover:text-white">Contact</a> | <a href="sitemap.xml" class="hover:text-white">Sitemap</a></footer>
 <script>
 let originalImage=null, aspectRatio=1;
 const fileInput=document.getElementById('fileInput'), dropArea=document.getElementById('dropArea'), preview=document.getElementById('preview'), uploadPrompt=document.getElementById('uploadPrompt'), widthInput=document.getElementById('widthInput'), heightInput=document.getElementById('heightInput');
@@ -79,7 +111,7 @@ function handleFile(file){if(!file)return;const r=new FileReader();r.onload=e=>{
 widthInput.addEventListener('input',()=>{if(document.getElementById('lockAspect').checked&&originalImage)heightInput.value=Math.round(widthInput.value/aspectRatio);});
 heightInput.addEventListener('input',()=>{if(document.getElementById('lockAspect').checked&&originalImage)widthInput.value=Math.round(heightInput.value*aspectRatio);});
 document.querySelectorAll('.preset').forEach(b=>{b.addEventListener('click',()=>{document.querySelectorAll('.preset').forEach(x=>x.classList.remove('active'));b.classList.add('active');widthInput.value=b.dataset.w;heightInput.value=b.dataset.h;});});
-document.getElementById('resizeBtn').addEventListener('click',()=>{if(!originalImage){alert('Pehle image upload karo!');return}const w=parseInt(widthInput.value),h=parseInt(heightInput.value);const c=document.getElementById('canvas');c.width=w;c.height=h;const ctx=c.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);ctx.drawImage(originalImage,0,0,w,h);const fmt=document.getElementById('formatSelect').value;const ext=fmt==='image/png'?'png':fmt==='image/webp'?'webp':'jpg';const a=document.createElement('a');a.download=`PakTools-${w}x${h}.${ext}`;a.href=c.toDataURL(fmt,0.92);a.click();document.getElementById('sizeInfo').innerText=`✅ Downloaded ${w}x${h}`;});
+document.getElementById('resizeBtn').addEventListener('click',()=>{if(!originalImage){alert('Pehle image upload karo!');return}const w=parseInt(widthInput.value),h=parseInt(heightInput.value);const c=document.getElementById('canvas');c.width=w;c.height=h;const ctx=c.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);ctx.drawImage(originalImage,0,0,w,h);const fmt=document.getElementById('formatSelect').value;const ext=fmt==='image/png'?'png':fmt==='image/webp'?'webp':'jpg';const a=document.createElement('a');a.download=`PakToolsOnline-${w}x${h}.${ext}`;a.href=c.toDataURL(fmt,0.92);a.click();document.getElementById('sizeInfo').innerText=`✅ Downloaded ${w}x${h}`;});
 </script>
 </body>
 </html>
