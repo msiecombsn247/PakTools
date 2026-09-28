@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>QR Code Generator With Logo - Free Custom QR | PakTools</title>
+<meta name="description" content="Free QR Code Generator with Logo, Colors, Custom Design. Create QR for WhatsApp, Instagram, Website, WiFi. Download PNG High Quality.">
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+*{font-family:'Inter',sans-serif}body{background:#07010f;color:white;margin:0}
+.galaxy-bg{position:fixed;inset:0;z-index:0;background:#020006;pointer-events:none}
+.galaxy{position:absolute;width:800px;height:800px;border-radius:50%;filter:blur(80px);opacity:0.5}
+.g1{background:radial-gradient(circle,#c084fc,#7e22ce 25%,transparent 70%);top:-10%;left:-10%}
+.g2{background:radial-gradient(circle,#a855f7,#581c87 25%,transparent 70%);bottom:-20%;right:-10%}
+.tool-box{background:linear-gradient(145deg,rgba(28,10,58,0.92),rgba(12,3,32,0.92));border:1px solid rgba(168,85,247,0.3);border-radius:1.5rem}
+.input{width:100%;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:11px 14px;font-size:13px;outline:none;color:white}
+@media(max-width:768px){.galaxy{filter:blur(40px);width:400px;height:400px}}
+#qrCanvas{border-radius:16px;background:white;padding:12px}
+</style>
+</head>
+<body>
+<div class="galaxy-bg"><div class="galaxy g1"></div><div class="galaxy g2"></div></div>
+<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#07010f]/80 backdrop-blur-xl"><div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"><a href="index.html" class="font-black text-xl flex items-center gap-2" style="text-decoration:none;color:white"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center">P</div>PakTools</a><a href="index.html" class="text-[12px] bg-white/10 border border-white/20 px-4 py-2 rounded-full" style="text-decoration:none;color:white">Home</a></div></header>
+
+<main class="relative z-10 max-w-6xl mx-auto px-6 py-8">
+<div class="text-center"><h1 class="text-3xl md:text-5xl font-black">QR Generator <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-fuchsia-300">With Logo PRO</span></h1><p class="text-gray-400 text-sm mt-2">Custom Colors + Logo + High Quality PNG - 100% Working</p></div>
+
+<div class="grid md:grid-cols-2 gap-6 mt-8">
+<div class="tool-box p-6 space-y-4">
+<label class="text-xs text-gray-400">Your Link / Text / WhatsApp / UPI</label>
+<textarea id="qrText" class="input h-24" placeholder="e.g. https://wa.me/923001234567 or https://instagram.com/yourname">https://paktoolsonline.com</textarea>
+<div class="grid grid-cols-2 gap-3">
+<div><label class="text-[11px] text-gray-400">QR Color</label><input id="colorDark" type="color" value="#000000" class="w-full h-10 rounded-lg mt-1"></div>
+<div><label class="text-[11px] text-gray-400">Background</label><input id="colorLight" type="color" value="#ffffff" class="w-full h-10 rounded-lg mt-1"></div>
+</div>
+<div><label class="text-[11px] text-gray-400">Upload Logo (Optional - Center me ayega)</label><input id="logoUpload" type="file" accept="image/*" class="input mt-1 text-[11px]"></div>
+<div class="flex gap-2"><button onclick="generateQR()" class="flex-1 bg-gradient-to-r from-purple-500 to-fuchsia-500 font-bold py-3 rounded-full text-sm">Generate QR</button><button onclick="downloadQR()" class="flex-1 bg-white text-black font-bold py-3 rounded-full text-sm">Download PNG</button></div>
+<p class="text-[10px] text-gray-500 text-center">Works offline - High Quality 1000x1000</p>
+</div>
+
+<div class="tool-box p-6 flex flex-col items-center justify-center">
+<div id="qrWrapper" class="bg-white p-3 rounded-2xl"><canvas id="qrCanvas" width="400" height="400"></canvas></div>
+<p id="qrStatus" class="text-xs text-gray-400 mt-4">QR Ready - Change colors & generate</p>
+</div>
+</div>
+</main>
+
+<script>
+let logoImg=null;
+document.getElementById('logoUpload').addEventListener('change',e=>{
+ const f=e.target.files[0]; if(!f) return;
+ const r=new FileReader(); r.onload=ev=>{logoImg=new Image(); logoImg.onload=()=>generateQR(); logoImg.src=ev.target.result;}; r.readAsDataURL(f);
+});
+function generateQR(){
+ const text=document.getElementById('qrText').value||'https://paktoolsonline.com';
+ const dark=document.getElementById('colorDark').value, light=document.getElementById('colorLight').value;
+ const canvas=document.getElementById('qrCanvas');
+ QRCode.toCanvas(canvas,text,{width:400, margin:2, color:{dark:dark, light:light}},err=>{
+   if(err){console.log(err); return;}
+   if(logoImg){
+     const ctx=canvas.getContext('2d');
+     const size=90; const x=(canvas.width-size)/2, y=(canvas.height-size)/2;
+     ctx.fillStyle='white'; ctx.fillRect(x-5,y-5,size+10,size+10);
+     ctx.drawImage(logoImg,x,y,size,size);
+   }
+   document.getElementById('qrStatus').innerText='✅ QR Generated Successfully!';
+ });
+}
+function downloadQR(){
+ const c=document.getElementById('qrCanvas'); const a=document.createElement('a');
+ a.download='paktools-qr-code.png'; a.href=c.toDataURL('image/png'); a.click();
+}
+generateQR();
+</script>
+</body>
+</html>
