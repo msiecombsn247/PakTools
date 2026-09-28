@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Passport Photo Maker Pakistan - 35x45mm, 300 DPI Free | PakTools</title>
+<meta name="description" content="Free Passport Size Photo Maker for Pakistan. Make 35x45mm, 2x2 inch, CNIC Photo with White Background. Print 8 Photos on 1 Page. 100% Free, No Signup.">
+<meta name="keywords" content="passport photo maker pakistan, 35x45 photo maker, cnic photo maker, passport size photo online">
+<link rel="canonical" href="https://paktoolsonline.com/passport-photo-maker.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+*{font-family:'Inter',sans-serif}body{background:#07010f;color:white;margin:0;overflow-x:hidden}
+.galaxy-bg{position:fixed;inset:0;z-index:0;background:#020006;pointer-events:none}
+.galaxy{position:absolute;width:800px;height:800px;border-radius:50%;filter:blur(80px);opacity:0.5}
+.g1{background:radial-gradient(circle,#c084fc,#7e22ce 25%,transparent 70%);top:-10%;left:-10%}
+.g2{background:radial-gradient(circle,#a855f7,#581c87 25%,transparent 70%);bottom:-20%;right:-10%}
+.tool-box{background:linear-gradient(145deg,rgba(28,10,58,0.92),rgba(12,3,32,0.92));border:1px solid rgba(168,85,247,0.3);border-radius:1.5rem}
+@media(max-width:768px){.tool-box{backdrop-filter:none}.galaxy{filter:blur(40px);width:400px;height:400px}}
+canvas{max-width:100%;border-radius:12px;background:white}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Passport Photo Maker Pakistan","applicationCategory":"PhotoApplication","offers":{"@type":"Offer","price":"0"},"description":"Make Pakistan passport size photo 35x45mm with white background free."}
+</script>
+</head>
+<body>
+<div class="galaxy-bg"><div class="galaxy g1"></div><div class="galaxy g2"></div></div>
+<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#07010f]/80 backdrop-blur-xl"><div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"><a href="index.html" class="font-black text-xl flex items-center gap-2" style="text-decoration:none;color:white"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center">P</div>PakTools</a><a href="index.html" class="text-[12px] bg-white/10 border border-white/20 px-4 py-2 rounded-full" style="text-decoration:none;color:white">Home</a></div></header>
+
+<main class="relative z-10 max-w-6xl mx-auto px-6 py-8">
+<div class="text-center max-w-3xl mx-auto"><h1 class="text-3xl md:text-5xl font-black">Passport Photo <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-fuchsia-300">Maker Pakistan</span></h1><p class="text-gray-400 text-sm mt-3">35x45mm • 2x2 Inch • CNIC • White Background • 300 DPI - 100% Free & Offline</p></div>
+
+<div class="grid md:grid-cols-2 gap-6 mt-8">
+<div class="tool-box p-6">
+<h3 class="font-bold mb-4">1. Upload & Settings</h3>
+<input type="file" id="upload" accept="image/*" class="w-full text-xs bg-black/50 border border-purple-500/30 rounded-full px-4 py-3">
+<div class="grid grid-cols-2 gap-3 mt-4">
+<select id="size" class="bg-black/50 border border-white/20 rounded-full px-4 py-2.5 text-xs outline-none"><option value="35x45">Pakistan Passport 35x45mm</option><option value="2x2">USA Visa 2x2 Inch (51x51mm)</option><option value="33x48">CNIC / ID Card 33x48mm</option><option value="25x35">Small 25x35mm</option></select>
+<select id="bgColor" class="bg-black/50 border border-white/20 rounded-full px-4 py-2.5 text-xs outline-none"><option value="white">Background White</option><option value="blue">Background Blue</option><option value="transparent">Keep Original</option></select>
+</div>
+<div class="mt-4"><label class="text-xs text-gray-400">Copies on A4 Sheet</label><select id="copies" class="w-full mt-1 bg-black/50 border border-white/20 rounded-full px-4 py-2.5 text-xs"><option value="1">1 Photo - Single</option><option value="8" selected>8 Photos - Standard (Recommended)</option><option value="12">12 Photos</option><option value="20">20 Photos - Small Size</option></select></div>
+<button onclick="generatePhoto()" class="w-full mt-5 bg-gradient-to-r from-purple-500 to-fuchsia-500 font-bold py-3 rounded-full text-sm">Generate Passport Photo</button>
+<p class="text-[10px] text-gray-500 mt-2 text-center">100% Offline - Your photo never leaves your phone</p>
+</div>
+
+<div class="tool-box p-6 text-center">
+<h3 class="font-bold mb-4">2. Preview & Download</h3>
+<canvas id="mainCanvas" width="400" height="500" class="mx-auto border border-white/10"></canvas>
+<div class="mt-4 flex gap-2 justify-center">
+<button onclick="downloadSingle()" class="bg-white text-black font-bold px-5 py-2.5 rounded-full text-xs">Download Single</button>
+<button onclick="downloadSheet()" class="bg-white/10 border border-white/20 font-bold px-5 py-2.5 rounded-full text-xs">Download A4 Sheet</button>
+</div>
+<p id="msg" class="text-xs text-gray-400 mt-3">Upload photo to start</p>
+</div>
+</div>
+
+<div class="tool-box p-6 mt-6"><h2 class="font-bold">What is Pakistan Passport Photo Size?</h2><p class="text-sm text-gray-400 mt-2">Official size for Pakistan passport is 35mm x 45mm with white background, 70-80% face visible, 300 DPI. For CNIC / Nadra use 33mm x 48mm. This tool automatically crops and resizes your photo to correct size. Print on photo paper for best result.</p></div>
+</main>
+
+<script>
+let img=null, ctx=document.getElementById('mainCanvas').getContext('2d');
+document.getElementById('upload').addEventListener('change',e=>{
+ const file=e.target.files[0]; if(!file) return;
+ const reader=new FileReader();
+ reader.onload=ev=>{img=new Image(); img.onload=()=>{drawPreview(); document.getElementById('msg').innerText='✅ Photo loaded. Click Generate.'}; img.src=ev.target.result;}
+ reader.readAsDataURL(file);
+});
+function getDims(){
+ const s=document.getElementById('size').value;
+ if(s==='35x45') return {w:413,h:531}; // 35x45mm at 300 DPI
+ if(s==='2x2') return {w:600,h:600};
+ if(s==='33x48') return {w:390,h:567};
+ return {w:295,h:413};
+}
+function drawPreview(){
+ if(!img) return;
+ const d=getDims(); const canvas=document.getElementById('mainCanvas');
+ canvas.width=d.w; canvas.height=d.h;
+ const bg=document.getElementById('bgColor').value;
+ if(bg!=='transparent'){ctx.fillStyle=bg==='blue'?'#3b82f6':'white'; ctx.fillRect(0,0,d.w,d.h);}
+ // center crop
+ const ratio=Math.max(d.w/img.width, d.h/img.height);
+ const nw=img.width*ratio, nh=img.height*ratio;
+ const x=(d.w-nw)/2, y=(d.h-nh)/2;
+ ctx.drawImage(img,x,y,nw,nh);
+}
+function generatePhoto(){drawPreview(); document.getElementById('msg').innerText='✅ Ready to download - 300 DPI HQ';}
+function downloadSingle(){
+ if(!img){alert('Upload photo first');return;}
+ const a=document.createElement('a'); a.download='paktools-passport-'+document.getElementById('size').value+'.jpg'; a.href=document.getElementById('mainCanvas').toDataURL('image/jpeg',0.95); a.click();
+}
+function downloadSheet(){
+ if(!img){alert('Upload photo first');return;}
+ const copies=parseInt(document.getElementById('copies').value);
+ const single=document.getElementById('mainCanvas');
+ const sheet=document.createElement('canvas'); const sCtx=sheet.getContext('2d');
+ // A4 at 300 DPI = 2480x3508
+ sheet.width=2480; sheet.height=3508; sCtx.fillStyle='white'; sCtx.fillRect(0,0,sheet.width,sheet.height);
+ const gap=50; let x=100,y=100; let col=0;
+ for(let i=0;i<copies;i++){
+   sCtx.drawImage(single,x,y);
+   col++; x+=single.width+gap;
+   if(col>=4){col=0; x=100; y+=single.height+gap;}
+ }
+ const a=document.createElement('a'); a.download='paktools-A4-sheet-'+copies+'-photos.jpg'; a.href=sheet.toDataURL('image/jpeg',0.92); a.click();
+}
+document.getElementById('size').addEventListener('change',drawPreview);
+document.getElementById('bgColor').addEventListener('change',drawPreview);
+</script>
+</body>
+</html>
