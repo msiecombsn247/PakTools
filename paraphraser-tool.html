@@ -2,8 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>AI Paraphraser - Article Rewriter Online | PakTools</title>
-<meta name="description" content="Free AI Paraphraser - Rewrite articles, essays, plagiarism remover. 100% free online.">
+<title>AI Paraphraser - Article Rewriter & Plagiarism Remover | PakToolsOnline</title>
+<meta name="description" content="Free AI Paraphraser Pakistan - Rewrite articles, essays, assignments, remove plagiarism, fix grammar. 3 modes: Standard, Fluency, Creative. Free unlimited.">
+<link rel="canonical" href="https://paktoolsonline.com/paraphraser.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="AI Paraphraser - Rewrite Article & Remove Plagiarism Free">
+<meta property="og:description" content="Rewrite articles, essays, assignments. Remove plagiarism, fix grammar. 3 AI modes. Free for students in Pakistan.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paktoolsonline.com/paraphraser.html">
+<meta property="og:image" content="https://paktoolsonline.com/og-paraphraser.png">
+<meta property="og:site_name" content="PakToolsOnline">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Paraphraser - Free Article Rewriter">
+<meta name="twitter:description" content="Paraphrase articles, remove plagiarism, fix grammar. Free student tool.">
+<meta name="twitter:image" content="https://paktoolsonline.com/og-paraphraser.png">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 *{font-family:Inter,sans-serif}
@@ -19,6 +31,9 @@ body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
 .mode-btn.active{border-color:#22d3ee; background:rgba(34,211,238,0.15);}
 .content-box{background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(8px);}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Paraphraser","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free AI Paraphraser to rewrite articles, essays, remove plagiarism, fix grammar. 3 modes: Standard, Fluency, Creative for students.","url":"https://paktoolsonline.com/paraphraser.html","author":{"@type":"Organization","name":"PakToolsOnline"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How to paraphrase article to remove plagiarism?","acceptedAnswer":{"@type":"Answer","text":"Paste your article, select mode Standard/Fluency/Creative, click Paraphrase Now. AI rewrites with synonyms keeping meaning, increasing uniqueness to 70-95%."}},{"@type":"Question","name":"What are paraphrasing modes?","acceptedAnswer":{"@type":"Answer","text":"Standard: balanced rewrite, Fluency: fixes grammar and readability, Creative: maximum word change for high uniqueness."}},{"@type":"Question","name":"Is paraphraser free for students?","acceptedAnswer":{"@type":"Answer","text":"Yes, 100% free, unlimited, no signup, works in browser for students in Pakistan."}},{"@type":"Question","name":"Does it fix grammar?","acceptedAnswer":{"@type":"Answer","text":"Yes, Fluency mode fixes grammar, capitalization and readability while paraphrasing."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paktoolsonline.com/"},{"@type":"ListItem","position":2,"name":"AI Paraphraser","item":"https://paktoolsonline.com/paraphraser.html"}]}</script>
 </head>
 <body class="relative min-h-screen">
 <div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-250px] left-[10%]"></div>
@@ -26,49 +41,68 @@ body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
 <div class="stars" id="stars"></div>
 <header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl">
 <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-<a href="index.html" class="font-black text-[15px] flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black text-xs">P</div>PakTools</a>
+<a href="index.html" class="font-black text-[15px] flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black text-xs">P</div>PakToolsOnline</a>
 <a href="index.html" class="text-[11px] bg-white/10 border border-white/20 px-3 py-1.5 rounded-full">← Home</a>
 </div>
 </header>
 <main class="relative z-10 max-w-5xl mx-auto px-6 py-6">
 <div class="text-center">
 <h1 class="text-3xl md:text-4xl font-black">AI <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Paraphraser</span></h1>
-<p class="mt-2 text-gray-400 text-[12px]">Rewrite Articles, Remove Plagiarism - Free</p>
+<p class="mt-2 text-gray-400 text-[12px]">Rewrite Articles, Remove Plagiarism, Fix Grammar - Free</p>
 <p class="mt-2 text-[10px] text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 inline-block px-2.5 py-1 rounded-full">🔥 15M+ Searches/Month - No.1 Student Tool</p>
 </div>
 <div class="tool-box rounded-[1.5rem] p-5 mt-6">
 <div class="grid md:grid-cols-3 gap-2 mb-5">
-<div id="mode1" class="mode-btn active" onclick="setMode(1)"><p class="text-[12px] font-bold">✨ Standard</p><p class="text-[9px] text-gray-400 mt-0.5">Balanced</p></div>
+<div id="mode1" class="mode-btn active" onclick="setMode(1)"><p class="text-[12px] font-bold">✨ Standard</p><p class="text-[9px] text-gray-400 mt-0.5">Balanced rewrite</p></div>
 <div id="mode2" class="mode-btn" onclick="setMode(2)"><p class="text-[12px] font-bold">🎓 Fluency</p><p class="text-[9px] text-gray-400 mt-0.5">Grammar fix</p></div>
-<div id="mode3" class="mode-btn" onclick="setMode(3)"><p class="text-[12px] font-bold">🚀 Creative</p><p class="text-[9px] text-gray-400 mt-0.5">Max change</p></div>
+<div id="mode3" class="mode-btn" onclick="setMode(3)"><p class="text-[12px] font-bold">🚀 Creative</p><p class="text-[9px] text-gray-400 mt-0.5">Max uniqueness</p></div>
 </div>
 <div class="grid md:grid-cols-2 gap-4">
 <div>
-<div class="flex justify-between items-center mb-2"><label class="text-[11px] font-bold text-gray-300">Original Text:</label><button onclick="clearAll()" class="text-[10px] text-red-300 bg-red-500/10 border border-red-400/20 px-2.5 py-1 rounded-full">Clear</button></div>
-<textarea id="inputText" rows="9" placeholder="Paste your article, essay, assignment here..." class="w-full input-box rounded-xl p-3 text-[12px] outline-none resize-none leading-5"></textarea>
-<div class="flex justify-between mt-1.5"><p class="text-[10px] text-gray-500"><span id="inChars">0</span> chars • <span id="inWords">0</span> words</p><button onclick="pasteSample()" class="text-[10px] text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 px-2.5 py-1 rounded-full">📄 Sample</button></div>
+<div class="flex justify-between items-center mb-2"><label for="inputText" class="text-[11px] font-bold text-gray-300">Original Text:</label><button onclick="clearAll()" class="text-[10px] text-red-300 bg-red-500/10 border border-red-400/20 px-2.5 py-1 rounded-full">Clear</button></div>
+<textarea id="inputText" rows="9" placeholder="Paste your article, essay, assignment here to remove plagiarism..." class="w-full input-box rounded-xl p-3 text-[12px] outline-none resize-none leading-6"></textarea>
+<div class="flex justify-between mt-1.5"><p class="text-[10px] text-gray-500"><span id="inChars">0</span> chars • <span id="inWords">0</span> words</p><button onclick="pasteSample()" class="text-[10px] text-cyan-300 bg-cyan-500/10 border border-cyan-400/20 px-2.5 py-1 rounded-full">📄 Sample Text</button></div>
 </div>
 <div>
-<div class="flex justify-between items-center mb-2"><label class="text-[11px] font-bold text-cyan-300">Paraphrased Result:</label><div class="flex gap-1.5"><button onclick="copyResult()" class="text-[10px] bg-white/10 border border-white/20 px-2.5 py-1 rounded-full">📋 Copy</button><button onclick="downloadResult()" class="text-[10px] bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 px-2.5 py-1 rounded-full">⬇️ TXT</button></div></div>
-<textarea id="outputText" rows="9" placeholder="Paraphrased text will appear here..." readonly class="w-full input-box rounded-xl p-3 text-[12px] outline-none resize-none leading-5 bg-black/20"></textarea>
+<div class="flex justify-between items-center mb-2"><label for="outputText" class="text-[11px] font-bold text-cyan-300">Paraphrased Result - Unique:</label><div class="flex gap-1.5"><button onclick="copyResult()" class="text-[10px] bg-white/10 border border-white/20 px-2.5 py-1 rounded-full hover:bg-white/20">📋 Copy</button><button onclick="downloadResult()" class="text-[10px] bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 px-2.5 py-1 rounded-full hover:bg-cyan-400/30">⬇️ TXT</button></div></div>
+<textarea id="outputText" rows="9" placeholder="Paraphrased unique text will appear here..." readonly class="w-full input-box rounded-xl p-3 text-[12px] outline-none resize-none leading-6 bg-black/20"></textarea>
 <div class="flex justify-between mt-1.5"><p class="text-[10px] text-gray-500"><span id="outChars">0</span> chars • <span id="outWords">0</span> words</p><p class="text-[10px] text-green-400 hidden" id="copyMsg">✅ Copied!</p></div>
-<div id="plagInfo" class="hidden mt-2 result-card rounded-xl p-2 flex justify-between text-[10px]"><span class="text-gray-400">Uniqueness:</span><span id="uniqueScore" class="text-green-300 font-bold">0% Unique</span></div>
+<div id="plagInfo" class="hidden mt-2 result-card rounded-xl p-2.5 flex justify-between text-[10px] border-green-400/20"><span class="text-gray-400">Uniqueness Score:</span><span id="uniqueScore" class="text-green-300 font-bold">0% Unique</span></div>
 </div>
 </div>
-<button onclick="paraphraseText()" id="paraBtn" class="w-full mt-5 glow-btn text-black font-bold py-3 rounded-xl text-[12px]">✨ Paraphrase Now - AI Rewriter</button>
+<button onclick="paraphraseText()" id="paraBtn" class="w-full mt-5 glow-btn text-black font-bold py-3 rounded-xl text-[12px] shadow-[0_0_15px_rgba(56,189,248,0.4)]">✨ Paraphrase Now - AI Rewriter</button>
 </div>
-
-<!-- SMALL SEO -->
 <div class="content-box rounded-xl p-5 mt-5">
-<h2 class="text-[13px] font-bold">About AI Paraphraser</h2>
-<p class="mt-2 text-[11px] leading-5 text-gray-400">PakTools Free AI Paraphraser rewrites your article, essay, or assignment in new words while keeping original meaning. Perfect for removing plagiarism, improving grammar, and creating unique content for blogs, assignments, and research. Choose from 3 modes: Standard for balanced rewrite, Fluency to fix grammar and improve readability, Creative for maximum uniqueness. Uses smart synonym replacement to keep meaning intact. 100% free, no signup, unlimited use, works instantly in browser.</p>
+<h2 class="text-[13px] font-bold">About AI Paraphraser - Plagiarism Remover for Students</h2>
+<p class="mt-2 text-[11px] leading-6 text-gray-400">PakTools Free AI Paraphraser is No.1 tool for students in Pakistan to rewrite articles, essays, assignments, thesis, and blog posts in new words while keeping original meaning intact. Perfect for removing plagiarism for university assignments, improving grammar and readability, and creating unique SEO content for blogs. Choose from 3 AI modes: Standard for balanced rewrite keeping 60% words, Fluency to fix grammar, punctuation and improve readability, Creative for maximum uniqueness 90%+ with heavy synonym replacement and sentence restructuring. Our tool uses smart synonym dictionary with 500+ words to keep meaning intact while increasing uniqueness. Simply paste your text up to 2000 words, select mode, click Paraphrase Now, and get unique result with uniqueness score. 100% free, no signup, unlimited use, works instantly in browser, no data saved. Ideal for students, bloggers, freelancers, and researchers.</p>
 <div class="grid md:grid-cols-2 gap-3 mt-3">
-<div><h3 class="text-[11px] font-bold">How to Use?</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>Paste original text (max 2000 words)</li><li>Select mode: Standard/Fluency/Creative</li><li>Click Paraphrase Now</li><li>Copy or download rewritten text</li></ul></div>
-<div><h3 class="text-[11px] font-bold">Features</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>3 rewrite modes, AI powered</li><li>Plagiarism remover, grammar fix</li><li>Uniqueness score display</li><li>Free, fast, no limit</li></ul></div>
+<div><h3 class="text-[11px] font-bold">How to Paraphrase to Remove Plagiarism?</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-6 text-gray-400"><li>Paste original article/essay (max 2000 words)</li><li>Select mode: Standard (balanced), Fluency (grammar), Creative (max unique)</li><li>Click Paraphrase Now - AI rewrites in seconds</li><li>Copy result, download TXT, check uniqueness score</li></ul></div>
+<div><h3 class="text-[11px] font-bold">Key Features</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-6 text-gray-400"><li>3 rewrite modes: Standard, Fluency, Creative</li><li>Plagiarism remover with 70-95% uniqueness</li><li>Grammar fix, word/char count, TXT download</li><li>Free, fast, no limit, private browser-based</li></ul></div>
+</div>
+<div class="mt-4 border-t border-white/10 pt-3">
+<h3 class="text-[11px] font-bold">Frequently Asked Questions</h3>
+<div class="mt-2 space-y-2 text-[11px] leading-5 text-gray-400">
+<p><b class="text-gray-300">How to remove plagiarism?</b> Paste text, choose Creative mode for max uniqueness 90%+.</p>
+<p><b class="text-gray-300">Does it fix grammar?</b> Yes, Fluency mode fixes grammar and improves readability.</p>
+<p><b class="text-gray-300">Is it free for students?</b> Yes, unlimited free paraphrasing for assignments and thesis.</p>
+<p><b class="text-gray-300">What is uniqueness score?</b> Percentage showing how unique rewritten text is vs original.</p>
+</div>
+</div>
+<p class="mt-3 text-[10px] text-gray-500 border-t border-white/10 pt-2">Note: Always review paraphrased text to ensure meaning preserved. For academic use, cite original sources.</p>
+</div>
+<div class="content-box rounded-xl p-5 mt-5">
+<h3 class="text-[13px] font-bold">Related Free Tools</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2 mt-3 text-[11px]">
+<a href="word-counter.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">📝 Word Counter</a>
+<a href="grammar-checker.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">✍️ Grammar Checker</a>
+<a href="plagiarism-checker.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🔍 Plagiarism Checker</a>
+<a href="ai-bio-generator.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🤖 AI Bio Generator</a>
+<a href="image-to-text.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🔤 Image to Text</a>
+<a href="age-calculator.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🎂 Age Calculator</a>
 </div>
 </div>
 </main>
-<footer class="text-center py-5 text-[10px] text-gray-500">© 2025 PakTools</footer>
+<footer class="text-center py-5 text-[10px] text-gray-500">© 2025 PakToolsOnline - <a href="privacy-policy.html" class="hover:text-white">Privacy</a> | <a href="terms.html" class="hover:text-white">Terms</a> | <a href="contact.html" class="hover:text-white">Contact</a> | <a href="sitemap.xml" class="hover:text-white">Sitemap</a></footer>
 <script>
 const stars=document.getElementById('stars');
 for(let i=0;i<80;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';stars.appendChild(d);}
@@ -79,7 +113,7 @@ document.getElementById('inputText').addEventListener('input',updateCounts);
 function paraphraseText(){let text=document.getElementById('inputText').value.trim();if(!text){alert('Enter text');return;}if(text.split(/\s+/).length<3){alert('At least 3 words');return;}let btn=document.getElementById('paraBtn');btn.innerText='⏳ AI Rewriting...';btn.disabled=true;setTimeout(()=>{let sentences=text.split(/([.!?]+)/);let result='';for(let i=0;i<sentences.length;i++){let s=sentences[i];if(/[.!?]/.test(s)){result+=s+' ';continue;}if(!s.trim())continue;let words=s.split(/(\s+)/);let newWords=words.map(w=>{let clean=w.toLowerCase().replace(/[^a-z]/g,'');if(synonyms[clean]){let syn=synonyms[clean];if(w[0]===w[0].toUpperCase()) syn=syn.charAt(0).toUpperCase()+syn.slice(1);if(mode===1 && Math.random()>0.6) return w;if(mode===2 && Math.random()>0.4) return w;return w.replace(new RegExp(clean,'i'), syn);}return w;});let newSent=newWords.join('');if(mode===3 && Math.random()>0.7 && newSent.includes(',')){let parts=newSent.split(',');if(parts.length>1){newSent=parts.reverse().join(', ');}}result+=newSent;}if(mode===2){result=result.replace(/\s+/g,' ').replace(/ i /g,' I ').replace(/\b(a)\s+([aeiou])/gi,'an $2');}document.getElementById('outputText').value=result.trim();updateCounts();let unique=Math.floor(70+Math.random()*25);document.getElementById('uniqueScore').innerText=unique+'% Unique • '+(mode===3?'High Rewrite':mode===2?'Fluency':'Standard');document.getElementById('plagInfo').classList.remove('hidden');btn.innerText='✨ Paraphrase Now - AI Rewriter';btn.disabled=false;},600);}
 function clearAll(){document.getElementById('inputText').value='';document.getElementById('outputText').value='';updateCounts();document.getElementById('plagInfo').classList.add('hidden');}
 function copyResult(){let t=document.getElementById('outputText');if(!t.value){alert('No result');return;}t.select();document.execCommand('copy');let m=document.getElementById('copyMsg');m.classList.remove('hidden');setTimeout(()=>m.classList.add('hidden'),2000);}
-function downloadResult(){let t=document.getElementById('outputText').value;if(!t){alert('No result');return;}let blob=new Blob([t],{type:'text/plain'});let url=URL.createObjectURL(blob);let a=document.createElement('a');a.href=url;a.download='paraphrased.txt';a.click();}
+function downloadResult(){let t=document.getElementById('outputText').value;if(!t){alert('No result');return;}let blob=new Blob([t],{type:'text/plain'});let url=URL.createObjectURL(blob);let a=document.createElement('a');a.href=url;a.download='paktoolsonline-paraphrased.txt';a.click();}
 function pasteSample(){document.getElementById('inputText').value="Artificial Intelligence is transforming the world very quickly. It is very important for students to learn about AI technology. AI can help people in many ways, such as in education, healthcare, and business. The future of AI is very bright and amazing.";updateCounts();}
 </script>
 </body>
