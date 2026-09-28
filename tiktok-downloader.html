@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>TikTok Video Downloader No Watermark Free - PakTools</title>
+<meta name="description" content="Download TikTok Videos Without Watermark in HD Free. Fast, No Signup. 100% Working TikTok Downloader by PakTools.">
+<meta name="keywords" content="tiktok downloader, tiktok no watermark, tiktok video download pakistan">
+<link rel="canonical" href="https://paktoolsonline.com/tiktok-downloader.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+*{font-family:'Inter',sans-serif}body{background:#07010f;color:white;margin:0;overflow-x:hidden}
+.galaxy-bg{position:fixed;inset:0;z-index:0;background:#020006;pointer-events:none}
+.galaxy{position:absolute;width:800px;height:800px;border-radius:50%;filter:blur(80px);opacity:0.6}
+.g1{background:radial-gradient(circle at 30% 30%, #c084fc, #7e22ce 25%, transparent 70%);top:-10%;left:-10%}
+.g2{background:radial-gradient(circle at 70% 70%, #a855f7, #581c87 25%, transparent 70%);bottom:-20%;right:-10%}
+.tool-box{background:linear-gradient(145deg,rgba(28,10,58,0.92),rgba(12,3,32,0.92));border:1px solid rgba(168,85,247,0.3);border-radius:1.5rem;backdrop-filter:blur(12px)}
+@media(max-width:768px){.tool-box{backdrop-filter:none}.galaxy{filter:blur(40px);width:400px;height:400px}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"TikTok Downloader No Watermark","applicationCategory":"MultimediaApplication","offers":{"@type":"Offer","price":"0"}}
+</script>
+</head>
+<body>
+<div class="galaxy-bg"><div class="galaxy g1"></div><div class="galaxy g2"></div></div>
+<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#07010f]/80 backdrop-blur-xl"><div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"><a href="index.html" class="font-black text-xl flex items-center gap-2" style="text-decoration:none;color:white"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center">P</div>PakTools</a><a href="index.html" class="text-[12px] bg-white/10 border border-white/20 px-4 py-2 rounded-full" style="text-decoration:none;color:white">Home</a></div></header>
+
+<main class="relative z-10 max-w-4xl mx-auto px-6 py-10">
+<div class="text-center"><h1 class="text-3xl md:text-5xl font-black">TikTok Downloader <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-fuchsia-300">No Watermark</span></h1><p class="text-gray-400 text-sm mt-3">Paste TikTok Link & Download HD Video Free - 100% Working</p></div>
+
+<div class="tool-box mt-8 p-6 md:p-8">
+<div class="flex flex-col md:flex-row gap-3"><input id="tiktokUrl" type="text" placeholder="Paste TikTok link here e.g. https://www.tiktok.com/..." class="flex-1 bg-black/50 border border-purple-500/30 rounded-full px-5 py-3.5 text-sm outline-none focus:border-purple-400"><button onclick="downloadTikTok()" id="dlBtn" class="bg-gradient-to-r from-purple-500 to-fuchsia-500 text-white font-bold px-8 py-3.5 rounded-full hover:scale-105 transition text-sm">Download</button></div>
+<p id="status" class="text-[12px] text-center mt-3 text-gray-400"></p>
+
+<div id="result" class="hidden mt-6 border-t border-white/10 pt-6">
+<div class="grid md:grid-cols-2 gap-6 items-center">
+<video id="preview" controls class="w-full rounded-xl bg-black"></video>
+<div class="space-y-3">
+<h3 id="vidTitle" class="font-bold text-sm"></h3>
+<p id="vidAuthor" class="text-xs text-gray-400"></p>
+<a id="noWatermarkBtn" href="#" download class="block w-full text-center bg-white text-black font-bold py-3 rounded-full text-sm hover:bg-gray-200 transition">Download No Watermark (HD)</a>
+<a id="musicBtn" href="#" download class="block w-full text-center bg-white/10 border border-white/20 font-bold py-3 rounded-full text-sm hover:bg-white/20 transition">Download MP3 Audio</a>
+<button onclick="location.reload()" class="w-full text-xs text-gray-500 mt-2">Download Another</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="mt-10 tool-box p-6"><h2 class="font-bold">How to Download TikTok Video?</h2><ol class="text-sm text-gray-400 mt-3 list-decimal ml-5 space-y-2"><li>Copy TikTok video link from app</li><li>Paste link above and click Download</li><li>Wait 3 sec, then download without watermark</li></ol></div>
+</main>
+
+<script>
+async function downloadTikTok(){
+ const url=document.getElementById('tiktokUrl').value.trim();
+ const status=document.getElementById('status');
+ const btn=document.getElementById('dlBtn');
+ if(!url.includes('tiktok.com')){status.innerText='❌ Please paste valid TikTok link';return;}
+ status.innerText='⏳ Fetching video... Please wait';
+ btn.innerText='Loading...'; btn.disabled=true;
+ try{
+   const api=`https://www.tikwm.com/api/?url=${encodeURIComponent(url)}&hd=1`;
+   const res=await fetch(api);
+   const data=await res.json();
+   if(data.code!=0) throw new Error('Failed');
+   const d=data.data;
+   document.getElementById('preview').src=d.play;
+   document.getElementById('vidTitle').innerText=d.title || 'TikTok Video';
+   document.getElementById('vidAuthor').innerText='@'+(d.author?.unique_id || 'tiktok');
+   document.getElementById('noWatermarkBtn').href=d.hdplay || d.play;
+   document.getElementById('musicBtn').href=d.music;
+   document.getElementById('result').classList.remove('hidden');
+   status.innerText='✅ Video Ready!';
+ }catch(e){
+   status.innerText='❌ Failed. Try another link or try again. TikTok blocked this video.';
+ }finally{btn.innerText='Download';btn.disabled=false;}
+}
+</script>
+</body>
+</html>
