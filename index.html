@@ -4,36 +4,53 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>PakTools - 22 Free Tools | Built Faster, Create Smarter</title>
 <meta name="description" content="Built Faster, Create Smarter - 22 Free Online Tools for Images, PDFs, AI & More. No Signup Needed.">
-<script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
 *{font-family:'Inter',sans-serif}
 body{background:#07010f;color:white;overflow-x:hidden;margin:0;}
-.galaxy-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:#020006;}
-.galaxy{position:absolute;width:1200px;height:1200px;border-radius:50%;filter:blur(120px);opacity:0.8;animation:galaxyMove 28s infinite alternate ease-in-out;}
+.galaxy-bg{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:#020006;will-change:transform;}
+.galaxy{position:absolute;width:1200px;height:1200px;border-radius:50%;filter:blur(80px);opacity:0.6;will-change:transform;transform:translateZ(0);}
 .g1{background:radial-gradient(circle at 30% 30%, #c084fc, #7e22ce 25%, #1a0533 60%, transparent 75%);top:-20%;left:-10%;}
-.g2{background:radial-gradient(circle at 70% 70%, #a855f7, #581c87 25%, #0a0218 60%, transparent 75%);bottom:-30%;right:-15%;animation-duration:32s;}
-.g3{background:radial-gradient(circle at 50% 50%, #9333ea, #4c1d95 30%, transparent 70%);top:30%;left:35%;width:800px;height:800px;opacity:0.5;animation-duration:40s;}
-@keyframes galaxyMove{0%{transform:translate(0%,0%) scale(1)}50%{transform:translate(7%,5%) scale(1.12)}100%{transform:translate(-5%,7%) scale(1.05)}}
-.cloud{position:absolute;background:radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, rgba(196,132,252,0.1) 30%, transparent 70%);border-radius:50%;filter:blur(20px);opacity:0.6;animation:cloudMove 60s infinite linear;}
-.c1{width:600px;height:200px;top:10%;left:-10%;animation-duration:80s;}
-.c2{width:800px;height:250px;top:45%;right:-15%;animation-duration:100s;opacity:0.4;}
-.c3{width:500px;height:180px;bottom:15%;left:30%;animation-duration:90s;opacity:0.3;}
-@keyframes cloudMove{0%{transform:translateX(0)}100%{transform:translateX(100px)}}
+.g2{background:radial-gradient(circle at 70% 70%, #a855f7, #581c87 25%, #0a0218 60%, transparent 75%);bottom:-30%;right:-15%;}
+.g3{background:radial-gradient(circle at 50% 50%, #9333ea, #4c1d95 30%, transparent 70%);top:30%;left:35%;width:800px;height:800px;opacity:0.35;}
+.cloud{position:absolute;background:radial-gradient(ellipse at center, rgba(255,255,255,0.12) 0%, rgba(196,132,252,0.08) 30%, transparent 70%);border-radius:50%;filter:blur(15px);opacity:0.4;}
+.c1{width:600px;height:200px;top:10%;left:-10%;}
+.c2{width:800px;height:250px;top:45%;right:-15%;}
+.c3{width:500px;height:180px;bottom:15%;left:30%;}
 .stars{position:fixed;inset:0;z-index:1;pointer-events:none;}
-.star{position:absolute;width:2px;height:2px;background:white;border-radius:50%;box-shadow:0 0 6px white, 0 0 12px #c084fc;animation:twinkle 3s infinite ease-in-out;}
-@keyframes twinkle{0%,100%{opacity:0.2;transform:scale(0.8)}50%{opacity:1;transform:scale(1.5)}}
-.tool-card{background:linear-gradient(145deg,rgba(28,10,58,0.92) 0%,rgba(12,3,32,0.92) 100%);border:1px solid rgba(168,85,247,0.25);backdrop-filter:blur(12px);border-radius:1.5rem;padding:20px;transition:0.3s;display:block;text-decoration:none;color:white;position:relative;}
-.tool-card:hover{transform:translateY(-6px) scale(1.02);border-color:rgba(192,132,252,0.7);box-shadow:0 0 40px rgba(168,85,247,0.5), 0 0 80px rgba(88,28,135,0.3);}
+.star{position:absolute;width:2px;height:2px;background:white;border-radius:50%;}
+.tool-card{background:linear-gradient(145deg,rgba(28,10,58,0.92) 0%,rgba(12,3,32,0.92) 100%);border:1px solid rgba(168,85,247,0.25);border-radius:1.5rem;padding:20px;transition:transform 0.2s ease, border-color 0.2s ease;display:block;text-decoration:none;color:white;position:relative;will-change:transform;transform:translateZ(0);}
+.tool-card:hover{transform:translateY(-4px);border-color:rgba(192,132,252,0.6);box-shadow:0 0 25px rgba(168,85,247,0.4);}
 .tool-card.top::before{content:"TOP RANKED";position:absolute;top:0;left:0;background:linear-gradient(90deg,#c084fc,#a855f7);color:black;font-size:8px;font-weight:900;padding:3px 10px;border-radius:0 0 10px 0;letter-spacing:0.5px;}
-.search-box{background:rgba(0,0,0,0.55);border:1px solid rgba(168,85,247,0.35);backdrop-filter:blur(12px);}
+.search-box{background:rgba(20,10,40,0.8);border:1px solid rgba(168,85,247,0.35);}
 .tagline{letter-spacing:2px;text-transform:uppercase;font-size:12px;background:linear-gradient(90deg,#e9d5ff,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800;}
+
+/* DESKTOP ONLY ANIMATIONS - Mobile par band */
+@media (min-width: 769px) {
+ .galaxy{animation:galaxyMove 28s infinite alternate ease-in-out;filter:blur(120px);opacity:0.8;}
+ .g2{animation-duration:32s;}.g3{animation-duration:40s;opacity:0.5;}
+ .cloud{animation:cloudMove 80s infinite linear;filter:blur(20px);}
+ .star{box-shadow:0 0 6px white, 0 0 12px #c084fc;animation:twinkle 3s infinite ease-in-out;}
+ .tool-card{backdrop-filter:blur(12px);}
+ .search-box{backdrop-filter:blur(12px);background:rgba(0,0,0,0.55);}
+  @keyframes galaxyMove{0%{transform:translate(0%,0%) scale(1)}50%{transform:translate(7%,5%) scale(1.12)}100%{transform:translate(-5%,7%) scale(1.05)}}
+  @keyframes cloudMove{0%{transform:translateX(0)}100%{transform:translateX(100px)}}
+  @keyframes twinkle{0%,100%{opacity:0.2;transform:scale(0.8)}50%{opacity:1;transform:scale(1.5)}}
+}
+
+/* MOBILE FAST MODE */
+@media (max-width: 768px) {
+ .galaxy-bg{filter:blur(0px);}
+ .galaxy{width:600px;height:600px;}
+  h1{font-size:2.2rem!important;}
+}
 </style>
 </head>
 <body>
 <div class="galaxy-bg"><div class="galaxy g1"></div><div class="galaxy g2"></div><div class="galaxy g3"></div><div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div></div>
 <div class="stars" id="stars"></div>
-<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#07010f]/80 backdrop-blur-xl">
+<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl">
 <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 <div class="font-black text-xl flex items-center gap-2"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center text-white shadow-[0_0_20px_rgba(168,85,247,0.6)]">P</div>PakTools</div>
 <a href="contact.html" class="text-[12px] bg-white/10 border border-white/20 px-4 py-2 rounded-full hover:bg-white/20 transition" style="text-decoration:none;color:white">Contact</a>
@@ -71,10 +88,26 @@ body{background:#07010f;color:white;overflow-x:hidden;margin:0;}
 <a href="age-calculator.html" class="tool-card" data-name="age"><div class="text-3xl">🎂</div><h3 class="mt-3 font-bold">Age Calculator</h3><p class="text-[12px] text-gray-400 mt-1">Exact age</p></a>
 </div>
 </main>
-<footer class="relative z-10 border-t border-white/10 mt-16 py-8"><div class="max-w-7xl mx-auto px-6 text-center text-[11px] text-gray-500"><p>© 2025 PakTools - Built Faster, Create Smarter - Purple Galaxy Edition</p><div class="mt-2 flex justify-center gap-4"><a href="about.html" class="hover:text-purple-300">About</a><a href="privacy-policy.html" class="hover:text-purple-300">Privacy</a><a href="terms.html" class="hover:text-purple-300">Terms</a><a href="contact.html" class="hover:text-purple-300">Contact</a></div></div></footer>
+<footer class="relative z-10 border-t border-white/10 mt-16 py-8"><div class="max-w-7xl mx-auto px-6 text-center text-[11px] text-gray-500"><p>© 2025 PakTools - Built Faster, Create Smarter</p><div class="mt-2 flex justify-center gap-4"><a href="about.html" class="hover:text-purple-300">About</a><a href="privacy-policy.html" class="hover:text-purple-300">Privacy</a><a href="terms.html" class="hover:text-purple-300">Terms</a><a href="contact.html" class="hover:text-purple-300">Contact</a></div></div></footer>
 <script>
 const starsBox=document.getElementById('stars');
-for(let i=0;i<200;i++){let s=document.createElement('div');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*4+'s';s.style.animationDuration=(2+Math.random()*3)+'s';let size=1+Math.random()*2.5;s.style.width=size+'px';s.style.height=size+'px';starsBox.appendChild(s);}
+const isMobile = window.innerWidth < 768;
+const starCount = isMobile? 25 : 120;
+for(let i=0;i<starCount;i++){
+  let s=document.createElement('div');
+  s.className='star';
+  s.style.left=Math.random()*100+'%';
+  s.style.top=Math.random()*100+'%';
+  if(!isMobile){
+    s.style.animationDelay=Math.random()*4+'s';
+    s.style.animationDuration=(2+Math.random()*3)+'s';
+    let size=1+Math.random()*2.5;
+    s.style.width=size+'px';s.style.height=size+'px';
+  } else {
+    s.style.opacity = 0.5 + Math.random()*0.5;
+  }
+  starsBox.appendChild(s);
+}
 function filterTools(){let q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.tool-card').forEach(c=>{let n=c.getAttribute('data-name')||'';let t=c.innerText.toLowerCase();c.style.display=(t.includes(q)||n.includes(q))?'block':'none';});}
 </script>
 </body>
