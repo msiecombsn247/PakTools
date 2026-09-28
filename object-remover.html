@@ -2,8 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>AI Object Remover - Remove Watermark, Object | PakTools</title>
-<meta name="description" content="Free AI Object Remover - Remove unwanted objects, people, watermark, text from photo online.">
+<title>AI Object Remover - Remove Watermark, Text, People | PakToolsOnline</title>
+<meta name="description" content="Free AI Object Remover - Remove unwanted objects, people, watermark, text, logo from photo online. Brush to erase, AI fills background. Private & Free.">
+<link rel="canonical" href="https://paktoolsonline.com/object-remover.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="AI Object Remover - Remove Watermark, People, Text Free">
+<meta property="og:description" content="Erase unwanted objects, watermark, people from photo. Paint & remove with AI background fill. Free, private, browser-based.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paktoolsonline.com/object-remover.html">
+<meta property="og:image" content="https://paktoolsonline.com/og-object-remover.png">
+<meta property="og:site_name" content="PakToolsOnline">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Object Remover - Free Online">
+<meta name="twitter:description" content="Remove objects, watermark, text from photo with AI. Free & Private.">
+<meta name="twitter:image" content="https://paktoolsonline.com/og-object-remover.png">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 *{font-family:Inter,sans-serif}
@@ -19,6 +31,9 @@ body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
 #drawCanvas{position:absolute; left:0; top:0; z-index:2;}
 .range{accent-color:#22d3ee;}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Object Remover","applicationCategory":"MultimediaApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free AI Object Remover to erase unwanted objects, people, watermark, text from photo. Brush to paint and AI fills background.","url":"https://paktoolsonline.com/object-remover.html","author":{"@type":"Organization","name":"PakToolsOnline"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How to remove object from photo?","acceptedAnswer":{"@type":"Answer","text":"Upload photo, adjust brush size, paint over unwanted object with red brush, click Remove Object Now. AI will fill background naturally."}},{"@type":"Question","name":"Can it remove watermark and text?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can remove watermarks, logos, text, people, and any unwanted object by painting over it."}},{"@type":"Question","name":"Is object remover private?","acceptedAnswer":{"@type":"Answer","text":"Yes, all processing happens in your browser. Image never uploaded to server, 100% private."}},{"@type":"Question","name":"Is AI Object Remover free?","acceptedAnswer":{"@type":"Answer","text":"Yes, PakToolsOnline Object Remover is 100% free, unlimited use, no signup, no watermark."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paktoolsonline.com/"},{"@type":"ListItem","position":2,"name":"AI Object Remover","item":"https://paktoolsonline.com/object-remover.html"}]}</script>
 </head>
 <body class="relative min-h-screen">
 <div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-250px] left-[10%]"></div>
@@ -26,51 +41,70 @@ body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
 <div class="stars" id="stars"></div>
 <header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl">
 <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-<a href="index.html" class="font-black text-[15px] flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black text-xs">P</div>PakTools</a>
+<a href="index.html" class="font-black text-[15px] flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black text-xs">P</div>PakToolsOnline</a>
 <a href="index.html" class="text-[11px] bg-white/10 border border-white/20 px-3 py-1.5 rounded-full">← Home</a>
 </div>
 </header>
 <main class="relative z-10 max-w-5xl mx-auto px-6 py-6">
 <div class="text-center">
 <h1 class="text-3xl md:text-4xl font-black">AI Object <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Remover</span></h1>
-<p class="mt-2 text-gray-400 text-[12px]">Remove Objects, Watermark, Text, People - Free</p>
+<p class="mt-2 text-gray-400 text-[12px]">Remove Objects, Watermark, Text, People - AI Magic Eraser</p>
 <p class="mt-2 text-[10px] text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 inline-block px-2.5 py-1 rounded-full">🔥 Trending - After BG Remover</p>
 </div>
 <div class="tool-box rounded-[1.5rem] p-5 mt-6">
-<div id="uploadArea" class="border-2 border-dashed border-blue-400/30 rounded-xl p-7 text-center bg-black/20 cursor-pointer hover:border-cyan-400/50">
+<div id="uploadArea" class="border-2 border-dashed border-blue-400/30 rounded-xl p-7 text-center bg-black/20 cursor-pointer hover:border-cyan-400/50 transition">
 <input type="file" id="fileInput" accept="image/*" class="hidden">
 <div class="text-3xl mb-2">🧹</div>
 <p class="font-bold text-[12px]">Upload Photo to Remove Object</p>
-<p class="text-[10px] text-gray-400 mt-1">JPG, PNG - Paint over object</p>
+<p class="text-[10px] text-gray-400 mt-1">JPG, PNG - Paint over object to erase</p>
 <button class="mt-3 glow-btn text-black font-bold px-5 py-2 rounded-full text-[11px]">Choose Photo</button>
 </div>
 <div id="editor" class="hidden">
 <div class="flex flex-wrap gap-2 items-center justify-between bg-black/30 border border-white/10 rounded-xl p-3 mb-3">
 <div class="flex items-center gap-2">
-<label class="text-[10px] text-gray-300">Brush:</label><input id="brushSize" type="range" min="5" max="80" value="30" class="range w-20"><span id="brushVal" class="text-[10px] text-cyan-300 font-bold">30px</span>
+<label for="brushSize" class="text-[10px] text-gray-300">Brush:</label><input id="brushSize" type="range" min="5" max="80" value="30" class="range w-20"><span id="brushVal" class="text-[10px] text-cyan-300 font-bold">30px</span>
 </div>
 <div class="flex gap-1.5"><button onclick="clearMask()" class="bg-white/10 border border-white/20 px-3 py-1.5 rounded-full text-[10px] font-bold">Clear</button><button onclick="resetAll()" class="bg-red-500/20 border border-red-400/30 text-red-300 px-3 py-1.5 rounded-full text-[10px] font-bold">New Photo</button></div>
 </div>
 <div class="grid md:grid-cols-2 gap-4">
-<div><p class="text-[10px] text-gray-400 mb-1.5 font-bold">PAINT OVER OBJECT - Red area removed</p><div id="canvasWrap"><img id="baseImg" class="w-full block max-h-[380px] object-contain"><canvas id="drawCanvas"></canvas></div><p class="text-[10px] text-gray-500 mt-1 text-center">👆 Brush se object par paint karen</p></div>
-<div><p class="text-[10px] text-cyan-300 mb-1.5 font-bold">RESULT ✨</p><div class="bg-black/40 border border-cyan-400/30 rounded-xl p-2 min-h-[200px] flex items-center justify-center"><img id="resultImg" class="hidden w-full rounded-lg max-h-[380px] object-contain"><p id="resultPlaceholder" class="text-[11px] text-gray-500 text-center">Result yahan aayega</p></div><div id="resultActions" class="hidden mt-3 grid grid-cols-2 gap-2"><a id="downloadBtn" download="object-removed.png" class="glow-btn text-center text-black font-bold py-2.5 rounded-xl text-[11px] cursor-pointer">⬇️ Download</a><button onclick="keepEditing()" class="bg-white/10 border border-white/20 font-bold py-2.5 rounded-xl text-[11px]">Continue</button></div></div>
+<div><p class="text-[10px] text-gray-400 mb-1.5 font-bold">PAINT OVER OBJECT - Red area will be removed</p><div id="canvasWrap"><img id="baseImg" class="w-full block max-h-[380px] object-contain" alt="Base image for object removal"><canvas id="drawCanvas"></canvas></div><p class="text-[10px] text-gray-500 mt-1 text-center">👆 Brush se object par paint karen</p></div>
+<div><p class="text-[10px] text-cyan-300 mb-1.5 font-bold">RESULT ✨ - AI Filled</p><div class="bg-black/40 border border-cyan-400/30 rounded-xl p-2 min-h-[200px] flex items-center justify-center"><img id="resultImg" class="hidden w-full rounded-lg max-h-[380px] object-contain" alt="Result after object removal AI magic"><p id="resultPlaceholder" class="text-[11px] text-gray-500 text-center">Result yahan aayega</p></div><div id="resultActions" class="hidden mt-3 grid grid-cols-2 gap-2"><a id="downloadBtn" download="paktoolsonline-object-removed.png" class="glow-btn text-center text-black font-bold py-2.5 rounded-xl text-[11px] cursor-pointer">⬇️ Download HD</a><button onclick="keepEditing()" class="bg-white/10 border border-white/20 font-bold py-2.5 rounded-xl text-[11px]">Continue Editing</button></div></div>
 </div>
-<button id="removeBtn" onclick="removeObject()" class="w-full mt-4 glow-btn text-black font-bold py-3 rounded-xl text-[12px]">✨ Remove Object Now - AI Magic</button>
+<button id="removeBtn" onclick="removeObject()" class="w-full mt-4 glow-btn text-black font-bold py-3 rounded-xl text-[12px] shadow-[0_0_15px_rgba(56,189,248,0.4)]">✨ Remove Object Now - AI Magic</button>
 </div>
 </div>
-
-<!-- SMALL SEO -->
 <div class="content-box rounded-xl p-5 mt-5">
-<h2 class="text-[13px] font-bold">About AI Object Remover</h2>
-<p class="mt-2 text-[11px] leading-5 text-gray-400">PakTools Free AI Object Remover helps you erase unwanted objects, people, watermarks, logos, and text from any photo in seconds. Just upload photo, paint over the object with red brush, and click Remove - AI will automatically fill background to make it look natural. Perfect for cleaning vacation photos, removing photobombers, deleting watermarks, and product photo editing. Works 100% in browser, no upload to server, so your photos stay private. Free, no signup, unlimited use.</p>
+<h2 class="text-[13px] font-bold">About AI Object Remover - Magic Eraser Tool</h2>
+<p class="mt-2 text-[11px] leading-6 text-gray-400">PakTools Free AI Object Remover is a magic eraser that helps you erase unwanted objects, people, watermarks, logos, text, and photobombers from any photo in seconds using AI inpainting. Just upload your photo, adjust brush size, paint over the object you want to remove with red brush, and click Remove Object Now - AI will automatically analyze surrounding pixels and fill background to make it look natural as if object never existed. Perfect for cleaning vacation photos, removing photobombers and tourists, deleting watermarks and logos for personal use, removing text from images, product photo editing for e-commerce, and cleaning up backgrounds. Unlike cloud tools, our tool works 100% in your browser using canvas-based inpainting, no upload to server, so your photos stay private and secure. Free, no signup, unlimited use, works on mobile and desktop. For best results, use smaller brush for detailed areas and larger brush for big objects.</p>
 <div class="grid md:grid-cols-2 gap-3 mt-3">
-<div><h3 class="text-[11px] font-bold">How to Use?</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>Upload photo (JPG/PNG)</li><li>Adjust brush size & paint over object</li><li>Click Remove Object Now</li><li>Download cleaned photo</li></ul></div>
-<div><h3 class="text-[11px] font-bold">Features</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>AI background fill, natural result</li><li>Remove people, text, watermark</li><li>Brush size control</li><li>Private, browser-based, free</li></ul></div>
+<div><h3 class="text-[11px] font-bold">How to Remove Object from Photo?</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-6 text-gray-400"><li>Upload photo (JPG/PNG) from gallery</li><li>Adjust brush size slider (5px to 80px)</li><li>Paint over object/watermark with red brush</li><li>Click Remove Object Now & download cleaned photo</li></ul></div>
+<div><h3 class="text-[11px] font-bold">Key Features</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-6 text-gray-400"><li>AI background fill, natural inpainting result</li><li>Remove people, text, watermark, logo, objects</li><li>Brush size control, clear & continue editing</li><li>Private, browser-based, free, no watermark</li></ul></div>
+</div>
+<div class="mt-4 border-t border-white/10 pt-3">
+<h3 class="text-[11px] font-bold">Frequently Asked Questions</h3>
+<div class="mt-2 space-y-2 text-[11px] leading-5 text-gray-400">
+<p><b class="text-gray-300">How to remove watermark?</b> Upload image, paint over watermark with brush, click Remove - AI fills background.</p>
+<p><b class="text-gray-300">Can it remove people?</b> Yes, paint over person and AI will replace with background.</p>
+<p><b class="text-gray-300">Is it private?</b> Yes, 100% private, no server upload, all in browser.</p>
+<p><b class="text-gray-300">Is it free?</b> Yes, unlimited free object removal.</p>
+</div>
+</div>
+<p class="mt-3 text-[10px] text-gray-500">Disclaimer: Use for personal photos only. Removing watermarks from copyrighted images may violate copyright.</p>
+</div>
+<div class="content-box rounded-xl p-5 mt-5">
+<h3 class="text-[13px] font-bold">Related Free Tools</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2 mt-3 text-[11px]">
+<a href="background-remover.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">✨ BG Remover</a>
+<a href="image-compressor.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🗜️ Image Compressor</a>
+<a href="image-resizer.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">📐 Image Resizer</a>
+<a href="image-to-text.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🔤 Image to Text</a>
+<a href="jpg-to-png.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🔄 JPG to PNG</a>
+<a href="qr-generator.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🔳 QR Generator</a>
 </div>
 </div>
 </main>
 <canvas id="processCanvas" class="hidden"></canvas>
-<footer class="text-center py-5 text-[10px] text-gray-500">© 2025 PakTools</footer>
+<footer class="text-center py-5 text-[10px] text-gray-500">© 2025 PakToolsOnline - <a href="privacy-policy.html" class="hover:text-white">Privacy</a> | <a href="terms.html" class="hover:text-white">Terms</a> | <a href="contact.html" class="hover:text-white">Contact</a> | <a href="sitemap.xml" class="hover:text-white">Sitemap</a></footer>
 <script>
 const stars=document.getElementById('stars');
 for(let i=0;i<80;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';stars.appendChild(d);}
