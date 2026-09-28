@@ -2,8 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Unit Converter - Length, Weight, Temperature | PakTools</title>
-<meta name="description" content="Free All-in-One Unit Converter - Convert Length, Weight, Temperature, Area, Speed, Data, Time.">
+<title>Unit Converter - Length, Weight, Temperature, Data | PakToolsOnline</title>
+<meta name="description" content="Free All-in-One Unit Converter Pakistan - Convert Length m to ft, Weight kg to lb, Temperature C to F, Data GB to MB, Area, Speed, Time. Accurate & Fast.">
+<link rel="canonical" href="https://paktoolsonline.com/unit-converter.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="Unit Converter - Length, Weight, Temp - Free">
+<meta property="og:description" content="Convert length, weight, temperature, data, time, speed, area. 40+ units, instant accurate results.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paktoolsonline.com/unit-converter.html">
+<meta property="og:image" content="https://paktoolsonline.com/og-unit-converter.png">
+<meta property="og:site_name" content="PakToolsOnline">
+<meta name="twitter:card" content="summary_large_image">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 *{font-family:Inter,sans-serif}
@@ -18,6 +27,9 @@ body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
 .tab{padding:7px 14px; border-radius:999px; font-size:11px; font-weight:700; cursor:pointer; border:1px solid rgba(255,255,255,0.15); background:rgba(0,0,0,0.3); transition:0.2s;}
 .tab.active{background:linear-gradient(90deg,#22d3ee,#3b82f6); color:black; border-color:transparent;}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Unit Converter All in One","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free all-in-one unit converter to convert length, weight, temperature, data, time, speed, area with 40+ units. Accurate formulas.","url":"https://paktoolsonline.com/unit-converter.html","author":{"@type":"Organization","name":"PakToolsOnline"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How to convert meter to feet?","acceptedAnswer":{"@type":"Answer","text":"Select Length category, From Meter To Feet, enter value e.g. 1m = 3.28084 ft. Instant conversion."}},{"@type":"Question","name":"How to convert kg to pounds?","acceptedAnswer":{"@type":"Answer","text":"Select Weight, From KG To LB, 1 kg = 2.20462 lb. Accurate."}},{"@type":"Question","name":"How to convert Celsius to Fahrenheit?","acceptedAnswer":{"@type":"Answer","text":"Select Temperature, C to F, formula (C*9/5)+32. Example 0C=32F."}},{"@type":"Question","name":"What units supported?","acceptedAnswer":{"@type":"Answer","text":"Length m, km, cm, mm, ft, inch, yard, mile; Weight kg, g, mg, lb, oz, ton; Temp C, F, K; Area, Data, Time, Speed - 40+ units."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paktoolsonline.com/"},{"@type":"ListItem","position":2,"name":"Unit Converter","item":"https://paktoolsonline.com/unit-converter.html"}]}</script>
 </head>
 <body class="relative min-h-screen">
 <div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-250px] left-[10%]"></div>
@@ -25,59 +37,80 @@ body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
 <div class="stars" id="stars"></div>
 <header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl">
 <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-<a href="index.html" class="font-black text-[15px] flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black text-xs">P</div>PakTools</a>
+<a href="index.html" class="font-black text-[15px] flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black text-xs">P</div>PakToolsOnline</a>
 <a href="index.html" class="text-[11px] bg-white/10 border border-white/20 px-3 py-1.5 rounded-full">← Home</a>
 </div>
 </header>
 <main class="relative z-10 max-w-4xl mx-auto px-6 py-6">
 <div class="text-center">
 <h1 class="text-3xl md:text-4xl font-black">Unit <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Converter</span></h1>
-<p class="mt-2 text-gray-400 text-[12px]">Length, Weight, Temperature, Data, Time, Speed, Area</p>
+<p class="mt-2 text-gray-400 text-[12px]">Length m→ft, Weight kg→lb, Temperature C→F, Data, Time, Speed, Area</p>
 <p class="mt-2 text-[10px] text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 inline-block px-2.5 py-1 rounded-full">🔥 20M+ Searches/Month - Evergreen Tool</p>
 </div>
 <div class="tool-box rounded-[1.5rem] p-5 mt-6">
 <div class="flex flex-wrap gap-1.5 justify-center mb-5" id="tabs"></div>
 <div class="grid md:grid-cols-[1fr_40px_1fr] gap-3 items-end">
 <div>
-<label class="text-[10px] text-gray-400 font-bold">From:</label>
+<label for="fromUnit" class="text-[10px] text-gray-400 font-bold">From Unit:</label>
 <select id="fromUnit" class="w-full mt-1 input-box rounded-xl px-3 py-3 text-[11px] outline-none"></select>
-<input id="fromVal" type="number" value="1" class="w-full mt-2 input-box rounded-xl px-3 py-3 text-[13px] font-bold outline-none" oninput="convert()">
+<label for="fromVal" class="text-[10px] text-gray-400 font-bold mt-2 block">Value:</label>
+<input id="fromVal" type="number" value="1" class="w-full mt-1 input-box rounded-xl px-3 py-3 text-[13px] font-bold outline-none" oninput="convert()">
 </div>
-<div class="flex justify-center"><button onclick="swapUnits()" class="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[14px]">⇄</button></div>
+<div class="flex justify-center pb-3"><button onclick="swapUnits()" class="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[14px] hover:bg-white/20" title="Swap units">⇄</button></div>
 <div>
-<label class="text-[10px] text-gray-400 font-bold">To:</label>
+<label for="toUnit" class="text-[10px] text-gray-400 font-bold">To Unit:</label>
 <select id="toUnit" class="w-full mt-1 input-box rounded-xl px-3 py-3 text-[11px] outline-none"></select>
-<input id="toVal" type="number" readonly class="w-full mt-2 input-box rounded-xl px-3 py-3 text-[13px] font-bold outline-none bg-cyan-500/10 border-cyan-400/30">
+<label class="text-[10px] text-gray-400 font-bold mt-2 block">Converted:</label>
+<input id="toVal" type="number" readonly class="w-full mt-1 input-box rounded-xl px-3 py-3 text-[13px] font-bold outline-none bg-cyan-500/10 border-cyan-400/30 text-cyan-300">
 </div>
 </div>
-<div class="mt-4 result-card rounded-xl p-3 text-center">
-<p class="text-[10px] text-gray-400">Result:</p>
+<div class="mt-4 result-card rounded-xl p-3 text-center border-cyan-400/20">
+<p class="text-[10px] text-gray-400">Instant Result:</p>
 <p id="resultText" class="text-[14px] md:text-[16px] font-black text-cyan-300 mt-1">1 Meter = 3.28084 Feet</p>
 <p class="text-[10px] text-gray-500 mt-1">Formula: <span id="formula">multiply by 3.28084</span></p>
 </div>
-<div class="mt-4 grid grid-cols-4 gap-1.5 text-[10px]">
-<button onclick="quickSet('length','m','ft')" class="bg-white/5 border border-white/10 rounded-xl py-2.5">m → ft</button>
-<button onclick="quickSet('weight','kg','lb')" class="bg-white/5 border border-white/10 rounded-xl py-2.5">kg → lb</button>
-<button onclick="quickSet('temperature','c','f')" class="bg-white/5 border border-white/10 rounded-xl py-2.5">°C → °F</button>
-<button onclick="quickSet('data','gb','mb')" class="bg-white/5 border border-white/10 rounded-xl py-2.5">GB → MB</button>
-<button onclick="quickSet('length','inch','cm')" class="bg-white/5 border border-white/10 rounded-xl py-2.5">inch → cm</button>
-<button onclick="quickSet('area','acre','m2')" class="bg-white/5 border border-white/10 rounded-xl py-2.5">acre → m²</button>
-<button onclick="quickSet('speed','kmh','mph')" class="bg-white/5 border border-white/10 rounded-xl py-2.5">km/h → mph</button>
-<button onclick="quickSet('time','hour','min')" class="bg-white/5 border border-white/10 rounded-xl py-2.5">hour → min</button>
+<div class="mt-4">
+<p class="text-[11px] font-bold mb-2">⚡ Quick Presets - Most Searched:</p>
+<div class="grid grid-cols-4 gap-1.5 text-[10px]">
+<button onclick="quickSet('length','m','ft')" class="bg-white/5 border border-white/10 rounded-xl py-2.5 hover:bg-white/10">m → ft</button>
+<button onclick="quickSet('weight','kg','lb')" class="bg-white/5 border border-white/10 rounded-xl py-2.5 hover:bg-white/10">kg → lb</button>
+<button onclick="quickSet('temperature','c','f')" class="bg-white/5 border border-white/10 rounded-xl py-2.5 hover:bg-white/10">°C → °F</button>
+<button onclick="quickSet('data','gb','mb')" class="bg-white/5 border border-white/10 rounded-xl py-2.5 hover:bg-white/10">GB → MB</button>
+<button onclick="quickSet('length','inch','cm')" class="bg-white/5 border border-white/10 rounded-xl py-2.5 hover:bg-white/10">inch → cm</button>
+<button onclick="quickSet('area','acre','m2')" class="bg-white/5 border border-white/10 rounded-xl py-2.5 hover:bg-white/10">acre → m²</button>
+<button onclick="quickSet('speed','kmh','mph')" class="bg-white/5 border border-white/10 rounded-xl py-2.5 hover:bg-white/10">km/h → mph</button>
+<button onclick="quickSet('time','hour','min')" class="bg-white/5 border border-white/10 rounded-xl py-2.5 hover:bg-white/10">hour → min</button>
 </div>
 </div>
-
-<!-- SMALL SEO -->
+</div>
 <div class="content-box rounded-xl p-5 mt-5">
-<h2 class="text-[13px] font-bold">About Unit Converter</h2>
-<p class="mt-2 text-[11px] leading-5 text-gray-400">PakTools Free All-in-One Unit Converter converts all daily life units instantly. Length: meter, feet, inch, km, mile, yard. Weight: kg, pounds, gram, ounce. Temperature: Celsius, Fahrenheit, Kelvin. Data: GB, MB, KB, TB. Time: seconds, minutes, hours, days. Speed: km/h, mph, knot. Area: acre, m², hectare. Most searched evergreen tool with 20M+ monthly searches worldwide. 100% accurate formulas, fast, mobile friendly, no signup, free unlimited conversions.</p>
+<h2 class="text-[13px] font-bold">About All-in-One Unit Converter - Length Weight Temperature</h2>
+<p class="mt-2 text-[11px] leading-6 text-gray-400">PakTools Free All-in-One Unit Converter is Pakistan's most accurate evergreen tool converting all daily life units instantly with 40+ units across 7 categories. Length Converter: meter to feet, meter to km, inch to cm, km to mile, yard, mm. Weight Converter: kg to pounds, kg to gram, ounce, ton. Temperature Converter: Celsius to Fahrenheit, Celsius to Kelvin, with formulas. Data Storage: GB to MB, MB to KB, TB to GB. Time: seconds to minutes, hours to minutes, days to hours, years. Speed: km/h to mph, m/s, knot, ft/s. Area: acre to square meter, hectare, ft2, km2. Most searched evergreen tool with 20M+ monthly searches worldwide, used by students, engineers, shopkeepers, property dealers. 100% accurate formulas, fast instant calculation, mobile friendly, no signup, free unlimited conversions, works offline in browser.</p>
 <div class="grid md:grid-cols-2 gap-3 mt-3">
-<div><h3 class="text-[11px] font-bold">How to Use?</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>Select category: Length/Weight etc</li><li>Choose From & To units</li><li>Enter value, see instant result</li><li>Swap or use quick buttons</li></ul></div>
-<div><h3 class="text-[11px] font-bold">Features</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-5 text-gray-400"><li>7 categories, 40+ units</li><li>Accurate formulas, instant</li><li>Quick presets: m→ft, kg→lb etc</li><li>Free, fast, no limit</li></ul></div>
+<div><h3 class="text-[11px] font-bold">How to Convert Units?</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-6 text-gray-400"><li>Select category: Length/Weight/Temp/Data etc</li><li>Choose From & To units e.g. m to ft</li><li>Enter value, see instant accurate result</li><li>Use Swap button or quick presets m→ft, kg→lb</li></ul></div>
+<div><h3 class="text-[11px] font-bold">Key Features</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-6 text-gray-400"><li>7 categories, 40+ units: Length, Weight, Temp, Data, Time, Speed, Area</li><li>Accurate formulas, instant calculation, no delay</li><li>Quick presets: m→ft, kg→lb, C→F, GB→MB, inch→cm etc</li><li>Free, fast, no limit, private, mobile friendly</li></ul></div>
+</div>
+<div class="mt-4 border-t border-white/10 pt-3">
+<h3 class="text-[11px] font-bold">Frequently Asked Questions</h3>
+<div class="mt-2 space-y-2 text-[11px] leading-5 text-gray-400">
+<p><b class="text-gray-300">1 meter = how many feet?</b> 1 meter = 3.28084 feet - instant conversion.</p>
+<p><b class="text-gray-300">1 kg = how many pounds?</b> 1 kg = 2.20462 lb.</p>
+<p><b class="text-gray-300">How to convert C to F?</b> Formula (C × 9/5) + 32 = F. 0°C = 32°F.</p>
+<p><b class="text-gray-300">1 GB = how many MB?</b> 1 GB = 1024 MB.</p>
+</div>
+</div>
+</div>
+<div class="content-box rounded-xl p-5 mt-5">
+<h3 class="text-[13px] font-bold">Related Free Tools</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2 mt-3 text-[11px]">
+<a href="percentage-calculator.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10">% Percentage Calculator</a>
+<a href="age-calculator.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10">🎂 Age Calculator</a>
+<a href="image-compressor.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10">🗜️ Image Compressor</a>
+<a href="qr-generator.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10">🔳 QR Generator</a>
 </div>
 </div>
 </main>
-<footer class="text-center py-5 text-[10px] text-gray-500">© 2025 PakTools</footer>
+<footer class="text-center py-5 text-[10px] text-gray-500">© 2025 PakToolsOnline - <a href="privacy-policy.html" class="hover:text-white">Privacy</a> | <a href="terms.html" class="hover:text-white">Terms</a> | <a href="contact.html" class="hover:text-white">Contact</a> | <a href="sitemap.xml" class="hover:text-white">Sitemap</a></footer>
 <script>
 const stars=document.getElementById('stars');
 for(let i=0;i<80;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';stars.appendChild(d);}
@@ -85,7 +118,7 @@ const units={length:{name:"📏 Length",base:"m",units:{m:1,km:1000,cm:0.01,mm:0
 let currentCat='length';
 function renderTabs(){let wrap=document.getElementById('tabs');wrap.innerHTML='';Object.keys(units).forEach(cat=>{let b=document.createElement('button');b.className='tab'+(cat===currentCat?' active':'');b.innerText=units[cat].name;b.onclick=()=>{currentCat=cat;renderTabs();loadUnits();convert();};wrap.appendChild(b);});}
 function loadUnits(){let fromSel=document.getElementById('fromUnit'),toSel=document.getElementById('toUnit');fromSel.innerHTML='';toSel.innerHTML='';Object.keys(units[currentCat].units).forEach(u=>{let o1=document.createElement('option');o1.value=u;o1.textContent=u.toUpperCase();let o2=document.createElement('option');o2.value=u;o2.textContent=u.toUpperCase();fromSel.appendChild(o1);toSel.appendChild(o2);});if(toSel.options.length>1)toSel.selectedIndex=1;}
-function convert(){let fromU=document.getElementById('fromUnit').value,toU=document.getElementById('toUnit').value,fromV=parseFloat(document.getElementById('fromVal').value)||0,toInput=document.getElementById('toVal'),resText=document.getElementById('resultText'),formula=document.getElementById('formula');let result=0;if(currentCat==='temperature'){if(fromU==='c'&&toU==='f')result=(fromV*9/5)+32;else if(fromU==='f'&&toU==='c')result=(fromV-32)*5/9;else if(fromU==='c'&&toU==='k')result=fromV+273.15;else if(fromU==='k'&&toU==='c')result=fromV-273.15;else if(fromU==='f'&&toU==='k')result=(fromV-32)*5/9+273.15;else if(fromU==='k'&&toU==='f')result=(fromV-273.15)*9/5+32;else result=fromV;}else{let baseVal=fromV*units[currentCat].units[fromU];result=baseVal/units[currentCat].units[toU];}toInput.value=Number(result.toFixed(6)).toString();resText.innerText=`${fromV} ${fromU.toUpperCase()} = ${Number(result.toFixed(6))} ${toU.toUpperCase()}`;formula.innerText=currentCat==='temperature'?`${fromU} to ${toU} formula`:`× ${(units[currentCat].units[fromU]/units[currentCat].units[toU]).toFixed(5)}`;}
+function convert(){let fromU=document.getElementById('fromUnit').value,toU=document.getElementById('toUnit').value,fromV=parseFloat(document.getElementById('fromVal').value)||0,toInput=document.getElementById('toVal'),resText=document.getElementById('resultText'),formula=document.getElementById('formula');let result=0;if(currentCat==='temperature'){if(fromU==='c'&&toU==='f')result=(fromV*9/5)+32;else if(fromU==='f'&&toU==='c')result=(fromV-32)*5/9;else if(fromU==='c'&&toU==='k')result=fromV+273.15;else if(fromU==='k'&&toU==='c')result=fromV-273.15;else if(fromU==='f'&&toU==='k')result=(fromV-32)*5/9+273.15;else if(fromU==='k'&&toU==='f')result=(fromV-273.15)*9/5+32;else result=fromV;}else{let baseVal=fromV*units[currentCat].units[fromU];result=baseVal/units[currentCat].units[toU];}toInput.value=Number(result.toFixed(6)).toString();resText.innerText=`${fromV} ${fromU.toUpperCase()} = ${Number(result.toFixed(6))} ${toU.toUpperCase()}`;formula.innerText=currentCat==='temperature'?`${fromU.toUpperCase()} to ${toU.toUpperCase()} formula`:`multiply by ${(units[currentCat].units[fromU]/units[currentCat].units[toU]).toFixed(5)}`;}
 function swapUnits(){let f=document.getElementById('fromUnit'),t=document.getElementById('toUnit'),fv=f.value;f.value=t.value;t.value=fv;convert();}
 function quickSet(cat,from,to){currentCat=cat;renderTabs();loadUnits();document.getElementById('fromUnit').value=from;document.getElementById('toUnit').value=to;convert();}
 document.getElementById('fromUnit').addEventListener('change',convert);document.getElementById('toUnit').addEventListener('change',convert);
