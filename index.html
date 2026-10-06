@@ -23,27 +23,22 @@ body{background:#07010f;color:white;overflow-x:hidden;margin:0;}
 #brokenStars{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:0.9;}
 #stars{position:fixed;inset:0;z-index:1;pointer-events:none;}
 .star{position:absolute;width:2px;height:2px;background:white;border-radius:50%;}
-.tool-card{background:linear-gradient(145deg,rgba(28,10,58,0.92) 0%,rgba(12,3,32,0.92) 100%);border:1px solid rgba(168,85,247,0.25);border-radius:1.5rem;padding:20px;transition:transform 0.2s ease, border-color 0.2s ease;display:block;text-decoration:none;color:white;position:relative;}
-.tool-card:hover{transform:translateY(-4px);border-color:rgba(192,132,252,0.6);box-shadow:0 0 25px rgba(168,85,247,0.4);}
-.search-box{background:rgba(20,10,40,0.8);border:1px solid rgba(168,85,247,0.35);}
+.explore-folder{background:linear-gradient(145deg,rgba(28,10,58,0.92) 0%,rgba(12,3,32,0.92) 100%);border:2px solid rgba(168,85,247,0.4);border-radius:2rem;padding:50px 30px;transition:all 0.3s ease;text-align:center;display:block;text-decoration:none;color:white;}
+.explore-folder:hover{transform:translateY(-6px) scale(1.02);border-color:rgba(192,132,252,0.8);box-shadow:0 0 40px rgba(168,85,247,0.6);}
 .tagline{letter-spacing:2px;text-transform:uppercase;font-size:12px;background:linear-gradient(90deg,#e9d5ff,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800;}
 @media (min-width: 769px) {
 .galaxy{animation:galaxyMove 28s infinite alternate ease-in-out;filter:blur(120px);opacity:0.8;}
 .g2{animation-duration:32s;}.g3{animation-duration:40s;opacity:0.5;}
 .cloud{animation:cloudMove 80s infinite linear;filter:blur(20px);}
 .star{box-shadow:0 0 6px white, 0 0 12px #c084fc;animation:twinkle 3s infinite ease-in-out;}
-.tool-card{backdrop-filter:blur(12px);}
-.search-box{backdrop-filter:blur(12px);background:rgba(0,0,0,0.55);}
+.explore-folder{backdrop-filter:blur(12px);}
 @keyframes galaxyMove{0%{transform:translate(0%,0%) scale(1)}50%{transform:translate(7%,5%) scale(1.12)}100%{transform:translate(-5%,7%) scale(1.05)}}
 @keyframes cloudMove{0%{transform:translateX(0)}100%{transform:translateX(100px)}}
 @keyframes twinkle{0%,100%{opacity:0.2;transform:scale(0.8)}50%{opacity:1;transform:scale(1.5)}}
 }
 @media (max-width: 768px) {
-.galaxy-bg{filter:none;}
 .galaxy{width:550px;height:550px;filter:blur(50px);opacity:0.5;animation:none;}
 .cloud{display:none;}
-.tool-card{backdrop-filter:none;background:linear-gradient(145deg,rgba(28,10,58,0.96),rgba(12,3,32,0.96));}
-.search-box{backdrop-filter:none;}
 h1{font-size:2.2rem!important;}
 #brokenStars{opacity:0.6;}
 }
@@ -67,71 +62,28 @@ h1{font-size:2.2rem!important;}
 <p class="tagline">Built Faster, Create Smarter</p>
 <h1 class="mt-3 text-4xl md:text-6xl font-black leading-tight">Pakistan's No.1<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-fuchsia-300 to-purple-400">All-in-One Toolkit</span></h1>
 <p class="mt-4 text-gray-400 text-[13px]">27 Powerful Tools - Broken Stars Galaxy Edition</p>
-<div class="mt-6 flex justify-center"><div class="search-box rounded-full px-5 py-3 flex items-center gap-3 w-full max-w-md"><span>🔍</span><input id="searchInput" oninput="filterTools()" type="text" placeholder="Search 27 tools..." class="bg-transparent outline-none text-sm w-full placeholder:text-gray-500 text-white"></div></div>
-</div>
-<div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" id="toolsGrid">
-<a href="passport-photo-maker.html" class="tool-card" data-name="passport photo maker pakistan"><div class="text-3xl mt-3">🪪</div><h3 class="mt-3 font-bold text-[15px]">Passport Photo Maker</h3><p class="text-[12px] text-gray-400 mt-1">35x45mm 300 DPI - PK</p></a>
-<a href="cv-maker.html" class="tool-card" data-name="cv maker resume pakistan"><div class="text-3xl mt-3">📄</div><h3 class="mt-3 font-bold text-[15px]">CV Maker Pakistan</h3><p class="text-[12px] text-gray-400 mt-1">ATS Resume PDF Free</p></a>
-<a href="fancy-text-generator.html" class="tool-card" data-name="fancy text stylish name pubg"><div class="text-3xl mt-3">🔤</div><h3 class="mt-3 font-bold text-[15px]">Fancy Text Generator</h3><p class="text-[12px] text-gray-400 mt-1">PUBG Stylish Names</p></a>
-<a href="qr-generator-pro.html" class="tool-card" data-name="qr code generator logo"><div class="text-3xl mt-3">🔳</div><h3 class="mt-3 font-bold text-[15px]">QR Generator PRO</h3><p class="text-[12px] text-gray-400 mt-1">With Logo & Color</p></a>
-<a href="image-to-pdf-pro.html" class="tool-card" data-name="image to pdf merge"><div class="text-3xl mt-3">📚</div><h3 class="mt-3 font-bold text-[15px]">Image to PDF PRO</h3><p class="text-[12px] text-gray-400 mt-1">Merge 50 Images to PDF</p></a>
-<a href="background-remover.html" class="tool-card" data-name="background remover"><div class="text-3xl mt-3">✨</div><h3 class="mt-3 font-bold text-[15px]">BG Remover - #1</h3><p class="text-[12px] text-gray-400 mt-1">Remove Background Free</p></a>
-<a href="paraphraser-tool.html" class="tool-card" data-name="paraphraser"><div class="text-3xl mt-3">📝</div><h3 class="mt-3 font-bold text-[15px]">AI Paraphraser - #2</h3><p class="text-[12px] text-gray-400 mt-1">Rewrite in Seconds</p></a>
-<a href="unit-converter.html" class="tool-card" data-name="unit converter"><div class="text-3xl mt-3">🔄</div><h3 class="mt-3 font-bold text-[15px]">Unit Converter - #3</h3><p class="text-[12px] text-gray-400 mt-1">All Units Converter</p></a>
-<a href="upscaler.html" class="tool-card" data-name="upscaler"><div class="text-3xl mt-3">⬆️</div><h3 class="mt-3 font-bold text-[15px]">AI Upscaler - #4</h3><p class="text-[12px] text-gray-400 mt-1">Enhance to 4K HD</p></a>
-<a href="youtube-thumbnail-downloader.html" class="tool-card" data-name="youtube thumbnail"><div class="text-3xl mt-3">🎬</div><h3 class="mt-3 font-bold text-[15px]">YT Thumbnail DL - #5</h3><p class="text-[12px] text-gray-400 mt-1">Download HD Thumbnails</p></a>
-<a href="image-compressor.html" class="tool-card" data-name="compressor"><div class="text-3xl">🗜️</div><h3 class="mt-3 font-bold">Image Compressor</h3><p class="text-[12px] text-gray-400 mt-1">Reduce size without quality</p></a>
-<a href="image-to-text.html" class="tool-card" data-name="ocr text"><div class="text-3xl">🔤</div><h3 class="mt-3 font-bold">Image to Text OCR</h3><p class="text-[12px] text-gray-400 mt-1">Extract text from image</p></a>
-<a href="object-remover.html" class="tool-card" data-name="object remover"><div class="text-3xl">🧹</div><h3 class="mt-3 font-bold">Object Remover</h3><p class="text-[12px] text-gray-400 mt-1">Remove objects AI</p></a>
-<a href="pdf-merge-tool.html" class="tool-card" data-name="pdf merge"><div class="text-3xl">📚</div><h3 class="mt-3 font-bold">PDF Merge & Split</h3><p class="text-[12px] text-gray-400 mt-1">Merge or split PDFs</p></a>
-<a href="youtube-tags.html" class="tool-card" data-name="tags"><div class="text-3xl">🏷️</div><h3 class="mt-3 font-bold">YT Tags Extractor</h3><p class="text-[12px] text-gray-400 mt-1">Extract tags for SEO</p></a>
-<a href="image-resizer.html" class="tool-card" data-name="resizer"><div class="text-3xl">📐</div><h3 class="mt-3 font-bold">Image Resizer</h3><p class="text-[12px] text-gray-400 mt-1">Resize KB & pixels</p></a>
-<a href="pdf-to-jpg.html" class="tool-card" data-name="pdf jpg"><div class="text-3xl">📄</div><h3 class="mt-3 font-bold">PDF to JPG</h3><p class="text-[12px] text-gray-400 mt-1">Convert PDF pages</p></a>
-<a href="text-to-speech.html" class="tool-card" data-name="tts speech"><div class="text-3xl">🔊</div><h3 class="mt-3 font-bold">Text to Speech</h3><p class="text-[12px] text-gray-400 mt-1">AI voice generator</p></a>
-<a href="jpg-to-png.html" class="tool-card" data-name="jpg png"><div class="text-3xl">🖼️</div><h3 class="mt-3 font-bold">JPG to PNG</h3><p class="text-[12px] text-gray-400 mt-1">Convert formats</p></a>
-<a href="color-palette-generator.html" class="tool-card" data-name="color"><div class="text-3xl">🎨</div><h3 class="mt-3 font-bold">Color Palette</h3><p class="text-[12px] text-gray-400 mt-1">Generate colors</p></a>
-<a href="word-counter.html" class="tool-card" data-name="word"><div class="text-3xl">🔢</div><h3 class="mt-3 font-bold">Word Counter</h3><p class="text-[12px] text-gray-400 mt-1">Count words & chars</p></a>
-<a href="percentage-calculator.html" class="tool-card" data-name="percentage"><div class="text-3xl">%</div><h3 class="mt-3 font-bold">Percentage Calc</h3><p class="text-[12px] text-gray-400 mt-1">Calculate percent</p></a>
-<a href="ai-bio-generator.html" class="tool-card" data-name="bio"><div class="text-3xl">💫</div><h3 class="mt-3 font-bold">AI Bio Generator</h3><p class="text-[12px] text-gray-400 mt-1">Generate bios</p></a>
-<a href="password-generator.html" class="tool-card" data-name="password"><div class="text-3xl">🔐</div><h3 class="mt-3 font-bold">Password Generator</h3><p class="text-[12px] text-gray-400 mt-1">Strong passwords</p></a>
-<a href="bmi-calculator.html" class="tool-card" data-name="bmi"><div class="text-3xl">⚖️</div><h3 class="mt-3 font-bold">BMI Calculator</h3><p class="text-[12px] text-gray-400 mt-1">Check BMI</p></a>
-<a href="age-calculator.html" class="tool-card" data-name="age"><div class="text-3xl">🎂</div><h3 class="mt-3 font-bold">Age Calculator</h3><p class="text-[12px] text-gray-400 mt-1">Exact age</p></a>
 </div>
 
-<!-- BLOG SECTION START - 4 BLOGS ADDED -->
+<!-- EXPLORE TOOLS FOLDER - REPLACED TOOLS GRID -->
+<div class="mt-16 max-w-2xl mx-auto">
+<a href="explore.html" class="explore-folder">
+<div class="text-6xl">📁</div>
+<h2 class="mt-5 text-3xl font-black">Explore Tools</h2>
+<p class="mt-3 text-gray-300 text-[14px]">27 Free Tools Inside - Click to Open</p>
+<div class="mt-6 inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-fuchsia-500 px-6 py-3 rounded-full text-sm font-bold">🚀 Open All Tools</div>
+<p class="mt-4 text-[11px] text-gray-500">Image • PDF • AI • Text • QR • CV & More</p>
+</a>
+</div>
+
+<!-- BLOG SECTION START - 4 BLOGS -->
 <div class="mt-16 border-t border-white/10 pt-10">
 <h2 class="text-2xl font-black text-white">Latest Guides & Blogs</h2>
 <p class="text-gray-400 text-[12px] mt-2">Learn how to use our tools - Helpful guides for Pakistan</p>
 <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-
-<a href="blog/passport-size-photo-maker-guide.html" class="bg-gradient-to-br from-purple-900/40 to-[#0a0218] border border-purple-500/30 rounded-2xl p-5 hover:border-purple-400 transition block">
-<div class="text-[10px] text-green-400 font-bold tracking-widest">NEW • PASSPORT</div>
-<h3 class="text-[14px] font-bold text-white mt-2 leading-snug">Passport Photo at Home (35x45mm)</h3>
-<p class="text-[11px] text-gray-400 mt-2 leading-relaxed">NADRA, Passport & Visa 300 DPI guide for Pakistan.</p>
-<span class="text-[11px] text-purple-300 mt-4 inline-block font-bold">Read Guide →</span>
-</a>
-
-<a href="blog/ats-cv-maker-pakistan-guide.html" class="bg-gradient-to-br from-blue-900/40 to-[#0a0218] border border-blue-500/30 rounded-2xl p-5 hover:border-blue-400 transition block">
-<div class="text-[10px] text-blue-400 font-bold tracking-widest">NEW • JOBS</div>
-<h3 class="text-[14px] font-bold text-white mt-2 leading-snug">ATS CV for Pakistan Jobs 2025</h3>
-<p class="text-[11px] text-gray-400 mt-2 leading-relaxed">Rozee.pk & LinkedIn approved format, 95% score.</p>
-<span class="text-[11px] text-blue-300 mt-4 inline-block font-bold">Read Guide →</span>
-</a>
-
-<a href="blog/qr-code-generator-guide.html" class="bg-gradient-to-br from-emerald-900/40 to-[#0a0218] border border-emerald-500/30 rounded-2xl p-5 hover:border-emerald-400 transition block">
-<div class="text-[10px] text-emerald-400 font-bold tracking-widest">NEW • BUSINESS</div>
-<h3 class="text-[14px] font-bold text-white mt-2 leading-snug">QR Code with Logo for Business</h3>
-<p class="text-[11px] text-gray-400 mt-2 leading-relaxed">WhatsApp, Easypaisa, JazzCash QR with brand logo.</p>
-<span class="text-[11px] text-emerald-300 mt-4 inline-block font-bold">Read Guide →</span>
-</a>
-
-<a href="blog/image-to-pdf-guide.html" class="bg-gradient-to-br from-red-900/40 to-[#0a0218] border border-red-500/30 rounded-2xl p-5 hover:border-red-400 transition block">
-<div class="text-[10px] text-red-400 font-bold tracking-widest">NEW • PDF TOOLS</div>
-<h3 class="text-[14px] font-bold text-white mt-2 leading-snug">Image to PDF 300 DPI - High Quality</h3>
-<p class="text-[11px] text-gray-400 mt-2 leading-relaxed">Merge JPG to PDF for NADRA & University forms.</p>
-<span class="text-[11px] text-red-300 mt-4 inline-block font-bold">Read Guide →</span>
-</a>
-
+<a href="blog/passport-size-photo-maker-guide.html" class="bg-gradient-to-br from-purple-900/40 to-[#0a0218] border border-purple-500/30 rounded-2xl p-5 hover:border-purple-400 transition block"><div class="text-[10px] text-green-400 font-bold tracking-widest">NEW • PASSPORT</div><h3 class="text-[14px] font-bold text-white mt-2 leading-snug">Passport Photo at Home (35x45mm)</h3><p class="text-[11px] text-gray-400 mt-2 leading-relaxed">NADRA, Passport & Visa 300 DPI guide for Pakistan.</p><span class="text-[11px] text-purple-300 mt-4 inline-block font-bold">Read Guide →</span></a>
+<a href="blog/ats-cv-maker-pakistan-guide.html" class="bg-gradient-to-br from-blue-900/40 to-[#0a0218] border border-blue-500/30 rounded-2xl p-5 hover:border-blue-400 transition block"><div class="text-[10px] text-blue-400 font-bold tracking-widest">NEW • JOBS</div><h3 class="text-[14px] font-bold text-white mt-2 leading-snug">ATS CV for Pakistan Jobs 2025</h3><p class="text-[11px] text-gray-400 mt-2 leading-relaxed">Rozee.pk & LinkedIn approved format, 95% score.</p><span class="text-[11px] text-blue-300 mt-4 inline-block font-bold">Read Guide →</span></a>
+<a href="blog/qr-code-generator-guide.html" class="bg-gradient-to-br from-emerald-900/40 to-[#0a0218] border border-emerald-500/30 rounded-2xl p-5 hover:border-emerald-400 transition block"><div class="text-[10px] text-emerald-400 font-bold tracking-widest">NEW • BUSINESS</div><h3 class="text-[14px] font-bold text-white mt-2 leading-snug">QR Code with Logo for Business</h3><p class="text-[11px] text-gray-400 mt-2 leading-relaxed">WhatsApp, Easypaisa, JazzCash QR with brand logo.</p><span class="text-[11px] text-emerald-300 mt-4 inline-block font-bold">Read Guide →</span></a>
+<a href="blog/image-to-pdf-guide.html" class="bg-gradient-to-br from-red-900/40 to-[#0a0218] border border-red-500/30 rounded-2xl p-5 hover:border-red-400 transition block"><div class="text-[10px] text-red-400 font-bold tracking-widest">NEW • PDF TOOLS</div><h3 class="text-[14px] font-bold text-white mt-2 leading-snug">Image to PDF 300 DPI - High Quality</h3><p class="text-[11px] text-gray-400 mt-2 leading-relaxed">Merge JPG to PDF for NADRA & University forms.</p><span class="text-[11px] text-red-300 mt-4 inline-block font-bold">Read Guide →</span></a>
 </div>
 </div>
 <!-- BLOG SECTION END -->
@@ -166,15 +118,7 @@ window.addEventListener('resize', resizeCanvas);
 const brokenCount = isMobile? 35 : 90;
 const brokenStars = [];
 for(let i=0;i<brokenCount;i++){
-  brokenStars.push({
-    x: Math.random()*canvas.width,
-    y: Math.random()*canvas.height,
-    size: Math.random()*1.8+0.3,
-    rot: Math.random()*Math.PI,
-    type: Math.floor(Math.random()*3),
-    opacity: Math.random()*0.7+0.3,
-    twinkleSpeed: Math.random()*0.02+0.005
-  });
+  brokenStars.push({x: Math.random()*canvas.width,y: Math.random()*canvas.height,size: Math.random()*1.8+0.3,rot: Math.random()*Math.PI,type: Math.floor(Math.random()*3),opacity: Math.random()*0.7+0.3,twinkleSpeed: Math.random()*0.02+0.005});
 }
 let tick=0;
 function drawBrokenStars(){
@@ -182,35 +126,17 @@ function drawBrokenStars(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
   tick+=0.02;
   brokenStars.forEach(s=>{
-    ctx.save();
-    ctx.translate(s.x, s.y);
-    ctx.rotate(s.rot);
+    ctx.save();ctx.translate(s.x, s.y);ctx.rotate(s.rot);
     ctx.globalAlpha = s.opacity * (0.6 + Math.sin(tick*s.twinkleSpeed*100)*0.4);
     ctx.fillStyle = '#ffffff';
-    if(s.type===0){
-      ctx.beginPath(); ctx.arc(0,0,s.size,0,Math.PI*2); ctx.fill();
-      ctx.globalAlpha*=0.5;
-      ctx.beginPath(); ctx.arc(s.size*2,0,s.size*0.6,0,Math.PI*2); ctx.fill();
-    } else if(s.type===1){
-      ctx.fillRect(-s.size*2, -0.3, s.size*4, 0.6);
-      ctx.fillRect(-0.3, -s.size*2, 0.6, s.size*4);
-      ctx.clearRect(s.size*0.8, -0.3, s.size*1.2, 0.6);
-    } else {
-      ctx.beginPath();
-      ctx.moveTo(-s.size*2,0);
-      ctx.lineTo(s.size*2,0);
-      ctx.strokeStyle='#c084fc';
-      ctx.lineWidth=0.6;
-      ctx.stroke();
-      ctx.fillStyle='#fff';
-      ctx.beginPath(); ctx.arc(0,0,s.size*0.8,0,Math.PI*2); ctx.fill();
-    }
+    if(s.type===0){ctx.beginPath(); ctx.arc(0,0,s.size,0,Math.PI*2); ctx.fill();ctx.globalAlpha*=0.5;ctx.beginPath(); ctx.arc(s.size*2,0,s.size*0.6,0,Math.PI*2); ctx.fill();}
+    else if(s.type===1){ctx.fillRect(-s.size*2, -0.3, s.size*4, 0.6);ctx.fillRect(-0.3, -s.size*2, 0.6, s.size*4);ctx.clearRect(s.size*0.8, -0.3, s.size*1.2, 0.6);}
+    else {ctx.beginPath();ctx.moveTo(-s.size*2,0);ctx.lineTo(s.size*2,0);ctx.strokeStyle='#c084fc';ctx.lineWidth=0.6;ctx.stroke();ctx.fillStyle='#fff';ctx.beginPath(); ctx.arc(0,0,s.size*0.8,0,Math.PI*2); ctx.fill();}
     ctx.restore();
   });
   if(!isMobile || tick % 2 < 1){ requestAnimationFrame(drawBrokenStars); }
 }
 drawBrokenStars();
-function filterTools(){let q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.tool-card').forEach(c=>{let n=c.getAttribute('data-name')||'';let t=c.innerText.toLowerCase();c.style.display=(t.includes(q)||n.includes(q))?'block':'none';});}
 </script>
 </body>
 </html>
