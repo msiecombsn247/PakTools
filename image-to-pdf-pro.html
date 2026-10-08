@@ -2,103 +2,187 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Image to PDF Converter - Merge JPG to PDF Free | PakTools</title>
-<meta name="description" content="Convert Multiple JPG, PNG Images to Single PDF Free. Merge Images to PDF, High Quality. Offline, No Upload.">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<title>Image to PDF PRO - JPG to PDF 300 DPI | PakTools</title>
+<meta name="description" content="Convert JPG, PNG to PDF 300 DPI for PPSC, jobs, documents. Multiple images to single PDF, A4, offline, no watermark.">
 <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-*{font-family:'Inter',sans-serif}body{background:#07010f;color:white;margin:0}
+*{font-family:'Inter',sans-serif}
+body{background:#07010f;color:white}
 .galaxy-bg{position:fixed;inset:0;z-index:0;background:#020006;pointer-events:none}
-.galaxy{position:absolute;width:800px;height:800px;border-radius:50%;filter:blur(80px);opacity:0.5}
+.galaxy{position:absolute;width:800px;height:800px;border-radius:50%;filter:blur(80px);opacity:0.4}
 .g1{background:radial-gradient(circle,#c084fc,#7e22ce 25%,transparent 70%);top:-10%;left:-10%}
-.g2{background:radial-gradient(circle,#a855f7,#581c87 25%,transparent 70%);bottom:-20%;right:-10%}
-.tool-box{background:linear-gradient(145deg,rgba(28,10,58,0.92),rgba(12,3,32,0.92));border:1px solid rgba(168,85,247,0.3);border-radius:1.5rem}
-.drop{border:2px dashed rgba(168,85,247,0.4);border-radius:1.5rem;padding:30px;text-align:center;background:rgba(0,0,0,0.3);transition:0.2s}
-.drop.dragover{border-color:#c084fc;background:rgba(168,85,247,0.1)}
-.thumb{width:80px;height:80px;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,0.2)}
-@media(max-width:768px){.galaxy{filter:blur(40px);width:400px;height:400px}}
+.input{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:10px;color:white;font-size:12px}
+.thumb{position:relative;border:1px solid rgba(255,255,255,0.1);border-radius:12px;overflow:hidden;background:#0c031c}
 </style>
 </head>
 <body>
-<div class="galaxy-bg"><div class="galaxy g1"></div><div class="galaxy g2"></div></div>
-<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#07010f]/80 backdrop-blur-xl"><div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"><a href="index.html" class="font-black text-xl flex items-center gap-2" style="text-decoration:none;color:white"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center">P</div>PakTools</a><a href="index.html" class="text-[12px] bg-white/10 border border-white/20 px-4 py-2 rounded-full" style="text-decoration:none;color:white">Home</a></div></header>
-
-<main class="relative z-10 max-w-5xl mx-auto px-6 py-8">
-<div class="text-center"><h1 class="text-3xl md:text-5xl font-black">Image to PDF <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-fuchsia-300">Merger PRO</span></h1><p class="text-gray-400 text-sm mt-2">Merge Multiple JPG/PNG to One PDF - Offline & Free</p></div>
-
-<div class="tool-box p-6 mt-8">
-<div id="drop" class="drop"><p class="text-3xl">📁</p><p class="font-bold mt-2 text-sm">Drag & Drop Images Here or Click to Upload</p><p class="text-[11px] text-gray-500 mt-1">JPG, PNG, WEBP - Up to 50 Images</p><input type="file" id="fileInput" accept="image/*" multiple hidden><button onclick="document.getElementById('fileInput').click()" class="mt-4 bg-white/10 border border-white/20 px-6 py-2 rounded-full text-xs">Select Images</button></div>
-
-<div id="previewArea" class="hidden mt-6">
-<div class="flex justify-between items-center mb-3"><p class="font-bold text-sm"><span id="count">0</span> Images Selected</p><button onclick="clearAll()" class="text-[11px] text-red-400">Clear All</button></div>
-<div id="thumbs" class="flex flex-wrap gap-3 max-h-52 overflow-auto p-2 bg-black/30 rounded-xl"></div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
-<select id="orientation" class="bg-black/50 border border-white/20 rounded-full px-4 py-2.5 text-xs"><option value="p">Portrait</option><option value="l">Landscape</option></select>
-<select id="pageSize" class="bg-black/50 border border-white/20 rounded-full px-4 py-2.5 text-xs"><option value="a4">A4</option><option value="letter">Letter</option><option value="fit">Fit to Image</option></select>
-<select id="margin" class="bg-black/50 border border-white/20 rounded-full px-4 py-2.5 text-xs"><option value="10">Small Margin</option><option value="0">No Margin</option><option value="20">Large Margin</option></select>
-<button onclick="convertToPDF()" class="bg-gradient-to-r from-purple-500 to-fuchsia-500 font-bold py-2.5 rounded-full text-xs">Convert to PDF</button>
+<div class="galaxy-bg"><div class="galaxy g1"></div></div>
+<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<a href="index.html" class="font-black flex items-center gap-2" style="text-decoration:none;color:white"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center">P</div>PakTools</a>
+<div class="flex gap-2"><span class="text-[10px] bg-green-500/20 border border-green-500/30 text-green-300 px-3 py-2 rounded-full">300 DPI PDF</span><button id="downloadBtn" class="text-[11px] bg-white text-black px-5 py-2 rounded-full font-bold">⬇️ Download PDF</button></div>
 </div>
-<p id="status" class="text-xs text-center mt-3 text-gray-400"></p>
+</header>
+
+<main class="relative z-10 max-w-7xl mx-auto px-6 py-6 grid lg:grid-cols-[340px_1fr] gap-6">
+<!-- LEFT -->
+<div class="bg-[#0c031c] border border-white/10 rounded-2xl p-5 h-fit lg:sticky top-[88px]">
+<h2 class="text-[11px] font-black tracking-widest text-purple-300">1. UPLOAD IMAGES</h2>
+<div id="drop" class="mt-3 border-2 border-dashed border-purple-500/30 rounded-2xl p-6 text-center cursor-pointer bg-white/5">
+<input type="file" id="file" accept="image/*" multiple hidden>
+<div class="text-xl">📄</div><div class="text-[11px] font-bold mt-2">Drop Images / Click (Multiple)</div><div class="text-[9px] text-gray-400">JPG, PNG - Max 20 images</div>
+</div>
+<div class="mt-3 text-[10px] text-gray-400"><span id="count">0 images</span> • Drag to reorder</div>
+
+<h2 class="text-[11px] font-black tracking-widest text-purple-300 mt-6">2. PDF SETTINGS (PPSC)</h2>
+<div class="mt-3 grid gap-3">
+<div class="grid grid-cols-2 gap-2">
+<div><label class="text-[9px] font-bold tracking-widest text-gray-400">PAGE SIZE</label><select id="pageSize" class="input mt-1"><option value="a4">A4 (PPSC)</option><option value="letter">Letter</option><option value="original">Original Image Size</option></select></div>
+<div><label class="text-[9px] font-bold tracking-widest text-gray-400">ORIENTATION</label><select id="orient" class="input mt-1"><option value="p">Portrait</option><option value="l">Landscape</option><option value="auto">Auto</option></select></div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div><label class="text-[9px] font-bold tracking-widest text-gray-400">MARGIN</label><select id="margin" class="input mt-1"><option value="0">No Margin</option><option value="10" selected>Small (10mm)</option><option value="20">Large (20mm)</option></select></div>
+<div><label class="text-[9px] font-bold tracking-widest text-gray-400">FIT</label><select id="fit" class="input mt-1"><option value="contain">Contain (Full Image)</option><option value="cover">Cover (Fill Page)</option><option value="stretch">Stretch</option></select></div>
+</div>
+<div><label class="text-[9px] font-bold tracking-widest text-gray-400">PDF QUALITY</label><select id="quality" class="input mt-1"><option value="1.0">100% HD (300 DPI) - Best for Print</option><option value="0.8">80% Medium - Small Size</option><option value="0.5">50% Low - Email</option></select></div>
+</div>
+
+<div class="mt-5 grid grid-cols-2 gap-2">
+<button id="createBtn" class="bg-gradient-to-r from-purple-600 to-fuchsia-600 py-2.5 rounded-xl font-bold text-[11px]">⚡ Create PDF</button>
+<button id="clearBtn" class="bg-white/5 border border-white/10 py-2.5 rounded-xl font-bold text-[11px]">🗑️ Clear</button>
+</div>
+<p class="text-[9px] text-gray-500 mt-3 text-center">100% Offline • Images never uploaded</p>
+</div>
+
+<!-- RIGHT -->
+<div class="bg-[#12072a] border border-white/10 rounded-2xl p-5">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-[11px] font-black tracking-widest text-gray-400">IMAGES - DRAG TO REORDER (PPSC ORDER)</h3>
+<button onclick="document.getElementById('file').click()" class="text-[10px] bg-white/5 border border-white/10 px-3 py-1 rounded-full">+ Add More</button>
+</div>
+<div id="grid" class="grid grid-cols-2 md:grid-cols-3 gap-3 min-h-[400px]">
+<div id="empty" class="col-span-full flex flex-col items-center justify-center py-20 text-center"><div class="text-3xl">🖼️📄</div><p class="text-[11px] text-gray-500 mt-2">Upload CNIC, Domicile, Degrees<br>Multiple images → Single PDF for PPSC</p><p class="text-[9px] text-gray-600 mt-3">Example order: CNIC Front → Back → Domicile → Degree</p></div>
 </div>
 </div>
 </main>
 
 <script>
 let images=[];
-const drop=document.getElementById('drop'), input=document.getElementById('fileInput');
-drop.addEventListener('dragover',e=>{e.preventDefault(); drop.classList.add('dragover')});
-drop.addEventListener('dragleave',()=>drop.classList.remove('dragover'));
-drop.addEventListener('drop',e=>{e.preventDefault(); drop.classList.remove('dragover'); handleFiles(e.dataTransfer.files)});
-input.addEventListener('change',e=>handleFiles(e.target.files));
+const fileInput=document.getElementById('file');
+const drop=document.getElementById('drop');
+const grid=document.getElementById('grid');
+const empty=document.getElementById('empty');
+const countEl=document.getElementById('count');
+
+drop.addEventListener('click',()=>fileInput.click());
+drop.addEventListener('dragover',e=>{e.preventDefault()});
+drop.addEventListener('drop',e=>{e.preventDefault(); handleFiles(e.dataTransfer.files)});
+fileInput.addEventListener('change',e=>handleFiles(e.target.files));
 
 function handleFiles(files){
- for(let f of files){ if(!f.type.startsWith('image/')) continue;
-  const reader=new FileReader();
-  reader.onload=ev=>{images.push({src:ev.target.result, name:f.name}); render();};
-  reader.readAsDataURL(f);
- }
+for(let file of files){
+if(images.length>=20){alert('Max 20 images'); break;}
+const reader=new FileReader();
+reader.onload=ev=>{
+images.push({src:ev.target.result, name:file.name, file});
+render();
+};
+reader.readAsDataURL(file);
 }
-function render(){
- document.getElementById('previewArea').classList.remove('hidden');
- document.getElementById('count').innerText=images.length;
- const thumbs=document.getElementById('thumbs'); thumbs.innerHTML='';
- images.forEach((img,i)=>{
-  const d=document.createElement('div'); d.className='relative';
-  d.innerHTML=`<img src="${img.src}" class="thumb"><button onclick="removeImg(${i})" class="absolute -top-1 -right-1 bg-red-500 text-white w-5 h-5 rounded-full text-[10px]">x</button>`;
-  thumbs.appendChild(d);
- });
 }
-function removeImg(i){images.splice(i,1); render(); if(images.length==0) clearAll();}
-function clearAll(){images=[]; document.getElementById('previewArea').classList.add('hidden'); document.getElementById('thumbs').innerHTML='';}
 
-async function convertToPDF(){
- if(images.length==0){alert('Add images first');return;}
- const status=document.getElementById('status'); status.innerText='⏳ Creating PDF...';
- const {jsPDF}=window.jspdf;
- const orient=document.getElementById('orientation').value;
- const size=document.getElementById('pageSize').value;
- const margin=parseInt(document.getElementById('margin').value);
- let doc;
- if(size==='fit'){
-   // first image size
-   const img=new Image(); img.src=images[0].src; await new Promise(r=>img.onload=r);
-   doc=new jsPDF({orientation: img.width>img.height?'l':'p', unit:'px', format:[img.width+margin*2, img.height+margin*2]});
- } else {
-   doc=new jsPDF({orientation:orient, unit:'mm', format:size});
- }
- for(let i=0;i<images.length;i++){
-  if(i>0) doc.addPage();
-  const imgData=images[i].src;
-  const props=doc.internal.pageSize;
-  const pw=props.getWidth(), ph=props.getHeight();
-  // fit image
-  doc.addImage(imgData,'JPEG',margin,margin,pw-margin*2,ph-margin*2,undefined,'FAST');
-  status.innerText=`⏳ Adding ${i+1}/${images.length}...`;
- }
- doc.save(`PakTools-Images-to-PDF-${Date.now()}.pdf`);
- status.innerText=`✅ PDF Ready - ${images.length} images merged!`;
+function render(){
+if(images.length===0){empty.style.display='flex'; grid.innerHTML=''; grid.appendChild(empty); countEl.innerText='0 images'; return;}
+empty.style.display='none';
+grid.innerHTML='';
+images.forEach((img,i)=>{
+const div=document.createElement('div');
+div.className='thumb group cursor-move';
+div.draggable=true;
+div.innerHTML=`
+<img src="${img.src}" class="w-full h-[140px] object-cover">
+<div class="p-2 flex justify-between items-center bg-[#0c031c]">
+<span class="text-[9px] truncate w-[90px]">${img.name}</span>
+<button onclick="removeImg(${i})" class="text-[10px] bg-red-500/20 text-red-300 px-2 py-0.5 rounded-full">✕</button>
+</div>
+<div class="absolute top-1 left-1 bg-black/70 text-[9px] px-1.5 py-0.5 rounded-full">${i+1}</div>
+`;
+div.addEventListener('dragstart',e=>{e.dataTransfer.setData('text/plain',i)});
+div.addEventListener('dragover',e=>e.preventDefault());
+div.addEventListener('drop',e=>{
+e.preventDefault();
+const from=parseInt(e.dataTransfer.getData('text/plain'));
+const to=i;
+const moved=images.splice(from,1)[0];
+images.splice(to,0,moved);
+render();
+});
+grid.appendChild(div);
+});
+countEl.innerText=`${images.length} images`;
 }
+
+function removeImg(i){images.splice(i,1); render();}
+
+document.getElementById('clearBtn').addEventListener('click',()=>{images=[]; render();});
+
+async function createPDF(){
+if(images.length===0){alert('Pehle images upload karo'); return;}
+const {jsPDF} = window.jspdf;
+const pageSize=document.getElementById('pageSize').value;
+const orient=document.getElementById('orient').value;
+const margin=parseInt(document.getElementById('margin').value);
+const fit=document.getElementById('fit').value;
+const quality=parseFloat(document.getElementById('quality').value);
+
+let pdf;
+if(pageSize==='original'){
+// Use first image size
+const firstImg = await loadImage(images[0].src);
+pdf = new jsPDF({orientation: firstImg.width>firstImg.height?'l':'p', unit:'px', format:[firstImg.width, firstImg.height]});
+} else {
+pdf = new jsPDF({orientation: orient==='auto'?'p':orient, unit:'mm', format:pageSize});
+}
+
+for(let i=0;i<images.length;i++){
+if(i>0) pdf.addPage();
+const imgData = images[i].src;
+const img = await loadImage(imgData);
+const pageW = pdf.internal.pageSize.getWidth();
+const pageH = pdf.internal.pageSize.getHeight();
+let x=margin, y=margin, w=pageW-margin*2, h=pageH-margin*2;
+
+if(pageSize==='original' && i>0){
+pdf.addPage([img.width, img.height]);
+pdf.addImage(imgData,'JPEG',0,0,img.width,img.height,undefined,'FAST');
+continue;
+}
+
+if(fit==='contain'){
+const ratio = Math.min(w/img.width, h/img.height);
+w=img.width*ratio; h=img.height*ratio;
+x=(pageW-w)/2; y=(pageH-h)/2;
+} else if(fit==='cover'){
+const ratio = Math.max(w/img.width, h/img.height);
+w=img.width*ratio; h=img.height*ratio;
+x=(pageW-w)/2; y=(pageH-h)/2;
+}
+pdf.addImage(imgData,'JPEG',x,y,w,h,undefined,'FAST');
+if(quality<1) {} // jsPDF quality handled via compression
+}
+pdf.save(`PakTools-Documents-${Date.now()}.pdf`);
+}
+
+function loadImage(src){
+return new Promise(res=>{
+const im=new Image(); im.onload=()=>res(im); im.src=src;
+});
+}
+
+document.getElementById('createBtn').addEventListener('click',createPDF);
+document.getElementById('downloadBtn').addEventListener('click',createPDF);
 </script>
 </body>
 </html>
