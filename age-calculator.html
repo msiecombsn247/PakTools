@@ -2,127 +2,209 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Age Calculator - Exact Age in Years, Months, Days | PakTools</title>
-<meta name="description" content="Free Age Calculator - Calculate exact age in years, months, days, weeks, hours, minutes. 100% Free, Accurate, Private & No Signup needed.">
-<link rel="canonical" href="https://paktoolsonline.com/age-calculator.html">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<meta property="og:title" content="Age Calculator - Exact Age in Years, Months, Days | PakTools">
-<meta property="og:description" content="Calculate your exact age in years, months, days, total days lived, weeks & hours. 100% Free & Private.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://paktoolsonline.com/age-calculator.html">
-<meta property="og:image" content="https://paktoolsonline.com/og-age-calculator.png">
-<meta property="og:site_name" content="PakToolsOnline">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Age Calculator - Exact Age in Years, Months, Days">
-<meta name="twitter:description" content="Free Age Calculator - Exact age in years, months, days. Private & Accurate.">
-<meta name="twitter:image" content="https://paktoolsonline.com/og-age-calculator.png">
+<title>Age Calculator PRO - PPSC Age Limit Check, Exact Age 2025 | PakTools</title>
+<meta name="description" content="Exact age calculator for PPSC 21-28 years, Punjab Police. Years months days, next birthday, retirement. 100% offline.">
 <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-body{background:#020a1f; color:white; font-family:Inter,sans-serif; overflow-x:hidden;}
-.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55; animation:float 20s infinite alternate;}
-@keyframes float{0%{transform:translate(-10%,-10%)}100%{transform:translate(10%,10%) scale(1.15)}}
-.stars{position:absolute; inset:0; pointer-events:none;}
-.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%; animation:twinkle 3s infinite;}
-.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 30px rgba(37,99,235,0.35), inset 0 1px 0 rgba(150,200,255,0.18); backdrop-filter:blur(15px);}
-.input-box{background:rgba(0,0,0,0.35); border:1px solid rgba(59,130,246,0.3);}
-.result-card{background:rgba(255,255,255,0.06); border:1px solid rgba(56,189,248,0.25);}
-.content-box{background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(8px);}
+*{font-family:'Inter',sans-serif}
+body{background:#07010f;color:white}
+.galaxy-bg{position:fixed;inset:0;z-index:0;background:#020006;pointer-events:none}
+.galaxy{position:absolute;width:800px;height:800px;border-radius:50%;filter:blur(80px);opacity:0.4}
+.g1{background:radial-gradient(circle,#c084fc,#7e22ce 25%,transparent 70%);top:-10%;left:-10%}
+.input{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:12px;color:white;font-size:12px}
+.stat{background:linear-gradient(145deg,rgba(24,10,58,0.9),rgba(12,3,32,0.9));border:1px solid rgba(168,85,247,0.2);border-radius:16px;padding:14px}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Age Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free Age Calculator calculates exact age in years, months, days, weeks, hours. 100% accurate with leap years.","url":"https://paktoolsonline.com/age-calculator.html","author":{"@type":"Organization","name":"PakToolsOnline"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this Age Calculator accurate?","acceptedAnswer":{"@type":"Answer","text":"Yes, it calculates exact age including leap years and different month lengths."}},{"@type":"Question","name":"Is my Date of Birth stored?","acceptedAnswer":{"@type":"Answer","text":"No, all calculations happen in your browser. Your DOB is never sent to any server."}},{"@type":"Question","name":"Can I use this for official documents like CNIC or Passport?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can calculate exact age for school admission, job applications, CNIC, passport and retirement planning."}},{"@type":"Question","name":"Is it free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, PakTools Age Calculator is 100% free, unlimited and no signup required."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paktoolsonline.com/"},{"@type":"ListItem","position":2,"name":"Age Calculator","item":"https://paktoolsonline.com/age-calculator.html"}]}</script>
 </head>
-<body class="relative min-h-screen">
-<div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-250px] left-[10%]"></div>
-<div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-300px] right-[5%]"></div>
-<div class="stars" id="stars"></div>
-<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl">
+<body>
+<div class="galaxy-bg"><div class="galaxy g1"></div></div>
+<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl">
 <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-<a href="index.html" class="font-black text-lg flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-sm">P</div>PakTools</a>
-<a href="index.html" class="text-[12px] bg-white/10 border border-white/20 px-3 py-1.5 rounded-full">← Home</a>
+<a href="index.html" class="font-black flex items-center gap-2" style="text-decoration:none;color:white"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center">P</div>PakTools</a>
+<span class="text-[10px] bg-green-500/20 border border-green-500/30 text-green-300 px-3 py-2 rounded-full">PPSC Age Check</span>
 </div>
 </header>
-<main class="relative z-10 max-w-4xl mx-auto px-6 py-8">
-<div class="text-center">
-<h1 class="text-3xl md:text-4xl font-black">Age <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Calculator</span></h1>
-<p class="mt-2 text-gray-400 text-[13px]">Calculate Exact Age in Years, Months, Days - 100% Accurate</p>
+
+<main class="relative z-10 max-w-7xl mx-auto px-6 py-6 grid lg:grid-cols-[360px_1fr] gap-6">
+<!-- LEFT -->
+<div class="bg-[#0c031c] border border-white/10 rounded-2xl p-5 h-fit lg:sticky top-[88px]">
+<h2 class="text-[11px] font-black tracking-widest text-purple-300">1. DATE OF BIRTH</h2>
+<div class="mt-3 grid gap-3">
+<div><label class="text-[9px] font-bold tracking-widest text-gray-400">DOB (CNIC ke mutabiq)</label><input id="dob" type="date" class="input mt-1"></div>
+<div><label class="text-[9px] font-bold tracking-widest text-gray-400">CALCULATE TILL (Cut-off Date)</label><input id="till" type="date" class="input mt-1"><p class="text-[9px] text-gray-500 mt-1">PPSC ad me jo closing date hai woh likho</p></div>
 </div>
-<div class="tool-box rounded-[1.5rem] p-6 md:p-7 mt-8">
-<div class="grid md:grid-cols-2 gap-3">
-<div><label for="dob" class="text-[12px] text-gray-300">Your Date of Birth</label><input type="date" id="dob" class="input-box w-full mt-1 rounded-xl p-3 text-[13px] outline-none"></div>
-<div><label for="today" class="text-[12px] text-gray-300">Calculate Till</label><input type="date" id="today" class="input-box w-full mt-1 rounded-xl p-3 text-[13px] outline-none"></div>
+
+<h2 class="text-[11px] font-black tracking-widest text-purple-300 mt-6">2. PPSC AGE LIMIT CHECK</h2>
+<div class="mt-3 grid gap-2">
+<div class="grid grid-cols-2 gap-2">
+<div><label class="text-[9px] font-bold tracking-widest text-gray-400">MIN AGE</label><input id="minAge" type="number" value="21" class="input mt-1"></div>
+<div><label class="text-[9px] font-bold tracking-widest text-gray-400">MAX AGE</label><input id="maxAge" type="number" value="28" class="input mt-1"></div>
 </div>
-<button onclick="calcAge()" class="w-full mt-4 bg-gradient-to-r from-cyan-400 to-blue-600 text-black font-bold py-3 rounded-xl text-[13px] shadow-[0_0_15px_rgba(56,189,248,0.4)]">🎂 Calculate Age</button>
-<div id="result" class="hidden mt-5 grid grid-cols-3 gap-3 text-center">
-<div class="result-card rounded-xl p-4"><p class="text-2xl font-black text-cyan-300" id="y">0</p><p class="text-[10px] text-gray-400 mt-1">Years</p></div>
-<div class="result-card rounded-xl p-4"><p class="text-2xl font-black text-blue-400" id="m">0</p><p class="text-[10px] text-gray-400 mt-1">Months</p></div>
-<div class="result-card rounded-xl p-4"><p class="text-2xl font-black text-indigo-300" id="d">0</p><p class="text-[10px] text-gray-400 mt-1">Days</p></div>
-</div>
-<div id="details" class="hidden mt-4 bg-black/30 rounded-xl p-4 border border-white/10 text-[12px] leading-5 text-gray-300"></div>
-</div>
-<div class="content-box rounded-xl p-5 mt-6">
-<h2 class="text-[14px] font-bold">About Age Calculator - Exact & Private</h2>
-<p class="mt-2 text-[11px] leading-6 text-gray-400">PakTools Free Age Calculator is the most accurate tool to calculate your exact chronological age in years, months, and days. Unlike simple calculators, our tool considers leap years, varying month lengths (28-31 days), and time zones for 100% precision. It is perfect for official use cases in Pakistan including school admission, university forms, CSS age eligibility, government jobs, NADRA CNIC, passport application, and retirement planning. The tool also shows total days lived, total weeks, total hours and even minutes, making it useful for fun facts and birthday planning. All calculations are done locally in your browser using JavaScript - your date of birth is never uploaded, stored, or tracked, ensuring complete privacy. It works on all devices, no app install or signup needed, and is free forever.</p>
-<div class="grid md:grid-cols-2 gap-4 mt-4">
-<div>
-<h3 class="text-[12px] font-bold">How to Use Age Calculator?</h3>
-<ul class="mt-1 list-disc pl-4 text-[11px] leading-6 text-gray-400"><li>Select your Date of Birth from the calendar</li><li>Leave second date as today or choose any future/past date</li><li>Click Calculate Age button to see exact age</li></ul>
-</div>
-<div>
-<h3 class="text-[12px] font-bold">Key Features</h3>
-<ul class="mt-1 list-disc pl-4 text-[11px] leading-6 text-gray-400"><li>Exact Years, Months, Days with leap year accuracy</li><li>Total days, weeks, hours, minutes lived</li><li>100% Private, browser-based, no data stored</li><li>Free forever, no signup</li></ul>
+<div class="flex gap-2 mt-1">
+<button onclick="setLimit(18,25)" class="text-[9px] bg-white/5 border border-white/10 px-2 py-1 rounded-full">Police 18-25</button>
+<button onclick="setLimit(21,28)" class="text-[9px] bg-white/5 border border-white/10 px-2 py-1 rounded-full">PPSC 21-28</button>
+<button onclick="setLimit(21,30)" class="text-[9px] bg-white/5 border border-white/10 px-2 py-1 rounded-full">FPSC 21-30</button>
 </div>
 </div>
-<div class="mt-4 border-t border-white/10 pt-3">
-<h3 class="text-[12px] font-bold">Frequently Asked Questions</h3>
-<div class="mt-2 space-y-2 text-[11px] leading-5 text-gray-400">
-<p><b class="text-gray-300">Is this accurate for legal documents?</b> Yes, it includes leap years and is accurate for CNIC, passport, school and job forms.</p>
-<p><b class="text-gray-300">Is my DOB safe and stored?</b> No, PakTools never stores your DOB. All processing is client-side.</p>
-<p><b class="text-gray-300">Can I calculate age till any date?</b> Yes, you can calculate age till today or any past/future date.</p>
-<p><b class="text-gray-300">Is it free?</b> Yes, unlimited free use.</p>
+
+<div class="mt-5 grid grid-cols-2 gap-2">
+<button id="calcBtn" class="bg-gradient-to-r from-purple-600 to-fuchsia-600 py-3 rounded-xl font-bold text-[11px]">⚡ Calculate Age</button>
+<button id="todayBtn" class="bg-white/5 border border-white/10 py-3 rounded-xl font-bold text-[11px]">📅 Today</button>
+</div>
+
+<div class="mt-4 p-3 rounded-xl bg-white/5 border border-white/10">
+<p class="text-[10px] text-gray-400">💡 CNIC se DOB: CNIC ka number <a href="cnic-dob.html" style="color:#c084fc">CNIC to DOB tool</a> me daal kar DOB nikalo</p>
 </div>
 </div>
-<p class="mt-3 text-[10px] text-gray-500">Disclaimer: For informational purposes only. Verify critical ages for legal docs with official sources.</p>
+
+<!-- RIGHT -->
+<div class="grid gap-4">
+<!-- Main Result -->
+<div class="bg-gradient-to-br from-purple-600/20 to-fuchsia-600/20 border border-purple-500/30 rounded-2xl p-6 text-center">
+<h3 class="text-[11px] font-black tracking-widest text-purple-300">EXACT AGE</h3>
+<div id="mainAge" class="text-4xl font-black mt-2">-- Years</div>
+<div id="detailAge" class="text-[12px] text-gray-400 mt-1">Select DOB</div>
+<div id="ppscResult" class="mt-4 inline-block px-4 py-1.5 rounded-full text-[11px] font-bold bg-white/5 border border-white/10">PPSC Eligibility: --</div>
 </div>
-<div class="content-box rounded-xl p-5 mt-6">
-<h3 class="text-[13px] font-bold">Related Free Tools</h3>
-<div class="grid grid-cols-2 md:grid-cols-3 gap-2 mt-3 text-[11px]">
-<a href="bmi-calculator.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">📊 BMI Calculator</a>
-<a href="percentage-calculator.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">% Percentage Calculator</a>
-<a href="date-difference.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">📅 Date Difference</a>
-<a href="passport-photo-maker.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🖼️ Passport Photo Maker</a>
-<a href="word-counter.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🔤 Word Counter</a>
-<a href="background-remover.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">✨ BG Remover</a>
+
+<div class="grid md:grid-cols-3 gap-3">
+<div class="stat"><div class="text-[9px] font-bold tracking-widest text-gray-400">IN MONTHS</div><div id="inMonths" class="text-[18px] font-black mt-1">--</div></div>
+<div class="stat"><div class="text-[9px] font-bold tracking-widest text-gray-400">IN DAYS</div><div id="inDays" class="text-[18px] font-black mt-1">--</div></div>
+<div class="stat"><div class="text-[9px] font-bold tracking-widest text-gray-400">IN HOURS</div><div id="inHours" class="text-[18px] font-black mt-1">--</div></div>
 </div>
+
+<div class="grid md:grid-cols-2 gap-4">
+<div class="stat">
+<h4 class="text-[11px] font-black tracking-widest text-purple-300">NEXT BIRTHDAY</h4>
+<div id="nextBday" class="mt-3 text-[12px]">--</div>
+<div class="mt-3 grid grid-cols-3 gap-2 text-center">
+<div class="bg-white/5 rounded-lg p-2"><div id="bdayMonths" class="font-black text-[14px]">--</div><div class="text-[8px] text-gray-500">MONTHS</div></div>
+<div class="bg-white/5 rounded-lg p-2"><div id="bdayDays" class="font-black text-[14px]">--</div><div class="text-[8px] text-gray-500">DAYS</div></div>
+<div class="bg-white/5 rounded-lg p-2"><div id="bdayWeekday" class="font-black text-[12px]">--</div><div class="text-[8px] text-gray-500">DAY</div></div>
+</div>
+</div>
+
+<div class="stat">
+<h4 class="text-[11px] font-black tracking-widest text-purple-300">SUMMARY (PPSC FORM KE LIYE)</h4>
+<div id="summary" class="mt-3 text-[11px] leading-relaxed text-gray-300">DOB select karo to summary banega jo aap PPSC form me copy kar sakte ho.</div>
+<div class="mt-3 flex gap-2">
+<button onclick="copySummary()" class="text-[10px] bg-white text-black px-3 py-1.5 rounded-full font-bold">📋 Copy Summary</button>
+<button onclick="shareAge()" class="text-[10px] bg-white/10 border border-white/20 px-3 py-1.5 rounded-full">🔗 Share</button>
+</div>
+</div>
+</div>
+
+<div class="stat">
+<h4 class="text-[11px] font-black tracking-widest text-purple-300">DATE DIFFERENCE (2 Dates ke Darmiyan)</h4>
+<div class="grid md:grid-cols-2 gap-3 mt-3">
+<div><label class="text-[9px] text-gray-400">Start Date</label><input id="d1" type="date" class="input mt-1"></div>
+<div><label class="text-[9px] text-gray-400">End Date</label><input id="d2" type="date" class="input mt-1"></div>
+</div>
+<button onclick="calcDiff()" class="mt-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-[11px] font-bold">Calculate Difference</button>
+<div id="diffResult" class="mt-2 text-[12px] text-gray-300">--</div>
+</div>
+
 </div>
 </main>
-<footer class="relative z-10 border-t border-white/10 mt-8 py-6 text-center text-[10px] text-gray-500">
-<p>© 2025 PakToolsOnline - <a href="privacy-policy.html" class="hover:text-white">Privacy</a> | <a href="terms.html" class="hover:text-white">Terms</a> | <a href="contact.html" class="hover:text-white">Contact</a> | <a href="sitemap.xml" class="hover:text-white">Sitemap</a></p>
-</footer>
+
 <script>
-const stars=document.getElementById('stars');
-for(let i=0;i<100;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.animationDelay=Math.random()*3+'s';stars.appendChild(d);}
-document.getElementById('today').valueAsDate=new Date();
-function calcAge(){
-let dob=document.getElementById('dob').value;
-let todayVal=document.getElementById('today').value;
-if(!dob){alert('Select DOB!'); return;}
-let b=new Date(dob); let t=todayVal? new Date(todayVal): new Date();
-let years=t.getFullYear()-b.getFullYear();
-let months=t.getMonth()-b.getMonth();
-let days=t.getDate()-b.getDate();
-if(days<0){months--; let prevMonth=new Date(t.getFullYear(),t.getMonth(),0); days+=prevMonth.getDate();}
-if(months<0){years--; months+=12;}
-if(years<0){alert('DOB cannot be in future!'); return;}
-document.getElementById('y').innerText=years; document.getElementById('m').innerText=months; document.getElementById('d').innerText=days;
-document.getElementById('result').classList.remove('hidden');
-let diff=t-b;
-let totalDays=Math.floor(diff/(1000*60*60*24));
-let totalHours=Math.floor(diff/(1000*60*60));
-let totalWeeks=Math.floor(totalDays/7);
-document.getElementById('details').classList.remove('hidden');
-document.getElementById('details').innerHTML=`You are <b class="text-white">${years}y ${months}m ${days}d</b> old. Total: ${totalDays.toLocaleString()} days • ${totalWeeks.toLocaleString()} weeks • ${totalHours.toLocaleString()} hours • Born ${b.toDateString()}`;
+function setLimit(min,max){
+document.getElementById('minAge').value=min;
+document.getElementById('maxAge').value=max;
+calcAge();
 }
+
+function calcAge(){
+const dobVal=document.getElementById('dob').value;
+const tillVal=document.getElementById('till').value;
+if(!dobVal){alert('DOB select karo'); return;}
+const dob=new Date(dobVal);
+const till=tillVal?new Date(tillVal):new Date();
+if(till<dob){alert('Till date DOB se pehle nahi ho sakti'); return;}
+
+let years=till.getFullYear()-dob.getFullYear();
+let months=till.getMonth()-dob.getMonth();
+let days=till.getDate()-dob.getDate();
+if(days<0){months--; const prevMonth=new Date(till.getFullYear(),till.getMonth(),0); days+=prevMonth.getDate();}
+if(months<0){years--; months+=12;}
+
+const diffMs=till-dob;
+const totalDays=Math.floor(diffMs/(1000*60*60*24));
+const totalMonths=years*12+months;
+const totalHours=totalDays*24;
+
+document.getElementById('mainAge').innerText=`${years} Years`;
+document.getElementById('detailAge').innerText=`${years} years, ${months} months, ${days} days old`;
+
+document.getElementById('inMonths').innerText=`${totalMonths} months`;
+document.getElementById('inDays').innerText=`${totalDays.toLocaleString()} days`;
+document.getElementById('inHours').innerText=`${totalHours.toLocaleString()} hours`;
+
+// PPSC check
+const minP=parseInt(document.getElementById('minAge').value)||0;
+const maxP=parseInt(document.getElementById('maxAge').value)||100;
+const eligible = years>=minP && years<=maxP || (years===maxP && months===0 && days===0) || (years===minP-1 && months>=0)? (years>=minP && years<maxP) || (years===maxP && months===0 && days===0) || (years>=minP && years<=maxP) : false;
+let isElig = years>=minP && years<=maxP;
+if(years===maxP && (months>0 || days>0)) isElig=false;
+if(years<minP) isElig=false;
+
+const resEl=document.getElementById('ppscResult');
+if(isElig){
+resEl.innerText=`✅ Eligible for ${minP}-${maxP} years`;
+resEl.className='mt-4 inline-block px-4 py-1.5 rounded-full text-[11px] font-bold bg-green-500/20 border border-green-500/30 text-green-300';
+} else {
+resEl.innerText=`❌ Not Eligible - You are ${years}y ${months}m, Required ${minP}-${maxP}`;
+resEl.className='mt-4 inline-block px-4 py-1.5 rounded-full text-[11px] font-bold bg-red-500/20 border border-red-500/30 text-red-300';
+}
+
+// Next birthday
+let nextBdayYear=till.getFullYear();
+let nextBday=new Date(nextBdayYear, dob.getMonth(), dob.getDate());
+if(nextBday<till){nextBdayYear++; nextBday=new Date(nextBdayYear, dob.getMonth(), dob.getDate());}
+const diffBday=Math.ceil((nextBday-till)/(1000*60*60*24));
+const bMonths=Math.floor(diffBday/30);
+const bDays=diffBday%30;
+const weekdays=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+document.getElementById('nextBday').innerHTML=`Next Birthday: <b>${nextBday.toDateString()}</b> (${diffBday} days left)`;
+document.getElementById('bdayMonths').innerText=bMonths;
+document.getElementById('bdayDays').innerText=bDays;
+document.getElementById('bdayWeekday').innerText=weekdays[nextBday.getDay()].slice(0,3);
+
+// Summary
+const summary=`My Date of Birth is ${dob.toDateString()}. As of ${till.toDateString()}, I am ${years} years, ${months} months, ${days} days old. Total ${totalDays} days. Eligibility for ${minP}-${maxP} years: ${isElig?'Eligible ✅':'Not Eligible ❌'}.`;
+document.getElementById('summary').innerText=summary;
+}
+
+function calcDiff(){
+const d1=document.getElementById('d1').value;
+const d2=document.getElementById('d2').value;
+if(!d1||!d2){alert('Dono dates select karo'); return;}
+const a=new Date(d1), b=new Date(d2);
+let y=b.getFullYear()-a.getFullYear(), m=b.getMonth()-a.getMonth(), d=b.getDate()-a.getDate();
+if(d<0){m--; const pm=new Date(b.getFullYear(),b.getMonth(),0); d+=pm.getDate();}
+if(m<0){y--; m+=12;}
+const days=Math.floor((b-a)/(1000*60*60*24));
+document.getElementById('diffResult').innerText=`Difference: ${y} years, ${m} months, ${d} days = ${days} days total`;
+}
+
+function copySummary(){
+const text=document.getElementById('summary').innerText;
+navigator.clipboard.writeText(text).then(()=>alert('Summary copied!'));
+}
+function shareAge(){
+if(navigator.share){navigator.share({title:'My Age', text:document.getElementById('summary').innerText});}
+else copySummary();
+}
+
+document.getElementById('calcBtn').addEventListener('click',calcAge);
+document.getElementById('todayBtn').addEventListener('click',()=>{
+const today=new Date().toISOString().split('T')[0];
+document.getElementById('till').value=today;
+calcAge();
+});
+
+// auto set today
+document.getElementById('till').value=new Date().toISOString().split('T')[0];
 </script>
 </body>
 </html>
