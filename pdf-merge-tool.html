@@ -2,153 +2,65 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>PDF Merge + Split Tool - Merge PDFs & Split PDF | PakToolsOnline</title>
-<meta name="description" content="Free PDF Merger Pakistan - Merge multiple PDFs into one, Split PDF by page range online. 100% Offline, Private, No Upload, Free, No Watermark.">
-<link rel="canonical" href="https://paktoolsonline.com/pdf-merge.html">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<meta property="og:title" content="PDF Merge & Split Tool - Merge PDFs Free Online">
-<meta property="og:description" content="Merge multiple PDFs into one, Split PDF by pages. 100% offline, private, free, no upload to server.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://paktoolsonline.com/pdf-merge.html">
-<meta property="og:image" content="https://paktoolsonline.com/og-pdf-merge.png">
-<meta property="og:site_name" content="PakToolsOnline">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PDF Merge + Split Tool - Free">
-<meta name="twitter:description" content="Merge PDFs & Split PDF free. Offline & private.">
-<meta name="twitter:image" content="https://paktoolsonline.com/og-pdf-merge.png">
+<title>PDF Merge Tool - Merge PDF Files Online Free Pakistan | PakTools</title>
+<meta name="description" content="Free PDF Merge Tool Pakistan - Merge multiple PDF files into one online. For PPSC, FPSC, University assignments, NADRA docs. 100% free, secure, no watermark.">
+<meta name="keywords" content="pdf merge pakistan, merge pdf online free, combine pdf files, pdf jorny ka tarika, ppsc pdf merge">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
-<style>
-*{font-family:Inter,sans-serif}
-body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
-.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55;}
-.stars{position:absolute; inset:0; pointer-events:none;}
-.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%;}
-.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 30px rgba(37,99,235,0.35); backdrop-filter:blur(15px);}
-.result-card{background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08);}
-.glow-btn{background:linear-gradient(90deg,#22d3ee,#3b82f6);}
-.content-box{background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(8px);}
-.tab.active{background:linear-gradient(90deg,#22d3ee,#3b82f6); color:black; font-weight:900;}
-.pdf-item{background:rgba(0,0,0,0.35); border:1px solid rgba(59,130,246,0.3); border-radius:10px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;}
-</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF Merge and Split Tool","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free PDF Merger to merge multiple PDFs into one and Split PDF by page range. 100% offline browser-based, private, no upload.","url":"https://paktoolsonline.com/pdf-merge.html","author":{"@type":"Organization","name":"PakToolsOnline"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How to merge multiple PDFs into one?","acceptedAnswer":{"@type":"Answer","text":"Upload 2 or more PDFs, they appear in list, click Merge All Now. Merged PDF downloads instantly with all pages combined."}},{"@type":"Question","name":"How to split PDF by pages?","acceptedAnswer":{"@type":"Answer","text":"Switch to Split tab, upload PDF, enter From and To page numbers e.g. 1 to 5, click Split & Download. New PDF with selected pages downloaded."}},{"@type":"Question","name":"Is PDF merge private?","acceptedAnswer":{"@type":"Answer","text":"Yes, uses PDF-Lib in browser, 100% offline, no file uploaded to server, documents stay private."}},{"@type":"Question","name":"Is PDF merge tool free?","acceptedAnswer":{"@type":"Answer","text":"Yes, 100% free, unlimited merges and splits, no signup, no watermark, no quality loss."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paktoolsonline.com/"},{"@type":"ListItem","position":2,"name":"PDF Merge & Split","item":"https://paktoolsonline.com/pdf-merge.html"}]}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body class="relative min-h-screen">
-<div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-250px] left-[10%]"></div>
-<div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-300px] right-[5%]"></div>
-<div class="stars" id="stars"></div>
-<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl">
-<div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-<a href="index.html" class="font-black text-[15px] flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black text-xs">P</div>PakToolsOnline</a>
-<a href="index.html" class="text-[11px] bg-white/10 border border-white/20 px-3 py-1.5 rounded-full">← Home</a>
+<body style="background:#07010f;color:white;font-family:Inter,sans-serif">
+<div style="position:fixed;inset:0;background:radial-gradient(ellipse at 30% 20%, rgba(120,40,200,0.15), transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(200,40,120,0.1), transparent 50%);z-index:0"></div>
+<header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/80 backdrop-blur-xl"><div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"><a href="index.html" style="text-decoration:none;color:white" class="font-black text-xl flex gap-2 items-center"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center">P</div>PakTools</a><a href="blog.html" style="color:white;text-decoration:none" class="text-[11px] bg-white/10 border border-white/20 px-4 py-2 rounded-full">Blogs</a></div></header>
+<main class="max-w-5xl mx-auto px-6 py-10 relative z-10">
+<h1 style="font-family:'Plus Jakarta Sans',sans-serif" class="text-3xl md:text-5xl font-black leading-tight">PDF Merge Tool - Combine PDFs in Pakistan</h1>
+<p class="text-gray-400 text-[13px] mt-3">Merge PPSC, FPSC, University PDFs into one file. 100% secure - files never leave your phone.</p>
+
+<div id="dropZone" class="mt-8 border-2 border-dashed border-purple-500/40 bg-white/[0.04] rounded-[24px] p-10 text-center cursor-pointer hover:border-purple-400 transition">
+<div class="text-5xl">📄</div>
+<h3 class="mt-4 font-bold">Drag & Drop PDF Files Here</h3>
+<p class="text-[11px] text-gray-400 mt-2">or click to browse - Unlimited files, max 50MB each</p>
+<input id="fileInput" type="file" multiple accept="application/pdf" class="hidden">
 </div>
-</header>
-<main class="relative z-10 max-w-4xl mx-auto px-6 py-6">
-<div class="text-center">
-<h1 class="text-3xl md:text-4xl font-black">PDF <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Merge & Split</span></h1>
-<p class="mt-2 text-gray-400 text-[12px]">Merge Multiple PDFs • Split PDF by Pages • Free & Offline</p>
-<p class="mt-2 text-[10px] text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 inline-block px-2.5 py-1 rounded-full">🔥 Most Searched PDF Tool in Pakistan</p>
+
+<div id="fileList" class="mt-6 grid gap-3"></div>
+
+<div class="mt-6 flex gap-3">
+<button id="mergeBtn" class="flex-1 py-3 bg-gradient-to-r from-purple-500 to-fuchsia-500 rounded-full font-bold text-[13px] disabled:opacity-30" disabled>Merge Now → Download</button>
+<button id="clearBtn" class="px-6 py-3 bg-white/10 border border-white/20 rounded-full text-[12px]">Clear All</button>
 </div>
-<div class="tool-box rounded-[1.5rem] p-5 mt-6">
-<div class="flex gap-2 p-1 bg-black/30 rounded-xl w-fit mx-auto mb-5 border border-white/10">
-<button id="tabMerge" class="tab active px-5 py-1.5 rounded-lg text-[12px] transition" onclick="switchTab('merge')">Merge PDF</button>
-<button id="tabSplit" class="tab px-5 py-1.5 rounded-lg text-[12px] text-gray-400 transition" onclick="switchTab('split')">Split PDF</button>
-</div>
-<div id="mergeSection">
-<div id="dropArea" class="border-2 border-dashed border-blue-400/30 rounded-xl p-6 text-center bg-black/20 hover:border-cyan-400/50 cursor-pointer transition">
-<input type="file" id="fileInput" accept="application/pdf" multiple class="hidden">
-<div class="text-3xl mb-2">📄</div>
-<p class="font-bold text-[12px]">Drop PDFs Here or Click to Upload</p>
-<p class="text-[10px] text-gray-400 mt-1">Select 2+ PDFs to merge - Private & Secure</p>
-<button class="mt-3 glow-btn text-black font-bold px-5 py-2 rounded-full text-[11px]">Choose PDFs</button>
-</div>
-<div id="fileList" class="mt-4 hidden">
-<p class="text-[11px] font-bold mb-2 text-gray-300">Selected PDFs (<span id="count">0</span>): Drag to reorder coming soon</p>
-<div id="listContainer"></div>
-<div class="flex gap-2 mt-4">
-<button onclick="mergePDFs()" id="mergeBtn" class="flex-1 glow-btn text-black font-bold py-3 rounded-xl text-[12px] shadow-[0_0_15px_rgba(56,189,248,0.4)]">🔗 Merge All Now</button>
-<button onclick="resetMerge()" class="bg-white/10 border border-white/20 px-4 py-3 rounded-xl text-[11px] font-bold">Clear All</button>
-</div>
-</div>
-<div id="mergeResult" class="hidden mt-4 result-card rounded-xl p-4 text-center border-cyan-400/30">
-<p class="text-cyan-300 font-bold text-[12px]">✅ Merged Successfully!</p>
-<p id="mergeInfo" class="text-[10px] text-gray-400 mt-1"></p>
-<a id="downloadMerge" download="paktoolsonline-merged.pdf" class="mt-3 inline-block glow-btn text-black font-bold px-6 py-2.5 rounded-xl text-[11px] cursor-pointer">⬇️ Download Merged PDF</a>
-</div>
-</div>
-<div id="splitSection" class="hidden">
-<div id="dropAreaSplit" class="border-2 border-dashed border-blue-400/30 rounded-xl p-6 text-center bg-black/20 hover:border-cyan-400/50 cursor-pointer transition">
-<input type="file" id="fileInputSplit" accept="application/pdf" class="hidden">
-<div class="text-3xl mb-2">✂️</div>
-<p class="font-bold text-[12px]">Upload PDF to Split by Pages</p>
-<p class="text-[10px] text-gray-400 mt-1">Extract pages - e.g. 1-5 from 20 pages PDF</p>
-<button class="mt-3 glow-btn text-black font-bold px-5 py-2 rounded-full text-[11px]">Choose PDF</button>
-</div>
-<div id="splitControls" class="hidden mt-4">
-<p id="splitFileName" class="text-[11px] text-cyan-300 font-bold"></p>
-<p id="totalPagesInfo" class="text-[10px] text-gray-400 mt-1"></p>
-<div class="grid grid-cols-2 gap-2 mt-3">
-<div><label for="fromPage" class="text-[10px] text-gray-400">From Page</label><input id="fromPage" type="number" placeholder="From e.g. 1" class="w-full bg-black/40 border border-blue-400/30 rounded-xl px-3 py-2.5 text-[11px] outline-none mt-1"></div>
-<div><label for="toPage" class="text-[10px] text-gray-400">To Page</label><input id="toPage" type="number" placeholder="To e.g. 5" class="w-full bg-black/40 border border-blue-400/30 rounded-xl px-3 py-2.5 text-[11px] outline-none mt-1"></div>
-</div>
-<button onclick="splitPDF()" id="splitBtn" class="w-full mt-3 glow-btn text-black font-bold py-3 rounded-xl text-[12px] shadow-[0_0_15px_rgba(56,189,248,0.4)]">✂️ Split & Download</button>
-<div id="splitResult" class="hidden mt-3 result-card rounded-xl p-3 text-center border-green-400/20"><p class="text-[11px] text-green-300 font-bold">✅ Split Successfully!</p><a id="downloadSplit" download class="mt-2 glow-btn text-black font-bold px-5 py-2 rounded-full text-[11px] inline-block cursor-pointer">⬇️ Download Split PDF</a></div>
-</div>
-</div>
-</div>
-<div class="content-box rounded-xl p-5 mt-5">
-<h2 class="text-[13px] font-bold">About PDF Merge & Split Tool - Free Offline</h2>
-<p class="mt-2 text-[11px] leading-6 text-gray-400">PakTools Free PDF Merger & Splitter is world's fastest browser-based PDF tool for Pakistan. No upload to server, 100% works offline using PDF-Lib JavaScript library, so your private documents like CNIC, bank statements, job applications stay private and secure. Merge multiple PDFs into one file for job applications (required for FPSC, PPSC, NTS), combine bank statements, merge assignments and research papers into single PDF, or combine scanned documents. Or split large PDF into small parts by extracting specific page ranges - e.g. extract pages 1-5 from 50 pages PDF for submission. Perfect for students, job seekers, lawyers, and offices in Pakistan who need to handle PDFs daily. Uses PDF-Lib for high-quality processing, no quality loss, keeps original formatting, fonts, images. Free, unlimited merges and splits, no signup, no watermark, instant download, mobile friendly.</p>
-<div class="grid md:grid-cols-2 gap-3 mt-3">
-<div><h3 class="text-[11px] font-bold">How to Merge & Split PDFs?</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-6 text-gray-400"><li>Merge: Upload 2+ PDFs → Click Merge All Now → Download</li><li>Split: Upload PDF → Enter page range From-To → Split</li><li>Download result instantly - HD quality preserved</li><li>Works offline, private & secure, no upload</li></ul></div>
-<div><h3 class="text-[11px] font-bold">Key Features</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-6 text-gray-400"><li>Merge 2+ PDFs into one single PDF</li><li>Split PDF by extracting page range</li><li>100% offline, no upload, private documents</li><li>Free, no limit, instant, keeps formatting</li></ul></div>
-</div>
-<div class="mt-4 border-t border-white/10 pt-3">
-<h3 class="text-[11px] font-bold">Frequently Asked Questions</h3>
-<div class="mt-2 space-y-2 text-[11px] leading-5 text-gray-400">
-<p><b class="text-gray-300">How to merge PDFs?</b> Upload 2+ PDFs, click Merge All Now, download merged file.</p>
-<p><b class="text-gray-300">How to split PDF?</b> Upload PDF, enter From-To pages, click Split & Download.</p>
-<p><b class="text-gray-300">Is it private?</b> Yes, offline in browser, PDF never leaves device, secure for CNIC/bank docs.</p>
-<p><b class="text-gray-300">Quality loss?</b> No, original quality preserved, no compression.</p>
-</div>
-</div>
-</div>
-<div class="content-box rounded-xl p-5 mt-5">
-<h3 class="text-[13px] font-bold">Related Free Tools</h3>
-<div class="grid grid-cols-2 md:grid-cols-3 gap-2 mt-3 text-[11px]">
-<a href="image-to-text.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🔤 Image to Text</a>
-<a href="image-compressor.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🗜️ Image Compressor</a>
-<a href="jpg-to-png.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🔄 JPG to PNG</a>
-<a href="qr-generator.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🔳 QR Generator</a>
-<a href="word-counter.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">📝 Word Counter</a>
-<a href="password-generator.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🔐 Password Generator</a>
-</div>
+
+<div class="mt-12 bg-white/[0.03] border border-white/10 rounded-2xl p-6">
+<h2 class="font-bold">Why Use Our PDF Merge?</h2>
+<ul class="text-[12px] text-gray-400 mt-3 list-disc pl-5 space-y-1">
+<li>For PPSC/FPSC: Combine CNIC + Domicile + Degrees in one PDF</li>
+<li>For Students: Merge assignments & research papers</li>
+<li>100% Private: PDFLib works in browser, no upload to server</li>
+<li>Re-order by drag & drop</li>
+</ul>
 </div>
 </main>
-<footer class="text-center py-5 text-[10px] text-gray-500">© 2025 PakToolsOnline - <a href="privacy-policy.html" class="hover:text-white">Privacy</a> | <a href="terms.html" class="hover:text-white">Terms</a> | <a href="contact.html" class="hover:text-white">Contact</a> | <a href="sitemap.xml" class="hover:text-white">Sitemap</a></footer>
 <script>
-const stars=document.getElementById('stars');
-for(let i=0;i<80;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';stars.appendChild(d);}
-let pdfFiles=[]; let splitFileBytes=null, splitTotalPages=0;
-const dropArea=document.getElementById('dropArea'), fileInput=document.getElementById('fileInput');
-dropArea.addEventListener('click',()=>fileInput.click());
-dropArea.addEventListener('dragover',e=>{e.preventDefault();});
-dropArea.addEventListener('drop',e=>{e.preventDefault(); handleFiles(e.dataTransfer.files);});
-fileInput.addEventListener('change',e=>handleFiles(e.target.files));
-function handleFiles(files){for(let f of files){ if(f.type==='application/pdf') pdfFiles.push(f); }renderList();}
-function renderList(){if(pdfFiles.length===0){document.getElementById('fileList').classList.add('hidden');return;}document.getElementById('fileList').classList.remove('hidden');document.getElementById('count').innerText=pdfFiles.length;let html='';pdfFiles.forEach((f,i)=>{html+=`<div class="pdf-item"><div><p class="text-[11px] font-bold">📄 ${f.name}</p><p class="text-[10px] text-gray-500">${(f.size/1024).toFixed(1)} KB</p></div><button onclick="removeFile(${i})" class="text-red-400 text-[10px] bg-red-500/10 px-2.5 py-1 rounded-full">Remove</button></div>`;});document.getElementById('listContainer').innerHTML=html;}
-function removeFile(i){pdfFiles.splice(i,1);renderList();}
-function resetMerge(){pdfFiles=[];renderList();document.getElementById('mergeResult').classList.add('hidden');}
-async function mergePDFs(){if(pdfFiles.length<2){alert('Select at least 2 PDFs');return;}let btn=document.getElementById('mergeBtn');btn.innerText='⏳ Merging...';btn.disabled=true;try{const mergedPdf=await PDFLib.PDFDocument.create();for(let file of pdfFiles){let bytes=await file.arrayBuffer();let pdf=await PDFLib.PDFDocument.load(bytes);let pages=await mergedPdf.copyPages(pdf, pdf.getPageIndices());pages.forEach(p=>mergedPdf.addPage(p));}let mergedBytes=await mergedPdf.save();let blob=new Blob([mergedBytes],{type:'application/pdf'});let url=URL.createObjectURL(blob);let a=document.getElementById('downloadMerge');a.href=url;document.getElementById('mergeInfo').innerText=`${pdfFiles.length} PDFs • ${mergedPdf.getPageCount()} pages merged`;document.getElementById('mergeResult').classList.remove('hidden');}catch(e){alert('Error: '+e.message);}btn.innerText='🔗 Merge All Now';btn.disabled=false;}
-function switchTab(t){document.getElementById('mergeSection').classList.toggle('hidden', t!=='merge');document.getElementById('splitSection').classList.toggle('hidden', t!=='split');document.getElementById('tabMerge').classList.toggle('active', t==='merge');document.getElementById('tabSplit').classList.toggle('active', t==='split');document.getElementById('tabMerge').classList.toggle('text-gray-400', t!=='merge');document.getElementById('tabSplit').classList.toggle('text-gray-400', t!=='split');}
-const dropSplit=document.getElementById('dropAreaSplit'), fileInputSplit=document.getElementById('fileInputSplit');
-dropSplit.addEventListener('click',()=>fileInputSplit.click());
-dropSplit.addEventListener('dragover',e=>{e.preventDefault();}); dropSplit.addEventListener('drop',e=>{e.preventDefault(); if(e.dataTransfer.files[0]) handleSplitFile(e.dataTransfer.files[0]);});
-fileInputSplit.addEventListener('change',e=>{ if(e.target.files[0]) handleSplitFile(e.target.files[0]); });
-async function handleSplitFile(file){splitFileBytes=await file.arrayBuffer();let pdf=await PDFLib.PDFDocument.load(splitFileBytes);splitTotalPages=pdf.getPageCount();document.getElementById('splitControls').classList.remove('hidden');document.getElementById('splitFileName').innerText='📄 '+file.name;document.getElementById('totalPagesInfo').innerText='Total Pages: '+splitTotalPages+' - Enter range to extract';document.getElementById('fromPage').max=splitTotalPages;document.getElementById('toPage').max=splitTotalPages;}
-async function splitPDF(){let from=parseInt(document.getElementById('fromPage').value);let to=parseInt(document.getElementById('toPage').value);if(!from ||!to || from<1 || to>splitTotalPages || from>to){alert('Enter valid page range');return;}let btn=document.getElementById('splitBtn');btn.innerText='⏳ Splitting...';try{let pdf=await PDFLib.PDFDocument.load(splitFileBytes);let newPdf=await PDFLib.PDFDocument.create();for(let i=from-1;i<to;i++){ let [p]=await newPdf.copyPages(pdf,[i]); newPdf.addPage(p); }let bytes=await newPdf.save();let blob=new Blob([bytes],{type:'application/pdf'});let url=URL.createObjectURL(blob);let a=document.getElementById('downloadSplit');a.href=url; a.download=`paktoolsonline-split-${from}-to-${to}.pdf`;document.getElementById('splitResult').classList.remove('hidden');}catch(e){alert(e.message);}btn.innerText='✂️ Split & Download';}
+const fileInput=document.getElementById('fileInput'), dropZone=document.getElementById('dropZone'), fileList=document.getElementById('fileList'), mergeBtn=document.getElementById('mergeBtn'), clearBtn=document.getElementById('clearBtn');
+let files=[];
+dropZone.onclick=()=>fileInput.click();
+dropZone.ondragover=e=>{e.preventDefault();dropZone.classList.add('border-purple-400')};
+dropZone.ondragleave=()=>dropZone.classList.remove('border-purple-400');
+dropZone.ondrop=e=>{e.preventDefault();handleFiles(e.dataTransfer.files)};
+fileInput.onchange=e=>handleFiles(e.target.files);
+function handleFiles(newFiles){files=[...files,...Array.from(newFiles)];render();mergeBtn.disabled=files.length<2}
+function render(){fileList.innerHTML=files.map((f,i)=>`<div class="flex justify-between items-center bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3"><span class="text-[12px] truncate">${i+1}. ${f.name} - ${(f.size/1024/1024).toFixed(2)} MB</span><button onclick="removeFile(${i})" class="text-[11px] text-red-300">✕</button></div>`).join(''); new Sortable(fileList,{onEnd:evt=>{const item=files.splice(evt.oldIndex,1)[0];files.splice(evt.newIndex,0,item);render()}})}
+window.removeFile=i=>{files.splice(i,1);render();mergeBtn.disabled=files.length<2}
+clearBtn.onclick=()=>{files=[];render();mergeBtn.disabled=true}
+mergeBtn.onclick=async()=>{
+mergeBtn.textContent='Merging...';
+const merged=await PDFLib.PDFDocument.create();
+for(let f of files){const buf=await f.arrayBuffer();const pdf=await PDFLib.PDFDocument.load(buf);const pages=await merged.copyPages(pdf,pdf.getPageIndices());pages.forEach(p=>merged.addPage(p))}
+const bytes=await merged.save();
+const blob=new Blob([bytes],{type:'application/pdf'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='PakTools-Merged-'+Date.now()+'.pdf';a.click();
+mergeBtn.textContent='Merge Now → Download';
+}
 </script>
 </body>
 </html>
