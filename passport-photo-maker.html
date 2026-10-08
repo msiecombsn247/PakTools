@@ -2,109 +2,229 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Passport Photo Maker Pakistan - 35x45mm, 300 DPI Free | PakTools</title>
-<meta name="description" content="Free Passport Size Photo Maker for Pakistan. Make 35x45mm, 2x2 inch, CNIC Photo with White Background. Print 8 Photos on 1 Page. 100% Free, No Signup.">
-<meta name="keywords" content="passport photo maker pakistan, 35x45 photo maker, cnic photo maker, passport size photo online">
-<link rel="canonical" href="https://paktoolsonline.com/passport-photo-maker.html">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<title>Passport Photo Maker Pakistan - 35x45mm 300 DPI | PakTools</title>
+<meta name="description" content="Make NADRA, Passport & Visa photo at home. 35x45mm, 300 DPI HD, White/Blue background. 100% Free & Private - PakTools">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-*{font-family:'Inter',sans-serif}body{background:#07010f;color:white;margin:0;overflow-x:hidden}
-.galaxy-bg{position:fixed;inset:0;z-index:0;background:#020006;pointer-events:none}
-.galaxy{position:absolute;width:800px;height:800px;border-radius:50%;filter:blur(80px);opacity:0.5}
-.g1{background:radial-gradient(circle,#c084fc,#7e22ce 25%,transparent 70%);top:-10%;left:-10%}
-.g2{background:radial-gradient(circle,#a855f7,#581c87 25%,transparent 70%);bottom:-20%;right:-10%}
-.tool-box{background:linear-gradient(145deg,rgba(28,10,58,0.92),rgba(12,3,32,0.92));border:1px solid rgba(168,85,247,0.3);border-radius:1.5rem}
-@media(max-width:768px){.tool-box{backdrop-filter:none}.galaxy{filter:blur(40px);width:400px;height:400px}}
-canvas{max-width:100%;border-radius:12px;background:white}
+*{font-family:'Inter',sans-serif}
+body{background:#07010f;color:white;margin:0;overflow-x:hidden;}
+.galaxy-bg{position:fixed;inset:0;z-index:0;background:#020006;pointer-events:none;}
+.galaxy{position:absolute;width:1200px;height:1200px;border-radius:50%;filter:blur(100px);opacity:0.6;}
+.g1{background:radial-gradient(circle,#c084fc,#7e22ce 25%,#1a0533 60%,transparent 75%);top:-20%;left:-10%;}
+.g2{background:radial-gradient(circle,#a855f7,#581c87 25%,#0a0218 60%,transparent 75%);bottom:-30%;right:-15%;}
+#canvasPreview{image-rendering: -webkit-optimize-contrast;}
+.range{accent-color:#a855f7;}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Passport Photo Maker Pakistan","applicationCategory":"PhotoApplication","offers":{"@type":"Offer","price":"0"},"description":"Make Pakistan passport size photo 35x45mm with white background free."}
-</script>
 </head>
 <body>
 <div class="galaxy-bg"><div class="galaxy g1"></div><div class="galaxy g2"></div></div>
-<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#07010f]/80 backdrop-blur-xl"><div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"><a href="index.html" class="font-black text-xl flex items-center gap-2" style="text-decoration:none;color:white"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center">P</div>PakTools</a><a href="index.html" class="text-[12px] bg-white/10 border border-white/20 px-4 py-2 rounded-full" style="text-decoration:none;color:white">Home</a></div></header>
+<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<a href="index.html" class="font-black text-xl flex items-center gap-2" style="text-decoration:none;color:white"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center text-white">P</div>PakTools</a>
+<div class="flex gap-2"><a href="explore.html" class="text-[12px] bg-white/10 border border-white/20 px-4 py-2 rounded-full" style="text-decoration:none;color:white">All Tools</a><a href="blog.html" class="text-[12px] bg-white/10 border border-white/20 px-4 py-2 rounded-full" style="text-decoration:none;color:white">Blog</a></div>
+</div>
+</header>
 
-<main class="relative z-10 max-w-6xl mx-auto px-6 py-8">
-<div class="text-center max-w-3xl mx-auto"><h1 class="text-3xl md:text-5xl font-black">Passport Photo <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-fuchsia-300">Maker Pakistan</span></h1><p class="text-gray-400 text-sm mt-3">35x45mm • 2x2 Inch • CNIC • White Background • 300 DPI - 100% Free & Offline</p></div>
+<main class="relative z-10 max-w-7xl mx-auto px-6 py-8 grid lg:grid-cols-5 gap-6">
+<!-- LEFT CONTROLS -->
+<div class="lg:col-span-2 bg-[#12072a]/80 backdrop-blur-xl border border-purple-500/30 rounded-[1.8rem] p-6">
+<h1 class="text-[22px] font-black leading-tight">Passport Photo Maker <span class="text-purple-300">PRO</span></h1>
+<p class="text-[11px] text-gray-400 mt-2">NADRA • Passport • Visa • 300 DPI • 100% Private (No Upload to Server)</p>
 
-<div class="grid md:grid-cols-2 gap-6 mt-8">
-<div class="tool-box p-6">
-<h3 class="font-bold mb-4">1. Upload & Settings</h3>
-<input type="file" id="upload" accept="image/*" class="w-full text-xs bg-black/50 border border-purple-500/30 rounded-full px-4 py-3">
-<div class="grid grid-cols-2 gap-3 mt-4">
-<select id="size" class="bg-black/50 border border-white/20 rounded-full px-4 py-2.5 text-xs outline-none"><option value="35x45">Pakistan Passport 35x45mm</option><option value="2x2">USA Visa 2x2 Inch (51x51mm)</option><option value="33x48">CNIC / ID Card 33x48mm</option><option value="25x35">Small 25x35mm</option></select>
-<select id="bgColor" class="bg-black/50 border border-white/20 rounded-full px-4 py-2.5 text-xs outline-none"><option value="white">Background White</option><option value="blue">Background Blue</option><option value="transparent">Keep Original</option></select>
-</div>
-<div class="mt-4"><label class="text-xs text-gray-400">Copies on A4 Sheet</label><select id="copies" class="w-full mt-1 bg-black/50 border border-white/20 rounded-full px-4 py-2.5 text-xs"><option value="1">1 Photo - Single</option><option value="8" selected>8 Photos - Standard (Recommended)</option><option value="12">12 Photos</option><option value="20">20 Photos - Small Size</option></select></div>
-<button onclick="generatePhoto()" class="w-full mt-5 bg-gradient-to-r from-purple-500 to-fuchsia-500 font-bold py-3 rounded-full text-sm">Generate Passport Photo</button>
-<p class="text-[10px] text-gray-500 mt-2 text-center">100% Offline - Your photo never leaves your phone</p>
-</div>
-
-<div class="tool-box p-6 text-center">
-<h3 class="font-bold mb-4">2. Preview & Download</h3>
-<canvas id="mainCanvas" width="400" height="500" class="mx-auto border border-white/10"></canvas>
-<div class="mt-4 flex gap-2 justify-center">
-<button onclick="downloadSingle()" class="bg-white text-black font-bold px-5 py-2.5 rounded-full text-xs">Download Single</button>
-<button onclick="downloadSheet()" class="bg-white/10 border border-white/20 font-bold px-5 py-2.5 rounded-full text-xs">Download A4 Sheet</button>
-</div>
-<p id="msg" class="text-xs text-gray-400 mt-3">Upload photo to start</p>
-</div>
+<!-- Upload -->
+<div id="dropZone" class="mt-6 border-2 border-dashed border-purple-500/40 rounded-2xl p-8 text-center cursor-pointer hover:border-purple-400 transition bg-white/[0.03]">
+<div class="text-4xl">📸</div>
+<p class="text-[13px] font-bold mt-3">Drop Photo Here or Click to Upload</p>
+<p class="text-[10px] text-gray-500 mt-1">JPG, PNG - HD Quality</p>
+<input type="file" id="fileInput" accept="image/*" class="hidden">
 </div>
 
-<div class="tool-box p-6 mt-6"><h2 class="font-bold">What is Pakistan Passport Photo Size?</h2><p class="text-sm text-gray-400 mt-2">Official size for Pakistan passport is 35mm x 45mm with white background, 70-80% face visible, 300 DPI. For CNIC / Nadra use 33mm x 48mm. This tool automatically crops and resizes your photo to correct size. Print on photo paper for best result.</p></div>
+<div class="mt-6 space-y-5">
+<div>
+<label class="text-[11px] font-bold tracking-widest text-purple-300">1. PHOTO SIZE</label>
+<div class="grid grid-cols-2 gap-2 mt-2">
+<button onclick="setSize('passport')" id="btn-passport" class="size-btn bg-purple-600 text-white border-purple-400 text-[12px] py-2.5 rounded-full font-bold">Passport 35x45mm</button>
+<button onclick="setSize('nadra')" id="btn-nadra" class="size-btn bg-white/10 border border-white/20 text-[12px] py-2.5 rounded-full">NADRA 35x45mm</button>
+<button onclick="setSize('visa')" id="btn-visa" class="size-btn bg-white/10 border border-white/20 text-[12px] py-2.5 rounded-full">USA Visa 51x51mm</button>
+<button onclick="setSize('id')" id="btn-id" class="size-btn bg-white/10 border border-white/20 text-[12px] py-2.5 rounded-full">ID Card 33x48mm</button>
+</div>
+</div>
+
+<div>
+<label class="text-[11px] font-bold tracking-widest text-purple-300">2. BACKGROUND COLOR</label>
+<div class="flex gap-2 mt-2">
+<button onclick="setBg('#ffffff')" class="w-9 h-9 rounded-full bg-white border-2 border-purple-400 ring-2 ring-purple-400/30" id="bg-white"></button>
+<button onclick="setBg('#e5e7eb')" class="w-9 h-9 rounded-full bg-[#e5e7eb] border border-white/30"></button>
+<button onclick="setBg('#3b82f6')" class="w-9 h-9 rounded-full bg-[#3b82f6] border border-white/30"></button>
+<button onclick="setBg('#ef4444')" class="w-9 h-9 rounded-full bg-[#ef4444] border border-white/30"></button>
+<button onclick="setBg('#dbeafe')" class="w-9 h-9 rounded-full bg-[#dbeafe] border border-white/30"></button>
+</div>
+<p class="text-[10px] text-gray-500 mt-1">NADRA = White, Passport = White/Light Blue</p>
+</div>
+
+<div>
+<label class="text-[11px] font-bold tracking-widest text-purple-300">3. ADJUSTMENTS</label>
+<div class="mt-3 space-y-3">
+<div class="flex justify-between items-center"><span class="text-[12px]">Zoom</span><input type="range" id="zoom" min="0.5" max="3" step="0.05" value="1" class="range w-32"></div>
+<div class="flex justify-between items-center"><span class="text-[12px]">Brightness</span><input type="range" id="bright" min="0.5" max="1.8" step="0.05" value="1" class="range w-32"></div>
+<div class="flex justify-between items-center"><span class="text-[12px]">Move X / Y - Drag Photo</span></div>
+</div>
+</div>
+
+<div class="grid grid-cols-2 gap-3 pt-4">
+<button onclick="downloadSingle()" class="bg-gradient-to-r from-purple-600 to-fuchsia-600 py-3 rounded-full font-black text-[13px] shadow-[0_0_20px_rgba(168,85,247,0.5)]">Download HD Photo</button>
+<button onclick="downloadSheet()" class="bg-white/10 border border-white/20 py-3 rounded-full font-bold text-[13px]">Download A4 Sheet (6 Photos)</button>
+</div>
+<p class="text-[10px] text-gray-500 text-center mt-2">300 DPI • Print Ready • No Watermark</p>
+</div>
+</div>
+
+<!-- RIGHT PREVIEW -->
+<div class="lg:col-span-3 space-y-4">
+<div class="bg-[#12072a]/80 backdrop-blur-xl border border-purple-500/30 rounded-[1.8rem] p-6 flex flex-col items-center">
+<p class="text-[11px] font-bold tracking-widest text-gray-400">LIVE PREVIEW - DRAG TO MOVE FACE</p>
+<div class="relative mt-5 bg-[#07010f] rounded-2xl p-4 border border-white/10">
+<div id="previewWrap" class="relative overflow-hidden bg-white" style="width:310px;height:398px;cursor:grab;">
+<canvas id="mainCanvas" width="413" height="531" style="width:100%;height:100%;"></canvas>
+<!-- Face guide -->
+<div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+<div class="w-[62%] h-[68%] border border-dashed border-black/20 rounded-[50%]"></div>
+</div>
+</div>
+<p id="sizeInfo" class="text-[11px] text-center text-gray-400 mt-3">413 x 531 px @ 300 DPI = 35 x 45 mm</p>
+</div>
+
+<div class="mt-6 grid grid-cols-3 gap-3 w-full">
+<div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center"><p class="text-[10px] text-gray-400">WIDTH</p><p class="text-[13px] font-bold" id="wText">413px</p></div>
+<div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center"><p class="text-[10px] text-gray-400">HEIGHT</p><p class="text-[13px] font-bold" id="hText">531px</p></div>
+<div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center"><p class="text-[10px] text-gray-400">DPI</p><p class="text-[13px] font-bold">300 DPI</p></div>
+</div>
+</div>
+
+<div class="bg-gradient-to-br from-purple-900/30 to-[#0a0218] border border-purple-500/30 rounded-2xl p-5">
+<h3 class="text-[13px] font-black">✅ NADRA / Passport Requirements Pakistan</h3>
+<ul class="text-[11px] text-gray-400 mt-2 space-y-1 leading-relaxed">
+<li>• White background, no shadow</li>
+<li>• Face 70-80% of photo, both ears visible</li>
+<li>• No glasses, neutral expression</li>
+<li>• 300 DPI minimum for print - Our tool gives exact 300 DPI</li>
+<li>• File size < 1MB for online forms</li>
+</ul>
+<a href="blog/passport-size-photo-maker-guide.html" class="text-[11px] text-purple-300 mt-3 inline-block font-bold">Read Full Guide →</a>
+</div>
+</div>
 </main>
 
 <script>
-let img=null, ctx=document.getElementById('mainCanvas').getContext('2d');
-document.getElementById('upload').addEventListener('change',e=>{
- const file=e.target.files[0]; if(!file) return;
- const reader=new FileReader();
- reader.onload=ev=>{img=new Image(); img.onload=()=>{drawPreview(); document.getElementById('msg').innerText='✅ Photo loaded. Click Generate.'}; img.src=ev.target.result;}
- reader.readAsDataURL(file);
-});
-function getDims(){
- const s=document.getElementById('size').value;
- if(s==='35x45') return {w:413,h:531}; // 35x45mm at 300 DPI
- if(s==='2x2') return {w:600,h:600};
- if(s==='33x48') return {w:390,h:567};
- return {w:295,h:413};
+let img = new Image();
+let imgLoaded = false;
+let state = { x:0, y:0, zoom:1, bright:1, bg:'#ffffff', w:413, h:531, size:'passport' };
+const canvas = document.getElementById('mainCanvas');
+const ctx = canvas.getContext('2d');
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+
+const sizes = {
+  passport:{w:413,h:531,mm:'35x45mm'},
+  nadra:{w:413,h:531,mm:'35x45mm'},
+  visa:{w:600,h:600,mm:'51x51mm'},
+  id:{w:390,h:567,mm:'33x48mm'}
+};
+
+function setSize(k){
+  state.size=k;
+  state.w=sizes[k].w; state.h=sizes[k].h;
+  canvas.width=sizes[k].w; canvas.height=sizes[k].h;
+  document.getElementById('previewWrap').style.width=(sizes[k].w/1.33)+'px';
+  document.getElementById('previewWrap').style.height=(sizes[k].h/1.33)+'px';
+  document.getElementById('sizeInfo').innerText=`${sizes[k].w} x ${sizes[k].h} px @ 300 DPI = ${sizes[k].mm}`;
+  document.getElementById('wText').innerText=sizes[k].w+'px';
+  document.getElementById('hText').innerText=sizes[k].h+'px';
+  document.querySelectorAll('.size-btn').forEach(b=>{b.className='size-btn bg-white/10 border border-white/20 text-[12px] py-2.5 rounded-full';});
+  document.getElementById('btn-'+k).className='size-btn bg-purple-600 text-white border border-purple-400 text-[12px] py-2.5 rounded-full font-bold';
+  draw();
 }
-function drawPreview(){
- if(!img) return;
- const d=getDims(); const canvas=document.getElementById('mainCanvas');
- canvas.width=d.w; canvas.height=d.h;
- const bg=document.getElementById('bgColor').value;
- if(bg!=='transparent'){ctx.fillStyle=bg==='blue'?'#3b82f6':'white'; ctx.fillRect(0,0,d.w,d.h);}
- // center crop
- const ratio=Math.max(d.w/img.width, d.h/img.height);
- const nw=img.width*ratio, nh=img.height*ratio;
- const x=(d.w-nw)/2, y=(d.h-nh)/2;
- ctx.drawImage(img,x,y,nw,nh);
+function setBg(c){ state.bg=c; draw(); }
+
+dropZone.onclick=()=>fileInput.click();
+dropZone.ondragover=(e)=>{e.preventDefault(); dropZone.classList.add('border-purple-400');}
+dropZone.ondragleave=()=>dropZone.classList.remove('border-purple-400');
+dropZone.ondrop=(e)=>{e.preventDefault(); handleFile(e.dataTransfer.files[0]);}
+fileInput.onchange=(e)=>handleFile(e.target.files[0]);
+
+function handleFile(f){
+  if(!f) return;
+  const r=new FileReader();
+  r.onload=(ev)=>{
+    img.onload=()=>{
+      imgLoaded=true;
+      state.x=0; state.y=0; state.zoom=1;
+      document.getElementById('zoom').value=1;
+      draw();
+    };
+    img.src=ev.target.result;
+  };
+  r.readAsDataURL(f);
 }
-function generatePhoto(){drawPreview(); document.getElementById('msg').innerText='✅ Ready to download - 300 DPI HQ';}
+
+function draw(){
+  if(!imgLoaded){ ctx.fillStyle=state.bg; ctx.fillRect(0,0,canvas.width,canvas.height); ctx.fillStyle='#999'; ctx.font='14px Inter'; ctx.textAlign='center'; ctx.fillText('Upload your photo',canvas.width/2,canvas.height/2); return; }
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle=state.bg; ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.filter=`brightness(${state.bright})`;
+  const iw=img.width, ih=img.height;
+  const scale=Math.max(canvas.width/iw, canvas.height/ih)*state.zoom;
+  const nw=iw*scale, nh=ih*scale;
+  const cx=canvas.width/2 + state.x;
+  const cy=canvas.height/2 + state.y;
+  ctx.drawImage(img, cx-nw/2, cy-nh/2, nw, nh);
+  ctx.filter='none';
+}
+
+let isDrag=false, sx, sy;
+const wrap=document.getElementById('previewWrap');
+wrap.addEventListener('mousedown',e=>{isDrag=true; sx=e.clientX-state.x; sy=e.clientY-state.y; wrap.style.cursor='grabbing';});
+window.addEventListener('mouseup',()=>{isDrag=false; wrap.style.cursor='grab';});
+window.addEventListener('mousemove',e=>{if(!isDrag||!imgLoaded) return; state.x=e.clientX-sx; state.y=e.clientY-sy; draw();});
+wrap.addEventListener('touchstart',e=>{isDrag=true; sx=e.touches[0].clientX-state.x; sy=e.touches[0].clientY-state.y;},{passive:true});
+window.addEventListener('touchend',()=>isDrag=false);
+window.addEventListener('touchmove',e=>{if(!isDrag||!imgLoaded) return; state.x=e.touches[0].clientX-sx; state.y=e.touches[0].clientY-sy; draw();},{passive:true});
+
+document.getElementById('zoom').oninput=e=>{state.zoom=parseFloat(e.target.value); draw();};
+document.getElementById('bright').oninput=e=>{state.bright=parseFloat(e.target.value); draw();};
+
 function downloadSingle(){
- if(!img){alert('Upload photo first');return;}
- const a=document.createElement('a'); a.download='paktools-passport-'+document.getElementById('size').value+'.jpg'; a.href=document.getElementById('mainCanvas').toDataURL('image/jpeg',0.95); a.click();
+  if(!imgLoaded){alert('Pehle photo upload karein!'); return;}
+  const link=document.createElement('a');
+  link.download=`PakTools-Passport-${state.size}-${Date.now()}.jpg`;
+  link.href=canvas.toDataURL('image/jpeg',0.95);
+  link.click();
 }
 function downloadSheet(){
- if(!img){alert('Upload photo first');return;}
- const copies=parseInt(document.getElementById('copies').value);
- const single=document.getElementById('mainCanvas');
- const sheet=document.createElement('canvas'); const sCtx=sheet.getContext('2d');
- // A4 at 300 DPI = 2480x3508
- sheet.width=2480; sheet.height=3508; sCtx.fillStyle='white'; sCtx.fillRect(0,0,sheet.width,sheet.height);
- const gap=50; let x=100,y=100; let col=0;
- for(let i=0;i<copies;i++){
-   sCtx.drawImage(single,x,y);
-   col++; x+=single.width+gap;
-   if(col>=4){col=0; x=100; y+=single.height+gap;}
- }
- const a=document.createElement('a'); a.download='paktools-A4-sheet-'+copies+'-photos.jpg'; a.href=sheet.toDataURL('image/jpeg',0.92); a.click();
+  if(!imgLoaded){alert('Pehle photo upload karein!'); return;}
+  const sheet=document.createElement('canvas');
+  sheet.width=2480; sheet.height=3508; // A4 300DPI
+  const sctx=sheet.getContext('2d');
+  sctx.fillStyle='#ffffff'; sctx.fillRect(0,0,sheet.width,sheet.height);
+  const pw=state.w*1.1, ph=state.h*1.1;
+  const gap=60; let x=200,y=200,count=0;
+  for(let row=0;row<4;row++){
+    for(let col=0;col<2;col++){
+      if(count>=6) break;
+      sctx.drawImage(canvas, x+col*(pw+gap), y+row*(ph+gap), pw, ph);
+      // cut line
+      sctx.strokeStyle='#ddd'; sctx.setLineDash([10,10]); sctx.strokeRect(x+col*(pw+gap), y+row*(ph+gap), pw, ph);
+      count++;
+    }
+  }
+  sctx.setLineDash([]); sctx.fillStyle='#000'; sctx.font='40px Inter'; sctx.fillText('PakTools.com - 35x45mm Passport Photos (6 Copies) - Cut Here',200,3300);
+  const link=document.createElement('a');
+  link.download=`PakTools-A4-Sheet-6-Photos-${Date.now()}.jpg`;
+  link.href=sheet.toDataURL('image/jpeg',0.92);
+  link.click();
 }
-document.getElementById('size').addEventListener('change',drawPreview);
-document.getElementById('bgColor').addEventListener('change',drawPreview);
+setSize('passport');
 </script>
 </body>
 </html>
