@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>GST Calculator Pakistan 2025 - 18% GST Include Exclude | PakTools</title>
+<meta name="description" content="Free GST Calculator Pakistan 2025 - Calculate 18% GST, 5% GST, FBR GST. GST Inclusive & Exclusive, Net Amount, GST Amount - 100% Accurate for Invoices.">
+<meta name="keywords" content="gst calculator pakistan 18%, gst calculator 2025, fbr gst calculator, pakistan gst 18 percent">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GST Calculator Pakistan 18%","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0"}}
+</script>
+<style>*{font-family:'Inter',sans-serif}body{background:#07010f;color:white}.glass{background:rgba(20,10,40,0.7);backdrop-filter:blur(12px);border:1px solid rgba(168,85,247,0.25)} input,select{background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.15)}</style>
+</head>
+<body class="min-h-screen">
+<header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl"><div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center"><a href="index.html" class="font-black text-xl flex items-center gap-2 no-underline text-white"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-400 to-blue-700 flex items-center justify-center">G</div>PakTools</a><a href="explore.html" class="text-[12px] bg-white/10 border border-white/20 px-4 py-2 rounded-full no-underline text-white">All Tools</a></div></header>
+
+<main class="max-w-5xl mx-auto px-6 py-10">
+<div class="text-center"><div class="inline-block bg-blue-500/20 border border-blue-500/30 text-blue-300 text-[10px] px-3 py-1 rounded-full font-bold tracking-widest">NEW • BUSINESS • FBR 18% • 2025</div>
+<h1 class="mt-4 text-4xl md:text-5xl font-black">GST Calculator<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-400">Pakistan 18% - 2025</span></h1>
+<p class="mt-3 text-gray-400 text-[13px]">FBR Standard GST 18% | Reduced 5% | Inclusive & Exclusive Calculation</p></div>
+
+<div class="mt-8 grid md:grid-cols-2 gap-6">
+<div class="glass rounded-3xl p-6">
+<div class="flex gap-2 p-1 bg-black/40 rounded-full">
+<button id="btnEx" onclick="setMode('ex')" class="flex-1 py-2 rounded-full bg-blue-600 font-bold text-[12px]">GST Exclusive (Add GST)</button>
+<button id="btnIn" onclick="setMode('in')" class="flex-1 py-2 rounded-full text-[12px] text-gray-400">GST Inclusive (Extract GST)</button>
+</div>
+
+<div class="mt-6 space-y-4">
+<label class="text-[11px] text-gray-400">Amount (Rs.)</label>
+<input id="amount" type="number" value="10000" oninput="calcGST()" class="w-full rounded-xl px-4 py-3 text-sm outline-none focus:border-blue-400">
+
+<label class="text-[11px] text-gray-400">GST Rate %</label>
+<div class="grid grid-cols-4 gap-2">
+<button onclick="setRate(18)" id="r18" class="rate-btn py-2 rounded-xl bg-blue-600 font-bold text-[12px] border border-blue-400">18% Standard</button>
+<button onclick="setRate(5)" id="r5" class="rate-btn py-2 rounded-xl bg-white/10 text-[12px]">5% Reduced</button>
+<button onclick="setRate(10)" id="r10" class="rate-btn py-2 rounded-xl bg-white/10 text-[12px]">10%</button>
+<button onclick="setRate(0)" id="rCustom" class="rate-btn py-2 rounded-xl bg-white/10 text-[12px]">Custom</button>
+</div>
+<input id="customRate" type="number" value="18" oninput="calcGST()" class="w-full rounded-xl px-4 py-3 text-sm outline-none mt-2">
+
+<label class="text-[11px] text-gray-400">Business Type (FBR Category)</label>
+<select id="bizType" onchange="calcGST()" class="w-full rounded-xl px-4 py-3 text-sm outline-none">
+<option value="standard">Standard Goods - 18% GST</option>
+<option value="restaurant">Restaurant / Cafe - 5% (PRA)</option>
+<option value="services">Services (IT, Freelance) - 5% / 16%</option>
+<option value="export">Export - 0% Zero Rated</option>
+</select>
+</div>
+</div>
+
+<div class="space-y-4">
+<div class="glass rounded-3xl p-6 bg-gradient-to-br from-blue-900/30 to-[#0a0218]">
+<p class="text-[11px] text-blue-300 tracking-widest font-bold">RESULT - FBR INVOICE READY</p>
+<div class="mt-4">
+<div class="flex justify-between text-[12px]"><span class="text-gray-400">Net Amount:</span><span id="netAmt" class="font-bold">Rs. 10,000</span></div>
+<div class="flex justify-between text-[14px] mt-2"><span class="text-gray-400">GST Amount (18%):</span><span id="gstAmt" class="font-bold text-blue-300">Rs. 1,800</span></div>
+<div class="border-t border-white/10 mt-3 pt-3 flex justify-between"><span class="text-[13px] font-bold">Total with GST:</span><span id="totalAmt" class="font-black text-xl">Rs. 11,800</span></div>
+<div id="inclusiveBreak" class="mt-3 text-[11px] bg-black/30 p-3 rounded-xl text-gray-400 hidden"></div>
+</div>
+<button onclick="copyInvoice()" class="mt-5 w-full py-3 rounded-full bg-white/10 border border-white/20 font-bold text-[12px]">📋 Copy Invoice Text</button>
+<button onclick="calcGST()" class="mt-2 w-full py-4 rounded-full bg-gradient-to-r from-blue-500 to-cyan-600 font-black text-sm shadow-[0_0_25px_rgba(59,130,246,0.5)]">Calculate GST 18% →</button>
+</div>
+
+<div class="glass rounded-2xl p-5">
+<h4 class="font-bold text-[13px]">📖 FBR GST Pakistan 2025 - Quick Info</h4>
+<ul class="mt-2 text-[11px] text-gray-400 space-y-1 leading-relaxed">
+<li>• Standard GST: <b>18%</b> (Budget 2024-25 se)</li>
+<li>• Restaurant GST: 5% (PRA - with card), 16% cash</li>
+<li>• Formula Exclusive: GST = Amount x 18% / 100</li>
+<li>• Formula Inclusive: GST = Amount x 18 / 118</li>
+<li>• FBR Invoice me GST alag show karna lazmi hai</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+
+<script>
+let mode='ex';
+let rate=18;
+function setMode(m){
+  mode=m;
+  document.getElementById('btnEx').className = m=='ex'? 'flex-1 py-2 rounded-full bg-blue-600 font-bold text-[12px]' : 'flex-1 py-2 rounded-full text-[12px] text-gray-400';
+  document.getElementById('btnIn').className = m=='in'? 'flex-1 py-2 rounded-full bg-blue-600 font-bold text-[12px]' : 'flex-1 py-2 rounded-full text-[12px] text-gray-400';
+  calcGST();
+}
+function setRate(r){
+  if(r==0){ document.getElementById('customRate').focus(); rate=parseFloat(document.getElementById('customRate').value)||18; }
+  else { rate=r; document.getElementById('customRate').value=r; }
+  document.querySelectorAll('.rate-btn').forEach(b=>b.className='rate-btn py-2 rounded-xl bg-white/10 text-[12px]');
+  let id = r==18?'r18': r==5?'r5': r==10?'r10':'rCustom';
+  document.getElementById(id).className='rate-btn py-2 rounded-xl bg-blue-600 font-bold text-[12px] border border-blue-400';
+  calcGST();
+}
+function calcGST(){
+  let amount = parseFloat(document.getElementById('amount').value)||0;
+  rate = parseFloat(document.getElementById('customRate').value)||18;
+  let biz = document.getElementById('bizType').value;
+  if(biz=='restaurant') rate=5;
+  if(biz=='export') rate=0;
+
+  let net, gst, total, breakText='';
+  if(mode=='ex'){
+    net=amount; gst=net*rate/100; total=net+gst;
+    breakText=`Calculation: ${net} + (${net} x ${rate}%) = ${total}`;
+  } else {
+    total=amount; gst= total * rate / (100+rate); net= total - gst;
+    breakText=`Inclusive: GST = ${total} x ${rate} / ${100+rate} = ${gst.toFixed(2)}<br>Net = ${total} - ${gst.toFixed(2)} = ${net.toFixed(2)}`;
+  }
+  document.getElementById('netAmt').innerText='Rs. '+net.toLocaleString('en-PK',{maximumFractionDigits:0});
+  document.getElementById('gstAmt').innerText='Rs. '+gst.toLocaleString('en-PK',{maximumFractionDigits:0})+' ('+rate+'%)';
+  document.getElementById('totalAmt').innerText='Rs. '+total.toLocaleString('en-PK',{maximumFractionDigits:0});
+  let incDiv=document.getElementById('inclusiveBreak');
+  if(mode=='in'){ incDiv.classList.remove('hidden'); incDiv.innerHTML=breakText; } else { incDiv.classList.add('hidden'); }
+}
+function copyInvoice(){
+  let t=`Net: ${document.getElementById('netAmt').innerText}\nGST: ${document.getElementById('gstAmt').innerText}\nTotal: ${document.getElementById('totalAmt').innerText}\n- PakTools GST Calculator 2025`;
+  navigator.clipboard.writeText(t); alert('Invoice copied!');
+}
+calcGST();
+</script>
+</body>
+</html>
