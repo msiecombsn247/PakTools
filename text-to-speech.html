@@ -2,88 +2,74 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Text to Speech Free - Convert Text to Voice Online | PakToolsOnline</title>
-<meta name="description" content="Free Text to Speech Pakistan - Convert text to voice with natural AI voices. Male female voices, multiple languages, download MP3. Works on mobile & PC.">
-<link rel="canonical" href="https://paktoolsonline.com/text-to-speech.html">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<meta property="og:title" content="Text to Speech Free - Text to Voice Online">
-<meta property="og:description" content="Convert text to speech with natural voices. Male female, English Urdu. Free online, works on mobile.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://paktoolsonline.com/text-to-speech.html">
-<meta property="og:image" content="https://paktoolsonline.com/og-text-to-speech.png">
-<meta property="og:site_name" content="PakToolsOnline">
-<meta name="twitter:card" content="summary_large_image">
+<title>Text to Speech Pakistan - Urdu English TTS Free | PakTools</title>
+<meta name="description" content="Text to Speech free Pakistan - Urdu, English, Hindi voice. 100% browser based, no copyright, no API cost. Professional TTS 2025.">
 <script src="https://cdn.tailwindcss.com"></script>
-<style>
-body{background:#020a1f; color:white; font-family:Inter,sans-serif; overflow-x:hidden;}
-.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55;}
-.stars{position:absolute; inset:0; pointer-events:none;}
-.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%;}
-.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 30px rgba(37,99,235,0.35); backdrop-filter:blur(15px);}
-.input-box{background:rgba(0,0,0,0.35); border:1px solid rgba(59,130,246,0.3);}
-.content-box{background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(8px);}
-</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Text to Speech","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free Text to Speech converter to convert text to natural voice with male female voices, works on mobile and PC.","url":"https://paktoolsonline.com/text-to-speech.html","author":{"@type":"Organization","name":"PakToolsOnline"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How to convert text to speech?","acceptedAnswer":{"@type":"Answer","text":"Type text, select voice male/female, adjust speed and pitch, click Speak. Works on mobile and PC."}},{"@type":"Question","name":"Why voices not showing on mobile?","acceptedAnswer":{"@type":"Answer","text":"Mobile loads voices slowly. This tool uses voiceschanged event to load voices on Android Chrome correctly."}},{"@type":"Question","name":"Is text to speech free?","acceptedAnswer":{"@type":"Answer","text":"Yes, free unlimited text to voice conversion using browser speech synthesis, no signup."}}]}</script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body class="relative min-h-screen">
-<div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-250px] left-[10%]"></div>
-<div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-300px] right-[5%]"></div>
-<div class="stars" id="stars"></div>
-<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl">
-<div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-<a href="index.html" class="font-black text-[15px] flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black text-xs">P</div>PakToolsOnline</a>
-<a href="index.html" class="text-[11px] bg-white/10 border border-white/20 px-3 py-1.5 rounded-full">← Home</a>
+<body style="background:#07010f;color:white;font-family:Inter,sans-serif">
+<div style="position:fixed;inset:0;background:radial-gradient(ellipse at 30% 20%, rgba(120,40,200,0.15), transparent 50%);z-index:0"></div>
+<header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/80 backdrop-blur-xl"><div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"><a href="index.html" style="text-decoration:none;color:white" class="font-black text-xl flex gap-2 items-center"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center">P</div>PakTools</a><a href="blog.html" style="color:white;text-decoration:none" class="text-[11px] bg-white/10 border border-white/20 px-4 py-2 rounded-full">Blogs</a></div></header>
+<main class="max-w-6xl mx-auto px-6 py-8 relative z-10 grid lg:grid-cols-2 gap-6">
+<div>
+<h1 style="font-family:'Plus Jakarta Sans'" class="text-3xl font-black">Text to Speech - Urdu English</h1>
+<p class="text-gray-400 text-[11px] mt-2">100% Browser TTS, No API, No copyright. Works offline.</p>
+<div class="mt-5 bg-white/[0.05] border border-white/10 rounded-2xl p-5">
+<label class="text-[11px]">Enter Text</label>
+<textarea id="text" placeholder="السلام علیکم، یہ پاک ٹولز کا ٹیکسٹ ٹو اسپیچ ٹول ہے۔ Type English or Urdu roman..." class="w-full mt-2 bg-black/30 border border-white/10 rounded-2xl px-4 py-3 text-[12px] h-32"></textarea>
+<div class="grid grid-cols-2 gap-3 mt-4">
+<div><label class="text-[10px]">Voice / Language</label><select id="voice" class="w-full mt-1 bg-black/30 border border-white/10 rounded-full px-3 py-2 text-[11px]"></select></div>
+<div><label class="text-[10px]">Speed</label><input id="rate" type="range" min="0.5" max="1.5" step="0.1" value="1" class="w-full mt-3"><span id="rateVal" class="text-[10px]">1x</span></div>
 </div>
-</header>
-<main class="relative z-10 max-w-4xl mx-auto px-6 py-6">
-<div class="text-center">
-<h1 class="text-3xl md:text-4xl font-black">Text to <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Speech</span></h1>
-<p class="mt-2 text-gray-400 text-[12px]">Convert Text to Natural Voice - Works on Mobile & PC</p>
+<div class="flex gap-2 mt-4">
+<button id="speak" class="flex-1 py-3 bg-gradient-to-r from-purple-500 to-fuchsia-500 rounded-full font-bold text-[12px]">▶ Play</button>
+<button id="pause" class="px-6 py-3 bg-white/10 rounded-full text-[12px]">⏸ Pause</button>
+<button id="stop" class="px-6 py-3 bg-white/10 rounded-full text-[12px]">⏹ Stop</button>
 </div>
-<div class="tool-box rounded-[1.5rem] p-5 mt-6">
-<label for="textInput" class="text-[11px] font-bold text-gray-300">Enter Text to Convert to Voice:</label>
-<textarea id="textInput" rows="5" placeholder="Type or paste text here to convert to speech... Example: Hello, welcome to PakToolsOnline free text to speech tool." class="input-box w-full mt-1.5 rounded-xl p-3 text-[12px] outline-none resize-none leading-6">Hello, welcome to PakToolsOnline free text to speech tool. This works perfectly on mobile and PC.</textarea>
-<div class="grid md:grid-cols-2 gap-3 mt-4">
-<div><label for="voiceSelect" class="text-[10px] text-gray-400 font-bold">🎙️ Select Voice - Male Female (Mobile Fixed):</label><select id="voiceSelect" class="w-full mt-1 input-box rounded-xl px-3 py-3 text-[11px] outline-none"><option>Loading voices... Please wait</option></select><p class="text-[9px] text-cyan-300 mt-1">✅ Mobile Fix: Voices auto-load on Android</p></div>
-<div><label class="text-[10px] text-gray-400 font-bold">Language Filter:</label><select id="langFilter" onchange="filterVoices()" class="w-full mt-1 input-box rounded-xl px-3 py-3 text-[11px] outline-none"><option value="all">All Languages</option><option value="en" selected>English Only</option><option value="ur">Urdu / Hindi</option></select></div>
+<div class="mt-4 flex gap-2 text-[10px]"><span class="px-3 py-1 bg-green-500/20 rounded-full">✓ No API Cost</span><span class="px-3 py-1 bg-blue-500/20 rounded-full">✓ Offline</span><span class="px-3 py-1 bg-purple-500/20 rounded-full">✓ Copyright Free</span></div>
 </div>
-<div class="grid grid-cols-2 gap-3 mt-3">
-<div><label class="text-[10px] text-gray-400">Speed: <span id="speedVal" class="text-cyan-300">1</span></label><input type="range" id="speed" min="0.5" max="2" step="0.1" value="1" class="w-full accent-cyan-400" oninput="document.getElementById('speedVal').innerText=this.value"></div>
-<div><label class="text-[10px] text-gray-400">Pitch: <span id="pitchVal" class="text-cyan-300">1</span></label><input type="range" id="pitch" min="0.5" max="2" step="0.1" value="1" class="w-full accent-cyan-400" oninput="document.getElementById('pitchVal').innerText=this.value"></div>
 </div>
-<div class="grid grid-cols-3 gap-2 mt-4">
-<button onclick="speak()" id="speakBtn" class="bg-gradient-to-r from-cyan-400 to-blue-600 text-black font-bold py-3 rounded-xl text-[12px]">▶️ Speak</button>
-<button onclick="pause()" class="bg-white/10 border border-white/20 py-3 rounded-xl text-[11px] font-bold">⏸️ Pause</button>
-<button onclick="stop()" class="bg-white/10 border border-white/20 py-3 rounded-xl text-[11px] font-bold">⏹️ Stop</button>
+<div class="bg-white/[0.05] border border-white/10 rounded-2xl p-5">
+<h3 class="text-[12px] font-bold">Features Pakistan</h3>
+<div class="mt-4 space-y-3 text-[11px] text-gray-300">
+<div class="bg-black/30 rounded-xl p-3">🔊 <b>Urdu Support:</b> Use Roman Urdu for best voice - "Assalam u Alaikum, kese hain ap" - browser will speak Urdu accent voice if available.</div>
+<div class="bg-black/30 rounded-xl p-3">🎧 <b>YouTubers:</b> Create voiceover for videos without mic - 100% copyright free voice.</div>
+<div class="bg-black/30 rounded-xl p-3">📚 <b>Students:</b> Listen to assignments, CV text.</div>
+<div class="bg-black/30 rounded-xl p-3">⚙️ <b>Settings:</b> Install Urdu language pack in Windows/Android for better Urdu voice. Chrome → Settings → Languages → Add Urdu.</div>
 </div>
-<div class="mt-3 flex gap-2">
-<button onclick="clearText()" class="flex-1 bg-white/5 border border-white/10 py-2.5 rounded-xl text-[11px]">Clear</button>
-<button onclick="copyText()" class="flex-1 bg-white/5 border border-cyan-400/20 py-2.5 rounded-xl text-[11px] font-bold">📋 Copy Text</button>
-</div>
-<p id="status" class="text-[10px] text-center mt-3 text-gray-500">Ready - Select voice and click Speak. Works on mobile Chrome.</p>
-</div>
-<div class="content-box rounded-xl p-5 mt-5">
-<h2 class="text-[13px] font-bold">About Text to Speech - Mobile Voice Fix</h2>
-<p class="mt-2 text-[11px] leading-6 text-gray-400">PakTools Free Text to Speech converts text to natural sounding voice with male and female voices in multiple languages including English US, UK, Urdu, Hindi. This version has mobile fix for Select Voice tab - uses speechSynthesis.onvoiceschanged event which is required for Android Chrome where voices load asynchronously after page load. On PC voices load instantly but on mobile you must wait for voiceschanged event. This tool auto-loads voices on mobile, shows loading status, and filters English/Urdu voices. Adjust speed 0.5x to 2x and pitch for custom voice. Pause, Stop, Speak controls. 100% browser-based using Web Speech API, no upload, private, free unlimited, no signup. Perfect for students listening to assignments, YouTubers creating voiceovers, and content creators.</p>
-<div class="mt-3"><h3 class="text-[11px] font-bold">Why Mobile Voice Not Working Before?</h3><p class="mt-1 text-[11px] leading-5 text-gray-400">Mobile Chrome loads voices after 1-2 seconds via <b class="text-gray-300">voiceschanged</b> event. Old code used getVoices() directly on page load which returns empty on mobile. Fix: Add window.speechSynthesis.onvoiceschanged listener and reload voices list. Also add setTimeout fallback for iOS.</p></div>
+<div class="mt-4 bg-black/30 rounded-xl p-3 text-[10px] text-gray-400"><b class="text-white">Note:</b> This uses your device's built-in speech engine - no data sent to server - 100% private and legal.</div>
 </div>
 </main>
-<footer class="text-center py-5 text-[10px] text-gray-500">© 2025 PakToolsOnline</footer>
 <script>
-const stars=document.getElementById('stars');for(let i=0;i<80;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';stars.appendChild(d);}
-let voices=[],filteredVoices=[];
-function loadVoices(){voices=speechSynthesis.getVoices();if(voices.length===0){document.getElementById('voiceSelect').innerHTML='<option>Loading voices... Please tap Speak to enable on mobile</option>';return;}filterVoices();}
-function filterVoices(){let filter=document.getElementById('langFilter').value;let sel=document.getElementById('voiceSelect');sel.innerHTML='';filteredVoices=voices.filter(v=>{if(filter==='all')return true;if(filter==='en')return v.lang.toLowerCase().includes('en');if(filter==='ur')return v.lang.toLowerCase().includes('ur')||v.lang.toLowerCase().includes('hi');return true;});if(filteredVoices.length===0)filteredVoices=voices;filteredVoices.forEach((v,i)=>{let opt=document.createElement('option');opt.value=i;opt.textContent=`${v.name} (${v.lang}) ${v.default?'• Default':''}`;sel.appendChild(opt);});document.getElementById('status').innerText=`✅ ${filteredVoices.length} voices loaded - Ready on mobile & PC`;}
-// CRITICAL MOBILE FIX
-if(speechSynthesis.onvoiceschanged!==undefined){speechSynthesis.onvoiceschanged=loadVoices;}
-setTimeout(loadVoices,100);setTimeout(loadVoices,1000);
-window.addEventListener('load',()=>{loadVoices();setTimeout(loadVoices,500);});
-function speak(){let text=document.getElementById('textInput').value.trim();if(!text){alert('Enter text!');return;}if(voices.length===0){loadVoices();speechSynthesis.getVoices();setTimeout(()=>{if(speechSynthesis.getVoices().length>0){loadVoices();speak();}else{alert('On mobile, tap Speak again after 2 seconds - voices loading...');}},1000);return;}speechSynthesis.cancel();let utter=new SpeechSynthesisUtterance(text);let idx=document.getElementById('voiceSelect').value;if(filteredVoices[idx])utter.voice=filteredVoices[idx];utter.rate=parseFloat(document.getElementById('speed').value);utter.pitch=parseFloat(document.getElementById('pitch').value);utter.onstart=()=>document.getElementById('status').innerText='🔊 Speaking...';utter.onend=()=>document.getElementById('status').innerText='✅ Done - Click Speak again';utter.onerror=(e)=>document.getElementById('status').innerText='❌ Error: '+e.error;speechSynthesis.speak(utter);}
-function pause(){if(speechSynthesis.speaking){speechSynthesis.pause();document.getElementById('status').innerText='⏸️ Paused';}else if(speechSynthesis.paused){speechSynthesis.resume();document.getElementById('status').innerText='🔊 Resumed';}}
-function stop(){speechSynthesis.cancel();document.getElementById('status').innerText='⏹️ Stopped';}
-function clearText(){document.getElementById('textInput').value='';stop();}
-function copyText(){navigator.clipboard.writeText(document.getElementById('textInput').value);document.getElementById('status').innerText='✅ Text copied!';}
+let voices=[]; let synth=window.speechSynthesis;
+function loadVoices(){
+voices=synth.getVoices();
+let sel=document.getElementById('voice');
+sel.innerHTML='';
+voices.forEach((v,i)=>{
+let opt=document.createElement('option');
+opt.value=i; opt.textContent=v.name+' ('+v.lang+')';
+sel.appendChild(opt);
+});
+// auto select Urdu or English Pakistan if available
+let urduIdx=voices.findIndex(v=>v.lang.includes('ur')||v.lang.includes('hi'));
+if(urduIdx!=-1) sel.value=urduIdx;
+}
+if(synth.onvoiceschanged!==undefined) synth.onvoiceschanged=loadVoices;
+loadVoices();
+document.getElementById('rate').oninput=e=>document.getElementById('rateVal').innerText=e.target.value+'x';
+document.getElementById('speak').onclick=()=>{
+let txt=document.getElementById('text').value; if(!txt) return;
+if(synth.speaking) synth.cancel();
+let utter=new SpeechSynthesisUtterance(txt);
+let idx=document.getElementById('voice').value;
+if(voices[idx]) utter.voice=voices[idx];
+utter.rate=document.getElementById('rate').value;
+utter.pitch=1;
+synth.speak(utter);
+};
+document.getElementById('pause').onclick=()=>{if(synth.speaking){synth.paused?synth.resume():synth.pause();}};
+document.getElementById('stop').onclick=()=>synth.cancel();
 </script>
 </body>
 </html>
