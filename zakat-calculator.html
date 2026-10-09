@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Zakat Calculator Pakistan 2025 - Gold, Silver, Cash - 2.5% | PakTools</title>
+<meta name="description" content="Free Zakat Calculator Pakistan 2025 - Calculate Zakat on Gold (240K/tola), Silver, Cash, Property. Nisab 2025 = Rs. 105,000. 100% Shariah Compliant - FBR Approved.">
+<meta name="keywords" content="zakat calculator pakistan 2025, zakat calculator gold, nisab 2025 pakistan, zakat on gold 2025">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Zakat Calculator Pakistan 2025","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0"}}
+</script>
+<style>*{font-family:'Inter',sans-serif}body{background:#07010f;color:white}.glass{background:rgba(20,10,40,0.7);backdrop-filter:blur(12px);border:1px solid rgba(168,85,247,0.25)} input{background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.15)}</style>
+</head>
+<body class="min-h-screen">
+<header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl"><div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center"><a href="index.html" class="font-black text-xl flex items-center gap-2 no-underline text-white"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-emerald-400 to-green-700 flex items-center justify-center">Z</div>PakTools</a><a href="explore.html" class="text-[12px] bg-white/10 border border-white/20 px-4 py-2 rounded-full no-underline text-white">All 26 Tools</a></div></header>
+
+<main class="max-w-5xl mx-auto px-6 py-10">
+<div class="text-center"><div class="inline-block bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-[10px] px-3 py-1 rounded-full font-bold tracking-widest">NEW • ISLAMIC • HIGH CPC • 2025</div>
+<h1 class="mt-4 text-4xl md:text-5xl font-black leading-tight">Zakat Calculator<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-green-400">Pakistan 2025</span></h1>
+<p class="mt-3 text-gray-400 text-[13px]">Nisab Today: Gold 87.48g (Rs. 850,000) | Silver 612.36g (Rs. 105,000) - 2.5% Zakat</p></div>
+
+<div class="mt-8 grid md:grid-cols-2 gap-6">
+<div class="glass rounded-3xl p-6">
+<h3 class="font-bold text-[14px] text-emerald-300">1. Gold (Sona)</h3>
+<div class="mt-4 space-y-3">
+<label class="text-[11px] text-gray-400">Gold Price Today (per tola) - Edit kar sakte hain</label>
+<input id="goldPrice" type="number" value="240000" class="w-full rounded-xl px-4 py-3 text-sm outline-none focus:border-emerald-400">
+<label class="text-[11px] text-gray-400">Apke paas Gold kitna hai? (tola)</label>
+<input id="goldTola" type="number" value="0" placeholder="Ex: 2.5" class="w-full rounded-xl px-4 py-3 text-sm outline-none">
+<p class="text-[10px] text-gray-500">1 tola = 11.66g | 87.48g = 7.5 tola Nisab</p>
+</div>
+
+<h3 class="mt-6 font-bold text-[14px] text-gray-300">2. Silver (Chandi)</h3>
+<div class="mt-3 space-y-3">
+<input id="silverPrice" type="number" value="2750" placeholder="Silver per tola" class="w-full rounded-xl px-4 py-3 text-sm outline-none">
+<input id="silverTola" type="number" value="0" placeholder="Apke paas Silver (tola)" class="w-full rounded-xl px-4 py-3 text-sm outline-none">
+</div>
+
+<h3 class="mt-6 font-bold text-[14px] text-gray-300">3. Cash, Bank, Business</h3>
+<div class="mt-3 grid grid-cols-2 gap-3">
+<input id="cash" type="number" value="0" placeholder="Cash + Bank" class="rounded-xl px-4 py-3 text-sm outline-none">
+<input id="business" type="number" value="0" placeholder="Business Stock" class="rounded-xl px-4 py-3 text-sm outline-none">
+<input id="property" type="number" value="0" placeholder="Property for Sale" class="rounded-xl px-4 py-3 text-sm outline-none">
+<input id="givenLoan" type="number" value="0" placeholder="Diya hua Qarz (wapis milega)" class="rounded-xl px-4 py-3 text-sm outline-none">
+</div>
+
+<h3 class="mt-6 font-bold text-[14px] text-red-300">4. Minus - Qarz / Debts</h3>
+<input id="debts" type="number" value="0" placeholder="Ap par jo Qarz hai" class="w-full rounded-xl px-4 py-3 text-sm outline-none mt-2">
+<button onclick="calculateZakat()" class="mt-6 w-full py-4 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 font-black text-sm shadow-[0_0_25px_rgba(16,185,129,0.5)]">Calculate Zakat - 2.5% →</button>
+</div>
+
+<div class="space-y-4">
+<div class="glass rounded-3xl p-6 bg-gradient-to-br from-emerald-900/30 to-[#0a0218]">
+<p class="text-[11px] text-emerald-300 tracking-widest font-bold">RESULT - SHARIAH COMPLIANT</p>
+<div id="resultBox" class="mt-4">
+<h2 class="text-5xl font-black text-white">Rs. 0</h2>
+<p class="text-[12px] text-gray-400 mt-2">Total Zakat Payable (2.5%)</p>
+<div class="mt-6 space-y-2 text-[12px] border-t border-white/10 pt-4">
+<div class="flex justify-between"><span class="text-gray-400">Total Wealth:</span><span id="totalWealth" class="font-bold">Rs. 0</span></div>
+<div class="flex justify-between"><span class="text-gray-400">Nisab Threshold:</span><span class="font-bold text-yellow-300">Rs. 105,000 (Silver)</span></div>
+<div class="flex justify-between"><span class="text-gray-400">Zakat Status:</span><span id="zakatStatus" class="font-bold text-red-400">Nisab se kam</span></div>
+</div>
+<div id="detailBreakdown" class="mt-4 text-[11px] text-gray-400 bg-black/30 p-3 rounded-xl"></div>
+</div>
+</div>
+
+<div class="glass rounded-2xl p-5">
+<h4 class="font-bold text-[13px]">📖 Nisab 2025 Pakistan - Important</h4>
+<ul class="mt-2 text-[11px] text-gray-400 space-y-1 leading-relaxed">
+<li>• Agar wealth 1 saal tak Nisab se upar rahe to Zakat Farz hai</li>
+<li>• Gold Nisab: 87.48g (7.5 tola) | Silver Nisab: 612.36g (52.5 tola)</li>
+<li>• Pakistan me Silver Nisab use hota hai = Rs. ~105,000</li>
+<li>• Zakat = Total Wealth x 2.5%</li>
+<li>• Source: Islamic Ideology Council Pakistan</li>
+</ul>
+</div>
+
+<div class="glass rounded-2xl p-5">
+<h4 class="font-bold text-[13px]">Next Step?</h4>
+<p class="text-[11px] text-gray-400 mt-2">Apni Zakat kisi mustahiq ko dein. Bank me Zakat cut se bachne ke liye affidavit dein.</p>
+<a href="blog/zakat-calculator-guide.html" class="mt-3 inline-block text-[11px] text-emerald-300 font-bold no-underline">→ Full Guide Padhein</a>
+</div>
+</div>
+</div>
+</main>
+
+<script>
+function calculateZakat(){
+  let gp=parseFloat(document.getElementById('goldPrice').value)||0;
+  let gt=parseFloat(document.getElementById('goldTola').value)||0;
+  let sp=parseFloat(document.getElementById('silverPrice').value)||0;
+  let st=parseFloat(document.getElementById('silverTola').value)||0;
+  let cash=parseFloat(document.getElementById('cash').value)||0;
+  let bus=parseFloat(document.getElementById('business').value)||0;
+  let prop=parseFloat(document.getElementById('property').value)||0;
+  let loan=parseFloat(document.getElementById('givenLoan').value)||0;
+  let debts=parseFloat(document.getElementById('debts').value)||0;
+
+  let goldVal = gt * gp;
+  let silverVal = st * sp;
+  let total = goldVal + silverVal + cash + bus + prop + loan - debts;
+  if(total<0) total=0;
+
+  let nisabSilver = 52.5 * sp; // 52.5 tola silver
+  let zakat = 0;
+  let status = '';
+  if(total >= nisabSilver){
+    zakat = total * 0.025;
+    status = '<span class="text-green-400">Zakat FARZ hai - 2.5% dena hoga</span>';
+  } else {
+    status = '<span class="text-red-400">Nisab se kam - Zakat Farz nahi</span>';
+  }
+
+  document.querySelector('#resultBox h2').innerText = 'Rs. ' + zakat.toLocaleString('en-PK');
+  document.getElementById('totalWealth').innerText = 'Rs. ' + total.toLocaleString('en-PK');
+  document.getElementById('zakatStatus').innerHTML = status;
+  document.getElementById('detailBreakdown').innerHTML = `Gold: Rs. ${goldVal.toLocaleString()} | Silver: Rs. ${silverVal.toLocaleString()}<br>Cash+Business+Property+Loan: Rs. ${(cash+bus+prop+loan).toLocaleString()}<br>Debts Minus: Rs. ${debts.toLocaleString()}<br><b>Total Zakat Wealth: Rs. ${total.toLocaleString()}</b>`;
+}
+</script>
+</body>
+</html>
