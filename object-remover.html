@@ -2,141 +2,97 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>AI Object Remover - Remove Watermark, Text, People | PakToolsOnline</title>
-<meta name="description" content="Free AI Object Remover - Remove unwanted objects, people, watermark, text, logo from photo online. Brush to erase, AI fills background. Private & Free.">
-<link rel="canonical" href="https://paktoolsonline.com/object-remover.html">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<meta property="og:title" content="AI Object Remover - Remove Watermark, People, Text Free">
-<meta property="og:description" content="Erase unwanted objects, watermark, people from photo. Paint & remove with AI background fill. Free, private, browser-based.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://paktoolsonline.com/object-remover.html">
-<meta property="og:image" content="https://paktoolsonline.com/og-object-remover.png">
-<meta property="og:site_name" content="PakToolsOnline">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Object Remover - Free Online">
-<meta name="twitter:description" content="Remove objects, watermark, text from photo with AI. Free & Private.">
-<meta name="twitter:image" content="https://paktoolsonline.com/og-object-remover.png">
+<title>Object Remover - Remove People, Text, Watermark Free Pakistan | PakTools</title>
+<meta name="description" content="Free Object Remover Pakistan - Remove people, text, watermark, pimples from photos. Brush eraser, 100% working, offline.">
 <script src="https://cdn.tailwindcss.com"></script>
-<style>
-*{font-family:Inter,sans-serif}
-body{background:#020a1f; color:white; overflow-x:hidden; margin:0;}
-.galaxy{position:absolute; width:800px; height:800px; border-radius:50%; filter:blur(90px); opacity:.55;}
-.stars{position:absolute; inset:0; pointer-events:none;}
-.star{position:absolute; width:2px; height:2px; background:white; border-radius:50%;}
-.tool-box{background:linear-gradient(145deg,#10205e 0%,#0a1744 40%,#070f30 100%); border:1px solid rgba(59,130,246,0.4); box-shadow:0 0 30px rgba(37,99,235,0.35); backdrop-filter:blur(15px);}
-.result-card{background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08);}
-.glow-btn{background:linear-gradient(90deg,#22d3ee,#3b82f6);}
-.content-box{background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(8px);}
-#canvasWrap{position:relative; cursor:crosshair; background:#000; border-radius:12px; overflow:hidden; touch-action:none;}
-#drawCanvas{position:absolute; left:0; top:0; z-index:2;}
-.range{accent-color:#22d3ee;}
-</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Object Remover","applicationCategory":"MultimediaApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free AI Object Remover to erase unwanted objects, people, watermark, text from photo. Brush to paint and AI fills background.","url":"https://paktoolsonline.com/object-remover.html","author":{"@type":"Organization","name":"PakToolsOnline"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How to remove object from photo?","acceptedAnswer":{"@type":"Answer","text":"Upload photo, adjust brush size, paint over unwanted object with red brush, click Remove Object Now. AI will fill background naturally."}},{"@type":"Question","name":"Can it remove watermark and text?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can remove watermarks, logos, text, people, and any unwanted object by painting over it."}},{"@type":"Question","name":"Is object remover private?","acceptedAnswer":{"@type":"Answer","text":"Yes, all processing happens in your browser. Image never uploaded to server, 100% private."}},{"@type":"Question","name":"Is AI Object Remover free?","acceptedAnswer":{"@type":"Answer","text":"Yes, PakToolsOnline Object Remover is 100% free, unlimited use, no signup, no watermark."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://paktoolsonline.com/"},{"@type":"ListItem","position":2,"name":"AI Object Remover","item":"https://paktoolsonline.com/object-remover.html"}]}</script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body class="relative min-h-screen">
-<div class="galaxy bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-900 top-[-250px] left-[10%]"></div>
-<div class="galaxy bg-gradient-to-br from-cyan-700 via-blue-800 to-[#020a1f] bottom-[-300px] right-[5%]"></div>
-<div class="stars" id="stars"></div>
-<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#020a1f]/70 backdrop-blur-xl">
-<div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-<a href="index.html" class="font-black text-[15px] flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-black text-xs">P</div>PakToolsOnline</a>
-<a href="index.html" class="text-[11px] bg-white/10 border border-white/20 px-3 py-1.5 rounded-full">← Home</a>
-</div>
-</header>
-<main class="relative z-10 max-w-5xl mx-auto px-6 py-6">
-<div class="text-center">
-<h1 class="text-3xl md:text-4xl font-black">AI Object <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">Remover</span></h1>
-<p class="mt-2 text-gray-400 text-[12px]">Remove Objects, Watermark, Text, People - AI Magic Eraser</p>
-<p class="mt-2 text-[10px] text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 inline-block px-2.5 py-1 rounded-full">🔥 Trending - After BG Remover</p>
-</div>
-<div class="tool-box rounded-[1.5rem] p-5 mt-6">
-<div id="uploadArea" class="border-2 border-dashed border-blue-400/30 rounded-xl p-7 text-center bg-black/20 cursor-pointer hover:border-cyan-400/50 transition">
-<input type="file" id="fileInput" accept="image/*" class="hidden">
-<div class="text-3xl mb-2">🧹</div>
-<p class="font-bold text-[12px]">Upload Photo to Remove Object</p>
-<p class="text-[10px] text-gray-400 mt-1">JPG, PNG - Paint over object to erase</p>
-<button class="mt-3 glow-btn text-black font-bold px-5 py-2 rounded-full text-[11px]">Choose Photo</button>
-</div>
-<div id="editor" class="hidden">
-<div class="flex flex-wrap gap-2 items-center justify-between bg-black/30 border border-white/10 rounded-xl p-3 mb-3">
-<div class="flex items-center gap-2">
-<label for="brushSize" class="text-[10px] text-gray-300">Brush:</label><input id="brushSize" type="range" min="5" max="80" value="30" class="range w-20"><span id="brushVal" class="text-[10px] text-cyan-300 font-bold">30px</span>
-</div>
-<div class="flex gap-1.5"><button onclick="clearMask()" class="bg-white/10 border border-white/20 px-3 py-1.5 rounded-full text-[10px] font-bold">Clear</button><button onclick="resetAll()" class="bg-red-500/20 border border-red-400/30 text-red-300 px-3 py-1.5 rounded-full text-[10px] font-bold">New Photo</button></div>
-</div>
-<div class="grid md:grid-cols-2 gap-4">
-<div><p class="text-[10px] text-gray-400 mb-1.5 font-bold">PAINT OVER OBJECT - Red area will be removed</p><div id="canvasWrap"><img id="baseImg" class="w-full block max-h-[380px] object-contain" alt="Base image for object removal"><canvas id="drawCanvas"></canvas></div><p class="text-[10px] text-gray-500 mt-1 text-center">👆 Brush se object par paint karen</p></div>
-<div><p class="text-[10px] text-cyan-300 mb-1.5 font-bold">RESULT ✨ - AI Filled</p><div class="bg-black/40 border border-cyan-400/30 rounded-xl p-2 min-h-[200px] flex items-center justify-center"><img id="resultImg" class="hidden w-full rounded-lg max-h-[380px] object-contain" alt="Result after object removal AI magic"><p id="resultPlaceholder" class="text-[11px] text-gray-500 text-center">Result yahan aayega</p></div><div id="resultActions" class="hidden mt-3 grid grid-cols-2 gap-2"><a id="downloadBtn" download="paktoolsonline-object-removed.png" class="glow-btn text-center text-black font-bold py-2.5 rounded-xl text-[11px] cursor-pointer">⬇️ Download HD</a><button onclick="keepEditing()" class="bg-white/10 border border-white/20 font-bold py-2.5 rounded-xl text-[11px]">Continue Editing</button></div></div>
-</div>
-<button id="removeBtn" onclick="removeObject()" class="w-full mt-4 glow-btn text-black font-bold py-3 rounded-xl text-[12px] shadow-[0_0_15px_rgba(56,189,248,0.4)]">✨ Remove Object Now - AI Magic</button>
+<body style="background:#07010f;color:white;font-family:Inter,sans-serif">
+<div style="position:fixed;inset:0;background:radial-gradient(ellipse at 30% 20%, rgba(120,40,200,0.15), transparent 50%);z-index:0"></div>
+<header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/80 backdrop-blur-xl"><div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"><a href="index.html" style="text-decoration:none;color:white" class="font-black text-xl flex gap-2 items-center"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center">P</div>PakTools</a><a href="blog.html" style="color:white;text-decoration:none" class="text-[11px] bg-white/10 border border-white/20 px-4 py-2 rounded-full">Blogs</a></div></header>
+<main class="max-w-6xl mx-auto px-6 py-8 relative z-10">
+<h1 style="font-family:'Plus Jakarta Sans'" class="text-2xl md:text-4xl font-black">Object Remover - Magic Eraser</h1>
+<p class="text-gray-400 text-[11px] mt-2">Remove People, Text, Watermark, Pimples • Brush Tool • 100% Offline</p>
+
+<div class="mt-6 grid lg:grid-cols-3 gap-4">
+<div class="lg:col-span-2">
+<div id="drop" class="border-2 border-dashed border-purple-500/40 bg-white/[0.04] rounded-2xl p-8 text-center cursor-pointer"><div class="text-4xl">🧹</div><h3 class="mt-2 font-bold text-[13px]">Drop Photo or Click</h3><p class="text-[10px] text-gray-400">JPG, PNG • Remove anything with brush</p><input id="file" type="file" accept="image/*" class="hidden"></div>
+<div class="mt-4 bg-black/40 border border-white/10 rounded-2xl p-3 relative overflow-hidden">
+<div class="flex gap-2 mb-3 flex-wrap"><span class="text-[11px]">Brush Size:</span><input id="brushSize" type="range" min="5" max="80" value="25" class="w-32"><span id="sizeVal" class="text-[11px]">25px</span><button id="undo" class="ml-auto px-3 py-1 bg-white/10 rounded-full text-[10px]">Undo</button><button id="removeBtn" class="px-4 py-1 bg-gradient-to-r from-purple-500 to-fuchsia-500 rounded-full text-[10px] font-bold">✨ Remove Objects</button><button id="download" class="px-4 py-1 bg-white text-black rounded-full text-[10px] font-bold">Download</button></div>
+<div class="relative bg-[#111] rounded-xl overflow-hidden flex justify-center"><canvas id="canvas" class="max-w-full max-h-[500px] cursor-crosshair touch-none"></canvas></div>
+<p class="mt-2 text-[10px] text-gray-500">💡 Paint over object with brush, then click Remove. For best result, use small brush on edges.</p>
 </div>
 </div>
-<div class="content-box rounded-xl p-5 mt-5">
-<h2 class="text-[13px] font-bold">About AI Object Remover - Magic Eraser Tool</h2>
-<p class="mt-2 text-[11px] leading-6 text-gray-400">PakTools Free AI Object Remover is a magic eraser that helps you erase unwanted objects, people, watermarks, logos, text, and photobombers from any photo in seconds using AI inpainting. Just upload your photo, adjust brush size, paint over the object you want to remove with red brush, and click Remove Object Now - AI will automatically analyze surrounding pixels and fill background to make it look natural as if object never existed. Perfect for cleaning vacation photos, removing photobombers and tourists, deleting watermarks and logos for personal use, removing text from images, product photo editing for e-commerce, and cleaning up backgrounds. Unlike cloud tools, our tool works 100% in your browser using canvas-based inpainting, no upload to server, so your photos stay private and secure. Free, no signup, unlimited use, works on mobile and desktop. For best results, use smaller brush for detailed areas and larger brush for big objects.</p>
-<div class="grid md:grid-cols-2 gap-3 mt-3">
-<div><h3 class="text-[11px] font-bold">How to Remove Object from Photo?</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-6 text-gray-400"><li>Upload photo (JPG/PNG) from gallery</li><li>Adjust brush size slider (5px to 80px)</li><li>Paint over object/watermark with red brush</li><li>Click Remove Object Now & download cleaned photo</li></ul></div>
-<div><h3 class="text-[11px] font-bold">Key Features</h3><ul class="mt-1 list-disc pl-4 text-[11px] leading-6 text-gray-400"><li>AI background fill, natural inpainting result</li><li>Remove people, text, watermark, logo, objects</li><li>Brush size control, clear & continue editing</li><li>Private, browser-based, free, no watermark</li></ul></div>
-</div>
-<div class="mt-4 border-t border-white/10 pt-3">
-<h3 class="text-[11px] font-bold">Frequently Asked Questions</h3>
-<div class="mt-2 space-y-2 text-[11px] leading-5 text-gray-400">
-<p><b class="text-gray-300">How to remove watermark?</b> Upload image, paint over watermark with brush, click Remove - AI fills background.</p>
-<p><b class="text-gray-300">Can it remove people?</b> Yes, paint over person and AI will replace with background.</p>
-<p><b class="text-gray-300">Is it private?</b> Yes, 100% private, no server upload, all in browser.</p>
-<p><b class="text-gray-300">Is it free?</b> Yes, unlimited free object removal.</p>
-</div>
-</div>
-<p class="mt-3 text-[10px] text-gray-500">Disclaimer: Use for personal photos only. Removing watermarks from copyrighted images may violate copyright.</p>
-</div>
-<div class="content-box rounded-xl p-5 mt-5">
-<h3 class="text-[13px] font-bold">Related Free Tools</h3>
-<div class="grid grid-cols-2 md:grid-cols-3 gap-2 mt-3 text-[11px]">
-<a href="background-remover.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">✨ BG Remover</a>
-<a href="image-compressor.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🗜️ Image Compressor</a>
-<a href="image-resizer.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">📐 Image Resizer</a>
-<a href="image-to-text.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🔤 Image to Text</a>
-<a href="jpg-to-png.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🔄 JPG to PNG</a>
-<a href="qr-generator.html" class="bg-white/5 border border-white/10 rounded-lg p-2.5 hover:bg-white/10 transition">🔳 QR Generator</a>
+<div class="bg-white/[0.05] border border-white/10 rounded-2xl p-5 h-fit">
+<h3 class="text-[12px] font-bold">100% Working How?</h3><ul class="mt-3 space-y-2 text-[11px] text-gray-400 leading-6"><li>✅ Brush to mark object</li><li>✅ Smart inpaint (blur + nearby pixels)</li><li>✅ No server upload - secure</li><li>✅ Works for: People, Text, Logo, Pimples, Wires</li><li>✅ Unlimited free</li></ul>
+<div class="mt-5"><h4 class="text-[11px] font-bold">Examples Pakistan:</h4><p class="text-[10px] text-gray-500 mt-2">• Remove photobomber from Murree trip photo<br>• Remove watermark from product photo for Daraz<br>• Remove pimple for passport photo<br>• Remove text from meme template</p></div>
 </div>
 </div>
 </main>
-<canvas id="processCanvas" class="hidden"></canvas>
-<footer class="text-center py-5 text-[10px] text-gray-500">© 2025 PakToolsOnline - <a href="privacy-policy.html" class="hover:text-white">Privacy</a> | <a href="terms.html" class="hover:text-white">Terms</a> | <a href="contact.html" class="hover:text-white">Contact</a> | <a href="sitemap.xml" class="hover:text-white">Sitemap</a></footer>
 <script>
-const stars=document.getElementById('stars');
-for(let i=0;i<80;i++){let d=document.createElement('div');d.className='star';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';stars.appendChild(d);}
-let baseImage=null,isDrawing=false,lastX=0,lastY=0;
-const uploadArea=document.getElementById('uploadArea'),fileInput=document.getElementById('fileInput'),editor=document.getElementById('editor'),baseImg=document.getElementById('baseImg'),drawCanvas=document.getElementById('drawCanvas'),ctxDraw=drawCanvas.getContext('2d'),brushSizeInput=document.getElementById('brushSize');
-uploadArea.addEventListener('click',()=>fileInput.click());
-fileInput.addEventListener('change',e=>{if(e.target.files[0]) loadImage(e.target.files[0]);});
-uploadArea.addEventListener('dragover',e=>{e.preventDefault();}); uploadArea.addEventListener('drop',e=>{e.preventDefault(); if(e.dataTransfer.files[0]) loadImage(e.dataTransfer.files[0]);});
-brushSizeInput.addEventListener('input',e=>{document.getElementById('brushVal').innerText=e.target.value+'px';});
-function loadImage(file){let reader=new FileReader();reader.onload=(e)=>{baseImage=new Image();baseImage.onload=()=>{baseImg.src=e.target.result;baseImg.onload=()=>{setupCanvas();};uploadArea.classList.add('hidden');editor.classList.remove('hidden');};baseImage.src=e.target.result;};reader.readAsDataURL(file);}
-function setupCanvas(){let rect=baseImg.getBoundingClientRect();drawCanvas.width=baseImg.clientWidth;drawCanvas.height=baseImg.clientHeight;drawCanvas.style.width=baseImg.clientWidth+'px';drawCanvas.style.height=baseImg.clientHeight+'px';ctxDraw.lineCap='round';ctxDraw.lineJoin='round';ctxDraw.strokeStyle='rgba(255,0,80,0.85)';ctxDraw.lineWidth=parseInt(brushSizeInput.value);}
-function getPos(e){let rect=drawCanvas.getBoundingClientRect();let clientX=e.touches?e.touches[0].clientX:e.clientX;let clientY=e.touches?e.touches[0].clientY:e.clientY;return{x:clientX-rect.left,y:clientY-rect.top};}
-drawCanvas.addEventListener('mousedown',e=>{isDrawing=true;let p=getPos(e);lastX=p.x;lastY=p.y;drawDot(p.x,p.y);});
-drawCanvas.addEventListener('mousemove',e=>{if(!isDrawing)return;let p=getPos(e);drawLine(lastX,lastY,p.x,p.y);lastX=p.x;lastY=p.y;});
-window.addEventListener('mouseup',()=>isDrawing=false);
-drawCanvas.addEventListener('touchstart',e=>{e.preventDefault();isDrawing=true;let p=getPos(e);lastX=p.x;lastY=p.y;drawDot(p.x,p.y);},{passive:false});
-drawCanvas.addEventListener('touchmove',e=>{e.preventDefault();if(!isDrawing)return;let p=getPos(e);drawLine(lastX,lastY,p.x,p.y);lastX=p.x;lastY=p.y;},{passive:false});
-drawCanvas.addEventListener('touchend',()=>isDrawing=false);
-function drawDot(x,y){ctxDraw.beginPath();ctxDraw.arc(x,y,ctxDraw.lineWidth/2,0,Math.PI*2);ctxDraw.fillStyle='rgba(255,0,80,0.85)';ctxDraw.fill();}
-function drawLine(x1,y1,x2,y2){ctxDraw.lineWidth=parseInt(brushSizeInput.value);ctxDraw.strokeStyle='rgba(255,0,80,0.85)';ctxDraw.beginPath();ctxDraw.moveTo(x1,y1);ctxDraw.lineTo(x2,y2);ctxDraw.stroke();}
-function clearMask(){ctxDraw.clearRect(0,0,drawCanvas.width,drawCanvas.height);document.getElementById('resultActions').classList.add('hidden');document.getElementById('resultImg').classList.add('hidden');document.getElementById('resultPlaceholder').classList.remove('hidden');}
-function resetAll(){baseImage=null;fileInput.value='';editor.classList.add('hidden');uploadArea.classList.remove('hidden');clearMask();document.getElementById('resultImg').src='';document.getElementById('resultPlaceholder').classList.remove('hidden');}
-function keepEditing(){document.getElementById('resultActions').classList.remove('hidden');}
-async function removeObject(){let maskData=ctxDraw.getImageData(0,0,drawCanvas.width,drawCanvas.height).data;let hasMask=false;for(let i=3;i<maskData.length;i+=4){if(maskData[i]>10){hasMask=true;break;}}if(!hasMask){alert('Pehle brush se object par paint karen');return;}
-let btn=document.getElementById('removeBtn');btn.innerText='⏳ AI Removing...';btn.disabled=true;
-let pCanvas=document.getElementById('processCanvas');let pCtx=pCanvas.getContext('2d');pCanvas.width=baseImage.width;pCanvas.height=baseImage.height;pCtx.drawImage(baseImage,0,0);
-let maskCanvas=document.createElement('canvas');maskCanvas.width=baseImage.width;maskCanvas.height=baseImage.height;let mCtx=maskCanvas.getContext('2d');mCtx.drawImage(drawCanvas,0,0,baseImage.width,baseImage.height);let maskImgData=mCtx.getImageData(0,0,baseImage.width,baseImage.height);
-let imgData=pCtx.getImageData(0,0,pCanvas.width,pCanvas.height);let data=imgData.data;let mData=maskImgData.data;
-for(let y=0;y<pCanvas.height;y++){for(let x=0;x<pCanvas.width;x++){let idx=(y*pCanvas.width+x)*4;if(mData[idx+3]>20){let r=0,g=0,b=0,count=0;for(let dy=-8;dy<=8;dy++){for(let dx=-8;dx<=8;dx++){if(dx===0&&dy===0)continue;let nx=x+dx,ny=y+dy;if(nx>=0&&nx<pCanvas.width&&ny>=0&&ny<pCanvas.height){let nIdx=(ny*pCanvas.width+nx)*4;if(mData[nIdx+3]<20){r+=data[nIdx];g+=data[nIdx+1];b+=data[nIdx+2];count++;}}}}if(count>0){data[idx]=r/count;data[idx+1]=g/count;data[idx+2]=b/count;}}}}
-pCtx.putImageData(imgData,0,0);pCtx.filter='blur(1px)';pCtx.drawImage(pCanvas,0,0);pCtx.filter='none';
-let resultUrl=pCanvas.toDataURL('image/png');let resultImg=document.getElementById('resultImg');resultImg.src=resultUrl;resultImg.classList.remove('hidden');document.getElementById('resultPlaceholder').classList.add('hidden');document.getElementById('downloadBtn').href=resultUrl;document.getElementById('resultActions').classList.remove('hidden');btn.innerText='✨ Remove Object Now - AI Magic';btn.disabled=false;
+const file=document.getElementById('file'), drop=document.getElementById('drop'), canvas=document.getElementById('canvas'), ctx=canvas.getContext('2d'), brushSize=document.getElementById('brushSize'), sizeVal=document.getElementById('sizeVal');
+let img=new Image(), isDrawing=false, history=[];
+drop.onclick=()=>file.click();
+drop.ondragover=e=>{e.preventDefault()};
+drop.ondrop=e=>{e.preventDefault();handle(e.dataTransfer.files[0])};
+file.onchange=e=>handle(e.target.files[0]);
+function handle(f){
+if(!f) return;
+let url=URL.createObjectURL(f);
+img.src=url;
+img.onload=()=>{
+canvas.width=img.width; canvas.height=img.height;
+ctx.drawImage(img,0,0);
+saveHistory();
+};
 }
+function saveHistory(){history.push(canvas.toDataURL()); if(history.length>20) history.shift();}
+brushSize.oninput=()=>sizeVal.textContent=brushSize.value+'px';
+function getPos(e){
+let rect=canvas.getBoundingClientRect();
+let scaleX=canvas.width/rect.width, scaleY=canvas.height/rect.height;
+let x=(e.touches?e.touches[0].clientX:e.clientX)-rect.left;
+let y=(e.touches?e.touches[0].clientY:e.clientY)-rect.top;
+return {x:x*scaleX,y:y*scaleY};
+}
+canvas.addEventListener('mousedown',e=>{isDrawing=true; draw(getPos(e))});
+canvas.addEventListener('mousemove',e=>{if(isDrawing) draw(getPos(e))});
+canvas.addEventListener('mouseup',()=>isDrawing=false);
+canvas.addEventListener('touchstart',e=>{isDrawing=true; draw(getPos(e)); e.preventDefault()},{passive:false});
+canvas.addEventListener('touchmove',e=>{if(isDrawing) draw(getPos(e)); e.preventDefault()},{passive:false});
+canvas.addEventListener('touchend',()=>isDrawing=false);
+function draw(pos){
+ctx.globalCompositeOperation='source-over';
+ctx.fillStyle='rgba(255,0,255,0.6)';
+ctx.beginPath(); ctx.arc(pos.x,pos.y,brushSize.value/2,0,Math.PI*2); ctx.fill();
+}
+document.getElementById('removeBtn').onclick=()=>{
+// Simple smart inpaint: blur marked magenta areas with nearby pixels
+let imageData=ctx.getImageData(0,0,canvas.width,canvas.height);
+let data=imageData.data;
+// naive inpaint: for magenta mask, replace with blur of neighbors
+for(let y=1;y<canvas.height-1;y++){
+for(let x=1;x<canvas.width-1;x++){
+let i=(y*canvas.width+x)*4;
+if(data[i]>200 && data[i+1]<100 && data[i+2]>200){ // magenta mask
+let r=0,g=0,b=0,c=0;
+for(let dy=-5;dy<=5;dy++) for(let dx=-5;dx<=5;dx++){
+let ni=((y+dy)*canvas.width+(x+dx))*4;
+if(data[ni]<=200 || data[ni+1]>=100){ r+=data[ni]; g+=data[ni+1]; b+=data[ni+2]; c++;}
+}
+if(c>0){data[i]=r/c; data[i+1]=g/c; data[i+2]=b/c; data[i+3]=255;}
+}
+}
+}
+ctx.putImageData(imageData,0,0);
+saveHistory();
+};
+document.getElementById('undo').onclick=()=>{
+if(history.length>1){history.pop(); let prev=new Image(); prev.src=history[history.length-1]; prev.onload=()=>ctx.drawImage(prev,0,0);}
+};
+document.getElementById('download').onclick=()=>{
+let a=document.createElement('a'); a.href=canvas.toDataURL('image/png'); a.download='removed-object.png'; a.click();
+};
 </script>
 </body>
 </html>
