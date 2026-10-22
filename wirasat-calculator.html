@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Inheritance Calculator Pakistan 2026 - Wirasat Hisab | Islamic Hanafi | PakTools</title>
+<meta name="description" content="Islamic Inheritance Calculator Pakistan 2026 - Wirasat Calculator Hanafi. Wife husband son daughter father mother shares as per Shariah.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+*{font-family:'Inter',sans-serif}body{background:#07010f;color:white;margin:0;overflow-x:hidden}
+.bg{position:fixed;inset:0;z-index:0;background:radial-gradient(circle at 20% 20%,#0f3d2e 0%,#1a0533 45%,#020006 85%)}
+.galaxy{position:absolute;width:900px;height:900px;border-radius:50%;filter:blur(80px);opacity:0.45}
+.g1{background:radial-gradient(circle at 30% 30%,#34d399,#065f46 25%,#1a0533 60%,transparent 75%);top:-15%;left:-10%}
+.g2{background:radial-gradient(circle at 70% 70%,#a855f7,#581c87 25%,#0a0218 60%,transparent 75%);bottom:-20%;right:-10%}
+.card{background:linear-gradient(145deg,rgba(35,15,70,0.9),rgba(15,5,40,0.95));border:1px solid rgba(52,211,153,0.25);border-radius:20px}
+.input{background:rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.15);border-radius:12px;color:white;padding:12px 14px;width:100%;outline:none;font-size:14px}
+.label{font-size:11px;color:#9ca3af;letter-spacing:0.5px;text-transform:uppercase;font-weight:700;margin-bottom:6px;display:block}
+.btn{background:linear-gradient(90deg,#10b981,#059669);border-radius:12px;padding:13px;font-weight:900;font-size:14px;box-shadow:0 0 20px rgba(16,185,129,0.4)}
+</style>
+</head>
+<body>
+<div class="bg"><div class="galaxy g1"></div><div class="galaxy g2"></div></div>
+<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#07010f]/85 backdrop-blur-xl"><div class="max-w-6xl mx-auto px-6 py-4 flex justify-between"><a href="index.html" style="text-decoration:none;color:white" class="font-black text-xl flex items-center gap-2"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-emerald-400 to-emerald-700 flex items-center justify-center">P</div>PakTools</a><span class="text-[11px] bg-emerald-400/20 border border-emerald-400/30 text-emerald-300 px-3 py-2 rounded-full font-bold">NEW • ISLAMIC HIGH CPC</span></div></header>
+<main class="relative z-10 max-w-6xl mx-auto px-6 py-8">
+<div class="text-center max-w-3xl mx-auto">
+<span class="text-[11px] tracking-[2px] text-emerald-300 font-black">SHARIAH COMPLIANT • HANAFI FIQH • 2026</span>
+<h1 class="mt-2 text-3xl md:text-5xl font-black">Wirasat Calculator<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-teal-300">Islamic Inheritance</span></h1>
+</div>
+<div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="card p-6">
+<h3 class="font-black text-[13px] text-emerald-300">STEP 1 - TOTAL TARKA</h3>
+<div class="mt-4 grid gap-4"><div><span class="label">Total Jaidad (Rs.)</span><input id="total" type="number" class="input" value="5000000" oninput="calc()"></div>
+<div class="grid grid-cols-2 gap-3"><div><span class="label">Qarz</span><input id="debts" type="number" class="input" value="0" oninput="calc()"></div><div><span class="label">Funeral</span><input id="funeral" type="number" class="input" value="0" oninput="calc()"></div></div>
+<div><span class="label">Wasiyat Max 1/3</span><input id="wasiyat" type="number" class="input" value="0" oninput="calc()"></div></div>
+<h3 class="mt-7 font-black text-[13px] text-emerald-300">STEP 2 - WARIS</h3>
+<div class="mt-4 grid grid-cols-2 gap-3">
+<label class="text-[13px]"><input type="checkbox" id="hasWife" onchange="calc()"> Wife</label>
+<label class="text-[13px]"><input type="checkbox" id="hasHusband" onchange="calc()"> Husband</label>
+<label class="text-[13px]"><input type="checkbox" id="hasFather" checked onchange="calc()"> Father</label>
+<label class="text-[13px]"><input type="checkbox" id="hasMother" checked onchange="calc()"> Mother</label>
+</div>
+<div class="mt-4 grid grid-cols-2 gap-3"><div><span class="label">Sons</span><input id="sons" type="number" class="input" value="1" oninput="calc()"></div><div><span class="label">Daughters</span><input id="daughters" type="number" class="input" value="1" oninput="calc()"></div></div>
+<button class="btn w-full mt-6 text-black" onclick="calc()">Calculate Wirasat →</button>
+</div>
+<div class="card p-6 border-emerald-400/40">
+<h3 class="font-black text-[13px]">RESULT - SHARIAH COMPLIANT</h3>
+<div class="mt-4 bg-black/30 rounded-xl p-4"><div class="text-[11px] text-gray-400">Net Wirasat</div><div id="netEstate" class="text-3xl font-black">Rs. 5,000,000</div><div id="breakdown" class="mt-2 text-[11px] text-gray-500"></div></div>
+<div id="shares" class="mt-4"></div><div id="statusBox" class="mt-4 text-[11px]"></div>
+</div>
+</div>
+</main>
+<script>
+function calc(){
+ const total=parseFloat(document.getElementById('total').value)||0;
+ const debts=parseFloat(document.getElementById('debts').value)||0;
+ const funeral=parseFloat(document.getElementById('funeral').value)||0;
+ let wasiyat=parseFloat(document.getElementById('wasiyat').value)||0;
+ const maxWasiyat=total*0.3333;
+ if(wasiyat>maxWasiyat){wasiyat=maxWasiyat;document.getElementById('wasiyat').value=Math.floor(maxWasiyat);}
+ const net=Math.max(0,total-debts-funeral-wasiyat);
+ const hasWife=document.getElementById('hasWife').checked;
+ const hasHusband=document.getElementById('hasHusband').checked;
+ const hasFather=document.getElementById('hasFather').checked;
+ const hasMother=document.getElementById('hasMother').checked;
+ const sons=parseInt(document.getElementById('sons').value)||0;
+ const daughters=parseInt(document.getElementById('daughters').value)||0;
+ const hasChildren=(sons+daughters)>0;
+ document.getElementById('netEstate').innerText='Rs. '+net.toLocaleString('en-PK');
+ document.getElementById('breakdown').innerText=`Total ${total.toLocaleString()} - Debts ${debts.toLocaleString()} - Funeral ${funeral.toLocaleString()} - Wasiyat ${wasiyat.toLocaleString()}`;
+ let shares=[],remaining=net,wifeShare=0,husbandShare=0,motherShare=0,fatherShare=0;
+ if(hasWife&&hasHusband){document.getElementById('statusBox').innerHTML='<div class="bg-red-500/20 text-red-300 p-2 rounded">Wife aur Husband ek sath nahi!</div>';return;}
+ if(hasWife){wifeShare=hasChildren?net/8:net/4;shares.push({name:'Wife (Biwi)',share:wifeShare,rule:hasChildren?'1/8 (Aulad hai)':'1/4'});remaining-=wifeShare;}
+ if(hasHusband){husbandShare=hasChildren?net/4:net/2;shares.push({name:'Husband',share:husbandShare,rule:hasChildren?'1/4':'1/2'});remaining-=husbandShare;}
+ if(hasMother){motherShare=hasChildren?net/6:net/3;shares.push({name:'Mother',share:motherShare,rule:hasChildren?'1/6':'1/3'});remaining-=motherShare;}
+ if(hasFather&&hasChildren){fatherShare=net/6;shares.push({name:'Father',share:fatherShare,rule:'1/6'});remaining-=fatherShare;}
+ let childrenTotal=remaining,perUnit=0;
+ if(hasChildren){let units=sons*2+daughters*1;if(units>0){perUnit=childrenTotal/units;if(sons>0)shares.push({name:`${sons} Son(s)`,share:perUnit*2*sons,rule:`${sons*2}/${units} (2:1)`,per:`Per son: Rs. ${Math.floor(perUnit*2).toLocaleString()}`});if(daughters>0)shares.push({name:`${daughters} Daughter(s)`,share:perUnit*daughters,rule:`${daughters}/${units} (2:1)`,per:`Per daughter: Rs. ${Math.floor(perUnit).toLocaleString()}`});remaining=0;}}
+ else{if(hasFather){let extra=remaining;let fIndex=shares.findIndex(s=>s.name.includes('Father'));if(fIndex>=0){shares[fIndex].share+=extra;shares[fIndex].rule+=' + Remainder';}else shares.push({name:'Father',share:extra,rule:'Asaba'});remaining=0;}}
+ let html='';shares.forEach(s=>{html+=`<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.07);font-size:13px"><div><div class="font-bold">${s.name}</div><div class="text-[10px] text-gray-500">${s.rule} ${s.per?'<br>'+s.per:''}</div></div><div class="font-black text-emerald-300">Rs. ${Math.floor(s.share).toLocaleString()}</div></div>`;});
+ document.getElementById('shares').innerHTML=html;
+ let totalCheck=shares.reduce((a,b)=>a+b.share,0);
+ document.getElementById('statusBox').innerHTML=`<div class="bg-emerald-500/15 border border-emerald-500/30 text-emerald-200 p-2 rounded">✓ Distributed: Rs. ${Math.floor(totalCheck).toLocaleString()} | Net: Rs. ${net.toLocaleString()}</div>`;
+}calc();
+</script>
+</body>
+</html>
