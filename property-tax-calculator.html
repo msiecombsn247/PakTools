@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Property Tax Calculator Pakistan 2026-27 - Transfer Tax Filer Non-Filer | PakTools</title>
+<meta name="description" content="Property Transfer Tax Calculator Pakistan 2026-27 - FBR 236C 236K Filer 3% Non-Filer 6% Stamp Duty 1% CVT.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+*{font-family:'Inter',sans-serif}body{background:#07010f;color:white;margin:0}
+.bg{position:fixed;inset:0;z-index:0;background:radial-gradient(circle at 20% 20%,#1e3a8a 0%,#1a0533 45%,#020006 85%)}
+.galaxy{position:absolute;width:900px;height:900px;border-radius:50%;filter:blur(80px);opacity:0.45}
+.g1{background:radial-gradient(circle at 30% 30%,#60a5fa,#1e40af 25%,#1a0533 60%,transparent 75%);top:-15%;left:-10%}
+.g2{background:radial-gradient(circle at 70% 70%,#a855f7,#581c87 25%,#0a0218 60%,transparent 75%);bottom:-20%;right:-10%}
+.card{background:linear-gradient(145deg,rgba(30,20,70,0.9),rgba(15,5,40,0.95));border:1px solid rgba(96,165,250,0.25);border-radius:20px}
+.input,.select{background:rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.15);border-radius:12px;color:white;padding:12px 14px;width:100%;font-size:14px}
+.label{font-size:11px;color:#9ca3af;text-transform:uppercase;font-weight:700;margin-bottom:6px;display:block}
+.btn{background:linear-gradient(90deg,#3b82f6,#1d4ed8);border-radius:12px;padding:13px;font-weight:900;box-shadow:0 0 20px rgba(59,130,246,0.4)}
+.row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:13px}
+</style>
+</head>
+<body>
+<div class="bg"><div class="galaxy g1"></div><div class="galaxy g2"></div></div>
+<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#07010f]/85 backdrop-blur-xl"><div class="max-w-6xl mx-auto px-6 py-4 flex justify-between"><a href="index.html" class="font-black text-xl flex items-center gap-2"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-400 to-blue-700 flex items-center justify-center">P</div>PakTools</a><span class="text-[11px] bg-blue-400/20 border border-blue-400/30 text-blue-300 px-3 py-2 rounded-full font-bold">NEW • REAL ESTATE HIGH CPC</span></div></header>
+<main class="relative z-10 max-w-6xl mx-auto px-6 py-8">
+<div class="text-center max-w-3xl mx-auto">
+<span class="text-[11px] tracking-[2px] text-blue-300 font-black">FBR 236C • 236K • FILER 2026-27</span>
+<h1 class="mt-2 text-3xl md:text-5xl font-black">Property Tax Calculator<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">Transfer Tax Pakistan</span></h1>
+</div>
+<div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="card p-6">
+<h3 class="font-black text-[13px] text-blue-300">STEP 1 - VALUE</h3>
+<div class="mt-4 grid gap-4">
+<div><span class="label">DC / FBR Value (Rs.)</span><input id="value" type="number" class="input" value="10000000" oninput="calc()"></div>
+<div class="grid grid-cols-2 gap-3">
+<div><span class="label">Buyer Status</span><select id="buyerStatus" class="select" onchange="calc()"><option value="filer">Filer - 3%</option><option value="late">Late Filer - 4.5%</option><option value="non">Non-Filer - 6%</option></select></div>
+<div><span class="label">Seller Status</span><select id="sellerStatus" class="select" onchange="calc()"><option value="filer">Filer - 3%</option><option value="late">Late Filer - 4.5%</option><option value="non">Non-Filer - 6%</option></select></div>
+</div>
+<div class="grid grid-cols-2 gap-3"><div><span class="label">Holding Period</span><select id="holding" class="select" onchange="calc()"><option value="less1">Less than 1 Year</option><option value="1-2">1-2 Years</option><option value="2-4">2-4 Years</option><option value="more4" selected>More than 4 Years</option></select></div><div><span class="label">Type</span><select id="ptype" class="select" onchange="calc()"><option>Open Plot</option><option>House</option><option>Apartment</option></select></div></div>
+<div class="flex gap-2"><input type="checkbox" id="isGain" checked onchange="calc()"><label class="text-[12px] text-gray-400">Gain Tax Applicable?</label></div>
+<button class="btn w-full mt-4" onclick="calc()">Calculate Transfer Tax →</button>
+</div>
+</div>
+<div class="card p-6 border-blue-400/30">
+<h3 class="font-black text-[13px]">RESULT - FBR COMPLIANT</h3>
+<div class="mt-4 bg-black/30 rounded-xl p-4"><div id="totalTax" class="text-3xl font-black">Rs. 900,000</div><div id="breakdown" class="text-[11px] text-gray-500 mt-1"></div></div>
+<div class="mt-4"><h4 class="text-[11px] text-blue-300 font-black">BUYER TAXES</h4><div id="buyerTaxes"></div></div>
+<div class="mt-4"><h4 class="text-[11px] text-purple-300 font-black">SELLER TAXES</h4><div id="sellerTaxes"></div></div>
+<div id="statusBox" class="mt-4 text-[11px]"></div>
+</div>
+</div>
+</div>
+<script>
+function calc(){
+ const val=parseFloat(document.getElementById('value').value)||0;
+ const buyerStatus=document.getElementById('buyerStatus').value;
+ const sellerStatus=document.getElementById('sellerStatus').value;
+ const holding=document.getElementById('holding').value;
+ const isGain=document.getElementById('isGain').checked;
+ let buyerRate=buyerStatus==='filer'?0.03:buyerStatus==='late'?0.045:0.06;
+ let sellerRate=sellerStatus==='filer'?0.03:sellerStatus==='late'?0.045:0.06;
+ let buyer236K=val*buyerRate;let seller236C=val*sellerRate;let stamp=val*0.01;let cvt=val*0.02;
+ let gainTax=0;if(isGain){let gainRate=holding==='less1'?0.15:holding==='1-2'?0.10:holding==='2-4'?0.075:0;gainTax=val*gainRate*0.15;}
+ let buyerTotal=buyer236K+stamp+cvt;let sellerTotal=seller236C+gainTax;let total=buyerTotal+sellerTotal;
+ document.getElementById('totalTax').innerText='Rs. '+Math.floor(total).toLocaleString('en-PK');
+ document.getElementById('breakdown').innerText=`On DC Value Rs. ${val.toLocaleString()}`;
+ document.getElementById('buyerTaxes').innerHTML=`<div class="row"><div>236K Advance ${buyerRate*100}%</div><div class="font-bold text-blue-300">Rs. ${Math.floor(buyer236K).toLocaleString()}</div></div><div class="row"><div>Stamp 1%</div><div>Rs. ${Math.floor(stamp).toLocaleString()}</div></div><div class="row"><div>CVT 2%</div><div>Rs. ${Math.floor(cvt).toLocaleString()}</div></div><div class="row font-black"><div>Buyer Total</div><div class="text-blue-300">Rs. ${Math.floor(buyerTotal).toLocaleString()}</div></div>`;
+ document.getElementById('sellerTaxes').innerHTML=`<div class="row"><div>236C Advance ${sellerRate*100}%</div><div class="font-bold text-purple-300">Rs. ${Math.floor(seller236C).toLocaleString()}</div></div><div class="row"><div>Gain Tax</div><div>Rs. ${Math.floor(gainTax).toLocaleString()}</div></div><div class="row font-black"><div>Seller Total</div><div class="text-purple-300">Rs. ${Math.floor(sellerTotal).toLocaleString()}</div></div>`;
+ document.getElementById('statusBox').innerHTML=`<div class="bg-blue-500/15 border border-blue-500/30 text-blue-200 p-3 rounded">✓ Filer saves Rs. ${Math.floor(val*0.03).toLocaleString()} vs Non-Filer | Finance Act 2025-26</div>`;
+}calc();
+</script>
+</body>
+</html>
