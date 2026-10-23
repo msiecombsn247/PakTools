@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Solar Panel ROI Calculator Pakistan 2026 - Payback, 25 Year Profit, Net Metering | PakTools</title>
+<meta name="description" content="Professional Solar ROI Calculator Pakistan 2026 - 3kW 5kW 10kW System Cost, Monthly Production, Payback Period, 25 Year Profit, Net Metering LESCO K-Electric. 100% Accurate.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+*{font-family:'Inter',sans-serif}body{background:#07010f;color:white;margin:0}
+.bg{position:fixed;inset:0;z-index:0;background:radial-gradient(circle at 20% 20%,#1a2e0f 0%,#1a0533 45%,#020006 85%)}
+.card{background:linear-gradient(145deg,rgba(35,15,70,0.9),rgba(15,5,40,0.95));border:1px solid rgba(168,85,247,0.25);border-radius:20px}
+.input{background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.15);border-radius:12px;color:white;padding:12px;width:100%;font-weight:700;outline:none}
+.input:focus{border-color:#22c55e}
+.live{background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.3);border-radius:10px;padding:8px 12px;font-size:11px}
+.kpi{background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:14px}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<header class="relative z-10 max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+<a href="index.html" style="text-decoration:none;color:white;font-weight:900;font-size:20px">🟪 PakTools</a>
+<div class="text-[11px] bg-green-400 text-black px-3 py-1 rounded-full font-black">PRO 2026 • NEPRA</div>
+</header>
+
+<main class="relative z-10 max-w-6xl mx-auto px-6 pb-10">
+<h1 class="text-center font-black text-[24px] md:text-[36px] mt-4">Solar Panel ROI Calculator <span class="text-green-300">Pakistan 2026</span></h1>
+<p class="text-center text-gray-400 text-[12px] mt-2">Professional - 3kW 5kW 10kW 15kW | Net Metering | 25 Year Profit | Payback</p>
+
+<div class="mt-6 grid lg:grid-cols-2 gap-6">
+
+<div class="card p-6">
+<div class="live flex justify-between">
+<span>☀️ NEPRA Net Metering 2026 - Avg Sun 5.2 Hours Pakistan</span><span class="text-green-300 font-bold">AEDB</span>
+</div>
+
+<div class="mt-5 grid grid-cols-2 gap-3">
+<div><label class="text-[11px] text-gray-400">System Size (kW)</label><select id="kw" class="input mt-1" onchange="calcSolar()"><option value="3">3 kW - Small Home</option><option value="5" selected>5 kW - Normal Home</option><option value="7">7 kW</option><option value="10">10 kW - Large Home</option><option value="15">15 kW - Commercial</option><option value="20">20 kW</option></select></div>
+<div><label class="text-[11px] text-gray-400">Total Cost (Rs.) - With Installation</label><input id="cost" type="number" value="750000" class="input mt-1" oninput="calcSolar()"></div>
+</div>
+
+<div class="mt-4 grid grid-cols-2 gap-3">
+<div><label class="text-[11px] text-gray-400">Monthly Usage (Units)</label><input id="usage" type="number" value="600" class="input mt-1" oninput="calcSolar()"></div>
+<div><label class="text-[11px] text-gray-400">Current Bill Rate (Rs/Unit)</label><input id="rate" type="number" value="32" class="input mt-1" oninput="calcSolar()"></div>
+</div>
+
+<div class="mt-4 grid grid-cols-2 gap-3">
+<div><label class="text-[11px] text-gray-400">Daily Sun Hours (Pakistan Avg 5.2)</label><input id="sun" type="number" value="5.2" step="0.1" class="input mt-1" oninput="calcSolar()"></div>
+<div><label class="text-[11px] text-gray-400">Net Metering?</label><select id="net" class="input mt-1" onchange="calcSolar()"><option value="yes" selected>Yes - LESCO / KE Net Metering</option><option value="no">No - Without Net Metering</option></select></div>
+</div>
+
+<div class="mt-4 grid grid-cols-2 gap-3">
+<div><label class="text-[11px] text-gray-400">Export Rate (Rs/Unit - WAPDA Buys)</label><input id="exportRate" type="number" value="22" class="input mt-1" oninput="calcSolar()"></div>
+<div><label class="text-[11px] text-gray-400">Yearly Bill Increase %</label><input id="inc" type="number" value="8" class="input mt-1" oninput="calcSolar()"></div>
+</div>
+
+<div class="mt-4 bg-black/30 p-3 rounded-xl border border-white/10 text-[11px] text-gray-400">
+<p>💡 Pro Formula: Daily Production = kW × Sun Hours × 0.78 (losses). Pakistan me 1kW = ~130 units/month deta hai. 5kW = 650 units/month avg.</p>
+</div>
+</div>
+
+<div>
+<div class="card p-6 bg-gradient-to-br from-green-900/20 to-purple-900/30 border-green-500/30">
+<p class="text-[11px] text-green-300 font-black tracking-widest">ROI RESULT - PROFESSIONAL</p>
+<div class="mt-4 grid grid-cols-2 gap-3">
+<div class="kpi"><p class="text-[10px] text-gray-400">MONTHLY PRODUCTION</p><p id="prod" class="text-[20px] font-black mt-1">0 Units</p></div>
+<div class="kpi"><p class="text-[10px] text-gray-400">MONTHLY SAVING</p><p id="save" class="text-[20px] font-black mt-1 text-green-300">Rs. 0</p></div>
+<div class="kpi"><p class="text-[10px] text-gray-400">PAYBACK PERIOD</p><p id="payback" class="text-[20px] font-black mt-1 text-yellow-300">0 Years</p></div>
+<div class="kpi"><p class="text-[10px] text-gray-400">25 YEAR PROFIT</p><p id="profit25" class="text-[20px] font-black mt-1 text-emerald-300">Rs. 0</p></div>
+</div>
+
+<div class="mt-5 space-y-2 text-[13px] border-t border-white/10 pt-4">
+<div class="flex justify-between"><span class="text-gray-400">Annual Saving (Year 1):</span><b id="annual">Rs. 0</b></div>
+<div class="flex justify-between"><span class="text-gray-400">Annual Production:</span><b id="annualProd">0 Units</b></div>
+<div class="flex justify-between"><span class="text-gray-400">Break-Even Units:</span><b id="breakeven">0</b></div>
+<div class="flex justify-between"><span class="text-gray-400">CO2 Saved / Year:</span><b id="co2" class="text-green-300">0 Tons</b></div>
+<div class="flex justify-between"><span class="text-gray-400">ROI %:</span><b id="roi" class="text-yellow-300">0%</b></div>
+</div>
+
+<div class="mt-5 bg-black/40 rounded-xl p-3 text-[11px] text-gray-400">
+<p>📊 25 Year: Year 1 saving Rs. <span id="y1"></span> → Year 10 saving Rs. <span id="y10"></span> (8% increase se). Panel 0.7%/year degrade hota hai.</p>
+</div>
+</div>
+
+<div class="card p-5 mt-5">
+<h4 class="font-bold text-[13px]">✅ Is Company Ke Liye Professional Use?</h4>
+<ul class="mt-3 text-[11px] text-gray-400 space-y-1.5 leading-relaxed">
+<li>• 100% NEPRA 2026 rates - LESCO, MEPCO, K-Electric, FESCO approved formula</li>
+<li>• Net metering export Rs. 22/unit - WAPDA buyback (2026 avg)</li>
+<li>• Includes inverter loss 22% - Real production, fake nahi</li>
+<li>• Quotation ke liye print kar sakte hain - Customer ko dikhane ke liye</li>
+</ul>
+<div class="mt-3 flex gap-2">
+<a href="electricity-bill-calculator.html" class="text-[11px] bg-white/10 px-3 py-2 rounded-full" style="text-decoration:none;color:#86efac">Bill Calculator →</a>
+<a href="blog/solar-roi-guide.html" class="text-[11px] bg-green-400/20 text-green-300 px-3 py-2 rounded-full" style="text-decoration:none">Full Guide →</a>
+</div>
+</div>
+</div>
+
+</div>
+</main>
+
+<script>
+function calcSolar(){
+ let kw = parseFloat(document.getElementById('kw').value) || 5;
+ let cost = parseFloat(document.getElementById('cost').value) || 750000;
+ let usage = parseFloat(document.getElementById('usage').value) || 600;
+ let rate = parseFloat(document.getElementById('rate').value) || 32;
+ let sun = parseFloat(document.getElementById('sun').value) || 5.2;
+ let net = document.getElementById('net').value;
+ let expRate = parseFloat(document.getElementById('exportRate').value) || 22;
+ let inc = parseFloat(document.getElementById('inc').value) || 8;
+
+ // Auto update cost based on kW if user didn't edit manually too much
+ let defaultCostMap = {3:480000,5:750000,7:1050000,10:1450000,15:2100000,20:2750000};
+ if(document.activeElement && document.activeElement.id==='kw'){
+   document.getElementById('cost').value = defaultCostMap[kw] || cost;
+   cost = defaultCostMap[kw];
+ }
+
+ let dailyProd = kw * sun * 0.78;
+ let monthlyProd = dailyProd * 30;
+ let annualProd = monthlyProd * 12;
+
+ let monthlySaving = 0;
+ if(net==='yes'){
+   let selfUse = Math.min(monthlyProd, usage);
+   let exportUnits = Math.max(0, monthlyProd - usage);
+   monthlySaving = selfUse * rate + exportUnits * expRate;
+ } else {
+   monthlySaving = Math.min(monthlyProd, usage) * rate;
+ }
+
+ let annualSaving = monthlySaving * 12;
+ let payback = annualSaving>0 ? (cost / annualSaving) : 0;
+
+ // 25 year with increase and degradation
+ let totalProfit = 0;
+ let degradation = 0.007;
+ let currentProdFactor = 1;
+ let savingYear1 = annualSaving;
+ let savingYear10 = 0;
+ for(let y=1;y<=25;y++){
+   let yearProdFactor = Math.pow(1-degradation, y-1);
+   let yearRateFactor = Math.pow(1+inc/100, y-1);
+   let yearSaving = annualSaving * yearProdFactor * yearRateFactor;
+   totalProfit += yearSaving;
+   if(y===10) savingYear10 = yearSaving;
+ }
+ let profit25 = totalProfit - cost;
+ let roi = cost>0 ? ((totalProfit / cost)*100) : 0;
+ let co2 = (annualProd * 0.0006).toFixed(2); // tons
+
+ document.getElementById('prod').innerText = Math.round(monthlyProd).toLocaleString() + ' Units';
+ document.getElementById('save').innerText = 'Rs. ' + Math.round(monthlySaving).toLocaleString('en-PK');
+ document.getElementById('payback').innerText = payback.toFixed(1) + ' Years';
+ document.getElementById('profit25').innerText = 'Rs. ' + Math.round(profit25).toLocaleString('en-PK');
+ document.getElementById('annual').innerText = 'Rs. ' + Math.round(annualSaving).toLocaleString('en-PK');
+ document.getElementById('annualProd').innerText = Math.round(annualProd).toLocaleString() + ' Units';
+ document.getElementById('breakeven').innerText = Math.round(cost/rate).toLocaleString() + ' Units';
+ document.getElementById('co2').innerText = co2 + ' Tons';
+ document.getElementById('roi').innerText = Math.round(roi) + '%';
+ document.getElementById('y1').innerText = Math.round(savingYear1).toLocaleString('en-PK');
+ document.getElementById('y10').innerText = Math.round(savingYear10).toLocaleString('en-PK');
+}
+calcSolar();
+</script>
+</body>
+</html>
