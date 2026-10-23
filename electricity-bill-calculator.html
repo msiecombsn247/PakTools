@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Electricity Bill Calculator Pakistan 2026 - LESCO K-Electric Slab 2026 | PakTools</title>
+<meta name="description" content="Electricity Bill Calculator 2026 Pakistan - LESCO, K-Electric, MEPCO, FESCO, GEPCO. New Slab Rate 2026, Fuel Adjustment, Quarter Tariff. Calculate WAPDA Bill online.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+*{font-family:'Inter',sans-serif}body{background:#07010f;color:white;margin:0}
+.bg{position:fixed;inset:0;z-index:0;background:radial-gradient(circle at 20% 20%,#3d2e0f 0%,#1a0533 45%,#020006 85%)}
+.card{background:linear-gradient(145deg,rgba(35,15,70,0.9),rgba(15,5,40,0.95));border:1px solid rgba(168,85,247,0.25);border-radius:20px}
+.input{background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.15);border-radius:12px;color:white;padding:12px;width:100%;font-weight:700;outline:none}
+.input:focus{border-color:#facc15}
+.live{background:rgba(250,204,21,0.15);border:1px solid rgba(250,204,21,0.3);border-radius:10px;padding:8px 12px;font-size:11px}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<header class="relative z-10 max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+<a href="index.html" style="text-decoration:none;color:white;font-weight:900;font-size:20px">🟪 PakTools</a>
+<div class="text-[11px] bg-yellow-400 text-black px-3 py-1 rounded-full font-black">SLAB 2026 LIVE</div>
+</header>
+
+<main class="relative z-10 max-w-6xl mx-auto px-6 pb-10">
+<h1 class="text-center font-black text-[24px] md:text-[36px] mt-4">Electricity Bill Calculator 2026 <span class="text-yellow-300">LESCO K-Electric</span></h1>
+<p class="text-center text-gray-400 text-[12px] mt-2">New WAPDA Slab Rate July 2026 | Protected / Non-Protected | Fuel + Quarter Tariff</p>
+
+<div class="mt-6 grid md:grid-cols-2 gap-6">
+
+<div class="card p-6">
+<div class="live flex justify-between">
+<span>⚡ NEPRA New Tariff 2026 - July Update</span><span class="text-yellow-300 font-bold">NEPRA.PK</span>
+</div>
+
+<div class="mt-5">
+<h3 class="font-bold text-yellow-300 text-[14px]">1. Units Consumed</h3>
+<label class="text-[11px] text-gray-400 mt-3 block">Total Units (kWh) - Bijli ke unit</label>
+<input id="units" type="number" value="300" class="input mt-1" oninput="calcBill()">
+<p class="text-[10px] text-gray-500 mt-1">Example: 100, 200, 300, 500 units</p>
+
+<label class="text-[11px] text-gray-400 mt-4 block">Consumer Type</label>
+<select id="type" class="input mt-1" onchange="calcBill()">
+<option value="nonprotected">Non-Protected (Normal)</option>
+<option value="protected">Protected (Last 6 months <200 units)</option>
+</select>
+
+<label class="text-[11px] text-gray-400 mt-4 block">Phase</label>
+<select id="phase" class="input mt-1" onchange="calcBill()">
+<option value="single">Single Phase (Gharelu)</option>
+<option value="three">Three Phase / Commercial</option>
+</select>
+</div>
+
+<div class="mt-6">
+<h3 class="font-bold text-gray-300 text-[14px]">2. Extra Charges (Auto)</h3>
+<div class="grid grid-cols-2 gap-3 mt-3">
+<div><label class="text-[11px] text-gray-400">Fuel Adjustment (FPA)</label><input id="fpa" type="number" value="3.5" step="0.1" class="input mt-1" oninput="calcBill()"></div>
+<div><label class="text-[11px] text-gray-400">Quarterly Tariff</label><input id="qta" type="number" value="2.1" step="0.1" class="input mt-1" oninput="calcBill()"></div>
+</div>
+</div>
+</div>
+
+<div>
+<div class="card p-6 bg-gradient-to-br from-yellow-900/20 to-purple-900/30 border-yellow-500/30">
+<p class="text-[11px] text-yellow-300 font-black tracking-widest">TOTAL BILL ESTIMATE</p>
+<p id="billAmount" class="text-[42px] font-black mt-2">Rs. 0</p>
+<p class="text-[12px] text-gray-400">LESCO / MEPCO / FESCO / K-Electric</p>
+
+<div class="mt-6 space-y-3 text-[13px] border-t border-white/10 pt-4">
+<div class="flex justify-between"><span class="text-gray-400">Energy Charges:</span><b id="energy">Rs. 0</b></div>
+<div class="flex justify-between"><span class="text-gray-400">Fuel Adj (FPA):</span><b id="fuel">Rs. 0</b></div>
+<div class="flex justify-between"><span class="text-gray-400">Qtr Tariff (QTA):</span><b id="qtar">Rs. 0</b></div>
+<div class="flex justify-between"><span class="text-gray-400">Electricity Duty:</span><b id="duty">Rs. 0</b></div>
+<div class="flex justify-between"><span class="text-gray-400">GST 18% + TV Fee 35:</span><b id="gst">Rs. 0</b></div>
+<div class="flex justify-between text-yellow-300"><span>Per Unit Avg Rate:</span><b id="perunit">Rs. 0</b></div>
+</div>
+
+<div class="mt-5 bg-black/40 rounded-xl p-3 text-[11px] text-gray-400">
+<p>💡 Slab 2026: 1-100=Rs14.16 | 101-200=Rs18.12 | 201-300=Rs24.21 | 301-400=Rs27.15 | 401-500=Rs29.96 | 500+=Rs32.27</p>
+<p class="mt-1">Protected slab 50% sasta hai - NEPRA July 2026</p>
+</div>
+</div>
+
+<div class="card p-5 mt-5">
+<h4 class="font-bold text-[13px]">📖 Bijli Bill Kaise Check Kare?</h4>
+<ul class="mt-3 text-[11px] text-gray-400 space-y-1.5 leading-relaxed">
+<li>• Units x Slab Rate = Energy Charges</li>
+<li>• Protected consumer ko 6 month tak <200 unit pe discount milta hai</li>
+<li>• Fuel Adjustment har month change hota hai - approx Rs 3-5/unit</li>
+<li>• Total Bill = Energy + FPA + QTA + Duty + GST + TV Fee 35</li>
+</ul>
+<div class="mt-3 flex gap-2">
+<a href="blog/electricity-bill-guide.html" class="text-[11px] bg-white/10 px-3 py-2 rounded-full" style="text-decoration:none;color:#fde047">Full Slab Guide →</a>
+<a href="explore.html" class="text-[11px] bg-yellow-400/20 text-yellow-300 px-3 py-2 rounded-full" style="text-decoration:none">All 32 Tools →</a>
+</div>
+</div>
+</div>
+
+</div>
+</main>
+
+<script>
+function calcBill(){
+ let u = parseFloat(document.getElementById('units').value) || 0;
+ let fpaRate = parseFloat(document.getElementById('fpa').value) || 0;
+ let qtaRate = parseFloat(document.getElementById('qta').value) || 0;
+ let type = document.getElementById('type').value;
+
+ let remaining = u;
+ let energy = 0;
+ let slabs = type==='protected' ? 
+ [{l:100,r:9.5},{l:100,r:12.8},{l:100,r:18.5},{l:100,r:22.5},{l:100,r:25.5},{l:9999,r:28.5}] :
+ [{l:100,r:14.16},{l:100,r:18.12},{l:100,r:24.21},{l:100,r:27.15},{l:100,r:29.96},{l:9999,r:32.27}];
+
+ for(let s of slabs){
+   if(remaining<=0) break;
+   let use = Math.min(remaining, s.l);
+   energy += use * s.r;
+   remaining -= use;
+ }
+
+ let fuel = u * fpaRate;
+ let qta = u * qtaRate;
+ let duty = energy * 0.015;
+ let subtotal = energy + fuel + qta + duty;
+ let gst = subtotal * 0.18;
+ let tv = u>0?35:0;
+ let total = subtotal + gst + tv;
+
+ document.getElementById('billAmount').innerText = 'Rs. ' + Math.round(total).toLocaleString('en-PK');
+ document.getElementById('energy').innerText = 'Rs. ' + Math.round(energy).toLocaleString('en-PK');
+ document.getElementById('fuel').innerText = 'Rs. ' + Math.round(fuel).toLocaleString('en-PK');
+ document.getElementById('qtar').innerText = 'Rs. ' + Math.round(qta).toLocaleString('en-PK');
+ document.getElementById('duty').innerText = 'Rs. ' + Math.round(duty).toLocaleString('en-PK');
+ document.getElementById('gst').innerText = 'Rs. ' + Math.round(gst+tv).toLocaleString('en-PK');
+ document.getElementById('perunit').innerText = 'Rs. ' + (u>0?(total/u).toFixed(2):0);
+}
+calcBill();
+</script>
+</body>
+</html>
