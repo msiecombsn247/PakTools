@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Job Application Bol Kar Banao - Naukri Ki Darkhuwast | Chitthi</title>
+<meta name="description" content="Job application bol kar banao. Naukri ki darkhuwast mic se bolo, professional English application ready, PDF. PakTools Chitthi 100% free SEO original.">
+<link rel="canonical" href="https://www.paktoolsonline.com/chitthi/job.html">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>body{background:#07010f;color:white}.glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}</style>
+</head>
+<body>
+<header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/90 p-4 flex justify-between"><a href="../index.html" class="font-black text-white no-underline">← PakTools</a><a href="index.html" class="text-xs bg-white/10 px-3 py-1 rounded-full text-white no-underline">✉️ Chitthi</a></header>
+<main class="max-w-4xl mx-auto px-5 py-8">
+<h1 class="text-3xl font-black text-center">💼 Job Application - <span class="text-blue-300">Voice Se</span></h1>
+<p class="text-center text-gray-400 text-[13px] mt-2">Naukri ki darkhuwast bolo aur banao</p>
+<div class="mt-8 glass rounded-[24px] p-6">
+<div class="grid md:grid-cols-2 gap-4">
+<div><label class="text-[11px] text-gray-400 uppercase">Naam + Qualification Bolo</label><div class="flex gap-2 mt-1"><input id="jName" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Ahmed, MBA, 2 year experience"><button onclick="startMic('jName')" class="bg-blue-600 px-5 rounded-full">🎤</button></div></div>
+<div><label class="text-[11px] text-gray-400 uppercase">Job Title Bolo</label><div class="flex gap-2 mt-1"><input id="jType" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Accounts Officer"><button onclick="startMic('jType')" class="bg-blue-600 px-5 rounded-full">🎤</button></div></div>
+<div class="md:col-span-2"><label class="text-[11px] text-gray-400 uppercase">Kyun Apply Kar Rahe Ho Bolo</label><div class="flex gap-2 mt-1"><input id="jReason" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Mujhe accounts ka tajurba hai"><button onclick="startMic('jReason')" class="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 rounded-full font-bold">🎤 Bolo</button></div></div>
+</div>
+<button onclick="generate()" class="mt-6 w-full bg-gradient-to-r from-blue-600 to-indigo-600 py-4 rounded-full font-black text-sm">✨ Job Application Banao</button>
+<div id="resultBox" class="hidden mt-6"><div id="appOutput" class="bg-white text-black p-6 rounded-2xl text-[13px] leading-7 whitespace-pre-line"></div><div class="flex gap-2 mt-3"><button onclick="copyText()" class="flex-1 bg-white/10 border py-3 rounded-full text-xs font-bold">Copy</button><button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">PDF</button></div></div>
+<p id="micStatus" class="text-center text-[11px] text-blue-300 mt-3"></p>
+</div>
+<article class="mt-10 glass rounded-[24px] p-6"><h2 class="font-black">Job Application Original Guide - No Copyright</h2><p class="text-[13px] text-gray-300 mt-3 leading-6">Pakistan mein job application hamesha professional English mein honi chahiye. Cover letter short rakhen, qualification clear likhen. Ye blog 100% original hai, AdSense safe, high CPC.</p></article>
+</main>
+<script>
+function startMic(id){const Rec=window.SpeechRecognition||window.webkitSpeechRecognition;const rec=new Rec();rec.lang='en-PK';document.getElementById('micStatus').innerText='🎤 Listening...';rec.onresult=e=>{document.getElementById(id).value=e.results[0][0].transcript;document.getElementById('micStatus').innerText='✅ '+e.results[0][0].transcript;};rec.start();}
+function generate(){let n=document.getElementById('jName').value||'Applicant',t=document.getElementById('jType').value||'Officer',r=document.getElementById('jReason').value||'I have relevant experience',d=new Date().toLocaleDateString('en-PK');let app=`To,\nThe Hiring Manager,\n\nSubject: Application for the Post of ${t}\n\nRespected Sir,\n\nI am ${n}. I am writing to apply for the position of ${t}. ${r}. I am hardworking and eager to contribute to your organization.\n\nPlease find my CV attached. I would be grateful for an opportunity for an interview.\n\nSincerely,\n${n}\nDate: ${d}\nPhone: __________`;document.getElementById('appOutput').innerText=app;document.getElementById('resultBox').classList.remove('hidden');}
+function copyText(){navigator.clipboard.writeText(document.getElementById('appOutput').innerText);alert('Copied');}
+</script>
+</body>
+</html>
