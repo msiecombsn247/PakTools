@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fee Maafi Application - School College Fee Concession | Bol Kar Banao</title>
+<meta name="description" content="Fee maafi ki application bol kar banao. School, College fee maaf, qist. Urdu mein bolo mic se, PDF download. 100% free original content.">
+<link rel="canonical" href="https://www.paktoolsonline.com/chitthi/fee.html">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>body{background:#07010f;color:white}.glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}</style>
+</head>
+<body>
+<header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/90 p-4 flex justify-between"><a href="../index.html" class="font-black text-white no-underline">← PakTools</a><a href="index.html" class="text-xs bg-white/10 px-3 py-1 rounded-full text-white no-underline">✉️ Chitthi</a></header>
+<main class="max-w-4xl mx-auto px-5 py-8">
+<h1 class="text-3xl font-black text-center">💰 Fee Maafi - <span class="text-emerald-300">Bol Kar Banao</span></h1>
+<div class="mt-8 glass rounded-[24px] p-6">
+<div class="grid md:grid-cols-2 gap-4">
+<div><label class="text-[11px] text-gray-400 uppercase">Naam + Class Bolo</label><div class="flex gap-2 mt-1"><input id="fName" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Ali, Class 10th"><button onclick="startMic('fName')" class="bg-emerald-600 px-5 rounded-full">🎤</button></div></div>
+<div><label class="text-[11px] text-gray-400 uppercase">Fee Qisam Bolo</label><div class="flex gap-2 mt-1"><input id="fType" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Puri fee maafi, ya qist"><button onclick="startMic('fType')" class="bg-emerald-600 px-5 rounded-full">🎤</button></div></div>
+<div class="md:col-span-2"><label class="text-[11px] text-gray-400 uppercase">Wajah Bolo</label><div class="flex gap-2 mt-1"><input id="fReason" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Walid mazdoor hain, fee nahi de sakte"><button onclick="startMic('fReason')" class="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 rounded-full font-bold">🎤 Bolo</button></div></div>
+</div>
+<button onclick="generate()" class="mt-6 w-full bg-gradient-to-r from-emerald-600 to-teal-600 py-4 rounded-full font-black text-sm">✨ Fee Application Banao</button>
+<div id="resultBox" class="hidden mt-6"><div id="appOutput" class="bg-white text-black p-6 rounded-2xl text-[13px] leading-7 whitespace-pre-line"></div><div class="flex gap-2 mt-3"><button onclick="copyText()" class="flex-1 bg-white/10 border py-3 rounded-full text-xs font-bold">Copy</button><button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">PDF</button></div></div>
+<p id="micStatus" class="text-center text-[11px] text-emerald-300 mt-3"></p>
+</div>
+</main>
+<script>
+function startMic(id){const Rec=window.SpeechRecognition||window.webkitSpeechRecognition;const rec=new Rec();rec.lang='ur-PK';document.getElementById('micStatus').innerText='🎤 Sun raha...';rec.onresult=e=>{document.getElementById(id).value=e.results[0][0].transcript;document.getElementById('micStatus').innerText='✅ '+e.results[0][0].transcript;};rec.start();}
+function generate(){let n=document.getElementById('fName').value||'Student',t=document.getElementById('fType').value||'Fee Maafi',r=document.getElementById('fReason').value||'financial problem',d=new Date().toLocaleDateString('en-PK');let app=`Bakhidmat Janab Principal Sahab,\nMozoo: ${t} ki Darkhuwast\n\nGuzarish hai ke main ${n} hun. ${r} ki wajah se ${t} ki darkhuwast kar raha hun. Meherbani farma kar meri ${t} manzoor farmayen.\n\nShukriya,\n${n}\nTarikh: ${d}`;document.getElementById('appOutput').innerText=app;document.getElementById('resultBox').classList.remove('hidden');}
+function copyText(){navigator.clipboard.writeText(document.getElementById('appOutput').innerText);alert('Copied');}
+</script>
+</body>
+</html>
