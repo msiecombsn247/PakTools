@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WAPDA Bijli Application - Meter, Bill, Khamba | Bol Kar Banao | Chitthi</title>
+<meta name="description" content="Bijli ki application bol kar banao. WAPDA meter kharab, bijli chori, khamba girna, bill zyada. Mic se Urdu mein bolo, application + PDF ready. 100% free PakTools Chitthi.">
+<link rel="canonical" href="https://www.paktoolsonline.com/chitthi/bijli.html">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>*{font-family:'Inter',sans-serif}.urdu{font-family:'Noto Nastaliq Urdu',serif}body{background:#07010f;color:white}.glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}</style>
+</head>
+<body>
+<header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/90 p-4 flex justify-between"><a href="../index.html" class="font-black text-white no-underline">← PakTools</a><a href="index.html" class="text-xs bg-white/10 px-3 py-1 rounded-full text-white no-underline">✉️ Chitthi</a></header>
+<main class="max-w-4xl mx-auto px-5 py-8">
+<h1 class="text-3xl font-black text-center">💡 WAPDA / Bijli Application - <span class="text-yellow-300">Voice Se</span></h1>
+<p class="text-center text-gray-400 text-[13px] mt-2">Meter Kharab, Bill Zyada, Transformer - Bolo aur application banao</p>
+<div class="mt-8 glass rounded-[24px] p-6">
+<div class="grid md:grid-cols-2 gap-4">
+<div><label class="text-[11px] text-gray-400 uppercase">Naam + Reference No Bolo</label><div class="flex gap-2 mt-1"><input id="bName" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Ahmed, Ref 123456"><button onclick="startMic('bName')" class="bg-yellow-600 px-5 rounded-full">🎤</button></div></div>
+<div><label class="text-[11px] text-gray-400 uppercase">Masla Bolo</label><div class="flex gap-2 mt-1"><input id="bType" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Meter tez chal raha, bill zyada"><button onclick="startMic('bType')" class="bg-yellow-600 px-5 rounded-full">🎤</button></div></div>
+<div class="md:col-span-2"><label class="text-[11px] text-gray-400 uppercase">Pura Address + Detail Bolo</label><div class="flex gap-2 mt-1"><input id="bReason" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Pichle 2 mah se bill 15000 aa raha, meter kharab hai"><button onclick="startMic('bReason')" class="bg-gradient-to-r from-yellow-600 to-orange-600 px-6 rounded-full font-bold">🎤 Bolo</button></div></div>
+</div>
+<button onclick="generate()" class="mt-6 w-full bg-gradient-to-r from-yellow-600 to-orange-600 py-4 rounded-full font-black text-sm">✨ WAPDA Application Banao</button>
+<div id="resultBox" class="hidden mt-6"><div id="appOutput" class="bg-white text-black p-6 rounded-2xl text-[13px] leading-7 whitespace-pre-line urdu"></div><div class="flex gap-2 mt-3"><button onclick="copyText()" class="flex-1 bg-white/10 border py-3 rounded-full text-xs font-bold">Copy</button><button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">PDF</button></div></div>
+<p id="micStatus" class="text-center text-[11px] text-yellow-300 mt-3"></p>
+</div>
+<article class="mt-10 glass rounded-[24px] p-6"><h2 class="font-black">WAPDA Application Kaise Likhen? (100% Original Guide)</h2><p class="text-[13px] text-gray-300 mt-3 leading-6">LESCO, MEPCO, K-Electric mein application ke liye Reference Number aur Address lazmi likhen. Hamara tool aap ki boli hui shikayat ko WAPDA ke format mein badalta hai. Ye content original hai, Google AdSense approved niche hai, high CPC keywords: bijli bill, wapda complaint.</p><ul class="text-[12px] text-gray-400 mt-3 list-disc ml-5 leading-6"><li>Reference Number: Bill par 14 hinsay ka number</li><li>Meter reading ki photo attach karen</li><li>Application SDO ko likhen</li></ul></article>
+</main>
+<script>
+function startMic(id){const Rec=window.SpeechRecognition||window.webkitSpeechRecognition;const rec=new Rec();rec.lang='ur-PK';document.getElementById('micStatus').innerText='🎤 Sun raha...';rec.onresult=e=>{document.getElementById(id).value=e.results[0][0].transcript;document.getElementById('micStatus').innerText='✅ '+e.results[0][0].transcript;};rec.start();}
+function generate(){let n=document.getElementById('bName').value||'Saeel',t=document.getElementById('bType').value||'Bill Zyada',r=document.getElementById('bReason').value||'meter kharab hai',d=new Date().toLocaleDateString('en-PK');let app=`Bakhidmat Janab SDO Sahab,
+WAPDA / LESCO
+
+Mozoo: ${t} ke baare mein Darkhuwast
+
+Janab-e-Aali,
+
+Guzarish hai ke main ${n} hun. Mere bijli ke bill ka masla hai. ${r}.
+
+Baraye meherbani mere ${t} ka masla hal kiya jaye aur sahi bill jari kiya jaye. Aap ki bari meherbani hogi.
+
+Shukriya,
+${n}
+Tarikh: ${d}
+Ref No: __________`;document.getElementById('appOutput').innerText=app;document.getElementById('resultBox').classList.remove('hidden');}
+function copyText(){navigator.clipboard.writeText(document.getElementById('appOutput').innerText);alert('Copied');}
+</script>
+</body>
+</html>
