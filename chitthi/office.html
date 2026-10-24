@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Office Chutti Application - Bol Kar Banao | Sick Leave Casual Leave | Chitthi</title>
+<meta name="description" content="Office ki chutti ki application bol kar banao. Sick leave, casual leave, emergency leave. Urdu/English mein bolo, mic se application ready, PDF download. 100% Free PakTools Chitthi.">
+<meta name="keywords" content="office chutti application, sick leave application urdu, casual leave application, bol kar office application, daftar ki chutti">
+<link rel="canonical" href="https://www.paktoolsonline.com/chitthi/office.html">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>*{font-family:'Inter',sans-serif} .urdu{font-family:'Noto Nastaliq Urdu',serif} body{background:#07010f;color:white} .glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Office Leave Application Voice Maker","author":{"@type":"Organization","name":"PakTools"}}</script>
+</head>
+<body>
+<div style="position:fixed;inset:0;z-index:-1;background:#07010f"><div style="position:absolute;width:1000px;height:1000px;background:radial-gradient(circle,#22d3ee,#07010f 70%);filter:blur(100px);opacity:0.25;right:-10%;top:10%"></div></div>
+<header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl p-4 flex justify-between">
+<a href="../index.html" class="font-black text-white no-underline">← PakTools</a><a href="index.html" class="text-xs bg-white/10 px-3 py-1 rounded-full text-white no-underline">✉️ Chitthi</a>
+</header>
+<main class="max-w-4xl mx-auto px-5 py-8">
+<h1 class="text-3xl font-black text-center">🏢 Office Chutti - <span class="text-cyan-300">Bol Kar Banao</span></h1>
+<p class="text-center text-gray-400 text-[13px] mt-2">Sick, Casual, Emergency Leave - Mic se bolo, professional application ready</p>
+
+<div class="mt-8 glass rounded-[24px] p-6">
+<div class="grid md:grid-cols-2 gap-4">
+<div><label class="text-[11px] text-gray-400 uppercase">Naam + Designation Bolo</label><div class="flex gap-2 mt-1"><input id="oName" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Mera naam Ahmed, Accounts Officer"><button onclick="startMic('oName')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
+<div><label class="text-[11px] text-gray-400 uppercase">Department Bolo</label><div class="flex gap-2 mt-1"><input id="oDept" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Finance Department"><button onclick="startMic('oDept')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
+<div><label class="text-[11px] text-gray-400 uppercase">Chutti Ki Qisam Bolo</label><div class="flex gap-2 mt-1"><input id="oType" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Sick leave, 2 din"><button onclick="startMic('oType')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
+<div><label class="text-[11px] text-gray-400 uppercase">Wajah Bolo</label><div class="flex gap-2 mt-1"><input id="oReason" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Bukhar aur doctor appointment"><button onclick="startMic('oReason')" class="bg-gradient-to-r from-cyan-600 to-blue-600 px-6 rounded-full font-bold">🎤</button></div></div>
+</div>
+<button onclick="generateOffice()" class="mt-6 w-full bg-gradient-to-r from-cyan-600 to-blue-600 py-4 rounded-full font-black text-sm shadow-[0_0_20px_rgba(6,182,212,0.4)]">✨ Professional Application Banao</button>
+<div id="resultBox" class="hidden mt-6"><div id="appOutput" class="bg-white text-black p-6 rounded-2xl text-[13px] leading-7 whitespace-pre-line"></div><div class="flex gap-2 mt-3"><button onclick="copyText()" class="flex-1 bg-white/10 border border-white/20 py-3 rounded-full text-xs font-bold">Copy</button><button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">PDF / Print</button></div></div>
+<p id="micStatus" class="text-center text-[11px] text-cyan-300 mt-3"></p>
+</div>
+
+<article class="mt-10 glass rounded-[24px] p-6">
+<h2 class="font-black">Office Leave Application Kaise Likhen? Blog</h2>
+<p class="text-[13px] text-gray-300 mt-3 leading-6">Pakistan ke offices mein chutti ki application hamesha professional honi chahiye. Manager ko mukhatib karna, wajah mukhtasar likhna, aur tarikh wazeh karna zaroori hai. Chitthi tool aap ki boli hui baat ko English/Urdu professional letter mein badal deta hai. AdSense safe aur original content hai, koi copyright issue nahi.</p>
+<ul class="text-[12px] text-gray-400 mt-3 list-disc ml-5 leading-6"><li>Subject: Application for Sick Leave - hamesha likhen</li><li>2 din se zyada ho to medical certificate ka zikr karen</li><li>Contact number akhri mein likhen</li></ul>
+</article>
+<footer class="text-center text-[11px] text-gray-500 mt-8">© PakTools Chitthi - 100% Original</footer>
+</main>
+<script>
+function startMic(id){
+  const Rec = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const rec = new Rec(); rec.lang = 'ur-PK';
+  document.getElementById('micStatus').innerText = '🎤 Sun raha hun...';
+  rec.onresult = e => { document.getElementById(id).value = e.results[0][0].transcript; document.getElementById('micStatus').innerText = '✅ ' + e.results[0][0].transcript; };
+  rec.start();
+}
+function generateOffice(){
+  let n=document.getElementById('oName').value||'Employee', d=document.getElementById('oDept').value||'General', t=document.getElementById('oType').value||'Sick Leave', r=document.getElementById('oReason').value||'illness', date=new Date().toLocaleDateString('en-PK');
+  let app=`To,
+The Manager,
+${d}
+
+Subject: Application for ${t}
+
+Respected Sir,
+
+I beg to state that I am ${n} from ${d}. I am writing to request ${t} as I am suffering from ${r}.
+
+Kindly grant me leave for the said period. I shall be very thankful to you and will complete my pending work after rejoining.
+
+Thanking you,
+
+Sincerely,
+${n}
+${d}
+Date: ${date}
+Contact: ________`;
+  document.getElementById('appOutput').innerText=app;
+  document.getElementById('resultBox').classList.remove('hidden');
+}
+function copyText(){ navigator.clipboard.writeText(document.getElementById('appOutput').innerText); alert('Copied!'); }
+</script>
+</body>
+</html>
