@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>School Chutti Ki Application Bolo Aur Banao - Urdu Voice | Chitthi - PakTools</title>
+<meta name="description" content="Bol kar School ki chutti ki application banao. Urdu mein bolo - bukhar, shadi, mehman ki wajah se chutti ki darkhuwast. Mic dabao, naam, class bolo, application ready. 100% Free, PDF Download.">
+<meta name="keywords" content="school ki chutti ki application, bukhar ki application urdu, bol kar application banao, urdu voice application maker, school leave application in urdu">
+<link rel="canonical" href="https://www.paktoolsonline.com/chitthi/school.html">
+<meta property="og:title" content="School Chutti Application - Bol Kar Banao">
+<meta property="og:description" content="Urdu mein bol kar school ki application banao. Mic se bolo, PDF lo.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>*{font-family:'Inter',sans-serif} .urdu{font-family:'Noto Nastaliq Urdu',serif; line-height:2} body{background:#07010f;color:white} .glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px)}</style>
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Article",
+"headline":"School Ki Chutti Ki Application Bol Kar Kaise Banayein",
+"description":"Urdu voice se school ki application banane ka tarika",
+"author":{"@type":"Organization","name":"PakTools"}
+}
+</script>
+</head>
+<body>
+<div style="position:fixed;inset:0;z-index:-1;background:#07010f"><div style="position:absolute;width:1200px;height:1200px;background:radial-gradient(circle,#a855f7,#07010f 70%);filter:blur(80px);opacity:0.4"></div></div>
+
+<header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl p-4 flex justify-between items-center">
+<a href="../index.html" class="font-black text-white no-underline">← PakTools</a>
+<a href="index.html" class="text-xs bg-white/10 px-3 py-1 rounded-full text-white no-underline">✉️ Chitthi Home</a>
+</header>
+
+<main class="max-w-4xl mx-auto px-5 py-8">
+
+<h1 class="text-3xl md:text-4xl font-black text-center">🏫 School Chutti Ki Application - <span class="text-purple-300">Bol Kar Banao</span></h1>
+<p class="text-center text-gray-400 mt-2 text-[13px]">Mic dabao, Urdu mein bolo, application khud ban jayegi. No typing needed.</p>
+
+<!-- FORM -->
+<div class="mt-8 glass rounded-[24px] p-5 md:p-7">
+<div class="grid md:grid-cols-2 gap-4">
+<div>
+<label class="text-[11px] text-gray-400 uppercase tracking-widest">1. Apna Naam Bolo</label>
+<div class="flex gap-2 mt-1"><input id="sName" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Mera naam Ali Ahmed hai"><button onclick="startMic('sName')" class="bg-purple-600 hover:bg-purple-700 px-5 rounded-full text-sm">🎤</button></div>
+</div>
+<div>
+<label class="text-[11px] text-gray-400 uppercase tracking-widest">2. Class / Jamaat Bolo</label>
+<div class="flex gap-2 mt-1"><input id="sClass" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Class 9th A"><button onclick="startMic('sClass')" class="bg-purple-600 px-5 rounded-full text-sm">🎤</button></div>
+</div>
+<div class="md:col-span-2">
+<label class="text-[11px] text-gray-400 uppercase tracking-widest">3. Chutti Ki Wajah Bolo (Bukhar, Shadi, etc)</label>
+<div class="flex gap-2 mt-1"><input id="sReason" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Kal bukhar ki wajah se school nahi aa sakunga"><button onclick="startMic('sReason')" class="bg-gradient-to-r from-purple-600 to-fuchsia-600 px-6 rounded-full font-bold">🎤 Bolo</button></div>
+</div>
+<div>
+<label class="text-[11px] text-gray-400 uppercase tracking-widest">4. Kitne Din?</label>
+<div class="flex gap-2 mt-1"><input id="sDays" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="1 din"><button onclick="startMic('sDays')" class="bg-purple-600 px-5 rounded-full text-sm">🎤</button></div>
+</div>
+</div>
+
+<button onclick="generateApp()" class="mt-6 w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 py-4 rounded-full font-black text-sm shadow-[0_0_20px_rgba(168,85,247,0.5)]">✨ Application Banao + PDF</button>
+
+<div id="resultBox" class="hidden mt-6">
+<div id="appOutput" class="bg-white text-black p-6 rounded-2xl text-sm leading-7 whitespace-pre-line urdu"></div>
+<div class="flex gap-2 mt-3">
+<button onclick="copyText()" class="flex-1 bg-white/10 border border-white/20 py-3 rounded-full text-xs font-bold">Copy Karo</button>
+<button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">PDF / Print</button>
+</div>
+</div>
+<p id="micStatus" class="text-center text-[11px] text-fuchsia-300 mt-3"></p>
+</div>
+
+<!-- SEO BLOG - COPYRIGHT FREE ORIGINAL CONTENT -->
+<article class="mt-12 glass rounded-[24px] p-6">
+<h2 class="text-xl font-black">School Ki Application Kaise Likhen? (Guide)</h2>
+<p class="text-gray-300 text-[13px] mt-3 leading-6">
+Pakistan mein school ki chutti ki application likhna ab asaan hai. Aap ko sirf 4 cheezein chahiye: Apna naam, class, wajah, aur tarikh. Hamara Chitthi tool aap ki boli hui baat ko sahi Urdu format mein badal deta hai. Ye tool khaas taur par un walidain aur students ke liye banaya gaya hai jo Urdu mein jaldi application banana chahte hain.
+</p>
+<h3 class="font-bold mt-5 text-sm">Bukhar Ki Application Ka Sample:</h3>
+<p class="text-gray-400 text-[12px] mt-2 bg-black/30 p-3 rounded-xl">Bakhidmat Janab Headmaster Sahab, Guzarish hai ke main kal bukhar ki wajah se school hazir nahi ho sakunga. Meherbani farma kar mujhe ek din ki chutti de dein. Shukriya.</p>
+<h3 class="font-bold mt-5 text-sm">SEO Tips:</h3>
+<ul class="text-[12px] text-gray-400 mt-2 list-disc ml-5 leading-6">
+<li>Hamesha adab se shuru karen: Bakhidmat Janab</li>
+<li>Wajah saaf likhen: Bukhar, Shadi, Barish</li>
+<li>Akhir mein Shukriya aur Naam, Class likhna na bhoolen</li>
+</ul>
+<div class="mt-6 flex gap-2 flex-wrap text-[10px]">
+<span class="bg-white/10 px-2 py-1 rounded-full">#SchoolApplication</span>
+<span class="bg-white/10 px-2 py-1 rounded-full">#ChuttiKiDarkhuwast</span>
+<span class="bg-white/10 px-2 py-1 rounded-full">#UrduApplication</span>
+<span class="bg-white/10 px-2 py-1 rounded-full">#PakTools</span>
+</div>
+</article>
+
+<footer class="text-center text-[11px] text-gray-500 mt-10">© 2025 PakTools - Chitthi - 100% Original, No Copyright, AdSense Safe</footer>
+</main>
+
+<script>
+function startMic(id){
+  if(!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)){ alert('Mic sirf Chrome mein kaam karta hai'); return; }
+  const Rec = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const rec = new Rec();
+  rec.lang = 'ur-PK';
+  rec.interimResults = false;
+  document.getElementById('micStatus').innerText = '🎤 Sun raha hun... bolo...';
+  rec.onresult = e => {
+    document.getElementById(id).value = e.results[0][0].transcript;
+    document.getElementById('micStatus').innerText = '✅ Ho gaya: ' + e.results[0][0].transcript;
+  };
+  rec.onerror = () => { document.getElementById('micStatus').innerText = 'Mic error, dobara try karo'; };
+  rec.start();
+}
+function generateApp(){
+  let name = document.getElementById('sName').value || 'Talib-e-Ilm';
+  let cls = document.getElementById('sClass').value || '10th';
+  let reason = document.getElementById('sReason').value || 'bukhar ki wajah se';
+  let days = document.getElementById('sDays').value || '1 din';
+  let date = new Date().toLocaleDateString('en-PK');
+  
+  let app = `Bakhidmat Janab Headmaster Sahab,
+Govt. High School
+
+Mozoo: ${days} ki Chutti ki Darkhuwast
+
+Janab-e-Aali,
+
+Guzarish hai ke mera naam ${name} hai aur main jamaat ${cls} ka talib-e-ilm hun. Guzarish hai ke ${reason} ki wajah se main ${days} school hazir nahi ho sakunga.
+
+Baraye meherbani mujhe ${days} ki chutti de kar shukriya ka moqa dein.
+
+Aap ka shagird,
+${name}
+Jamaat: ${cls}
+Tarikh: ${date}`;
+  
+  document.getElementById('appOutput').innerText = app;
+  document.getElementById('resultBox').classList.remove('hidden');
+  window.scrollTo({top: document.getElementById('resultBox').offsetTop - 20, behavior:'smooth'});
+}
+function copyText(){
+  navigator.clipboard.writeText(document.getElementById('appOutput').innerText);
+  alert('Copied!');
+}
+</script>
+</body>
+</html>
