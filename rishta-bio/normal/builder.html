@@ -6,14 +6,53 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cinzel:wght@800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cinzel:wght@700;800;900&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
 <style>
 body{background:#07010f;color:#fff}
 .glass{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px)}
 .paper{width:794px; min-height:1123px; background:white; color:#000; position:relative; overflow:hidden;}
-.safe-content{position:relative; z-index:10; padding: 145px 95px 110px 95px;}
-.line{padding:8px 0; border-bottom:1px solid #f0f0f0;}
+/* FIXED - Writing Right Side */
+.safe-content{
+  position:relative; z-index:10; 
+  padding: 145px 85px 110px 125px; /* LEFT 95->125 RIGHT SHIFT */
+}
+.line{padding:8.5px 0; border-bottom:1px solid #f0f0f0; padding-left:10px;}
 .line:last-child{border-bottom:none;}
+/* Premium RISHTA BIODATA Font */
+.premium-title{
+  font-family:'Cinzel', serif;
+  font-weight:900;
+  font-size:30px;
+  letter-spacing:0.28em;
+  background: linear-gradient(180deg, #2b2b2b 0%, #000 45%, #8a6d3b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position:relative;
+  text-align:center;
+  filter: drop-shadow(0 1px 0px rgba(212,175,55,0.4));
+}
+.premium-title::after{
+  content:'';
+  position:absolute;
+  bottom:-8px;
+  left:50%;
+  transform:translateX(-50%);
+  width:140px;
+  height:3px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  border-radius:10px;
+}
+.premium-title::before{
+  content:'';
+  position:absolute;
+  bottom:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  width:80px;
+  height:1px;
+  background: #d4af37;
+}
 </style>
 </head>
 <body>
@@ -45,10 +84,11 @@ body{background:#07010f;color:#fff}
   <div class="safe-content">
     <div class="flex justify-between">
       <div class="flex-1">
-        <p style="font-family:'Amiri', serif;" class="text-center text-[17px] font-bold">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-        <h1 style="font-family:'Cinzel', serif;" class="text-center font-black text-[29px] tracking-[0.22em] text-[#111] mt-3">RISHTA BIODATA</h1>
+        <p style="font-family:'Amiri', serif;" class="text-center text-[17px] font-bold text-[#222]">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+        <!-- PREMIUM FONT FIXED -->
+        <h1 class="premium-title mt-4">RISHTA BIODATA</h1>
 
-        <div class="mt-8 text-[13.5px] leading-[1.7]">
+        <div class="mt-10 text-[13.5px] leading-[1.75] ml-2">
           <div class="line"><b>Name:</b> <span id="pName">__________</span></div>
           <div class="line"><b>Father Name:</b> <span id="pFName">__________</span></div>
           <div class="line"><b>Date of Birth:</b> <span id="pDob">__________</span></div>
@@ -66,8 +106,8 @@ body{background:#07010f;color:#fff}
         </div>
       </div>
       <div class="w-[125px] ml-6 relative z-10">
-        <div class="w-[125px] h-[150px] border-2 border-gray-100 flex items-center justify-center bg-gray-50 overflow-hidden shadow-sm">
-          <img id="pPhoto" class="w-full h-full object-cover hidden"><span id="pPhotoTxt" class="text-[10px]">Photo</span>
+        <div class="w-[125px] h-[150px] border-2 border-[#f3e8c0] flex items-center justify-center bg-[#fffef8] overflow-hidden shadow-[0_2px_10px_rgba(212,175,55,0.25)]">
+          <img id="pPhoto" class="w-full h-full object-cover hidden"><span id="pPhotoTxt" class="text-[10px] text-gray-400">Photo</span>
         </div>
       </div>
     </div>
