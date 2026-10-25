@@ -2,24 +2,24 @@
 <html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>College Application - Bol Kar Banao | Fee, Chutti, Admission | PakTools Chitthi</title>
-<meta name="description" content="College ki application bol kar banao. Fee concession, chutti, sports, admission. Mic dabao Urdu mein bolo, khalis Urdu mein PDF ready. 100% free.">
+<title>College Chutti Ki Application - Urdu Mein Bol Kar Banao | PakTools</title>
+<meta name="description" content="College ki chutti ki application bol kar banao. Bukhar, shadi, exam ki tayari. Mic dabao Urdu mein bolo, khalis Urdu mein PDF ready.">
 <link rel="canonical" href="https://www.paktoolsonline.com/chitthi/college.html">
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-.urdu{font-family:'Noto Nastaliq Urdu',serif;line-height:2.4}
+.urdu{font-family:'Noto Nastaliq Urdu',serif;line-height:2.6}
 body{background:#07010f;color:#fff}
 .glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}
-#appOutput{direction:rtl;text-align:right;font-size:20px;line-height:2.6}
+#appOutput{direction:rtl;text-align:right;font-size:20px;line-height:2.7}
 </style>
 <script type="application/ld+json">
 {
  "@context":"https://schema.org",
  "@type":"FAQPage",
  "mainEntity":[
-  {"@type":"Question","name":"College mein fee maafi ki application kaise likhen?","acceptedAnswer":{"@type":"Answer","text":"Principal ko mukhatib karen, roll number likhen, aur walid ki aamdani kam hone ki wajah imaandari se bayan karen."}},
-  {"@type":"Question","name":"Kya bol kar college application ban sakti hai?","acceptedAnswer":{"@type":"Answer","text":"Ji haan, PakTools Chitthi par mic se bol kar fee, chutti ya admission ki application bana sakte hain."}}
+  {"@type":"Question","name":"College mein chutti ki application kaise likhen?","acceptedAnswer":{"@type":"Answer","text":"Principal ko mukhatib karen, Roll No, Class, Kitne din aur wajah likhen."}},
+  {"@type":"Question","name":"Kya college chutti bol kar bana sakte hain?","acceptedAnswer":{"@type":"Answer","text":"Ji haan, mic dabayein aur Urdu mein bolein, khalis Urdu mein chitthi ban jayegi."}}
  ]
 }
 </script>
@@ -28,38 +28,34 @@ body{background:#07010f;color:#fff}
 <div style="position:fixed;inset:0;z-index:-1;background:#07010f"><div style="position:absolute;width:1200px;height:1200px;background:radial-gradient(circle,#d946ef,#07010f 70%);filter:blur(90px);opacity:0.3"></div></div>
 <header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl p-4 flex justify-between"><a href="../index.html" class="font-black text-white no-underline">← PakTools</a><a href="index.html" class="text-xs bg-white/10 px-3 py-1 rounded-full text-white no-underline">✉️ Chitthi Home</a></header>
 <main class="max-w-4xl mx-auto px-5 py-8">
-<h1 class="text-3xl font-black text-center leading-tight">🎓 کالج درخواست - <span class="text-fuchsia-300">بول کر بنائیں</span></h1>
-<p class="text-center text-gray-400 text-[13px] mt-2 urdu">داخلہ، فیس معافی، چھٹی، سپورٹس - مائیک سے بولیں، درخواست تیار</p>
+<h1 class="text-3xl font-black text-center leading-tight">🎓 کالج چھٹی کی درخواست - <span class="text-fuchsia-300">بول کر بنائیں</span></h1>
+<p class="text-center text-gray-400 text-[13px] mt-2 urdu">بخار، شادی، امتحان کی تیاری - مائیک سے بولیں، خالص اردو میں درخواست تیار</p>
 
 <div class="mt-8 glass rounded-[24px] p-6">
 <div class="grid md:grid-cols-2 gap-4">
-<div><label class="text-[11px] text-gray-400">1. نام + رول نمبر بولیں</label><div class="flex gap-2 mt-1"><input id="cName" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm urdu" placeholder="علی، رول 1234، بی ایس سی ایس"><button onclick="startMic('cName')" class="bg-fuchsia-600 px-5 rounded-full">🎤</button></div></div>
-<div><label class="text-[11px] text-gray-400">2. کالج کا نام بولیں</label><div class="flex gap-2 mt-1"><input id="cCollege" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm urdu" placeholder="گورنمنٹ کالج لاہور"><button onclick="startMic('cCollege')" class="bg-fuchsia-600 px-5 rounded-full">🎤</button></div></div>
-<div><label class="text-[11px] text-gray-400">3. درخواست کی قسم بولیں</label><div class="flex gap-2 mt-1"><input id="cType" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm urdu" placeholder="فیس معافی، دو ماہ"><button onclick="startMic('cType')" class="bg-fuchsia-600 px-5 rounded-full">🎤</button></div></div>
-<div><label class="text-[11px] text-gray-400">4. کلاس / سمسٹر بولیں</label><div class="flex gap-2 mt-1"><input id="cClass" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm urdu" placeholder="بی ایس چوتھا سمسٹر"><button onclick="startMic('cClass')" class="bg-fuchsia-600 px-5 rounded-full">🎤</button></div></div>
-<div class="md:col-span-2"><label class="text-[11px] text-gray-400">5. وجہ تفصیل سے بولیں</label><div class="flex gap-2 mt-1"><input id="cReason" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm urdu" placeholder="والد کی آمدنی کم ہے، فیس نہیں دے سکتا"><button onclick="startMic('cReason')" class="bg-gradient-to-r from-purple-600 to-fuchsia-600 px-6 rounded-full font-bold">🎤 بولیں</button></div></div>
+<div><label class="text-[11px] text-gray-400">1. اپنا نام بولیں</label><div class="flex gap-2 mt-1"><input id="cName" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm urdu" placeholder="علی احمد"><button onclick="startMic('cName')" class="bg-fuchsia-600 px-5 rounded-full">🎤</button></div></div>
+<div><label class="text-[11px] text-gray-400">2. رول نمبر بولیں</label><div class="flex gap-2 mt-1"><input id="cRoll" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm urdu" placeholder="1234"><button onclick="startMic('cRoll')" class="bg-fuchsia-600 px-5 rounded-full">🎤</button></div></div>
+<div><label class="text-[11px] text-gray-400">3. کلاس / سمسٹر بولیں</label><div class="flex gap-2 mt-1"><input id="cClass" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm urdu" placeholder="بی ایس چوتھا سمسٹر"><button onclick="startMic('cClass')" class="bg-fuchsia-600 px-5 rounded-full">🎤</button></div></div>
+<div><label class="text-[11px] text-gray-400">4. کتنے دن کی چھٹی؟</label><div class="flex gap-2 mt-1"><input id="cDays" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm urdu" placeholder="دو دن"><button onclick="startMic('cDays')" class="bg-fuchsia-600 px-5 rounded-full">🎤</button></div></div>
+<div class="md:col-span-2"><label class="text-[11px] text-gray-400">5. چھٹی کی وجہ بولیں</label><div class="flex gap-2 mt-1"><input id="cReason" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm urdu" placeholder="بخار کی وجہ سے"><button onclick="startMic('cReason')" class="bg-gradient-to-r from-purple-600 to-fuchsia-600 px-6 rounded-full font-bold">🎤 بولیں</button></div></div>
+<div class="md:col-span-2"><label class="text-[11px] text-gray-400">6. کالج کا نام بولیں</label><div class="flex gap-2 mt-1"><input id="cCollege" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm urdu" placeholder="گورنمنٹ کالج لاہور"><button onclick="startMic('cCollege')" class="bg-fuchsia-600 px-5 rounded-full">🎤</button></div></div>
 </div>
-<button onclick="generate()" class="mt-6 w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 py-4 rounded-full font-black text-sm shadow-[0_0_20px_rgba(217,70,239,0.4)]">✨ کالج درخواست بنائیں</button>
+<button onclick="generate()" class="mt-6 w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 py-4 rounded-full font-black text-sm">✨ چھٹی کی درخواست بنائیں</button>
 <div id="resultBox" class="hidden mt-6"><div id="appOutput" class="bg-white text-black p-8 rounded-[20px] urdu shadow-2xl"></div><div class="flex gap-2 mt-3"><button onclick="copyText()" class="flex-1 bg-white/10 border border-white/20 py-3 rounded-full text-xs font-bold">📋 کاپی کریں</button><button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">🖨️ پی ڈی ایف</button></div></div>
 <p id="micStatus" class="text-center text-[11px] text-fuchsia-300 mt-3 urdu"></p>
 </div>
 
 <article class="mt-10 glass rounded-[24px] p-6 md:p-8">
-<h2 class="text-xl font-black urdu">کالج کی درخواست کیسے لکھیں؟ مکمل گائیڈ</h2>
-<p class="text-[13px] text-gray-300 mt-3 leading-7 urdu">کالج کی درخواست میں ٹو دی پوائنٹ ہونا بہتر ہے۔ پرنسپل کو عزت سے مخاطب کریں، رول نمبر ضرور لکھیں، اور وجہ ایمانداری سے بیان کریں۔</p>
+<h2 class="text-xl font-black urdu">کالج میں چھٹی کی درخواست کیسے لکھیں؟</h2>
+<p class="text-[13px] text-gray-300 mt-3 leading-7 urdu">کالج کی چھٹی سکول سے تھوڑی مختلف ہوتی ہے۔ یہاں رول نمبر اور سمسٹر لکھنا ضروری ہے۔</p>
 <h3 class="font-black mt-6 text-[17px] urdu">استعمال کا طریقہ (اردو میں)</h3>
 <ol class="text-[13px] text-gray-300 list-decimal mr-5 mt-3 leading-8 urdu">
-<li><b>مائیک دبائیں:</b> ہر خانے کے سامنے مائیک ہے۔</li>
-<li><b>نام، رول نمبر:</b> اپنا نام اور رول نمبر بولیں۔</li>
-<li><b>کالج کا نام:</b> اپنے کالج کا نام بولیں، اب اس میں بھی مائیک ہے۔</li>
-<li><b>قسم:</b> فیس معافی، چھٹی، سپورٹس یا داخلہ۔</li>
-<li><b>وجہ:</b> وجہ تفصیل سے بولیں۔</li>
-<li><b>بنائیں:</b> درخواست خالص اردو میں تیار ہو جائے گی۔</li>
+<li>مائیک دبا کر اپنا نام، رول نمبر اور کلاس بولیں۔</li>
+<li>کتنے دن کی چھٹی چاہیے، بولیں - جیسے "دو دن"۔</li>
+<li>وجہ بولیں - بخار، شادی، امتحان کی تیاری۔</li>
+<li>کالج کا نام بولیں۔</li>
+<li>بٹن دبائیں، نیچے خالص اردو میں چھٹی کی درخواست تیار ہو جائے گی۔</li>
 </ol>
-<h3 class="font-black mt-6 text-[15px] urdu">فیس معافی کا نمونہ</h3>
-<div class="bg-white text-black p-5 rounded-xl urdu text-[16px] mt-2" dir="rtl">
-بخدمت جناب پرنسپل صاحب،<br>گورنمنٹ کالج لاہور<br><br>موضوع: فیس معافی کی درخواست<br><br>جناب عالی! گزارش ہے کہ میرے والد کی آمدنی بہت کم ہے اور میں فیس ادا کرنے سے قاصر ہوں۔ برائے مہربانی میری فیس معاف فرما کر شکرگزار ہونے کا موقع دیں۔<br><br>آپ کا شاگرد، علی
-</div>
 </article>
 <footer class="text-center text-[11px] text-gray-500 mt-8 urdu">© PakTools Chitthi - 100% اصلی</footer>
 </main>
@@ -76,14 +72,27 @@ function startMic(id){
   rec.onerror = () => { document.getElementById('micStatus').innerText = 'مائیک میں مسئلہ ہے'; };
   rec.start();
 }
+function toUrduDays(input){
+  if(!input) return 'ایک دن';
+  let t = input.toLowerCase().trim();
+  if(t.includes('1')||t.includes('ایک')||t.includes('one')||t.includes('aik')) return 'ایک دن';
+  if(t.includes('2')||t.includes('دو')||t.includes('two')) return 'دو دن';
+  if(t.includes('3')||t.includes('تین')||t.includes('three')) return 'تین دن';
+  if(t.includes('4')||t.includes('چار')||t.includes('four')) return 'چار دن';
+  if(t.includes('5')||t.includes('پانچ')||t.includes('five')) return 'پانچ دن';
+  if(t.includes('دن')) return input;
+  return input;
+}
 function generate(){
-  let n=document.getElementById('cName').value.trim()||'طالب علم';
+  let name=document.getElementById('cName').value.trim()||'طالب علم';
+  let roll=document.getElementById('cRoll').value.trim()||'';
+  let cls=document.getElementById('cClass').value.trim()||'بی ایس';
+  let daysRaw=document.getElementById('cDays').value.trim()||'ایک دن';
+  let reason=document.getElementById('cReason').value.trim()||'بخار';
   let college=document.getElementById('cCollege').value.trim()||'گورنمنٹ کالج';
-  let cls=document.getElementById('cClass').value.trim()||'';
-  let t=document.getElementById('cType').value.trim()||'فیس معافی';
-  let r=document.getElementById('cReason').value.trim()||'مالی مشکلات';
-  let d=new Date().toLocaleDateString('en-GB');
-  let app=`بخدمت جناب پرنسپل صاحب،<br>${college}<br><br>موضوع: ${t} کی درخواست<br><br>جناب عالی!<br><br>گزارش ہے کہ میں ${n} ${cls ? 'جماعت ' + cls + ' کا' : ''} طالب علم ہوں۔ میں ${t} کے لیے درخواست دے رہا ہوں۔ وجہ یہ ہے کہ ${r}۔<br><br>مہربانی فرما کر میری درخواست منظور فرما کر شکرگزار ہونے کا موقع دیں۔<br><br>آپ کا شاگرد،<br>${n}<br>${cls ? 'کلاس: ' + cls + '<br>' : ''}تاریخ: ${d}`;
+  let days=toUrduDays(daysRaw);
+  let date=new Date().toLocaleDateString('en-GB');
+  let app=`بخدمت جناب پرنسپل صاحب،<br>${college}<br><br>موضوع: ${days} کی چھٹی کی درخواست<br><br>جناب عالی!<br><br>گزارش ہے کہ میرا نام ${name} ${roll ? 'اور رول نمبر ' + roll + ' ہے' : 'ہے'} اور میں ${cls} کا طالب علم ہوں۔ گزارش ہے کہ ${reason} کی وجہ سے میں ${days} کالج حاضر نہیں ہو سکوں گا۔<br><br>برائے مہربانی مجھے ${days} کی چھٹی دے کر شکرگزار ہونے کا موقع دیں۔<br><br>آپ کا شاگرد،<br>${name}<br>${roll ? 'رول نمبر: ' + roll + '<br>' : ''}کلاس: ${cls}<br>تاریخ: ${date}`;
   document.getElementById('appOutput').innerHTML=app;
   document.getElementById('resultBox').classList.remove('hidden');
   window.scrollTo({top: document.getElementById('resultBox').offsetTop - 20, behavior:'smooth'});
