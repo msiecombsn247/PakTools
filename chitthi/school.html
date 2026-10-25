@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>School Chutti Ki Application - Urdu Mein Bol Kar Banao | PakTools Chitthi</title>
-<meta name="description" content="Urdu mein bol kar school ki chutti ki application banao. Bukhar, shadi, mehman, barish ki wajah se 1 se 5 din ki darkhuwast. Voice + PDF free.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>School Chutti Application - English / Urdu Mein Bol Kar Banao | PakTools</title>
+<meta name="description" content="School ki chutti ki application English ya Urdu mein bol kar banao. Mic dabao, PDF ready. 1 se 5 din.">
 <link rel="canonical" href="https://www.paktoolsonline.com/chitthi/school.html">
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-.urdu{font-family:'Noto Nastaliq Urdu',serif;line-height:2.4}
+.urdu{font-family:'Noto Nastaliq Urdu',serif;line-height:2.6}
 body{background:#07010f;color:#fff}
 .glass{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(12px)}
-#appOutput{direction:rtl;text-align:right;font-size:21px;line-height:2.7}
+.lang-active{background:white !important;color:black !important;font-weight:900}
+.en-input{direction:ltr;text-align:left;font-family:'Inter',sans-serif}
+.ur-input{direction:rtl;text-align:right;font-family:'Noto Nastaliq Urdu',serif}
 </style>
-<script type="application/ld+json">
-{
- "@context":"https://schema.org",
- "@type":"FAQPage",
- "mainEntity":[
-  {"@type":"Question","name":"School ki chutti ki application mein kya likhna chahiye?","acceptedAnswer":{"@type":"Answer","text":"Bakhidmat Janab Headmaster, Mozoo, Wajah, Kitne din, Naam, Class aur Tarikh."}},
-  {"@type":"Question","name":"Kya mein bol kar application bana sakta hun?","acceptedAnswer":{"@type":"Answer","text":"Ji haan, mic dabayein aur Urdu mein bolein, tool khalis Urdu mein application bana dega."}},
-  {"@type":"Question","name":"Kya ye PDF download hoti hai?","acceptedAnswer":{"@type":"Answer","text":"Ji, PDF / Print button se PDF download kar sakte hain."}}
- ]
-}
-</script>
 </head>
 <body>
 <div style="position:fixed;inset:0;z-index:-1;background:#07010f"><div style="position:absolute;width:1200px;height:1200px;background:radial-gradient(circle,#a855f7,#07010f 70%);filter:blur(80px);opacity:.35"></div></div>
@@ -33,95 +23,108 @@ body{background:#07010f;color:#fff}
 <a href="index.html" class="text-xs bg-white/10 px-3 py-1 rounded-full text-white no-underline">✉️ Chitthi Home</a>
 </header>
 <main class="max-w-4xl mx-auto px-5 py-8">
-<h1 class="text-3xl md:text-4xl font-black text-center leading-tight">🏫 سکول چھٹی کی درخواست - <span class="text-purple-300">بول کر بنائیں</span></h1>
-<p class="text-center text-gray-400 mt-3 text-[13px] urdu">مائیک دبائیں، اردو میں بولیں، خالص اردو میں درخواست خود بن جائے گی۔ ٹائپنگ کی ضرورت نہیں۔</p>
+<h1 class="text-3xl font-black text-center">🏫 سکول چھٹی - <span class="text-purple-300">بول کر بنائیں</span></h1>
 
-<div class="mt-8 glass rounded-[24px] p-5 md:p-7">
+<div class="mt-6 flex justify-center gap-2 p-1 bg-white/10 rounded-full w-fit mx-auto border border-white/10">
+<button id="btnEn" onclick="setLang('en')" class="lang-active px-6 py-2 rounded-full text-sm">English</button>
+<button id="btnUr" onclick="setLang('ur')" class="px-6 py-2 rounded-full text-sm text-gray-300">اردو</button>
+</div>
+<p id="langNote" class="text-center text-[11px] text-fuchsia-300 mt-2">English mode: Speak in ENGLISH</p>
+
+<div class="mt-6 glass rounded-[24px] p-6">
 <div class="grid md:grid-cols-2 gap-4">
-<div><label class="text-[11px] text-gray-400">1. اپنا نام بولیں</label><div class="flex gap-2 mt-1"><input id="sName" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm urdu" placeholder="مثال: علی احمد"><button onclick="startMic('sName')" class="bg-purple-600 hover:bg-purple-700 px-5 rounded-full text-sm">🎤</button></div></div>
-<div><label class="text-[11px] text-gray-400">2. کلاس / جماعت بولیں</label><div class="flex gap-2 mt-1"><input id="sClass" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm urdu" placeholder="مثال: نہم اے"><button onclick="startMic('sClass')" class="bg-purple-600 px-5 rounded-full text-sm">🎤</button></div></div>
-<div class="md:col-span-2"><label class="text-[11px] text-gray-400">3. چھٹی کی وجہ بولیں</label><div class="flex gap-2 mt-1"><input id="sReason" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm urdu" placeholder="مثال: بخار کی وجہ سے"><button onclick="startMic('sReason')" class="bg-gradient-to-r from-purple-600 to-fuchsia-600 px-6 rounded-full font-bold">🎤 بولیں</button></div></div>
-<div><label class="text-[11px] text-gray-400">4. کتنے دن کی چھٹی؟</label><div class="flex gap-2 mt-1"><input id="sDays" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm urdu" placeholder="مثال: ایک دن"><button onclick="startMic('sDays')" class="bg-purple-600 px-5 rounded-full text-sm">🎤</button></div></div>
-<div><label class="text-[11px] text-gray-400">5. سکول کا نام بولیں</label><div class="flex gap-2 mt-1"><input id="sSchool" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm urdu" placeholder="گورنمنٹ ہائی سکول"><button onclick="startMic('sSchool')" class="bg-purple-600 px-5 rounded-full text-sm">🎤</button></div></div>
+<div><label id="lName" class="text-[11px] text-gray-400">1. Name</label><div class="flex gap-2 mt-1"><input id="sName" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Ali Ahmed"><button onclick="startMic('sName')" class="bg-purple-600 px-5 rounded-full">🎤</button></div></div>
+<div><label id="lClass" class="text-[11px] text-gray-400">2. Class</label><div class="flex gap-2 mt-1"><input id="sClass" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Class 9th A"><button onclick="startMic('sClass')" class="bg-purple-600 px-5 rounded-full">🎤</button></div></div>
+<div><label id="lReason" class="text-[11px] text-gray-400">3. Reason</label><div class="flex gap-2 mt-1"><input id="sReason" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Fever"><button onclick="startMic('sReason')" class="bg-gradient-to-r from-purple-600 to-fuchsia-600 px-6 rounded-full font-bold">🎤 Speak</button></div></div>
+<div><label id="lDays" class="text-[11px] text-gray-400">4. Days</label><div class="flex gap-2 mt-1"><input id="sDays" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="One Day"><button onclick="startMic('sDays')" class="bg-purple-600 px-5 rounded-full">🎤</button></div></div>
+<div class="md:col-span-2"><label id="lSchool" class="text-[11px] text-gray-400">5. School Name</label><div class="flex gap-2 mt-1"><input id="sSchool" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Govt. High School Lahore"><button onclick="startMic('sSchool')" class="bg-purple-600 px-5 rounded-full">🎤</button></div></div>
 </div>
-
-<button onclick="generateApp()" class="mt-6 w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 py-4 rounded-full font-black text-sm shadow-[0_0_20px_rgba(168,85,247,0.5)]">✨ درخواست بنائیں + پی ڈی ایف</button>
-
-<div id="resultBox" class="hidden mt-6">
-<div id="appOutput" class="bg-white text-black p-8 rounded-[20px] urdu shadow-2xl"></div>
-<div class="flex gap-2 mt-3">
-<button onclick="copyText()" class="flex-1 bg-white/10 border border-white/20 py-3 rounded-full text-xs font-bold">📋 کاپی کریں</button>
-<button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">🖨️ پی ڈی ایف / پرنٹ</button>
+<button onclick="generateApp()" class="mt-6 w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 py-4 rounded-full font-black text-sm">✨ Generate / درخواست بنائیں</button>
+<div id="resultBox" class="hidden mt-6"><div id="appOutput" class="bg-white text-black p-8 rounded-[20px] whitespace-pre-line text-[14px] leading-7"></div><div class="flex gap-2 mt-3"><button onclick="copyText()" class="flex-1 bg-white/10 border border-white/20 py-3 rounded-full text-xs font-bold">📋 Copy</button><button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">🖨️ PDF</button></div></div>
+<p id="micStatus" class="text-center text-[11px] text-fuchsia-300 mt-3"></p>
 </div>
-</div>
-<p id="micStatus" class="text-center text-[11px] text-fuchsia-300 mt-3 urdu"></p>
-</div>
-
-<article class="mt-12 glass rounded-[24px] p-6 md:p-8">
-<h2 class="text-2xl font-black urdu">سکول کی درخواست کیسے لکھیں؟ مکمل گائیڈ</h2>
-<p class="text-gray-300 text-[14px] mt-4 leading-7 urdu">پاکستان کے تمام سکولوں میں چھٹی کی درخواست کا ایک ہی معیاری طریقہ ہے۔ اس میں تین چیزیں ضروری ہیں: آپ کون ہیں، چھٹی کیوں چاہیے، اور کتنے دن کے لیے۔ ہمارا چٹھی ٹول آپ کی بولی ہوئی بات کو اسی فارمیٹ میں بدل دیتا ہے۔</p>
-
-<h3 class="font-black mt-8 text-[18px] urdu">اس ٹول کو استعمال کیسے کرنا ہے؟ (اردو میں)</h3>
-<ol class="text-[13px] text-gray-300 list-decimal mr-5 mt-3 leading-8 urdu">
-<li><b>مائیک دبائیں:</b> ہر خانے کے سامنے مائیک کا بٹن ہے۔</li>
-<li><b>نام اور جماعت:</b> اپنا نام اور کلاس بولیں، جیسے "میرا نام علی ہے، کلاس نہم"۔</li>
-<li><b>وجہ بتائیں:</b> بخار، شادی، مہمان یا بارش۔</li>
-<li><b>دن بتائیں:</b> ایک دن، دو دن یا پانچ دن۔</li>
-<li><b>سکول کا نام:</b> اب اس میں بھی مائیک لگ گیا ہے، سکول کا نام بولیں۔</li>
-<li><b>بنائیں:</b> بٹن دبائیں، نیچے خالص اردو میں درخواست تیار ہو گی۔</li>
-</ol>
-
-<h3 class="font-black mt-8 text-[18px] urdu">بخار کی درخواست کا نمونہ</h3>
-<div class="text-gray-900 text-[16px] mt-3 bg-white p-5 rounded-xl urdu" dir="rtl">
-بخدمت جناب ہیڈ ماسٹر صاحب،<br>گورنمنٹ ہائی سکول لاہور<br><br>موضوع: بخار کی وجہ سے چھٹی کی درخواست<br><br>جناب عالی!<br>گزارش ہے کہ میں آپ کے سکول کا طالب علم ہوں، کل رات سے مجھے تیز بخار ہے۔ اس لیے میں کل سکول حاضر نہیں ہو سکوں گا۔<br>برائے مہربانی مجھے ایک دن کی چھٹی دے کر شکرگزار ہونے کا موقع دیں۔<br><br>آپ کا شاگرد، علی احمد<br>جماعت: نہم اے
-</div>
-</article>
-<footer class="text-center text-[11px] text-gray-500 mt-10 urdu">© 2025 PakTools - چٹھی - 100% اصلی، کاپی رائٹ فری، ایڈسینس سیف</footer>
 </main>
-
 <script>
+let currentLang='en';
+function setLang(l){
+  currentLang=l;
+  document.getElementById('btnEn').classList.remove('lang-active');
+  document.getElementById('btnUr').classList.remove('lang-active');
+  const ids=['sName','sClass','sReason','sDays','sSchool'];
+  if(l==='en'){
+    document.getElementById('btnEn').classList.add('lang-active');
+    document.getElementById('langNote').innerText='English mode: Please speak in ENGLISH';
+    document.getElementById('lName').innerText='1. Your Name'; document.getElementById('lClass').innerText='2. Class'; document.getElementById('lReason').innerText='3. Reason'; document.getElementById('lDays').innerText='4. How many days?'; document.getElementById('lSchool').innerText='5. School Name';
+    document.getElementById('sName').placeholder='Ali Ahmed'; document.getElementById('sClass').placeholder='Class 9th A'; document.getElementById('sReason').placeholder='Fever'; document.getElementById('sDays').placeholder='One Day'; document.getElementById('sSchool').placeholder='Govt. High School Lahore';
+    ids.forEach(id=>{ document.getElementById(id).className='en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm'; });
+  }else{
+    document.getElementById('btnUr').classList.add('lang-active');
+    document.getElementById('langNote').innerText='اردو موڈ: براہ کرم اردو میں بولیں';
+    document.getElementById('lName').innerText='1. اپنا نام'; document.getElementById('lClass').innerText='2. کلاس'; document.getElementById('lReason').innerText='3. وجہ'; document.getElementById('lDays').innerText='4. کتنے دن؟'; document.getElementById('lSchool').innerText='5. سکول کا نام';
+    document.getElementById('sName').placeholder='علی احمد'; document.getElementById('sClass').placeholder='نہم اے'; document.getElementById('sReason').placeholder='بخار کی وجہ سے'; document.getElementById('sDays').placeholder='ایک دن'; document.getElementById('sSchool').placeholder='گورنمنٹ ہائی سکول';
+    ids.forEach(id=>{ document.getElementById(id).className='ur-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm'; });
+  }
+}
 function startMic(id){
-  const Rec = window.SpeechRecognition || window.webkitSpeechRecognition;
-  if(!Rec){ alert('مائیک صرف کروم براؤزر میں کام کرتا ہے'); return; }
-  const rec = new Rec(); rec.lang = 'ur-PK'; rec.interimResults = false;
-  document.getElementById('micStatus').innerText = '🎤 سن رہا ہوں... بولیں...';
-  rec.onresult = e => {
-    document.getElementById(id).value = e.results[0][0].transcript.trim();
-    document.getElementById('micStatus').innerText = '✅ ہو گیا: ' + e.results[0][0].transcript;
-  };
-  rec.onerror = () => { document.getElementById('micStatus').innerText = 'مائیک میں مسئلہ ہے، دوبارہ کوشش کریں'; };
+  const Rec=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!Rec){ alert('Mic only in Chrome'); return; }
+  const rec=new Rec(); rec.lang=currentLang==='ur'?'ur-PK':'en-US';
+  document.getElementById('micStatus').innerText=currentLang==='ur'?'🎤 سن رہا ہوں...':'🎤 Listening... Speak in ENGLISH...';
+  rec.onresult=e=>{ document.getElementById(id).value=e.results[0][0].transcript; document.getElementById('micStatus').innerText='✅ '+e.results[0][0].transcript; };
   rec.start();
 }
-function toUrduDays(input){
-  if(!input) return 'ایک دن';
-  let t = input.toLowerCase().trim();
-  if(t.includes('1')||t.includes('ایک')||t.includes('one')||t.includes('aik')) return 'ایک دن';
-  if(t.includes('2')||t.includes('دو')||t.includes('two')) return 'دو دن';
-  if(t.includes('3')||t.includes('تین')||t.includes('three')) return 'تین دن';
-  if(t.includes('4')||t.includes('چار')||t.includes('four')) return 'چار دن';
-  if(t.includes('5')||t.includes('پانچ')||t.includes('five')) return 'پانچ دن';
-  if(t.includes('دن')) return input;
+function toDays(input){
+  if(!input) return currentLang==='ur'?'ایک دن':'One Day';
+  let t=input.toLowerCase().trim();
+  if(currentLang==='ur'){
+    if(t.includes('1')||t.includes('ایک')||t.includes('one')) return 'ایک دن';
+    if(t.includes('2')||t.includes('دو')) return 'دو دن';
+    if(t.includes('3')||t.includes('تین')) return 'تین دن';
+    if(t.includes('4')||t.includes('چار')) return 'چار دن';
+    if(t.includes('5')||t.includes('پانچ')) return 'پانچ دن';
+    if(t.includes('دن')) return input;
+  }
   return input;
 }
 function generateApp(){
-  let name = document.getElementById('sName').value.trim() || 'طالب علم';
-  let cls = document.getElementById('sClass').value.trim() || 'دہم';
-  let reasonRaw = document.getElementById('sReason').value.trim() || 'بخار';
-  let daysRaw = document.getElementById('sDays').value.trim() || 'ایک دن';
-  let school = document.getElementById('sSchool').value.trim() || 'گورنمنٹ ہائی سکول';
-  let reason = reasonRaw.replace(/ki wajah se/gi,'').replace(/کی وجہ سے/g,'').trim();
-  let days = toUrduDays(daysRaw);
-  let date = new Date().toLocaleDateString('en-GB');
-  let appHTML = `بخدمت جناب ہیڈ ماسٹر صاحب،<br>${school}<br><br>موضوع: ${days} کی چھٹی کی درخواست<br><br>جناب عالی!<br><br>گزارش ہے کہ میرا نام ${name} ہے اور میں جماعت ${cls} کا طالب علم ہوں۔ گزارش ہے کہ ${reason} کی وجہ سے میں ${days} سکول حاضر نہیں ہو سکوں گا۔<br><br>برائے مہربانی مجھے ${days} کی چھٹی دے کر شکرگزار ہونے کا موقع دیں۔<br><br>آپ کا شاگرد،<br>${name}<br>جماعت: ${cls}<br>تاریخ: ${date}`;
-  let out = document.getElementById('appOutput');
-  out.innerHTML = appHTML;
+  let name=document.getElementById('sName').value.trim()||(currentLang==='ur'?'طالب علم':'Student');
+  let cls=document.getElementById('sClass').value.trim()||(currentLang==='ur'?'نہم':'9th');
+  let reason=document.getElementById('sReason').value.trim()||(currentLang==='ur'?'بخار':'Fever');
+  let daysRaw=document.getElementById('sDays').value.trim()||(currentLang==='ur'?'ایک دن':'One Day');
+  let school=document.getElementById('sSchool').value.trim()||(currentLang==='ur'?'گورنمنٹ ہائی سکول':'Govt. High School');
+  let days=toDays(daysRaw);
+  let date=new Date().toLocaleDateString('en-GB');
+  let out=document.getElementById('appOutput');
+  let app='';
+  if(currentLang==='en'){
+    app=`To,
+The Headmaster,
+${school}
+
+Subject: Application for ${days} Leave
+
+Respected Sir,
+
+I beg to state that I am ${name} of Class ${cls}. I am suffering from ${reason}. Therefore, I will not be able to attend school for ${days}.
+
+Kindly grant me ${days} leave. I shall be highly obliged.
+
+Yours obediently,
+${name}
+Class: ${cls}
+Date: ${date}`;
+    out.style.direction='ltr'; out.style.textAlign='left'; out.style.fontFamily="'Inter',sans-serif"; out.style.fontSize='14px'; out.style.lineHeight='1.8';
+    out.innerText=app;
+  }else{
+    app=`بخدمت جناب ہیڈ ماسٹر صاحب،<br>${school}<br><br>موضوع: ${days} کی چھٹی کی درخواست<br><br>جناب عالی!<br><br>گزارش ہے کہ میرا نام ${name} ہے اور میں جماعت ${cls} کا طالب علم ہوں۔ گزارش ہے کہ ${reason} کی وجہ سے میں ${days} سکول حاضر نہیں ہو سکوں گا۔<br><br>برائے مہربانی مجھے ${days} کی چھٹی دے کر شکرگزار ہونے کا موقع دیں۔<br><br>آپ کا شاگرد،<br>${name}<br>جماعت: ${cls}<br>تاریخ: ${date}`;
+    out.style.direction='rtl'; out.style.textAlign='right'; out.style.fontFamily="'Noto Nastaliq Urdu',serif"; out.style.fontSize='20px'; out.style.lineHeight='2.7';
+    out.innerHTML=app;
+  }
   document.getElementById('resultBox').classList.remove('hidden');
   window.scrollTo({top: document.getElementById('resultBox').offsetTop - 20, behavior:'smooth'});
 }
-function copyText(){
-  let txt = document.getElementById('appOutput').innerText;
-  navigator.clipboard.writeText(txt).then(()=>{ alert('درخواست کاپی ہو گئی!'); });
-}
+function copyText(){ navigator.clipboard.writeText(document.getElementById('appOutput').innerText).then(()=>alert(currentLang==='ur'?'کاپی ہو گئی!':'Copied!')); }
+setLang('en');
 </script>
 </body>
 </html>
