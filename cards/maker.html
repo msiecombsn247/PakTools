@@ -8,55 +8,75 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Noto+Nastaliq+Urdu:wght@500;600&family=Montserrat:wght@600;700&family=Alex+Brush&family=Pacifico&family=Cormorant+Garamond:wght@600&family=Jameel+Noori+Nastaleeq&display=swap" rel="stylesheet">
 <style>
-body{font-family:'Poppins',sans-serif; background:#0f0a1e;}
+body{font-family:'Poppins',sans-serif; background:#0f0a1e; overflow:hidden; height:100vh;}
 .galaxy-bg{background:radial-gradient(ellipse at top left,#2a1852 0%,#0f0a1e 50%,#1a0f2e 100%);}
 .glass{backdrop-filter:blur(16px); background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);}
 .font-btn.active{border-color:#a855f7 !important; background:rgba(168,85,247,0.25) !important; color:white}
-canvas{box-shadow:0 20px 50px rgba(0,0,0,0.5);}
+canvas{box-shadow:0 10px 30px rgba(0,0,0,0.5);}
+/* thin scrollbar */
+::-webkit-scrollbar{width:5px; height:5px}
+::-webkit-scrollbar-thumb{background:rgba(168,85,247,0.4); border-radius:10px}
 </style>
 </head>
-<body class="galaxy-bg min-h-screen">
-<div class="max-w-[1400px] mx-auto px-4 lg:px-8 py-6">
-  <div class="flex justify-between items-center">
-    <a href="index.html" class="glass px-5 py-2 rounded-full text-white/80 text-sm hover:text-white">← All Cards</a>
-    <div class="text-white/40 text-xs">PakTools</div>
+<body class="galaxy-bg">
+<div class="max-w-[1600px] mx-auto px-4 lg:px-6 py-3 h-screen flex flex-col">
+  <!-- COMPACT HEADER -->
+  <div class="flex justify-between items-center shrink-0">
+    <div class="flex items-center gap-4">
+      <a href="index.html" class="glass px-4 py-1.5 rounded-full text-white/80 text-xs hover:text-white">← All Cards</a>
+      <h1 id="pageTitle" class="text-lg lg:text-xl font-bold text-white capitalize">Birthday Card Maker</h1>
+      <p class="text-white/40 text-[11px] hidden md:block">Light cards ke liye dark elegant writing</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <span id="designCount" class="text-white/30 text-[11px]"></span>
+      <div class="text-white/30 text-[10px]">PakTools</div>
+    </div>
   </div>
-  <div class="mt-6">
-    <h1 id="pageTitle" class="text-3xl lg:text-4xl font-bold text-white capitalize">Birthday Card Maker</h1>
-    <p class="text-white/50 text-sm mt-2">Light cards ke liye dark elegant writing</p>
-  </div>
-  <div class="grid lg:grid-cols-[1.7fr_0.9fr] gap-6 mt-8">
-    <div>
-      <div class="flex justify-between items-center mb-3">
-        <h3 class="text-white font-semibold">Choose Template <span class="text-violet-400">cards/designs/</span></h3>
-        <span id="designCount" class="text-white/40 text-xs"></span>
+
+  <div class="grid lg:grid-cols-[1.6fr_0.9fr] gap-4 mt-3 flex-1 overflow-hidden">
+    <!-- LEFT -->
+    <div class="flex flex-col overflow-hidden gap-3">
+      <div class="glass rounded-[14px] p-3 shrink-0">
+        <div class="flex justify-between items-center mb-2">
+          <h3 class="text-white text-[12px] font-semibold">Choose Template <span class="text-violet-400 font-normal">cards/designs/</span></h3>
+        </div>
+        <!-- COMPACT GRID: 6 columns -->
+        <div id="designGrid" class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-2 max-h-[22vh] lg:max-h-[26vh] overflow-y-auto pr-1"></div>
       </div>
-      <div id="designGrid" class="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-[420px] overflow-y-auto pr-1"></div>
-      <div class="mt-8 glass rounded-[20px] p-4">
-        <div class="flex justify-between items-center mb-3">
-          <p class="text-white/60 text-sm">Live HD Preview (800x500)</p>
+
+      <div class="glass rounded-[14px] p-3 flex-1 flex flex-col overflow-hidden">
+        <div class="flex justify-between items-center mb-2 shrink-0">
+          <p class="text-white/60 text-[11px]">Live HD Preview (800x500)</p>
           <div class="flex gap-2">
-            <button onclick="downloadJPG()" class="px-5 py-2 rounded-full bg-gradient-to-r from-violet-600 to-pink-600 text-white text-sm font-semibold">JPG Download</button>
-            <button onclick="downloadPDF()" class="px-5 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold">PDF Download</button>
+            <button onclick="downloadJPG()" class="px-3 py-1 rounded-full bg-gradient-to-r from-violet-600 to-pink-600 text-white text-[11px] font-semibold">JPG</button>
+            <button onclick="downloadPDF()" class="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-[11px]">PDF</button>
           </div>
         </div>
-        <canvas id="cardCanvas" width="800" height="500" class="w-full rounded-xl bg-[#fdf6f0]"></canvas>
+        <div class="flex-1 flex items-center justify-center bg-black/20 rounded-xl overflow-hidden">
+          <canvas id="cardCanvas" width="800" height="500" class="w-full h-auto max-h-[32vh] lg:max-h-[38vh] object-contain rounded-lg bg-[#fdf6f0]"></canvas>
+        </div>
       </div>
     </div>
-    <div class="glass rounded-[20px] p-5 h-fit sticky top-6">
-      <label class="text-[11px] tracking-widest text-white/40 uppercase">Left Side - Title + Name</label>
-      <input id="leftText" class="w-full mt-2 p-3.5 rounded-xl bg-[#1a1430] border border-white/10 text-white outline-none focus:border-violet-500 text-[15px]">
-      <label class="text-[11px] tracking-widest text-white/40 uppercase mt-5 block">Right Side - Dua / Message</label>
-      <textarea id="rightText" rows="5" class="w-full mt-2 p-3.5 rounded-xl bg-[#1a1430] border border-white/10 text-white outline-none focus:border-violet-500 text-[14px]"></textarea>
-      <label class="text-[11px] tracking-widest text-white/40 uppercase mt-5 block">Choose Font</label>
-      <div id="fontList" class="grid grid-cols-1 gap-2 mt-3 max-h-[300px] overflow-y-auto"></div>
-      <div class="mt-5 grid grid-cols-2 gap-3">
-        <button onclick="downloadJPG()" class="py-3.5 rounded-full bg-gradient-to-r from-violet-600 to-pink-600 text-white font-semibold">Download JPG</button>
-        <button onclick="downloadPDF()" class="py-3.5 rounded-full bg-white text-[#0f0a1e] font-semibold">Download PDF</button>
+
+    <!-- RIGHT - COMPACT CONTROLS -->
+    <div class="glass rounded-[14px] p-4 flex flex-col overflow-hidden h-full">
+      <label class="text-[10px] tracking-widest text-white/40 uppercase">Left Side - Title + Name</label>
+      <input id="leftText" class="w-full mt-1.5 p-2.5 rounded-lg bg-[#1a1430] border border-white/10 text-white outline-none focus:border-violet-500 text-[13px]">
+      
+      <label class="text-[10px] tracking-widest text-white/40 uppercase mt-3 block">Right Side - Dua / Message</label>
+      <textarea id="rightText" rows="3" class="w-full mt-1.5 p-2.5 rounded-lg bg-[#1a1430] border border-white/10 text-white outline-none focus:border-violet-500 text-[12px] resize-none"></textarea>
+      
+      <label class="text-[10px] tracking-widest text-white/40 uppercase mt-3 block">Choose Font</label>
+      <div id="fontList" class="grid grid-cols-2 gap-1.5 mt-2 overflow-y-auto flex-1 max-h-[24vh] lg:max-h-[30vh] pr-1"></div>
+      
+      <div class="mt-3 grid grid-cols-2 gap-2 shrink-0">
+        <button onclick="downloadJPG()" class="py-2.5 rounded-full bg-gradient-to-r from-violet-600 to-pink-600 text-white font-semibold text-[12px]">Download JPG</button>
+        <button onclick="downloadPDF()" class="py-2.5 rounded-full bg-white text-[#0f0a1e] font-semibold text-[12px]">Download PDF</button>
       </div>
     </div>
   </div>
 </div>
+
 <script>
 const params = new URLSearchParams(window.location.search);
 const type = params.get('type') || 'birthday';
@@ -73,24 +93,23 @@ document.getElementById('designCount').innerText = DESIGN_FILES.length + " templ
 const fontList = document.getElementById('fontList');
 FONTS.forEach((f,i)=>{
   const btn = document.createElement('button');
-  btn.className = `font-btn text-left px-4 py-3 rounded-xl bg-[#1a1430] border border-white/10 text-white/80 text-sm hover:bg-white/10 ${i==0?'active':''}`;
+  btn.className = `font-btn text-left px-2.5 py-2 rounded-lg bg-[#1a1430] border border-white/10 text-white/80 text-[11px] hover:bg-white/10 ${i==0?'active':''}`;
   btn.style.fontFamily = f.family;
-  btn.innerHTML = `<span class="text-[16px]">${f.name}</span> <span class="block text-[11px] text-white/40" style="font-family:Poppins">Preview</span>`;
+  btn.innerHTML = `<span class="text-[13px] leading-none">${f.name}</span>`;
   btn.onclick = ()=>{ selectedFont=f; document.querySelectorAll('.font-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); drawCard(); };
   fontList.appendChild(btn);
 });
 const grid = document.getElementById('designGrid');
 DESIGN_FILES.forEach(file=>{
   const wrap = document.createElement('div');
-  wrap.className = "group relative aspect-[4/3] rounded-xl bg-white/[0.04] border border-white/10 overflow-hidden cursor-pointer hover:border-violet-400 transition";
-  wrap.innerHTML = `<img src="designs/${file}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" class="w-full h-full object-cover"><div style="display:none" class="absolute inset-0 flex-col items-center justify-center p-2 text-center"><span class="text-[11px] text-white/30">${file} not uploaded</span></div><span class="absolute bottom-2 left-2 text-[10px] px-2 py-1 rounded-full bg-black/50 text-white/70">${file}</span>`;
+  wrap.className = "group relative aspect-[4/3] rounded-lg bg-white/[0.04] border border-white/10 overflow-hidden cursor-pointer hover:border-violet-400 transition";
+  wrap.innerHTML = `<img src="designs/${file}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" class="w-full h-full object-cover"><div style="display:none" class="absolute inset-0 flex-col items-center justify-center p-1 text-center"><span class="text-[9px] text-white/30">${file}</span></div><span class="absolute bottom-1 left-1 text-[8px] px-1.5 py-0.5 rounded-full bg-black/60 text-white/60">${file}</span>`;
   wrap.onclick = ()=>{ selectedDesign=`designs/${file}`; document.querySelectorAll('#designGrid > div').forEach(d=>d.classList.remove('ring-2','ring-violet-500')); wrap.classList.add('ring-2','ring-violet-500'); drawCard(); };
   grid.appendChild(wrap);
 });
-setTimeout(()=>{ const first = document.querySelector('#designGrid > div'); if(first) first.click(); }, 500);
+setTimeout(()=>{ const first = document.querySelector('#designGrid > div'); if(first) first.click(); }, 400);
 const canvas = document.getElementById('cardCanvas');
 const ctx = canvas.getContext('2d');
-
 async function drawCard(){
   await document.fonts.ready;
   ctx.clearRect(0,0,800,500);
@@ -110,36 +129,23 @@ async function drawCard(){
       ctx.drawImage(img, (800-w)/2, (500-h)/2, w, h);
     }
   }catch(e){}
-
-  // *** LIGHT CARD KE LIYE DARK ELEGANT COLORS ***
-  // Left side - Deep Maroon/Brown - Light background par perfect
-  ctx.fillStyle = "#4A1E2A";  // Deep Burgundy - sabse readable
+  ctx.fillStyle = "#4A1E2A";
   ctx.textAlign = "center";
   ctx.font = `700 46px ${selectedFont.family}`;
-  
-  // Halka sa white glow taake light design par aur bhi ubhre
   ctx.shadowColor = "rgba(255,255,255,0.9)";
   ctx.shadowBlur = 8;
-  ctx.shadowOffsetX = 0;
-  ctx.shadowOffsetY = 0;
-  
   const leftVal = document.getElementById('leftText').value;
   wrapText(ctx, leftVal, 200, 220, 340, 50);
-
   ctx.shadowBlur = 0;
-
-  // Right side - Deep Rose / Muted Brown
-  ctx.fillStyle = "#8B4557"; // Prayer / Dua ke liye soft rose
+  ctx.fillStyle = "#8B4557";
   ctx.font = "38px 'Great Vibes'";
   ctx.textAlign = "center";
   ctx.fillText("Prayer / Dua", 600, 120);
-
-  ctx.fillStyle = "#3D2A26"; // Message ke liye dark chocolate
+  ctx.fillStyle = "#3D2A26";
   ctx.font = "500 14px 'Poppins'";
   ctx.textAlign = "center";
   wrapText(ctx, document.getElementById('rightText').value, 600, 175, 320, 21);
 }
-
 function wrapText(context, text, x, y, maxWidth, lineHeight){
   if(!text) return;
   const words = text.split(' '); let line=''; let currY = y;
