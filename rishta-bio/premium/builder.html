@@ -4,6 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Builder - Premium Design</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <style>
 body{background:#0f0a1a; color:#fff}
@@ -11,20 +12,20 @@ body{background:#0f0a1a; color:#fff}
 .input-dark{background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.1); color:#fff; padding:10px 12px; border-radius:10px; width:100%; font-size:13px; outline:none}
 .input-dark:focus{border-color:#d4af37}
 #a4-page{width:210mm; min-height:297mm; background-color:#fffef8; background-size:100% 100%; background-position:center; position:relative; margin:0 auto; box-shadow:0 0 30px rgba(0,0,0,0.6)}
-/* YE SABSE IMPORTANT HAI - Safe Area */
+/* FIXED SAFE AREA - Thora Right Shift */
 #safe-content{
   position:absolute;
-  top:28mm; /* Upar gold corner se bachne ke liye */
-  left:28mm; /* Left marble se */
-  right:28mm; /* Right marble se */
-  bottom:26mm; /* Neeche se */
-  padding:5mm;
+  top:28mm;
+  left:36mm; /* 28mm se 36mm -> writing right ko */
+  right:28mm;
+  bottom:26mm;
+  padding:5mm 5mm 5mm 8mm; /* left padding extra */
   overflow:hidden;
 }
 </style>
 </head>
 <body class="flex flex-col md:flex-row h-screen">
-<!-- LEFT - Normal wale inputs -->
+<!-- LEFT -->
 <div class="w-full md:w-[360px] p-4 overflow-y-auto glass m-2 rounded-2xl">
 <a href="./index.html" class="text-[12px] text-gray-400">← Change Design</a>
 <h2 id="designTitle" class="font-black text-[14px] mt-2 mb-3">Design 01 - Premium</h2>
@@ -42,7 +43,11 @@ body{background:#0f0a1a; color:#fff}
 <input id="f_req" class="input-dark mb-2" placeholder="Requirement">
 <input type="file" id="f_photo" accept="image/*" class="text-[11px] mt-2">
 
-<button onclick="downloadPDF()" class="w-full mt-4 bg-gradient-to-r from-[#d4af37] to-[#8b5a2b] py-3 rounded-full font-bold text-[13px]">📄 Download Premium PDF</button>
+<div class="grid grid-cols-2 gap-2 mt-4">
+<button onclick="downloadJPG()" class="w-full bg-gradient-to-r from-[#22c55e] to-[#16a34a] py-3 rounded-full font-bold text-[13px]">🖼️ Download JPG</button>
+<button onclick="downloadPDF()" class="w-full bg-gradient-to-r from-[#d4af37] to-[#8b5a2b] py-3 rounded-full font-bold text-[13px]">📄 Download PDF</button>
+</div>
+<p class="text-[10px] text-white/40 mt-2 text-center">JPG = Fast Share | PDF = High Quality Print</p>
 </div>
 
 <!-- RIGHT - A4 Preview -->
@@ -55,12 +60,11 @@ body{background:#0f0a1a; color:#fff}
     </div>
     
     <div class="mt-6 relative">
-      <!-- Photo Box - Safe area ke andar -->
       <div class="absolute top-0 right-0 w-[32mm] h-[40mm] border-[2.5px] border-[#d4af37] rounded-lg overflow-hidden bg-white">
         <img id="p_photo" class="w-full h-full object-cover"><div id="photoPlaceholder" class="text-[10px] text-black text-center mt-[15mm]">Photo</div>
       </div>
       
-      <div class="w-[62%] space-y-4 text-black text-[12px] leading-6">
+      <div class="w-[60%] ml-2 space-y-[14px] text-black text-[12px] leading-[22px]">
         <p><b>Name:</b> <span id="p_name">______</span></p>
         <p><b>Father Name:</b> <span id="p_father">______</span></p>
         <p><b>Date of Birth:</b> <span id="p_dob">______</span></p>
@@ -89,8 +93,6 @@ document.getElementById('designTitle').innerText=`Design ${String(d).padStart(2,
 const borderSrc=`./borders/border_a4_${d}.jpg`;
 const a4=document.getElementById('a4-page');
 a4.style.backgroundImage=`url('${borderSrc}')`;
-
-// Fallback to webp if jpg not found
 let imgTest=new Image();
 imgTest.onerror=()=>{ a4.style.backgroundImage=`url('./borders/border_a4_${d}.webp')`; };
 imgTest.src=borderSrc;
@@ -116,8 +118,17 @@ document.getElementById('f_photo').addEventListener('change', e=>{
 });
 
 function downloadPDF(){
-  const opt={margin:0, filename:`Premium_Biodata_${d}.pdf`, image:{type:'jpeg', quality:1}, html2canvas:{scale:3, useCORS:true}, jsPDF:{unit:'mm', format:'a4', orientation:'portrait'}};
+  const opt={margin:0, filename:`Premium_Biodata_${d}.pdf`, image:{type:'jpeg', quality:1}, html2canvas:{scale:3, useCORS:true, logging:false}, jsPDF:{unit:'mm', format:'a4', orientation:'portrait'}};
   html2pdf().set(opt).from(a4).save();
+}
+
+function downloadJPG(){
+  html2canvas(a4, {scale:3, useCORS:true, backgroundColor:null}).then(canvas=>{
+    const link=document.createElement('a');
+    link.download=`Premium_Biodata_${d}.jpg`;
+    link.href=canvas.toDataURL('image/jpeg',0.95);
+    link.click();
+  });
 }
 </script>
 </body>
