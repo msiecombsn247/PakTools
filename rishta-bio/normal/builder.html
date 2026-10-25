@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Builder - Normal Design</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>body{background:#07010f;color:#fff}.glass{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px)}.paper{width:794px;min-height:1123px;background:white;color:#000;position:relative;overflow:hidden;background-size:100% 100%}</style>
+</head>
+<body>
+<div class="grid lg:grid-cols-[380px_1fr] gap-4 p-4 max-w-[1600px] mx-auto">
+<div class="glass rounded-[20px] p-4 h-fit sticky top-4">
+<a href="index.html" class="text-xs">← Change Design</a>
+<h2 id="dTitle" class="font-black mt-2">Design 01</h2>
+<div class="mt-3 grid grid-cols-2 gap-2">
+<input id="fName" placeholder="Full Name" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fFName" placeholder="Father Name" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fDob" placeholder="DOB" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs"><input id="fAge" placeholder="Age" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fHeight" placeholder="Height" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs"><input id="fCast" placeholder="Cast" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fSect" placeholder="Sect" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fEdu" placeholder="Education" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fJob" placeholder="Job" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fIncome" placeholder="Income" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs"><input id="fCity" placeholder="City" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fFamily" placeholder="Family" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fPhone" placeholder="Phone" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fReq" placeholder="Requirement" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+</div>
+<div class="mt-3"><input type="file" id="fPhoto" accept="image/*" class="text-[10px]"></div>
+<button onclick="downloadPDF()" class="mt-4 w-full bg-white text-black py-3 rounded-full font-black text-xs">📥 PDF Download</button>
+</div>
+<div class="flex justify-center bg-[#0a0a0a] rounded-[20px] p-4 overflow-auto"><div id="paper" class="paper p-[90px_70px]"><div class="relative z-10 flex justify-between"><div class="flex-1"><h1 class="text-center font-black text-[26px] tracking-widest">RISHTA BIODATA</h1><p class="text-center text-[11px] mt-1">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p><div class="mt-8 space-y-[20px] text-[13px]"><p><b>Name:</b> <span id="pName">__________</span> <b>Father:</b> <span id="pFName">__________</span></p><p><b>DOB:</b> <span id="pDob">__________</span> <b>Age:</b> <span id="pAge">__________</span> <b>Height:</b> <span id="pHeight">__________</span></p><p><b>Cast:</b> <span id="pCast">__________</span> <b>Sect:</b> <span id="pSect">__________</span></p><p><b>Education:</b> <span id="pEdu">__________</span></p><p><b>Profession:</b> <span id="pJob">__________</span> <b>Income:</b> <span id="pIncome">__________</span></p><p><b>City:</b> <span id="pCity">__________</span></p><p><b>Family:</b> <span id="pFamily">__________</span></p><p><b>Contact:</b> <span id="pPhone">__________</span></p><p class="pt-4 border-t border-dashed"><b>Requirement:</b> <span id="pReq">__________</span></p></div></div><div class="w-[120px] ml-4"><div class="w-[120px] h-[140px] border flex items-center justify-center bg-gray-50 overflow-hidden"><img id="pPhoto" class="w-full h-full object-cover hidden"><span id="pPhotoTxt" class="text-[9px]">Photo</span></div></div></div></div></div>
+</div>
+<script>
+const url=new URLSearchParams(location.search);let d=parseInt(url.get('d'))||1;if(d<1||d>20)d=1;
+const names=["Eucalyptus Round","Mini Floral Corner","Classic Blossom","Fern Minimal","Olive Branch","Green Olive","Lavender Corner","Magnolia Bow","Pine Leaf","Ginkgo Leaf","White Blossom","Daisy Flower","Berry Leaf","Pine Needle","Palm Elegant","Lotus Minimal","Hydrangea","Maple Leaf","Wildflower","Meadow"];
+document.getElementById('dTitle').innerText=`Design ${String(d).padStart(2,'0')} - ${names[d-1]}`;
+document.getElementById('paper').style.backgroundImage=`url('borders/border_a4_${d}.jpg')`;
+const map={fName:'pName',fFName:'pFName',fDob:'pDob',fAge:'pAge',fHeight:'pHeight',fCast:'pCast',fSect:'pSect',fEdu:'pEdu',fJob:'pJob',fIncome:'pIncome',fCity:'pCity',fFamily:'pFamily',fPhone:'pPhone',fReq:'pReq'};
+Object.keys(map).forEach(id=>{document.getElementById(id).addEventListener('input',e=>{document.getElementById(map[id]).innerText=e.target.value||'__________';});});
+document.getElementById('fPhoto').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const u=URL.createObjectURL(f);const img=document.getElementById('pPhoto');img.src=u;img.classList.remove('hidden');document.getElementById('pPhotoTxt').classList.add('hidden');});
+async function downloadPDF(){const {jsPDF}=window.jspdf;const paper=document.getElementById('paper');const canvas=await html2canvas(paper,{scale:2,useCORS:true,backgroundColor:'#ffffff'});const imgData=canvas.toDataURL('image/jpeg',0.95);const pdf=new jsPDF('p','mm','a4');const w=210;const h=(canvas.height*w)/canvas.width;pdf.addImage(imgData,'JPEG',0,0,w,h);pdf.save(`Rishta-Design-${d}.pdf`);}
+</script>
+</body>
+</html>
