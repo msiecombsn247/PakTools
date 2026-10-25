@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Card Maker - PakTools</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@600&family=Poppins:wght@500;700&family=Playfair+Display:wght@700&family=Noto+Nastaliq+Urdu:wght@500&family=Montserrat:wght@600&family=Alex+Brush&family=Pacifico&family=Cormorant+Garamond:wght@600&family=Jameel+Noori+Nastaleeq&display=swap" rel="stylesheet">
+<style>
+.font-btn.active{border-color:#a855f7; background:rgba(168,85,247,0.2)}
+canvas{max-width:100%; height:auto}
+</style>
+</head>
+<body class="bg-[#0f0a1e] text-white font-[Poppins]">
+
+<div class="max-w-7xl mx-auto px-4 py-6">
+  <a href="index.html" class="text-white/60 hover:text-white">← Back to Cards</a>
+  <h1 id="pageTitle" class="text-3xl font-bold mt-4 capitalize">Loading...</h1>
+  <p class="text-white/50 text-sm mt-1">Select a design, write your message, choose font, download JPG/PDF</p>
+
+  <div class="grid lg:grid-cols-3 gap-6 mt-8">
+    <!-- LEFT: Designs Grid -->
+    <div class="lg:col-span-2">
+      <h3 class="font-semibold mb-3">Choose Design (1 Folder for All Cards)</h3>
+      <div id="designGrid" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Designs auto load here from /designs/ folder -->
+      </div>
+    </div>
+
+    <!-- RIGHT: Editor -->
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-fit sticky top-6">
+      <label class="text-sm text-white/70">Left Side Title</label>
+      <input id="leftText" class="w-full mt-1 p-3 rounded-lg bg-white/10 border border-white/10 outline-none" value="Happy Birthday Ahmed">
+
+      <label class="text-sm text-white/70 mt-4 block">Right Side - Prayer / Dua</label>
+      <textarea id="rightText" rows="4" class="w-full mt-1 p-3 rounded-lg bg-white/10 border border-white/10 outline-none">May your life be filled with happiness, health and success. Ameen.</textarea>
+
+      <label class="text-sm text-white/70 mt-4 block">Choose 10 Fonts (Left Side)</label>
+      <div id="fontList" class="grid grid-cols-2 gap-2 mt-2 max-h-[220px] overflow-y-auto"></div>
+
+      <div class="flex gap-3 mt-6">
+        <button onclick="downloadJPG()" class="flex-1 py-3 rounded-full bg-gradient-to-r from-violet-600 to-pink-600 font-semibold">Download JPG</button>
+        <button onclick="downloadPDF()" class="flex-1 py-3 rounded-full bg-white/10 border border-white/20 font-semibold">Download PDF</button>
+      </div>
+
+      <div class="mt-6">
+        <p class="text-xs text-white/40 mb-2">Live Preview</p>
+        <canvas id="cardCanvas" width="800" height="500" class="w-full rounded-xl bg-[#fdf6f0]"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const type = urlParams.get('type') || 'birthday';
+
+const TITLES = {
+  'birthday': 'Happy Birthday',
+  'wedding': 'Happy Wedding',
+  'proposal': 'Will You Marry Me?',
+  'love': 'I Love You',
+  'anniversary': 'Happy Anniversary',
+  'engagement': 'Happy Engagement',
+  'eid': 'Eid Mubarak',
+  'ramzan': 'Ramzan Mubarak',
+  'mothers-day': "Happy Mother's Day",
+  'fathers-day': "Happy Father's Day"
+};
+
+const FONTS = ["Great Vibes","Dancing Script","Poppins","Playfair Display","Noto Nastaliq Urdu","Montserrat","Alex Brush","Pacifico","Cormorant Garamond","Jameel Noori Nastaleeq"];
+
+let selectedFont = FONTS[0];
+let selectedDesign = null;
+
+// For now we load from one common folder: designs/
+// You will drag your folder later, just keep names like 1.jpg, 2.jpg
+const DESIGN_FILES = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg"]; // you can add 50 here
+
+document.getElementById('pageTitle').innerText = TITLES[type] + " Card Maker";
+document.getElementById('leftText').value = TITLES[type] + " Ahmed";
+
+// Render Fonts
+const fontListDiv = document.getElementById('fontList');
+FONTS.forEach(f=>{
+  const btn = document.createElement('button');
+  btn.className = "font-btn p-2 rounded-lg bg-white/5 border border-white/10 text-sm text-left";
+  btn.style.fontFamily = `'${f}'`;
+  btn.innerText = f;
+  btn.onclick = ()=>{ selectedFont=f; document.querySelectorAll('.font-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); drawCard(); };
+  fontListDiv.appendChild(btn);
+});
+fontListDiv.firstChild.classList.add('active');
+
+// Render Designs
+const grid = document.getElementById('designGrid');
+DESIGN_FILES.forEach(file=>{
+  const div = document.createElement('div');
+  div.className = "aspect-[4/3] rounded-xl bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer hover:border-violet-400 overflow-hidden";
+  div.innerHTML = `<img src="designs/${file}" onerror="this.parentElement.innerHTML='<span class=text-xs text-white/40>Upload ${file} in designs/</span>'" class="w-full h-full object-cover">`;
+  div.onclick = ()=>{ selectedDesign = `designs/${file}`; drawCard(); document.querySelectorAll('#designGrid div').forEach(d=>d.classList.remove('ring-2','ring-violet-500')); div.classList.add('ring-2','ring-violet-500'); };
+  grid.appendChild(div);
+});
+
+const canvas = document.getElementById('cardCanvas');
+const ctx = canvas.getContext('2d');
+
+async function drawCard(){
+  await document.fonts.ready;
+  // Background
+  ctx.fillStyle = "#fdf6f0";
+  ctx.fillRect(0,0,800,500);
+  
+  if(selectedDesign){
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.src = selectedDesign;
+    await new Promise(r=>{ img.onload=r; img.onerror=r; });
+    if(img.complete && img.naturalWidth>0) ctx.drawImage(img,0,0,800,500);
+  }
+
+  // Left side
+  ctx.fillStyle = "rgba(0,0,0,0.6)";
+  ctx.fillRect(0,0,400,500);
+  ctx.fillStyle = "#fff";
+  ctx.textAlign = "center";
+  ctx.font = `600 42px '${selectedFont}'`;
+  ctx.fillText(document.getElementById('leftText').value, 200, 180, 360);
+
+  // Right side
+  ctx.fillStyle = "rgba(253,246,240,0.9)";
+  ctx.fillRect(400,0,400,500);
+  ctx.fillStyle = "#b76a7a";
+  ctx.font = `400 38px 'Great Vibes'`;
+  ctx.fillText("Prayer / Dua", 600, 120);
+  ctx.fillStyle = "#333";
+  ctx.font = `14px 'Poppins'`;
+  wrapText(ctx, document.getElementById('rightText').value, 600, 180, 340, 20);
+}
+
+function wrapText(context, text, x, y, maxWidth, lineHeight) {
+  const words = text.split(' ');
+  let line = '';
+  for(let n=0; n<words.length; n++) {
+    let testLine = line + words[n] + ' ';
+    let metrics = context.measureText(testLine);
+    if (metrics.width > maxWidth && n > 0) {
+      context.fillText(line, x, y); line = words[n] + ' '; y += lineHeight;
+    } else { line = testLine; }
+  }
+  context.fillText(line, x, y);
+}
+
+document.getElementById('leftText').addEventListener('input', drawCard);
+document.getElementById('rightText').addEventListener('input', drawCard);
+
+function downloadJPG(){
+  drawCard().then(()=>{ const link=document.createElement('a'); link.download=`${type}-card.jpg`; link.href=canvas.toDataURL('image/jpeg',0.9); link.click(); });
+}
+function downloadPDF(){
+  drawCard().then(()=>{
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({orientation:'landscape', unit:'px', format:[800,500]});
+    pdf.addImage(canvas.toDataURL('image/jpeg',0.9), 'JPEG', 0, 0, 800, 500);
+    pdf.save(`${type}-card.pdf`);
+  });
+}
+drawCard();
+</script>
+</body>
+</html>
