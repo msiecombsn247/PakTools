@@ -1,32 +1,117 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Fee Maafi Application - School College Fee Concession | Bol Kar Banao</title>
-<meta name="description" content="Fee maafi ki application bol kar banao. School, College fee maaf, qist. Urdu mein bolo mic se, PDF download. 100% free original content.">
+<title>Fee Maafi Application - English / Urdu Bol Kar Banao | PakTools</title>
+<meta name="description" content="Fee maafi ki application English ya Urdu mein bol kar banao. School, College fee maaf, qist. Mic se bolo, PDF download.">
 <link rel="canonical" href="https://www.paktoolsonline.com/chitthi/fee.html">
 <script src="https://cdn.tailwindcss.com"></script>
-<style>body{background:#07010f;color:white}.glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+.urdu{font-family:'Noto Nastaliq Urdu',serif;line-height:2.6}
+body{background:#07010f;color:#fff}
+.glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}
+.lang-active{background:white !important;color:black !important;font-weight:900}
+.en-input{direction:ltr;text-align:left;font-family:'Inter',sans-serif}
+.ur-input{direction:rtl;text-align:right;font-family:'Noto Nastaliq Urdu',serif}
+</style>
 </head>
 <body>
-<header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/90 p-4 flex justify-between"><a href="../index.html" class="font-black text-white no-underline">← PakTools</a><a href="index.html" class="text-xs bg-white/10 px-3 py-1 rounded-full text-white no-underline">✉️ Chitthi</a></header>
+<div style="position:fixed;inset:0;z-index:-1;background:#07010f"><div style="position:absolute;width:1000px;height:1000px;background:radial-gradient(circle,#10b981,#07010f 70%);filter:blur(90px);opacity:0.3"></div></div>
+<header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl p-4 flex justify-between">
+<a href="../index.html" class="font-black text-white no-underline">← PakTools</a><a href="index.html" class="text-xs bg-white/10 px-3 py-1 rounded-full text-white no-underline">✉️ Chitthi Home</a>
+</header>
 <main class="max-w-4xl mx-auto px-5 py-8">
-<h1 class="text-3xl font-black text-center">💰 Fee Maafi - <span class="text-emerald-300">Bol Kar Banao</span></h1>
-<div class="mt-8 glass rounded-[24px] p-6">
-<div class="grid md:grid-cols-2 gap-4">
-<div><label class="text-[11px] text-gray-400 uppercase">Naam + Class Bolo</label><div class="flex gap-2 mt-1"><input id="fName" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Ali, Class 10th"><button onclick="startMic('fName')" class="bg-emerald-600 px-5 rounded-full">🎤</button></div></div>
-<div><label class="text-[11px] text-gray-400 uppercase">Fee Qisam Bolo</label><div class="flex gap-2 mt-1"><input id="fType" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Puri fee maafi, ya qist"><button onclick="startMic('fType')" class="bg-emerald-600 px-5 rounded-full">🎤</button></div></div>
-<div class="md:col-span-2"><label class="text-[11px] text-gray-400 uppercase">Wajah Bolo</label><div class="flex gap-2 mt-1"><input id="fReason" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Walid mazdoor hain, fee nahi de sakte"><button onclick="startMic('fReason')" class="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 rounded-full font-bold">🎤 Bolo</button></div></div>
+<h1 class="text-3xl font-black text-center">💰 فیس معافی - <span class="text-emerald-300">بول کر بنائیں</span></h1>
+
+<div class="mt-6 flex justify-center gap-2 p-1 bg-white/10 rounded-full w-fit mx-auto border border-white/10">
+<button id="btnEn" onclick="setLang('en')" class="lang-active px-6 py-2 rounded-full text-sm">English</button>
+<button id="btnUr" onclick="setLang('ur')" class="px-6 py-2 rounded-full text-sm text-gray-300">اردو</button>
 </div>
-<button onclick="generate()" class="mt-6 w-full bg-gradient-to-r from-emerald-600 to-teal-600 py-4 rounded-full font-black text-sm">✨ Fee Application Banao</button>
-<div id="resultBox" class="hidden mt-6"><div id="appOutput" class="bg-white text-black p-6 rounded-2xl text-[13px] leading-7 whitespace-pre-line"></div><div class="flex gap-2 mt-3"><button onclick="copyText()" class="flex-1 bg-white/10 border py-3 rounded-full text-xs font-bold">Copy</button><button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">PDF</button></div></div>
+<p id="langNote" class="text-center text-[11px] text-emerald-300 mt-2">English mode: Speak in ENGLISH</p>
+
+<div class="mt-6 glass rounded-[24px] p-6">
+<div class="grid md:grid-cols-2 gap-4">
+<div><label id="lName" class="text-[11px] text-gray-400">1. Name + Class</label><div class="flex gap-2 mt-1"><input id="fName" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Ali, Class 10th"><button onclick="startMic('fName')" class="bg-emerald-600 px-5 rounded-full">🎤</button></div></div>
+<div><label id="lType" class="text-[11px] text-gray-400">2. Fee Type</label><div class="flex gap-2 mt-1"><input id="fType" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Full fee concession / Installment"><button onclick="startMic('fType')" class="bg-emerald-600 px-5 rounded-full">🎤</button></div></div>
+<div><label id="lSchool" class="text-[11px] text-gray-400">3. School/College Name</label><div class="flex gap-2 mt-1"><input id="fSchool" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Govt. High School Lahore"><button onclick="startMic('fSchool')" class="bg-emerald-600 px-5 rounded-full">🎤</button></div></div>
+<div><label id="lAmount" class="text-[11px] text-gray-400">4. Fee Amount (Optional)</label><div class="flex gap-2 mt-1"><input id="fAmount" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="5000 / 2 months"><button onclick="startMic('fAmount')" class="bg-emerald-600 px-5 rounded-full">🎤</button></div></div>
+<div class="md:col-span-2"><label id="lReason" class="text-[11px] text-gray-400">5. Reason</label><div class="flex gap-2 mt-1"><input id="fReason" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Father is laborer, cannot afford fee"><button onclick="startMic('fReason')" class="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 rounded-full font-bold">🎤 Speak</button></div></div>
+</div>
+<button onclick="generate()" class="mt-6 w-full bg-gradient-to-r from-emerald-600 to-teal-600 py-4 rounded-full font-black text-sm">✨ Generate / درخواست بنائیں</button>
+<div id="resultBox" class="hidden mt-6"><div id="appOutput" class="bg-white text-black p-8 rounded-2xl whitespace-pre-line text-[14px] leading-7"></div><div class="flex gap-2 mt-3"><button onclick="copyText()" class="flex-1 bg-white/10 border border-white/20 py-3 rounded-full text-xs font-bold">📋 Copy</button><button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">🖨️ PDF</button></div></div>
 <p id="micStatus" class="text-center text-[11px] text-emerald-300 mt-3"></p>
 </div>
 </main>
 <script>
-function startMic(id){const Rec=window.SpeechRecognition||window.webkitSpeechRecognition;const rec=new Rec();rec.lang='ur-PK';document.getElementById('micStatus').innerText='🎤 Sun raha...';rec.onresult=e=>{document.getElementById(id).value=e.results[0][0].transcript;document.getElementById('micStatus').innerText='✅ '+e.results[0][0].transcript;};rec.start();}
-function generate(){let n=document.getElementById('fName').value||'Student',t=document.getElementById('fType').value||'Fee Maafi',r=document.getElementById('fReason').value||'financial problem',d=new Date().toLocaleDateString('en-PK');let app=`Bakhidmat Janab Principal Sahab,\nMozoo: ${t} ki Darkhuwast\n\nGuzarish hai ke main ${n} hun. ${r} ki wajah se ${t} ki darkhuwast kar raha hun. Meherbani farma kar meri ${t} manzoor farmayen.\n\nShukriya,\n${n}\nTarikh: ${d}`;document.getElementById('appOutput').innerText=app;document.getElementById('resultBox').classList.remove('hidden');}
-function copyText(){navigator.clipboard.writeText(document.getElementById('appOutput').innerText);alert('Copied');}
+let currentLang='en';
+function setLang(l){
+  currentLang=l;
+  document.getElementById('btnEn').classList.remove('lang-active');
+  document.getElementById('btnUr').classList.remove('lang-active');
+  const ids=['fName','fType','fSchool','fAmount','fReason'];
+  if(l==='en'){
+    document.getElementById('btnEn').classList.add('lang-active');
+    document.getElementById('langNote').innerText='English mode: Please speak in ENGLISH';
+    document.getElementById('lName').innerText='1. Name + Class'; document.getElementById('lType').innerText='2. Fee Type'; document.getElementById('lSchool').innerText='3. School/College Name'; document.getElementById('lAmount').innerText='4. Fee Amount (Optional)'; document.getElementById('lReason').innerText='5. Reason';
+    document.getElementById('fName').placeholder='Ali, Class 10th'; document.getElementById('fType').placeholder='Full fee concession / Installment'; document.getElementById('fSchool').placeholder='Govt. High School Lahore'; document.getElementById('fAmount').placeholder='5000 / 2 months'; document.getElementById('fReason').placeholder='Father is laborer, cannot afford fee';
+    ids.forEach(id=>{ document.getElementById(id).className='en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm'; });
+  }else{
+    document.getElementById('btnUr').classList.add('lang-active');
+    document.getElementById('langNote').innerText='اردو موڈ: براہ کرم اردو میں بولیں';
+    document.getElementById('lName').innerText='1. نام + کلاس'; document.getElementById('lType').innerText='2. فیس کی قسم'; document.getElementById('lSchool').innerText='3. سکول/کالج کا نام'; document.getElementById('lAmount').innerText='4. فیس کتنی؟'; document.getElementById('lReason').innerText='5. وجہ';
+    document.getElementById('fName').placeholder='علی، جماعت دہم'; document.getElementById('fType').placeholder='پوری فیس معافی یا قسط'; document.getElementById('fSchool').placeholder='گورنمنٹ ہائی سکول لاہور'; document.getElementById('fAmount').placeholder='5000 روپے، دو ماہ'; document.getElementById('fReason').placeholder='والد مزدور ہیں، فیس نہیں دے سکتے';
+    ids.forEach(id=>{ document.getElementById(id).className='ur-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm'; });
+  }
+}
+function startMic(id){
+  const Rec=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!Rec){ alert('Mic only in Chrome'); return; }
+  const rec=new Rec(); rec.lang=currentLang==='ur'?'ur-PK':'en-US';
+  document.getElementById('micStatus').innerText=currentLang==='ur'?'🎤 سن رہا ہوں...':'🎤 Listening... Speak in ENGLISH...';
+  rec.onresult=e=>{ document.getElementById(id).value=e.results[0][0].transcript; document.getElementById('micStatus').innerText='✅ '+e.results[0][0].transcript; };
+  rec.start();
+}
+function generate(){
+  let name=document.getElementById('fName').value.trim()||(currentLang==='ur'?'طالب علم':'Student');
+  let type=document.getElementById('fType').value.trim()||(currentLang==='ur'?'پوری فیس معافی':'Full Fee Concession');
+  let school=document.getElementById('fSchool').value.trim()||(currentLang==='ur'?'گورنمنٹ سکول':'Govt. School');
+  let amount=document.getElementById('fAmount').value.trim()||'';
+  let reason=document.getElementById('fReason').value.trim()||(currentLang==='ur'?'مالی مشکلات':'Financial Problem');
+  let date=new Date().toLocaleDateString('en-GB');
+  let out=document.getElementById('appOutput');
+  let app='';
+
+  if(currentLang==='en'){
+    app=`To,
+The Principal,
+${school}
+
+Subject: Application for ${type}
+
+Respected Sir,
+
+I beg to state that I am ${name} studying in your esteemed institution. I am writing to request ${type}${amount?' for amount '+amount:''}.
+
+My father is a laborer and our family income is very low. Due to ${reason}, I am unable to pay my fee. I am a hardworking and obedient student.
+
+Kindly grant me ${type}. I shall be highly obliged and will always pray for you.
+
+Yours obediently,
+${name}
+Date: ${date}`;
+    out.style.direction='ltr'; out.style.textAlign='left'; out.style.fontFamily="'Inter',sans-serif"; out.style.fontSize='14px'; out.style.lineHeight='1.8';
+    out.innerText=app;
+  }else{
+    app=`بخدمت جناب پرنسپل صاحب،<br>${school}<br><br>موضوع: ${type} کی درخواست<br><br>جناب عالی!<br><br>گزارش ہے کہ میں ${name} آپ کے ادارے کا طالب علم ہوں۔ میں ${type} ${amount?'رقم '+amount+' کے لیے':'کے لیے'} درخواست دے رہا ہوں۔<br><br>میرے والد مزدور ہیں اور گھر کی آمدنی بہت کم ہے۔ ${reason} کی وجہ سے میں فیس ادا کرنے سے قاصر ہوں۔ میں ایک محنتی اور فرمانبردار طالب علم ہوں۔<br><br>مہربانی فرما کر میری ${type} منظور فرما کر شکرگزار ہونے کا موقع دیں۔<br><br>آپ کا شاگرد،<br>${name}<br>تاریخ: ${date}`;
+    out.style.direction='rtl'; out.style.textAlign='right'; out.style.fontFamily="'Noto Nastaliq Urdu',serif"; out.style.fontSize='20px'; out.style.lineHeight='2.7';
+    out.innerHTML=app;
+  }
+  document.getElementById('resultBox').classList.remove('hidden');
+  window.scrollTo({top: document.getElementById('resultBox').offsetTop - 20, behavior:'smooth'});
+}
+function copyText(){ navigator.clipboard.writeText(document.getElementById('appOutput').innerText).then(()=>alert(currentLang==='ur'?'کاپی ہو گئی!':'Copied!')); }
+setLang('en');
 </script>
 </body>
 </html>
