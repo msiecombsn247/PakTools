@@ -6,21 +6,19 @@
 <title>Card Maker - PakTools</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Noto+Nastaliq+Urdu:wght@500;600&family=Montserrat:wght@600;700&family=Alex+Brush&family=Pacifico&family=Cormorant+Garamond:wght@600&family=Jameel+Noori+Nastaleeq&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Noto+Nastaliq+Urdu:wght@500;600&family=Montserrat:wght@600;700&family=Alex+Brush&family=Pacifico&family=Cormorant+Garamond:wght@600&family=Jameel+Noori+Nastaleeq&family=Lobster&family=Satisfy&family=Caveat:wght@600&family=Kaushan+Script&family=Sacramento&family=Courgette&family=Merriweather:wght@700&family=Lora:wght@600&family=Raleway:wght@600&family=Quicksand:wght@600&family=Kalam:wght@600&family=Shadows+Into+Light&family=Indie+Flower&family=Cookie&family=Tangerine:wght@700&family=Allura&family=Abril+Fatface&family=Josefin+Sans:wght@600&family=Comfortaa:wght@600&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
 <style>
 body{font-family:'Poppins',sans-serif; background:#0f0a1e; overflow:hidden; height:100vh;}
 .galaxy-bg{background:radial-gradient(ellipse at top left,#2a1852 0%,#0f0a1e 50%,#1a0f2e 100%);}
 .glass{backdrop-filter:blur(16px); background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);}
 .font-btn.active{border-color:#a855f7 !important; background:rgba(168,85,247,0.25) !important; color:white}
 canvas{box-shadow:0 10px 30px rgba(0,0,0,0.5);}
-/* thin scrollbar */
 ::-webkit-scrollbar{width:5px; height:5px}
 ::-webkit-scrollbar-thumb{background:rgba(168,85,247,0.4); border-radius:10px}
 </style>
 </head>
 <body class="galaxy-bg">
 <div class="max-w-[1600px] mx-auto px-4 lg:px-6 py-3 h-screen flex flex-col">
-  <!-- COMPACT HEADER -->
   <div class="flex justify-between items-center shrink-0">
     <div class="flex items-center gap-4">
       <a href="index.html" class="glass px-4 py-1.5 rounded-full text-white/80 text-xs hover:text-white">← All Cards</a>
@@ -34,16 +32,13 @@ canvas{box-shadow:0 10px 30px rgba(0,0,0,0.5);}
   </div>
 
   <div class="grid lg:grid-cols-[1.6fr_0.9fr] gap-4 mt-3 flex-1 overflow-hidden">
-    <!-- LEFT -->
     <div class="flex flex-col overflow-hidden gap-3">
       <div class="glass rounded-[14px] p-3 shrink-0">
         <div class="flex justify-between items-center mb-2">
           <h3 class="text-white text-[12px] font-semibold">Choose Template <span class="text-violet-400 font-normal">cards/designs/</span></h3>
         </div>
-        <!-- COMPACT GRID: 6 columns -->
         <div id="designGrid" class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-2 max-h-[22vh] lg:max-h-[26vh] overflow-y-auto pr-1"></div>
       </div>
-
       <div class="glass rounded-[14px] p-3 flex-1 flex flex-col overflow-hidden">
         <div class="flex justify-between items-center mb-2 shrink-0">
           <p class="text-white/60 text-[11px]">Live HD Preview (800x500)</p>
@@ -58,17 +53,13 @@ canvas{box-shadow:0 10px 30px rgba(0,0,0,0.5);}
       </div>
     </div>
 
-    <!-- RIGHT - COMPACT CONTROLS -->
     <div class="glass rounded-[14px] p-4 flex flex-col overflow-hidden h-full">
       <label class="text-[10px] tracking-widest text-white/40 uppercase">Left Side - Title + Name</label>
       <input id="leftText" class="w-full mt-1.5 p-2.5 rounded-lg bg-[#1a1430] border border-white/10 text-white outline-none focus:border-violet-500 text-[13px]">
-      
-      <label class="text-[10px] tracking-widest text-white/40 uppercase mt-3 block">Right Side - Dua / Message</label>
+      <label class="text-[10px] tracking-widest text-white/40 uppercase mt-3 block">Right Side - Words From Heart</label>
       <textarea id="rightText" rows="3" class="w-full mt-1.5 p-2.5 rounded-lg bg-[#1a1430] border border-white/10 text-white outline-none focus:border-violet-500 text-[12px] resize-none"></textarea>
-      
-      <label class="text-[10px] tracking-widest text-white/40 uppercase mt-3 block">Choose Font</label>
-      <div id="fontList" class="grid grid-cols-2 gap-1.5 mt-2 overflow-y-auto flex-1 max-h-[24vh] lg:max-h-[30vh] pr-1"></div>
-      
+      <label class="text-[10px] tracking-widest text-white/40 uppercase mt-3 block">Choose Font (30 Fonts)</label>
+      <div id="fontList" class="grid grid-cols-2 gap-1.5 mt-2 overflow-y-auto flex-1 max-h-[30vh] lg:max-h-[36vh] pr-1"></div>
       <div class="mt-3 grid grid-cols-2 gap-2 shrink-0">
         <button onclick="downloadJPG()" class="py-2.5 rounded-full bg-gradient-to-r from-violet-600 to-pink-600 text-white font-semibold text-[12px]">Download JPG</button>
         <button onclick="downloadPDF()" class="py-2.5 rounded-full bg-white text-[#0f0a1e] font-semibold text-[12px]">Download PDF</button>
@@ -81,7 +72,38 @@ canvas{box-shadow:0 10px 30px rgba(0,0,0,0.5);}
 const params = new URLSearchParams(window.location.search);
 const type = params.get('type') || 'birthday';
 const TITLES = {'birthday':'Happy Birthday','wedding':'Happy Wedding','proposal':'Will You Marry Me?','love':'I Love You','anniversary':'Happy Anniversary','engagement':'Happy Engagement','eid':'Eid Mubarak','ramzan':'Ramzan Mubarak','mothers-day':"Happy Mother's Day",'fathers-day':"Happy Father's Day"};
-const FONTS = [{name:"Great Vibes", family:"'Great Vibes', cursive"},{name:"Dancing Script", family:"'Dancing Script', cursive"},{name:"Poppins Bold", family:"'Poppins', sans-serif"},{name:"Playfair Display", family:"'Playfair Display', serif"},{name:"Noto Nastaliq Urdu", family:"'Noto Nastaliq Urdu', serif"},{name:"Montserrat", family:"'Montserrat', sans-serif"},{name:"Alex Brush", family:"'Alex Brush', cursive"},{name:"Pacifico", family:"'Pacifico', cursive"},{name:"Cormorant", family:"'Cormorant Garamond', serif"},{name:"Jameel Noori", family:"'Jameel Noori Nastaleeq', serif"}];
+const FONTS = [
+{name:"Great Vibes", family:"'Great Vibes', cursive"},
+{name:"Dancing Script", family:"'Dancing Script', cursive"},
+{name:"Poppins Bold", family:"'Poppins', sans-serif"},
+{name:"Playfair Display", family:"'Playfair Display', serif"},
+{name:"Noto Nastaliq Urdu", family:"'Noto Nastaliq Urdu', serif"},
+{name:"Montserrat", family:"'Montserrat', sans-serif"},
+{name:"Alex Brush", family:"'Alex Brush', cursive"},
+{name:"Pacifico", family:"'Pacifico', cursive"},
+{name:"Cormorant", family:"'Cormorant Garamond', serif"},
+{name:"Jameel Noori", family:"'Jameel Noori Nastaleeq', serif"},
+{name:"Lobster", family:"'Lobster', cursive"},
+{name:"Satisfy", family:"'Satisfy', cursive"},
+{name:"Caveat", family:"'Caveat', cursive"},
+{name:"Kaushan Script", family:"'Kaushan Script', cursive"},
+{name:"Sacramento", family:"'Sacramento', cursive"},
+{name:"Courgette", family:"'Courgette', cursive"},
+{name:"Merriweather", family:"'Merriweather', serif"},
+{name:"Lora", family:"'Lora', serif"},
+{name:"Raleway", family:"'Raleway', sans-serif"},
+{name:"Quicksand", family:"'Quicksand', sans-serif"},
+{name:"Kalam", family:"'Kalam', cursive"},
+{name:"Shadows Into Light", family:"'Shadows Into Light', cursive"},
+{name:"Indie Flower", family:"'Indie Flower', cursive"},
+{name:"Cookie", family:"'Cookie', cursive"},
+{name:"Tangerine", family:"'Tangerine', cursive"},
+{name:"Allura", family:"'Allura', cursive"},
+{name:"Abril Fatface", family:"'Abril Fatface', cursive"},
+{name:"Josefin Sans", family:"'Josefin Sans', sans-serif"},
+{name:"Comfortaa", family:"'Comfortaa', cursive"},
+{name:"Amatic SC", family:"'Amatic SC', cursive"}
+];
 const DESIGN_FILES = Array.from({length:50}, (_,i)=>`${i+1}.jpg`);
 let selectedFont = FONTS[0];
 let selectedDesign = null;
@@ -134,16 +156,13 @@ async function drawCard(){
   ctx.font = `700 46px ${selectedFont.family}`;
   ctx.shadowColor = "rgba(255,255,255,0.9)";
   ctx.shadowBlur = 8;
-  const leftVal = document.getElementById('leftText').value;
-  wrapText(ctx, leftVal, 200, 220, 340, 50);
+  wrapText(ctx, document.getElementById('leftText').value, 200, 220, 340, 50);
   ctx.shadowBlur = 0;
   ctx.fillStyle = "#8B4557";
   ctx.font = "38px 'Great Vibes'";
-  ctx.textAlign = "center";
-  ctx.fillText("Prayer / Dua", 600, 120);
+  ctx.fillText("Words From Heart", 600, 120);
   ctx.fillStyle = "#3D2A26";
   ctx.font = "500 14px 'Poppins'";
-  ctx.textAlign = "center";
   wrapText(ctx, document.getElementById('rightText').value, 600, 175, 320, 21);
 }
 function wrapText(context, text, x, y, maxWidth, lineHeight){
