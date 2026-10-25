@@ -13,56 +13,43 @@ body{font-family:'Poppins',sans-serif; background:#0f0a1e;}
 .glass{backdrop-filter:blur(16px); background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);}
 .font-btn.active{border-color:#a855f7 !important; background:rgba(168,85,247,0.25) !important; color:white}
 canvas{box-shadow:0 20px 50px rgba(0,0,0,0.5);}
-#designGrid div.ring-2{ring-color:#a855f7; border-color:#a855f7 !important;}
 </style>
 </head>
 <body class="galaxy-bg min-h-screen">
-
 <div class="max-w-[1400px] mx-auto px-4 lg:px-8 py-6">
   <div class="flex justify-between items-center">
     <a href="index.html" class="glass px-5 py-2 rounded-full text-white/80 text-sm hover:text-white">← All Cards</a>
-    <div class="text-white/40 text-xs">PakTools • 1 Code + 1 Folder System</div>
+    <div class="text-white/40 text-xs">PakTools</div>
   </div>
-
   <div class="mt-6">
     <h1 id="pageTitle" class="text-3xl lg:text-4xl font-bold text-white capitalize">Birthday Card Maker</h1>
-    <p id="pageSub" class="text-white/50 text-sm mt-2">Choose any design from common folder • Write name • Choose 10 fonts • Download JPG / PDF</p>
+    <p class="text-white/50 text-sm mt-2">Light cards ke liye dark elegant writing</p>
   </div>
-
   <div class="grid lg:grid-cols-[1.7fr_0.9fr] gap-6 mt-8">
     <div>
       <div class="flex justify-between items-center mb-3">
-        <h3 class="text-white font-semibold">Choose Template (Folder: <span class="text-violet-400">cards/designs/</span>)</h3>
+        <h3 class="text-white font-semibold">Choose Template <span class="text-violet-400">cards/designs/</span></h3>
         <span id="designCount" class="text-white/40 text-xs"></span>
       </div>
       <div id="designGrid" class="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-[420px] overflow-y-auto pr-1"></div>
-
       <div class="mt-8 glass rounded-[20px] p-4">
         <div class="flex justify-between items-center mb-3">
-          <p class="text-white/60 text-sm">Live HD Preview (800x500) - Selected Design</p>
+          <p class="text-white/60 text-sm">Live HD Preview (800x500)</p>
           <div class="flex gap-2">
-            <button onclick="downloadJPG()" class="px-5 py-2 rounded-full bg-gradient-to-r from-violet-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition">JPG Download</button>
-            <button onclick="downloadPDF()" class="px-5 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold hover:bg-white/20">PDF Download</button>
+            <button onclick="downloadJPG()" class="px-5 py-2 rounded-full bg-gradient-to-r from-violet-600 to-pink-600 text-white text-sm font-semibold">JPG Download</button>
+            <button onclick="downloadPDF()" class="px-5 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold">PDF Download</button>
           </div>
         </div>
         <canvas id="cardCanvas" width="800" height="500" class="w-full rounded-xl bg-[#fdf6f0]"></canvas>
       </div>
     </div>
-
     <div class="glass rounded-[20px] p-5 h-fit sticky top-6">
       <label class="text-[11px] tracking-widest text-white/40 uppercase">Left Side - Title + Name</label>
-      <input id="leftText" class="w-full mt-2 p-3.5 rounded-xl bg-[#1a1430] border border-white/10 text-white outline-none focus:border-violet-500 text-[15px]" placeholder="Happy Birthday Ahmed">
-      
+      <input id="leftText" class="w-full mt-2 p-3.5 rounded-xl bg-[#1a1430] border border-white/10 text-white outline-none focus:border-violet-500 text-[15px]">
       <label class="text-[11px] tracking-widest text-white/40 uppercase mt-5 block">Right Side - Dua / Message</label>
-      <textarea id="rightText" rows="5" class="w-full mt-2 p-3.5 rounded-xl bg-[#1a1430] border border-white/10 text-white outline-none focus:border-violet-500 text-[14px]">May your life be filled with happiness, health and countless blessings. Ameen.</textarea>
-
-      <label class="text-[11px] tracking-widest text-white/40 uppercase mt-5 block">Choose Font (10 Fonts for Left Side)</label>
+      <textarea id="rightText" rows="5" class="w-full mt-2 p-3.5 rounded-xl bg-[#1a1430] border border-white/10 text-white outline-none focus:border-violet-500 text-[14px]"></textarea>
+      <label class="text-[11px] tracking-widest text-white/40 uppercase mt-5 block">Choose Font</label>
       <div id="fontList" class="grid grid-cols-1 gap-2 mt-3 max-h-[300px] overflow-y-auto"></div>
-
-      <div class="mt-6 p-3 rounded-xl bg-violet-500/10 border border-violet-500/20">
-        <p class="text-[12px] text-violet-200 leading-5">✅ Fixed: Ab jo design select karoge, writing usi par hogi. No more grey sample box.</p>
-      </div>
-
       <div class="mt-5 grid grid-cols-2 gap-3">
         <button onclick="downloadJPG()" class="py-3.5 rounded-full bg-gradient-to-r from-violet-600 to-pink-600 text-white font-semibold">Download JPG</button>
         <button onclick="downloadPDF()" class="py-3.5 rounded-full bg-white text-[#0f0a1e] font-semibold">Download PDF</button>
@@ -70,175 +57,104 @@ canvas{box-shadow:0 20px 50px rgba(0,0,0,0.5);}
     </div>
   </div>
 </div>
-
 <script>
 const params = new URLSearchParams(window.location.search);
 const type = params.get('type') || 'birthday';
-
-const TITLES = {
-  'birthday':'Happy Birthday', 'wedding':'Happy Wedding', 'proposal':'Will You Marry Me?',
-  'love':'I Love You', 'anniversary':'Happy Anniversary', 'engagement':'Happy Engagement',
-  'eid':'Eid Mubarak', 'ramzan':'Ramzan Mubarak', 'mothers-day':"Happy Mother's Day", 'fathers-day':"Happy Father's Day"
-};
-const FONTS = [
-  {name:"Great Vibes", family:"'Great Vibes', cursive"},
-  {name:"Dancing Script", family:"'Dancing Script', cursive"},
-  {name:"Poppins Bold", family:"'Poppins', sans-serif"},
-  {name:"Playfair Display", family:"'Playfair Display', serif"},
-  {name:"Noto Nastaliq Urdu", family:"'Noto Nastaliq Urdu', serif"},
-  {name:"Montserrat", family:"'Montserrat', sans-serif"},
-  {name:"Alex Brush", family:"'Alex Brush', cursive"},
-  {name:"Pacifico", family:"'Pacifico', cursive"},
-  {name:"Cormorant", family:"'Cormorant Garamond', serif"},
-  {name:"Jameel Noori", family:"'Jameel Noori Nastaleeq', serif"}
-];
-
+const TITLES = {'birthday':'Happy Birthday','wedding':'Happy Wedding','proposal':'Will You Marry Me?','love':'I Love You','anniversary':'Happy Anniversary','engagement':'Happy Engagement','eid':'Eid Mubarak','ramzan':'Ramzan Mubarak','mothers-day':"Happy Mother's Day",'fathers-day':"Happy Father's Day"};
+const FONTS = [{name:"Great Vibes", family:"'Great Vibes', cursive"},{name:"Dancing Script", family:"'Dancing Script', cursive"},{name:"Poppins Bold", family:"'Poppins', sans-serif"},{name:"Playfair Display", family:"'Playfair Display', serif"},{name:"Noto Nastaliq Urdu", family:"'Noto Nastaliq Urdu', serif"},{name:"Montserrat", family:"'Montserrat', sans-serif"},{name:"Alex Brush", family:"'Alex Brush', cursive"},{name:"Pacifico", family:"'Pacifico', cursive"},{name:"Cormorant", family:"'Cormorant Garamond', serif"},{name:"Jameel Noori", family:"'Jameel Noori Nastaleeq', serif"}];
 const DESIGN_FILES = Array.from({length:50}, (_,i)=>`${i+1}.jpg`);
-
 let selectedFont = FONTS[0];
 let selectedDesign = null;
 let loadedImages = {};
-
 document.getElementById('pageTitle').innerText = (TITLES[type] || type) + " Card Maker";
 document.getElementById('leftText').value = (TITLES[type] || "Happy Birthday") + " Ahmed";
+document.getElementById('rightText').value = "May your life be filled with happiness, health and countless blessings. Ameen.";
 document.getElementById('designCount').innerText = DESIGN_FILES.length + " templates";
-
-// Fonts render
 const fontList = document.getElementById('fontList');
 FONTS.forEach((f,i)=>{
   const btn = document.createElement('button');
   btn.className = `font-btn text-left px-4 py-3 rounded-xl bg-[#1a1430] border border-white/10 text-white/80 text-sm hover:bg-white/10 ${i==0?'active':''}`;
   btn.style.fontFamily = f.family;
-  btn.innerHTML = `<span class="text-[16px]">${f.name}</span> <span class="block text-[11px] text-white/40" style="font-family:Poppins">Preview: ${TITLES[type] || 'Happy Birthday'}</span>`;
+  btn.innerHTML = `<span class="text-[16px]">${f.name}</span> <span class="block text-[11px] text-white/40" style="font-family:Poppins">Preview</span>`;
   btn.onclick = ()=>{ selectedFont=f; document.querySelectorAll('.font-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); drawCard(); };
   fontList.appendChild(btn);
 });
-
-// Designs render - FIXED
 const grid = document.getElementById('designGrid');
 DESIGN_FILES.forEach(file=>{
   const wrap = document.createElement('div');
   wrap.className = "group relative aspect-[4/3] rounded-xl bg-white/[0.04] border border-white/10 overflow-hidden cursor-pointer hover:border-violet-400 transition";
-  wrap.innerHTML = `<img src="designs/${file}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" class="w-full h-full object-cover"><div style="display:none" class="absolute inset-0 flex-col items-center justify-center p-2 text-center"><span class="text-[11px] text-white/30">${file} not uploaded yet</span><span class="text-[10px] text-white/20 mt-1">Upload in cards/designs/</span></div><span class="absolute bottom-2 left-2 text-[10px] px-2 py-1 rounded-full bg-black/50 text-white/70">${file}</span>`;
-  wrap.onclick = ()=>{
-    selectedDesign=`designs/${file}`;
-    document.querySelectorAll('#designGrid > div').forEach(d=>d.classList.remove('ring-2','ring-violet-500')); 
-    wrap.classList.add('ring-2','ring-violet-500');
-    drawCard();
-  };
+  wrap.innerHTML = `<img src="designs/${file}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" class="w-full h-full object-cover"><div style="display:none" class="absolute inset-0 flex-col items-center justify-center p-2 text-center"><span class="text-[11px] text-white/30">${file} not uploaded</span></div><span class="absolute bottom-2 left-2 text-[10px] px-2 py-1 rounded-full bg-black/50 text-white/70">${file}</span>`;
+  wrap.onclick = ()=>{ selectedDesign=`designs/${file}`; document.querySelectorAll('#designGrid > div').forEach(d=>d.classList.remove('ring-2','ring-violet-500')); wrap.classList.add('ring-2','ring-violet-500'); drawCard(); };
   grid.appendChild(wrap);
 });
-
-// Auto select first available design
-setTimeout(()=>{ 
-  const first = document.querySelector('#designGrid > div');
-  if(first) first.click();
-}, 500);
-
+setTimeout(()=>{ const first = document.querySelector('#designGrid > div'); if(first) first.click(); }, 500);
 const canvas = document.getElementById('cardCanvas');
 const ctx = canvas.getContext('2d');
 
 async function drawCard(){
   await document.fonts.ready;
   ctx.clearRect(0,0,800,500);
-  ctx.fillStyle="#fdf6f0"; ctx.fillRect(0,0,800,500);
-
-  if(!selectedDesign){
-    ctx.fillStyle="#f5e6e0"; ctx.fillRect(0,0,800,500);
-    ctx.fillStyle="#b76a7a"; ctx.font="40px 'Great Vibes'"; ctx.textAlign="center"; ctx.fillText("Select a Design",400,250);
-    return;
-  }
-
-  // FIXED IMAGE LOADING
+  if(!selectedDesign) return;
   try{
     let img = loadedImages[selectedDesign];
     if(!img){
-      img = new Image();
-      img.crossOrigin = "anonymous";
-      const p = new Promise((res, rej) => {
-        img.onload = () => res(img);
-        img.onerror = () => res(null);
-      });
-      img.src = selectedDesign + "?t=" + new Date().getTime();
+      img = new Image(); img.crossOrigin = "anonymous";
+      const p = new Promise((res) => { img.onload = () => res(img); img.onerror = () => res(null); });
+      img.src = selectedDesign + "?t=" + Date.now();
       await p;
       if(img && img.naturalWidth > 0) loadedImages[selectedDesign] = img;
     }
-
     if(img && img.naturalWidth > 0){
       const ratio = Math.max(800/img.width, 500/img.height);
       const w = img.width*ratio, h=img.height*ratio;
-      const x = (800-w)/2, y = (500-h)/2;
-      ctx.drawImage(img, x, y, w, h);
+      ctx.drawImage(img, (800-w)/2, (500-h)/2, w, h);
     }
-  }catch(e){ console.log("Image load error", e); }
+  }catch(e){}
 
-  // REMOVED HEAVY BOXES - Design will be fully visible now
-  // Only soft shadows for readability
-  ctx.shadowColor = "rgba(0,0,0,0.55)";
-  ctx.shadowBlur = 12;
-  ctx.shadowOffsetX = 2;
-  ctx.shadowOffsetY = 2;
-
-  // Left Side Text
-  ctx.fillStyle="#ffffff";
-  ctx.textAlign="center";
-  ctx.font=`700 44px ${selectedFont.family}`;
-  const leftVal = document.getElementById('leftText').value;
-  wrapText(ctx, leftVal, 200, 210, 340, 48);
-
-  ctx.shadowBlur = 0;
+  // *** LIGHT CARD KE LIYE DARK ELEGANT COLORS ***
+  // Left side - Deep Maroon/Brown - Light background par perfect
+  ctx.fillStyle = "#4A1E2A";  // Deep Burgundy - sabse readable
+  ctx.textAlign = "center";
+  ctx.font = `700 46px ${selectedFont.family}`;
+  
+  // Halka sa white glow taake light design par aur bhi ubhre
+  ctx.shadowColor = "rgba(255,255,255,0.9)";
+  ctx.shadowBlur = 8;
   ctx.shadowOffsetX = 0;
   ctx.shadowOffsetY = 0;
+  
+  const leftVal = document.getElementById('leftText').value;
+  wrapText(ctx, leftVal, 200, 220, 340, 50);
 
-  // Right Side Text - No more hiding box
-  ctx.fillStyle="#b76a7a";
-  ctx.font="38px 'Great Vibes'";
-  ctx.textAlign="center";
-  ctx.fillText("Prayer / Dua",600,110);
+  ctx.shadowBlur = 0;
 
-  ctx.fillStyle="#222";
-  ctx.font="500 14px 'Poppins'";
-  ctx.textAlign="center";
-  wrapText(ctx, document.getElementById('rightText').value, 600, 170, 320, 21);
+  // Right side - Deep Rose / Muted Brown
+  ctx.fillStyle = "#8B4557"; // Prayer / Dua ke liye soft rose
+  ctx.font = "38px 'Great Vibes'";
+  ctx.textAlign = "center";
+  ctx.fillText("Prayer / Dua", 600, 120);
+
+  ctx.fillStyle = "#3D2A26"; // Message ke liye dark chocolate
+  ctx.font = "500 14px 'Poppins'";
+  ctx.textAlign = "center";
+  wrapText(ctx, document.getElementById('rightText').value, 600, 175, 320, 21);
 }
 
 function wrapText(context, text, x, y, maxWidth, lineHeight){
   if(!text) return;
-  const words = text.split(' ');
-  let line='';
-  let currY = y;
+  const words = text.split(' '); let line=''; let currY = y;
   for(let n=0;n<words.length;n++){
     let testLine = line + words[n] + ' ';
     if(context.measureText(testLine).width > maxWidth && n>0){
-      context.fillText(line.trim(), x, currY);
-      line = words[n] + ' ';
-      currY+=lineHeight;
-    } else {
-      line=testLine;
-    }
+      context.fillText(line.trim(), x, currY); line = words[n] + ' '; currY+=lineHeight;
+    } else { line=testLine; }
   }
   context.fillText(line.trim(), x, currY);
 }
-
 document.getElementById('leftText').addEventListener('input', drawCard);
 document.getElementById('rightText').addEventListener('input', drawCard);
-
-function downloadJPG(){
-  drawCard().then(()=>{ 
-    const a=document.createElement('a'); 
-    a.download=`${type}-card.jpg`; 
-    a.href=canvas.toDataURL('image/jpeg',0.95); 
-    a.click(); 
-  });
-}
-function downloadPDF(){
-  drawCard().then(()=>{
-    const {jsPDF}=window.jspdf;
-    const pdf=new jsPDF({orientation:'landscape', unit:'px', format:[800,500]});
-    pdf.addImage(canvas.toDataURL('image/jpeg',0.95),'JPEG',0,0,800,500);
-    pdf.save(`${type}-card.pdf`);
-  });
-}
+function downloadJPG(){ drawCard().then(()=>{ const a=document.createElement('a'); a.download=`${type}-card.jpg`; a.href=canvas.toDataURL('image/jpeg',0.95); a.click(); }); }
+function downloadPDF(){ drawCard().then(()=>{ const {jsPDF}=window.jspdf; const pdf=new jsPDF({orientation:'landscape', unit:'px', format:[800,500]}); pdf.addImage(canvas.toDataURL('image/jpeg',0.95),'JPEG',0,0,800,500); pdf.save(`${type}-card.pdf`); }); }
 </script>
 </body>
 </html>
