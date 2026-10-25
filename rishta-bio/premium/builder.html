@@ -1,106 +1,122 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Luxury Biodata Builder</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Builder - Premium Design</title>
+<script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <style>
-*{box-sizing:border-box; font-family:'Segoe UI', Arial, sans-serif}
-body{margin:0; background:#f5f1e8; display:flex; flex-direction:column; height:100vh}
-.top{background:linear-gradient(90deg,#5a3e1b,#d4af37); color:white; text-align:center; padding:12px; font-weight:bold; font-size:17px}
-.main{display:flex; flex:1; overflow:hidden}
-@media(max-width:900px){ .main{flex-direction:column; overflow:auto} }
-.left{width:380px; background:white; overflow-y:auto; padding:14px; border-right:2px solid #e8d9a8}
-.left h3{margin:10px 0 5px; color:#5a3e1b; font-size:13px; border-left:4px solid #d4af37; padding-left:8px}
-.left input, .left textarea{width:100%; padding:9px; margin:5px 0; border:1.5px solid #d4af37; border-radius:8px; font-size:13px}
-.grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:7px; margin:8px 0 }
-.grid div{height:85px; border-radius:8px; overflow:hidden; border:2px solid transparent; cursor:pointer; position:relative}
-.grid div.active{border-color:#d4af37; box-shadow:0 0 12px gold}
-.grid img{width:100%; height:100%; object-fit:cover}
-.grid span{position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.6); color:white; font-size:8px; text-align:center; padding:2px}
-.photo-mini{width:80px; height:95px; border:2px dashed #d4af37; border-radius:8px; object-fit:cover; display:block; margin:6px auto}
-.btn{width:100%; padding:12px; border:none; border-radius:10px; font-weight:bold; font-size:15px; cursor:pointer; margin-top:10px}
-.gold{background:linear-gradient(90deg,#d4af37,#8b5a2b); color:white}
-.right{flex:1; background:#e9e1c8; overflow:auto; padding:20px; display:flex; justify-content:center}
-#a4{width:210mm; min-height:297mm; background:#fffef8; background-size:cover; background-position:center; padding:18mm 20mm; position:relative; box-shadow:0 10px 40px rgba(0,0,0,0.3); flex-shrink:0}
-.photo-box{position:absolute; top:22mm; right:20mm; width:35mm; height:43mm; border:3px solid #d4af37; border-radius:10px; overflow:hidden; background:white}
-.photo-box img{width:100%; height:100%; object-fit:cover}
-.title{text-align:center; font-size:24px; font-weight:bold; color:#5a3e1b; border-bottom:3px double #d4af37; padding-bottom:3mm; margin-bottom:4mm}
-.sec{margin-bottom:3.5mm}
-.sec h4{margin:0 0 1mm; background:linear-gradient(90deg,#d4af37,#b8941f); color:white; display:inline-block; padding:1mm 3mm; border-radius:4px; font-size:11px}
-.sec p{margin:0; font-size:11.5px; line-height:1.5; color:#222; white-space:pre-line}
+body{background:#0f0a1a; color:#fff}
+.glass{background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); backdrop-filter:blur(12px)}
+.input-dark{background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.1); color:#fff; padding:10px 12px; border-radius:10px; width:100%; font-size:13px; outline:none}
+.input-dark:focus{border-color:#d4af37}
+#a4-page{width:210mm; min-height:297mm; background-color:#fffef8; background-size:100% 100%; background-position:center; position:relative; margin:0 auto; box-shadow:0 0 30px rgba(0,0,0,0.6)}
+/* YE SABSE IMPORTANT HAI - Safe Area */
+#safe-content{
+  position:absolute;
+  top:28mm; /* Upar gold corner se bachne ke liye */
+  left:28mm; /* Left marble se */
+  right:28mm; /* Right marble se */
+  bottom:26mm; /* Neeche se */
+  padding:5mm;
+  overflow:hidden;
+}
 </style>
 </head>
-<body>
-<div class="top">PREMIUM BUILDER - Photo + Text Auto Fit - 12 Luxury Borders</div>
-<div class="main">
-<div class="left">
-<h3>1. Border Select</h3><div class="grid" id="grid"></div>
-<h3>2. Photo</h3><input type="file" id="photoIn" accept="image/*"><img id="mini" class="photo-mini" style="display:none">
-<h3>3. Details</h3>
-<input id="f_name" placeholder="Full Name">
-<textarea id="f_personal" rows="3" placeholder="Personal: Age, Height, City, Cast"></textarea>
-<textarea id="f_family" rows="2" placeholder="Family Details"></textarea>
-<textarea id="f_edu" rows="2" placeholder="Education & Job"></textarea>
-<textarea id="f_deen" rows="2" placeholder="Deen / Maslak"></textarea>
-<textarea id="f_req" rows="2" placeholder="Requirements"></textarea>
-<textarea id="f_contact" rows="1" placeholder="Contact"></textarea>
-<button class="btn gold" onclick="downloadPDF()">📄 HD PDF Download</button>
-<button class="btn" style="background:#222; color:#d4af37" onclick="location.href='./index.html'">← Back to Premium List</button>
+<body class="flex flex-col md:flex-row h-screen">
+<!-- LEFT - Normal wale inputs -->
+<div class="w-full md:w-[360px] p-4 overflow-y-auto glass m-2 rounded-2xl">
+<a href="./index.html" class="text-[12px] text-gray-400">← Change Design</a>
+<h2 id="designTitle" class="font-black text-[14px] mt-2 mb-3">Design 01 - Premium</h2>
+
+<input id="f_name" class="input-dark mb-2" placeholder="Full Name">
+<input id="f_father" class="input-dark mb-2" placeholder="Father Name">
+<div class="flex gap-2 mb-2"><input id="f_dob" class="input-dark" placeholder="DOB"><input id="f_age" class="input-dark" placeholder="Age"></div>
+<div class="flex gap-2 mb-2"><input id="f_height" class="input-dark" placeholder="Height"><input id="f_cast" class="input-dark" placeholder="Cast"></div>
+<input id="f_sect" class="input-dark mb-2" placeholder="Sect">
+<input id="f_edu" class="input-dark mb-2" placeholder="Education">
+<input id="f_job" class="input-dark mb-2" placeholder="Job">
+<div class="flex gap-2 mb-2"><input id="f_income" class="input-dark" placeholder="Income"><input id="f_city" class="input-dark" placeholder="City"></div>
+<input id="f_family" class="input-dark mb-2" placeholder="Family">
+<input id="f_phone" class="input-dark mb-2" placeholder="Phone">
+<input id="f_req" class="input-dark mb-2" placeholder="Requirement">
+<input type="file" id="f_photo" accept="image/*" class="text-[11px] mt-2">
+
+<button onclick="downloadPDF()" class="w-full mt-4 bg-gradient-to-r from-[#d4af37] to-[#8b5a2b] py-3 rounded-full font-bold text-[13px]">📄 Download Premium PDF</button>
 </div>
-<div class="right"><div id="a4">
-<div class="photo-box"><img id="a4Photo"></div>
-<div style="width:65%">
-<div class="title">Rishta Biodata</div>
-<div id="a4_name" style="font-weight:bold; font-size:15px; color:#8b5a2b; margin-bottom:2mm"></div>
-<div class="sec"><h4>Personal Information</h4><p id="a4_personal"></p></div>
-<div class="sec"><h4>Family Details</h4><p id="a4_family"></p></div>
-<div class="sec"><h4>Education & Job</h4><p id="a4_edu"></p></div>
-<div class="sec"><h4>Deeni Maloomat</h4><p id="a4_deen"></p></div>
-<div class="sec"><h4>Requirements</h4><p id="a4_req"></p></div>
-<div class="sec"><h4>Rabta</h4><p id="a4_contact"></p></div>
+
+<!-- RIGHT - A4 Preview -->
+<div class="flex-1 bg-[#1a102c] overflow-auto p-4 flex justify-center">
+<div id="a4-page">
+  <div id="safe-content">
+    <div class="text-center">
+      <p class="text-[14px] font-serif text-black">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+      <h1 class="text-[22px] font-black tracking-[4px] text-black mt-2 border-b-2 border-[#d4af37] pb-2 inline-block">RISHTA BIODATA</h1>
+    </div>
+    
+    <div class="mt-6 relative">
+      <!-- Photo Box - Safe area ke andar -->
+      <div class="absolute top-0 right-0 w-[32mm] h-[40mm] border-[2.5px] border-[#d4af37] rounded-lg overflow-hidden bg-white">
+        <img id="p_photo" class="w-full h-full object-cover"><div id="photoPlaceholder" class="text-[10px] text-black text-center mt-[15mm]">Photo</div>
+      </div>
+      
+      <div class="w-[62%] space-y-4 text-black text-[12px] leading-6">
+        <p><b>Name:</b> <span id="p_name">______</span></p>
+        <p><b>Father Name:</b> <span id="p_father">______</span></p>
+        <p><b>Date of Birth:</b> <span id="p_dob">______</span></p>
+        <p><b>Age:</b> <span id="p_age">______</span></p>
+        <p><b>Height:</b> <span id="p_height">______</span></p>
+        <p><b>Cast:</b> <span id="p_cast">______</span></p>
+        <p><b>Sect:</b> <span id="p_sect">______</span></p>
+        <p><b>Education:</b> <span id="p_edu">______</span></p>
+        <p><b>Job:</b> <span id="p_job">______</span></p>
+        <p><b>Income:</b> <span id="p_income">______</span></p>
+        <p><b>City:</b> <span id="p_city">______</span></p>
+        <p><b>Family:</b> <span id="p_family">______</span></p>
+        <p><b>Phone:</b> <span id="p_phone">______</span></p>
+        <p><b>Requirement:</b> <span id="p_req">______</span></p>
+      </div>
+    </div>
+  </div>
 </div>
-</div></div>
 </div>
 
 <script>
-const files=[]; for(let i=1;i<=12;i++) files.push(`./borders/border_a4_${i}.jpg`);
-const names=["Cream Baroque","Navy Gold","Maroon","Damask","Rose Gold","Black Marble","Pearl Silver","Emerald","Champagne","Purple","Gold Hearts","Gold Marble"];
-const grid=document.getElementById('grid'); const a4=document.getElementById('a4');
-
-files.forEach((src,i)=>{
-  const d=document.createElement('div');
-  if(i==0) d.className='active';
-  d.innerHTML=`<img src="${src}" onerror="this.src='${src.replace('.jpg','.webp')}'"><span>${i+1}. ${names[i]}</span>`;
-  d.onclick=()=>{
-    document.querySelectorAll('.grid div').forEach(x=>x.classList.remove('active'));
-    d.classList.add('active'); a4.style.backgroundImage=`url('${src}')`; localStorage.setItem('premium_border',src);
-  };
-  grid.appendChild(d);
-});
-
-// URL se border
+const names=["Cream Gold Baroque","Navy Blue Gold","Maroon Bridal Velvet","Damask Glitter Luxury","Rose Gold Love","Black Marble Gold","Pearl Silver Royal","Emerald Green Gold","Champagne Silk","Purple Velvet Gold","Gold Hearts Luxury","White Gold Marble"];
 const params=new URLSearchParams(location.search);
-const bid=params.get('border');
-let startFile = files[0];
-if(bid){ startFile = files[parseInt(bid)-1] || files[0]; }
-const saved=localStorage.getItem('premium_border');
-a4.style.backgroundImage=`url('${saved || startFile}')`;
+let d=parseInt(params.get('d'))||1;
+document.getElementById('designTitle').innerText=`Design ${String(d).padStart(2,'0')} - ${names[d-1]}`;
+const borderSrc=`./borders/border_a4_${d}.jpg`;
+const a4=document.getElementById('a4-page');
+a4.style.backgroundImage=`url('${borderSrc}')`;
 
-function bind(inp,out){ document.getElementById(inp).addEventListener('input',e=>{ document.getElementById(out).innerText=e.target.value; }); }
-bind('f_name','a4_name'); bind('f_personal','a4_personal'); bind('f_family','a4_family'); bind('f_edu','a4_edu'); bind('f_deen','a4_deen'); bind('f_req','a4_req'); bind('f_contact','a4_contact');
+// Fallback to webp if jpg not found
+let imgTest=new Image();
+imgTest.onerror=()=>{ a4.style.backgroundImage=`url('./borders/border_a4_${d}.webp')`; };
+imgTest.src=borderSrc;
 
-document.getElementById('photoIn').addEventListener('change',e=>{
-  const f=e.target.files[0]; if(!f) return;
-  const r=new FileReader(); r.onload=ev=>{
-    document.getElementById('a4Photo').src=ev.target.result;
-    const m=document.getElementById('mini'); m.src=ev.target.result; m.style.display='block';
-  }; r.readAsDataURL(f);
+function bind(inputId, previewId){
+  document.getElementById(inputId).addEventListener('input', e=>{
+    document.getElementById(previewId).innerText = e.target.value || '______';
+  });
+}
+bind('f_name','p_name'); bind('f_father','p_father'); bind('f_dob','p_dob'); bind('f_age','p_age');
+bind('f_height','p_height'); bind('f_cast','p_cast'); bind('f_sect','p_sect'); bind('f_edu','p_edu');
+bind('f_job','p_job'); bind('f_income','p_income'); bind('f_city','p_city'); bind('f_family','p_family');
+bind('f_phone','p_phone'); bind('f_req','p_req');
+
+document.getElementById('f_photo').addEventListener('change', e=>{
+  const file=e.target.files[0]; if(!file) return;
+  const r=new FileReader();
+  r.onload=ev=>{
+    document.getElementById('p_photo').src=ev.target.result;
+    document.getElementById('photoPlaceholder').style.display='none';
+  };
+  r.readAsDataURL(file);
 });
 
 function downloadPDF(){
-  const opt={margin:0, filename:`${document.getElementById('f_name').value || 'Premium_Biodata'}.pdf`, image:{type:'jpeg', quality:1}, html2canvas:{scale:3, useCORS:true}, jsPDF:{unit:'mm', format:'a4', orientation:'portrait'}};
+  const opt={margin:0, filename:`Premium_Biodata_${d}.pdf`, image:{type:'jpeg', quality:1}, html2canvas:{scale:3, useCORS:true}, jsPDF:{unit:'mm', format:'a4', orientation:'portrait'}};
   html2pdf().set(opt).from(a4).save();
 }
 </script>
