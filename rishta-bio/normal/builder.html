@@ -6,7 +6,20 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<style>body{background:#07010f;color:#fff}.glass{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px)}.paper{width:794px;min-height:1123px;background:white;color:#000;position:relative;overflow:hidden;background-size:100% 100%}</style>
+<style>
+body{background:#07010f;color:#fff}
+.glass{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px)}
+.paper{
+  width:794px; min-height:1123px; background:white; color:#000; 
+  position:relative; overflow:hidden; 
+  background-size:100% 100%; background-repeat:no-repeat; background-position:center;
+}
+.safe-content{
+  position:relative; z-index:10;
+  /* YE SAFE AREA HAI - Saare designs ke liye fix */
+  padding: 170px 110px 150px 110px;
+}
+</style>
 </head>
 <body>
 <div class="grid lg:grid-cols-[380px_1fr] gap-4 p-4 max-w-[1600px] mx-auto">
@@ -29,7 +42,35 @@
 <div class="mt-3"><input type="file" id="fPhoto" accept="image/*" class="text-[10px]"></div>
 <button onclick="downloadPDF()" class="mt-4 w-full bg-white text-black py-3 rounded-full font-black text-xs">📥 PDF Download</button>
 </div>
-<div class="flex justify-center bg-[#0a0a0a] rounded-[20px] p-4 overflow-auto"><div id="paper" class="paper p-[90px_70px]"><div class="relative z-10 flex justify-between"><div class="flex-1"><h1 class="text-center font-black text-[26px] tracking-widest">RISHTA BIODATA</h1><p class="text-center text-[11px] mt-1">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p><div class="mt-8 space-y-[20px] text-[13px]"><p><b>Name:</b> <span id="pName">__________</span> <b>Father:</b> <span id="pFName">__________</span></p><p><b>DOB:</b> <span id="pDob">__________</span> <b>Age:</b> <span id="pAge">__________</span> <b>Height:</b> <span id="pHeight">__________</span></p><p><b>Cast:</b> <span id="pCast">__________</span> <b>Sect:</b> <span id="pSect">__________</span></p><p><b>Education:</b> <span id="pEdu">__________</span></p><p><b>Profession:</b> <span id="pJob">__________</span> <b>Income:</b> <span id="pIncome">__________</span></p><p><b>City:</b> <span id="pCity">__________</span></p><p><b>Family:</b> <span id="pFamily">__________</span></p><p><b>Contact:</b> <span id="pPhone">__________</span></p><p class="pt-4 border-t border-dashed"><b>Requirement:</b> <span id="pReq">__________</span></p></div></div><div class="w-[120px] ml-4"><div class="w-[120px] h-[140px] border flex items-center justify-center bg-gray-50 overflow-hidden"><img id="pPhoto" class="w-full h-full object-cover hidden"><span id="pPhotoTxt" class="text-[9px]">Photo</span></div></div></div></div></div>
+
+<div class="flex justify-center bg-[#0a0a0a] rounded-[20px] p-4 overflow-auto">
+<div id="paper" class="paper">
+  <div class="safe-content">
+    <div class="flex justify-between">
+      <div class="flex-1">
+        <h1 class="text-center font-black text-[26px] tracking-widest">RISHTA BIODATA</h1>
+        <p class="text-center text-[11px] mt-1">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+        <div class="mt-10 space-y-[22px] text-[13px] leading-[1.6]">
+          <p><b>Name:</b> <span id="pName">__________</span> <b class="ml-2">Father:</b> <span id="pFName">__________</span></p>
+          <p><b>DOB:</b> <span id="pDob">__________</span> <b class="ml-2">Age:</b> <span id="pAge">__________</span> <b class="ml-2">Height:</b> <span id="pHeight">__________</span></p>
+          <p><b>Cast:</b> <span id="pCast">__________</span> <b class="ml-2">Sect:</b> <span id="pSect">__________</span></p>
+          <p><b>Education:</b> <span id="pEdu">__________</span></p>
+          <p><b>Profession:</b> <span id="pJob">__________</span> <b class="ml-2">Income:</b> <span id="pIncome">__________</span></p>
+          <p><b>City:</b> <span id="pCity">__________</span></p>
+          <p><b>Family:</b> <span id="pFamily">__________</span></p>
+          <p><b>Contact:</b> <span id="pPhone">__________</span></p>
+          <p class="pt-5 border-t border-dashed mt-6"><b>Requirement:</b> <span id="pReq">__________</span></p>
+        </div>
+      </div>
+      <div class="w-[115px] ml-5">
+        <div class="w-[115px] h-[135px] border flex items-center justify-center bg-gray-50 overflow-hidden">
+          <img id="pPhoto" class="w-full h-full object-cover hidden"><span id="pPhotoTxt" class="text-[9px]">Photo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 </div>
 <script>
 const url=new URLSearchParams(location.search);let d=parseInt(url.get('d'))||1;if(d<1||d>20)d=1;
