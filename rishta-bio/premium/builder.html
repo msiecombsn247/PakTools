@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Luxury Biodata Builder - 12 Designs</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+  body { font-family: 'Noto Nastaliq Urdu', 'Jameel Noori', serif; background:#f5f1e8; margin:0; padding:20px; }
+  .controls { max-width:400px; margin:0 auto 20px; background:white; padding:15px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
+  .controls input, .controls textarea, .controls select { width:100%; margin:6px 0; padding:8px; border:1px solid #d4af37; border-radius:6px; }
+  .borders-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:8px; margin:10px 0; }
+  .borders-grid img { width:100%; height:80px; object-fit:cover; border:2px solid transparent; border-radius:6px; cursor:pointer; }
+  .borders-grid img.active { border-color:#d4af37; box-shadow:0 0 10px gold; }
+  
+  /* A4 Page */
+  #biodata-page {
+    width:210mm; min-height:297mm; margin:0 auto;
+    background-size:cover; background-position:center;
+    background-repeat:no-repeat;
+    position:relative; padding:18mm 20mm 15mm 20mm;
+    box-sizing:border-box; background-color:#fffef8;
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
+  }
+  .photo-box {
+    position:absolute; top:22mm; right:22mm;
+    width:32mm; height:38mm; border:2.5px solid #d4af37;
+    border-radius:8px; overflow:hidden; background:white;
+  }
+  .photo-box img { width:100%; height:100%; object-fit:cover; }
+  .content { width:68%; }
+  .title { font-size:26px; font-weight:bold; color:#8b5a2b; text-align:center; margin-bottom:5mm; border-bottom:2px solid #d4af37; padding-bottom:2mm; }
+  .section { margin-bottom:3.5mm; }
+  .section h3 { font-size:13px; color:#fff; background:linear-gradient(90deg, #d4af37, #b8941f); display:inline-block; padding:1.5mm 4mm; border-radius:4px; margin:0 0 1.5mm 0; }
+  .section p { font-size:11.5px; line-height:1.5; margin:0; color:#2c2c2c; white-space:pre-line; }
+  .label { font-weight:bold; color:#5a3e1b; }
+  .download-btn { width:100%; padding:12px; background:linear-gradient(90deg, #d4af37, #8b5a2b); color:white; border:none; border-radius:8px; font-size:16px; cursor:pointer; margin-top:10px; }
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <h3>Premium Builder - 12 Luxury Borders</h3>
+  <label>Border Select Karo:</label>
+  <div class="borders-grid" id="borderGrid"></div>
+  
+  <input type="file" id="photoInput" accept="image/*">
+  <input type="text" id="name" placeholder="Naam">
+  <textarea id="personal" rows="3" placeholder="Personal Info: Age, Height, City etc"></textarea>
+  <textarea id="family" rows="2" placeholder="Family Details"></textarea>
+  <textarea id="education" rows="2" placeholder="Education / Job"></textarea>
+  <textarea id="religion" rows="2" placeholder="Deen / Maslak"></textarea>
+  <textarea id="requirements" rows="2" placeholder="Requirements"></textarea>
+  <textarea id="contact" rows="1" placeholder="Contact"></textarea>
+  <button class="download-btn" onclick="downloadPDF()">📄 Premium PDF Download</button>
+</div>
+
+<div id="biodata-page">
+  <div class="photo-box"><img id="previewPhoto" src=""></div>
+  <div class="content">
+    <div class="title">Rishta Biodata</div>
+    <div class="section"><h3>Personal Information</h3><p id="out-personal"></p></div>
+    <div class="section"><h3>Family Details</h3><p id="out-family"></p></div>
+    <div class="section"><h3>Education & Job</h3><p id="out-education"></p></div>
+    <div class="section"><h3>Deeni Maloomat</h3><p id="out-religion"></p></div>
+    <div class="section"><h3>Requirements</h3><p id="out-requirements"></p></div>
+    <div class="section"><h3>Rabta</h3><p id="out-contact"></p></div>
+  </div>
+</div>
+
+<script>
+const borders = [];
+for(let i=1;i<=12;i++){ borders.push(`luxury/borders/border_a4_${i}.jpg`); }
+
+const grid = document.getElementById('borderGrid');
+const page = document.getElementById('biodata-page');
+let currentBorder = borders[0];
+
+borders.forEach((src, idx)=>{
+  const img = document.createElement('img');
+  img.src = src;
+  if(idx===0) img.classList.add('active');
+  img.onclick = ()=>{
+    document.querySelectorAll('.borders-grid img').forEach(im=>im.classList.remove('active'));
+    img.classList.add('active');
+    currentBorder = src;
+    page.style.backgroundImage = `url('${src}')`;
+  };
+  grid.appendChild(img);
+});
+page.style.backgroundImage = `url('${borders[0]}')`;
+
+// Inputs binding
+const bind = (inputId, outId)=>{
+  document.getElementById(inputId).addEventListener('input', e=>{
+    document.getElementById(outId).innerText = e.target.value;
+  });
+};
+bind('personal','out-personal');
+bind('family','out-family');
+bind('education','out-education');
+bind('religion','out-religion');
+bind('requirements','out-requirements');
+bind('contact','out-contact');
+
+// Photo
+document.getElementById('photoInput').addEventListener('change', e=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ev=>{ document.getElementById('previewPhoto').src = ev.target.result; };
+  reader.readAsDataURL(file);
+});
+
+function downloadPDF(){
+  const opt = {
+    margin:0,
+    filename:`Premium_Rishta_${document.getElementById('name').value || 'Biodata'}.pdf`,
+    image:{type:'jpeg', quality:1},
+    html2canvas:{scale:3, useCORS:true},
+    jsPDF:{unit:'mm', format:'a4', orientation:'portrait'}
+  };
+  html2pdf().set(opt).from(page).save();
+}
+</script>
+</body>
+</html>
