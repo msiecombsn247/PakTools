@@ -1,0 +1,24 @@
+<div id="card-preview" class="flex bg-[#fdf6f0] border rounded-lg overflow-hidden" style="font-family: serif;">
+  <div class="w-1/2 p-8 border-r text-center">
+    <h2 id="left-title" style="font-family: cursive; color: #b76a7a; font-size: 42px;">Happy Birthday</h2>
+    <h3 id="user-name" class="mt-4 text-2xl font-bold">ABCD</h3>
+    <p id="user-msg" class="mt-6 text-sm">[Your message]</p>
+  </div>
+  <div class="w-1/2 p-8 text-center">
+    <h2 style="font-family: cursive; color: #b76a7a; font-size: 42px;">Prayer / Dua</h2>
+    <p id="dua-text" class="mt-6 text-sm">[Write your prayer or dua here]</p>
+  </div>
+</div>
+
+<script>
+// Dynamic setting
+const cardTypes = {
+  birthday: "Happy Birthday",
+  wedding: "Happy Wedding",
+  mothers: "Happy Mother's Day",
+  fathers: "Happy Father's Day",
+  eid: "Eid Mubarak"
+  // ...baki 10 ke liye
+}
+document.getElementById('left-title').innerText = cardTypes['birthday']; // yahan type change hoga
+</script>
