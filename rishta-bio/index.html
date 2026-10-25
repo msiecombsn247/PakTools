@@ -2,7 +2,7 @@
 <html lang="ur" dir="ltr">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Rishta Bio Maker - 20 Normal + 20 Premium Advanced | PakTools</title>
+<title>Rishta Bio Maker - 20 Normal + 20 Premium | PakTools</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -29,54 +29,61 @@
 </head>
 <body>
 <header class="sticky top-0 z-30 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl p-4 flex justify-between items-center">
-<a href="../index.html" class="font-black">← PakTools</a><div class="text-xs bg-pink-500/20 border px-3 py-1 rounded-full">💍 20 Normal + 20 Premium</div>
+<a href="../index.html" class="font-black">← PakTools</a><div class="text-xs bg-pink-500/20 border border-pink-400/30 px-3 py-1 rounded-full">💍 20 Normal + 20 Premium</div>
 </header>
 <div class="max-w-[1600px] mx-auto grid lg:grid-cols-[380px_1fr_440px] gap-4 p-4">
-<div class="glass rounded-[20px] p-4 h-fit lg:sticky top-[70px] overflow-y-auto max-h-[90vh]">
+<div class="glass rounded-[20px] p-4 h-fit lg:sticky top-[70px]">
 <h2 class="font-black text-sm">1. Details Bharo</h2>
 <div class="mt-3 grid grid-cols-2 gap-2">
 <input id="fName" placeholder="Full Name" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
 <input id="fFName" placeholder="Father Name" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fDob" placeholder="DOB" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fAge" placeholder="Age" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fHeight" placeholder="Height" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fCast" placeholder="Cast" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fSect" placeholder="Sect" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fEdu" placeholder="Education" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fJob" placeholder="Job" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fIncome" placeholder="Income" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fCity" placeholder="City" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fFamily" placeholder="Family" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fPhone" placeholder="Phone" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fReq" placeholder="Requirement" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fDob" placeholder="DOB 12-05-1998" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fAge" placeholder="Age 26" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fHeight" placeholder="Height 5.8" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fCast" placeholder="Cast / Biradri" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fSect" placeholder="Sect / Maslak" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fEdu" placeholder="Education BS Computer" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fJob" placeholder="Job / Business" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fIncome" placeholder="Income 150k" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fCity" placeholder="City Lahore" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fFamily" placeholder="Father Job, Siblings 3" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fPhone" placeholder="Phone / WhatsApp" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fReq" placeholder="Partner Requirement" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
 </div>
-<div class="mt-3"><input type="file" id="fPhoto" accept="image/*" class="w-full text-[10px]"></div>
-<div class="flex gap-2 mt-3"><button id="modeCol" onclick="setMode('col')" class="flex-1 bg-gradient-to-r from-pink-600 to-rose-600 py-2 rounded-full text-[11px] font-bold">🎨 Coloured</button><button id="modeBw" onclick="setMode('bw')" class="flex-1 bg-white/10 py-2 rounded-full text-[11px]">⚫ B&W</button></div>
-<button onclick="downloadPDF()" class="mt-4 w-full bg-white text-black py-3 rounded-full font-black text-xs">📥 PDF Download A4</button>
+<div class="mt-3"><label class="text-[10px] text-gray-400">Photo Upload</label><input type="file" id="fPhoto" accept="image/*" class="w-full text-[10px] mt-1"></div>
+<div class="flex gap-2 mt-4"><button id="modeCol" onclick="setMode('col')" class="flex-1 bg-gradient-to-r from-pink-600 to-rose-600 py-2 rounded-full text-[11px] font-bold">🎨 Coloured</button><button id="modeBw" onclick="setMode('bw')" class="flex-1 bg-white/10 py-2 rounded-full text-[11px]">⚫ B&W</button></div>
+<button onclick="downloadPDF()" class="mt-4 w-full bg-white text-black py-3 rounded-full font-black text-xs">📥 PDF Download (A4)</button>
 </div>
-<div class="flex justify-center overflow-auto bg-[#0a0a0a] rounded-[20px] p-4"><div id="paper" class="paper line-bg p-[50px]"><div id="borderEl" class="b b1"></div><div class="relative z-10"><div class="flex justify-between"><div class="flex-1"><h1 class="text-center font-black text-[28px] tracking-widest">RISHTA BIODATA</h1><p class="text-center text-[11px] mt-1">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p><div class="mt-6 space-y-[22px] text-[13px]"><p><b>Name:</b> <span id="pName">__________</span> <b>Father:</b> <span id="pFName">__________</span></p><p><b>DOB:</b> <span id="pDob">__________</span> <b>Age:</b> <span id="pAge">__________</span> <b>Height:</b> <span id="pHeight">__________</span></p><p><b>Cast:</b> <span id="pCast">__________</span> <b>Sect:</b> <span id="pSect">__________</span></p><p><b>Education:</b> <span id="pEdu">__________</span></p><p><b>Profession:</b> <span id="pJob">__________</span> <b>Income:</b> <span id="pIncome">__________</span></p><p><b>City:</b> <span id="pCity">__________</span></p><p><b>Family:</b> <span id="pFamily">__________</span></p><p><b>Contact:</b> <span id="pPhone">__________</span></p><p class="pt-4 border-t border-dashed"><b>Partner:</b> <span id="pReq">__________</span></p></div></div><div class="w-[130px] ml-4"><div class="w-[130px] h-[150px] border flex items-center justify-center bg-gray-50 overflow-hidden"><img id="pPhoto" class="w-full h-full object-cover hidden"><span id="pPhotoTxt" class="text-[9px]">Photo</span></div></div></div></div></div></div>
-<div class="glass rounded-[20px] p-4 h-fit lg:sticky top-[70px]"><h2 class="font-black text-sm">3. 40 Borders</h2><div class="flex gap-2 mt-2 text-[10px]"><span class="bg-white/10 border px-2 py-1 rounded-full">Left 2 = Normal (20)</span><span class="bg-yellow-500/20 border border-yellow-400/30 px-2 py-1 rounded-full">Right 2 = Premium (20)</span></div><div class="grid grid-cols-4 gap-1 mt-2 text-[9px] text-center text-gray-400"><div class="col-span-2">📄 Normal</div><div class="col-span-2 text-yellow-300">👑 Premium Advanced</div></div><div id="borderGrid" class="grid grid-cols-4 gap-2 mt-2"></div></div>
+<div class="flex justify-center overflow-auto bg-[#0a0a0a] rounded-[20px] p-4"><div id="paper" class="paper line-bg p-[50px]"><div id="borderEl" class="b b1"></div><div class="relative z-10"><div class="flex justify-between"><div class="flex-1"><h1 class="text-center font-black text-[28px] tracking-widest">RISHTA BIODATA</h1><p class="text-center text-[11px] mt-1">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p><div class="mt-6 space-y-[22px] text-[13px]"><p><b>Name:</b> <span id="pName">__________</span> &nbsp;&nbsp; <b>Father:</b> <span id="pFName">__________</span></p><p><b>DOB:</b> <span id="pDob">__________</span> &nbsp;&nbsp; <b>Age:</b> <span id="pAge">__________</span> &nbsp;&nbsp; <b>Height:</b> <span id="pHeight">__________</span></p><p><b>Cast:</b> <span id="pCast">__________</span> &nbsp;&nbsp; <b>Sect:</b> <span id="pSect">__________</span></p><p><b>Education:</b> <span id="pEdu">__________</span></p><p><b>Profession:</b> <span id="pJob">__________</span> &nbsp;&nbsp; <b>Income:</b> <span id="pIncome">__________</span></p><p><b>City:</b> <span id="pCity">__________</span></p><p><b>Family:</b> <span id="pFamily">__________</span></p><p><b>Contact:</b> <span id="pPhone">__________</span></p><p class="pt-4 border-t border-dashed"><b>Partner Preference:</b> <span id="pReq">__________</span></p></div></div><div class="w-[130px] ml-4"><div class="w-[130px] h-[150px] border border-black flex items-center justify-center bg-gray-50 overflow-hidden"><img id="pPhoto" class="w-full h-full object-cover hidden"><span id="pPhotoTxt" class="text-[9px] text-center">Paste<br>Photo<br>Here</span></div></div></div></div></div></div>
+<div class="glass rounded-[20px] p-4 h-fit lg:sticky top-[70px]"><h2 class="font-black text-sm">3. 40 Borders</h2><div class="flex gap-2 mt-2 text-[10px]"><span class="bg-white/10 border px-2 py-1 rounded-full">Left=Normal 20</span><span class="bg-yellow-500/20 border border-yellow-400/30 px-2 py-1 rounded-full">Right=Premium 20</span></div><div id="borderGrid" class="grid grid-cols-4 gap-2 mt-3"></div></div>
 </div>
 <script>
-const PREMIUM_IMAGES = [
-  "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=400", // placeholder - replace with your 7 images
-];
-let curBorder='b1',curMode='col',curIsPremium=false;
-const normalList=[]; for(let i=1;i<=20;i++) normalList.push('b'+i);
-// Yahan 7 images ko 20 tak repeat kiya
-const baseImgs = ["p1.jpg","p2.jpg","p3.jpg","p4.jpg","p5.jpg","p6.jpg","p7.jpg"];
-const premiumList=[]; for(let i=0;i<20;i++) premiumList.push({id:'p'+(i+1), img:'premium/'+baseImgs[i%7]});
+let curBorder='b1'; let curMode='col'; let curIsPremium=false;
+const normalList=[]; for(let i=1;i<=20;i++){ normalList.push('b'+i); }
+const baseImgs = ["p1.jpg","p2.jpg","p3.jpg","p4.jpg","p5.jpg","p6.jpg","p7.jpg","p8.jpg","p9.jpg","p10.jpg","p11.jpg","p12.jpg","p13.jpg","p14.jpg","p15.jpg","p16.jpg","p17.jpg","p18.jpg","p19.jpg","p20.jpg"];
+const premiumList=[]; for(let i=0;i<20;i++){ premiumList.push({id:'p'+(i+1), img:'premium/'+baseImgs[i]}); }
 const grid=document.getElementById('borderGrid');
-for(let row=0;row<10;row++){
-  for(let c=0;c<2;c++){let idx=row*2+c; if(idx>=20){let e=document.createElement('div');e.className='h-[68px]';grid.appendChild(e);continue;} let b=normalList[idx]; let d=document.createElement('div'); d.className='h-[68px] bg-white border-2 border-white/20 rounded-[10px] relative cursor-pointer hover:scale-105 transition'; d.innerHTML=`<div class='absolute inset-[4px] border border-black rounded-[6px]'></div><span class='absolute bottom-0 left-0 right-0 text-center text-[7px] bg-black/70 text-white'>N${idx+1}</span>`; d.onclick=()=>setBorder(b,d); if(idx==0)d.classList.add('sel'); grid.appendChild(d);}
-  for(let c=0;c<2;c++){let idx=row*2+c; let p=premiumList[idx]; let d=document.createElement('div'); d.className='h-[68px] bg-white border-2 border-yellow-500/50 rounded-[10px] relative cursor-pointer overflow-hidden hover:scale-105 transition'; d.innerHTML=`<img src='${p.img}' class='w-full h-full object-cover' onerror="this.src='https://via.placeholder.com/100x140?text=P${idx+1}'"><span class='absolute bottom-0 left-0 right-0 text-center text-[6px] bg-gradient-to-r from-yellow-700 to-orange-700 text-white'>P${idx+1} FREE</span>`; d.onclick=()=>setPremiumBorder(p,d); grid.appendChild(d);}
+for(let row=0; row<10; row++){
+  for(let c=0;c<2;c++){
+    let idx=row*2+c; if(idx>=20){let e=document.createElement('div');e.className='h-[68px]';grid.appendChild(e);continue;}
+    let b='b'+(idx+1); let d=document.createElement('div');
+    d.className='h-[68px] bg-white border-2 border-white/20 rounded-[10px] relative cursor-pointer hover:scale-105 transition';
+    d.innerHTML=`<div class='absolute inset-[4px] border border-black rounded-[6px]'></div><span class='absolute bottom-0 left-0 right-0 text-center text-[7px] bg-black/70 text-white'>N${idx+1}</span>`;
+    d.onclick=()=>setBorder(b,d); if(idx==0) d.classList.add('sel'); grid.appendChild(d);
+  }
+  for(let c=0;c<2;c++){
+    let idx=row*2+c; let p=premiumList[idx]; let d=document.createElement('div');
+    d.className='h-[68px] bg-white border-2 border-yellow-500/50 rounded-[10px] relative cursor-pointer overflow-hidden hover:scale-105 transition';
+    d.innerHTML=`<img src='${p.img}' class='w-full h-full object-cover' onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"><div class='w-full h-full bg-gradient-to-br from-yellow-50 to-orange-100 hidden items-center justify-center text-[8px] text-black font-bold text-center'>P${idx+1}<br>Soon</div><span class='absolute bottom-0 left-0 right-0 text-center text-[6px] bg-gradient-to-r from-yellow-700 to-orange-700 text-white'>P${idx+1}</span>`;
+    d.onclick=()=>setPremiumBorder(p,d); grid.appendChild(d);
+  }
 }
-function setBorder(b,el){curBorder=b;curIsPremium=false;const be=document.getElementById('borderEl');be.className='b '+b;be.style.backgroundImage='';be.style.filter='';document.getElementById('paper').classList.add('line-bg');document.getElementById('paper').classList.remove('premium-paper');document.querySelectorAll('#borderGrid div').forEach(x=>x.classList.remove('sel'));if(el)el.classList.add('sel');}
-function setPremiumBorder(p,el){curBorder=p.id;curIsPremium=true;const be=document.getElementById('borderEl');be.className='b';be.style.backgroundImage=`url('${p.img}')`;be.style.backgroundSize='100% 100%';be.style.backgroundRepeat='no-repeat';be.style.border='none';document.getElementById('paper').classList.add('premium-paper');document.getElementById('paper').classList.remove('line-bg');document.querySelectorAll('#borderGrid div').forEach(x=>x.classList.remove('sel'));if(el)el.classList.add('sel');}
-function setMode(m){curMode=m;document.getElementById('modeCol').className=m=='col'?'flex-1 bg-gradient-to-r from-pink-600 to-rose-600 py-2 rounded-full text-[11px] font-bold':'flex-1 bg-white/10 py-2 rounded-full text-[11px]';document.getElementById('modeBw').className=m=='bw'?'flex-1 bg-white text-black py-2 rounded-full text-[11px] font-bold':'flex-1 bg-white/10 py-2 rounded-full text-[11px]';const be=document.getElementById('borderEl');if(!curIsPremium){if(m=='bw')be.style.filter='grayscale(1)';else be.style.filter='';}}
-const map={fName:'pName',fFName:'pFName',fDob:'pDob',fAge:'pAge',fHeight:'pHeight',fCast:'pCast',fSect:'pSect',fEdu:'pEdu',fJob:'pJob',fIncome:'pIncome',fCity:'pCity',fFamily:'pFamily',fPhone:'pPhone',fReq:'pReq'};Object.keys(map).forEach(id=>{document.getElementById(id).addEventListener('input',e=>{document.getElementById(map[id]).innerText=e.target.value||'__________';});});
-document.getElementById('fPhoto').addEventListener('change',e=>{const file=e.target.files[0];if(!file)return;const url=URL.createObjectURL(file);const img=document.getElementById('pPhoto');img.src=url;img.classList.remove('hidden');document.getElementById('pPhotoTxt').classList.add('hidden');});
-async function downloadPDF(){const {jsPDF}=window.jspdf;const paper=document.getElementById('paper');const canvas=await html2canvas(paper,{scale:2,useCORS:true,backgroundColor:'#ffffff'});const imgData=canvas.toDataURL('image/jpeg',0.95);const pdf=new jsPDF('p','mm','a4');const w=210;const h=(canvas.height*w)/canvas.width;pdf.addImage(imgData,'JPEG',0,0,w,h);pdf.save(`Rishta-Bio-${curBorder}.pdf`);}
+function setBorder(b,el){ curBorder=b; curIsPremium=false; const be=document.getElementById('borderEl'); be.className='b '+b; be.style.backgroundImage=''; be.style.filter=''; document.getElementById('paper').classList.add('line-bg'); document.getElementById('paper').classList.remove('premium-paper'); document.querySelectorAll('#borderGrid div').forEach(x=>x.classList.remove('sel')); if(el) el.classList.add('sel'); }
+function setPremiumBorder(p,el){ curBorder=p.id; curIsPremium=true; const be=document.getElementById('borderEl'); be.className='b'; be.style.backgroundImage=`url('${p.img}')`; be.style.backgroundSize='100% 100%'; be.style.backgroundRepeat='no-repeat'; be.style.border='none'; document.getElementById('paper').classList.add('premium-paper'); document.getElementById('paper').classList.remove('line-bg'); document.querySelectorAll('#borderGrid div').forEach(x=>x.classList.remove('sel')); if(el) el.classList.add('sel'); }
+function setMode(m){ curMode=m; document.getElementById('modeCol').className=m=='col'?'flex-1 bg-gradient-to-r from-pink-600 to-rose-600 py-2 rounded-full text-[11px] font-bold border border-pink-400':'flex-1 bg-white/10 py-2 rounded-full text-[11px]'; document.getElementById('modeBw').className=m=='bw'?'flex-1 bg-white text-black py-2 rounded-full text-[11px] font-bold':'flex-1 bg-white/10 py-2 rounded-full text-[11px]'; const be=document.getElementById('borderEl'); if(!curIsPremium){ if(m=='bw') be.style.filter='grayscale(1)'; else be.style.filter=''; } }
+const map={fName:'pName',fFName:'pFName',fDob:'pDob',fAge:'pAge',fHeight:'pHeight',fCast:'pCast',fSect:'pSect',fEdu:'pEdu',fJob:'pJob',fIncome:'pIncome',fCity:'pCity',fFamily:'pFamily',fPhone:'pPhone',fReq:'pReq'}; Object.keys(map).forEach(id=>{ document.getElementById(id).addEventListener('input',e=>{ document.getElementById(map[id]).innerText=e.target.value||'__________'; }); });
+document.getElementById('fPhoto').addEventListener('change',e=>{ const file=e.target.files[0]; if(!file) return; const url=URL.createObjectURL(file); const img=document.getElementById('pPhoto'); img.src=url; img.classList.remove('hidden'); document.getElementById('pPhotoTxt').classList.add('hidden'); });
+async function downloadPDF(){ const {jsPDF}=window.jspdf; const paper=document.getElementById('paper'); const canvas=await html2canvas(paper,{scale:2,useCORS:true,backgroundColor:'#ffffff'}); const imgData=canvas.toDataURL('image/jpeg',0.95); const pdf=new jsPDF('p','mm','a4'); const w=210; const h=(canvas.height*w)/canvas.width; pdf.addImage(imgData,'JPEG',0,0,w,h); pdf.save(`Rishta-Bio-${curBorder}.pdf`); }
 setMode('col');
 </script>
 </body>
