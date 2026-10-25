@@ -1,77 +1,125 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Office Chutti Application - Bol Kar Banao | Sick Leave Casual Leave | Chitthi</title>
-<meta name="description" content="Office ki chutti ki application bol kar banao. Sick leave, casual leave, emergency leave. Urdu/English mein bolo, mic se application ready, PDF download. 100% Free PakTools Chitthi.">
-<meta name="keywords" content="office chutti application, sick leave application urdu, casual leave application, bol kar office application, daftar ki chutti">
+<title>Office Chutti Application - Urdu/English Mein Bol Kar Banao | PakTools</title>
+<meta name="description" content="Office ki chutti ki application bol kar banao. Sick leave, casual leave, emergency leave. Mic dabao, professional application ready, PDF download free.">
 <link rel="canonical" href="https://www.paktoolsonline.com/chitthi/office.html">
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-<style>*{font-family:'Inter',sans-serif} .urdu{font-family:'Noto Nastaliq Urdu',serif} body{background:#07010f;color:white} .glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Office Leave Application Voice Maker","author":{"@type":"Organization","name":"PakTools"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+.urdu{font-family:'Noto Nastaliq Urdu',serif;line-height:2.4}
+body{background:#07010f;color:#fff}
+.glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}
+#appOutput{direction:ltr;text-align:left;font-size:14px;line-height:1.9;font-family:'Inter',sans-serif}
+</style>
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"FAQPage",
+ "mainEntity":[
+  {"@type":"Question","name":"Office mein sick leave kaise lein?","acceptedAnswer":{"@type":"Answer","text":"Sick leave ke liye Manager ko application dein, wajah (bukhar/illness) aur kitne din ki chutti chahiye, saaf likhen."}},
+  {"@type":"Question","name":"Kya bol kar office application bana sakte hain?","acceptedAnswer":{"@type":"Answer","text":"Ji haan, PakTools Chitthi par mic dabayein aur bolein, professional application tayyar ho jayegi."}},
+  {"@type":"Question","name":"Casual leave aur sick leave mein kya farq hai?","acceptedAnswer":{"@type":"Answer","text":"Sick leave bemari ke liye hoti hai, casual leave zaati kaam ya emergency ke liye."}}
+ ]
+}
+</script>
 </head>
 <body>
 <div style="position:fixed;inset:0;z-index:-1;background:#07010f"><div style="position:absolute;width:1000px;height:1000px;background:radial-gradient(circle,#22d3ee,#07010f 70%);filter:blur(100px);opacity:0.25;right:-10%;top:10%"></div></div>
 <header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl p-4 flex justify-between">
-<a href="../index.html" class="font-black text-white no-underline">← PakTools</a><a href="index.html" class="text-xs bg-white/10 px-3 py-1 rounded-full text-white no-underline">✉️ Chitthi</a>
+<a href="../index.html" class="font-black text-white no-underline">← PakTools</a><a href="index.html" class="text-xs bg-white/10 px-3 py-1 rounded-full text-white no-underline">✉️ Chitthi Home</a>
 </header>
 <main class="max-w-4xl mx-auto px-5 py-8">
-<h1 class="text-3xl font-black text-center">🏢 Office Chutti - <span class="text-cyan-300">Bol Kar Banao</span></h1>
-<p class="text-center text-gray-400 text-[13px] mt-2">Sick, Casual, Emergency Leave - Mic se bolo, professional application ready</p>
+<h1 class="text-3xl font-black text-center leading-tight">🏢 آفس چھٹی کی درخواست - <span class="text-cyan-300">بول کر بنائیں</span></h1>
+<p class="text-center text-gray-400 text-[13px] mt-2 urdu">سِک لیو، کیجول لیو، ایمرجنسی لیو - مائیک سے بولیں، پروفیشنل درخواست تیار</p>
 
 <div class="mt-8 glass rounded-[24px] p-6">
 <div class="grid md:grid-cols-2 gap-4">
-<div><label class="text-[11px] text-gray-400 uppercase">Naam + Designation Bolo</label><div class="flex gap-2 mt-1"><input id="oName" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Mera naam Ahmed, Accounts Officer"><button onclick="startMic('oName')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
-<div><label class="text-[11px] text-gray-400 uppercase">Department Bolo</label><div class="flex gap-2 mt-1"><input id="oDept" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Finance Department"><button onclick="startMic('oDept')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
-<div><label class="text-[11px] text-gray-400 uppercase">Chutti Ki Qisam Bolo</label><div class="flex gap-2 mt-1"><input id="oType" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Sick leave, 2 din"><button onclick="startMic('oType')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
-<div><label class="text-[11px] text-gray-400 uppercase">Wajah Bolo</label><div class="flex gap-2 mt-1"><input id="oReason" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Bukhar aur doctor appointment"><button onclick="startMic('oReason')" class="bg-gradient-to-r from-cyan-600 to-blue-600 px-6 rounded-full font-bold">🎤</button></div></div>
+<div><label class="text-[11px] text-gray-400">1. نام + عہدہ بولیں</label><div class="flex gap-2 mt-1"><input id="oName" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="احمد، اکاؤنٹس آفیسر"><button onclick="startMic('oName')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
+<div><label class="text-[11px] text-gray-400">2. ڈیپارٹمنٹ بولیں</label><div class="flex gap-2 mt-1"><input id="oDept" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="فنانس ڈیپارٹمنٹ"><button onclick="startMic('oDept')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
+<div><label class="text-[11px] text-gray-400">3. آفس / کمپنی کا نام بولیں</label><div class="flex gap-2 mt-1"><input id="oOffice" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="XYZ Company Lahore"><button onclick="startMic('oOffice')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
+<div><label class="text-[11px] text-gray-400">4. چھٹی کی قسم + دن بولیں</label><div class="flex gap-2 mt-1"><input id="oType" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="دو دن کی سِک لیو"><button onclick="startMic('oType')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
+<div class="md:col-span-2"><label class="text-[11px] text-gray-400">5. وجہ بولیں</label><div class="flex gap-2 mt-1"><input id="oReason" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="بخار اور ڈاکٹر اپائنٹمنٹ"><button onclick="startMic('oReason')" class="bg-gradient-to-r from-cyan-600 to-blue-600 px-6 rounded-full font-bold">🎤 بولیں</button></div></div>
 </div>
-<button onclick="generateOffice()" class="mt-6 w-full bg-gradient-to-r from-cyan-600 to-blue-600 py-4 rounded-full font-black text-sm shadow-[0_0_20px_rgba(6,182,212,0.4)]">✨ Professional Application Banao</button>
-<div id="resultBox" class="hidden mt-6"><div id="appOutput" class="bg-white text-black p-6 rounded-2xl text-[13px] leading-7 whitespace-pre-line"></div><div class="flex gap-2 mt-3"><button onclick="copyText()" class="flex-1 bg-white/10 border border-white/20 py-3 rounded-full text-xs font-bold">Copy</button><button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">PDF / Print</button></div></div>
-<p id="micStatus" class="text-center text-[11px] text-cyan-300 mt-3"></p>
+<button onclick="generateOffice()" class="mt-6 w-full bg-gradient-to-r from-cyan-600 to-blue-600 py-4 rounded-full font-black text-sm shadow-[0_0_20px_rgba(6,182,212,0.4)]">✨ پروفیشنل درخواست بنائیں</button>
+<div id="resultBox" class="hidden mt-6"><div id="appOutput" class="bg-white text-black p-7 rounded-2xl whitespace-pre-line"></div><div class="flex gap-2 mt-3"><button onclick="copyText()" class="flex-1 bg-white/10 border border-white/20 py-3 rounded-full text-xs font-bold">📋 کاپی کریں</button><button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">🖨️ پی ڈی ایف</button></div></div>
+<p id="micStatus" class="text-center text-[11px] text-cyan-300 mt-3 urdu"></p>
 </div>
 
-<article class="mt-10 glass rounded-[24px] p-6">
-<h2 class="font-black">Office Leave Application Kaise Likhen? Blog</h2>
-<p class="text-[13px] text-gray-300 mt-3 leading-6">Pakistan ke offices mein chutti ki application hamesha professional honi chahiye. Manager ko mukhatib karna, wajah mukhtasar likhna, aur tarikh wazeh karna zaroori hai. Chitthi tool aap ki boli hui baat ko English/Urdu professional letter mein badal deta hai. AdSense safe aur original content hai, koi copyright issue nahi.</p>
-<ul class="text-[12px] text-gray-400 mt-3 list-disc ml-5 leading-6"><li>Subject: Application for Sick Leave - hamesha likhen</li><li>2 din se zyada ho to medical certificate ka zikr karen</li><li>Contact number akhri mein likhen</li></ul>
+<article class="mt-10 glass rounded-[24px] p-6 md:p-8">
+<h2 class="text-xl font-black urdu">آفس کی چھٹی کی درخواست کیسے لکھیں؟ مکمل گائیڈ</h2>
+<p class="text-[13px] text-gray-300 mt-3 leading-7 urdu">پاکستان کے تمام دفاتر میں چھٹی کی درخواست ہمیشہ پروفیشنل ہونی چاہیے۔ مینیجر کو مخاطب کرنا، وجہ مختصر لکھنا، اور تاریخ واضح کرنا ضروری ہے۔</p>
+
+<h3 class="font-black mt-6 text-[17px] urdu">اس ٹول کو استعمال کیسے کرنا ہے؟ (اردو میں)</h3>
+<ol class="text-[13px] text-gray-300 list-decimal mr-5 mt-3 leading-8 urdu">
+<li><b>مائیک دبائیں:</b> ہر خانے کے سامنے مائیک ہے۔</li>
+<li><b>نام اور عہدہ:</b> اپنا نام اور عہدہ بولیں۔</li>
+<li><b>ڈیپارٹمنٹ اور آفس:</b> ڈیپارٹمنٹ اور کمپنی کا نام بولیں۔</li>
+<li><b>چھٹی کی قسم:</b> سِک لیو، کیجول لیو، 2 دن۔</li>
+<li><b>وجہ:</b> بخار، ایمرجنسی، فیملی فنکشن۔</li>
+<li><b>بنائیں:</b> بٹن دبائیں، نیچے پروفیشنل لیٹر تیار ہو جائے گا۔</li>
+</ol>
+
+<h3 class="font-black mt-6 text-[15px]">Sick Leave vs Casual Leave</h3>
+<ul class="text-[12px] text-gray-400 mt-2 list-disc mr-5 leading-7 urdu">
+<li><b>Sick Leave:</b> بیماری کی صورت میں، ڈاکٹر کا ذکر کریں۔</li>
+<li><b>Casual Leave:</b> ذاتی کام یا ایمرجنسی کے لیے۔</li>
+<li>ہمیشہ Subject لکھیں اور آخر میں رابطہ نمبر چھوڑیں۔</li>
+</ul>
 </article>
-<footer class="text-center text-[11px] text-gray-500 mt-8">© PakTools Chitthi - 100% Original</footer>
+<footer class="text-center text-[11px] text-gray-500 mt-8 urdu">© PakTools Chitthi - 100% اصلی، کاپی رائٹ فری</footer>
 </main>
 <script>
 function startMic(id){
   const Rec = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if(!Rec){ alert('Mic sirf Chrome mein'); return; }
   const rec = new Rec(); rec.lang = 'ur-PK';
-  document.getElementById('micStatus').innerText = '🎤 Sun raha hun...';
-  rec.onresult = e => { document.getElementById(id).value = e.results[0][0].transcript; document.getElementById('micStatus').innerText = '✅ ' + e.results[0][0].transcript; };
+  document.getElementById('micStatus').innerText = '🎤 سن رہا ہوں... بولیں...';
+  rec.onresult = e => {
+    document.getElementById(id).value = e.results[0][0].transcript;
+    document.getElementById('micStatus').innerText = '✅ ہو گیا: ' + e.results[0][0].transcript;
+  };
+  rec.onerror = () => { document.getElementById('micStatus').innerText = 'مائیک میں مسئلہ ہے'; };
   rec.start();
 }
 function generateOffice(){
-  let n=document.getElementById('oName').value||'Employee', d=document.getElementById('oDept').value||'General', t=document.getElementById('oType').value||'Sick Leave', r=document.getElementById('oReason').value||'illness', date=new Date().toLocaleDateString('en-PK');
+  let n=document.getElementById('oName').value.trim()||'Ahmed - Accounts Officer';
+  let dept=document.getElementById('oDept').value.trim()||'Finance Department';
+  let office=document.getElementById('oOffice').value.trim()||'XYZ Company';
+  let type=document.getElementById('oType').value.trim()||'2 Days Sick Leave';
+  let reason=document.getElementById('oReason').value.trim()||'bukhar and doctor appointment';
+  let date=new Date().toLocaleDateString('en-GB');
+
   let app=`To,
 The Manager,
-${d}
+${office}
+${dept}
 
-Subject: Application for ${t}
+Subject: Application for ${type}
 
 Respected Sir,
 
-I beg to state that I am ${n} from ${d}. I am writing to request ${t} as I am suffering from ${r}.
+I beg to state that I am ${n} from ${dept}, ${office}. I am writing to request ${type} as I am suffering from ${reason}.
 
-Kindly grant me leave for the said period. I shall be very thankful to you and will complete my pending work after rejoining.
+Kindly grant me leave for the said period. I shall be thankful to you and will complete my pending work after rejoining. I will remain reachable on phone if any urgent work arises.
 
 Thanking you,
 
 Sincerely,
 ${n}
-${d}
+${dept}
 Date: ${date}
 Contact: ________`;
+
   document.getElementById('appOutput').innerText=app;
   document.getElementById('resultBox').classList.remove('hidden');
+  window.scrollTo({top: document.getElementById('resultBox').offsetTop - 20, behavior:'smooth'});
 }
-function copyText(){ navigator.clipboard.writeText(document.getElementById('appOutput').innerText); alert('Copied!'); }
+function copyText(){ 
+  let t=document.getElementById('appOutput').innerText;
+  navigator.clipboard.writeText(t).then(()=>alert('کاپی ہو گئی!')); 
+}
 </script>
 </body>
 </html>
