@@ -14,7 +14,7 @@
 .urdu{font-family:'Noto Nastaliq Urdu',serif}
 .paper{width:794px;min-height:1123px;background:white;color:black;position:relative;overflow:hidden}
 .line-bg{background-image: repeating-linear-gradient(transparent, transparent 27px, #e5e7eb 27px, #e5e7eb 28px);}
-/* 40 BORDER CLASSES - NORMAL */
+/* 40 BORDER CLASSES */
 .b{position:absolute;inset:0;pointer-events:none}
 .b1{border:6px double #7f1d1d} .b1:before{content:'';position:absolute;inset:12px;border:1px solid #d4af37}
 .b2{border:8px solid #14532d} .b2:after{content:'❖';position:absolute;top:2px;left:50%;transform:translateX(-50%);background:white;padding:0 8px;color:#14532d}
@@ -40,21 +40,16 @@
 .b36{border:6px solid #7f1d1d} .b37{border:6px solid #14532d} .b38{border:6px solid #1e3a8a}
 .b39{border:6px solid #000; background-image: radial-gradient(circle, black 1px, transparent 1px); background-size:20px 20px; background-position: -10px -10px; background-repeat: no-repeat; background-clip: border-box}
 .b40{border:8px inset #d1d5db}
-
-/* PREMIUM */
-.premium-bg{position:absolute;inset:0;background-size:100% 100%;background-repeat:no-repeat;pointer-events:none;opacity:0.9}
-
 .sel{border-color:#ec4899 !important; transform:scale(1.05); box-shadow:0 0 15px #ec4899}
-.tabActive{background:linear-gradient(90deg,#ec4899,#8b5cf6);border-color:#f9a8d4 !important;color:white}
 @media print{.no-print{display:none} body{background:white} .paper{box-shadow:none; width:100%; min-height:auto}}
 </style>
 </head>
 <body>
 <header class="sticky top-0 z-30 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl p-4 flex justify-between items-center">
-<a href="../index.html" class="font-black">← PakTools</a><div class="text-xs bg-pink-500/20 border border-pink-400/30 px-3 py-1 rounded-full">💍 Rishta Bio 80 Borders</div>
+<a href="../index.html" class="font-black">← PakTools</a><div class="text-xs bg-pink-500/20 border border-pink-400/30 px-3 py-1 rounded-full">💍 Rishta Bio 40 Borders</div>
 </header>
 <div class="max-w-[1600px] mx-auto grid lg:grid-cols-[380px_1fr_440px] gap-4 p-4">
-<!-- LEFT FORM - SAME AS YOUR CODE -->
+<!-- LEFT FORM -->
 <div class="glass rounded-[20px] p-4 h-fit lg:sticky top-[70px] overflow-y-auto max-h-[90vh]">
 <h2 class="font-black text-sm">1. Details Bharo</h2>
 <div class="mt-3 grid grid-cols-2 gap-2">
@@ -79,15 +74,14 @@
 <button id="modeCol" onclick="setMode('col')" class="flex-1 bg-gradient-to-r from-pink-600 to-rose-600 py-2 rounded-full text-[11px] font-bold border border-pink-400">🎨 Coloured</button>
 <button id="modeBw" onclick="setMode('bw')" class="flex-1 bg-white/10 py-2 rounded-full text-[11px] font-bold">⚫ B&W Printer</button>
 </div>
-<p class="text-[10px] text-gray-400 mt-2">Normal designs: B&W mode har printer se saaf print hoga. Premium: Abhi Free hai.</p>
+<p class="text-[10px] text-gray-400 mt-2">B&W mode har black & white printer se saaf print hoga, ink bhi kam lagega.</p>
 <button onclick="downloadPDF()" class="mt-4 w-full bg-white text-black py-3 rounded-full font-black text-xs">📥 PDF Download (A4)</button>
 <button onclick="window.print()" class="mt-2 w-full bg-white/10 border border-white/20 py-3 rounded-full font-bold text-xs no-print">🖨️ Direct Print</button>
 </div>
-<!-- CENTER PREVIEW - SAME -->
+<!-- CENTER PREVIEW -->
 <div class="flex justify-center overflow-auto bg-[#0a0a0a] rounded-[20px] p-4">
 <div id="paper" class="paper line-bg p-[50px]">
 <div id="borderEl" class="b b1"></div>
-<div id="premiumEl" class="premium-bg hidden"></div>
 <div class="relative z-10">
 <div class="flex justify-between">
 <div class="flex-1">
@@ -111,87 +105,31 @@
 </div>
 </div>
 </div>
-<!-- RIGHT - 2 SECTIONS -->
+<!-- RIGHT BORDERS -->
 <div class="glass rounded-[20px] p-4 h-fit lg:sticky top-[70px]">
-<h2 class="font-black text-sm">3. Designs Select Karo</h2>
-<!-- TABS -->
-<div class="flex gap-2 mt-3">
-<button id="tabNormal" onclick="switchTab('normal')" class="flex-1 tabActive border border-white/20 py-2 rounded-full text-[11px] font-bold">📄 Normal (40)</button>
-<button id="tabPremium" onclick="switchTab('premium')" class="flex-1 bg-white/10 border border-white/20 py-2 rounded-full text-[11px] font-bold">👑 Premium (40)</button>
-</div>
-<!-- NORMAL SECTION -->
-<div id="secNormal">
-<div class="flex gap-2 mt-3 text-[10px]"><span class="bg-pink-500/20 px-2 py-1 rounded-full">Coloured</span><span class="bg-white/10 px-2 py-1 rounded-full">B&W Lining</span><span class="bg-green-500/20 px-2 py-1 rounded-full">Free</span></div>
-<div id="normalGrid" class="grid grid-cols-4 gap-2 mt-3"></div>
-</div>
-<!-- PREMIUM SECTION -->
-<div id="secPremium" class="hidden">
-<div class="flex gap-2 mt-3 text-[10px]"><span class="bg-gradient-to-r from-yellow-500/30 to-orange-500/30 text-yellow-200 border border-yellow-400/30 px-2 py-1 rounded-full">Royal Floral</span><span class="bg-green-500/20 px-2 py-1 rounded-full">Abhi Free</span><span class="bg-white/10 px-2 py-1 rounded-full">Baad mein Rs.50/100</span></div>
-<div id="premiumGrid" class="grid grid-cols-2 gap-2 mt-3"></div>
-<p class="text-[9px] text-gray-400 mt-3">Premium designs: Tumhari bheji hui image jaisa Maroon Gold, Green Gold, Blue Silver etc. Yahan 40 designs ayenge.</p>
-</div>
+<h2 class="font-black text-sm">3. 40 Borders - Click to Select</h2>
+<div class="flex gap-2 mt-2 text-[10px]"><span class="bg-pink-500/20 px-2 py-1 rounded-full">Coloured 20</span><span class="bg-white/10 px-2 py-1 rounded-full">B&W 20</span></div>
+<div id="borderGrid" class="grid grid-cols-4 gap-2 mt-3"></div>
 </div>
 </div>
 <script>
-let curBorder='b1'; let curMode='col'; let curTab='normal'; let curPremium='p1';
-const normalBorders=[]; for(let i=1;i<=40;i++){ normalBorders.push('b'+i); }
-const premiumBorders=[]; for(let i=1;i<=40;i++){ premiumBorders.push({id:'p'+i,name:'Premium '+(i),img:`borders/premium-${i}.jpg`,color:['#7f1d1d','#14532d','#1e3a8a','#831843','#064e3b','#854d0e'][i%6]}); }
-
-// RENDER NORMAL
-const nGrid=document.getElementById('normalGrid');
-normalBorders.forEach((b,i)=>{
+let curBorder='b1'; let curMode='col';
+const borders=[];
+for(let i=1;i<=40;i++){ borders.push('b'+i); }
+const grid=document.getElementById('borderGrid');
+borders.forEach((b,i)=>{
  let d=document.createElement('div');
  d.className='h-[55px] bg-white border-2 border-white/20 rounded-[8px] relative cursor-pointer hover:scale-105 transition';
  d.innerHTML=`<div class='absolute inset-[3px] border ${i<20?'border-pink-300':'border-black'} rounded-[4px]'></div><span class='absolute bottom-0 left-0 right-0 text-center text-[8px] bg-black/70 text-white'>${i+1}</span>`;
- d.onclick=()=>{ setBorder(b,d,'normal'); };
+ d.onclick=()=>setBorder(b,d);
  if(i==0) d.classList.add('sel');
- nGrid.appendChild(d);
+ grid.appendChild(d);
 });
-
-// RENDER PREMIUM
-const pGrid=document.getElementById('premiumGrid');
-premiumBorders.forEach((p,i)=>{
- let d=document.createElement('div');
- d.className='h-[90px] bg-white border-2 border-white/20 rounded-[12px] relative cursor-pointer hover:scale-105 transition overflow-hidden';
- d.innerHTML=`<div class='absolute inset-0 bg-gradient-to-br from-[${p.color}]/20 to-yellow-500/20'></div><div class='absolute inset-[5px] border-2 rounded-[8px]' style='border-color:${p.color}'></div><div class='absolute inset-0 flex items-center justify-center'><span class='text-[10px] font-black text-black bg-white/90 px-2 py-1 rounded-full'>${p.name}</span></div><span class='absolute bottom-0 left-0 right-0 text-center text-[7px] bg-gradient-to-r from-pink-600 to-rose-600 text-white py-[2px]'>FREE NOW • Rs.50 later</span>`;
- // If you have real images, uncomment next line and add images to borders/ folder:
- // d.innerHTML = `<img src='${p.img}' class='w-full h-full object-cover' onerror="this.style.display='none'"><span class='absolute bottom-0 left-0 right-0 text-center text-[7px] bg-black/70 text-white'>${p.name}</span>`;
- d.onclick=()=>{ setPremium(p,d); };
- pGrid.appendChild(d);
-});
-
-function switchTab(t){
- curTab=t;
- document.getElementById('secNormal').classList.toggle('hidden',t!=='normal');
- document.getElementById('secPremium').classList.toggle('hidden',t!=='premium');
- document.getElementById('tabNormal').className=t==='normal'?'flex-1 tabActive border border-white/20 py-2 rounded-full text-[11px] font-bold':'flex-1 bg-white/10 border border-white/20 py-2 rounded-full text-[11px] font-bold';
- document.getElementById('tabPremium').className=t==='premium'?'flex-1 tabActive border border-white/20 py-2 rounded-full text-[11px] font-bold':'flex-1 bg-white/10 border border-white/20 py-2 rounded-full text-[11px] font-bold';
-}
-
-function setBorder(b,el,type){
- curBorder=b; curTab='normal';
- document.getElementById('borderEl').className='b '+b;
- document.getElementById('borderEl').classList.remove('hidden');
- document.getElementById('premiumEl').classList.add('hidden');
- document.querySelectorAll('#normalGrid div').forEach(x=>x.classList.remove('sel')); if(el) el.classList.add('sel');
- document.querySelectorAll('#premiumGrid div').forEach(x=>x.classList.remove('sel'));
+function setBorder(b,el){
+ curBorder=b; document.getElementById('borderEl').className='b '+b;
+ document.querySelectorAll('#borderGrid div').forEach(x=>x.classList.remove('sel')); if(el) el.classList.add('sel');
  applyMode();
 }
-function setPremium(p,el){
- curPremium=p.id; curTab='premium'; curBorder=p.id;
- document.getElementById('borderEl').className='b';
- document.getElementById('borderEl').style.border=`8px double ${p.color}`;
- document.getElementById('borderEl').classList.remove('hidden');
- document.getElementById('premiumEl').classList.add('hidden');
- // Agar tumhare pass real image hai to ye use hoga:
- // document.getElementById('premiumEl').style.backgroundImage=`url('${p.img}')`;
- // document.getElementById('premiumEl').classList.remove('hidden');
- // document.getElementById('borderEl').classList.add('hidden');
- document.querySelectorAll('#premiumGrid div').forEach(x=>x.classList.remove('sel')); if(el) el.classList.add('sel');
- document.querySelectorAll('#normalGrid div').forEach(x=>x.classList.remove('sel'));
- applyMode();
-}
-
 function setMode(m){
  curMode=m;
  document.getElementById('modeCol').className=m=='col'?'flex-1 bg-gradient-to-r from-pink-600 to-rose-600 py-2 rounded-full text-[11px] font-bold border border-pink-400':'flex-1 bg-white/10 py-2 rounded-full text-[11px] font-bold';
@@ -200,7 +138,7 @@ function setMode(m){
 }
 function applyMode(){
  const el=document.getElementById('borderEl');
- if(curTab==='normal' && curMode=='bw'){ el.style.filter='grayscale(1)'; el.style.borderColor='black'; } else { el.style.filter=''; }
+ if(curMode=='bw'){ el.style.filter='grayscale(1)'; el.style.borderColor='black'; } else { el.style.filter=''; }
 }
 const map={fName:'pName',fFName:'pFName',fDob:'pDob',fAge:'pAge',fHeight:'pHeight',fCast:'pCast',fSect:'pSect',fEdu:'pEdu',fJob:'pJob',fIncome:'pIncome',fCity:'pCity',fFamily:'pFamily',fPhone:'pPhone',fReq:'pReq'};
 Object.keys(map).forEach(id=>{
@@ -216,14 +154,14 @@ document.getElementById('fPhoto').addEventListener('change',e=>{
 async function downloadPDF(){
  const { jsPDF } = window.jspdf;
  const paper=document.getElementById('paper');
- const canvas=await html2canvas(paper,{scale:2,useCORS:true,backgroundColor:'#ffffff'});
+ const canvas=await html2canvas(paper,{scale:2,useCORS:true,backgroundColor:curMode=='bw'?'#ffffff':'#ffffff'});
  const imgData=canvas.toDataURL('image/jpeg',0.95);
  const pdf=new jsPDF('p','mm','a4');
  const w=210; const h=(canvas.height * w)/canvas.width;
  pdf.addImage(imgData,'JPEG',0,0,w,h);
- pdf.save(`Rishta-Bio-${curBorder}-${curMode}.pdf`);
+ pdf.save(`Rishta-Bio-${document.getElementById('fName').value||'Biodata'}-${curMode}.pdf`);
 }
-setMode('col'); switchTab('normal');
+setMode('col');
 </script>
 </body>
 </html>
