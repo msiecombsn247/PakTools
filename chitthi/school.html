@@ -1,24 +1,42 @@
-function generateApp(){
-  let name = document.getElementById('sName').value.trim() || 'طالب علم';
-  let cls = document.getElementById('sClass').value.trim() || 'دہم';
-  let reasonRaw = document.getElementById('sReason').value.trim() || 'بخار کی وجہ سے';
-  let daysRaw = document.getElementById('sDays').value.trim() || 'ایک دن';
-  let school = document.getElementById('sSchool').value.trim() || 'گورنمنٹ ہائی سکول';
-  let reason = reasonRaw.replace(/ki wajah se/gi,'').replace(/کی وجہ سے/g,'').trim();
-  let days = toUrduDays(daysRaw);
-  let date = new Date().toLocaleDateString('ur-PK', {day:'numeric', month:'long', year:'numeric'});
+function toUrduDays(input){
+  if(!input) return 'ایک دن';
+  let t = input.toLowerCase().trim();
+  if(t.includes('1') || t.includes('one') || t.includes('aik') || t.includes('ایک')) return 'ایک دن';
+  if(t.includes('2') || t.includes('two') || t.includes('دو')) return 'دو دن';
+  if(t.includes('3') || t.includes('three') || t.includes('تین')) return 'تین دن';
+  if(t.includes('4') || t.includes('four') || t.includes('چار')) return 'چار دن';
+  if(t.includes('5') || t.includes('five') || t.includes('پانچ')) return 'پانچ دن';
+  return input;
+}
 
+function generateApp(){ 
+  let name = document.getElementById('sName').value.trim() || 'طالب علم'; 
+  let cls = document.getElementById('sClass').value.trim() || 'دہم'; 
+  let reasonRaw = document.getElementById('sReason').value.trim() || 'بخار'; 
+  let daysRaw = document.getElementById('sDays').value.trim() || 'ایک دن'; 
+  let school = document.getElementById('sSchool').value.trim() || 'گورنمنٹ ہائی سکول'; 
+
+  let reason = reasonRaw.replace(/ki wajah se/gi,'').replace(/کی وجہ سے/g,'').trim(); 
+  let days = toUrduDays(daysRaw); 
+  let date = new Date().toLocaleDateString('en-GB'); 
+
+  // Pure Urdu + <br> se sahi format
   let appHTML = `بخدمت جناب ہیڈ ماسٹر صاحب،<br>
 ${school}<br><br>
 موضوع: ${days} کی چھٹی کی درخواست<br><br>
 جناب عالی!<br><br>
-گزارش ہے کہ میرا نام <b>${name}</b> ہے اور میں جماعت <b>${cls}</b> کا طالب علم ہوں۔ گزارش ہے کہ ${reason} کی وجہ سے میں ${days} سکول حاضر نہیں ہو سکوں گا۔<br><br>
+گزارش ہے کہ میرا نام ${name} ہے اور میں جماعت ${cls} کا طالب علم ہوں۔ گزارش ہے کہ ${reason} کی وجہ سے میں ${days} سکول حاضر نہیں ہو سکوں گا۔<br><br>
 برائے مہربانی مجھے ${days} کی چھٹی دے کر شکرگزار ہونے کا موقع دیں۔<br><br>
 آپ کا شاگرد،<br>
 ${name}<br>
 جماعت: ${cls}<br>
 تاریخ: ${date}`;
 
-  document.getElementById('appOutput').innerHTML = appHTML;
-  document.getElementById('resultBox').classList.remove('hidden');
+  let out = document.getElementById('appOutput');
+  out.style.direction = "rtl";
+  out.style.textAlign = "right";
+  out.className = "bg-white text-black p-8 rounded-[20px] urdu shadow-2xl";
+  out.innerHTML = appHTML; 
+  document.getElementById('resultBox').classList.remove('hidden'); 
+  window.scrollTo({top: document.getElementById('resultBox').offsetTop - 20, behavior:'smooth'});
 }
