@@ -1,167 +1,98 @@
 <!DOCTYPE html>
-<html lang="ur" dir="ltr">
+<html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Rishta Bio Maker - 40 A4 Borders, Coloured & B&W PDF | PakTools</title>
-<meta name="description" content="Rishta Bio banao 40 A4 borders ke saath. Photo upload, lining wale designs, coloured aur black & white printer friendly PDF.">
+<title>Rishta Bio Maker - 40 Coloured + 40 B&W A4 Borders | PakTools</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-*{font-family:'Inter',sans-serif} body{background:#07010f;color:white}
-.glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}
-.urdu{font-family:'Noto Nastaliq Urdu',serif}
+body{background:#07010f;color:white}.glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}
 .paper{width:794px;min-height:1123px;background:white;color:black;position:relative;overflow:hidden}
-.line-bg{background-image: repeating-linear-gradient(transparent, transparent 27px, #e5e7eb 27px, #e5e7eb 28px);}
-/* 40 BORDER CLASSES */
+.line-bg{background-image:repeating-linear-gradient(transparent,transparent 27px,#e5e7eb 27px,#e5e7eb 28px)}
 .b{position:absolute;inset:0;pointer-events:none}
-.b1{border:6px double #7f1d1d} .b1:before{content:'';position:absolute;inset:12px;border:1px solid #d4af37}
-.b2{border:8px solid #14532d} .b2:after{content:'❖';position:absolute;top:2px;left:50%;transform:translateX(-50%);background:white;padding:0 8px;color:#14532d}
-.b3{border:5px solid #1e3a8a} .b4{border:10px ridge #be185d} .b5{border:6px dotted #000}
-.b6{border:4px solid #000; outline:2px solid #000; outline-offset:-10px}
-.b7{border:12px double #000} .b8{border:3px solid #000} .b8:before{content:'';position:absolute;inset:0;border:3px solid #000;margin:8px}
-.b9{border:8px groove #6b7280} .b10{border:6px dashed #000}
-.b11{border:6px solid #7c2d12} .b12{border:6px solid #064e3b} .b13{border:6px solid #1e40af} .b14{border:6px solid #831843}
-.b15{border:6px solid #854d0e} .b16{border:8px double #000} .b17{border:5px solid #111827; border-radius:12px}
-.b18{border:4px solid #000; box-shadow:inset 0 0 0 6px white, inset 0 0 0 9px black}
-.b19{border:2px solid #000} .b19:before{content:'';position:absolute;top:0;left:0;right:0;height:18px;background:black}
-.b20{border:6px solid #000; border-image: repeating-linear-gradient(45deg, black, black 10px, white 10px, white 20px) 20}
-.b21{border:6px solid #991b1b; background:linear-gradient(white, white) padding-box, linear-gradient(45deg,#991b1b,gold) border-box}
-.b22{border:6px solid #065f46} .b23{border:6px solid #1e3a8a} .b24{border:6px solid #9d174d}
-.b25{border:6px solid #000} .b26{border:3px solid #000; border-style: double} .b27{border:8px solid #111; border-left-style: dotted; border-right-style: dotted}
-.b28{border-top:8px solid #000; border-bottom:8px solid #000; border-left:2px solid #000; border-right:2px solid #000}
-.b29{border:6px solid #000; position:relative} .b29:after{content:'✿ ✿ ✿';position:absolute;bottom:4px;left:50%;transform:translateX(-50%);background:white;padding:0 6px;font-size:10px}
-.b30{border:6px solid transparent; border-image: linear-gradient(to right, #ec4899, #8b5cf6) 1}
-.b31{border:1px solid #9ca3af} .b31:before{content:'';position:absolute;inset:6px;border:1px dashed #9ca3af}
-.b32{border:2px solid black} .b32:before{content:'';position:absolute;top:10px;left:10px;right:10px;bottom:10px;border:1px solid black}
-.b33{border:5px solid black} .b33:after{content:'';position:absolute;top:0;left:0;width:40px;height:40px;border-right:5px solid black;border-bottom:5px solid black}
-.b34{border:6px double black; border-radius:20px} .b35{border:4px solid black}
-.b36{border:6px solid #7f1d1d} .b37{border:6px solid #14532d} .b38{border:6px solid #1e3a8a}
-.b39{border:6px solid #000; background-image: radial-gradient(circle, black 1px, transparent 1px); background-size:20px 20px; background-position: -10px -10px; background-repeat: no-repeat; background-clip: border-box}
-.b40{border:8px inset #d1d5db}
-.sel{border-color:#ec4899 !important; transform:scale(1.05); box-shadow:0 0 15px #ec4899}
-@media print{.no-print{display:none} body{background:white} .paper{box-shadow:none; width:100%; min-height:auto}}
+.sel{ring:2px solid #ec4899;transform:scale(1.05)}
+.locked{filter:blur(1px);opacity:0.6}
 </style>
 </head>
 <body>
-<header class="sticky top-0 z-30 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl p-4 flex justify-between items-center">
-<a href="../index.html" class="font-black">← PakTools</a><div class="text-xs bg-pink-500/20 border border-pink-400/30 px-3 py-1 rounded-full">💍 Rishta Bio 40 Borders</div>
+<header class="sticky top-0 z-30 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl p-4 flex justify-between">
+<a href="../index.html" class="font-black">← PakTools</a><div class="flex gap-2"><span class="text-[10px] bg-pink-500/20 px-3 py-1 rounded-full">80 Borders</span><span id="freeBadge" class="text-[10px] bg-green-500/20 px-3 py-1 rounded-full">FREE TODAY</span></div>
 </header>
-<div class="max-w-[1600px] mx-auto grid lg:grid-cols-[380px_1fr_440px] gap-4 p-4">
-<!-- LEFT FORM -->
-<div class="glass rounded-[20px] p-4 h-fit lg:sticky top-[70px] overflow-y-auto max-h-[90vh]">
-<h2 class="font-black text-sm">1. Details Bharo</h2>
-<div class="mt-3 grid grid-cols-2 gap-2">
+<div class="max-w-[1600px] mx-auto grid lg:grid-cols-[380px_1fr_460px] gap-4 p-4">
+<!-- FORM -->
+<div class="glass rounded-[20px] p-4 h-fit lg:sticky top-[70px]">
+<h2 class="font-black text-xs">FORM BHARO</h2>
+<div class="grid grid-cols-2 gap-2 mt-3">
 <input id="fName" placeholder="Full Name" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
 <input id="fFName" placeholder="Father Name" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fDob" placeholder="DOB 12-05-1998" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fAge" placeholder="Age 26" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fHeight" placeholder="Height 5.8" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fCast" placeholder="Cast / Biradri" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fSect" placeholder="Sect / Maslak" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fEdu" placeholder="Education BS Computer" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fJob" placeholder="Job / Business" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fIncome" placeholder="Income 150k" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fCity" placeholder="City Lahore" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fFamily" placeholder="Father Job, Siblings 3" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fPhone" placeholder="Phone / WhatsApp" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
-<input id="fReq" placeholder="Partner Requirement" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fAge" placeholder="Age" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs"><input id="fHeight" placeholder="Height" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fCast" placeholder="Cast" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs"><input id="fCity" placeholder="City" class="bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fEdu" placeholder="Education" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fJob" placeholder="Job" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
+<input id="fPhone" placeholder="Phone" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
 </div>
-<div class="mt-3"><label class="text-[10px] text-gray-400">Photo Upload</label><input type="file" id="fPhoto" accept="image/*" class="w-full text-[10px] mt-1"></div>
-<h2 class="font-black text-sm mt-5">2. PDF Type</h2>
-<div class="flex gap-2 mt-2">
-<button id="modeCol" onclick="setMode('col')" class="flex-1 bg-gradient-to-r from-pink-600 to-rose-600 py-2 rounded-full text-[11px] font-bold border border-pink-400">🎨 Coloured</button>
-<button id="modeBw" onclick="setMode('bw')" class="flex-1 bg-white/10 py-2 rounded-full text-[11px] font-bold">⚫ B&W Printer</button>
+<div class="mt-3"><input type="file" id="fPhoto" accept="image/*" class="text-[10px]"></div>
+<div class="flex gap-2 mt-4">
+<button id="modeCol" onclick="setMode('col')" class="flex-1 bg-gradient-to-r from-pink-600 to-rose-600 py-2 rounded-full text-[11px] font-bold">🎨 Coloured (40)</button>
+<button id="modeBw" onclick="setMode('bw')" class="flex-1 bg-white/10 py-2 rounded-full text-[11px]">⚫ B&W (40)</button>
 </div>
-<p class="text-[10px] text-gray-400 mt-2">B&W mode har black & white printer se saaf print hoga, ink bhi kam lagega.</p>
-<button onclick="downloadPDF()" class="mt-4 w-full bg-white text-black py-3 rounded-full font-black text-xs">📥 PDF Download (A4)</button>
-<button onclick="window.print()" class="mt-2 w-full bg-white/10 border border-white/20 py-3 rounded-full font-bold text-xs no-print">🖨️ Direct Print</button>
+<button onclick="downloadPDF()" class="mt-4 w-full bg-white text-black py-3 rounded-full font-black text-xs">📥 PDF DOWNLOAD A4</button>
+<p class="text-[9px] text-gray-400 mt-2 text-center">Abhi sab free hai. Baad mein Coloured Rs.50/100 per design hoga.</p>
 </div>
-<!-- CENTER PREVIEW -->
+<!-- PREVIEW -->
 <div class="flex justify-center overflow-auto bg-[#0a0a0a] rounded-[20px] p-4">
 <div id="paper" class="paper line-bg p-[50px]">
-<div id="borderEl" class="b b1"></div>
-<div class="relative z-10">
-<div class="flex justify-between">
-<div class="flex-1">
-<h1 id="pTitle" class="text-center font-black text-[28px] tracking-widest">RISHTA BIODATA</h1>
-<p class="text-center text-[11px] mt-1">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-<div class="mt-6 space-y-[22px] text-[13px]">
-<p><b>Name:</b> <span id="pName">__________</span> &nbsp;&nbsp; <b>Father:</b> <span id="pFName">__________</span></p>
-<p><b>DOB:</b> <span id="pDob">__________</span> &nbsp;&nbsp; <b>Age:</b> <span id="pAge">__________</span> &nbsp;&nbsp; <b>Height:</b> <span id="pHeight">__________</span></p>
-<p><b>Cast:</b> <span id="pCast">__________</span> &nbsp;&nbsp; <b>Sect:</b> <span id="pSect">__________</span></p>
-<p><b>Education:</b> <span id="pEdu">__________</span></p>
-<p><b>Profession:</b> <span id="pJob">__________</span> &nbsp;&nbsp; <b>Income:</b> <span id="pIncome">__________</span></p>
-<p><b>City:</b> <span id="pCity">__________</span></p>
-<p><b>Family:</b> <span id="pFamily">__________</span></p>
-<p><b>Contact:</b> <span id="pPhone">__________</span></p>
-<p class="pt-4 border-t border-dashed"><b>Partner Preference:</b> <span id="pReq">__________</span></p>
+<div id="borderEl" class="b" style="border:8px double #7f1d1d"></div>
+<div class="relative z-10 text-center">
+<h1 class="font-black text-[26px] tracking-widest">RISHTA BIODATA</h1>
+<p class="text-[11px] mt-1">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+<div class="mt-6 text-left space-y-[20px] text-[12px]">
+<p><b>Name:</b> <span id="pName">___</span></p><p><b>Father:</b> <span id="pFName">___</span></p><p><b>Age/Height:</b> <span id="pAge">___</span> / <span id="pHeight">___</span></p><p><b>Education:</b> <span id="pEdu">___</span></p><p><b>Job:</b> <span id="pJob">___</span></p><p><b>City:</b> <span id="pCity">___</span></p><p><b>Contact:</b> <span id="pPhone">___</span></p>
 </div>
-</div>
-<div class="w-[130px] ml-4"><div class="w-[130px] h-[150px] border border-black flex items-center justify-center bg-gray-50 overflow-hidden"><img id="pPhoto" class="w-full h-full object-cover hidden"><span id="pPhotoTxt" class="text-[9px] text-center">Paste<br>Photo<br>Here</span></div></div>
-</div>
-<p class="absolute bottom-[18px] left-0 right-0 text-center text-[8px] text-gray-500">This biodata is for marriage proposal only. Information is true to best of knowledge.</p>
+<div class="absolute top-[120px] right-[20px] w-[130px] h-[150px] border flex items-center justify-center overflow-hidden bg-gray-50"><img id="pPhoto" class="w-full h-full object-cover hidden"><span id="pPhotoTxt" class="text-[9px]">Photo</span></div>
 </div>
 </div>
 </div>
-<!-- RIGHT BORDERS -->
-<div class="glass rounded-[20px] p-4 h-fit lg:sticky top-[70px]">
-<h2 class="font-black text-sm">3. 40 Borders - Click to Select</h2>
-<div class="flex gap-2 mt-2 text-[10px]"><span class="bg-pink-500/20 px-2 py-1 rounded-full">Coloured 20</span><span class="bg-white/10 px-2 py-1 rounded-full">B&W 20</span></div>
+<!-- BORDERS -->
+<div class="glass rounded-[20px] p-4 h-fit">
+<h2 class="font-black text-xs">SELECT BORDER - 80 DESIGNS</h2>
 <div id="borderGrid" class="grid grid-cols-4 gap-2 mt-3"></div>
+<div id="payModal" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-6"><div class="bg-white text-black p-6 rounded-[20px] max-w-sm w-full text-center"><h3 class="font-black">Premium Design</h3><p class="text-xs mt-2">Ye design premium hai. Rs. <span id="payPrice">50</span> JazzCash/Easypaisa se unlock karein.</p><p class="text-[10px] mt-2 text-gray-500">Abhi free promo chal raha hai, is liye Close karein aur free use karein.</p><button onclick="document.getElementById('payModal').classList.add('hidden')" class="mt-4 bg-black text-white px-6 py-2 rounded-full text-xs">Close (Free Use)</button></div></div>
 </div>
 </div>
 <script>
-let curBorder='b1'; let curMode='col';
-const borders=[];
-for(let i=1;i<=40;i++){ borders.push('b'+i); }
-const grid=document.getElementById('borderGrid');
-borders.forEach((b,i)=>{
- let d=document.createElement('div');
- d.className='h-[55px] bg-white border-2 border-white/20 rounded-[8px] relative cursor-pointer hover:scale-105 transition';
- d.innerHTML=`<div class='absolute inset-[3px] border ${i<20?'border-pink-300':'border-black'} rounded-[4px]'></div><span class='absolute bottom-0 left-0 right-0 text-center text-[8px] bg-black/70 text-white'>${i+1}</span>`;
- d.onclick=()=>setBorder(b,d);
- if(i==0) d.classList.add('sel');
- grid.appendChild(d);
-});
-function setBorder(b,el){
- curBorder=b; document.getElementById('borderEl').className='b '+b;
- document.querySelectorAll('#borderGrid div').forEach(x=>x.classList.remove('sel')); if(el) el.classList.add('sel');
- applyMode();
-}
-function setMode(m){
- curMode=m;
- document.getElementById('modeCol').className=m=='col'?'flex-1 bg-gradient-to-r from-pink-600 to-rose-600 py-2 rounded-full text-[11px] font-bold border border-pink-400':'flex-1 bg-white/10 py-2 rounded-full text-[11px] font-bold';
- document.getElementById('modeBw').className=m=='bw'?'flex-1 bg-white text-black py-2 rounded-full text-[11px] font-bold':'flex-1 bg-white/10 py-2 rounded-full text-[11px] font-bold';
- applyMode();
-}
-function applyMode(){
- const el=document.getElementById('borderEl');
- if(curMode=='bw'){ el.style.filter='grayscale(1)'; el.style.borderColor='black'; } else { el.style.filter=''; }
-}
-const map={fName:'pName',fFName:'pFName',fDob:'pDob',fAge:'pAge',fHeight:'pHeight',fCast:'pCast',fSect:'pSect',fEdu:'pEdu',fJob:'pJob',fIncome:'pIncome',fCity:'pCity',fFamily:'pFamily',fPhone:'pPhone',fReq:'pReq'};
-Object.keys(map).forEach(id=>{
- document.getElementById(id).addEventListener('input',e=>{
-   document.getElementById(map[id]).innerText=e.target.value||'__________';
+// CONFIG - YAHAN SE EARNING ON/OFF HOGA
+const PRICING_MODE = false; // <-- jab paisa lena ho to true kar dena
+const COLOURED_PRICE = 50; // Rs.50 per premium coloured design
+
+let curMode='col'; let curBorder='c1';
+const coloured=[{id:'c1',name:'Maroon Gold Royal',color:'#7f1d1d',free:true},{id:'c2',name:'Purple Gold',color:'#581c87',free:true},{id:'c3',name:'Teal Gold',color:'#134e4a',free:true},{id:'c4',name:'Blue Silver',color:'#1e3a8a',free:true},{id:'c5',name:'Green Gold',color:'#14532d',free:true},{id:'c6',name:'Original Maroon',color:'#7f1d1d',free:true}];
+for(let i=7;i<=40;i++){ coloured.push({id:'c'+i,name:'Royal '+(i),color:['#7f1d1d','#14532d','#1e3a8a','#831843','#064e3b','#854d0e'][i%6],free:i<=10}); }
+const bw=[]; for(let i=1;i<=40;i++){ bw.push({id:'b'+i,name:'B&W '+(i),color:'#000',free:true}); }
+
+function render(){
+ const grid=document.getElementById('borderGrid'); grid.innerHTML='';
+ const list=curMode==='col'?coloured:bw;
+ list.forEach(item=>{
+  let d=document.createElement('div');
+  let isLocked=PRICING_MODE && !item.free && curMode==='col';
+  d.className='h-[62px] bg-white border-2 rounded-[8px] relative cursor-pointer hover:scale-105 transition flex items-center justify-center '+(curBorder===item.id?'border-pink-500 sel':'border-white/20')+(isLocked?' locked':'');
+  d.innerHTML=`<div class='absolute inset-[4px] border-2 rounded-[4px]' style='border-color:${item.color}'></div><span class='relative text-[8px] font-bold text-black bg-white/80 px-1 rounded'>${item.name}</span>${isLocked?`<span class='absolute top-0 right-0 bg-black text-white text-[7px] px-1 rounded'>Rs.${COLOURED_PRICE}</span>`:''}`;
+  d.onclick=()=>{
+   if(isLocked){ document.getElementById('payPrice').innerText=COLOURED_PRICE; document.getElementById('payModal').classList.remove('hidden'); return; }
+   curBorder=item.id; document.getElementById('borderEl').style.border=`8px double ${item.color}`; render();
+  };
+  grid.appendChild(d);
  });
-});
-document.getElementById('fPhoto').addEventListener('change',e=>{
- const file=e.target.files[0]; if(!file) return;
- const url=URL.createObjectURL(file);
- const img=document.getElementById('pPhoto'); img.src=url; img.classList.remove('hidden'); document.getElementById('pPhotoTxt').classList.add('hidden');
-});
-async function downloadPDF(){
- const { jsPDF } = window.jspdf;
- const paper=document.getElementById('paper');
- const canvas=await html2canvas(paper,{scale:2,useCORS:true,backgroundColor:curMode=='bw'?'#ffffff':'#ffffff'});
- const imgData=canvas.toDataURL('image/jpeg',0.95);
- const pdf=new jsPDF('p','mm','a4');
- const w=210; const h=(canvas.height * w)/canvas.width;
- pdf.addImage(imgData,'JPEG',0,0,w,h);
- pdf.save(`Rishta-Bio-${document.getElementById('fName').value||'Biodata'}-${curMode}.pdf`);
 }
-setMode('col');
+function setMode(m){ curMode=m; document.getElementById('modeCol').className=m==='col'?'flex-1 bg-gradient-to-r from-pink-600 to-rose-600 py-2 rounded-full text-[11px] font-bold':'flex-1 bg-white/10 py-2 rounded-full text-[11px]'; document.getElementById('modeBw').className=m==='bw'?'flex-1 bg-white text-black py-2 rounded-full text-[11px] font-bold':'flex-1 bg-white/10 py-2 rounded-full text-[11px]'; curBorder=m==='col'?'c1':'b1'; render(); }
+const map={fName:'pName',fFName:'pFName',fAge:'pAge',fHeight:'pHeight',fEdu:'pEdu',fJob:'pJob',fCity:'pCity',fPhone:'pPhone'};
+Object.keys(map).forEach(id=>{ document.getElementById(id).addEventListener('input',e=>{ document.getElementById(map[id]).innerText=e.target.value; }); });
+document.getElementById('fPhoto').addEventListener('change',e=>{ const f=e.target.files[0]; if(!f) return; const u=URL.createObjectURL(f); const img=document.getElementById('pPhoto'); img.src=u; img.classList.remove('hidden'); document.getElementById('pPhotoTxt').classList.add('hidden'); });
+async function downloadPDF(){ const {jsPDF}=window.jspdf; const paper=document.getElementById('paper'); const canvas=await html2canvas(paper,{scale:2}); const img=canvas.toDataURL('image/jpeg',0.95); const pdf=new jsPDF('p','mm','a4'); const w=210; const h=(canvas.height*w)/canvas.width; pdf.addImage(img,'JPEG',0,0,w,h); pdf.save(`Rishta-Bio-${curBorder}.pdf`); }
+setMode('col'); render();
 </script>
 </body>
 </html>
