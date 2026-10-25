@@ -1,49 +1,118 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>WAPDA Bijli Application - Meter, Bill, Khamba | Bol Kar Banao | Chitthi</title>
-<meta name="description" content="Bijli ki application bol kar banao. WAPDA meter kharab, bijli chori, khamba girna, bill zyada. Mic se Urdu mein bolo, application + PDF ready. 100% free PakTools Chitthi.">
+<title>WAPDA Bijli Application - English/Urdu | Meter, Bill, Khamba | Chitthi</title>
+<meta name="description" content="Bijli ki application English ya Urdu mein bol kar banao. Meter kharab, bill zyada, transformer. Mic se bolo, PDF ready.">
 <link rel="canonical" href="https://www.paktoolsonline.com/chitthi/bijli.html">
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-<style>*{font-family:'Inter',sans-serif}.urdu{font-family:'Noto Nastaliq Urdu',serif}body{background:#07010f;color:white}.glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+.urdu{font-family:'Noto Nastaliq Urdu',serif;line-height:2.6}
+body{background:#07010f;color:#fff}
+.glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}
+.lang-active{background:white !important;color:black !important;font-weight:900}
+.en-input{direction:ltr;text-align:left;font-family:'Inter',sans-serif}
+.ur-input{direction:rtl;text-align:right;font-family:'Noto Nastaliq Urdu',serif}
+</style>
 </head>
 <body>
-<header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/90 p-4 flex justify-between"><a href="../index.html" class="font-black text-white no-underline">← PakTools</a><a href="index.html" class="text-xs bg-white/10 px-3 py-1 rounded-full text-white no-underline">✉️ Chitthi</a></header>
+<div style="position:fixed;inset:0;z-index:-1;background:#07010f"><div style="position:absolute;width:1000px;height:1000px;background:radial-gradient(circle,#eab308,#07010f 70%);filter:blur(90px);opacity:0.3"></div></div>
+<header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl p-4 flex justify-between">
+<a href="../index.html" class="font-black text-white no-underline">← PakTools</a><a href="index.html" class="text-xs bg-white/10 px-3 py-1 rounded-full text-white no-underline">✉️ Chitthi Home</a>
+</header>
 <main class="max-w-4xl mx-auto px-5 py-8">
-<h1 class="text-3xl font-black text-center">💡 WAPDA / Bijli Application - <span class="text-yellow-300">Voice Se</span></h1>
-<p class="text-center text-gray-400 text-[13px] mt-2">Meter Kharab, Bill Zyada, Transformer - Bolo aur application banao</p>
-<div class="mt-8 glass rounded-[24px] p-6">
-<div class="grid md:grid-cols-2 gap-4">
-<div><label class="text-[11px] text-gray-400 uppercase">Naam + Reference No Bolo</label><div class="flex gap-2 mt-1"><input id="bName" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Ahmed, Ref 123456"><button onclick="startMic('bName')" class="bg-yellow-600 px-5 rounded-full">🎤</button></div></div>
-<div><label class="text-[11px] text-gray-400 uppercase">Masla Bolo</label><div class="flex gap-2 mt-1"><input id="bType" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Meter tez chal raha, bill zyada"><button onclick="startMic('bType')" class="bg-yellow-600 px-5 rounded-full">🎤</button></div></div>
-<div class="md:col-span-2"><label class="text-[11px] text-gray-400 uppercase">Pura Address + Detail Bolo</label><div class="flex gap-2 mt-1"><input id="bReason" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Pichle 2 mah se bill 15000 aa raha, meter kharab hai"><button onclick="startMic('bReason')" class="bg-gradient-to-r from-yellow-600 to-orange-600 px-6 rounded-full font-bold">🎤 Bolo</button></div></div>
+<h1 class="text-3xl font-black text-center">💡 بجلی شکایت - <span class="text-yellow-300">بول کر بنائیں</span></h1>
+
+<div class="mt-6 flex justify-center gap-2 p-1 bg-white/10 rounded-full w-fit mx-auto border border-white/10">
+<button id="btnEn" onclick="setLang('en')" class="lang-active px-6 py-2 rounded-full text-sm">English</button>
+<button id="btnUr" onclick="setLang('ur')" class="px-6 py-2 rounded-full text-sm text-gray-300">اردو</button>
 </div>
-<button onclick="generate()" class="mt-6 w-full bg-gradient-to-r from-yellow-600 to-orange-600 py-4 rounded-full font-black text-sm">✨ WAPDA Application Banao</button>
-<div id="resultBox" class="hidden mt-6"><div id="appOutput" class="bg-white text-black p-6 rounded-2xl text-[13px] leading-7 whitespace-pre-line urdu"></div><div class="flex gap-2 mt-3"><button onclick="copyText()" class="flex-1 bg-white/10 border py-3 rounded-full text-xs font-bold">Copy</button><button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">PDF</button></div></div>
+<p id="langNote" class="text-center text-[11px] text-yellow-300 mt-2">English mode: Speak in ENGLISH</p>
+
+<div class="mt-6 glass rounded-[24px] p-6">
+<div class="grid md:grid-cols-2 gap-4">
+<div><label id="lName" class="text-[11px] text-gray-400">1. Name + Reference No</label><div class="flex gap-2 mt-1"><input id="bName" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Ahmed, Ref 123456789"><button onclick="startMic('bName')" class="bg-yellow-600 px-5 rounded-full">🎤</button></div></div>
+<div><label id="lType" class="text-[11px] text-gray-400">2. Problem Type</label><div class="flex gap-2 mt-1"><input id="bType" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="High bill, Faulty meter"><button onclick="startMic('bType')" class="bg-yellow-600 px-5 rounded-full">🎤</button></div></div>
+<div class="md:col-span-2"><label id="lReason" class="text-[11px] text-gray-400">3. Full Address + Detail</label><div class="flex gap-2 mt-1"><input id="bReason" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Last 2 months bill 15000, meter faulty, House #10 St #5"><button onclick="startMic('bReason')" class="bg-gradient-to-r from-yellow-600 to-orange-600 px-6 rounded-full font-bold">🎤 Speak</button></div></div>
+</div>
+<button onclick="generate()" class="mt-6 w-full bg-gradient-to-r from-yellow-600 to-orange-600 py-4 rounded-full font-black text-sm">✨ Generate / درخواست بنائیں</button>
+<div id="resultBox" class="hidden mt-6"><div id="appOutput" class="bg-white text-black p-8 rounded-2xl whitespace-pre-line text-[13px] leading-7"></div><div class="flex gap-2 mt-3"><button onclick="copyText()" class="flex-1 bg-white/10 border border-white/20 py-3 rounded-full text-xs font-bold">📋 Copy</button><button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">🖨️ PDF</button></div></div>
 <p id="micStatus" class="text-center text-[11px] text-yellow-300 mt-3"></p>
 </div>
-<article class="mt-10 glass rounded-[24px] p-6"><h2 class="font-black">WAPDA Application Kaise Likhen? (100% Original Guide)</h2><p class="text-[13px] text-gray-300 mt-3 leading-6">LESCO, MEPCO, K-Electric mein application ke liye Reference Number aur Address lazmi likhen. Hamara tool aap ki boli hui shikayat ko WAPDA ke format mein badalta hai. Ye content original hai, Google AdSense approved niche hai, high CPC keywords: bijli bill, wapda complaint.</p><ul class="text-[12px] text-gray-400 mt-3 list-disc ml-5 leading-6"><li>Reference Number: Bill par 14 hinsay ka number</li><li>Meter reading ki photo attach karen</li><li>Application SDO ko likhen</li></ul></article>
 </main>
 <script>
-function startMic(id){const Rec=window.SpeechRecognition||window.webkitSpeechRecognition;const rec=new Rec();rec.lang='ur-PK';document.getElementById('micStatus').innerText='🎤 Sun raha...';rec.onresult=e=>{document.getElementById(id).value=e.results[0][0].transcript;document.getElementById('micStatus').innerText='✅ '+e.results[0][0].transcript;};rec.start();}
-function generate(){let n=document.getElementById('bName').value||'Saeel',t=document.getElementById('bType').value||'Bill Zyada',r=document.getElementById('bReason').value||'meter kharab hai',d=new Date().toLocaleDateString('en-PK');let app=`Bakhidmat Janab SDO Sahab,
-WAPDA / LESCO
+let currentLang='en';
+function setLang(l){
+  currentLang=l;
+  document.getElementById('btnEn').classList.remove('lang-active');
+  document.getElementById('btnUr').classList.remove('lang-active');
+  const ids=['bName','bType','bReason'];
+  if(l==='en'){
+    document.getElementById('btnEn').classList.add('lang-active');
+    document.getElementById('langNote').innerText='English mode: Please speak in ENGLISH for correct application';
+    document.getElementById('lName').innerText='1. Name + Reference No'; document.getElementById('lType').innerText='2. Problem Type'; document.getElementById('lReason').innerText='3. Full Address + Detail';
+    document.getElementById('bName').placeholder='Ahmed, Ref 123456789'; document.getElementById('bType').placeholder='High bill, Faulty meter'; document.getElementById('bReason').placeholder='Last 2 months bill 15000, meter faulty';
+    ids.forEach(id=>{ document.getElementById(id).className='en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm'; });
+  }else{
+    document.getElementById('btnUr').classList.add('lang-active');
+    document.getElementById('langNote').innerText='اردو موڈ: براہ کرم اردو میں بولیں';
+    document.getElementById('lName').innerText='1. نام + ریفرنس نمبر'; document.getElementById('lType').innerText='2. مسئلہ کیا ہے؟'; document.getElementById('lReason').innerText='3. پورا پتہ + تفصیل';
+    document.getElementById('bName').placeholder='احمد، ریفرنس 123456'; document.getElementById('bType').placeholder='میٹر خراب، بل زیادہ'; document.getElementById('bReason').placeholder='پچھلے 2 ماہ سے بل 15000 آ رہا، میٹر خراب ہے';
+    ids.forEach(id=>{ document.getElementById(id).className='ur-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm'; });
+  }
+}
+function startMic(id){
+  const Rec=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!Rec){ alert('Mic only in Chrome'); return; }
+  const rec=new Rec(); rec.lang=currentLang==='ur'?'ur-PK':'en-US';
+  document.getElementById('micStatus').innerText=currentLang==='ur'?'🎤 سن رہا ہوں...':'🎤 Listening...';
+  rec.onresult=e=>{ document.getElementById(id).value=e.results[0][0].transcript; document.getElementById('micStatus').innerText='✅ '+e.results[0][0].transcript; };
+  rec.start();
+}
+function generate(){
+  let name=document.getElementById('bName').value.trim()||(currentLang==='ur'?'سائل':'Applicant');
+  let type=document.getElementById('bType').value.trim()||(currentLang==='ur'?'بل زیادہ':'Excessive Bill');
+  let detail=document.getElementById('bReason').value.trim()||(currentLang==='ur'?'میٹر خراب ہے':'Meter is faulty');
+  let date=new Date().toLocaleDateString('en-GB');
+  let out=document.getElementById('appOutput');
+  let app='';
 
-Mozoo: ${t} ke baare mein Darkhuwast
+  if(currentLang==='en'){
+    app=`To,
+The SDO,
+WAPDA / ${name.includes('KE')?'K-Electric':'LESCO'}
 
-Janab-e-Aali,
+Subject: Complaint regarding ${type}
 
-Guzarish hai ke main ${n} hun. Mere bijli ke bill ka masla hai. ${r}.
+Respected Sir,
 
-Baraye meherbani mere ${t} ka masla hal kiya jaye aur sahi bill jari kiya jaye. Aap ki bari meherbani hogi.
+I beg to state that I am ${name}. I have an electricity connection at the address mentioned below and my electricity bill has an issue.
 
-Shukriya,
-${n}
-Tarikh: ${d}
-Ref No: __________`;document.getElementById('appOutput').innerText=app;document.getElementById('resultBox').classList.remove('hidden');}
-function copyText(){navigator.clipboard.writeText(document.getElementById('appOutput').innerText);alert('Copied');}
+Details of complaint: ${detail}.
+
+You are requested to kindly resolve my issue of ${type} and issue a corrected bill / check the meter. I shall be highly obliged. Reference Number is mentioned below.
+
+Thanking you,
+
+Yours faithfully,
+${name}
+Address/Detail: ${detail}
+Date: ${date}
+Reference No: __________
+Contact: __________`;
+    out.style.direction='ltr'; out.style.textAlign='left'; out.style.fontFamily="'Inter',sans-serif"; out.style.fontSize='13px'; out.style.lineHeight='1.8';
+    out.innerText=app;
+  }else{
+    app=`بخدمت جناب ایس ڈی او صاحب،<br>واپڈا / لیسکو<br><br>موضوع: ${type} کے بارے میں درخواست<br><br>جناب عالی!<br><br>گزارش ہے کہ میں ${name} ہوں۔ میرے بجلی کے کنکشن میں مسئلہ ہے۔<br><br>تفصیل: ${detail}۔<br><br>برائے مہربانی میرے ${type} کے مسئلے کو حل کیا جائے اور درست بل جاری کیا جائے یا میٹر چیک کیا جائے۔ آپ کی بڑی مہربانی ہوگی۔<br><br>شکریہ،<br>${name}<br>پتہ: ${detail}<br>تاریخ: ${date}<br>ریفرنس نمبر: __________`;
+    out.style.direction='rtl'; out.style.textAlign='right'; out.style.fontFamily="'Noto Nastaliq Urdu',serif"; out.style.fontSize='20px'; out.style.lineHeight='2.6';
+    out.innerHTML=app;
+  }
+  document.getElementById('resultBox').classList.remove('hidden');
+  window.scrollTo({top: document.getElementById('resultBox').offsetTop - 20, behavior:'smooth'});
+}
+function copyText(){ navigator.clipboard.writeText(document.getElementById('appOutput').innerText).then(()=>alert(currentLang==='ur'?'کاپی ہو گئی!':'Copied!')); }
+setLang('en');
 </script>
 </body>
 </html>
