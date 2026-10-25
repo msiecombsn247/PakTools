@@ -10,14 +10,10 @@
 <style>
 body{background:#07010f;color:#fff}
 .glass{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px)}
-.paper{
-  width:794px; min-height:1123px; background:white; color:#000; 
-  position:relative; overflow:hidden;
-}
-.safe-content{
-  position:relative; z-index:10;
-  padding: 150px 105px 140px 105px;
-}
+.paper{width:794px; min-height:1123px; background:white; color:#000; position:relative; overflow:hidden;}
+.safe-content{position:relative; z-index:10; padding: 145px 95px 110px 95px;}
+.line{padding:8px 0; border-bottom:1px solid #f0f0f0;}
+.line:last-child{border-bottom:none;}
 </style>
 </head>
 <body>
@@ -45,7 +41,6 @@ body{background:#07010f;color:#fff}
 
 <div class="flex justify-center bg-[#0a0a0a] rounded-[20px] p-4 overflow-auto">
 <div id="paper" class="paper">
-  <!-- YE BACKGROUND IMG HAI - AB PDF MEIN BHI AYEGA -->
   <img id="bgImg" crossorigin="anonymous" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:fill; z-index:0;">
   <div class="safe-content">
     <div class="flex justify-between">
@@ -53,21 +48,28 @@ body{background:#07010f;color:#fff}
         <p style="font-family:'Amiri', serif;" class="text-center text-[17px] font-bold">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
         <h1 style="font-family:'Cinzel', serif;" class="text-center font-black text-[29px] tracking-[0.22em] text-[#111] mt-3">RISHTA BIODATA</h1>
         <div class="w-[70px] h-[2px] bg-[#111] mx-auto mt-3 opacity-20"></div>
-        <div class="mt-10 space-y-[22px] text-[13px] leading-[1.6]">
-          <p><b>Name:</b> <span id="pName">__________</span> <b class="ml-2">Father:</b> <span id="pFName">__________</span></p>
-          <p><b>DOB:</b> <span id="pDob">__________</span> <b class="ml-2">Age:</b> <span id="pAge">__________</span> <b class="ml-2">Height:</b> <span id="pHeight">__________</span></p>
-          <p><b>Cast:</b> <span id="pCast">__________</span> <b class="ml-2">Sect:</b> <span id="pSect">__________</span></p>
-          <p><b>Education:</b> <span id="pEdu">__________</span></p>
-          <p><b>Profession:</b> <span id="pJob">__________</span> <b class="ml-2">Income:</b> <span id="pIncome">__________</span></p>
-          <p><b>City:</b> <span id="pCity">__________</span></p>
-          <p><b>Family:</b> <span id="pFamily">__________</span></p>
-          <p><b>Contact:</b> <span id="pPhone">__________</span></p>
-          <p class="pt-5 border-t border-dashed mt-6"><b>Requirement:</b> <span id="pReq">__________</span></p>
+
+        <div class="mt-8 text-[13.5px] leading-[1.7]">
+          <div class="line"><b>Name:</b> <span id="pName">__________</span></div>
+          <div class="line"><b>Father Name:</b> <span id="pFName">__________</span></div>
+          <div class="line"><b>Date of Birth:</b> <span id="pDob">__________</span></div>
+          <div class="line"><b>Age:</b> <span id="pAge">__________</span></div>
+          <div class="line"><b>Height:</b> <span id="pHeight">__________</span></div>
+          <div class="line"><b>Cast:</b> <span id="pCast">__________</span></div>
+          <div class="line"><b>Sect:</b> <span id="pSect">__________</span></div>
+          <div class="line"><b>Education:</b> <span id="pEdu">__________</span></div>
+          <div class="line"><b>Profession:</b> <span id="pJob">__________</span></div>
+          <div class="line"><b>Income:</b> <span id="pIncome">__________</span></div>
+          <div class="line"><b>City:</b> <span id="pCity">__________</span></div>
+          <div class="line"><b>Family:</b> <span id="pFamily">__________</span></div>
+          <div class="line"><b>Contact:</b> <span id="pPhone">__________</span></div>
+          <div class="line mt-3 pt-3 border-t-2 border-dashed !border-gray-300"><b>Requirement:</b> <span id="pReq">__________</span></div>
         </div>
+
       </div>
-      <div class="w-[115px] ml-5 relative z-10">
-        <div class="w-[115px] h-[135px] border flex items-center justify-center bg-gray-50 overflow-hidden">
-          <img id="pPhoto" class="w-full h-full object-cover hidden"><span id="pPhotoTxt" class="text-[9px]">Photo</span>
+      <div class="w-[125px] ml-6 relative z-10">
+        <div class="w-[125px] h-[150px] border-2 border-gray-100 flex items-center justify-center bg-gray-50 overflow-hidden shadow-sm">
+          <img id="pPhoto" class="w-full h-full object-cover hidden"><span id="pPhotoTxt" class="text-[10px]">Photo</span>
         </div>
       </div>
     </div>
@@ -83,27 +85,9 @@ document.getElementById('bgImg').src=`borders/border_a4_${d}.jpg`;
 const map={fName:'pName',fFName:'pFName',fDob:'pDob',fAge:'pAge',fHeight:'pHeight',fCast:'pCast',fSect:'pSect',fEdu:'pEdu',fJob:'pJob',fIncome:'pIncome',fCity:'pCity',fFamily:'pFamily',fPhone:'pPhone',fReq:'pReq'};
 Object.keys(map).forEach(id=>{document.getElementById(id).addEventListener('input',e=>{document.getElementById(map[id]).innerText=e.target.value||'__________';});});
 document.getElementById('fPhoto').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const u=URL.createObjectURL(f);const img=document.getElementById('pPhoto');img.src=u;img.classList.remove('hidden');document.getElementById('pPhotoTxt').classList.add('hidden');});
-
-async function getCanvas(){
-  const paper=document.getElementById('paper');
-  return await html2canvas(paper,{scale:3,useCORS:true,allowTaint:true,backgroundColor:'#ffffff'});
-}
-async function downloadJPG(){
-  const canvas=await getCanvas();
-  const link=document.createElement('a');
-  link.download=`Rishta-Design-${d}.jpg`;
-  link.href=canvas.toDataURL('image/jpeg',0.95);
-  link.click();
-}
-async function downloadPDF(){
-  const {jsPDF}=window.jspdf;
-  const canvas=await getCanvas();
-  const imgData=canvas.toDataURL('image/jpeg',0.95);
-  const pdf=new jsPDF('p','mm','a4');
-  const w=210; const h=(canvas.height*w)/canvas.width;
-  pdf.addImage(imgData,'JPEG',0,0,w,h);
-  pdf.save(`Rishta-Design-${d}.pdf`);
-}
+async function getCanvas(){const paper=document.getElementById('paper');return await html2canvas(paper,{scale:3,useCORS:true,allowTaint:true,backgroundColor:'#ffffff'});}
+async function downloadJPG(){const canvas=await getCanvas();const link=document.createElement('a');link.download=`Rishta-Design-${d}.jpg`;link.href=canvas.toDataURL('image/jpeg',0.95);link.click();}
+async function downloadPDF(){const {jsPDF}=window.jspdf;const canvas=await getCanvas();const imgData=canvas.toDataURL('image/jpeg',0.95);const pdf=new jsPDF('p','mm','a4');const w=210;const h=(canvas.height*w)/canvas.width;pdf.addImage(imgData,'JPEG',0,0,w,h);pdf.save(`Rishta-Design-${d}.pdf`);}
 </script>
 </body>
 </html>
