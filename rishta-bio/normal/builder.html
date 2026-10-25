@@ -12,8 +12,7 @@ body{background:#07010f;color:#fff}
 .glass{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px)}
 .paper{
   width:794px; min-height:1123px; background:white; color:#000; 
-  position:relative; overflow:hidden; 
-  background-size:100% 100%; background-repeat:no-repeat; background-position:center;
+  position:relative; overflow:hidden;
 }
 .safe-content{
   position:relative; z-index:10;
@@ -40,20 +39,20 @@ body{background:#07010f;color:#fff}
 <input id="fReq" placeholder="Requirement" class="col-span-2 bg-black/50 border border-white/10 rounded-full px-3 py-2 text-xs">
 </div>
 <div class="mt-3"><input type="file" id="fPhoto" accept="image/*" class="text-[10px]"></div>
-<button onclick="downloadPDF()" class="mt-4 w-full bg-white text-black py-3 rounded-full font-black text-xs">📥 PDF Download</button>
+<button onclick="downloadJPG()" class="mt-4 w-full bg-white text-black py-3 rounded-full font-black text-xs">🖼️ JPG Download</button>
+<button onclick="downloadPDF()" class="mt-2 w-full bg-gradient-to-r from-pink-600 to-rose-600 py-3 rounded-full font-black text-xs">📥 PDF Download</button>
 </div>
 
 <div class="flex justify-center bg-[#0a0a0a] rounded-[20px] p-4 overflow-auto">
 <div id="paper" class="paper">
+  <!-- YE BACKGROUND IMG HAI - AB PDF MEIN BHI AYEGA -->
+  <img id="bgImg" crossorigin="anonymous" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:fill; z-index:0;">
   <div class="safe-content">
     <div class="flex justify-between">
       <div class="flex-1">
-        <!-- BISMILLAH UPAR -->
         <p style="font-family:'Amiri', serif;" class="text-center text-[17px] font-bold">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-        <!-- RISHTA BIODATA PYARA FONT -->
         <h1 style="font-family:'Cinzel', serif;" class="text-center font-black text-[29px] tracking-[0.22em] text-[#111] mt-3">RISHTA BIODATA</h1>
         <div class="w-[70px] h-[2px] bg-[#111] mx-auto mt-3 opacity-20"></div>
-
         <div class="mt-10 space-y-[22px] text-[13px] leading-[1.6]">
           <p><b>Name:</b> <span id="pName">__________</span> <b class="ml-2">Father:</b> <span id="pFName">__________</span></p>
           <p><b>DOB:</b> <span id="pDob">__________</span> <b class="ml-2">Age:</b> <span id="pAge">__________</span> <b class="ml-2">Height:</b> <span id="pHeight">__________</span></p>
@@ -66,7 +65,7 @@ body{background:#07010f;color:#fff}
           <p class="pt-5 border-t border-dashed mt-6"><b>Requirement:</b> <span id="pReq">__________</span></p>
         </div>
       </div>
-      <div class="w-[115px] ml-5">
+      <div class="w-[115px] ml-5 relative z-10">
         <div class="w-[115px] h-[135px] border flex items-center justify-center bg-gray-50 overflow-hidden">
           <img id="pPhoto" class="w-full h-full object-cover hidden"><span id="pPhotoTxt" class="text-[9px]">Photo</span>
         </div>
@@ -80,11 +79,31 @@ body{background:#07010f;color:#fff}
 const url=new URLSearchParams(location.search);let d=parseInt(url.get('d'))||1;if(d<1||d>20)d=1;
 const names=["Eucalyptus Round","Mini Floral Corner","Classic Blossom","Fern Minimal","Olive Branch","Green Olive","Lavender Corner","Magnolia Bow","Pine Leaf","Ginkgo Leaf","White Blossom","Daisy Flower","Berry Leaf","Pine Needle","Palm Elegant","Lotus Minimal","Hydrangea","Maple Leaf","Wildflower","Meadow"];
 document.getElementById('dTitle').innerText=`Design ${String(d).padStart(2,'0')} - ${names[d-1]}`;
-document.getElementById('paper').style.backgroundImage=`url('borders/border_a4_${d}.jpg')`;
+document.getElementById('bgImg').src=`borders/border_a4_${d}.jpg`;
 const map={fName:'pName',fFName:'pFName',fDob:'pDob',fAge:'pAge',fHeight:'pHeight',fCast:'pCast',fSect:'pSect',fEdu:'pEdu',fJob:'pJob',fIncome:'pIncome',fCity:'pCity',fFamily:'pFamily',fPhone:'pPhone',fReq:'pReq'};
 Object.keys(map).forEach(id=>{document.getElementById(id).addEventListener('input',e=>{document.getElementById(map[id]).innerText=e.target.value||'__________';});});
 document.getElementById('fPhoto').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const u=URL.createObjectURL(f);const img=document.getElementById('pPhoto');img.src=u;img.classList.remove('hidden');document.getElementById('pPhotoTxt').classList.add('hidden');});
-async function downloadPDF(){const {jsPDF}=window.jspdf;const paper=document.getElementById('paper');const canvas=await html2canvas(paper,{scale:2,useCORS:true,backgroundColor:'#ffffff'});const imgData=canvas.toDataURL('image/jpeg',0.95);const pdf=new jsPDF('p','mm','a4');const w=210;const h=(canvas.height*w)/canvas.width;pdf.addImage(imgData,'JPEG',0,0,w,h);pdf.save(`Rishta-Design-${d}.pdf`);}
+
+async function getCanvas(){
+  const paper=document.getElementById('paper');
+  return await html2canvas(paper,{scale:3,useCORS:true,allowTaint:true,backgroundColor:'#ffffff'});
+}
+async function downloadJPG(){
+  const canvas=await getCanvas();
+  const link=document.createElement('a');
+  link.download=`Rishta-Design-${d}.jpg`;
+  link.href=canvas.toDataURL('image/jpeg',0.95);
+  link.click();
+}
+async function downloadPDF(){
+  const {jsPDF}=window.jspdf;
+  const canvas=await getCanvas();
+  const imgData=canvas.toDataURL('image/jpeg',0.95);
+  const pdf=new jsPDF('p','mm','a4');
+  const w=210; const h=(canvas.height*w)/canvas.width;
+  pdf.addImage(imgData,'JPEG',0,0,w,h);
+  pdf.save(`Rishta-Design-${d}.pdf`);
+}
 </script>
 </body>
 </html>
