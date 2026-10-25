@@ -12,6 +12,8 @@
 body{background:#07010f;color:#fff}
 .glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}
 .lang-active{background:white !important;color:black !important;font-weight:900}
+.en-input{direction:ltr;text-align:left;font-family:'Inter',sans-serif}
+.ur-input{direction:rtl;text-align:right;font-family:'Noto Nastaliq Urdu',serif}
 </style>
 </head>
 <body>
@@ -22,26 +24,24 @@ body{background:#07010f;color:#fff}
 <main class="max-w-4xl mx-auto px-5 py-8">
 <h1 class="text-3xl font-black text-center">🏢 آفس چھٹی - <span class="text-cyan-300">بول کر بنائیں</span></h1>
 
-<!-- LANGUAGE SELECTOR -->
 <div class="mt-6 flex justify-center gap-2 p-1 bg-white/10 rounded-full w-fit mx-auto border border-white/10">
-<button id="btnEn" onclick="setLang('en')" class="lang-active px-6 py-2 rounded-full text-sm transition">English</button>
-<button id="btnUr" onclick="setLang('ur')" class="px-6 py-2 rounded-full text-sm transition text-gray-300">اردو</button>
+<button id="btnEn" onclick="setLang('en')" class="lang-active px-6 py-2 rounded-full text-sm">English</button>
+<button id="btnUr" onclick="setLang('ur')" class="px-6 py-2 rounded-full text-sm text-gray-300">اردو</button>
 </div>
-<p id="langNote" class="text-center text-[11px] text-cyan-300 mt-2">English mode: Application will be in Professional English</p>
+<p id="langNote" class="text-center text-[11px] text-cyan-300 mt-2">English mode: Speak in ENGLISH, Application will be in English</p>
 
 <div class="mt-6 glass rounded-[24px] p-6">
 <div class="grid md:grid-cols-2 gap-4">
-<div><label class="text-[11px] text-gray-400">1. نام + عہدہ</label><div class="flex gap-2 mt-1"><input id="oName" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Ahmed, Accounts Officer"><button onclick="startMic('oName')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
-<div><label class="text-[11px] text-gray-400">2. ڈیپارٹمنٹ</label><div class="flex gap-2 mt-1"><input id="oDept" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Finance Department"><button onclick="startMic('oDept')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
-<div><label class="text-[11px] text-gray-400">3. آفس / کمپنی</label><div class="flex gap-2 mt-1"><input id="oOffice" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="XYZ Company Lahore"><button onclick="startMic('oOffice')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
-<div><label class="text-[11px] text-gray-400">4. چھٹی کی قسم + دن</label><div class="flex gap-2 mt-1"><input id="oType" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="2 Days Sick Leave"><button onclick="startMic('oType')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
-<div class="md:col-span-2"><label class="text-[11px] text-gray-400">5. وجہ</label><div class="flex gap-2 mt-1"><input id="oReason" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Fever and doctor appointment"><button onclick="startMic('oReason')" class="bg-gradient-to-r from-cyan-600 to-blue-600 px-6 rounded-full font-bold">🎤 بولیں</button></div></div>
+<div><label id="lName" class="text-[11px] text-gray-400">1. Name + Designation</label><div class="flex gap-2 mt-1"><input id="oName" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Ahmed, Accounts Officer"><button onclick="startMic('oName')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
+<div><label id="lDept" class="text-[11px] text-gray-400">2. Department</label><div class="flex gap-2 mt-1"><input id="oDept" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Finance Department"><button onclick="startMic('oDept')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
+<div><label id="lOffice" class="text-[11px] text-gray-400">3. Office / Company Name</label><div class="flex gap-2 mt-1"><input id="oOffice" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="XYZ Company Lahore"><button onclick="startMic('oOffice')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
+<div><label id="lType" class="text-[11px] text-gray-400">4. Leave Type + Days</label><div class="flex gap-2 mt-1"><input id="oType" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="2 Days Sick Leave"><button onclick="startMic('oType')" class="bg-cyan-600 px-5 rounded-full">🎤</button></div></div>
+<div class="md:col-span-2"><label id="lReason" class="text-[11px] text-gray-400">5. Reason</label><div class="flex gap-2 mt-1"><input id="oReason" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Fever and doctor appointment"><button onclick="startMic('oReason')" class="bg-gradient-to-r from-cyan-600 to-blue-600 px-6 rounded-full font-bold">🎤 Speak</button></div></div>
 </div>
-<button onclick="generateOffice()" class="mt-6 w-full bg-gradient-to-r from-cyan-600 to-blue-600 py-4 rounded-full font-black text-sm">✨ درخواست بنائیں / Generate</button>
-<div id="resultBox" class="hidden mt-6"><div id="appOutput" class="bg-white text-black p-7 rounded-2xl whitespace-pre-line text-[14px] leading-7"></div><div class="flex gap-2 mt-3"><button onclick="copyText()" class="flex-1 bg-white/10 border border-white/20 py-3 rounded-full text-xs font-bold">📋 کاپی / Copy</button><button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">🖨️ PDF</button></div></div>
-<p id="micStatus" class="text-center text-[11px] text-cyan-300 mt-3 urdu"></p>
+<button onclick="generateOffice()" class="mt-6 w-full bg-gradient-to-r from-cyan-600 to-blue-600 py-4 rounded-full font-black text-sm">✨ Generate Application / درخواست بنائیں</button>
+<div id="resultBox" class="hidden mt-6"><div id="appOutput" class="bg-white text-black p-7 rounded-2xl whitespace-pre-line text-[14px] leading-7"></div><div class="flex gap-2 mt-3"><button onclick="copyText()" class="flex-1 bg-white/10 border border-white/20 py-3 rounded-full text-xs font-bold">📋 Copy</button><button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">🖨️ PDF</button></div></div>
+<p id="micStatus" class="text-center text-[11px] text-cyan-300 mt-3"></p>
 </div>
-<footer class="text-center text-[11px] text-gray-500 mt-8 urdu">© PakTools Chitthi - Language Wise Application</footer>
 </main>
 <script>
 let currentLang = 'en';
@@ -49,16 +49,20 @@ function setLang(l){
   currentLang = l;
   document.getElementById('btnEn').classList.remove('lang-active');
   document.getElementById('btnUr').classList.remove('lang-active');
+  const inputs = ['oName','oDept','oOffice','oType','oReason'];
+  
   if(l==='en'){
     document.getElementById('btnEn').classList.add('lang-active');
-    document.getElementById('langNote').innerText = 'English mode: Application will be in Professional English';
-    document.getElementById('oName').placeholder = 'Ahmed, Accounts Officer';
-    document.getElementById('oReason').placeholder = 'Fever and doctor appointment';
+    document.getElementById('langNote').innerText = 'English mode: Please speak in ENGLISH for correct application';
+    document.getElementById('lName').innerText='1. Name + Designation'; document.getElementById('lDept').innerText='2. Department'; document.getElementById('lOffice').innerText='3. Office / Company Name'; document.getElementById('lType').innerText='4. Leave Type + Days'; document.getElementById('lReason').innerText='5. Reason';
+    document.getElementById('oName').placeholder='Ahmed, Accounts Officer'; document.getElementById('oDept').placeholder='Finance Department'; document.getElementById('oOffice').placeholder='XYZ Company Lahore'; document.getElementById('oType').placeholder='2 Days Sick Leave'; document.getElementById('oReason').placeholder='Fever and doctor appointment';
+    inputs.forEach(id=>{ document.getElementById(id).className='en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm'; });
   }else{
     document.getElementById('btnUr').classList.add('lang-active');
-    document.getElementById('langNote').innerText = 'اردو موڈ: درخواست خالص اردو میں بنے گی';
-    document.getElementById('oName').placeholder = 'احمد، اکاؤنٹس آفیسر';
-    document.getElementById('oReason').placeholder = 'بخار اور ڈاکٹر اپائنٹمنٹ';
+    document.getElementById('langNote').innerText = 'اردو موڈ: براہ کرم اردو میں بولیں تاکہ درخواست صحیح بنے';
+    document.getElementById('lName').innerText='1. نام + عہدہ'; document.getElementById('lDept').innerText='2. ڈیپارٹمنٹ'; document.getElementById('lOffice').innerText='3. آفس / کمپنی کا نام'; document.getElementById('lType').innerText='4. چھٹی کی قسم + دن'; document.getElementById('lReason').innerText='5. وجہ';
+    document.getElementById('oName').placeholder='احمد، اکاؤنٹس آفیسر'; document.getElementById('oDept').placeholder='فنانس ڈیپارٹمنٹ'; document.getElementById('oOffice').placeholder='ایکس وائی زی کمپنی لاہور'; document.getElementById('oType').placeholder='دو دن کی سِک لیو'; document.getElementById('oReason').placeholder='بخار اور ڈاکٹر اپائنٹمنٹ';
+    inputs.forEach(id=>{ document.getElementById(id).className='ur-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm'; });
   }
 }
 function startMic(id){
@@ -66,7 +70,7 @@ function startMic(id){
   if(!Rec){ alert('Mic sirf Chrome mein'); return; }
   const rec = new Rec();
   rec.lang = currentLang === 'ur' ? 'ur-PK' : 'en-US';
-  document.getElementById('micStatus').innerText = currentLang==='ur' ? '🎤 سن رہا ہوں... بولیں...' : '🎤 Listening... Speak...';
+  document.getElementById('micStatus').innerText = currentLang==='ur' ? '🎤 سن رہا ہوں... اردو میں بولیں...' : '🎤 Listening... Speak in ENGLISH...';
   rec.onresult = e => {
     document.getElementById(id).value = e.results[0][0].transcript;
     document.getElementById('micStatus').innerText = '✅ ' + e.results[0][0].transcript;
@@ -74,14 +78,16 @@ function startMic(id){
   rec.start();
 }
 function generateOffice(){
-  let n=document.getElementById('oName').value.trim()||(currentLang==='ur' ? 'احمد' : 'Ahmed');
-  let dept=document.getElementById('oDept').value.trim()||(currentLang==='ur' ? 'فنانس ڈیپارٹمنٹ' : 'Finance Department');
-  let office=document.getElementById('oOffice').value.trim()||(currentLang==='ur' ? 'ایکس وائی زی کمپنی' : 'XYZ Company');
-  let type=document.getElementById('oType').value.trim()||(currentLang==='ur' ? 'دو دن کی چھٹی' : '2 Days Sick Leave');
-  let reason=document.getElementById('oReason').value.trim()||(currentLang==='ur' ? 'بخار' : 'fever');
+  let n=document.getElementById('oName').value.trim()||(currentLang==='ur'?'احمد':'Ahmed');
+  let dept=document.getElementById('oDept').value.trim()||(currentLang==='ur'?'فنانس ڈیپارٹمنٹ':'Finance Department');
+  let office=document.getElementById('oOffice').value.trim()||(currentLang==='ur'?'ایکس وائی زی کمپنی':'XYZ Company');
+  let type=document.getElementById('oType').value.trim()||(currentLang==='ur'?'دو دن کی چھٹی':'2 Days Sick Leave');
+  let reason=document.getElementById('oReason').value.trim()||(currentLang==='ur'?'بخار':'fever');
   let date=new Date().toLocaleDateString('en-GB');
-  let app = '';
-  if(currentLang === 'en'){
+  let out = document.getElementById('appOutput');
+  let app='';
+
+  if(currentLang==='en'){
     app=`To,
 The Manager,
 ${office}
@@ -97,35 +103,26 @@ Kindly grant me leave for the said period. I shall be thankful and will complete
 
 Thanking you,
 
-Sincerely,
+Yours faithfully,
 ${n}
-${dept}
-Date: ${date}`;
-    document.getElementById('appOutput').style.direction='ltr';
-    document.getElementById('appOutput').style.textAlign='left';
-    document.getElementById('appOutput').style.fontFamily='Inter, sans-serif';
+${dept} - Your Obedient Employee
+Date: ${date}
+Contact: ________`;
+    out.style.direction='ltr'; out.style.textAlign='left'; out.style.fontFamily="'Inter',sans-serif"; out.style.fontSize='14px'; out.style.lineHeight='1.8';
+    out.innerText = app;
   }else{
-    app=`بخدمت جناب مینیجر صاحب،<br>${office}<br>${dept}<br><br>موضوع: ${type} کی درخواست<br><br>جناب عالی!<br><br>گزارش ہے کہ میرا نام ${n} ہے اور میں ${dept}، ${office} میں کام کرتا ہوں۔ گزارش ہے کہ ${reason} کی وجہ سے مجھے ${type} کی ضرورت ہے۔<br><br>برائے مہربانی مجھے چھٹی دے کر شکرگزار ہونے کا موقع دیں۔ میں واپسی پر اپنا تمام التوا شدہ کام مکمل کر دوں گا۔<br><br>آپ کا شاگرد،<br>${n}<br>${dept}<br>تاریخ: ${date}`;
-    document.getElementById('appOutput').style.direction='rtl';
-    document.getElementById('appOutput').style.textAlign='right';
-    document.getElementById('appOutput').style.fontFamily="'Noto Nastaliq Urdu', serif";
-    document.getElementById('appOutput').style.lineHeight='2.6';
-    document.getElementById('appOutput').style.fontSize='20px';
-  }
-  document.getElementById('appOutput').innerHTML = currentLang==='ur' ? app : app.replace(/<br>/g, '\n');
-  // For Urdu we used innerHTML with <br>, for English innerText style with \n - so fix:
-  if(currentLang==='ur'){
-    document.getElementById('appOutput').innerHTML = app;
-  }else{
-    document.getElementById('appOutput').innerText = app;
+    app=`بخدمت جناب مینیجر صاحب،<br>${office}<br>${dept}<br><br>موضوع: ${type} کی درخواست<br><br>جناب عالی!<br><br>گزارش ہے کہ میرا نام ${n} ہے اور میں ${dept}، ${office} میں بطور ملازم کام کر رہا ہوں۔ گزارش ہے کہ ${reason} کی وجہ سے مجھے ${type} کی ضرورت ہے۔<br><br>برائے مہربانی مجھے چھٹی دے کر شکرگزار ہونے کا موقع دیں۔ میں واپسی پر اپنا تمام التوا شدہ کام مکمل کر دوں گا۔<br><br>آپ کا مخلص،<br>${n}<br>${dept}<br>ملازم - ${office}<br>تاریخ: ${date}`;
+    out.style.direction='rtl'; out.style.textAlign='right'; out.style.fontFamily="'Noto Nastaliq Urdu',serif"; out.style.fontSize='20px'; out.style.lineHeight='2.7';
+    out.innerHTML = app;
   }
   document.getElementById('resultBox').classList.remove('hidden');
   window.scrollTo({top: document.getElementById('resultBox').offsetTop - 20, behavior:'smooth'});
 }
 function copyText(){ 
   let t=document.getElementById('appOutput').innerText;
-  navigator.clipboard.writeText(t).then(()=>alert(currentLang==='ur' ? 'کاپی ہو گئی!' : 'Copied!')); 
+  navigator.clipboard.writeText(t).then(()=>alert(currentLang==='ur'?'کاپی ہو گئی!':'Copied!')); 
 }
+setLang('en');
 </script>
 </body>
 </html>
