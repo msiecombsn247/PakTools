@@ -1,1 +1,114 @@
-aa
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Borders - 12 Luxury Designs</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Arial; background:#faf6ef; margin:0; padding:0;}
+.header{background:linear-gradient(90deg,#8b5a2b,#d4af37); color:white; padding:15px; text-align:center; font-size:20px; font-weight:bold; position:sticky; top:0; z-index:10;}
+.container{padding:15px; max-width:900px; margin:0 auto;}
+.grid{display:grid; grid-template-columns:repeat(2,1fr); gap:15px;}
+@media(min-width:600px){ .grid{grid-template-columns:repeat(3,1fr);} }
+
+.card{background:white; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); border:2px solid transparent; cursor:pointer; transition:0.3s; position:relative;}
+.card:hover{transform:translateY(-4px); box-shadow:0 8px 20px rgba(212,175,55,0.4);}
+.card.active{border-color:#d4af37; box-shadow:0 0 15px gold;}
+.card img{width:100%; height:220px; object-fit:cover; display:block;}
+.card-info{padding:8px 10px; display:flex; justify-content:space-between; align-items:center;}
+.card-info span{font-size:13px; font-weight:bold; color:#5a3e1b;}
+.card-info .badge{background:#d4af37; color:white; font-size:10px; padding:3px 7px; border-radius:20px;}
+.premium-badge{position:absolute; top:8px; left:8px; background:linear-gradient(90deg,#d4af37,#8b5a2b); color:white; font-size:10px; padding:4px 8px; border-radius:20px; font-weight:bold;}
+
+.btn-use{width:100%; background:linear-gradient(90deg,#d4af37,#8b5a2b); color:white; border:none; padding:10px; font-size:14px; font-weight:bold; cursor:pointer; border-radius:0 0 12px 12px;}
+
+.selected-preview{position:fixed; bottom:0; left:0; right:0; background:white; padding:12px 15px; box-shadow:0 -4px 20px rgba(0,0,0,0.2); display:flex; gap:10px; align-items:center; transform:translateY(100%); transition:0.3s; z-index:20;}
+.selected-preview.show{transform:translateY(0);}
+.selected-preview img{width:50px; height:70px; object-fit:cover; border-radius:6px; border:2px solid #d4af37;}
+</style>
+</head>
+<body>
+
+<div class="header">✨ PREMIUM LUXURY - 12 Designs ✨</div>
+
+<div class="container">
+<div class="grid" id="grid"></div>
+</div>
+
+<div class="selected-preview" id="previewBar">
+  <img id="previewImg" src="">
+  <div style="flex:1">
+    <div id="previewName" style="font-weight:bold; font-size:14px;"></div>
+    <div style="font-size:11px; color:gray;">Selected - Builder me use hoga</div>
+  </div>
+  <button onclick="useBorder()" style="background:#d4af37; border:none; padding:10px 20px; border-radius:20px; color:white; font-weight:bold;">USE NOW</button>
+</div>
+
+<script>
+const borders = [
+ {id:1, name:"Cream Gold Baroque", file:"luxury/borders/border_a4_1.jpg"},
+ {id:2, name:"Navy Blue Gold", file:"luxury/borders/border_a4_2.jpg"},
+ {id:3, name:"Maroon Bridal", file:"luxury/borders/border_a4_3.jpg"},
+ {id:4, name:"Damask Glitter", file:"luxury/borders/border_a4_4.jpg"},
+ {id:5, name:"Rose Gold Love", file:"luxury/borders/border_a4_5.jpg"},
+ {id:6, name:"Black Marble Gold", file:"luxury/borders/border_a4_6.jpg"},
+ {id:7, name:"Pearl Silver", file:"luxury/borders/border_a4_7.jpg"},
+ {id:8, name:"Emerald Green Gold", file:"luxury/borders/border_a4_8.jpg"},
+ {id:9, name:"Champagne Gold", file:"luxury/borders/border_a4_9.jpg"},
+ {id:10, name:"Purple Velvet", file:"luxury/borders/border_a4_10.jpg"},
+ {id:11, name:"Gold Hearts Love", file:"luxury/borders/border_a4_11.jpg"},
+ {id:12, name:"White Gold Marble", file:"luxury/borders/border_a4_12.jpg"},
+];
+
+let selected = null;
+const grid = document.getElementById('grid');
+
+borders.forEach(b=>{
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <div class="premium-badge">PREMIUM</div>
+    <img src="${b.file}" loading="lazy">
+    <div class="card-info">
+      <span>${b.id}. ${b.name}</span>
+      <span class="badge">HD</span>
+    </div>
+    <button class="btn-use">SELECT & PREVIEW</button>
+  `;
+  card.onclick = ()=> selectBorder(b, card);
+  grid.appendChild(card);
+});
+
+function selectBorder(b, cardEl){
+  selected = b;
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('active'));
+  cardEl.classList.add('active');
+  
+  document.getElementById('previewImg').src = b.file;
+  document.getElementById('previewName').innerText = b.name;
+  document.getElementById('previewBar').classList.add('show');
+  
+  // localStorage me save taake builder use kar sake
+  localStorage.setItem('selected_premium_border', b.file);
+  localStorage.setItem('selected_premium_name', b.name);
+}
+
+function useBorder(){
+  if(!selected) return;
+  // Builder page pe bhejo
+  window.location.href = `../premium-builder.html?border=${selected.id}`;
+  // Agar Next.js hai to: /builder?border=${selected.id}
+}
+
+// Auto-load from URL
+const urlParams = new URLSearchParams(window.location.search);
+if(urlParams.get('selected')){
+  const id = parseInt(urlParams.get('selected'));
+  const found = borders.find(b=>b.id===id);
+  if(found) selectBorder(found, document.querySelectorAll('.card')[id-1]);
+}
+</script>
+
+</body>
+</html>
