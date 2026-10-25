@@ -1,34 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Job Application Bol Kar Banao - Naukri Ki Darkhuwast | Chitthi</title>
-<meta name="description" content="Job application bol kar banao. Naukri ki darkhuwast mic se bolo, professional English application ready, PDF. PakTools Chitthi 100% free SEO original.">
+<title>Job Application - English / Urdu Bol Kar Banao | Naukri | Chitthi</title>
+<meta name="description" content="Job application English ya Urdu mein bol kar banao. Naukri ki darkhuwast mic se bolo, professional application ready, PDF.">
 <link rel="canonical" href="https://www.paktoolsonline.com/chitthi/job.html">
 <script src="https://cdn.tailwindcss.com"></script>
-<style>body{background:#07010f;color:white}.glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+.urdu{font-family:'Noto Nastaliq Urdu',serif;line-height:2.6}
+body{background:#07010f;color:#fff}
+.glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}
+.lang-active{background:white !important;color:black !important;font-weight:900}
+.en-input{direction:ltr;text-align:left;font-family:'Inter',sans-serif}
+.ur-input{direction:rtl;text-align:right;font-family:'Noto Nastaliq Urdu',serif}
+</style>
 </head>
 <body>
-<header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/90 p-4 flex justify-between"><a href="../index.html" class="font-black text-white no-underline">← PakTools</a><a href="index.html" class="text-xs bg-white/10 px-3 py-1 rounded-full text-white no-underline">✉️ Chitthi</a></header>
+<div style="position:fixed;inset:0;z-index:-1;background:#07010f"><div style="position:absolute;width:1000px;height:1000px;background:radial-gradient(circle,#3b82f6,#07010f 70%);filter:blur(90px);opacity:0.3"></div></div>
+<header class="sticky top-0 z-20 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl p-4 flex justify-between">
+<a href="../index.html" class="font-black text-white no-underline">← PakTools</a><a href="index.html" class="text-xs bg-white/10 px-3 py-1 rounded-full text-white no-underline">✉️ Chitthi Home</a>
+</header>
 <main class="max-w-4xl mx-auto px-5 py-8">
-<h1 class="text-3xl font-black text-center">💼 Job Application - <span class="text-blue-300">Voice Se</span></h1>
-<p class="text-center text-gray-400 text-[13px] mt-2">Naukri ki darkhuwast bolo aur banao</p>
-<div class="mt-8 glass rounded-[24px] p-6">
-<div class="grid md:grid-cols-2 gap-4">
-<div><label class="text-[11px] text-gray-400 uppercase">Naam + Qualification Bolo</label><div class="flex gap-2 mt-1"><input id="jName" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Ahmed, MBA, 2 year experience"><button onclick="startMic('jName')" class="bg-blue-600 px-5 rounded-full">🎤</button></div></div>
-<div><label class="text-[11px] text-gray-400 uppercase">Job Title Bolo</label><div class="flex gap-2 mt-1"><input id="jType" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Accounts Officer"><button onclick="startMic('jType')" class="bg-blue-600 px-5 rounded-full">🎤</button></div></div>
-<div class="md:col-span-2"><label class="text-[11px] text-gray-400 uppercase">Kyun Apply Kar Rahe Ho Bolo</label><div class="flex gap-2 mt-1"><input id="jReason" class="w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Mujhe accounts ka tajurba hai"><button onclick="startMic('jReason')" class="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 rounded-full font-bold">🎤 Bolo</button></div></div>
+<h1 class="text-3xl font-black text-center">💼 نوکری کی درخواست - <span class="text-blue-300">بول کر بنائیں</span></h1>
+
+<div class="mt-6 flex justify-center gap-2 p-1 bg-white/10 rounded-full w-fit mx-auto border border-white/10">
+<button id="btnEn" onclick="setLang('en')" class="lang-active px-6 py-2 rounded-full text-sm">English</button>
+<button id="btnUr" onclick="setLang('ur')" class="px-6 py-2 rounded-full text-sm text-gray-300">اردو</button>
 </div>
-<button onclick="generate()" class="mt-6 w-full bg-gradient-to-r from-blue-600 to-indigo-600 py-4 rounded-full font-black text-sm">✨ Job Application Banao</button>
-<div id="resultBox" class="hidden mt-6"><div id="appOutput" class="bg-white text-black p-6 rounded-2xl text-[13px] leading-7 whitespace-pre-line"></div><div class="flex gap-2 mt-3"><button onclick="copyText()" class="flex-1 bg-white/10 border py-3 rounded-full text-xs font-bold">Copy</button><button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">PDF</button></div></div>
+<p id="langNote" class="text-center text-[11px] text-blue-300 mt-2">English mode: Professional English (Recommended for Jobs)</p>
+
+<div class="mt-6 glass rounded-[24px] p-6">
+<div class="grid md:grid-cols-2 gap-4">
+<div><label id="lName" class="text-[11px] text-gray-400">1. Name + Qualification</label><div class="flex gap-2 mt-1"><input id="jName" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Ahmed, MBA, 2 years experience"><button onclick="startMic('jName')" class="bg-blue-600 px-5 rounded-full">🎤</button></div></div>
+<div><label id="lType" class="text-[11px] text-gray-400">2. Job Title</label><div class="flex gap-2 mt-1"><input id="jType" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="Accounts Officer"><button onclick="startMic('jType')" class="bg-blue-600 px-5 rounded-full">🎤</button></div></div>
+<div><label id="lCompany" class="text-[11px] text-gray-400">3. Company Name</label><div class="flex gap-2 mt-1"><input id="jCompany" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="XYZ Company Lahore"><button onclick="startMic('jCompany')" class="bg-blue-600 px-5 rounded-full">🎤</button></div></div>
+<div><label id="lExp" class="text-[11px] text-gray-400">4. Experience / Skills</label><div class="flex gap-2 mt-1"><input id="jExp" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="2 years, Excel, Tally"><button onclick="startMic('jExp')" class="bg-blue-600 px-5 rounded-full">🎤</button></div></div>
+<div class="md:col-span-2"><label id="lReason" class="text-[11px] text-gray-400">5. Why should we hire you?</label><div class="flex gap-2 mt-1"><input id="jReason" class="en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm" placeholder="I have accounts experience, hardworking"><button onclick="startMic('jReason')" class="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 rounded-full font-bold">🎤 Speak</button></div></div>
+</div>
+<button onclick="generate()" class="mt-6 w-full bg-gradient-to-r from-blue-600 to-indigo-600 py-4 rounded-full font-black text-sm">✨ Generate / درخواست بنائیں</button>
+<div id="resultBox" class="hidden mt-6"><div id="appOutput" class="bg-white text-black p-8 rounded-2xl whitespace-pre-line text-[13px] leading-7"></div><div class="flex gap-2 mt-3"><button onclick="copyText()" class="flex-1 bg-white/10 border border-white/20 py-3 rounded-full text-xs font-bold">📋 Copy</button><button onclick="window.print()" class="flex-1 bg-white text-black py-3 rounded-full text-xs font-bold">🖨️ PDF</button></div></div>
 <p id="micStatus" class="text-center text-[11px] text-blue-300 mt-3"></p>
 </div>
-<article class="mt-10 glass rounded-[24px] p-6"><h2 class="font-black">Job Application Original Guide - No Copyright</h2><p class="text-[13px] text-gray-300 mt-3 leading-6">Pakistan mein job application hamesha professional English mein honi chahiye. Cover letter short rakhen, qualification clear likhen. Ye blog 100% original hai, AdSense safe, high CPC.</p></article>
 </main>
 <script>
-function startMic(id){const Rec=window.SpeechRecognition||window.webkitSpeechRecognition;const rec=new Rec();rec.lang='en-PK';document.getElementById('micStatus').innerText='🎤 Listening...';rec.onresult=e=>{document.getElementById(id).value=e.results[0][0].transcript;document.getElementById('micStatus').innerText='✅ '+e.results[0][0].transcript;};rec.start();}
-function generate(){let n=document.getElementById('jName').value||'Applicant',t=document.getElementById('jType').value||'Officer',r=document.getElementById('jReason').value||'I have relevant experience',d=new Date().toLocaleDateString('en-PK');let app=`To,\nThe Hiring Manager,\n\nSubject: Application for the Post of ${t}\n\nRespected Sir,\n\nI am ${n}. I am writing to apply for the position of ${t}. ${r}. I am hardworking and eager to contribute to your organization.\n\nPlease find my CV attached. I would be grateful for an opportunity for an interview.\n\nSincerely,\n${n}\nDate: ${d}\nPhone: __________`;document.getElementById('appOutput').innerText=app;document.getElementById('resultBox').classList.remove('hidden');}
-function copyText(){navigator.clipboard.writeText(document.getElementById('appOutput').innerText);alert('Copied');}
+let currentLang='en';
+function setLang(l){
+  currentLang=l;
+  document.getElementById('btnEn').classList.remove('lang-active');
+  document.getElementById('btnUr').classList.remove('lang-active');
+  const ids=['jName','jType','jCompany','jExp','jReason'];
+  if(l==='en'){
+    document.getElementById('btnEn').classList.add('lang-active');
+    document.getElementById('langNote').innerText='English mode: Professional English (Best for Jobs)';
+    document.getElementById('lName').innerText='1. Name + Qualification'; document.getElementById('lType').innerText='2. Job Title'; document.getElementById('lCompany').innerText='3. Company Name'; document.getElementById('lExp').innerText='4. Experience / Skills'; document.getElementById('lReason').innerText='5. Why should we hire you?';
+    document.getElementById('jName').placeholder='Ahmed, MBA, 2 years experience'; document.getElementById('jType').placeholder='Accounts Officer'; document.getElementById('jCompany').placeholder='XYZ Company Lahore'; document.getElementById('jExp').placeholder='2 years, Excel, Tally'; document.getElementById('jReason').placeholder='I have accounts experience, hardworking';
+    ids.forEach(id=>{ document.getElementById(id).className='en-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm'; });
+  }else{
+    document.getElementById('btnUr').classList.add('lang-active');
+    document.getElementById('langNote').innerText='اردو موڈ: اردو میں نوکری کی درخواست';
+    document.getElementById('lName').innerText='1. نام + تعلیم'; document.getElementById('lType').innerText='2. نوکری کا نام'; document.getElementById('lCompany').innerText='3. کمپنی کا نام'; document.getElementById('lExp').innerText='4. تجربہ / ہنر'; document.getElementById('lReason').innerText='5. آپ کو کیوں رکھیں؟';
+    document.getElementById('jName').placeholder='احمد، ایم بی اے، 2 سال تجربہ'; document.getElementById('jType').placeholder='اکاؤنٹس آفیسر'; document.getElementById('jCompany').placeholder='ایکس وائی زی کمپنی لاہور'; document.getElementById('jExp').placeholder='2 سال، ایکسل'; document.getElementById('jReason').placeholder='مجھے اکاؤنٹس کا تجربہ ہے';
+    ids.forEach(id=>{ document.getElementById(id).className='ur-input w-full bg-black/50 border border-white/10 rounded-full px-4 py-3 text-sm'; });
+  }
+}
+function startMic(id){
+  const Rec=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!Rec){ alert('Mic only in Chrome'); return; }
+  const rec=new Rec(); rec.lang=currentLang==='ur'?'ur-PK':'en-US';
+  document.getElementById('micStatus').innerText=currentLang==='ur'?'🎤 سن رہا ہوں...':'🎤 Listening... Speak in ENGLISH...';
+  rec.onresult=e=>{ document.getElementById(id).value=e.results[0][0].transcript; document.getElementById('micStatus').innerText='✅ '+e.results[0][0].transcript; };
+  rec.start();
+}
+function generate(){
+  let name=document.getElementById('jName').value.trim()||(currentLang==='ur'?'درخواست گزار':'Applicant');
+  let job=document.getElementById('jType').value.trim()||(currentLang==='ur'?'اکاؤنٹس آفیسر':'Accounts Officer');
+  let company=document.getElementById('jCompany').value.trim()||(currentLang==='ur'?'آپ کی کمپنی':'Your Company');
+  let exp=document.getElementById('jExp').value.trim()||(currentLang==='ur'?'2 سال کا تجربہ':'2 Years Experience');
+  let reason=document.getElementById('jReason').value.trim()||(currentLang==='ur'?'محنتی ہوں':'I am hardworking');
+  let date=new Date().toLocaleDateString('en-GB');
+  let out=document.getElementById('appOutput');
+  let app='';
+
+  if(currentLang==='en'){
+    app=`To,
+The Hiring Manager,
+${company}
+
+Subject: Application for the Post of ${job}
+
+Respected Sir/Madam,
+
+I am ${name}. I am writing to apply for the position of ${job} at ${company}.
+
+Qualification & Experience: ${exp}. ${reason}. I am a hardworking, punctual and dedicated individual who is eager to contribute positively to your organization.
+
+Please find my CV attached with this application. I would be grateful if you give me an opportunity for an interview. I am available at any time suitable to you.
+
+Thanking you in anticipation.
+
+Yours sincerely,
+${name}
+Qualification: ${exp}
+Date: ${date}
+Phone: __________
+Email: __________`;
+    out.style.direction='ltr'; out.style.textAlign='left'; out.style.fontFamily="'Inter',sans-serif"; out.style.fontSize='13px'; out.style.lineHeight='1.8';
+    out.innerText=app;
+  }else{
+    app=`بخدمت جناب مینیجر صاحب،<br>${company}<br><br>موضوع: ${job} کی نوکری کے لیے درخواست<br><br>جناب عالی!<br><br>گزارش ہے کہ میں ${name} ہوں۔ میں آپ کی کمپنی ${company} میں ${job} کی آسامی کے لیے درخواست دے رہا ہوں۔<br><br>تعلیم و تجربہ: ${exp}۔ ${reason}۔ میں ایک محنتی، ایماندار اور وقت کا پابند فرد ہوں اور آپ کے ادارے کے لیے دلجمعی سے کام کرنا چاہتا ہوں۔<br><br>برائے مہربانی میری درخواست قبول فرما کر انٹرویو کا موقع دیں۔ میری سی وی اس درخواست کے ساتھ منسلک ہے۔<br><br>آپ کا مخلص،<br>${name}<br>تعلیم: ${exp}<br>تاریخ: ${date}<br>فون: __________`;
+    out.style.direction='rtl'; out.style.textAlign='right'; out.style.fontFamily="'Noto Nastaliq Urdu',serif"; out.style.fontSize='19px'; out.style.lineHeight='2.6';
+    out.innerHTML=app;
+  }
+  document.getElementById('resultBox').classList.remove('hidden');
+  window.scrollTo({top: document.getElementById('resultBox').offsetTop - 20, behavior:'smooth'});
+}
+function copyText(){ navigator.clipboard.writeText(document.getElementById('appOutput').innerText).then(()=>alert(currentLang==='ur'?'کاپی ہو گئی!':'Copied!')); }
+setLang('en');
 </script>
 </body>
 </html>
