@@ -6,6 +6,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cinzel:wght@800;900&display=swap" rel="stylesheet">
 <style>
 body{background:#07010f;color:#fff}
 .glass{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px)}
@@ -16,8 +17,7 @@ body{background:#07010f;color:#fff}
 }
 .safe-content{
   position:relative; z-index:10;
-  /* YE SAFE AREA HAI - Saare designs ke liye fix */
-  padding: 170px 110px 150px 110px;
+  padding: 150px 105px 140px 105px;
 }
 </style>
 </head>
@@ -48,8 +48,12 @@ body{background:#07010f;color:#fff}
   <div class="safe-content">
     <div class="flex justify-between">
       <div class="flex-1">
-        <h1 class="text-center font-black text-[26px] tracking-widest">RISHTA BIODATA</h1>
-        <p class="text-center text-[11px] mt-1">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+        <!-- BISMILLAH UPAR -->
+        <p style="font-family:'Amiri', serif;" class="text-center text-[17px] font-bold">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+        <!-- RISHTA BIODATA PYARA FONT -->
+        <h1 style="font-family:'Cinzel', serif;" class="text-center font-black text-[29px] tracking-[0.22em] text-[#111] mt-3">RISHTA BIODATA</h1>
+        <div class="w-[70px] h-[2px] bg-[#111] mx-auto mt-3 opacity-20"></div>
+
         <div class="mt-10 space-y-[22px] text-[13px] leading-[1.6]">
           <p><b>Name:</b> <span id="pName">__________</span> <b class="ml-2">Father:</b> <span id="pFName">__________</span></p>
           <p><b>DOB:</b> <span id="pDob">__________</span> <b class="ml-2">Age:</b> <span id="pAge">__________</span> <b class="ml-2">Height:</b> <span id="pHeight">__________</span></p>
