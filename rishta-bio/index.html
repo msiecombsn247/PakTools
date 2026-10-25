@@ -11,10 +11,9 @@
 <style>
 *{font-family:'Inter',sans-serif} body{background:#07010f;color:white}
 .glass{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(12px)}
-.urdu{font-family:'Noto Nastaliq Urdu',serif}
 .paper{width:794px;min-height:1123px;background:white;color:black;position:relative;overflow:hidden}
 .line-bg{background-image: repeating-linear-gradient(transparent, transparent 27px, #e5e7eb 27px, #e5e7eb 28px);}
-/* 40 BORDER CLASSES */
+/* NORMAL 20 + PREMIUM 20 - TOTAL 40 BORDERS */
 .b{position:absolute;inset:0;pointer-events:none}
 .b1{border:6px double #7f1d1d} .b1:before{content:'';position:absolute;inset:12px;border:1px solid #d4af37}
 .b2{border:8px solid #14532d} .b2:after{content:'❖';position:absolute;top:2px;left:50%;transform:translateX(-50%);background:white;padding:0 8px;color:#14532d}
@@ -27,19 +26,21 @@
 .b18{border:4px solid #000; box-shadow:inset 0 0 0 6px white, inset 0 0 0 9px black}
 .b19{border:2px solid #000} .b19:before{content:'';position:absolute;top:0;left:0;right:0;height:18px;background:black}
 .b20{border:6px solid #000; border-image: repeating-linear-gradient(45deg, black, black 10px, white 10px, white 20px) 20}
-.b21{border:6px solid #991b1b; background:linear-gradient(white, white) padding-box, linear-gradient(45deg,#991b1b,gold) border-box}
-.b22{border:6px solid #065f46} .b23{border:6px solid #1e3a8a} .b24{border:6px solid #9d174d}
-.b25{border:6px solid #000} .b26{border:3px solid #000; border-style: double} .b27{border:8px solid #111; border-left-style: dotted; border-right-style: dotted}
-.b28{border-top:8px solid #000; border-bottom:8px solid #000; border-left:2px solid #000; border-right:2px solid #000}
-.b29{border:6px solid #000; position:relative} .b29:after{content:'✿ ✿ ✿';position:absolute;bottom:4px;left:50%;transform:translateX(-50%);background:white;padding:0 6px;font-size:10px}
-.b30{border:6px solid transparent; border-image: linear-gradient(to right, #ec4899, #8b5cf6) 1}
-.b31{border:1px solid #9ca3af} .b31:before{content:'';position:absolute;inset:6px;border:1px dashed #9ca3af}
-.b32{border:2px solid black} .b32:before{content:'';position:absolute;top:10px;left:10px;right:10px;bottom:10px;border:1px solid black}
-.b33{border:5px solid black} .b33:after{content:'';position:absolute;top:0;left:0;width:40px;height:40px;border-right:5px solid black;border-bottom:5px solid black}
-.b34{border:6px double black; border-radius:20px} .b35{border:4px solid black}
-.b36{border:6px solid #7f1d1d} .b37{border:6px solid #14532d} .b38{border:6px solid #1e3a8a}
-.b39{border:6px solid #000; background-image: radial-gradient(circle, black 1px, transparent 1px); background-size:20px 20px; background-position: -10px -10px; background-repeat: no-repeat; background-clip: border-box}
-.b40{border:8px inset #d1d5db}
+/* PREMIUM ROYAL - Coloured Floral Style */
+.p1{border:10px solid #7f1d1d; box-shadow:inset 0 0 0 2px #d4af37, inset 0 0 0 5px white, inset 0 0 0 7px #7f1d1d}
+.p2{border:10px solid #14532d; box-shadow:inset 0 0 0 2px #d4af37, inset 0 0 0 5px white}
+.p3{border:10px double #1e3a8a; background:linear-gradient(white,white) padding-box}
+.p4{border:8px solid #831843; outline:3px solid #d4af37; outline-offset:-12px}
+.p5{border:12px ridge #854d0e} .p6{border:10px groove #7f1d1d}
+.p7{border:8px solid #064e3b; box-shadow:inset 0 0 15px rgba(212,175,55,0.5)}
+.p8{border:10px solid transparent; border-image:linear-gradient(45deg,#7f1d1d,#d4af37) 1}
+.p9{border:8px double #1e40af} .p10{border:10px solid #7c2d12}
+.p11{border:8px solid #991b1b; box-shadow:inset 0 0 0 3px gold} .p12{border:10px solid #065f46}
+.p13{border:8px solid #581c87} .p14{border:10px double #14532d}
+.p15{border:12px double #7f1d1d} .p16{border:8px solid #1e3a8a; border-radius:12px}
+.p17{border:10px solid #be185d} .p18{border:8px solid #854d0e; outline:2px solid gold; outline-offset:-8px}
+.p19{border:10px groove #14532d} .p20{border:8px solid #7f1d1d; box-shadow:inset 0 0 20px rgba(127,29,0.3)}
+
 .sel{border-color:#ec4899 !important; transform:scale(1.05); box-shadow:0 0 15px #ec4899}
 @media print{.no-print{display:none} body{background:white} .paper{box-shadow:none; width:100%; min-height:auto}}
 </style>
@@ -49,7 +50,7 @@
 <a href="../index.html" class="font-black">← PakTools</a><div class="text-xs bg-pink-500/20 border border-pink-400/30 px-3 py-1 rounded-full">💍 Rishta Bio 40 Borders</div>
 </header>
 <div class="max-w-[1600px] mx-auto grid lg:grid-cols-[380px_1fr_440px] gap-4 p-4">
-<!-- LEFT FORM -->
+<!-- LEFT FORM - SAME AS YOURS -->
 <div class="glass rounded-[20px] p-4 h-fit lg:sticky top-[70px] overflow-y-auto max-h-[90vh]">
 <h2 class="font-black text-sm">1. Details Bharo</h2>
 <div class="mt-3 grid grid-cols-2 gap-2">
@@ -74,11 +75,11 @@
 <button id="modeCol" onclick="setMode('col')" class="flex-1 bg-gradient-to-r from-pink-600 to-rose-600 py-2 rounded-full text-[11px] font-bold border border-pink-400">🎨 Coloured</button>
 <button id="modeBw" onclick="setMode('bw')" class="flex-1 bg-white/10 py-2 rounded-full text-[11px] font-bold">⚫ B&W Printer</button>
 </div>
-<p class="text-[10px] text-gray-400 mt-2">B&W mode har black & white printer se saaf print hoga, ink bhi kam lagega.</p>
+<p class="text-[10px] text-gray-400 mt-2">Normal: B&W printer friendly. Premium: Royal coloured - abhi FREE.</p>
 <button onclick="downloadPDF()" class="mt-4 w-full bg-white text-black py-3 rounded-full font-black text-xs">📥 PDF Download (A4)</button>
 <button onclick="window.print()" class="mt-2 w-full bg-white/10 border border-white/20 py-3 rounded-full font-bold text-xs no-print">🖨️ Direct Print</button>
 </div>
-<!-- CENTER PREVIEW -->
+<!-- CENTER PREVIEW - SAME -->
 <div class="flex justify-center overflow-auto bg-[#0a0a0a] rounded-[20px] p-4">
 <div id="paper" class="paper line-bg p-[50px]">
 <div id="borderEl" class="b b1"></div>
@@ -105,28 +106,53 @@
 </div>
 </div>
 </div>
-<!-- RIGHT BORDERS -->
+<!-- RIGHT BORDERS - 2+2 SPLIT -->
 <div class="glass rounded-[20px] p-4 h-fit lg:sticky top-[70px]">
 <h2 class="font-black text-sm">3. 40 Borders - Click to Select</h2>
-<div class="flex gap-2 mt-2 text-[10px]"><span class="bg-pink-500/20 px-2 py-1 rounded-full">Coloured 20</span><span class="bg-white/10 px-2 py-1 rounded-full">B&W 20</span></div>
-<div id="borderGrid" class="grid grid-cols-4 gap-2 mt-3"></div>
+<div class="flex gap-2 mt-2 text-[10px]">
+<span class="bg-white/10 border border-white/20 px-2 py-1 rounded-full">Left 2 = Normal Lining</span>
+<span class="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-400/30 px-2 py-1 rounded-full">Right 2 = Premium Royal</span>
+</div>
+<div class="grid grid-cols-4 gap-1 mt-2 text-[9px] text-center text-gray-400"><div class="col-span-2">📄 Normal</div><div class="col-span-2 text-yellow-300">👑 Premium</div></div>
+<div id="borderGrid" class="grid grid-cols-4 gap-2 mt-2"></div>
 </div>
 </div>
 <script>
 let curBorder='b1'; let curMode='col';
-const borders=[];
-for(let i=1;i<=40;i++){ borders.push('b'+i); }
+// 20 Normal + 20 Premium = 40 Total
+const normalList=[]; for(let i=1;i<=20;i++){ normalList.push('b'+i); }
+const premiumList=[]; for(let i=1;i<=20;i++){ premiumList.push('p'+i); }
+
 const grid=document.getElementById('borderGrid');
-borders.forEach((b,i)=>{
- let d=document.createElement('div');
- d.className='h-[55px] bg-white border-2 border-white/20 rounded-[8px] relative cursor-pointer hover:scale-105 transition';
- d.innerHTML=`<div class='absolute inset-[3px] border ${i<20?'border-pink-300':'border-black'} rounded-[4px]'></div><span class='absolute bottom-0 left-0 right-0 text-center text-[8px] bg-black/70 text-white'>${i+1}</span>`;
- d.onclick=()=>setBorder(b,d);
- if(i==0) d.classList.add('sel');
- grid.appendChild(d);
-});
+// Build rows: each row has 2 normal + 2 premium
+for(let row=0; row<10; row++){
+  // 2 Normal
+  for(let c=0;c<2;c++){
+    let idx=row*2+c; if(idx>=normalList.length) continue;
+    let b=normalList[idx];
+    let d=document.createElement('div');
+    d.className='h-[55px] bg-white border-2 border-white/20 rounded-[8px] relative cursor-pointer hover:scale-105 transition';
+    d.innerHTML=`<div class='absolute inset-[3px] border border-black rounded-[4px]'></div><span class='absolute bottom-0 left-0 right-0 text-center text-[7px] bg-black/70 text-white'>N${idx+1}</span>`;
+    d.onclick=()=>setBorder(b,d);
+    if(idx==0) d.classList.add('sel');
+    grid.appendChild(d);
+  }
+  // 2 Premium
+  for(let c=0;c<2;c++){
+    let idx=row*2+c; if(idx>=premiumList.length) continue;
+    let p=premiumList[idx];
+    let d=document.createElement('div');
+    d.className='h-[55px] bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-yellow-400/50 rounded-[8px] relative cursor-pointer hover:scale-105 transition';
+    d.innerHTML=`<div class='absolute inset-[3px] border-2 border-yellow-600/50 rounded-[4px]'></div><span class='absolute top-[2px] right-[2px] text-[6px] bg-gradient-to-r from-pink-600 to-rose-600 text-white px-1 rounded'>👑</span><span class='absolute bottom-0 left-0 right-0 text-center text-[7px] bg-gradient-to-r from-yellow-600 to-orange-600 text-white'>P${idx+1} FREE</span>`;
+    d.onclick=()=>setBorder(p,d);
+    grid.appendChild(d);
+  }
+}
+
 function setBorder(b,el){
- curBorder=b; document.getElementById('borderEl').className='b '+b;
+ curBorder=b;
+ const isPremium=b.startsWith('p');
+ document.getElementById('borderEl').className='b '+b;
  document.querySelectorAll('#borderGrid div').forEach(x=>x.classList.remove('sel')); if(el) el.classList.add('sel');
  applyMode();
 }
@@ -138,7 +164,7 @@ function setMode(m){
 }
 function applyMode(){
  const el=document.getElementById('borderEl');
- if(curMode=='bw'){ el.style.filter='grayscale(1)'; el.style.borderColor='black'; } else { el.style.filter=''; }
+ if(curMode=='bw'){ el.style.filter='grayscale(1)'; } else { el.style.filter=''; }
 }
 const map={fName:'pName',fFName:'pFName',fDob:'pDob',fAge:'pAge',fHeight:'pHeight',fCast:'pCast',fSect:'pSect',fEdu:'pEdu',fJob:'pJob',fIncome:'pIncome',fCity:'pCity',fFamily:'pFamily',fPhone:'pPhone',fReq:'pReq'};
 Object.keys(map).forEach(id=>{
@@ -154,7 +180,7 @@ document.getElementById('fPhoto').addEventListener('change',e=>{
 async function downloadPDF(){
  const { jsPDF } = window.jspdf;
  const paper=document.getElementById('paper');
- const canvas=await html2canvas(paper,{scale:2,useCORS:true,backgroundColor:curMode=='bw'?'#ffffff':'#ffffff'});
+ const canvas=await html2canvas(paper,{scale:2,useCORS:true,backgroundColor:'#ffffff'});
  const imgData=canvas.toDataURL('image/jpeg',0.95);
  const pdf=new jsPDF('p','mm','a4');
  const w=210; const h=(canvas.height * w)/canvas.width;
