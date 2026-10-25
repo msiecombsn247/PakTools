@@ -13,12 +13,12 @@ body{font-family:'Poppins',sans-serif; background:#0f0a1e;}
 .glass{backdrop-filter:blur(16px); background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);}
 .font-btn.active{border-color:#a855f7 !important; background:rgba(168,85,247,0.25) !important; color:white}
 canvas{box-shadow:0 20px 50px rgba(0,0,0,0.5);}
+#designGrid div.ring-2{ring-color:#a855f7; border-color:#a855f7 !important;}
 </style>
 </head>
 <body class="galaxy-bg min-h-screen">
 
 <div class="max-w-[1400px] mx-auto px-4 lg:px-8 py-6">
-  <!-- Header -->
   <div class="flex justify-between items-center">
     <a href="index.html" class="glass px-5 py-2 rounded-full text-white/80 text-sm hover:text-white">← All Cards</a>
     <div class="text-white/40 text-xs">PakTools • 1 Code + 1 Folder System</div>
@@ -30,18 +30,16 @@ canvas{box-shadow:0 20px 50px rgba(0,0,0,0.5);}
   </div>
 
   <div class="grid lg:grid-cols-[1.7fr_0.9fr] gap-6 mt-8">
-    <!-- LEFT: Designs + Preview -->
     <div>
       <div class="flex justify-between items-center mb-3">
-        <h3 class="text-white font-semibold">Choose Template (All Cards Use Same Folder: <span class="text-violet-400">cards/designs/</span>)</h3>
+        <h3 class="text-white font-semibold">Choose Template (Folder: <span class="text-violet-400">cards/designs/</span>)</h3>
         <span id="designCount" class="text-white/40 text-xs"></span>
       </div>
-      <div id="designGrid" class="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-[420px] overflow-y-auto pr-1">
-      </div>
+      <div id="designGrid" class="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-[420px] overflow-y-auto pr-1"></div>
 
       <div class="mt-8 glass rounded-[20px] p-4">
         <div class="flex justify-between items-center mb-3">
-          <p class="text-white/60 text-sm">Live HD Preview (800x500)</p>
+          <p class="text-white/60 text-sm">Live HD Preview (800x500) - Selected Design</p>
           <div class="flex gap-2">
             <button onclick="downloadJPG()" class="px-5 py-2 rounded-full bg-gradient-to-r from-violet-600 to-pink-600 text-white text-sm font-semibold hover:scale-105 transition">JPG Download</button>
             <button onclick="downloadPDF()" class="px-5 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold hover:bg-white/20">PDF Download</button>
@@ -51,7 +49,6 @@ canvas{box-shadow:0 20px 50px rgba(0,0,0,0.5);}
       </div>
     </div>
 
-    <!-- RIGHT: Editor -->
     <div class="glass rounded-[20px] p-5 h-fit sticky top-6">
       <label class="text-[11px] tracking-widest text-white/40 uppercase">Left Side - Title + Name</label>
       <input id="leftText" class="w-full mt-2 p-3.5 rounded-xl bg-[#1a1430] border border-white/10 text-white outline-none focus:border-violet-500 text-[15px]" placeholder="Happy Birthday Ahmed">
@@ -63,7 +60,7 @@ canvas{box-shadow:0 20px 50px rgba(0,0,0,0.5);}
       <div id="fontList" class="grid grid-cols-1 gap-2 mt-3 max-h-[300px] overflow-y-auto"></div>
 
       <div class="mt-6 p-3 rounded-xl bg-violet-500/10 border border-violet-500/20">
-        <p class="text-[12px] text-violet-200 leading-5">💡 Tip: Design folder common hai. Aap `cards/designs/` me 1.jpg se 50.jpg tak daal do, ye har card (birthday, wedding, eid) me auto show hongi. Code change nahi karna.</p>
+        <p class="text-[12px] text-violet-200 leading-5">✅ Fixed: Ab jo design select karoge, writing usi par hogi. No more grey sample box.</p>
       </div>
 
       <div class="mt-5 grid grid-cols-2 gap-3">
@@ -96,11 +93,11 @@ const FONTS = [
   {name:"Jameel Noori", family:"'Jameel Noori Nastaleeq', serif"}
 ];
 
-// YAHAN APNE DESIGNS KE NAAM LIKHO - 50 tak bada sakte ho
 const DESIGN_FILES = Array.from({length:50}, (_,i)=>`${i+1}.jpg`);
 
 let selectedFont = FONTS[0];
 let selectedDesign = null;
+let loadedImages = {};
 
 document.getElementById('pageTitle').innerText = (TITLES[type] || type) + " Card Maker";
 document.getElementById('leftText').value = (TITLES[type] || "Happy Birthday") + " Ahmed";
@@ -117,15 +114,26 @@ FONTS.forEach((f,i)=>{
   fontList.appendChild(btn);
 });
 
-// Designs render
+// Designs render - FIXED
 const grid = document.getElementById('designGrid');
 DESIGN_FILES.forEach(file=>{
   const wrap = document.createElement('div');
   wrap.className = "group relative aspect-[4/3] rounded-xl bg-white/[0.04] border border-white/10 overflow-hidden cursor-pointer hover:border-violet-400 transition";
-  wrap.innerHTML = `<img src="designs/${file}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" class="w-full h-full object-cover"><div style="display:none" class="absolute inset-0 flex-col items-center justify-center p-2 text-center"><span class="text-[11px] text-white/30">${file} not uploaded yet</span><span class="text-[10px] text-white/20 mt-1">Upload in cards/designs/</span></div><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div><span class="absolute bottom-2 left-2 text-[10px] px-2 py-1 rounded-full bg-black/50 text-white/70">${file}</span>`;
-  wrap.onclick = ()=>{ selectedDesign=`designs/${file}`; document.querySelectorAll('#designGrid div').forEach(d=>d.classList.remove('ring-2','ring-violet-500')); wrap.classList.add('ring-2','ring-violet-500'); drawCard(); };
+  wrap.innerHTML = `<img src="designs/${file}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" class="w-full h-full object-cover"><div style="display:none" class="absolute inset-0 flex-col items-center justify-center p-2 text-center"><span class="text-[11px] text-white/30">${file} not uploaded yet</span><span class="text-[10px] text-white/20 mt-1">Upload in cards/designs/</span></div><span class="absolute bottom-2 left-2 text-[10px] px-2 py-1 rounded-full bg-black/50 text-white/70">${file}</span>`;
+  wrap.onclick = ()=>{
+    selectedDesign=`designs/${file}`;
+    document.querySelectorAll('#designGrid > div').forEach(d=>d.classList.remove('ring-2','ring-violet-500')); 
+    wrap.classList.add('ring-2','ring-violet-500');
+    drawCard();
+  };
   grid.appendChild(wrap);
 });
+
+// Auto select first available design
+setTimeout(()=>{ 
+  const first = document.querySelector('#designGrid > div');
+  if(first) first.click();
+}, 500);
 
 const canvas = document.getElementById('cardCanvas');
 const ctx = canvas.getContext('2d');
@@ -135,52 +143,93 @@ async function drawCard(){
   ctx.clearRect(0,0,800,500);
   ctx.fillStyle="#fdf6f0"; ctx.fillRect(0,0,800,500);
 
-  if(selectedDesign){
-    const img = new Image(); img.src = selectedDesign;
-    await new Promise(res=>{ img.onload=res; img.onerror=res; });
-    if(img.complete && img.naturalWidth>0){
-      const ratio = Math.max(800/img.width, 500/img.height);
-      const w = img.width*ratio, h=img.height*ratio;
-      ctx.drawImage(img, (800-w)/2, (500-h)/2, w, h);
-    }
-  } else {
+  if(!selectedDesign){
     ctx.fillStyle="#f5e6e0"; ctx.fillRect(0,0,800,500);
     ctx.fillStyle="#b76a7a"; ctx.font="40px 'Great Vibes'"; ctx.textAlign="center"; ctx.fillText("Select a Design",400,250);
     return;
   }
 
-  // Overlay for left side readability
-  ctx.fillStyle="rgba(0,0,0,0.38)"; ctx.fillRect(0,0,400,500);
-  
-  // Left Text
-  ctx.fillStyle="#ffffff"; ctx.textAlign="center";
+  // FIXED IMAGE LOADING
+  try{
+    let img = loadedImages[selectedDesign];
+    if(!img){
+      img = new Image();
+      img.crossOrigin = "anonymous";
+      const p = new Promise((res, rej) => {
+        img.onload = () => res(img);
+        img.onerror = () => res(null);
+      });
+      img.src = selectedDesign + "?t=" + new Date().getTime();
+      await p;
+      if(img && img.naturalWidth > 0) loadedImages[selectedDesign] = img;
+    }
+
+    if(img && img.naturalWidth > 0){
+      const ratio = Math.max(800/img.width, 500/img.height);
+      const w = img.width*ratio, h=img.height*ratio;
+      const x = (800-w)/2, y = (500-h)/2;
+      ctx.drawImage(img, x, y, w, h);
+    }
+  }catch(e){ console.log("Image load error", e); }
+
+  // REMOVED HEAVY BOXES - Design will be fully visible now
+  // Only soft shadows for readability
+  ctx.shadowColor = "rgba(0,0,0,0.55)";
+  ctx.shadowBlur = 12;
+  ctx.shadowOffsetX = 2;
+  ctx.shadowOffsetY = 2;
+
+  // Left Side Text
+  ctx.fillStyle="#ffffff";
+  ctx.textAlign="center";
   ctx.font=`700 44px ${selectedFont.family}`;
   const leftVal = document.getElementById('leftText').value;
   wrapText(ctx, leftVal, 200, 210, 340, 48);
 
-  // Right side panel
-  ctx.fillStyle="rgba(253,246,240,0.92)"; ctx.fillRect(400,0,400,500);
-  ctx.fillStyle="#b76a7a"; ctx.font="38px 'Great Vibes'"; ctx.fillText("Prayer / Dua",600,110);
-  ctx.fillStyle="#333"; ctx.font="14px 'Poppins'"; ctx.textAlign="center";
+  ctx.shadowBlur = 0;
+  ctx.shadowOffsetX = 0;
+  ctx.shadowOffsetY = 0;
+
+  // Right Side Text - No more hiding box
+  ctx.fillStyle="#b76a7a";
+  ctx.font="38px 'Great Vibes'";
+  ctx.textAlign="center";
+  ctx.fillText("Prayer / Dua",600,110);
+
+  ctx.fillStyle="#222";
+  ctx.font="500 14px 'Poppins'";
+  ctx.textAlign="center";
   wrapText(ctx, document.getElementById('rightText').value, 600, 170, 320, 21);
 }
 
 function wrapText(context, text, x, y, maxWidth, lineHeight){
-  const words = text.split(' '); let line=''; 
+  if(!text) return;
+  const words = text.split(' ');
+  let line='';
+  let currY = y;
   for(let n=0;n<words.length;n++){
     let testLine = line + words[n] + ' ';
     if(context.measureText(testLine).width > maxWidth && n>0){
-      context.fillText(line, x, y); line = words[n] + ' '; y+=lineHeight;
-    } else { line=testLine; }
+      context.fillText(line.trim(), x, currY);
+      line = words[n] + ' ';
+      currY+=lineHeight;
+    } else {
+      line=testLine;
+    }
   }
-  context.fillText(line, x, y);
+  context.fillText(line.trim(), x, currY);
 }
 
 document.getElementById('leftText').addEventListener('input', drawCard);
 document.getElementById('rightText').addEventListener('input', drawCard);
 
 function downloadJPG(){
-  drawCard().then(()=>{ const a=document.createElement('a'); a.download=`${type}-card.jpg`; a.href=canvas.toDataURL('image/jpeg',0.95); a.click(); });
+  drawCard().then(()=>{ 
+    const a=document.createElement('a'); 
+    a.download=`${type}-card.jpg`; 
+    a.href=canvas.toDataURL('image/jpeg',0.95); 
+    a.click(); 
+  });
 }
 function downloadPDF(){
   drawCard().then(()=>{
@@ -190,7 +239,6 @@ function downloadPDF(){
     pdf.save(`${type}-card.pdf`);
   });
 }
-drawCard();
 </script>
 </body>
 </html>
