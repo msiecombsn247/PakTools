@@ -17,6 +17,8 @@
 .tag{letter-spacing:2px;text-transform:uppercase;font-size:11px;background:linear-gradient(90deg,#d8b4fe,#f0abfc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900}
 .btn-main{background:linear-gradient(90deg,#9333ea,#7e22ce);border-radius:9999px;padding:14px 28px;font-weight:900;box-shadow:0 0 20px rgba(168,85,247,0.5);transition:0.2s;display:inline-block}
 .btn-main:hover{transform:translateY(-1px);box-shadow:0 0 30px rgba(168,85,247,0.7)}
+.btn-ai{background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.15);border-radius:9999px;padding:14px 28px;font-weight:900;transition:0.2s;display:inline-flex;align-items:center;gap:8px}
+.btn-ai:hover{background:rgba(255,255,255,0.15);border-color:rgba(168,85,247,0.5);transform:translateY(-1px)}
 .tool-card{background:linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03));backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:18px;transition:0.3s}
 .tool-card:hover{transform:translateY(-3px);border-color:rgba(168,85,247,0.5);box-shadow:0 10px 30px rgba(0,0,0,0.3)}
 </style>
@@ -24,7 +26,6 @@
 <body>
 <div class="galaxy-bg"><div class="galaxy g1"></div><div class="galaxy g2"></div><div class="galaxy g3"></div></div>
 
-<!-- HEADER - ONLY 3 LINKS -->
 <header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl">
 <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 <a href="index.html" class="font-black text-xl flex items-center gap-2" style="text-decoration:none;color:white"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center shadow-[0_0_15px_rgba(168,85,247,0.6)]">P</div>PakTools</a>
@@ -36,18 +37,16 @@
 </div>
 </header>
 
-<!-- MAIN SECTION - LEFT 2/3 + RIGHT 1/3 -->
 <main class="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-20">
 <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
 
-<!-- LEFT SIDE 2/3 -->
 <div class="w-full lg:w-[66.66%] text-left">
 <div class="tag">Built Faster Create Smarter - NEW: Greeting Cards Maker + Rishta Bio 40 Borders + Chitthi Voice + Income Tax + Car Loan</div>
-
 <h1 class="mt-4 text-4xl md:text-6xl font-black leading-[1.05]">Pakistan's No.1<br>All-in-One <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-fuchsia-300 to-purple-400">Toolkit</span></h1>
 
-<div class="mt-8">
+<div class="mt-8 flex flex-wrap gap-3">
 <a href="explore.html" class="btn-main text-sm" style="text-decoration:none;color:white">Explore Tools →</a>
+<button onclick="openAskAI()" class="btn-ai text-sm">✨ Ask AI</button>
 </div>
 
 <p class="mt-6 text-gray-400 text-[13px] md:text-[14px] leading-relaxed max-w-xl">39 Powerful Tools - NEW: Greeting Cards Maker (Love, Birthday, Wedding, Eid, Ramzan), Rishta Bio Maker 40 A4 Borders (Coloured & Black/White Printer Friendly) + Photo, Chitthi Bol Kar Application, Income Tax FBR 2025-26, Car Loan Islamic, Token Tax Punjab 0.3%, Electricity Bill, Solar ROI, Wirasat, Property Tax, Zakat, GST, USD Live + Gold</p>
@@ -60,54 +59,30 @@
 </div>
 </div>
 
-<!-- RIGHT SIDE 1/3 - 3 TOOLS -->
 <div class="w-full lg:w-[33.33%] flex flex-col gap-4">
-
-<a href="rishta-bio/index.html" style="text-decoration:none">
-<div class="tool-card">
-<div class="flex justify-between items-start">
-<div>
-<div class="text-[11px] font-black tracking-widest text-pink-300">NEW - 40 DESIGNS</div>
-<div class="mt-1 text-[18px] font-black text-white leading-tight">Rishta Bio Maker</div>
-<div class="mt-1 text-[11px] text-gray-400">40 A4 Borders Coloured & B&W</div>
-</div>
-<div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-[18px]">💍</div>
-</div>
-<div class="mt-4 text-[12px] font-bold text-pink-300">Banao →</div>
-</div>
-</a>
-
-<a href="chitthi/index.html" style="text-decoration:none">
-<div class="tool-card">
-<div class="flex justify-between items-start">
-<div>
-<div class="text-[11px] font-black tracking-widest text-fuchsia-300">VOICE TYPING</div>
-<div class="mt-1 text-[18px] font-black text-white leading-tight">Chitthi Bnao</div>
-<div class="mt-1 text-[11px] text-gray-400">Bol Kar Application Likho</div>
-</div>
-<div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-fuchsia-600 flex items-center justify-center text-[18px]">✉️</div>
-</div>
-<div class="mt-4 text-[12px] font-bold text-fuchsia-300">Banao →</div>
-</div>
-</a>
-
-<a href="cards/index.html" style="text-decoration:none">
-<div class="tool-card border-yellow-400/40 shadow-[0_0_20px_rgba(251,191,36,0.15)]">
-<div class="flex justify-between items-start">
-<div>
-<div class="text-[11px] font-black tracking-widest text-yellow-300">NEW LAUNCH</div>
-<div class="mt-1 text-[18px] font-black text-white leading-tight">Greeting Cards Maker</div>
-<div class="mt-1 text-[11px] text-gray-400">Love, Birthday, Wedding, Eid</div>
-</div>
-<div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-[18px]">💌</div>
-</div>
-<div class="mt-4 text-[12px] font-bold text-yellow-300">Banao →</div>
-</div>
-</a>
-
+<a href="rishta-bio/index.html" style="text-decoration:none"><div class="tool-card"><div class="flex justify-between items-start"><div><div class="text-[11px] font-black tracking-widest text-pink-300">NEW - 40 DESIGNS</div><div class="mt-1 text-[18px] font-black text-white leading-tight">Rishta Bio Maker</div><div class="mt-1 text-[11px] text-gray-400">40 A4 Borders Coloured & B&W</div></div><div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-[18px]">💍</div></div><div class="mt-4 text-[12px] font-bold text-pink-300">Banao →</div></div></a>
+<a href="chitthi/index.html" style="text-decoration:none"><div class="tool-card"><div class="flex justify-between items-start"><div><div class="text-[11px] font-black tracking-widest text-fuchsia-300">VOICE TYPING</div><div class="mt-1 text-[18px] font-black text-white leading-tight">Chitthi Bnao</div><div class="mt-1 text-[11px] text-gray-400">Bol Kar Application Likho</div></div><div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-fuchsia-600 flex items-center justify-center text-[18px]">✉️</div></div><div class="mt-4 text-[12px] font-bold text-fuchsia-300">Banao →</div></div></a>
+<a href="cards/index.html" style="text-decoration:none"><div class="tool-card border-yellow-400/40 shadow-[0_0_20px_rgba(251,191,36,0.15)]"><div class="flex justify-between items-start"><div><div class="text-[11px] font-black tracking-widest text-yellow-300">NEW LAUNCH</div><div class="mt-1 text-[18px] font-black text-white leading-tight">Greeting Cards Maker</div><div class="mt-1 text-[11px] text-gray-400">Love, Birthday, Wedding, Eid</div></div><div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-[18px]">💌</div></div><div class="mt-4 text-[12px] font-bold text-yellow-300">Banao →</div></div></a>
 </div>
 </div>
 </main>
+
+<!-- ASK AI MODAL -->
+<div id="askAIModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-[999] hidden flex items-end md:items-center justify-center p-0 md:p-4">
+  <div class="bg-[#110722] border border-white/15 w-full md:max-w-[520px] md:rounded-[24px] rounded-t-[24px] overflow-hidden flex flex-col h-[85vh] md:h-[75vh] shadow-[0_0_60px_rgba(168,85,247,0.3)]">
+    <div class="p-4 border-b border-white/10 flex justify-between items-center bg-gradient-to-r from-purple-900/30 to-fuchsia-900/20">
+      <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center">✨</div><div><h3 class="font-black text-[14px]">PakTools AI</h3><p class="text-[11px] text-gray-400">Ask anything about our tools</p></div></div>
+      <button onclick="closeAskAI()" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full text-[14px]">✕</button>
+    </div>
+    <div id="chatBox" class="flex-1 p-4 overflow-y-auto space-y-3 text-[13px] leading-relaxed">
+      <div class="bg-white/[0.07] border border-white/10 p-3.5 rounded-2xl rounded-bl-[6px] mr-8">Walaikum Salam! 👋<br>Main PakTools AI hun. Aap Rishta Bio, Income Tax, Wirasat, Chitthi Voice ya kisi bhi tool ke bare me pooch sakte hain.</div>
+    </div>
+    <div class="p-3 border-t border-white/10 bg-black/20 flex gap-2">
+      <input id="aiInput" onkeydown="if(event.key==='Enter') sendAI()" placeholder="Type your question..." class="flex-1 bg-black/50 border border-white/15 rounded-full px-5 py-3 text-[13px] outline-none focus:border-purple-500 focus:bg-black/70">
+      <button onclick="sendAI()" class="bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 px-6 py-3 rounded-full font-black text-[13px] shadow-[0_0_15px_rgba(168,85,247,0.4)]">Send</button>
+    </div>
+  </div>
+</div>
 
 <footer class="relative z-10 border-t border-white/10 mt-10">
 <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-[11px] text-gray-500">
@@ -115,5 +90,48 @@
 <div class="flex gap-4"><a href="about.html" style="color:#6b7280">About</a><a href="privacy-policy.html" style="color:#6b7280">Privacy</a><a href="blog.html" style="color:#6b7280">Blogs</a></div>
 </div>
 </footer>
+
+<script>
+function openAskAI(){ document.getElementById('askAIModal').classList.remove('hidden'); document.body.style.overflow='hidden'; }
+function closeAskAI(){ document.getElementById('askAIModal').classList.add('hidden'); document.body.style.overflow='auto'; }
+
+async function sendAI(){
+  const input = document.getElementById('aiInput');
+  const box = document.getElementById('chatBox');
+  const q = input.value.trim();
+  if(!q) return;
+  
+  box.innerHTML += `<div class="bg-gradient-to-r from-purple-600 to-purple-700 p-3.5 rounded-2xl rounded-br-[6px] ml-12 text-right">${q}</div>`;
+  input.value = '';
+  box.scrollTop = box.scrollHeight;
+  
+  const tempId = 'temp-'+Date.now();
+  box.innerHTML += `<div id="${tempId}" class="bg-white/[0.07] border border-white/10 p-3.5 rounded-2xl rounded-bl-[6px] mr-8 text-gray-400">Typing...</div>`;
+  box.scrollTop = box.scrollHeight;
+
+  // OFFLINE SMART ANSWERS (Agar API key nahi hai to bhi chalega)
+  const lower = q.toLowerCase();
+  let answer = null;
+  if(lower.includes('rishta') || lower.includes('bio')) answer = "💍 <b>Rishta Bio Maker:</b> 40 A4 Designs (Coloured & B&W) available hain. Aap Name, Father Name, Age, Education etc. add karke PDF/JPG download kar sakte hain. Premium borders bhi hain. <a href='rishta-bio/index.html' style='color:#f9a8d4;text-decoration:underline'>Open Rishta Bio →</a>";
+  else if(lower.includes('tax') || lower.includes('income')) answer = "💰 <b>Income Tax 2025-26:</b> FBR ke new slabs ke hisab se calculate karta hai. Salary enter karo, automatic tax nikal jayega.";
+  else if(lower.includes('chitthi') || lower.includes('application')) answer = "✉️ <b>Chitthi Voice:</b> Bol kar application likho! Urdu/English me voice typing se chitthi ban jayegi. <a href='chitthi/index.html' style='color:#e9d5ff;text-decoration:underline'>Try Chitthi →</a>";
+  else if(lower.includes('card') || lower.includes('greeting')) answer = "💌 <b>Greeting Cards:</b> Love, Birthday, Wedding, Eid, Ramzan cards banane ka naya tool launch hua hai!";
+
+  setTimeout(async ()=>{
+    const el = document.getElementById(tempId);
+    if(answer){
+      el.innerHTML = answer;
+      el.classList.remove('text-gray-400');
+    } else {
+      // Agar Groq API lagani hai to yahan key dalo
+      // const GROQ_KEY = "gsk_xxxx";
+      // Agar key nahi hai to generic answer:
+      el.innerHTML = "Main samajh gaya! PakTools par 39 tools hain. Aap <b>Rishta Bio, Chitthi, Greeting Cards, Income Tax</b> ke bare me pooch sakte hain. Jaldi hi main live AI se connect ho jaunga!";
+      el.classList.remove('text-gray-400');
+    }
+    box.scrollTop = box.scrollHeight;
+  }, 700);
+}
+</script>
 </body>
 </html>
