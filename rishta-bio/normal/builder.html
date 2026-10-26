@@ -10,15 +10,21 @@
 <style>
 body{background:#07010f;color:#fff}
 .glass{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px)}
-.paper{width:794px; min-height:1123px; background:white; color:#000; position:relative; overflow:hidden;}
-/* FIXED - Writing Right Side */
+.paper{
+  width:794px; 
+  min-height:1123px; 
+  background:white; 
+  color:#000; 
+  position:relative; 
+  overflow:visible;
+  flex-shrink: 0;
+}
 .safe-content{
   position:relative; z-index:10; 
-  padding: 145px 85px 110px 125px; /* LEFT 95->125 RIGHT SHIFT */
+  padding: 145px 85px 110px 125px;
 }
 .line{padding:8.5px 0; border-bottom:1px solid #f0f0f0; padding-left:10px;}
 .line:last-child{border-bottom:none;}
-/* Premium RISHTA BIODATA Font */
 .premium-title{
   font-family:'Cinzel', serif;
   font-weight:900;
@@ -85,7 +91,6 @@ body{background:#07010f;color:#fff}
     <div class="flex justify-between">
       <div class="flex-1">
         <p style="font-family:'Amiri', serif;" class="text-center text-[17px] font-bold text-[#222]">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-        <!-- PREMIUM FONT FIXED -->
         <h1 class="premium-title mt-4">RISHTA BIODATA</h1>
 
         <div class="mt-10 text-[13.5px] leading-[1.75] ml-2">
@@ -123,7 +128,29 @@ document.getElementById('bgImg').src=`borders/border_a4_${d}.jpg`;
 const map={fName:'pName',fFName:'pFName',fDob:'pDob',fAge:'pAge',fHeight:'pHeight',fCast:'pCast',fSect:'pSect',fEdu:'pEdu',fJob:'pJob',fIncome:'pIncome',fCity:'pCity',fFamily:'pFamily',fPhone:'pPhone',fReq:'pReq'};
 Object.keys(map).forEach(id=>{document.getElementById(id).addEventListener('input',e=>{document.getElementById(map[id]).innerText=e.target.value||'__________';});});
 document.getElementById('fPhoto').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const u=URL.createObjectURL(f);const img=document.getElementById('pPhoto');img.src=u;img.classList.remove('hidden');document.getElementById('pPhotoTxt').classList.add('hidden');});
-async function getCanvas(){const paper=document.getElementById('paper');return await html2canvas(paper,{scale:3,useCORS:true,allowTaint:true,backgroundColor:'#ffffff'});}
+
+async function getCanvas(){
+  const paper = document.getElementById('paper');
+  return await html2canvas(paper,{
+    scale: 2,
+    useCORS: true,
+    allowTaint: true,
+    backgroundColor: '#ffffff',
+    windowWidth: 794,
+    width: paper.scrollWidth,
+    height: paper.scrollHeight,
+    scrollX: 0,
+    scrollY: -window.scrollY,
+    onclone: (clonedDoc) => {
+      const clonedPaper = clonedDoc.getElementById('paper');
+      clonedPaper.style.transform = 'none';
+      clonedPaper.style.margin = '0';
+      clonedPaper.style.left = '0';
+      clonedPaper.style.top = '0';
+    }
+  });
+}
+
 async function downloadJPG(){const canvas=await getCanvas();const link=document.createElement('a');link.download=`Rishta-Design-${d}.jpg`;link.href=canvas.toDataURL('image/jpeg',0.95);link.click();}
 async function downloadPDF(){const {jsPDF}=window.jspdf;const canvas=await getCanvas();const imgData=canvas.toDataURL('image/jpeg',0.95);const pdf=new jsPDF('p','mm','a4');const w=210;const h=(canvas.height*w)/canvas.width;pdf.addImage(imgData,'JPEG',0,0,w,h);pdf.save(`Rishta-Design-${d}.pdf`);}
 </script>
