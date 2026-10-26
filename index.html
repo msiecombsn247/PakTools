@@ -39,26 +39,15 @@
 
 <main class="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-20">
 <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-
 <div class="w-full lg:w-[66.66%] text-left">
 <div class="tag">Built Faster Create Smarter - NEW: Greeting Cards Maker + Rishta Bio 40 Borders + Chitthi Voice + Income Tax + Car Loan</div>
 <h1 class="mt-4 text-4xl md:text-6xl font-black leading-[1.05]">Pakistan's No.1<br>All-in-One <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-fuchsia-300 to-purple-400">Toolkit</span></h1>
-
 <div class="mt-8 flex flex-wrap gap-3">
 <a href="explore.html" class="btn-main text-sm" style="text-decoration:none;color:white">Explore Tools →</a>
 <button onclick="openAskAI()" class="btn-ai text-sm">✨ Ask AI</button>
 </div>
-
 <p class="mt-6 text-gray-400 text-[13px] md:text-[14px] leading-relaxed max-w-xl">39 Powerful Tools - NEW: Greeting Cards Maker (Love, Birthday, Wedding, Eid, Ramzan), Rishta Bio Maker 40 A4 Borders (Coloured & Black/White Printer Friendly) + Photo, Chitthi Bol Kar Application, Income Tax FBR 2025-26, Car Loan Islamic, Token Tax Punjab 0.3%, Electricity Bill, Solar ROI, Wirasat, Property Tax, Zakat, GST, USD Live + Gold</p>
-
-<div class="mt-8 flex gap-2 flex-wrap text-[11px] text-gray-500">
-<span class="bg-gradient-to-r from-yellow-400/30 to-orange-500/30 text-yellow-200 border border-yellow-400/30 px-3 py-1 rounded-full font-bold">💌 Greeting Cards NEW</span>
-<span class="bg-gradient-to-r from-pink-500/30 to-rose-500/30 text-pink-200 border border-pink-400/30 px-3 py-1 rounded-full font-bold">💍 Rishta Bio 40 Borders</span>
-<span class="bg-gradient-to-r from-purple-500/30 to-fuchsia-500/30 text-fuchsia-200 border border-fuchsia-400/30 px-3 py-1 rounded-full font-bold">✉️ Chitthi Voice</span>
-<span class="bg-white/10 px-3 py-1 rounded-full">100% Free</span>
 </div>
-</div>
-
 <div class="w-full lg:w-[33.33%] flex flex-col gap-4">
 <a href="rishta-bio/index.html" style="text-decoration:none"><div class="tool-card"><div class="flex justify-between items-start"><div><div class="text-[11px] font-black tracking-widest text-pink-300">NEW - 40 DESIGNS</div><div class="mt-1 text-[18px] font-black text-white leading-tight">Rishta Bio Maker</div><div class="mt-1 text-[11px] text-gray-400">40 A4 Borders Coloured & B&W</div></div><div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-[18px]">💍</div></div><div class="mt-4 text-[12px] font-bold text-pink-300">Banao →</div></div></a>
 <a href="chitthi/index.html" style="text-decoration:none"><div class="tool-card"><div class="flex justify-between items-start"><div><div class="text-[11px] font-black tracking-widest text-fuchsia-300">VOICE TYPING</div><div class="mt-1 text-[18px] font-black text-white leading-tight">Chitthi Bnao</div><div class="mt-1 text-[11px] text-gray-400">Bol Kar Application Likho</div></div><div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-fuchsia-600 flex items-center justify-center text-[18px]">✉️</div></div><div class="mt-4 text-[12px] font-bold text-fuchsia-300">Banao →</div></div></a>
@@ -67,15 +56,14 @@
 </div>
 </main>
 
-<!-- ASK AI MODAL -->
 <div id="askAIModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-[999] hidden flex items-end md:items-center justify-center p-0 md:p-4">
   <div class="bg-[#110722] border border-white/15 w-full md:max-w-[520px] md:rounded-[24px] rounded-t-[24px] overflow-hidden flex flex-col h-[85vh] md:h-[75vh] shadow-[0_0_60px_rgba(168,85,247,0.3)]">
     <div class="p-4 border-b border-white/10 flex justify-between items-center bg-gradient-to-r from-purple-900/30 to-fuchsia-900/20">
       <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center">✨</div><div><h3 class="font-black text-[14px]">PakTools AI</h3><p class="text-[11px] text-gray-400">Ask anything about our tools</p></div></div>
-      <button onclick="closeAskAI()" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full text-[14px]">✕</button>
+      <div class="flex gap-2"><button onclick="resetKey()" class="text-[10px] bg-white/10 px-3 py-1 rounded-full">Reset Key</button><button onclick="closeAskAI()" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full text-[14px]">✕</button></div>
     </div>
     <div id="chatBox" class="flex-1 p-4 overflow-y-auto space-y-3 text-[13px] leading-relaxed">
-      <div class="bg-white/[0.07] border border-white/10 p-3.5 rounded-2xl rounded-bl-[6px] mr-8">Walaikum Salam! 👋<br>Main PakTools AI hun. Aap Rishta Bio, Income Tax, Wirasat, Chitthi Voice ya kisi bhi tool ke bare me pooch sakte hain.</div>
+      <div class="bg-white/[0.07] border border-white/10 p-3.5 rounded-2xl rounded-bl-[6px] mr-8">Walaikum Salam! 👋<br>Main PakTools AI hun. Rishta Bio, Income Tax, Wirasat ya kisi bhi tool ke bare me poocho...</div>
     </div>
     <div class="p-3 border-t border-white/10 bg-black/20 flex gap-2">
       <input id="aiInput" onkeydown="if(event.key==='Enter') sendAI()" placeholder="Type your question..." class="flex-1 bg-black/50 border border-white/15 rounded-full px-5 py-3 text-[13px] outline-none focus:border-purple-500 focus:bg-black/70">
@@ -92,8 +80,18 @@
 </footer>
 
 <script>
-function openAskAI(){ document.getElementById('askAIModal').classList.remove('hidden'); document.body.style.overflow='hidden'; }
+let GROQ_API_KEY = localStorage.getItem('groq_key') || "";
+
+function openAskAI(){ 
+  document.getElementById('askAIModal').classList.remove('hidden'); 
+  document.body.style.overflow='hidden';
+  if(!GROQ_API_KEY){
+    const k = prompt("Admin ke liye: Groq API Key yahan paste karo (sirf 1 bar). Ye GitHub par nahi jayegi, sirf apke browser me save hogi:");
+    if(k && k.trim().length > 20){ localStorage.setItem('groq_key', k.trim()); GROQ_API_KEY = k.trim(); alert("Key save ho gayi! Ab AI live hai."); }
+  }
+}
 function closeAskAI(){ document.getElementById('askAIModal').classList.add('hidden'); document.body.style.overflow='auto'; }
+function resetKey(){ localStorage.removeItem('groq_key'); GROQ_API_KEY=""; alert("Key reset ho gayi"); closeAskAI(); }
 
 async function sendAI(){
   const input = document.getElementById('aiInput');
@@ -109,28 +107,34 @@ async function sendAI(){
   box.innerHTML += `<div id="${tempId}" class="bg-white/[0.07] border border-white/10 p-3.5 rounded-2xl rounded-bl-[6px] mr-8 text-gray-400">Typing...</div>`;
   box.scrollTop = box.scrollHeight;
 
-  // OFFLINE SMART ANSWERS (Agar API key nahi hai to bhi chalega)
-  const lower = q.toLowerCase();
-  let answer = null;
-  if(lower.includes('rishta') || lower.includes('bio')) answer = "💍 <b>Rishta Bio Maker:</b> 40 A4 Designs (Coloured & B&W) available hain. Aap Name, Father Name, Age, Education etc. add karke PDF/JPG download kar sakte hain. Premium borders bhi hain. <a href='rishta-bio/index.html' style='color:#f9a8d4;text-decoration:underline'>Open Rishta Bio →</a>";
-  else if(lower.includes('tax') || lower.includes('income')) answer = "💰 <b>Income Tax 2025-26:</b> FBR ke new slabs ke hisab se calculate karta hai. Salary enter karo, automatic tax nikal jayega.";
-  else if(lower.includes('chitthi') || lower.includes('application')) answer = "✉️ <b>Chitthi Voice:</b> Bol kar application likho! Urdu/English me voice typing se chitthi ban jayegi. <a href='chitthi/index.html' style='color:#e9d5ff;text-decoration:underline'>Try Chitthi →</a>";
-  else if(lower.includes('card') || lower.includes('greeting')) answer = "💌 <b>Greeting Cards:</b> Love, Birthday, Wedding, Eid, Ramzan cards banane ka naya tool launch hua hai!";
+  if(!GROQ_API_KEY){
+    document.getElementById(tempId).innerHTML = "⚠️ API Key set nahi hai. Upar <b>Ask AI</b> dubara dabake key dalo.";
+    document.getElementById(tempId).classList.remove('text-gray-400');
+    return;
+  }
 
-  setTimeout(async ()=>{
-    const el = document.getElementById(tempId);
-    if(answer){
-      el.innerHTML = answer;
-      el.classList.remove('text-gray-400');
-    } else {
-      // Agar Groq API lagani hai to yahan key dalo
-      // const GROQ_KEY = "gsk_xxxx";
-      // Agar key nahi hai to generic answer:
-      el.innerHTML = "Main samajh gaya! PakTools par 39 tools hain. Aap <b>Rishta Bio, Chitthi, Greeting Cards, Income Tax</b> ke bare me pooch sakte hain. Jaldi hi main live AI se connect ho jaunga!";
-      el.classList.remove('text-gray-400');
-    }
-    box.scrollTop = box.scrollHeight;
-  }, 700);
+  try{
+    const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${GROQ_API_KEY}` },
+      body: JSON.stringify({
+        model: 'llama-3.1-8b-instant',
+        messages: [
+          {role:'system', content:'You are PakTools AI, helpful for Pakistani users. Answer short in Roman Urdu mixed English. Tools: Rishta Bio Maker, Chitthi Voice, Greeting Cards, Income Tax 2025-26, Wirasat, Property Tax.'},
+          {role:'user', content: q}
+        ]
+      })
+    });
+    const data = await res.json();
+    if(data.error) throw new Error(data.error.message);
+    const ans = data.choices[0].message.content;
+    document.getElementById(tempId).innerHTML = ans.replace(/\n/g, '<br>');
+    document.getElementById(tempId).classList.remove('text-gray-400');
+  } catch(e){
+    document.getElementById(tempId).innerHTML = "Error: " + e.message;
+    document.getElementById(tempId).classList.remove('text-gray-400');
+  }
+  box.scrollTop = box.scrollHeight;
 }
 </script>
 </body>
