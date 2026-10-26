@@ -5,31 +5,30 @@
 <title>Builder - Premium Design</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
 body{background:#0f0a1a; color:#fff}
 .glass{background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); backdrop-filter:blur(12px)}
 .input-dark{background:rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.1); color:#fff; padding:10px 12px; border-radius:10px; width:100%; font-size:13px; outline:none}
 .input-dark:focus{border-color:#d4af37}
-#a4-page{width:210mm; min-height:297mm; background-color:#fffef8; background-size:100% 100%; background-position:center; position:relative; margin:0 auto; box-shadow:0 0 30px rgba(0,0,0,0.6)}
-/* FIXED SAFE AREA - Thora Right Shift */
+/* FIXED - px me stable A4 */
+#a4-page{width:794px; height:1123px; background-color:#fffef8; position:relative; margin:0 auto; overflow:hidden; flex-shrink:0;}
 #safe-content{
   position:absolute;
-  top:28mm;
-  left:36mm; /* 28mm se 36mm -> writing right ko */
-  right:28mm;
-  bottom:26mm;
-  padding:5mm 5mm 5mm 8mm; /* left padding extra */
+  top:105px;
+  left:135px;
+  right:105px;
+  bottom:98px;
+  padding:20px 20px 20px 30px;
   overflow:hidden;
+  z-index:10;
 }
 </style>
 </head>
 <body class="flex flex-col md:flex-row h-screen">
-<!-- LEFT -->
 <div class="w-full md:w-[360px] p-4 overflow-y-auto glass m-2 rounded-2xl">
 <a href="./index.html" class="text-[12px] text-gray-400">← Change Design</a>
 <h2 id="designTitle" class="font-black text-[14px] mt-2 mb-3">Design 01 - Premium</h2>
-
 <input id="f_name" class="input-dark mb-2" placeholder="Full Name">
 <input id="f_father" class="input-dark mb-2" placeholder="Father Name">
 <div class="flex gap-2 mb-2"><input id="f_dob" class="input-dark" placeholder="DOB"><input id="f_age" class="input-dark" placeholder="Age"></div>
@@ -42,28 +41,25 @@ body{background:#0f0a1a; color:#fff}
 <input id="f_phone" class="input-dark mb-2" placeholder="Phone">
 <input id="f_req" class="input-dark mb-2" placeholder="Requirement">
 <input type="file" id="f_photo" accept="image/*" class="text-[11px] mt-2">
-
 <div class="grid grid-cols-2 gap-2 mt-4">
 <button onclick="downloadJPG()" class="w-full bg-gradient-to-r from-[#22c55e] to-[#16a34a] py-3 rounded-full font-bold text-[13px]">🖼️ Download JPG</button>
 <button onclick="downloadPDF()" class="w-full bg-gradient-to-r from-[#d4af37] to-[#8b5a2b] py-3 rounded-full font-bold text-[13px]">📄 Download PDF</button>
 </div>
-<p class="text-[10px] text-white/40 mt-2 text-center">JPG = Fast Share | PDF = High Quality Print</p>
 </div>
 
-<!-- RIGHT - A4 Preview -->
 <div class="flex-1 bg-[#1a102c] overflow-auto p-4 flex justify-center">
 <div id="a4-page">
+  <!-- FIXED - img tag instead of background -->
+  <img id="bgImg" crossorigin="anonymous" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:fill; z-index:0;">
   <div id="safe-content">
     <div class="text-center">
       <p class="text-[14px] font-serif text-black">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
       <h1 class="text-[22px] font-black tracking-[4px] text-black mt-2 border-b-2 border-[#d4af37] pb-2 inline-block">RISHTA BIODATA</h1>
     </div>
-    
     <div class="mt-6 relative">
-      <div class="absolute top-0 right-0 w-[32mm] h-[40mm] border-[2.5px] border-[#d4af37] rounded-lg overflow-hidden bg-white">
-        <img id="p_photo" class="w-full h-full object-cover"><div id="photoPlaceholder" class="text-[10px] text-black text-center mt-[15mm]">Photo</div>
+      <div class="absolute top-0 right-0 w-[120px] h-[150px] border-[2.5px] border-[#d4af37] rounded-lg overflow-hidden bg-white">
+        <img id="p_photo" class="w-full h-full object-cover"><div id="photoPlaceholder" class="text-[10px] text-black text-center mt-[55px]">Photo</div>
       </div>
-      
       <div class="w-[60%] ml-2 space-y-[14px] text-black text-[12px] leading-[22px]">
         <p><b>Name:</b> <span id="p_name">______</span></p>
         <p><b>Father Name:</b> <span id="p_father">______</span></p>
@@ -89,13 +85,11 @@ body{background:#0f0a1a; color:#fff}
 const names=["Cream Gold Baroque","Navy Blue Gold","Maroon Bridal Velvet","Damask Glitter Luxury","Rose Gold Love","Black Marble Gold","Pearl Silver Royal","Emerald Green Gold","Champagne Silk","Purple Velvet Gold","Gold Hearts Luxury","White Gold Marble"];
 const params=new URLSearchParams(location.search);
 let d=parseInt(params.get('d'))||1;
+if(d<1||d>12) d=1;
 document.getElementById('designTitle').innerText=`Design ${String(d).padStart(2,'0')} - ${names[d-1]}`;
-const borderSrc=`./borders/border_a4_${d}.jpg`;
-const a4=document.getElementById('a4-page');
-a4.style.backgroundImage=`url('${borderSrc}')`;
-let imgTest=new Image();
-imgTest.onerror=()=>{ a4.style.backgroundImage=`url('./borders/border_a4_${d}.webp')`; };
-imgTest.src=borderSrc;
+const bgImg=document.getElementById('bgImg');
+bgImg.src=`./borders/border_a4_${d}.jpg`;
+bgImg.onerror=()=>{ bgImg.src=`./borders/border_a4_${d}.webp`; };
 
 function bind(inputId, previewId){
   document.getElementById(inputId).addEventListener('input', e=>{
@@ -117,18 +111,48 @@ document.getElementById('f_photo').addEventListener('change', e=>{
   r.readAsDataURL(file);
 });
 
-function downloadPDF(){
-  const opt={margin:0, filename:`Premium_Biodata_${d}.pdf`, image:{type:'jpeg', quality:1}, html2canvas:{scale:3, useCORS:true, logging:false}, jsPDF:{unit:'mm', format:'a4', orientation:'portrait'}};
-  html2pdf().set(opt).from(a4).save();
+async function getCanvas(){
+  const a4=document.getElementById('a4-page');
+  return await html2canvas(a4,{
+    scale:2,
+    useCORS:true,
+    allowTaint:true,
+    backgroundColor:'#ffffff',
+    windowWidth:794,
+    width:a4.scrollWidth,
+    height:a4.scrollHeight,
+    scrollX:0,
+    scrollY:-window.scrollY
+  });
 }
 
-function downloadJPG(){
-  html2canvas(a4, {scale:3, useCORS:true, backgroundColor:null}).then(canvas=>{
+async function downloadJPG(){
+  const canvas=await getCanvas();
+  canvas.toBlob(function(blob){
+    const url=URL.createObjectURL(blob);
     const link=document.createElement('a');
     link.download=`Premium_Biodata_${d}.jpg`;
-    link.href=canvas.toDataURL('image/jpeg',0.95);
+    link.href=url;
     link.click();
-  });
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+  },'image/jpeg',0.95);
+}
+
+async function downloadPDF(){
+  const {jsPDF}=window.jspdf;
+  const canvas=await getCanvas();
+  canvas.toBlob(function(blob){
+    const reader=new FileReader();
+    reader.onload=function(){
+      const imgData=reader.result;
+      const pdf=new jsPDF('p','mm','a4');
+      const w=210;
+      const h=(canvas.height*w)/canvas.width;
+      pdf.addImage(imgData,'JPEG',0,0,w,h);
+      pdf.save(`Premium_Biodata_${d}.pdf`);
+    };
+    reader.readAsDataURL(blob);
+  },'image/jpeg',0.95);
 }
 </script>
 </body>
