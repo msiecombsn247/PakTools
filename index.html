@@ -8,130 +8,72 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 *{font-family:'Inter',sans-serif}body{background:#07010f;color:white;margin:0;overflow-x:hidden}
-.galaxy-bg{position:fixed;inset:0;z-index:0;background:#07010f}
-.galaxy{position:absolute;border-radius:50%;filter:blur(80px);animation:galaxyMove 30s infinite alternate}
-.g1{width:1200px;height:1200px;background:radial-gradient(circle at 30% 30%,#c084fc,#7e22ce 25%,#1a0533 60%,transparent 75%);top:-20%;left:-10%;opacity:0.6}
-.g2{width:1100px;height:1100px;background:radial-gradient(circle at 70% 70%,#a855f7,#581c87 25%,#0a0218 60%,transparent 75%);bottom:-30%;right:-15%;opacity:0.6}
-.g3{width:800px;height:800px;background:radial-gradient(circle at 50% 50%,#9333ea,#4c1d95 30%,transparent 70%);top:30%;left:35%;opacity:0.35}
-@keyframes galaxyMove{0%{transform:translate(0,0)}100%{transform:translate(30px,20px)}}
-.tag{letter-spacing:2px;text-transform:uppercase;font-size:11px;background:linear-gradient(90deg,#d8b4fe,#f0abfc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900}
-.btn-main{background:linear-gradient(90deg,#9333ea,#7e22ce);border-radius:9999px;padding:14px 28px;font-weight:900;box-shadow:0 0 20px rgba(168,85,247,0.5);transition:0.2s;display:inline-block}
-.btn-main:hover{transform:translateY(-1px);box-shadow:0 0 30px rgba(168,85,247,0.7)}
-.btn-ai{background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.15);border-radius:9999px;padding:14px 28px;font-weight:900;transition:0.2s;display:inline-flex;align-items:center;gap:8px}
-.btn-ai:hover{background:rgba(255,255,255,0.15);border-color:rgba(168,85,247,0.5);transform:translateY(-1px)}
-.tool-card{background:linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03));backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:18px;transition:0.3s}
-.tool-card:hover{transform:translateY(-3px);border-color:rgba(168,85,247,0.5);box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+.galaxy-bg{position:fixed;inset:0;z-index:0;background:#07010f;overflow:hidden}
+.galaxy{position:absolute;border-radius:50%;filter:blur(80px);animation:galaxyMove 30s infinite alternate;opacity:0.6}
+.g1{width:1200px;height:1200px;background:radial-gradient(circle at 30% 30%,#c084fc,#7e22ce 25%,#1a0533 60%,transparent 70%);top:-300px;left:-200px}
+.g2{width:900px;height:900px;background:radial-gradient(circle at 50% 50%,#a855f7,#4c1d95 40%,transparent 70%);bottom:-200px;right:-100px}
+.g3{width:800px;height:800px;background:radial-gradient(circle at 20% 80%,#7e22ce,#1a0533 50%,transparent 70%);top:40%;left:50%}
+@keyframes galaxyMove{0%{transform:translate(0,0) scale(1)}100%{transform:translate(100px,80px) scale(1.1)}}
+.tools-marquee-wrapper{flex:1;overflow:hidden;margin:0 20px;mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent)}
+.tools-marquee-track{display:flex;gap:10px;width:max-content;animation:scrollTools 50s linear infinite}
+.tools-marquee-track:hover{animation-play-state:paused}
+.tool-pill{white-space:nowrap;padding:5px 13px;border-radius:999px;font-size:12.5px;font-weight:700;background:rgba(192,132,252,0.12);border:1px solid rgba(192,132,252,0.25);color:#e9d5ff;text-decoration:none;display:flex;align-items:center}
+.tool-pill:hover{background:rgba(192,132,252,0.25);color:white}
+@keyframes scrollTools{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.mobile-marquee{display:none}
+@media(max-width:1180px){.tools-marquee-wrapper{display:none}.mobile-marquee{display:block;overflow:hidden;background:rgba(0,0,0,0.35);border-bottom:1px solid rgba(192,132,252,0.2);padding:8px 0}}
+.tool-card{background:rgba(18,8,33,0.85);border:1px solid rgba(192,132,252,0.18);border-radius:18px;padding:18px;transition:all 0.25s}
+.tool-card:hover{transform:translateY(-4px);border-color:#a855f7;background:rgba(28,12,50,0.95)}
 </style>
 </head>
 <body>
 <div class="galaxy-bg"><div class="galaxy g1"></div><div class="galaxy g2"></div><div class="galaxy g3"></div></div>
-
-<header class="relative z-20 sticky top-0 border-b border-white/10 bg-[#07010f]/90 backdrop-blur-xl">
-<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-<a href="index.html" class="font-black text-xl flex items-center gap-2" style="text-decoration:none;color:white"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center shadow-[0_0_15px_rgba(168,85,247,0.6)]">P</div>PakTools</a>
-<div class="flex gap-2 items-center">
-<a href="about.html" class="text-[12px] bg-white/10 border border-white/20 px-5 py-2 rounded-full font-bold hover:bg-white/20" style="text-decoration:none;color:white">About</a>
-<a href="privacy-policy.html" class="text-[12px] bg-white/10 border border-white/20 px-5 py-2 rounded-full font-bold hover:bg-white/20" style="text-decoration:none;color:white">Privacy</a>
-<a href="blog.html" class="text-[12px] bg-white/10 border border-white/20 px-5 py-2 rounded-full font-bold hover:bg-white/20" style="text-decoration:none;color:white">Blogs</a>
-</div>
-</div>
-</header>
-
-<main class="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-20">
-<div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-
-<div class="w-full lg:w-[66.66%] text-left">
-<div class="tag">Built Faster Create Smarter - NEW: Greeting Cards Maker + Rishta Bio 40 Borders + Chitthi Voice + Income Tax + Car Loan</div>
-<h1 class="mt-4 text-4xl md:text-6xl font-black leading-[1.05]">Pakistan's No.1<br>All-in-One <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-fuchsia-300 to-purple-400">Toolkit</span></h1>
-
-<div class="mt-8 flex flex-wrap gap-3">
-<a href="explore.html" class="btn-main text-sm" style="text-decoration:none;color:white">Explore Tools →</a>
-<button onclick="openAskAI()" class="btn-ai text-sm">✨ Ask AI</button>
-</div>
-
-<p class="mt-6 text-gray-400 text-[13px] md:text-[14px] leading-relaxed max-w-xl">39 Powerful Tools - NEW: Greeting Cards Maker (Love, Birthday, Wedding, Eid, Ramzan), Rishta Bio Maker 40 A4 Borders (Coloured & Black/White Printer Friendly) + Photo, Chitthi Bol Kar Application, Income Tax FBR 2025-26, Car Loan Islamic, Token Tax Punjab 0.3%, Electricity Bill, Solar ROI, Wirasat, Property Tax, Zakat, GST, USD Live + Gold</p>
-
-<div class="mt-8 flex gap-2 flex-wrap text-[11px] text-gray-500">
-<span class="bg-gradient-to-r from-yellow-400/30 to-orange-500/30 text-yellow-200 border border-yellow-400/30 px-3 py-1 rounded-full font-bold">💌 Greeting Cards NEW</span>
-<span class="bg-gradient-to-r from-pink-500/30 to-rose-500/30 text-pink-200 border border-pink-400/30 px-3 py-1 rounded-full font-bold">💍 Rishta Bio 40 Borders</span>
-<span class="bg-gradient-to-r from-purple-500/30 to-fuchsia-500/30 text-fuchsia-200 border border-fuchsia-400/30 px-3 py-1 rounded-full font-bold">✉️ Chitthi Voice</span>
-<span class="bg-white/10 px-3 py-1 rounded-full">100% Free</span>
-</div>
-</div>
-
-<div class="w-full lg:w-[33.33%] flex flex-col gap-4">
-<a href="rishta-bio/index.html" style="text-decoration:none"><div class="tool-card"><div class="flex justify-between items-start"><div><div class="text-[11px] font-black tracking-widest text-pink-300">NEW - 40 DESIGNS</div><div class="mt-1 text-[18px] font-black text-white leading-tight">Rishta Bio Maker</div><div class="mt-1 text-[11px] text-gray-400">40 A4 Borders Coloured & B&W</div></div><div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-[18px]">💍</div></div><div class="mt-4 text-[12px] font-bold text-pink-300">Banao →</div></div></a>
-<a href="chitthi/index.html" style="text-decoration:none"><div class="tool-card"><div class="flex justify-between items-start"><div><div class="text-[11px] font-black tracking-widest text-fuchsia-300">VOICE TYPING</div><div class="mt-1 text-[18px] font-black text-white leading-tight">Chitthi Bnao</div><div class="mt-1 text-[11px] text-gray-400">Bol Kar Application Likho</div></div><div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-fuchsia-600 flex items-center justify-center text-[18px]">✉️</div></div><div class="mt-4 text-[12px] font-bold text-fuchsia-300">Banao →</div></div></a>
-<a href="cards/index.html" style="text-decoration:none"><div class="tool-card border-yellow-400/40 shadow-[0_0_20px_rgba(251,191,36,0.15)]"><div class="flex justify-between items-start"><div><div class="text-[11px] font-black tracking-widest text-yellow-300">NEW LAUNCH</div><div class="mt-1 text-[18px] font-black text-white leading-tight">Greeting Cards Maker</div><div class="mt-1 text-[11px] text-gray-400">Love, Birthday, Wedding, Eid</div></div><div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-[18px]">💌</div></div><div class="mt-4 text-[12px] font-bold text-yellow-300">Banao →</div></div></a>
-</div>
-</div>
-</main>
-
-<!-- ASK AI MODAL -->
-<div id="askAIModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-[999] hidden flex items-end md:items-center justify-center p-0 md:p-4">
-  <div class="bg-[#110722] border border-white/15 w-full md:max-w-[520px] md:rounded-[24px] rounded-t-[24px] overflow-hidden flex flex-col h-[85vh] md:h-[75vh] shadow-[0_0_60px_rgba(168,85,247,0.3)]">
-    <div class="p-4 border-b border-white/10 flex justify-between items-center bg-gradient-to-r from-purple-900/30 to-fuchsia-900/20">
-      <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center">✨</div><div><h3 class="font-black text-[14px]">PakTools AI</h3><p class="text-[11px] text-gray-400">Ask anything about our tools</p></div></div>
-      <button onclick="closeAskAI()" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full text-[14px]">✕</button>
-    </div>
-    <div id="chatBox" class="flex-1 p-4 overflow-y-auto space-y-3 text-[13px] leading-relaxed">
-      <div class="bg-white/[0.07] border border-white/10 p-3.5 rounded-2xl rounded-bl-[6px] mr-8">Walaikum Salam! 👋<br>Main PakTools AI hun. Aap Rishta Bio, Income Tax, Wirasat, Chitthi Voice ya kisi bhi tool ke bare me pooch sakte hain.</div>
-    </div>
-    <div class="p-3 border-t border-white/10 bg-black/20 flex gap-2">
-      <input id="aiInput" onkeydown="if(event.key==='Enter') sendAI()" placeholder="Type your question..." class="flex-1 bg-black/50 border border-white/15 rounded-full px-5 py-3 text-[13px] outline-none focus:border-purple-500 focus:bg-black/70">
-      <button onclick="sendAI()" class="bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 px-6 py-3 rounded-full font-black text-[13px] shadow-[0_0_15px_rgba(168,85,247,0.4)]">Send</button>
-    </div>
+<header style="position:sticky;top:0;z-index:50;background:rgba(7,1,15,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(192,132,252,0.15);padding:12px 2.5%;">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1600px;margin:0 auto;">
+    <a href="/" style="display:flex;align-items:center;gap:8px;text-decoration:none;"><div style="width:36px;height:36px;background:#a855f7;border-radius:10px;display:grid;place-items:center;font-weight:900;color:white;">P</div><span style="font-weight:800;font-size:19px;color:white;">PakTools</span></a>
+    <div class="tools-marquee-wrapper"><div class="tools-marquee-track" id="desktopTrack"></div></div>
+    <div style="display:flex;gap:8px;"><a href="/about.html" style="padding:6px 14px;border-radius:999px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:white;font-size:13px;font-weight:600;text-decoration:none;">About</a><a href="/explore.html" style="padding:6px 14px;border-radius:999px;background:white;color:black;font-size:13px;font-weight:700;text-decoration:none;">Explore 36</a><a href="/" style="padding:6px 14px;border-radius:999px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:white;font-size:13px;font-weight:600;text-decoration:none;">Home</a></div>
   </div>
-</div>
-
-<footer class="relative z-10 border-t border-white/10 mt-10">
-<div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-[11px] text-gray-500">
-<div>© 2025 PakTools - 39 Tools - Pakistan No.1 Toolkit</div>
-<div class="flex gap-4"><a href="about.html" style="color:#6b7280">About</a><a href="privacy-policy.html" style="color:#6b7280">Privacy</a><a href="blog.html" style="color:#6b7280">Blogs</a></div>
-</div>
-</footer>
-
+</header>
+<div class="mobile-marquee"><div class="tools-marquee-track" id="mobileTrack" style="animation-duration:35s"></div></div>
+<main style="position:relative;z-index:10;max-width:1300px;margin:0 auto;padding:40px 5% 20px;text-align:center;">
+  <div style="display:inline-flex;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(168,85,247,0.15);border:1px solid rgba(168,85,247,0.3);font-size:12px;font-weight:700;color:#d8b4fe;margin-bottom:18px;">🎉 NEW: Greeting Cards Maker + Rishta Bio 40 Borders + Chitthi Voice</div>
+  <h1 style="font-size:clamp(32px,6vw,64px);font-weight:900;line-height:0.95;letter-spacing:-2px;margin:0;">39 Free Tools <br><span style="background:linear-gradient(90deg,#c084fc,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Pakistan No.1</span> Toolkit</h1>
+  <p style="max-width:720px;margin:16px auto 0;color:#a1a1aa;font-size:15px;">Income Tax FBR 2025-26, Car Loan Islamic, Token Tax Punjab 0.3%, Electricity Bill LESCO, Solar ROI, Wirasat, Property Tax, Zakat, GST, CV Maker, Passport Photo & more - 100% Free</p>
+  <div style="margin:22px auto;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;"><a href="/explore.html" style="padding:12px 28px;border-radius:999px;background:white;color:black;font-weight:800;text-decoration:none;">Explore 39 Tools →</a><a href="#featured" style="padding:12px 28px;border-radius:999px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:white;font-weight:700;text-decoration:none;">Search Tools</a></div>
+</main>
+<section id="featured" style="position:relative;z-index:10;max-width:1300px;margin:0 auto;padding:10px 3% 60px;"><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;" id="toolsGrid"></div></section>
+<footer style="position:relative;z-index:10;text-align:center;padding:30px 5%;border-top:1px solid rgba(255,255,255,0.08);color:#71717a;font-size:13px;">© 2025 PakToolsOnline.com - Made in Pakistan | <a href="/about.html" style="color:#a1a1aa;">About</a> | <a href="/privacy.html" style="color:#a1a1aa;">Privacy</a> | <a href="/contact.html" style="color:#a1a1aa;">Contact</a></footer>
 <script>
-function openAskAI(){ document.getElementById('askAIModal').classList.remove('hidden'); document.body.style.overflow='hidden'; }
-function closeAskAI(){ document.getElementById('askAIModal').classList.add('hidden'); document.body.style.overflow='auto'; }
-
-async function sendAI(){
-  const input = document.getElementById('aiInput');
-  const box = document.getElementById('chatBox');
-  const q = input.value.trim();
-  if(!q) return;
-  
-  box.innerHTML += `<div class="bg-gradient-to-r from-purple-600 to-purple-700 p-3.5 rounded-2xl rounded-br-[6px] ml-12 text-right">${q}</div>`;
-  input.value = '';
-  box.scrollTop = box.scrollHeight;
-  
-  const tempId = 'temp-'+Date.now();
-  box.innerHTML += `<div id="${tempId}" class="bg-white/[0.07] border border-white/10 p-3.5 rounded-2xl rounded-bl-[6px] mr-8 text-gray-400">Typing...</div>`;
-  box.scrollTop = box.scrollHeight;
-
-  // OFFLINE SMART ANSWERS (Agar API key nahi hai to bhi chalega)
-  const lower = q.toLowerCase();
-  let answer = null;
-  if(lower.includes('rishta') || lower.includes('bio')) answer = "💍 <b>Rishta Bio Maker:</b> 40 A4 Designs (Coloured & B&W) available hain. Aap Name, Father Name, Age, Education etc. add karke PDF/JPG download kar sakte hain. Premium borders bhi hain. <a href='rishta-bio/index.html' style='color:#f9a8d4;text-decoration:underline'>Open Rishta Bio →</a>";
-  else if(lower.includes('tax') || lower.includes('income')) answer = "💰 <b>Income Tax 2025-26:</b> FBR ke new slabs ke hisab se calculate karta hai. Salary enter karo, automatic tax nikal jayega.";
-  else if(lower.includes('chitthi') || lower.includes('application')) answer = "✉️ <b>Chitthi Voice:</b> Bol kar application likho! Urdu/English me voice typing se chitthi ban jayegi. <a href='chitthi/index.html' style='color:#e9d5ff;text-decoration:underline'>Try Chitthi →</a>";
-  else if(lower.includes('card') || lower.includes('greeting')) answer = "💌 <b>Greeting Cards:</b> Love, Birthday, Wedding, Eid, Ramzan cards banane ka naya tool launch hua hai!";
-
-  setTimeout(async ()=>{
-    const el = document.getElementById(tempId);
-    if(answer){
-      el.innerHTML = answer;
-      el.classList.remove('text-gray-400');
-    } else {
-      // Agar Groq API lagani hai to yahan key dalo
-      // const GROQ_KEY = "gsk_xxxx";
-      // Agar key nahi hai to generic answer:
-      el.innerHTML = "Main samajh gaya! PakTools par 39 tools hain. Aap <b>Rishta Bio, Chitthi, Greeting Cards, Income Tax</b> ke bare me pooch sakte hain. Jaldi hi main live AI se connect ho jaunga!";
-      el.classList.remove('text-gray-400');
-    }
-    box.scrollTop = box.scrollHeight;
-  }, 700);
-}
+const tools = [
+  {icon:'💌', name:'Greeting Cards Maker', desc:'Love Birthday Wedding Eid Ramzan', link:'/greeting-cards.html', tag:'NEW'},
+  {icon:'💍', name:'Rishta Bio Maker', desc:'40 Borders A4 PDF Download', link:'/rishta-bio.html', tag:'HOT'},
+  {icon:'🎙️', name:'Chitthi Bnao Voice', desc:'Bol Kar Application Likhain', link:'/chitthi-bnao.html', tag:'VOICE'},
+  {icon:'⚖️', name:'Wirasat Calculator', desc:'Islamic Hanafi 2:1 Ratio Faraiz', link:'/wirasat.html'},
+  {icon:'🏠', name:'Property Tax Calculator', desc:'Filer 3% Non-Filer 6% Transfer', link:'/property-tax.html'},
+  {icon:'⚡', name:'Electricity Bill Calculator', desc:'LESCO K-Electric Slab 2026', link:'/electricity-bill.html'},
+  {icon:'☀️', name:'Solar ROI Calculator', desc:'5kW Payback 3.2 Years 25Y Profit', link:'/solar-roi.html'},
+  {icon:'🕌', name:'Zakat Calculator 2025', desc:'Gold Silver 2.5% Nisab 105K', link:'/zakat.html'},
+  {icon:'🧾', name:'GST Calculator 18%', desc:'FBR Inclusive Exclusive', link:'/gst.html'},
+  {icon:'💵', name:'Currency + Gold Live', desc:'USD SAR AED + Gold Tola', link:'/currency.html'},
+  {icon:'📸', name:'Passport Photo Maker', desc:'35x45mm 300 DPI PK', link:'/passport-photo.html'},
+  {icon:'📄', name:'CV Maker Pakistan', desc:'ATS Resume PDF Free', link:'/cv-maker.html'},
+  {icon:'🖼️', name:'JPG to PNG', desc:'Convert formats', link:'/jpg-to-png.html'},
+  {icon:'🎨', name:'Color Palette', desc:'Generate colors', link:'/color-palette.html'},
+  {icon:'🔢', name:'Word Counter', desc:'Count words & chars', link:'/word-counter.html'},
+  {icon:'%', name:'Percentage Calc', desc:'Calculate percent', link:'/percentage.html'},
+  {icon:'✨', name:'AI Bio Generator', desc:'Generate bios', link:'/ai-bio.html'},
+  {icon:'🔐', name:'Password Generator', desc:'Strong passwords', link:'/password-generator.html'},
+  {icon:'⚖️', name:'BMI Calculator', desc:'Check BMI', link:'/bmi.html'},
+  {icon:'🎂', name:'Age Calculator PRO', desc:'PPSC 21-28 Check', link:'/age-calculator.html'},
+  {icon:'💰', name:'Salary Calculator PRO', desc:'After Tax 2025-26 EOBI', link:'/salary.html'}
+];
+function createPill(t){ return `<a href="${t.link}" class="tool-pill"><span style="margin-right:5px">${t.icon}</span>${t.name}</a>`; }
+function createCard(t){ return `<a href="${t.link}" style="text-decoration:none;color:white;"><div class="tool-card"><div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:10px;"><div style="font-size:24px;">${t.icon}</div>${t.tag?`<span style="font-size:10px;font-weight:800;padding:3px 8px;border-radius:999px;background:#a855f7;color:white;">${t.tag}</span>`:''}</div><div style="font-weight:700;font-size:15px;margin-bottom:4px;">${t.name}</div><div style="font-size:12px;color:#a1a1aa;">${t.desc}</div></div></a>`; }
+const doubleTools = [...tools, ...tools];
+document.getElementById('desktopTrack').innerHTML = doubleTools.map(createPill).join('');
+document.getElementById('mobileTrack').innerHTML = doubleTools.map(createPill).join('');
+document.getElementById('toolsGrid').innerHTML = tools.map(createCard).join('');
 </script>
 </body>
 </html>
