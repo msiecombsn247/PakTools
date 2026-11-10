@@ -19,54 +19,59 @@ body{margin:0;min-height:100vh;color:white;overflow-x:hidden}
 }
 .glass{background:rgba(255,255,255,.08);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.18)}
 .tab-card{transition:.3s}
-.tab-card:hover{transform:translateY(-6px) scale(1.02);background:rgba(255,255,255,.14);box-shadow:0 25px 50px rgba(0,0,0,.4)}
+.tab-card:hover{transform:translateY(-3px) scale(1.01);background:rgba(255,255,255,.14);box-shadow:0 20px 40px rgba(0,0,0,.4)}
 .urdu{font-family:'Noto Nastaliq Urdu',serif}
 </style>
 </head>
 <body>
 <div class="bg-img"></div><div class="bg-overlay"></div>
 
-<!-- Top Bar -->
-<header class="flex justify-between items-center px-5 md:px-8 py-4">
-  <a href="../" class="font-extrabold text-lg" style="text-decoration:none;color:white">← PakTools</a>
-  <span class="text-[11px] glass px-3 py-1.5 rounded-full">💍 Rishta Bio Maker</span>
+<header class="flex justify-between items-center px-5 md:px-8 py-3">
+  <a href="../" class="font-extrabold text-base" style="text-decoration:none;color:white">← PakTools</a>
+  <span class="text-[11px] glass px-3 py-1 rounded-full">💍 Rishta Bio Maker</span>
 </header>
 
-<!-- Center -->
-<main class="max-w-4xl mx-auto px-5 pt-8 md:pt-14 pb-16 text-center">
-  <div class="text-[11px] tracking-[2.5px] font-bold text-pink-200">APNA KHUBSURAT RISHTA BIODATA BANAYEN</div>
-  <h1 class="text-5xl md:text-6xl font-black leading-none mt-4">Rishta Biodata<br><span class="text-pink-300">Maker</span></h1>
-  <p class="urdu text-lg text-white/80 mt-5 leading-8">Apna pyaara sa rishta biodata banayen, apni pasand ka style chunen</p>
-  <p class="text-white/60 text-[13px] mt-2">Choose your style - Simple ke liye Normal, Premium Design ke liye Premium</p>
+<main class="max-w-[720px] mx-auto px-4 pt-4 md:pt-6 pb-6 text-center">
+  <div class="text-[10px] tracking-[2.5px] font-bold text-pink-200">APNA KHUBSURAT RISHTA BIODATA BANAYEN</div>
+  <h1 class="text-4xl md:text-5xl font-black leading-none mt-2">Rishta Biodata <span class="text-pink-300">Maker</span></h1>
+  <p class="urdu text-base text-white/80 mt-3 leading-7">Apna pyaara sa rishta biodata banayen, apni pasand ka style chunen</p>
 
-  <!-- 2 TABS IN CENTER -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10 text-left">
+  <!-- 2 SMALL TABS -->
+  <div class="grid grid-cols-2 gap-3 mt-6 text-left">
 
-    <!-- TAB 1 : NORMAL -->
-    <a href="normal/" style="text-decoration:none;color:white" class="tab-card glass rounded-[24px] p-6 block">
+    <!-- NORMAL - SMALL -->
+    <a href="normal/" style="text-decoration:none;color:white" class="tab-card glass rounded-[20px] p-4 block">
       <div class="flex justify-between items-start">
-        <div class="w-12 h-12 rounded-full bg-white text-black grid place-items-center text-2xl">📝</div>
-        <span class="text-[10px] font-bold bg-white/20 px-2.5 py-1 rounded-full">FREE • SIMPLE</span>
+        <div class="w-10 h-10 rounded-full bg-white text-black grid place-items-center text-xl">📝</div>
+        <span class="text-[9px] font-bold bg-white/20 px-2 py-0.5 rounded-full">FREE</span>
       </div>
-      <h2 class="text-2xl font-extrabold mt-4">Normal</h2>
-      <p class="text-white/60 text-[13px] leading-6 mt-1">Saaf-suthra, simple aur fast biodata.<br>Bina photo ke, print ke liye ready.</p>
-      <div class="mt-5 bg-white text-black text-center py-3 rounded-full font-bold text-sm">Normal Banao →</div>
+      <h2 class="text-xl font-extrabold mt-3">Normal</h2>
+      <p class="text-white/60 text-[12px] leading-5 mt-1">Simple, clean & fast biodata.<br>Without photo, print ready.</p>
+      <div class="mt-3 bg-white text-black text-center py-2.5 rounded-full font-bold text-[13px]">Normal Banao →</div>
     </a>
 
-    <!-- TAB 2 : PREMIUM -->
-    <a href="premium/" style="text-decoration:none;color:white" class="tab-card glass rounded-[24px] p-6 block" >
+    <!-- PREMIUM - SMALL -->
+    <a href="premium/" style="text-decoration:none;color:white" class="tab-card glass rounded-[20px] p-4 block">
       <div class="flex justify-between items-start">
-        <div class="w-12 h-12 rounded-full grid place-items-center text-2xl" style="background:linear-gradient(135deg,#ec4899,#6366f1)">👑</div>
-        <span class="text-[10px] font-bold px-2.5 py-1 rounded-full" style="background:#ec4899">40 DESIGNS</span>
+        <div class="w-10 h-10 rounded-full grid place-items-center text-xl" style="background:linear-gradient(135deg,#ec4899,#6366f1)">👑</div>
+        <span class="text-[9px] font-bold px-2 py-0.5 rounded-full" style="background:#ec4899">40 DESIGNS</span>
       </div>
-      <h2 class="text-2xl font-extrabold mt-4">Premium</h2>
-      <p class="text-white/60 text-[13px] leading-6 mt-1">40 A4 Borders - Coloured & B&W<br>Photo + Premium Design + HD Download</p>
-      <div class="mt-5 text-center py-3 rounded-full font-bold text-sm" style="background:linear-gradient(135deg,#ec4899,#6366f1)">Premium Banao →</div>
+      <h2 class="text-xl font-extrabold mt-3">Premium</h2>
+      <p class="text-white/60 text-[12px] leading-5 mt-1">40 A4 Borders - Coloured & B&W<br>Photo + Premium + HD Download</p>
+      <div class="mt-3 text-center py-2.5 rounded-full font-bold text-[13px]" style="background:linear-gradient(135deg,#ec4899,#6366f1)">Premium Banao →</div>
     </a>
 
   </div>
 
-  <p class="text-[11px] text-white/40 mt-8">Normal → /rishta-bio/normal/ &nbsp; • &nbsp; Premium → /rishta-bio/premium/</p>
+  <!-- ENGLISH DESCRIPTION BELOW -->
+  <div class="mt-5 glass rounded-2xl px-4 py-3 text-left md:text-center">
+    <p class="text-[12.5px] leading-6 text-white/75 m-0">
+      <b class="text-white">Normal:</b> Select Normal for a simple, clean & normal design Rishta Bio.
+      &nbsp; <span class="text-pink-300">•</span> &nbsp;
+      <b class="text-white">Premium:</b> Click Premium to create your Rishta Bio with a luxury design, beautiful borders & photo.
+    </p>
+  </div>
+
 </main>
 </body>
 </html>
