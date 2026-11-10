@@ -76,10 +76,11 @@ body{background:#020617;color:white;margin:0;overflow-x:hidden;min-height:100vh}
 .pills{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}
 .mini-pill{padding:5px 12px;border-radius:999px;font-size:11px;font-weight:700;border:1px solid rgba(255,255,255,0.12)}
 .right-cards{display:flex;flex-direction:column;gap:16px}
-.r-card{background:rgba(15,23,42,0.6);border:1px solid rgba(99,102,241,0.15);border-radius:20px;padding:20px 20px 16px;position:relative;backdrop-filter:blur(12px);box-shadow:0 0 30px rgba(2,6,23,0.5)}
-.r-card h3{font-size:17px;font-weight:800;margin:4px 0 2px}
+.r-card{background:rgba(15,23,42,0.6);border:1px solid rgba(99,102,241,0.15);border-radius:20px;padding:20px 20px 16px;position:relative;backdrop-filter:blur(12px);box-shadow:0 0 30px rgba(2,6,23,0.5);display:block;text-decoration:none;color:white;cursor:pointer;transition:.25s}
+.r-card:hover{transform:translateY(-3px);border-color:rgba(99,102,241,.45);box-shadow:0 15px 35px rgba(99,102,241,.25);background:rgba(15,23,42,.85)}
+.r-card h3{font-size:17px;font-weight:800;margin:4px 0 2px;color:white}
 .r-card p{font-size:12px;color:#94a3b8;margin:0}
-.r-card .banao{font-size:11.5px;font-weight:700;margin-top:12px;display:inline-block;text-decoration:none}
+.r-card .banao{font-size:11.5px;font-weight:700;margin-top:12px;display:inline-block}
 .badge-new{font-size:9.5px;font-weight:800;letter-spacing:1px}
 .icon-circle{width:42px;height:42px;border-radius:999px;display:grid;place-items:center;position:absolute;top:18px;right:18px;font-size:18px;box-shadow:0 0 15px rgba(0,0,0,0.3)}
 </style>
@@ -113,9 +114,9 @@ body{background:#020617;color:white;margin:0;overflow-x:hidden;min-height:100vh}
     </div>
   </div>
   <div class="right-cards">
-    <div class="r-card"><div class="badge-new" style="color:#f9a8d4">NEW - 40 DESIGNS</div><div class="icon-circle" style="background:linear-gradient(135deg,#ec4899,#6366f1)">💍</div><h3>Rishta Bio Maker</h3><p>40 A4 Borders Coloured & B&W</p><a href="/rishta-bio/" class="banao" style="color:#f9a8d4">Banao →</a></div>
-    <div class="r-card"><div class="badge-new" style="color:#818cf8">VOICE TYPING</div><div class="icon-circle" style="background:linear-gradient(135deg,#6366f1,#0ea5e9)">✉️</div><h3>Chitthi Bnao</h3><p>Bol Kar Application Likho</p><a href="/chitthi/" class="banao" style="color:#a5b4fc">Banao →</a></div>
-    <div class="r-card"><div class="badge-new" style="color:#fde68a">NEW LAUNCH</div><div class="icon-circle" style="background:linear-gradient(135deg,#f59e0b,#ec4899)">💌</div><h3>Greeting Cards Maker</h3><p>Love, Birthday, Wedding, Eid</p><a href="/cards/" class="banao" style="color:#fde68a">Banao →</a></div>
+    <a href="/rishta-bio/" class="r-card"><div class="badge-new" style="color:#f9a8d4">NEW - 40 DESIGNS</div><div class="icon-circle" style="background:linear-gradient(135deg,#ec4899,#6366f1)">💍</div><h3>Rishta Bio Maker</h3><p>40 A4 Borders Coloured & B&W</p><span class="banao" style="color:#f9a8d4">Banao →</span></a>
+    <a href="/chitthi/" class="r-card"><div class="badge-new" style="color:#818cf8">VOICE TYPING</div><div class="icon-circle" style="background:linear-gradient(135deg,#6366f1,#0ea5e9)">✉️</div><h3>Chitthi Bnao</h3><p>Bol Kar Application Likho</p><span class="banao" style="color:#a5b4fc">Banao →</span></a>
+    <a href="/cards/" class="r-card"><div class="badge-new" style="color:#fde68a">NEW LAUNCH</div><div class="icon-circle" style="background:linear-gradient(135deg,#f59e0b,#ec4899)">💌</div><h3>Greeting Cards Maker</h3><p>Love, Birthday, Wedding, Eid</p><span class="banao" style="color:#fde68a">Banao →</span></a>
   </div>
 </div>
 
