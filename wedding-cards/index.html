@@ -1,24 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Normal - Choose Design | PakTools</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>body{background:#07010f;color:#fff}.glass{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px)}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Wedding Cards Maker 6x9 | PakTools</title>
+<style>
+*{box-sizing:border-box;font-family:Arial,sans-serif}
+body{margin:0;min-height:100vh;color:#fff;overflow:hidden;background:#0b0618}
+.bg{position:fixed;inset:0;z-index:-2;background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop');background-size:cover;background-position:center}
+.overlay{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(2,6,23,.72),rgba(20,10,40,.78),rgba(2,6,23,.92))}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 3%}
+.logo{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none;font-weight:800;font-size:16px}
+.logo-icon{width:30px;height:30px;background:linear-gradient(135deg,#ec4899,#f59e0b);border-radius:8px;display:grid;place-items:center;font-size:15px}
+.back{padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:12px;text-decoration:none;font-weight:600}
+.wrap{max-width:700px;margin:0 auto;padding:2px 4% 8px;text-align:center}
+.badge{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(236,72,153,.18);border:1px solid rgba(236,72,153,.4);color:#fbcfe8;font-size:10px;font-weight:800;letter-spacing:1px}
+h1{font-size:34px;line-height:1.05;margin:8px 0 5px}
+h1 span{background:linear-gradient(90deg,#fbcfe8,#fde68a,#f9a8d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-size:12.5px;line-height:1.45;color:#e2e8f0;max-width:520px;margin:0 auto}
+/* SMALL BOXES */
+.box{margin:12px auto 0;max-width:560px;background:rgba(15,23,42,.72);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:8px}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tab{display:block;text-decoration:none;color:#fff;border-radius:12px;padding:10px 8px;border:2px solid transparent;background:rgba(255,255,255,.06);text-align:center}
+.tab:hover{transform:translateY(-2px)}
+.tab-n{border-color:rgba(255,255,255,.15)}
+.tab-n:hover{border-color:#a5b4fc}
+.tab-p{background:linear-gradient(135deg,rgba(236,72,153,.22),rgba(245,158,11,.18));border-color:rgba(236,72,153,.55)}
+.emoji{font-size:22px}
+.t1{font-size:16px;font-weight:900;margin-top:2px}
+.t2{font-size:11px;color:#cbd5e1;margin-top:2px;line-height:1.35}
+.price{margin-top:6px;display:inline-block;padding:3px 9px;border-radius:999px;font-size:10px;font-weight:800}
+.pn{background:rgba(255,255,255,.12)}
+.pp{background:linear-gradient(90deg,#ec4899,#f59e0b)}
+/* DESCRIPTION BELOW - SMALL */
+.desc{max-width:560px;margin:8px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:8px;text-align:left}
+.desc-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:8px 10px}
+.desc-card h3{font-size:11.5px;margin:0 0 3px}
+.desc-card p{font-size:11px;line-height:1.45;color:#cbd5e1;margin:0}
+.feat{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-top:8px}
+.f{padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-size:10px}
+.footer{font-size:10px;color:#94a3b8;margin-top:6px}
+@media(max-width:640px){body{overflow:auto}.desc{grid-template-columns:1fr}h1{font-size:28px}}
+</style>
 </head>
-<body class="p-4">
-<header class="flex justify-between items-center max-w-[1200px] mx-auto mb-6"><a href="../index.html" class="font-black">← Back</a><h1 class="font-black text-xl">🌿 Choose Normal Design - 20 Minimal Floral</h1></header>
-<div class="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4" id="grid"></div>
-<script>
-const names=["Eucalyptus Round","Mini Floral Corner","Classic Blossom","Fern Minimal","Olive Branch","Green Olive","Lavender Corner","Magnolia Bow","Pine Leaf","Ginkgo Leaf","White Blossom","Daisy Flower","Berry Leaf","Pine Needle","Palm Elegant","Lotus Minimal","Hydrangea","Maple Leaf","Wildflower","Meadow"];
-const grid=document.getElementById('grid');
-for(let i=1;i<=20;i++){
-  let div=document.createElement('div');
-  div.className='glass rounded-[16px] overflow-hidden cursor-pointer hover:scale-[1.03] transition group';
-  div.innerHTML=`<div class='bg-white p-2'><img src='borders/border_a4_${i}.jpg' class='w-full h-[220px] object-contain'></div><div class='p-3 text-center'><p class='text-[12px] font-bold'>Design ${String(i).padStart(2,'0')}</p><p class='text-[10px] text-gray-400 mt-1'>${names[i-1]}</p><button class='mt-2 w-full bg-gradient-to-r from-pink-600 to-rose-600 py-2 rounded-full text-[11px] font-bold group-hover:from-pink-500'>Use This Design →</button></div>`;
-  div.onclick=()=>location.href=`builder.html?d=${i}`;
-  grid.appendChild(div);
-}
-</script>
+<body>
+<div class="bg"></div><div class="overlay"></div>
+
+<div class="topbar">
+  <a href="/" class="logo"><span class="logo-icon">P</span> PakTools</a>
+  <a href="/" class="back">← Back to Home</a>
+</div>
+
+<div class="wrap">
+  <span class="badge">💍 WEDDING CARDS MAKER • 6x9 • PAKISTAN</span>
+  <h1>Create Your Wedding Card<br><span>By Yourself</span></h1>
+  <p class="sub">Mehndi, Baraat, Walima — In Just 2 Minutes. Enter Names, Select Date & Download Your Beautiful 6x9 Card.</p>
+
+  <!-- SMALL BOXES -->
+  <div class="box">
+    <div class="tabs">
+      <a href="/wedding-cards/normal.html" class="tab tab-n">
+        <div class="emoji">🤍</div>
+        <div class="t1">Normal</div>
+        <div class="t2">Clean, Simple & Elegant<br>For Everyday Weddings</div>
+        <span class="price pn">100% FREE • 6x9</span>
+      </a>
+      <a href="/wedding-cards/premium.html" class="tab tab-p">
+        <div class="emoji">👑</div>
+        <div class="t1">Premium</div>
+        <div class="t2">Royal Gold + Luxury<br>Mehrab Design</div>
+        <span class="price pp">✨ LUXURY DESIGN</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- DESCRIPTION BELOW -->
+  <div class="desc">
+    <div class="desc-card">
+      <h3>🤍 Normal Design</h3>
+      <p>For a <b>simple, clean & fast</b> wedding card, select <b>Normal</b>. Clean text, light design & 6x9 print size. Best for WhatsApp sharing.</p>
+    </div>
+    <div class="desc-card" style="border-color:rgba(236,72,153,.35)">
+      <h3>👑 Premium Design</h3>
+      <p>For a <b>luxury & royal</b> card, click <b>Premium</b>. Gold Mehrab, Roses & Premium Border. Perfect for Baraat / Walima.</p>
+    </div>
+  </div>
+
+  <div class="feat">
+    <span class="f">✅ Mehndi • Baraat • Walima</span>
+    <span class="f">✅ Bride / Groom / Guest</span>
+    <span class="f">✅ Date / Day / Time</span>
+    <span class="f">✅ Venue</span>
+    <span class="f">✅ 6x9 Download</span>
+  </div>
+  <p class="footer">www.paktoolsonline.com • 100% Free • No Sign-up</p>
+</div>
 </body>
 </html>
