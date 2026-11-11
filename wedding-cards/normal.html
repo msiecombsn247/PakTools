@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Normal - Choose Design | PakTools Wedding Cards</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body{background:#07010f;color:#fff;overflow-x:hidden}
+.glass{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(10px)}
+/* 20 Normal Designs - CSS Preview, Image ki zaroorat nahi */
+.preview{height:210px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.preview .bismillah{font-size:11px;color:#8a6d3b;font-weight:700}
+.preview .title{font-size:13px;font-weight:900;letter-spacing:2px;color:#333;margin-top:6px}
+.preview .names{font-size:16px;font-weight:800;color:#7a5a1f;margin-top:8px;font-family:serif}
+.preview .line{width:70%;height:1px;background:#d4af37;margin:8px 0}
+.preview .events{font-size:9px;color:#555;line-height:1.6;letter-spacing:1px}
+</style>
+</head>
+<body class="p-4">
+<header class="flex justify-between items-center max-w-[1200px] mx-auto mb-4">
+  <a href="../wedding-cards/" class="font-bold text-sm bg-white/10 px-4 py-2 rounded-full">← Back</a>
+  <h1 class="font-black text-[16px] md:text-xl text-center">🤍 Choose Normal Design - 20 Clean & Simple</h1>
+  <span class="text-[11px] bg-pink-600 px-3 py-1.5 rounded-full font-bold">100% FREE</span>
+</header>
 
+<p class="text-center text-[12px] text-gray-400 max-w-[1200px] mx-auto mb-4">Select any design to continue. Next page you will enter Bride Name, Groom Name, Guest Name, Mehndi / Baraat / Walima Date, Day, Time & Venue.</p>
+
+<div class="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-3" id="grid"></div>
+
+<script>
+const designs=[
+ {n:"Eucalyptus Round",c:"#f5f1e8",f:"🌿"},
+ {n:"Mini Floral Corner",c:"#fdf2f5",f:"🌸"},
+ {n:"Classic Blossom",c:"#fff8f0",f:"🌷"},
+ {n:"Fern Minimal",c:"#f0f5ef",f:"🍃"},
+ {n:"Olive Branch",c:"#f7f5ee",f:"🫒"},
+ {n:"Green Olive",c:"#eef2e8",f:"🌱"},
+ {n:"Lavender Corner",c:"#f3f0fa",f:"💜"},
+ {n:"Magnolia Bow",c:"#fff5f5",f:"🎀"},
+ {n:"Pine Leaf",c:"#eef4ee",f:"🌲"},
+ {n:"Ginkgo Leaf",c:"#fdf8e6",f:"🍂"},
+ {n:"White Blossom",c:"#ffffff",f:"🤍"},
+ {n:"Daisy Flower",c:"#fffdf5",f:"🌼"},
+ {n:"Berry Leaf",c:"#fdf0f0",f:"🍒"},
+ {n:"Pine Needle",c:"#f2f5f0",f:"🌿"},
+ {n:"Palm Elegant",c:"#f5f2e8",f:"🌴"},
+ {n:"Lotus Minimal",c:"#fdf2f8",f:"🪷"},
+ {n:"Hydrangea",c:"#eef0ff",f:"💐"},
+ {n:"Maple Leaf",c:"#fef3e6",f:"🍁"},
+ {n:"Wildflower",c:"#fff8ee",f:"🌻"},
+ {n:"Meadow",c:"#f0f8f0",f:"🌺"},
+];
+const grid=document.getElementById('grid');
+designs.forEach((d,i)=>{
+  let num=i+1;
+  let div=document.createElement('div');
+  div.className='glass rounded-[16px] overflow-hidden cursor-pointer hover:scale-[1.03] transition group';
+  div.innerHTML=`
+    <div class='preview' style='background:${d.c}'>
+      <div style='position:absolute;top:8px;left:8px;font-size:18px'>${d.f}</div>
+      <div style='position:absolute;bottom:8px;right:8px;font-size:18px'>${d.f}</div>
+      <div class='bismillah'>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+      <div class='title'>WEDDING INVITATION</div>
+      <div class='names'>Bride & Groom</div>
+      <div class='line'></div>
+      <div class='events'>MEHNDI • BARAAT • WALIMA<br>DATE | DAY | TIME<br>VENUE</div>
+      <div style='font-size:8px;color:#999;margin-top:6px'>www.paktoolsonline.com</div>
+    </div>
+    <div class='p-3 text-center'>
+      <p class='text-[12px] font-bold'>Design ${String(num).padStart(2,'0')}</p>
+      <p class='text-[10px] text-gray-400 mt-0.5'>${d.n}</p>
+      <button class='mt-2 w-full bg-gradient-to-r from-pink-600 to-rose-600 py-2 rounded-full text-[11px] font-bold'>Use This Design →</button>
+    </div>`;
+  div.onclick=()=>location.href=`builder.html?d=${num}`;
+  grid.appendChild(div);
+});
+</script>
+</body>
+</html>
