@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Premium Wedding Card - PakTools</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>*{box-sizing:border-box}body{margin:0;font-family:Georgia,Arial;background:#1a0f1e;color:#fff;padding:15px}
+.top{display:flex;justify-content:space-between;max-width:1100px;margin:auto}
+.top a{color:#ffd700;text-decoration:none;font-weight:700}
+.wrap{max-width:1100px;margin:15px auto;display:grid;grid-template-columns:360px 1fr;gap:18px}
+@media(max-width:800px){.wrap{grid-template-columns:1fr}}
+.form{background:#fff;color:#333;border-radius:14px;padding:16px}
+.form h3{margin:0 0 10px;color:#7c2d5e}.form label{font-size:13px;font-weight:700}
+.form input,.form select{width:100%;padding:9px;margin:5px 0 11px;border:1px solid #ddd;border-radius:8px}
+.row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.btn{width:100%;padding:12px;border:none;border-radius:10px;font-weight:800;cursor:pointer;margin-top:8px}
+.jpg{background:linear-gradient(90deg,#ff2d95,#7b5cff);color:#fff}.pdf{background:#111;color:#fff}
+.styles{display:flex;gap:8px;margin-bottom:12px}.styles button{flex:1;padding:9px;border-radius:20px;border:1px solid #ddd;cursor:pointer;font-weight:700}
+.preview{display:flex;justify-content:center}
+.card{width:480px;max-width:100%;aspect-ratio:3/4.2;background:#fff8f0;color:#222;border:12px solid #d4af37;outline:3px solid #fff;outline-offset:-8px;padding:24px 20px;text-align:center;position:relative}
+.card.gold{background:#fff8f0;border-color:#d4af37}.card.royal{background:#2a0a2e;color:#fff;border-color:#d4af37}
+.card.pink{background:#ffeef2;border-color:#e8a0b8}.card.green{background:#f0f7ee;border-color:#1a5a2a}
+.card .bismillah{font-size:22px;color:#8a6a1a}.card.royal .bismillah{color:#ffd700}
+.card .title{letter-spacing:3px;font-size:13px;margin:4px 0 10px}
+.card .names{font-size:30px;line-height:1.2;margin:10px 0}.card .and{font-size:24px;color:#b08a2a}
+.card .ev{border-top:1px solid #d9c48a;padding:8px 0;font-size:13px}.card .ev b{letter-spacing:2px}
+.card .joy{font-style:italic;font-size:13.5px;margin-top:16px}.card .web{font-size:12px;margin-top:10px;border-top:1px solid #ddd;padding-top:8px}
+.badge{display:inline-block;background:#ffd700;color:#000;font-size:11px;padding:4px 10px;border-radius:12px;font-weight:800}
+</style></head><body>
+<div class="top"><a href="index.html">← Back</a><b>👑 Premium - 40 Luxury Designs</b><span>HD</span></div>
+<div class="wrap">
+<div class="form"><h3>Premium Details</h3>
+<label>Choose Style</label><div class="styles"><button onclick="setStyle('gold')">Gold</button><button onclick="setStyle('royal')">Royal</button><button onclick="setStyle('pink')">Pink</button><button onclick="setStyle('green')">Green</button></div>
+<label>Bride Name</label><input id="bride" value="Ayesha Khan" oninput="up()">
+<label>Groom Name</label><input id="groom" value="Ahmed Ali" oninput="up()">
+<label>Mehndi - Date | Day | Time</label><div class="row"><input id="mDate" value="12 Dec 2026" oninput="up()"><input id="mDay" value="Friday" oninput="up()"><input id="mTime" value="7:00 PM" oninput="up()"></div>
+<label>Barat - Date | Day | Time</label><div class="row"><input id="bDate" value="13 Dec 2026" oninput="up()"><input id="bDay" value="Saturday" oninput="up()"><input id="bTime" value="7:30 PM" oninput="up()"></div>
+<label>Walima - Date | Day | Time</label><div class="row"><input id="wDate" value="14 Dec 2026" oninput="up()"><input id="wDay" value="Sunday" oninput="up()"><input id="wTime" value="7:00 PM" oninput="up()"></div>
+<label>Venue</label><input id="venue" value="Royal Palm Marquee" oninput="up()">
+<label>City</label><input id="city" value="Lahore, Pakistan" oninput="up()">
+<button class="btn jpg" onclick="dlJPG()">Download HD JPG</button>
+<button class="btn pdf" onclick="dlPDF()">Download HD PDF</button>
+</div>
+<div class="preview"><div class="card gold" id="card">
+<span class="badge">👑 PREMIUM LUXURY</span>
+<div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+<div class="title">WEDDING INVITATION</div>
+<div style="font-style:italic;font-size:13px">Together with their families</div>
+<div class="names"><span id="pBride">Ayesha Khan</span><div class="and">&</div><span id="pGroom">Ahmed Ali</span></div>
+<div style="font-style:italic;font-size:13px">Request the honour of your presence<br>to celebrate their wedding</div>
+<div class="ev"><b>MEHNDI</b><br><span id="pM">12 Dec 2026 | Friday, 7:00 PM</span></div>
+<div class="ev"><b>BARAT</b><br><span id="pB">13 Dec 2026 | Saturday, 7:30 PM</span></div>
+<div class="ev"><b>WALIMA</b><br><span id="pW">14 Dec 2026 | Sunday, 7:00 PM</span></div>
+<div style="font-style:italic;font-size:13px;margin-top:10px">Venue: <span id="pV">Royal Palm Marquee</span>, <span id="pC">Lahore, Pakistan</span></div>
+<div class="joy">Your presence will be a source of joy for us</div>
+<div class="web">www.paktoolsonline.com</div>
+</div></div>
+</div>
+<script>
+function setStyle(s){document.getElementById('card').className='card '+s}
+function up(){pBride.textContent=bride.value||'Bride Name';pGroom.textContent=groom.value||'Groom Name';pM.textContent=mDate.value+' | '+mDay.value+', '+mTime.value;pB.textContent=bDate.value+' | '+bDay.value+', '+bTime.value;pW.textContent=wDate.value+' | '+wDay.value+', '+wTime.value;pV.textContent=venue.value;pC.textContent=city.value}
+async function dlJPG(){const c=await html2canvas(document.getElementById('card'),{scale:3});let a=document.createElement('a');a.download='premium-wedding-card.jpg';a.href=c.toDataURL('image/jpeg',0.98);a.click()}
+async function dlPDF(){const c=await html2canvas(document.getElementById('card'),{scale:3});const {jsPDF}=window.jspdf;let p=new jsPDF({unit:'px',format:[c.width,c.height]});p.addImage(c.toDataURL('image/jpeg',0.98),'JPEG',0,0,c.width,c.height);p.save('premium-wedding-card.pdf')}
+</script></body></html>
