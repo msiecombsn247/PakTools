@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Normal Wedding Card - PakTools</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>*{box-sizing:border-box}body{margin:0;font-family:Arial;background:#fff5f7;padding:15px}
+.top{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:auto}
+.top a{color:#c0266b;text-decoration:none;font-weight:700}
+.wrap{max-width:1100px;margin:15px auto;display:grid;grid-template-columns:360px 1fr;gap:18px}
+@media(max-width:800px){.wrap{grid-template-columns:1fr}}
+.form{background:#fff;border-radius:14px;padding:16px;border:1px solid #f3d1de}
+.form h3{margin:0 0 12px;color:#7c2d5e}.form label{font-size:13px;font-weight:700;color:#444}
+.form input{width:100%;padding:9px 10px;margin:5px 0 11px;border:1px solid #ddd;border-radius:8px}
+.row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.btn{width:100%;padding:12px;border:none;border-radius:10px;font-weight:800;cursor:pointer;margin-top:8px}
+.jpg{background:#c0266b;color:#fff}.pdf{background:#111;color:#fff}
+.preview{display:flex;justify-content:center}
+/* CARD */
+.card{width:480px;max-width:100%;aspect-ratio:3/4.2;background:#fff8f0;border:10px solid #c9a24b;outline:3px solid #e8c87a;outline-offset:-6px;border-radius:6px;padding:22px 20px;text-align:center;position:relative;overflow:hidden}
+.card .bismillah{font-size:22px;color:#8a6a1a}.card .title{letter-spacing:3px;font-size:13px;color:#8a6a1a;margin:4px 0 10px}
+.card .arch{border:2.5px solid #c9a24b;border-radius:120px 120px 8px 8px;padding:16px 12px 12px}
+.card .small{font-style:italic;font-size:13px;color:#555}
+.card .names{font-size:28px;color:#8a6a1a;line-height:1.2;font-family:Georgia;margin:8px 0}
+.card .and{font-size:24px;color:#b08a2a}
+.card .ev{border-top:1px solid #d9c48a;padding:8px 0;font-size:13px}
+.card .ev b{letter-spacing:2px;color:#8a6a1a}
+.card .venue{font-style:italic;font-size:13px;margin-top:10px}
+.card .joy{font-style:italic;font-size:13.5px;color:#5a4510;margin-top:16px}
+.card .web{font-size:12px;letter-spacing:1px;color:#8a6a1a;margin-top:10px;border-top:1px solid #eee;padding-top:8px}
+</style></head><body>
+<div class="top"><a href="index.html">← Back</a><b>Normal - Golden Arch Card</b><span>FREE</span></div>
+<div class="wrap">
+<div class="form">
+<h3>Apni Details Likhein</h3>
+<label>Bride Name</label><input id="bride" value="Ayesha Khan" oninput="up()">
+<label>Groom Name</label><input id="groom" value="Ahmed Ali" oninput="up()">
+<label>Mehndi - Date | Day | Time</label><div class="row"><input id="mDate" value="12 Dec 2026" oninput="up()"><input id="mDay" value="Friday" oninput="up()"><input id="mTime" value="7:00 PM" oninput="up()"></div>
+<label>Barat - Date | Day | Time</label><div class="row"><input id="bDate" value="13 Dec 2026" oninput="up()"><input id="bDay" value="Saturday" oninput="up()"><input id="bTime" value="7:30 PM" oninput="up()"></div>
+<label>Walima - Date | Day | Time</label><div class="row"><input id="wDate" value="14 Dec 2026" oninput="up()"><input id="wDay" value="Sunday" oninput="up()"><input id="wTime" value="7:00 PM" oninput="up()"></div>
+<label>Venue Name</label><input id="venue" value="Royal Palm Marquee" oninput="up()">
+<label>City</label><input id="city" value="Lahore, Pakistan" oninput="up()">
+<button class="btn jpg" onclick="dlJPG()">Download JPG</button>
+<button class="btn pdf" onclick="dlPDF()">Download PDF</button>
+</div>
+<div class="preview"><div class="card" id="card">
+<div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+<div class="title">WEDDING INVITATION</div>
+<div class="arch">
+<div class="small">Together with their families</div>
+<div class="names"><span id="pBride">Ayesha Khan</span><div class="and">&</div><span id="pGroom">Ahmed Ali</span></div>
+<div class="small">Request the honour of your presence<br>to celebrate their wedding</div>
+<div class="ev"><b>MEHNDI</b><br><span id="pM">12 Dec 2026 | Friday, 7:00 PM</span></div>
+<div class="ev"><b>BARAT</b><br><span id="pB">13 Dec 2026 | Saturday, 7:30 PM</span></div>
+<div class="ev"><b>WALIMA</b><br><span id="pW">14 Dec 2026 | Sunday, 7:00 PM</span></div>
+<div class="venue">Venue: <span id="pV">Royal Palm Marquee</span>, <span id="pC">Lahore, Pakistan</span></div>
+</div>
+<div class="joy">Your presence will be a source of joy for us</div>
+<div class="web">www.paktoolsonline.com</div>
+</div></div>
+</div>
+<script>
+function up(){
+ pBride.textContent=bride.value||'Bride Name'; pGroom.textContent=groom.value||'Groom Name';
+ pM.textContent=mDate.value+' | '+mDay.value+', '+mTime.value;
+ pB.textContent=bDate.value+' | '+bDay.value+', '+bTime.value;
+ pW.textContent=wDate.value+' | '+wDay.value+', '+wTime.value;
+ pV.textContent=venue.value; pC.textContent=city.value;
+}
+async function dlJPG(){const c=await html2canvas(document.getElementById('card'),{scale:2});let a=document.createElement('a');a.download='wedding-card.jpg';a.href=c.toDataURL('image/jpeg',0.95);a.click()}
+async function dlPDF(){const c=await html2canvas(document.getElementById('card'),{scale:2});const {jsPDF}=window.jspdf;let p=new jsPDF({unit:'px',format:[c.width,c.height]});p.addImage(c.toDataURL('image/jpeg',0.95),'JPEG',0,0,c.width,c.height);p.save('wedding-card.pdf')}
+</script></body></html>
