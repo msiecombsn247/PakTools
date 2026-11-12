@@ -5,47 +5,115 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wedding Card Maker - PakTools</title>
 <style>
-body{font-family:Arial;background:#fdf2f8;margin:0;padding:20px;text-align:center}
-h1{color:#7c2d5e}
-.tabs{display:flex;justify-content:center;gap:10px;margin:20px 0}
-.tab{padding:12px 25px;border-radius:25px;border:none;cursor:pointer;font-weight:bold}
-.active{background:#c0266b;color:#fff}
-.inactive{background:#fff;border:1px solid #c0266b;color:#c0266b}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:15px;max-width:900px;margin:auto}
-.card{background:#fff;border-radius:15px;padding:15px;box-shadow:0 2px 10px #0001}
-.card img{width:100%;border-radius:10px}
-.card button{background:#c0266b;color:#fff;border:none;padding:10px 20px;border-radius:20px;cursor:pointer;margin-top:10px}
+*{box-sizing:border-box}
+body{
+  font-family:'Segoe UI', Arial, sans-serif;
+  margin:0; padding:0;
+  /* Wedding Background - Pink + Gold + Floral Feel */
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255,215,180,.9) 0, transparent 30%),
+    radial-gradient(circle at 90% 20%, rgba(255,183,197,.9) 0, transparent 32%),
+    radial-gradient(circle at 15% 85%, rgba(255,223,186,.9) 0, transparent 30%),
+    radial-gradient(circle at 85% 90%, rgba(255,205,220,.9) 0, transparent 32%),
+    linear-gradient(180deg,#fff5f7 0%, #ffeef2 45%, #fff8f0 100%);
+  min-height:100vh;
+  text-align:center;
+  padding:25px 15px 40px;
+}
+.top-badge{
+  display:inline-block; background:#fff; border:1px solid #f0c9d8;
+  padding:6px 14px; border-radius:20px; font-size:13px; color:#a8325e; font-weight:600;
+}
+h1{color:#7c2d5e; margin:12px 0 5px; font-size:32px}
+h1 span{font-size:32px}
+.subtitle{color:#555; margin:0 0 18px; font-size:16px}
+.tabs{display:flex; justify-content:center; gap:10px; margin:10px 0 12px; flex-wrap:wrap}
+.tab{padding:12px 28px; border-radius:25px; border:none; cursor:pointer; font-weight:bold; font-size:15px}
+.active{background:#c0266b; color:#fff; box-shadow:0 4px 12px rgba(192,38,107,.35)}
+.inactive{background:#fff; border:1.5px solid #c0266b; color:#c0266b}
+/* Normal / Premium Description Box */
+.desc-box{
+  max-width:720px; margin:0 auto 20px; background:rgba(255,255,255,.92);
+  border:1px solid #f3d1de; border-radius:14px; padding:13px 18px;
+  font-size:14.5px; line-height:1.6; color:#444; text-align:center;
+  box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+.desc-box b{color:#7c2d5e}
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; max-width:920px; margin:auto}
+.card{background:#fff; border-radius:16px; padding:20px 16px; box-shadow:0 4px 14px rgba(0,0,0,.07); border:1px solid #ffe3ec}
+.card h3{margin:5px 0 8px; font-size:18px}
+.card p{color:#666; font-size:14px; margin:0 0 14px}
+.card .tag{display:inline-block; background:#fff0f4; color:#c0266b; padding:4px 10px; border-radius:12px; font-size:12px; font-weight:700; margin-bottom:10px}
+.card button{background:#c0266b; color:#fff; border:none; padding:11px 22px; border-radius:20px; cursor:pointer; font-weight:700}
+.footer{margin-top:28px; font-size:13px; color:#888}
+.footer b{color:#c0266b}
 </style>
 </head>
 <body>
-<h1>💍 Wedding Card Maker</h1>
-<p>Free Wedding Invitation Card Banayein</p>
+
+<div class="top-badge">💍 ✨ PakTools • Made With Love in Pakistan ✨ 💍</div>
+<h1><span>💍</span> Wedding Card Maker</h1>
+<p class="subtitle">Create a Beautiful Wedding Invitation Card in 2 Minutes - Free</p>
 
 <div class="tabs">
-<button class="tab active" onclick="showTab('normal',this)">Normal FREE</button>
-<button class="tab inactive" onclick="showTab('premium',this)">Premium 40 Designs</button>
+  <button class="tab active" id="btnNormal" onclick="showTab('normal',this)">Normal FREE</button>
+  <button class="tab inactive" id="btnPremium" onclick="showTab('premium',this)">Premium 40 Designs</button>
 </div>
 
+<!-- Normal Description -->
+<div id="descNormal" class="desc-box">
+  <b>Normal FREE -</b> 20 Beautiful & Simple Wedding Card Designs. Perfect for Mehndi, Barat & Walima.
+  Add Bride & Groom Names, Event Dates, Venue and Download as <b>JPG / PDF - 100% Free, No Login Required.</b>
+</div>
+
+<!-- Premium Description -->
+<div id="descPremium" class="desc-box" style="display:none">
+  <b>Premium - 40 Luxury Designs -</b> Premium Gold, Royal, Floral & Mughal Arch Designs with Elegant Fonts,
+  Fancy Borders & High-Quality Print. Best for Premium Shadi Cards, Special Events & Professional Printing.
+</div>
+
+<!-- NORMAL GRID -->
 <div id="normal" class="grid">
   <div class="card">
+    <div class="tag">🌸 MOST POPULAR</div>
     <h3>Design 01 - Golden Arch</h3>
     <p>Gold + Pink Floral | Mehndi Barat Walima</p>
     <a href="normal/builder.html?design=01"><button>Use This Design</button></a>
   </div>
-  <div class="card"><h3>Design 02 - Coming Soon</h3><p>Same Setting</p><button>Use This Design</button></div>
-  <!-- Isi tarah 20 designs tak copy karna hai -->
+  <div class="card">
+    <div class="tag">COMING SOON</div>
+    <h3>Design 02 - Royal Pink</h3>
+    <p>Same Setting - Bride / Groom / Events</p>
+    <a href="normal/builder.html?design=02"><button>Use This Design</button></a>
+  </div>
 </div>
 
+<!-- PREMIUM GRID -->
 <div id="premium" class="grid" style="display:none">
-  <div class="card"><h3>Premium Design 01</h3><p>40 Premium Designs</p><button>Use This Design</button></div>
+  <div class="card">
+    <div class="tag">👑 PREMIUM</div>
+    <h3>Premium Design 01 - Royal Gold</h3>
+    <p>Luxury Gold Frame | High Quality Print</p>
+    <a href="premium/builder.html?design=p01"><button>Use This Design</button></a>
+  </div>
+  <div class="card">
+    <div class="tag">👑 PREMIUM</div>
+    <h3>Premium Design 02 - Mughal Luxury</h3>
+    <p>Premium Floral + Arch Design</p>
+    <a href="premium/builder.html?design=p02"><button>Use This Design</button></a>
+  </div>
 </div>
+
+<div class="footer">Made by <b>www.paktoolsonline.com</b> • Free Wedding Card Maker • Share With Family & Friends</div>
 
 <script>
 function showTab(id,btn){
- document.getElementById('normal').style.display = id=='normal'?'grid':'none';
- document.getElementById('premium').style.display = id=='premium'?'grid':'none';
- document.querySelectorAll('.tab').forEach(b=>{b.className='tab inactive'});
- btn.className='tab active';
+  document.getElementById('normal').style.display = id=='normal'?'grid':'none';
+  document.getElementById('premium').style.display = id=='premium'?'grid':'none';
+  document.getElementById('descNormal').style.display = id=='normal'?'block':'none';
+  document.getElementById('descPremium').style.display = id=='premium'?'block':'none';
+  document.querySelectorAll('.tab').forEach(b=>{b.className='tab inactive'});
+  btn.className='tab active';
 }
 </script>
 </body>
