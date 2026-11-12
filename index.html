@@ -54,7 +54,7 @@ body{background:#020617;color:white;margin:0;overflow-x:hidden;min-height:100vh}
 }
 @keyframes twinkle{0%{opacity:0.5}100%{opacity:1}}
 @keyframes twinkle2{0%{opacity:0.3}100%{opacity:0.8}}
-.header{position:sticky;top:0;z-index:100;background:rgba(2,6,23,0.75);backdrop-filter:blur(20px);border-bottom:1px solid rgba(99,102,241,0.15);padding:9px 3% 9px 52px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.header{position:sticky;top:0;z-index:100;background:rgba(2,6,23,0.75);backdrop-filter:blur(20px);border-bottom:1px solid rgba(99,102,241,0.15);padding:9px 3% 9px 92px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
 .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#6366f1,#7e22ce);border-radius:9px;display:grid;place-items:center;font-weight:900;color:white;font-size:17px;box-shadow:0 0 20px rgba(99,102,241,0.5)}
 .top-banner-wrap{flex:1;overflow:hidden;margin:0 16px;mask-image:linear-gradient(to right,transparent,black 5%,black 95%,transparent)}
@@ -64,11 +64,10 @@ body{background:#020617;color:white;margin:0;overflow-x:hidden;min-height:100vh}
 .top-pill:hover{background:rgba(99,102,241,0.25);color:white}
 @keyframes scrollBanner{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .mobile-banner{display:none}
-@media(max-width:1150px){.top-banner-wrap{display:none}.mobile-banner{display:block;overflow:hidden;background:rgba(2,6,23,0.6);border-bottom:1px solid rgba(99,102,241,0.15);padding:6px 0 6px 40px}}
-/* COMPACT HERO - NO SCROLL */
-.hero{max-width:1450px;margin:0 auto;padding:14px 3% 10px 52px;display:grid;grid-template-columns:1.25fr 0.5fr;gap:20px;align-items:start}
+@media(max-width:1150px){.top-banner-wrap{display:none}.mobile-banner{display:block;overflow:hidden;background:rgba(2,6,23,0.6);border-bottom:1px solid rgba(99,102,241,0.15);padding:6px 0 6px 84px}}
+.hero{max-width:1450px;margin:0 auto;padding:14px 3% 10px 92px;display:grid;grid-template-columns:1.25fr 0.5fr;gap:20px;align-items:start}
 @media(min-width:901px){.hero{height:calc(100vh - 52px);align-items:center;padding-top:8px;padding-bottom:8px}}
-@media(max-width:900px){.hero{grid-template-columns:1fr;padding-left:48px}}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-left:76px}}
 .hero-top-text{font-size:10px;letter-spacing:1.8px;font-weight:700;color:#818cf8;text-transform:uppercase;line-height:1.5;margin-bottom:10px}
 .hero-h1{font-size:clamp(32px,4.2vw,52px);font-weight:900;line-height:0.95;letter-spacing:-1.2px;margin:0;text-shadow:0 0 40px rgba(99,102,241,0.4)}
 .hero-h1 span{color:#a5b4fc}
@@ -78,7 +77,6 @@ body{background:#020617;color:white;margin:0;overflow-x:hidden;min-height:100vh}
 .hero-desc{margin-top:14px;color:#94a3b8;font-size:12.5px;line-height:1.55;max-width:620px}
 .pills{margin-top:12px;display:flex;gap:7px;flex-wrap:wrap}
 .mini-pill{padding:4px 10px;border-radius:999px;font-size:10.5px;font-weight:700;border:1px solid rgba(255,255,255,0.12)}
-/* RIGHT BOXES - SMALL COMPACT */
 .right-cards{display:flex;flex-direction:column;gap:9px}
 .r-card{background:rgba(15,23,42,0.6);border:1px solid rgba(99,102,241,0.15);border-radius:14px;padding:11px 14px 10px;position:relative;backdrop-filter:blur(12px);box-shadow:0 0 20px rgba(2,6,23,0.5);display:block;text-decoration:none;color:white;cursor:pointer;transition:.25s}
 .r-card:hover{transform:translateY(-2px);border-color:rgba(99,102,241,.45);box-shadow:0 10px 25px rgba(99,102,241,.25);background:rgba(15,23,42,.85)}
@@ -87,11 +85,11 @@ body{background:#020617;color:white;margin:0;overflow-x:hidden;min-height:100vh}
 .r-card .banao{font-size:10.5px;font-weight:700;margin-top:6px;display:inline-block}
 .badge-new{font-size:8.5px;font-weight:800;letter-spacing:0.8px}
 .icon-circle{width:32px;height:32px;border-radius:999px;display:grid;place-items:center;position:absolute;top:11px;right:12px;font-size:15px;box-shadow:0 0 12px rgba(0,0,0,0.3)}
-/* FUN AND INFO TOOLS - TOP TO BOTTOM */
-.left-vertical-tab{position:fixed;left:0;top:0;bottom:0;width:38px;z-index:90;background:linear-gradient(180deg,#f59e0b,#ec4899,#7e22ce);color:white;padding:10px 0;font-size:12px;font-weight:800;letter-spacing:1.5px;writing-mode:vertical-rl;text-decoration:none;box-shadow:4px 0 20px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;gap:10px}
-.left-vertical-tab:hover{width:44px}
-.left-vertical-tab span{font-size:16px}
-@media(max-width:900px){.left-vertical-tab{width:32px;font-size:11px}body{overflow:auto}}
+/* FUN AND INFO TOOLS - DOUBLE MOTA - TOP TO BOTTOM */
+.left-vertical-tab{position:fixed;left:0;top:0;bottom:0;width:76px;z-index:90;background:linear-gradient(180deg,#f59e0b,#ec4899,#7e22ce);color:white;padding:10px 0;font-size:15px;font-weight:900;letter-spacing:2px;writing-mode:vertical-rl;text-decoration:none;box-shadow:6px 0 24px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;gap:12px}
+.left-vertical-tab:hover{width:82px}
+.left-vertical-tab span{font-size:20px}
+@media(max-width:900px){.left-vertical-tab{width:60px;font-size:13px}body{overflow:auto}}
 </style>
 </head>
 <body>
