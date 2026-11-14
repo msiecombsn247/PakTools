@@ -21,6 +21,7 @@ const CATEGORIES_META = [
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     const res = await fetch('tools.json');
+    if (!res.ok) throw new Error('Network response was not ok');
     ALL_TOOLS = await res.json();
     ALL_TOOLS.forEach(tool => {
       if (!tool.blog || tool.blog.length < 400) {
@@ -28,9 +29,15 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     });
     renderCategories();
-  } catch (err) {
-    document.getElementById('categories-grid').innerHTML = `<p style="color:red;">Error loading tools.json. Please ensure all 3 files (index.html, tools.json, script.js) are in the same folder.</p>`;
+  }xncatch (err) {
+    console.error('Error loading tools.json:', err);
+    document.getElementById('categories-grid').innerHTML = `
+      <div style="grid-column:1/-1; background:#FEE2E2; border:1px solid #EF4444; padding:1.5rem; border-radius:12px; text-align:center; color:#991B1B;">
+        <h3>⚠️ `tools.json` file is missing or not reachable!</h3>
+        <p style="margin-top:0.5rem; font-size:0.9rem;">Please ensure <strong>tools.json</strong> is uploaded in the exact same root folder as index.html and script.js on GitHub.</p>
+      </div>`;
   }
+});
 
   const searchInput = document.getElementById('global-search');
   searchInput.addEventListener('input', () => {
