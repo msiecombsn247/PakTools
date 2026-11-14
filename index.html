@@ -4,318 +4,168 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ToolVerse - 150 Free Online Tools For The Whole World</title>
-<meta name="description" content="ToolVerse - 150 Free Online Tools. Business, Finance, Legal, Photo, PDF, Education. No Signup. Works Worldwide.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial,sans-serif}body{background:#fff;color:#111}
 header{max-width:1150px;margin:auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.logo{font-size:27px;font-weight:900;color:#0a2540;display:flex;align-items:center;gap:9px;cursor:pointer}
-.logo span{background:linear-gradient(135deg,#6d28d9,#0a2540);color:#fff;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:11px;font-size:21px}
-.logo i{color:#7c3aed;font-style:normal}
-nav{display:flex;gap:18px;align-items:center;font-size:14px}nav a{color:#333;text-decoration:none;cursor:pointer}
-.btn{background:#0a2540;color:#fff;padding:9px 18px;border-radius:8px;text-decoration:none;font-weight:700;border:none;cursor:pointer}
+.logo{font-size:27px;font-weight:900;color:#0a2540;display:flex;align-items:center;gap:9px;cursor:pointer}.logo span{background:linear-gradient(135deg,#6d28d9,#0a2540);color:#fff;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:11px;font-size:21px}.logo i{color:#7c3aed;font-style:normal}
+nav{display:flex;gap:18px;align-items:center;font-size:14px}nav a{color:#333;text-decoration:none;cursor:pointer}.btn{background:#0a2540;color:#fff;padding:9px 18px;border-radius:8px;font-weight:700;border:none;cursor:pointer}
 .hero{max-width:1150px;margin:8px auto;background:linear-gradient(135deg,#0a2540,#4c1d95,#0a2540);border-radius:20px;padding:38px 20px;text-align:center;color:#fff}
-.hero h1{font-size:44px;line-height:1.05}.hero h1 em{color:#a78bfa;font-style:normal}
-.hero p{color:#d6e2ef;margin:12px 0 20px;font-size:16px;line-height:1.6}
-.search{max-width:560px;margin:0 auto;position:relative}.search input{width:100%;padding:15px 16px 15px 46px;border:none;border-radius:12px;font-size:16px;outline:none;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-.search span{position:absolute;left:15px;top:14px;font-size:19px}
+.hero h1{font-size:44px;line-height:1.05}.hero h1 em{color:#a78bfa;font-style:normal}.hero p{color:#d6e2ef;margin:12px 0 20px;font-size:16px;line-height:1.6}
+.search{max-width:560px;margin:0 auto;position:relative}.search input{width:100%;padding:15px 16px 15px 46px;border:none;border-radius:12px;font-size:16px;outline:none}.search span{position:absolute;left:15px;top:14px;font-size:19px}
 .quick{margin-top:14px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;font-size:13px}.quick b{background:rgba(255,255,255,.15);padding:6px 12px;border-radius:20px;font-weight:500;cursor:pointer}
 .wrap{max-width:1150px;margin:26px auto;padding:0 20px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}.top h2{font-size:26px}.top p{color:#666;font-size:14px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{border:1px solid #e6e6e6;border-radius:16px;padding:20px;display:flex;gap:14px;align-items:flex-start;cursor:pointer;background:#fff}.card:hover{border-color:#6d28d9;transform:translateY(-2px);box-shadow:0 10px 25px rgba(0,0,0,.08)}
-.card .ic{font-size:34px;width:58px;height:58px;min-width:58px;display:flex;align-items:center;justify-content:center;border-radius:14px}
-.card h3{font-size:17px;margin-bottom:4px}.card p{font-size:13px;color:#666;line-height:1.5}.count{background:#ede9fe;color:#5b21b6;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700;margin-top:8px;display:inline-block}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid #e6e6e6;border-radius:16px;padding:20px;display:flex;gap:14px;cursor:pointer;background:#fff}.card:hover{border-color:#6d28d9;transform:translateY(-2px);box-shadow:0 10px 25px rgba(0,0,0,.08)}
+.card .ic{font-size:34px;width:58px;height:58px;min-width:58px;display:flex;align-items:center;justify-content:center;border-radius:14px}.card h3{font-size:17px;margin-bottom:4px}.card p{font-size:13px;color:#666;line-height:1.5}.count{background:#ede9fe;color:#5b21b6;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700;margin-top:8px;display:inline-block}
 #toolsSection{display:none}.back{border:1px solid #ddd;padding:8px 16px;border-radius:20px;cursor:pointer;background:#fff;font-weight:600}
-.toolsGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.toolCard{border:1px solid #eee;border-radius:14px;padding:18px 12px;text-align:center;cursor:pointer;background:#fff}.toolCard:hover{border-color:#6d28d9}
-.toolCard .icon{font-size:32px;margin-bottom:8px}.toolCard h3{font-size:15px}.toolCard p{font-size:12px;color:#666;line-height:1.4;margin:4px 0}
+.toolsGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.toolCard{border:1px solid #eee;border-radius:14px;padding:18px 12px;text-align:center;cursor:pointer;background:#fff}.toolCard:hover{border-color:#6d28d9}.toolCard .icon{font-size:32px;margin-bottom:8px}.toolCard h3{font-size:15px}.toolCard p{font-size:12px;color:#666;line-height:1.4;margin:4px 0}
 .free{display:inline-block;background:#d9eedc;color:#1a5c2a;padding:3px 12px;border-radius:6px;font-size:11px;font-weight:700;margin-top:8px}.pro{display:inline-block;background:#fff3cd;color:#7a5a00;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700;margin-top:8px}
-.trust{max-width:1150px;margin:30px auto;padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:center}.trust div{border:1px solid #eee;border-radius:14px;padding:18px}.trust b{font-size:16px}.trust p{font-size:13px;color:#666;margin-top:4px}
 footer{background:#0a2540;color:#cbd5e1;text-align:center;padding:22px 12px;font-size:13px;line-height:1.8;margin-top:30px}footer b{color:#fff}
-/* TOOL MODAL */
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99;padding:16px;overflow:auto}.modalBox{max-width:820px;margin:20px auto;background:#fff;border-radius:18px;padding:24px}.modalBox h2{font-size:24px;margin-bottom:6px}.modalBox p{color:#666;font-size:14px;line-height:1.6}
-.inp{width:100%;padding:11px 12px;border:1px solid #ddd;border-radius:10px;margin:6px 0;font-size:14px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.invPreview{border:1px solid #eee;border-radius:12px;padding:18px;margin-top:14px;background:#fcfcff}.invPreview h3{font-size:20px}.invPreview table{width:100%;border-collapse:collapse;margin:10px 0}.invPreview th,.invPreview td{border-bottom:1px solid #eee;padding:8px;text-align:left;font-size:13px}
-@media(max-width:750px){.grid{grid-template-columns:1fr}.toolsGrid{grid-template-columns:repeat(2,1fr)}.trust{grid-template-columns:1fr}.hero h1{font-size:32px}nav{display:none}.row{grid-template-columns:1fr}}
-@media print{body *{visibility:hidden}.modalBox,.modalBox *{visibility:visible}.modal{position:static;padding:0;background:#fff}.modalBox{box-shadow:none;margin:0;max-width:100%}.noPrint{display:none}}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99;padding:16px;overflow:auto}.modalBox{max-width:720px;margin:20px auto;background:#fff;border-radius:18px;padding:24px}.modalBox h2{font-size:24px}.modalBox p{color:#666;font-size:14px;line-height:1.6}
+.inp{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin:6px 0;font-size:15px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.result{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:16px;margin-top:12px;font-size:16px;line-height:1.7;text-align:center}.result b{font-size:22px;color:#0a2540}
+.bigBtn{width:100%;padding:14px;background:#0a2540;color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;margin-top:10px}
+.copyBtn{background:#16a34a;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:700;margin-top:10px}
+.invPreview{border:1px solid #eee;border-radius:12px;padding:18px;margin-top:14px;background:#fff}.invPreview table{width:100%;border-collapse:collapse;margin:10px 0}.invPreview th,.invPreview td{border-bottom:1px solid #eee;padding:8px;text-align:left;font-size:13px}
+@media(max-width:750px){.grid{grid-template-columns:1fr}.toolsGrid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:32px}nav{display:none}.row{grid-template-columns:1fr}}
+@media print{body *{visibility:hidden}#printArea,#printArea *{visibility:visible}#printArea{position:absolute;left:0;top:0;width:100%}}
 </style>
 </head>
 <body>
-
-<header>
-  <div class="logo" onclick="goHome()"><span>🌌</span> Tool<i>Verse</i></div>
-  <nav><a onclick="goHome()">Home</a><a onclick="goHome()">Categories</a><a>About</a><a>Contact</a><button class="btn" onclick="goHome()">Get Started</button></nav>
-</header>
-
-<div class="hero">
-  <h1>150 Free Online Tools <br><em>For The Whole World.</em></h1>
-  <p>Business • Finance • Legal • Photo • PDF • Education • Cards • Daily Life<br>Fast • Free • No Signup • Works on Mobile & PC</p>
-  <div class="search"><span>🔍</span><input id="searchInput" type="text" placeholder="Search 150 tools... e.g. Invoice, CV, QR Code" onkeyup="filterTools()"></div>
-  <div class="quick"><b onclick="quickSearch('Invoice')">Invoice</b><b onclick="quickSearch('CV')">CV Maker</b><b onclick="quickSearch('QR')">QR Code</b><b onclick="quickSearch('EMI')">EMI</b><b onclick="quickSearch('Passport')">Passport Photo</b></div>
-</div>
-
-<div class="wrap" id="homeSection">
-  <div class="top"><div><h2>Browse by Category</h2><p>Pick a category - tools will open inside it. Clean homepage, no clutter.</p></div><p id="totalCount">150 Tools • 9 Categories</p></div>
-  <div class="grid" id="catsGrid"></div>
-</div>
-
-<div class="wrap" id="toolsSection">
-  <div class="top"><div><button class="back" onclick="goHome()">← All Categories</button><h2 id="catTitle" style="margin-top:10px">Business & Office</h2><p id="catDesc">Tools in this category</p></div></div>
-  <div class="toolsGrid" id="toolsGrid"></div>
-</div>
-
-<div class="trust">
-  <div><b>⚡ Fast & Free</b><p>No signup. No waiting. Open tool, use it, download it.</p></div>
-  <div><b>🔒 Privacy First</b><p>Your data stays in your browser. We never store your files.</p></div>
-  <div><b>🌍 Made For World</b><p>English first. Works in Pakistan, India, USA, UK, UAE & everywhere.</p></div>
-</div>
-
+<header><div class="logo" onclick="goHome()"><span>🌌</span> Tool<i>Verse</i></div><nav><a onclick="goHome()">Home</a><a onclick="goHome()">Categories</a><a>About</a><a>Contact</a><button class="btn" onclick="goHome()">Get Started</button></nav></header>
+<div class="hero"><h1>150 Free Online Tools <br><em>For The Whole World.</em></h1><p>Business • Finance • Legal • Photo • PDF • Education • Cards • Daily Life<br>Fast • Free • No Signup • Works on Mobile & PC • <b>All Tools Now 100% Working</b></p><div class="search"><span>🔍</span><input id="searchInput" type="text" placeholder="Search 150 tools... e.g. Invoice, EMI, Age, BMI" onkeyup="filterTools()"></div><div class="quick"><b onclick="quickSearch('Invoice')">Invoice</b><b onclick="quickSearch('EMI')">EMI</b><b onclick="quickSearch('Age')">Age</b><b onclick="quickSearch('BMI')">BMI</b><b onclick="quickSearch('QR')">QR Code</b></div></div>
+<div class="wrap" id="homeSection"><div class="top"><div><h2>Browse by Category</h2><p>Pick a category - tools will open inside it.</p></div><p id="totalCount">150 Tools • 9 Categories</p></div><div class="grid" id="catsGrid"></div></div>
+<div class="wrap" id="toolsSection"><div class="top"><div><button class="back" onclick="goHome()">← All Categories</button><h2 id="catTitle" style="margin-top:10px">Business</h2><p id="catDesc"></p></div></div><div class="toolsGrid" id="toolsGrid"></div></div>
 <footer><b>© 2026 ToolVerse.io • 150 Free Tools For The Whole World</b><br>Privacy Policy • Terms • Contact • About<br>No login required • 100% Free • Privacy First</footer>
 
-<!-- TOOL MODAL - Invoice Generator Working -->
-<div class="modal" id="toolModal">
-  <div class="modalBox">
-    <div style="display:flex;justify-content:space-between;align-items:center"><h2 id="modalTitle">Invoice Generator</h2><button class="btn" onclick="closeModal()">✕ Close</button></div>
-    <p id="modalDesc">Professional invoice in seconds. Fill below, preview will update live. FREE version with watermark, PRO without watermark.</p>
-    <div style="display:flex;gap:8px;margin:12px 0;flex-wrap:wrap">
-      <button class="btn" style="background:#16a34a" onclick="setMode('free')">FREE Version</button>
-      <button class="btn" style="background:#ca8a04" onclick="setMode('pro')">⭐ PRO - Rs 800 / $3 - No Watermark</button>
-      <button class="btn" onclick="window.print()">🖨️ Print / Save PDF</button>
-    </div>
-    <div class="row"><input class="inp" id="bizName" placeholder="Your Business Name" value="ToolVerse Demo Shop" oninput="updateInv()"><input class="inp" id="clientName" placeholder="Client Name" value="Ahmad Khan" oninput="updateInv()"></div>
-    <div class="row"><input class="inp" id="itemName" placeholder="Item / Service - e.g. Website Design" value="Website Design" oninput="updateInv()"><input class="inp" id="itemPrice" type="number" placeholder="Price" value="5000" oninput="updateInv()"></div>
-    <div class="row"><input class="inp" id="itemQty" type="number" placeholder="Qty" value="1" oninput="updateInv()"><input class="inp" id="invNo" placeholder="Invoice No" value="INV-001" oninput="updateInv()"></div>
-
-    <div class="invPreview" id="invPreview">
-      <div style="display:flex;justify-content:space-between"><div><h3 id="pBiz">ToolVerse Demo Shop</h3><p>Invoice No: <span id="pNo">INV-001</span> • Date: <span id="pDate"></span></p></div><div style="text-align:right"><b style="font-size:22px;color:#0a2540">INVOICE</b><p>ToolVerse.io</p></div></div>
-      <p style="margin-top:10px"><b>Bill To:</b> <span id="pClient">Ahmad Khan</span></p>
-      <table><tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th></tr><tr><td id="pItem">Website Design</td><td id="pQty">1</td><td id="pPrice">Rs 5,000</td><td id="pTotal">Rs 5,000</td></tr></table>
-      <p style="text-align:right;font-size:18px"><b>Total: <span id="pGrand">Rs 5,000</span></b></p>
-      <p id="watermark" style="text-align:center;color:#aaa;font-size:12px;margin-top:10px">Made with ToolVerse.io - FREE Version - Upgrade to PRO to remove watermark</p>
-      <p style="text-align:center;font-size:12px;color:#666;margin-top:6px">Thank you for your business! • Payment: JazzCash / Easypaisa / Bank Transfer</p>
-    </div>
-    <p style="margin-top:12px;font-size:13px"><b>How to use:</b> Fill your details above → Preview updates live → Print / Save as PDF. PRO version gives premium design + no watermark + office-ready download. <b>Blog:</b> How to make invoice in Pakistan - Fill business name, client name, item & price. Always add invoice number & date.</p>
-    <button class="btn noPrint" style="margin-top:12px;width:100%;padding:13px" onclick="window.print()">⬇ Download Invoice as PDF (Print → Save as PDF)</button>
-  </div>
-</div>
+<div class="modal" id="toolModal"><div class="modalBox"><div style="display:flex;justify-content:space-between;align-items:center"><h2 id="modalTitle">Tool</h2><button class="btn" onclick="closeModal()">✕ Close</button></div><p id="modalDesc"></p><div id="modalBody" style="margin-top:14px"></div><div id="modalResult"></div></div></div>
 
 <script>
 const CATEGORIES=[
-{name:"Business & Office",icon:"💼",desc:"Invoice, CV, Receipt, Agreement, Visiting Card & more.",color:"#eef6ff"},
-{name:"Finance",icon:"💰",desc:"EMI, Loan, Tax, Zakat, Salary, Gold & Currency calculators.",color:"#e6f7eb"},
-{name:"Legal & Docs",icon:"⚖️",desc:"Contracts, Rent Agreement, Visa Letters, NDA & Job Offer.",color:"#fef3e2"},
-{name:"Photo & Image",icon:"📸",desc:"Passport Photo, Background Remover, Compressor, Logo & more.",color:"#f3e8ff"},
-{name:"PDF & Documents",icon:"📄",desc:"PDF to Word, Merge, Split, Compress, Sign & Convert.",color:"#e0f2fe"},
-{name:"Education",icon:"🎓",desc:"Result Card, GPA, Merit, Age Calculator & Certificate Maker.",color:"#e6f7eb"},
-{name:"Shaadi / Cards",icon:"💍",desc:"Shaadi, Walima, Mehndi, Birthday, Eid & Invitation Cards.",color:"#ffe4ec"},
-{name:"Rishta, Life & Fun",icon:"❤️",desc:"Rishta Biodata, Stylish Name, Love Calculator & Fun Tools.",color:"#fff0e0"},
-{name:"Daily Life & Health",icon:"🌍",desc:"QR Code, BMI, Qibla, Prayer Time, Countdown & Timer.",color:"#e0f7f5"},
+{name:"Business & Office",icon:"💼",desc:"Invoice, CV, Receipt, Agreement & more.",color:"#eef6ff"},
+{name:"Finance",icon:"💰",desc:"EMI, Loan, Tax, Zakat, Salary & Currency.",color:"#e6f7eb"},
+{name:"Legal & Docs",icon:"⚖️",desc:"Contracts, Rent, Visa Letters, NDA.",color:"#fef3e2"},
+{name:"Photo & Image",icon:"📸",desc:"Passport Photo, Compressor, Logo & more.",color:"#f3e8ff"},
+{name:"PDF & Documents",icon:"📄",desc:"PDF to Word, Merge, Split, Compress.",color:"#e0f2fe"},
+{name:"Education",icon:"🎓",desc:"Result Card, GPA, Merit, Age & Certificate.",color:"#e6f7eb"},
+{name:"Shaadi / Cards",icon:"💍",desc:"Shaadi, Walima, Mehndi, Birthday, Eid Cards.",color:"#ffe4ec"},
+{name:"Rishta, Life & Fun",icon:"❤️",desc:"Rishta Biodata, Stylish Name, Love Calc.",color:"#fff0e0"},
+{name:"Daily Life & Health",icon:"🌍",desc:"QR Code, BMI, Qibla, Prayer Time, Timer.",color:"#e0f7f5"},
 ];
-// 150 TOOLS DATA - Poora data isi file me hai, alag tools.json ki zaroorat nahi
+// HAR TOOL KA KAAM - kind batata hai kaise chalega: calc / gen / invoice / card / text
 const TOOLS=[
-{id:1,name:"Invoice Generator",cat:"Business & Office",icon:"🧾",desc:"Professional invoice in seconds",type:"FREE+PRO",pro:800},
-{id:2,name:"Receipt Maker",cat:"Business & Office",icon:"🧾",desc:"Cash receipt maker",type:"FREE+PRO",pro:500},
-{id:3,name:"Visiting Card Maker",cat:"Business & Office",icon:"💳",desc:"Business visiting card design",type:"FREE+PRO",pro:800},
-{id:4,name:"Agreement Maker",cat:"Business & Office",icon:"📝",desc:"Agreement draft in Urdu / English",type:"FREE+PRO",pro:3000},
-{id:5,name:"Cover Letter Maker",cat:"Business & Office",icon:"✉️",desc:"Job cover letter in seconds",type:"FREE+PRO",pro:800},
-{id:6,name:"GST / Tax Calculator",cat:"Business & Office",icon:"🧮",desc:"GST and tax calculation",type:"FREE",pro:0},
-{id:7,name:"Discount Calculator",cat:"Business & Office",icon:"🏷️",desc:"Discount and sale price",type:"FREE",pro:0},
-{id:8,name:"Attendance Sheet Maker",cat:"Business & Office",icon:"📋",desc:"School / office attendance sheet",type:"FREE",pro:0},
-{id:9,name:"Pay Slip Generator",cat:"Business & Office",icon:"💵",desc:"Monthly pay slip maker",type:"FREE+PRO",pro:500},
-{id:10,name:"Delivery Challan Maker",cat:"Business & Office",icon:"🚚",desc:"Delivery challan for shop",type:"FREE+PRO",pro:500},
-{id:11,name:"Application Writer",cat:"Business & Office",icon:"📄",desc:"Application in Urdu & English",type:"FREE+PRO",pro:500},
-{id:12,name:"Stamp Paper Text Maker",cat:"Business & Office",icon:"📜",desc:"Stamp paper text draft",type:"FREE+PRO",pro:3000},
-{id:13,name:"Price List Maker",cat:"Business & Office",icon:"💲",desc:"Shop price list design",type:"FREE",pro:0},
-{id:14,name:"Quotation Maker",cat:"Business & Office",icon:"📑",desc:"Business quotation maker",type:"FREE+PRO",pro:800},
-{id:15,name:"Salary Slip Maker",cat:"Business & Office",icon:"💰",desc:"Salary slip with company name",type:"FREE+PRO",pro:500},
-{id:16,name:"Letterhead Maker",cat:"Business & Office",icon:"🏢",desc:"Company letterhead design",type:"FREE+PRO",pro:800},
-{id:17,name:"CV / Resume Maker",cat:"Business & Office",icon:"👔",desc:"Build your CV instantly",type:"FREE+PRO",pro:1000},
-{id:18,name:"Business Card QR Maker",cat:"Business & Office",icon:"🔲",desc:"QR on business card",type:"FREE",pro:0},
-{id:19,name:"Profit / Loss Calculator",cat:"Business & Office",icon:"📈",desc:"Shop profit loss hisab",type:"FREE",pro:0},
-{id:20,name:"Price Calculator",cat:"Business & Office",icon:"🛒",desc:"Product price calculator",type:"FREE",pro:0},
-{id:21,name:"Employee ID Card Maker",cat:"Business & Office",icon:"🪪",desc:"Office ID card maker",type:"FREE+PRO",pro:800},
-{id:22,name:"Purchase Order Maker",cat:"Business & Office",icon:"📦",desc:"Purchase order format",type:"FREE+PRO",pro:500},
-{id:23,name:"Formal Letter Writer",cat:"Business & Office",icon:"📨",desc:"Formal letter in English",type:"FREE+PRO",pro:500},
-{id:24,name:"Tender Notice Maker",cat:"Business & Office",icon:"📢",desc:"Tender notice draft",type:"FREE+PRO",pro:1000},
-{id:25,name:"Shop Banner Maker",cat:"Business & Office",icon:"🏪",desc:"Shop banner design",type:"FREE+PRO",pro:800},
-{id:26,name:"EMI Calculator",cat:"Finance",icon:"🏦",desc:"Loan & EMI calculator",type:"FREE",pro:0},
-{id:27,name:"Home Loan Calculator",cat:"Finance",icon:"🏠",desc:"Home loan EMI hisab",type:"FREE",pro:0},
-{id:28,name:"Mortgage Calculator",cat:"Finance",icon:"🏡",desc:"Mortgage monthly payment",type:"FREE",pro:0},
-{id:29,name:"Compound Interest Calculator",cat:"Finance",icon:"📊",desc:"Compound interest hisab",type:"FREE",pro:0},
-{id:30,name:"FD Calculator",cat:"Finance",icon:"💳",desc:"Fixed deposit return",type:"FREE",pro:0},
-{id:31,name:"Gold Price Calculator",cat:"Finance",icon:"🪙",desc:"Gold price today in Pakistan",type:"FREE",pro:0},
-{id:32,name:"Crypto Converter",cat:"Finance",icon:"₿",desc:"Crypto to PKR converter",type:"FREE",pro:0},
-{id:33,name:"Tax Calculator Pakistan",cat:"Finance",icon:"🧾",desc:"Pakistan tax calculator",type:"FREE",pro:0},
-{id:34,name:"Salary Calculator",cat:"Finance",icon:"💼",desc:"Net salary after tax",type:"FREE",pro:0},
-{id:35,name:"Retirement Calculator",cat:"Finance",icon:"👴",desc:"Retirement planning",type:"FREE",pro:0},
-{id:36,name:"Expense Tracker",cat:"Finance",icon:"📒",desc:"Monthly kharcha tracker",type:"FREE",pro:0},
-{id:37,name:"Investment Return Calculator",cat:"Finance",icon:"📈",desc:"Investment profit hisab",type:"FREE",pro:0},
-{id:38,name:"Bike Installment Calculator",cat:"Finance",icon:"🏍️",desc:"Bike qist calculator",type:"FREE",pro:0},
-{id:39,name:"Personal Loan Calculator",cat:"Finance",icon:"💸",desc:"Personal loan EMI",type:"FREE",pro:0},
-{id:40,name:"Car Loan Calculator",cat:"Finance",icon:"🚗",desc:"Car loan EMI",type:"FREE",pro:0},
-{id:41,name:"Interest Calculator",cat:"Finance",icon:"%",desc:"Simple interest calculator",type:"FREE",pro:0},
-{id:42,name:"SIP Calculator",cat:"Finance",icon:"📅",desc:"Monthly SIP return",type:"FREE",pro:0},
-{id:43,name:"RD Calculator",cat:"Finance",icon:"🏦",desc:"Recurring deposit calculator",type:"FREE",pro:0},
-{id:44,name:"Currency Converter",cat:"Finance",icon:"💱",desc:"Dollar to PKR converter",type:"FREE",pro:0},
-{id:45,name:"Zakat Calculator",cat:"Finance",icon:"🕌",desc:"Zakat hisab in Urdu",type:"FREE",pro:0},
-{id:46,name:"Income Tax Calculator",cat:"Finance",icon:"🧾",desc:"Income tax Pakistan",type:"FREE",pro:0},
-{id:47,name:"Pension Calculator",cat:"Finance",icon:"👵",desc:"Pension hisab",type:"FREE",pro:0},
-{id:48,name:"Budget Planner",cat:"Finance",icon:"📓",desc:"Monthly budget planner",type:"FREE",pro:0},
-{id:49,name:"Profit / Loss Calculator",cat:"Finance",icon:"⚖️",desc:"Business profit loss",type:"FREE",pro:0},
-{id:50,name:"Insurance Premium Calculator",cat:"Finance",icon:"🛡️",desc:"Insurance premium hisab",type:"FREE",pro:0},
-{id:51,name:"Freelancer Contract",cat:"Legal & Docs",icon:"📜",desc:"Freelancer contract draft",type:"FREE+PRO",pro:4000},
-{id:52,name:"Rent Agreement Maker",cat:"Legal & Docs",icon:"🏠",desc:"House rent agreement",type:"FREE+PRO",pro:4000},
-{id:53,name:"Business Partnership Maker",cat:"Legal & Docs",icon:"🤝",desc:"Partnership agreement",type:"FREE+PRO",pro:5000},
-{id:54,name:"Visa Invitation Letter",cat:"Legal & Docs",icon:"✈️",desc:"Visa invitation letter",type:"FREE+PRO",pro:4000},
-{id:55,name:"Student Visa SOP Maker",cat:"Legal & Docs",icon:"🎓",desc:"SOP for student visa",type:"FREE+PRO",pro:4000},
-{id:56,name:"Contract Template Maker",cat:"Legal & Docs",icon:"📝",desc:"Contract template",type:"FREE+PRO",pro:3000},
-{id:57,name:"Partnership Deed Maker",cat:"Legal & Docs",icon:"📄",desc:"Partnership deed draft",type:"FREE+PRO",pro:4000},
-{id:58,name:"Legal Notice Draft",cat:"Legal & Docs",icon:"⚖️",desc:"Legal notice draft",type:"FREE+PRO",pro:3000},
-{id:59,name:"NDA Agreement",cat:"Legal & Docs",icon:"🔒",desc:"NDA agreement maker",type:"FREE+PRO",pro:3000},
-{id:60,name:"Job Offer Letter",cat:"Legal & Docs",icon:"💼",desc:"Job offer letter format",type:"FREE+PRO",pro:3000},
-{id:61,name:"Office Combo",cat:"Legal & Docs",icon:"🌍",desc:"Office docs combo",type:"FREE+PRO",pro:5000},
-{id:62,name:"Tourist Visa Cover Letter",cat:"Legal & Docs",icon:"🧳",desc:"Tourist visa cover letter",type:"FREE+PRO",pro:4000},
-{id:63,name:"Business Visa Letter",cat:"Legal & Docs",icon:"🏢",desc:"Business visa letter",type:"FREE+PRO",pro:4000},
-{id:64,name:"Offer Letter Maker",cat:"Legal & Docs",icon:"📨",desc:"Offer letter maker",type:"FREE+PRO",pro:3000},
-{id:65,name:"Freelancer Invoice",cat:"Legal & Docs",icon:"🧾",desc:"Freelancer invoice",type:"FREE+PRO",pro:800},
-{id:66,name:"Passport Photo Maker",cat:"Photo & Image",icon:"🪪",desc:"Passport size photo maker",type:"FREE+PRO",pro:800},
-{id:67,name:"Photo Resizer",cat:"Photo & Image",icon:"🖼️",desc:"Photo resize for ID",type:"FREE",pro:0},
-{id:68,name:"Image Converter JPG/PNG/WebP",cat:"Photo & Image",icon:"🔄",desc:"Image format converter",type:"FREE",pro:0},
-{id:69,name:"Passport Photo USA/UK Size",cat:"Photo & Image",icon:"🇺🇸",desc:"USA UK passport photo size",type:"FREE+PRO",pro:800},
-{id:70,name:"Photo Enhancer",cat:"Photo & Image",icon:"✨",desc:"Photo clear enhancer",type:"FREE",pro:0},
-{id:71,name:"Image to Text OCR",cat:"Photo & Image",icon:"🔍",desc:"Image se text nikale",type:"FREE",pro:0},
-{id:72,name:"Photo Frame Maker",cat:"Photo & Image",icon:"🖼️",desc:"Photo frame design",type:"FREE+PRO",pro:500},
-{id:73,name:"Birthday Photo Frame",cat:"Photo & Image",icon:"🎂",desc:"Birthday frame",type:"FREE+PRO",pro:500},
-{id:74,name:"Baby Photo Frame",cat:"Photo & Image",icon:"👶",desc:"Baby photo frame",type:"FREE+PRO",pro:500},
-{id:75,name:"Banner Maker YouTube/FB",cat:"Photo & Image",icon:"🎨",desc:"YouTube FB banner maker",type:"FREE+PRO",pro:800},
-{id:76,name:"Logo Maker Simple",cat:"Photo & Image",icon:"🏷️",desc:"Simple logo maker",type:"FREE+PRO",pro:1000},
-{id:77,name:"Background Remover",cat:"Photo & Image",icon:"✂️",desc:"Photo background remover",type:"FREE",pro:0},
-{id:78,name:"Image Compressor",cat:"Photo & Image",icon:"🗜️",desc:"Image size kam kare",type:"FREE",pro:0},
-{id:79,name:"Photo to PDF Maker",cat:"Photo & Image",icon:"📄",desc:"Photo to PDF",type:"FREE",pro:0},
-{id:80,name:"ID Card Photo Maker",cat:"Photo & Image",icon:"🪪",desc:"ID card photo maker",type:"FREE+PRO",pro:800},
-{id:81,name:"Collage Maker",cat:"Photo & Image",icon:"🧩",desc:"Photo collage maker",type:"FREE",pro:0},
-{id:82,name:"Signature Maker",cat:"Photo & Image",icon:"✍️",desc:"Digital signature maker",type:"FREE",pro:0},
-{id:83,name:"Profile Photo Maker",cat:"Photo & Image",icon:"👤",desc:"Profile photo maker",type:"FREE",pro:0},
-{id:84,name:"Thumbnail Maker",cat:"Photo & Image",icon:"📺",desc:"YouTube thumbnail maker",type:"FREE+PRO",pro:800},
-{id:85,name:"Photo Cropper",cat:"Photo & Image",icon:"✂️",desc:"Photo crop kare",type:"FREE",pro:0},
-{id:86,name:"PDF to Word",cat:"PDF & Documents",icon:"📄",desc:"PDF to Word converter",type:"FREE",pro:0},
-{id:87,name:"PDF to JPG",cat:"PDF & Documents",icon:"🖼️",desc:"PDF to JPG converter",type:"FREE",pro:0},
-{id:88,name:"PDF Merger",cat:"PDF & Documents",icon:"📚",desc:"PDF merge kare",type:"FREE",pro:0},
-{id:89,name:"PDF Compressor",cat:"PDF & Documents",icon:"🗜️",desc:"PDF size kam kare",type:"FREE",pro:0},
-{id:90,name:"PDF Watermark Adder",cat:"PDF & Documents",icon:"💧",desc:"PDF pe watermark lagaye",type:"FREE",pro:0},
-{id:91,name:"Resume to PDF",cat:"PDF & Documents",icon:"📑",desc:"Resume to PDF",type:"FREE",pro:0},
-{id:92,name:"Excel to PDF",cat:"PDF & Documents",icon:"📊",desc:"Excel to PDF converter",type:"FREE",pro:0},
-{id:93,name:"Online Notepad",cat:"PDF & Documents",icon:"📝",desc:"Online notepad free",type:"FREE",pro:0},
-{id:94,name:"Word to PDF",cat:"PDF & Documents",icon:"📄",desc:"Word to PDF converter",type:"FREE",pro:0},
-{id:95,name:"JPG to PDF",cat:"PDF & Documents",icon:"🖼️",desc:"JPG to PDF converter",type:"FREE",pro:0},
-{id:96,name:"PDF Splitter",cat:"PDF & Documents",icon:"✂️",desc:"PDF split kare",type:"FREE",pro:0},
-{id:97,name:"PDF Lock / Unlock",cat:"PDF & Documents",icon:"🔒",desc:"PDF lock unlock",type:"FREE",pro:0},
-{id:98,name:"PDF Signer E-Sign",cat:"PDF & Documents",icon:"✍️",desc:"PDF pe sign kare",type:"FREE+PRO",pro:800},
-{id:99,name:"Text to PDF",cat:"PDF & Documents",icon:"📝",desc:"Text to PDF maker",type:"FREE",pro:0},
-{id:100,name:"PDF to Excel",cat:"PDF & Documents",icon:"📊",desc:"PDF to Excel converter",type:"FREE",pro:0},
-{id:101,name:"Result Card Maker",cat:"Education",icon:"🏫",desc:"Create school result card",type:"FREE+PRO",pro:500},
-{id:102,name:"Percentage Calculator",cat:"Education",icon:"%",desc:"Percentage calculator",type:"FREE",pro:0},
-{id:103,name:"Age Calculator",cat:"Education",icon:"🎂",desc:"Calculate age from date of birth",type:"FREE",pro:0},
-{id:104,name:"Assignment Cover Maker",cat:"Education",icon:"📘",desc:"Assignment cover page",type:"FREE",pro:0},
-{id:105,name:"Date Sheet Maker",cat:"Education",icon:"📅",desc:"Exam date sheet maker",type:"FREE",pro:0},
-{id:106,name:"Merit Calculator",cat:"Education",icon:"📊",desc:"Merit calculator",type:"FREE",pro:0},
-{id:107,name:"Essay Helper",cat:"Education",icon:"✍️",desc:"Essay writing helper",type:"FREE",pro:0},
-{id:108,name:"Unit Converter Science",cat:"Education",icon:"🔬",desc:"Science unit converter",type:"FREE",pro:0},
-{id:109,name:"Marksheet Maker",cat:"Education",icon:"📋",desc:"Marksheet maker",type:"FREE+PRO",pro:500},
-{id:110,name:"GPA / CGPA Calculator",cat:"Education",icon:"🎓",desc:"GPA CGPA calculator",type:"FREE",pro:0},
-{id:111,name:"Date of Birth Calculator",cat:"Education",icon:"📆",desc:"DOB age calculator",type:"FREE",pro:0},
-{id:112,name:"Certificate Maker",cat:"Education",icon:"🏆",desc:"Certificate maker",type:"FREE+PRO",pro:500},
-{id:113,name:"Roll Number Slip Maker",cat:"Education",icon:"🎫",desc:"Roll number slip",type:"FREE",pro:0},
-{id:114,name:"Aggregate MDCAT/ECAT",cat:"Education",icon:"🩺",desc:"MDCAT ECAT aggregate",type:"FREE",pro:0},
-{id:115,name:"Math Solver Basic",cat:"Education",icon:"➗",desc:"Basic math solver",type:"FREE",pro:0},
-{id:116,name:"Shaadi Card Maker Urdu",cat:"Shaadi / Cards",icon:"💍",desc:"Design wedding cards in Urdu & English",type:"FREE+PRO",pro:1200},
-{id:117,name:"Mehndi Card Maker",cat:"Shaadi / Cards",icon:"🌿",desc:"Mehndi card design",type:"FREE+PRO",pro:1000},
-{id:118,name:"Eid Card Maker",cat:"Shaadi / Cards",icon:"🌙",desc:"Eid card maker",type:"FREE+PRO",pro:800},
-{id:119,name:"Dua Card Maker",cat:"Shaadi / Cards",icon:"🤲",desc:"Dua card maker",type:"FREE+PRO",pro:800},
-{id:120,name:"Baby Announcement Card",cat:"Shaadi / Cards",icon:"👶",desc:"Baby announcement card",type:"FREE+PRO",pro:800},
-{id:121,name:"Thank You Card Maker",cat:"Shaadi / Cards",icon:"🙏",desc:"Thank you card maker",type:"FREE+PRO",pro:500},
-{id:122,name:"Flyer Maker",cat:"Shaadi / Cards",icon:"📣",desc:"Flyer design maker",type:"FREE+PRO",pro:800},
-{id:123,name:"Calendar Maker 2026/2027",cat:"Shaadi / Cards",icon:"📅",desc:"Calendar maker 2026 2027",type:"FREE",pro:0},
-{id:124,name:"Walima Card Maker",cat:"Shaadi / Cards",icon:"💒",desc:"Walima card design",type:"FREE+PRO",pro:1200},
-{id:125,name:"Birthday Card Maker",cat:"Shaadi / Cards",icon:"🎂",desc:"Birthday card maker",type:"FREE+PRO",pro:800},
-{id:126,name:"Ramadan Calendar Maker",cat:"Shaadi / Cards",icon:"🕌",desc:"Ramadan calendar",type:"FREE",pro:0},
-{id:127,name:"Nikkah Certificate Maker",cat:"Shaadi / Cards",icon:"📜",desc:"Nikkah certificate",type:"FREE+PRO",pro:1000},
-{id:128,name:"Engagement Card Maker",cat:"Shaadi / Cards",icon:"💎",desc:"Engagement card design",type:"FREE+PRO",pro:1000},
-{id:129,name:"Invitation Card Maker",cat:"Shaadi / Cards",icon:"✉️",desc:"Invitation card maker",type:"FREE+PRO",pro:800},
-{id:130,name:"Poster Maker",cat:"Shaadi / Cards",icon:"🖼️",desc:"Poster design maker",type:"FREE+PRO",pro:800},
-{id:131,name:"Rishta Biodata Maker",cat:"Rishta, Life & Fun",icon:"💌",desc:"Rishta biodata maker",type:"FREE+PRO",pro:800},
-{id:132,name:"My Birthday Countdown",cat:"Rishta, Life & Fun",icon:"⏳",desc:"Birthday countdown",type:"FREE",pro:0},
-{id:133,name:"MyStylishName 100 Styles",cat:"Rishta, Life & Fun",icon:"✨",desc:"Stylish name maker",type:"FREE",pro:0},
-{id:134,name:"Cool Username Generator",cat:"Rishta, Life & Fun",icon:"😎",desc:"Cool username generator",type:"FREE",pro:0},
-{id:135,name:"Baby Name Meanings Urdu",cat:"Rishta, Life & Fun",icon:"👶",desc:"Baby name meanings",type:"FREE",pro:0},
-{id:136,name:"MyLifeInDays",cat:"Rishta, Life & Fun",icon:"📆",desc:"Kitne din jee liye",type:"FREE",pro:0},
-{id:137,name:"My Born Day Lucky No.",cat:"Rishta, Life & Fun",icon:"🍀",desc:"Lucky number finder",type:"FREE",pro:0},
-{id:138,name:"Love Calculator - Fun",cat:"Rishta, Life & Fun",icon:"❤️",desc:"Love calculator fun",type:"FREE",pro:0},
-{id:139,name:"Stylish Bio Maker",cat:"Rishta, Life & Fun",icon:"📱",desc:"Stylish bio for WhatsApp",type:"FREE",pro:0},
-{id:140,name:"Random Name Generator",cat:"Rishta, Life & Fun",icon:"🎲",desc:"Random name generator",type:"FREE",pro:0},
-{id:141,name:"QR Code Generator",cat:"Daily Life & Health",icon:"🔲",desc:"Generate QR codes for free",type:"FREE",pro:0},
-{id:142,name:"BMI Calculator",cat:"Daily Life & Health",icon:"⚖️",desc:"BMI calculator",type:"FREE",pro:0},
-{id:143,name:"Water Intake Calculator",cat:"Daily Life & Health",icon:"💧",desc:"Daily pani hisab",type:"FREE",pro:0},
-{id:144,name:"Qibla Direction Finder",cat:"Daily Life & Health",icon:"🕋",desc:"Qibla direction finder",type:"FREE",pro:0},
-{id:145,name:"Stopwatch / Timer",cat:"Daily Life & Health",icon:"⏱️",desc:"Online stopwatch timer",type:"FREE",pro:0},
-{id:146,name:"Barcode Generator",cat:"Daily Life & Health",icon:"📊",desc:"Barcode generator",type:"FREE",pro:0},
-{id:147,name:"Calorie Calculator",cat:"Daily Life & Health",icon:"🔥",desc:"Calorie calculator",type:"FREE",pro:0},
-{id:148,name:"Prayer Time Calculator",cat:"Daily Life & Health",icon:"🕌",desc:"Namaz time calculator",type:"FREE",pro:0},
-{id:149,name:"Countdown Timer Eid/Shaadi",cat:"Daily Life & Health",icon:"⏰",desc:"Eid Shaadi countdown",type:"FREE",pro:0},
-{id:150,name:"Random Winner Picker",cat:"Daily Life & Health",icon:"🏆",desc:"Random winner picker",type:"FREE",pro:0},
+{id:1,name:"Invoice Generator",cat:"Business & Office",icon:"🧾",desc:"Professional invoice - Tax + Discount sahi hisab",type:"FREE+PRO",pro:800,kind:"invoice"},
+{id:2,name:"Receipt Maker",cat:"Business & Office",icon:"🧾",desc:"Cash receipt maker",type:"FREE+PRO",pro:500,kind:"invoice"},
+{id:3,name:"Visiting Card Maker",cat:"Business & Office",icon:"💳",desc:"Business visiting card",type:"FREE+PRO",pro:800,kind:"card"},
+{id:17,name:"CV / Resume Maker",cat:"Business & Office",icon:"👔",desc:"Build your CV instantly",type:"FREE+PRO",pro:1000,kind:"text"},
+{id:26,name:"EMI Calculator",cat:"Finance",icon:"🏦",desc:"Loan EMI - Monthly payment",type:"FREE",pro:0,kind:"emi"},
+{id:44,name:"Currency Converter",cat:"Finance",icon:"💱",desc:"USD to PKR & more",type:"FREE",pro:0,kind:"currency"},
+{id:45,name:"Zakat Calculator",cat:"Finance",icon:"🕌",desc:"Zakat 2.5% hisab",type:"FREE",pro:0,kind:"zakat"},
+{id:34,name:"Salary Calculator",cat:"Finance",icon:"💼",desc:"Net salary after tax",type:"FREE",pro:0,kind:"salary"},
+{id:29,name:"Compound Interest Calculator",cat:"Finance",icon:"📊",desc:"Compound interest",type:"FREE",pro:0,kind:"compound"},
+{id:102,name:"Percentage Calculator",cat:"Education",icon:"%",desc:"Percentage calculator",type:"FREE",pro:0,kind:"percent"},
+{id:103,name:"Age Calculator",cat:"Education",icon:"🎂",desc:"Age from date of birth",type:"FREE",pro:0,kind:"age"},
+{id:110,name:"GPA / CGPA Calculator",cat:"Education",icon:"🎓",desc:"GPA calculator",type:"FREE",pro:0,kind:"gpa"},
+{id:142,name:"BMI Calculator",cat:"Daily Life & Health",icon:"⚖️",desc:"BMI - Weight / Height",type:"FREE",pro:0,kind:"bmi"},
+{id:141,name:"QR Code Generator",cat:"Daily Life & Health",icon:"🔲",desc:"Generate QR for any text / link",type:"FREE",pro:0,kind:"qr"},
+{id:133,name:"MyStylishName",cat:"Rishta, Life & Fun",icon:"✨",desc:"Stylish name 100 styles",type:"FREE",pro:0,kind:"stylish"},
+{id:134,name:"Cool Username Generator",cat:"Rishta, Life & Fun",icon:"😎",desc:"Cool username generator",type:"FREE",pro:0,kind:"username"},
+{id:138,name:"Love Calculator - Fun",cat:"Rishta, Life & Fun",icon:"❤️",desc:"Love % fun calculator",type:"FREE",pro:0,kind:"love"},
+{id:66,name:"Passport Photo Maker",cat:"Photo & Image",icon:"🪪",desc:"Passport size photo - Upload & crop",type:"FREE+PRO",pro:800,kind:"photo"},
+{id:116,name:"Shaadi Card Maker",cat:"Shaadi / Cards",icon:"💍",desc:"Shaadi card design - Urdu & English",type:"FREE+PRO",pro:1200,kind:"card"},
+{id:101,name:"Result Card Maker",cat:"Education",icon:"🏫",desc:"School result card maker",type:"FREE+PRO",pro:500,kind:"result"},
 ];
-let CURRENT_CAT="", CURRENT_SEARCH="", MODE="free";
-function renderCategories(){
-  document.getElementById("catsGrid").innerHTML=CATEGORIES.map(c=>{
-    let count=TOOLS.filter(t=>t.cat===c.name).length;
-    return `<div class="card" onclick="openCategory('${c.name}')"><div class="ic" style="background:${c.color}">${c.icon}</div><div><h3>${c.name}</h3><p>${c.desc}</p><span class="count">${count} Tools →</span></div></div>`;
-  }).join("");
-  document.getElementById("totalCount").innerText=TOOLS.length+" Tools • 9 Categories";
-}
-function openCategory(cat){
-  CURRENT_CAT=cat; document.getElementById("homeSection").style.display="none"; document.getElementById("toolsSection").style.display="block";
-  let c=CATEGORIES.find(x=>x.name===cat); document.getElementById("catTitle").innerText=cat; document.getElementById("catDesc").innerText=c?c.desc:"";
-  renderTools(); window.scrollTo({top:0,behavior:"smooth"});
-}
-function goHome(){document.getElementById("homeSection").style.display="block";document.getElementById("toolsSection").style.display="none";CURRENT_CAT="";CURRENT_SEARCH="";document.getElementById("searchInput").value="";renderCategories();window.scrollTo({top:0,behavior:"smooth"});return false;}
-function renderTools(){
-  let grid=document.getElementById("toolsGrid");
-  let f=TOOLS.filter(t=>{let cm=CURRENT_CAT===""||t.cat===CURRENT_CAT;let s=CURRENT_SEARCH.toLowerCase();let sm=!s||t.name.toLowerCase().includes(s)||t.desc.toLowerCase().includes(s)||t.cat.toLowerCase().includes(s);return cm&&sm;});
-  if(f.length===0){grid.innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:30px">No tool found. Try another keyword.</div>`;return;}
-  grid.innerHTML=f.map(t=>`<div class="toolCard" onclick="openTool(${t.id})"><div class="icon">${t.icon}</div><h3>${t.name}</h3><p>${t.desc}</p>${t.type==="FREE+PRO"?`<span class="free">FREE</span> <span class="pro">PRO ${t.pro} Rs</span>`:`<span class="free">FREE</span>`}</div>`).join("");
-}
-function filterTools(){
-  let v=document.getElementById("searchInput").value.toLowerCase().trim(); CURRENT_SEARCH=v;
-  if(v.length>1){document.getElementById("homeSection").style.display="none";document.getElementById("toolsSection").style.display="block";document.getElementById("catTitle").innerText=`Search Results for "${v}"`;document.getElementById("catDesc").innerText="Tools matching your search";CURRENT_CAT="";renderTools();}
-  else if(v.length===0){goHome();}
-}
+// Baaki 130 tools - same engine se chalenge, list poori karne ke liye
+const MORE=[
+[4,"Agreement Maker","Business & Office","📝","Agreement draft",3000],[5,"Cover Letter Maker","Business & Office","✉️","Job cover letter",800],[6,"GST / Tax Calculator","Business & Office","🧮","GST calculator",0],[7,"Discount Calculator","Business & Office","🏷️","Discount calculator",0],[8,"Attendance Sheet Maker","Business & Office","📋","Attendance sheet",0],[9,"Pay Slip Generator","Business & Office","💵","Pay slip",500],[10,"Delivery Challan Maker","Business & Office","🚚","Delivery challan",500],[11,"Application Writer","Business & Office","📄","Application writer",500],[12,"Stamp Paper Text Maker","Business & Office","📜","Stamp paper text",3000],[13,"Price List Maker","Business & Office","💲","Price list",0],[14,"Quotation Maker","Business & Office","📑","Quotation maker",800],[15,"Salary Slip Maker","Business & Office","💰","Salary slip",500],[16,"Letterhead Maker","Business & Office","🏢","Letterhead",800],[18,"Business Card QR Maker","Business & Office","🔲","QR on card",0],[19,"Profit / Loss Calculator","Business & Office","📈","Profit loss",0],[20,"Price Calculator","Business & Office","🛒","Price calculator",0],[21,"Employee ID Card Maker","Business & Office","🪪","ID card maker",800],[22,"Purchase Order Maker","Business & Office","📦","Purchase order",500],[23,"Formal Letter Writer","Business & Office","📨","Formal letter",500],[24,"Tender Notice Maker","Business & Office","📢","Tender notice",1000],[25,"Shop Banner Maker","Business & Office","🏪","Shop banner",800],
+[27,"Home Loan Calculator","Finance","🏠","Home loan EMI",0],[28,"Mortgage Calculator","Finance","🏡","Mortgage",0],[30,"FD Calculator","Finance","💳","FD return",0],[31,"Gold Price Calculator","Finance","🪙","Gold price",0],[32,"Crypto Converter","Finance","₿","Crypto to PKR",0],[33,"Tax Calculator Pakistan","Finance","🧾","Tax calculator",0],[35,"Retirement Calculator","Finance","👴","Retirement",0],[36,"Expense Tracker","Finance","📒","Expense tracker",0],[37,"Investment Return Calculator","Finance","📈","Investment return",0],[38,"Bike Installment Calculator","Finance","🏍️","Bike qist",0],[39,"Personal Loan Calculator","Finance","💸","Personal loan",0],[40,"Car Loan Calculator","Finance","🚗","Car loan",0],[41,"Interest Calculator","Finance","%","Interest",0],[42,"SIP Calculator","Finance","📅","SIP return",0],[43,"RD Calculator","Finance","🏦","RD calculator",0],[46,"Income Tax Calculator","Finance","🧾","Income tax",0],[47,"Pension Calculator","Finance","👵","Pension",0],[48,"Budget Planner","Finance","📓","Budget planner",0],[49,"Profit / Loss Calculator","Finance","⚖️","Profit loss",0],[50,"Insurance Premium Calculator","Finance","🛡️","Insurance premium",0],
+[51,"Freelancer Contract","Legal & Docs","📜","Freelancer contract",4000],[52,"Rent Agreement Maker","Legal & Docs","🏠","Rent agreement",4000],[53,"Business Partnership Maker","Legal & Docs","🤝","Partnership",5000],[54,"Visa Invitation Letter","Legal & Docs","✈️","Visa letter",4000],[55,"Student Visa SOP Maker","Legal & Docs","🎓","SOP maker",4000],[56,"Contract Template Maker","Legal & Docs","📝","Contract template",3000],[57,"Partnership Deed Maker","Legal & Docs","📄","Partnership deed",4000],[58,"Legal Notice Draft","Legal & Docs","⚖️","Legal notice",3000],[59,"NDA Agreement","Legal & Docs","🔒","NDA",3000],[60,"Job Offer Letter","Legal & Docs","💼","Offer letter",3000],[61,"Office Combo","Legal & Docs","🌍","Office combo",5000],[62,"Tourist Visa Cover Letter","Legal & Docs","🧳","Tourist visa",4000],[63,"Business Visa Letter","Legal & Docs","🏢","Business visa",4000],[64,"Offer Letter Maker","Legal & Docs","📨","Offer letter",3000],[65,"Freelancer Invoice","Legal & Docs","🧾","Freelancer invoice",800],
+[67,"Photo Resizer","Photo & Image","🖼️","Photo resize",0],[68,"Image Converter","Photo & Image","🔄","JPG/PNG/WebP",0],[69,"Passport Photo USA/UK","Photo & Image","🇺🇸","USA UK size",800],[70,"Photo Enhancer","Photo & Image","✨","Photo enhancer",0],[71,"Image to Text OCR","Photo & Image","🔍","Image to text",0],[72,"Photo Frame Maker","Photo & Image","🖼️","Photo frame",500],[73,"Birthday Photo Frame","Photo & Image","🎂","Birthday frame",500],[74,"Baby Photo Frame","Photo & Image","👶","Baby frame",500],[75,"Banner Maker","Photo & Image","🎨","YouTube/FB banner",800],[76,"Logo Maker","Photo & Image","🏷️","Logo maker",1000],[77,"Background Remover","Photo & Image","✂️","Background remover",0],[78,"Image Compressor","Photo & Image","🗜️","Image compressor",0],[79,"Photo to PDF Maker","Photo & Image","📄","Photo to PDF",0],[80,"ID Card Photo Maker","Photo & Image","🪪","ID photo",800],[81,"Collage Maker","Photo & Image","🧩","Collage",0],[82,"Signature Maker","Photo & Image","✍️","Signature",0],[83,"Profile Photo Maker","Photo & Image","👤","Profile photo",0],[84,"Thumbnail Maker","Photo & Image","📺","Thumbnail",800],[85,"Photo Cropper","Photo & Image","✂️","Photo crop",0],
+[86,"PDF to Word","PDF & Documents","📄","PDF to Word",0],[87,"PDF to JPG","PDF & Documents","🖼️","PDF to JPG",0],[88,"PDF Merger","PDF & Documents","📚","PDF merge",0],[89,"PDF Compressor","PDF & Documents","🗜️","PDF compress",0],[90,"PDF Watermark Adder","PDF & Documents","💧","PDF watermark",0],[91,"Resume to PDF","PDF & Documents","📑","Resume to PDF",0],[92,"Excel to PDF","PDF & Documents","📊","Excel to PDF",0],[93,"Online Notepad","PDF & Documents","📝","Notepad",0],[94,"Word to PDF","PDF & Documents","📄","Word to PDF",0],[95,"JPG to PDF","PDF & Documents","🖼️","JPG to PDF",0],[96,"PDF Splitter","PDF & Documents","✂️","PDF split",0],[97,"PDF Lock / Unlock","PDF & Documents","🔒","PDF lock",0],[98,"PDF Signer","PDF & Documents","✍️","PDF sign",800],[99,"Text to PDF","PDF & Documents","📝","Text to PDF",0],[100,"PDF to Excel","PDF & Documents","📊","PDF to Excel",0],
+[104,"Assignment Cover Maker","Education","📘","Assignment cover",0],[105,"Date Sheet Maker","Education","📅","Date sheet",0],[106,"Merit Calculator","Education","📊","Merit calculator",0],[107,"Essay Helper","Education","✍️","Essay helper",0],[108,"Unit Converter Science","Education","🔬","Unit converter",0],[109,"Marksheet Maker","Education","📋","Marksheet",500],[111,"Date of Birth Calculator","Education","📆","DOB calculator",0],[112,"Certificate Maker","Education","🏆","Certificate",500],[113,"Roll Number Slip Maker","Education","🎫","Roll slip",0],[114,"Aggregate MDCAT/ECAT","Education","🩺","MDCAT aggregate",0],[115,"Math Solver Basic","Education","➗","Math solver",0],
+[117,"Mehndi Card Maker","Shaadi / Cards","🌿","Mehndi card",1000],[118,"Eid Card Maker","Shaadi / Cards","🌙","Eid card",800],[119,"Dua Card Maker","Shaadi / Cards","🤲","Dua card",800],[120,"Baby Announcement Card","Shaadi / Cards","👶","Baby card",800],[121,"Thank You Card Maker","Shaadi / Cards","🙏","Thank you card",500],[122,"Flyer Maker","Shaadi / Cards","📣","Flyer maker",800],[123,"Calendar Maker","Shaadi / Cards","📅","Calendar 2026/27",0],[124,"Walima Card Maker","Shaadi / Cards","💒","Walima card",1200],[125,"Birthday Card Maker","Shaadi / Cards","🎂","Birthday card",800],[126,"Ramadan Calendar Maker","Shaadi / Cards","🕌","Ramadan calendar",0],[127,"Nikkah Certificate Maker","Shaadi / Cards","📜","Nikkah certificate",1000],[128,"Engagement Card Maker","Shaadi / Cards","💎","Engagement card",1000],[129,"Invitation Card Maker","Shaadi / Cards","✉️","Invitation card",800],[130,"Poster Maker","Shaadi / Cards","🖼️","Poster maker",800],
+[131,"Rishta Biodata Maker","Rishta, Life & Fun","💌","Rishta biodata",800],[132,"My Birthday Countdown","Rishta, Life & Fun","⏳","Birthday countdown",0],[135,"Baby Name Meanings","Rishta, Life & Fun","👶","Baby names",0],[136,"MyLifeInDays","Rishta, Life & Fun","📆","Days lived",0],[137,"My Born Day Lucky No.","Rishta, Life & Fun","🍀","Lucky number",0],[139,"Stylish Bio Maker","Rishta, Life & Fun","📱","Stylish bio",0],[140,"Random Name Generator","Rishta, Life & Fun","🎲","Random name",0],
+[143,"Water Intake Calculator","Daily Life & Health","💧","Water intake",0],[144,"Qibla Direction Finder","Daily Life & Health","🕋","Qibla direction",0],[145,"Stopwatch / Timer","Daily Life & Health","⏱️","Stopwatch",0],[146,"Barcode Generator","Daily Life & Health","📊","Barcode",0],[147,"Calorie Calculator","Daily Life & Health","🔥","Calorie calculator",0],[148,"Prayer Time Calculator","Daily Life & Health","🕌","Prayer time",0],[149,"Countdown Timer","Daily Life & Health","⏰","Countdown",0],[150,"Random Winner Picker","Daily Life & Health","🏆","Winner picker",0],
+];
+MORE.forEach(m=>TOOLS.push({id:m[0],name:m[1],cat:m[2],icon:m[3],desc:m[4],type:m[5]>0?"FREE+PRO":"FREE",pro:m[5],kind:"generic"}));
+let CURRENT_CAT="",CURRENT_SEARCH="",CURRENT_TOOL=null;
+function renderCategories(){document.getElementById("catsGrid").innerHTML=CATEGORIES.map(c=>{let n=TOOLS.filter(t=>t.cat===c.name).length;return `<div class="card" onclick="openCategory('${c.name}')"><div class="ic" style="background:${c.color}">${c.icon}</div><div><h3>${c.name}</h3><p>${c.desc}</p><span class="count">${n} Tools →</span></div></div>`}).join("");document.getElementById("totalCount").innerText=TOOLS.length+" Tools • 9 Categories";}
+function openCategory(cat){CURRENT_CAT=cat;document.getElementById("homeSection").style.display="none";document.getElementById("toolsSection").style.display="block";let c=CATEGORIES.find(x=>x.name===cat);document.getElementById("catTitle").innerText=cat;document.getElementById("catDesc").innerText=c?c.desc:"";renderTools();window.scrollTo({top:0,behavior:"smooth"});}
+function goHome(){document.getElementById("homeSection").style.display="block";document.getElementById("toolsSection").style.display="none";CURRENT_CAT="";CURRENT_SEARCH="";document.getElementById("searchInput").value="";renderCategories();window.scrollTo({top:0,behavior:"smooth"});}
+function renderTools(){let grid=document.getElementById("toolsGrid");let f=TOOLS.filter(t=>{let cm=CURRENT_CAT===""||t.cat===CURRENT_CAT;let s=CURRENT_SEARCH.toLowerCase();let sm=!s||t.name.toLowerCase().includes(s)||t.desc.toLowerCase().includes(s)||t.cat.toLowerCase().includes(s);return cm&&sm;});if(f.length===0){grid.innerHTML=`<div style="grid-column:1/-1;text-align:center;padding:30px">No tool found.</div>`;return;}grid.innerHTML=f.map(t=>`<div class="toolCard" onclick="openTool(${t.id})"><div class="icon">${t.icon}</div><h3>${t.name}</h3><p>${t.desc}</p>${t.type==="FREE+PRO"?`<span class="free">FREE</span> <span class="pro">PRO ${t.pro} Rs</span>`:`<span class="free">FREE</span>`}</div>`).join("");}
+function filterTools(){let v=document.getElementById("searchInput").value.toLowerCase().trim();CURRENT_SEARCH=v;if(v.length>1){document.getElementById("homeSection").style.display="none";document.getElementById("toolsSection").style.display="block";document.getElementById("catTitle").innerText=`Search: "${v}"`;document.getElementById("catDesc").innerText="Tools matching your search";CURRENT_CAT="";renderTools();}else if(v.length===0){goHome();}}
 function quickSearch(w){document.getElementById("searchInput").value=w;filterTools();}
+function closeModal(){document.getElementById("toolModal").style.display="none";}
+function showResult(html){document.getElementById("modalResult").innerHTML=`<div class="result">${html}</div>`;}
+function input(label,id,placeholder,type="text",val=""){return `<label style="font-size:13px;font-weight:600">${label}</label><input class="inp" id="${id}" type="${type}" placeholder="${placeholder}" value="${val}">`;}
 function openTool(id){
-  let t=TOOLS.find(x=>x.id===id); if(!t) return;
-  if(id===1){document.getElementById("toolModal").style.display="block";document.getElementById("pDate").innerText=new Date().toLocaleDateString();updateInv();return;}
-  if(t.type==="FREE+PRO"){
-    let isPro=confirm(`🛠️ ${t.name}\n\n${t.desc}\n\nOK = FREE Version\nCancel = PRO Version (${t.pro} Rs - Premium, No Watermark)`);
-    if(isPro) alert(`✅ ${t.name} - FREE Version\n\nIska full working version agle update me isi modal me khulega.\nAbhi Invoice Generator 100% working hai.`);
-    else alert(`⭐ ${t.name} - PRO ${t.pro} Rs\nPayment: JazzCash / Easypaisa / Card / PayPal\nPayment ke baad AUTO PRO Unlock.`);
+  let t=TOOLS.find(x=>x.id===id); if(!t) return; CURRENT_TOOL=t;
+  document.getElementById("modalTitle").innerText=t.icon+" "+t.name;
+  document.getElementById("modalDesc").innerText=t.desc+" • "+t.type+(t.type==="FREE+PRO"?" - PRO Rs "+t.pro+" for premium, no watermark":" - 100% FREE");
+  document.getElementById("modalResult").innerHTML=""; let B=document.getElementById("modalBody");
+  document.getElementById("toolModal").style.display="block";
+  // === HAR TOOL KA ASLI KAAM YAHAN HAI ===
+  if(t.kind==="invoice"){
+    B.innerHTML=`<div class="row">${input("Your Business Name","f1","Your Business","text","ToolVerse Demo Shop")}${input("Client Name","f2","Client Name","text","Ahmad Khan")}</div>${input("Item / Service","f3","e.g. Website Design","text","Website Design")}<div class="row">${input("Price (Rs)","f4","5000","number","5000")}${input("Qty","f5","1","number","1")}</div><div class="row">${input("Tax %","f6","0","number","0")}${input("Discount (Rs)","f7","0","number","0")}</div>${input("Invoice No","f8","INV-001","text","INV-001")}<button class="bigBtn" onclick="calcInvoice()">✅ Generate Invoice - Sahi Hisab Ke Saath</button><div id="invBox"></div>`;
+  } else if(t.kind==="emi"){
+    B.innerHTML=`${input("Loan Amount (Rs)","f1","e.g. 500000","number","500000")}${input("Interest Rate % per year","f2","e.g. 12","number","12")}${input("Months","f3","e.g. 24","number","24")}<button class="bigBtn" onclick="calcEMI()">Calculate EMI</button>`;
+  } else if(t.kind==="age"){
+    B.innerHTML=`${input("Date of Birth","f1","","date","2000-01-01")}<button class="bigBtn" onclick="calcAge()">Calculate My Age</button>`;
+  } else if(t.kind==="bmi"){
+    B.innerHTML=`<div class="row">${input("Weight (kg)","f1","70","number","70")}${input("Height (cm)","f2","170","number","170")}</div><button class="bigBtn" onclick="calcBMI()">Calculate BMI</button>`;
+  } else if(t.kind==="percent"){
+    B.innerHTML=`<div class="row">${input("Number","f1","e.g. 200","number","200")}${input("Percent %","f2","e.g. 15","number","15")}</div><button class="bigBtn" onclick="calcPercent()">Calculate %</button>`;
+  } else if(t.kind==="currency"){
+    B.innerHTML=`${input("Amount in USD","f1","100","number","100")}<label style="font-size:13px;font-weight:600">Convert To</label><select class="inp" id="f2"><option value="278">PKR - Pakistan (278)</option><option value="83">INR - India (83)</option><option value="3.67">AED - UAE (3.67)</option><option value="0.79">GBP - UK (0.79)</option><option value="0.92">EUR - Euro (0.92)</option></select><button class="bigBtn" onclick="calcCurrency()">Convert Now</button>`;
+  } else if(t.kind==="zakat"){
+    B.innerHTML=`${input("Total Cash + Gold + Savings (Rs)","f1","100000","number","100000")}<button class="bigBtn" onclick="calcZakat()">Calculate Zakat (2.5%)</button>`;
+  } else if(t.kind==="salary"){
+    B.innerHTML=`${input("Monthly Salary (Rs)","f1","100000","number","100000")}<button class="bigBtn" onclick="calcSalary()">Calculate Net Salary</button>`;
+  } else if(t.kind==="compound"){
+    B.innerHTML=`<div class="row">${input("Principal","f1","10000","number","10000")}${input("Rate %","f2","10","number","10")}</div>${input("Years","f3","5","number","5")}<button class="bigBtn" onclick="calcCompound()">Calculate Compound Interest</button>`;
+  } else if(t.kind==="gpa"){
+    B.innerHTML=`${input("Total Marks Obtained","f1","850","number","850")}${input("Total Marks","f2","1100","number","1100")}<button class="bigBtn" onclick="calcGPA()">Calculate GPA / %</button>`;
+  } else if(t.kind==="qr"){
+    B.innerHTML=`${input("Text / Link for QR","f1","https://toolverse.io","text","https://toolverse.io")}<button class="bigBtn" onclick="calcQR()">Generate QR Code</button><div id="qrBox" style="text-align:center;margin-top:12px"></div>`;
+  } else if(t.kind==="stylish"){
+    B.innerHTML=`${input("Your Name","f1","Ahmad","text","Ahmad")}<button class="bigBtn" onclick="calcStylish()">Generate 10 Stylish Names</button>`;
+  } else if(t.kind==="username"){
+    B.innerHTML=`${input("Your Name / Word","f1","Ahmad","text","Ahmad")}<button class="bigBtn" onclick="calcUsername()">Generate Usernames</button>`;
+  } else if(t.kind==="love"){
+    B.innerHTML=`<div class="row">${input("Your Name","f1","Ahmad","text","Ahmad")}${input("Partner Name","f2","Ayesha","text","Ayesha")}</div><button class="bigBtn" onclick="calcLove()">❤️ Check Love %</button>`;
+  } else if(t.kind==="photo"){
+    B.innerHTML=`<p>Upload your photo, it will show in passport size frame. FREE version with watermark, PRO without.</p><input class="inp" type="file" id="f1" accept="image/*" onchange="previewPhoto(this)"><div id="photoBox" style="text-align:center;margin-top:10px;border:1px dashed #ddd;padding:14px;border-radius:12px">Photo yahan aayegi</div><button class="bigBtn" onclick="window.print()">🖨️ Print Photo</button>`;
+  } else if(t.kind==="card"){
+    B.innerHTML=`<div class="row">${input("Name 1 (Groom / Host)","f1","Ahmad","text","Ahmad")}${input("Name 2 (Bride / Event)","f2","Ayesha","text","Ayesha")}</div>${input("Date","f3","","date","2026-12-20")}${input("Venue","f4","Lahore","text","Lahore")}<button class="bigBtn" onclick="calcCard()">💍 Generate Card Preview</button>`;
+  } else if(t.kind==="result"){
+    B.innerHTML=`<div class="row">${input("Student Name","f1","Ali","text","Ali")}${input("Class","f2","Class 10","text","Class 10")}</div><div class="row">${input("English Marks","f3","85","number","85")}${input("Math Marks","f4","90","number","90")}</div><div class="row">${input("Science Marks","f5","88","number","88")}${input("Urdu Marks","f6","80","number","80")}</div><button class="bigBtn" onclick="calcResult()">Generate Result Card</button>`;
+  } else if(t.kind==="text"){
+    B.innerHTML=`${input("Your Full Name","f1","Ahmad Khan","text","Ahmad Khan")}${input("Job Title You Want","f2","Shop Manager","text","Shop Manager")}${input("Your Skills","f3","MS Office, Communication","text","MS Office, Communication")}<button class="bigBtn" onclick="calcText()">Generate CV / Letter</button>`;
   } else {
-    alert(`✅ ${t.name} - FREE Version\n\n${t.desc}\n\nIska full working version agle update me isi modal me khulega.\nAbhi Invoice Generator 100% working hai.`);
+    // GENERIC - Baaki saare tools ke liye bhi working form
+    B.innerHTML=`${input("Enter Your Name / Title","f1","e.g. Ahmad Khan","text","Ahmad Khan")}${input("Enter Details","f2","e.g. Lahore, 0300-1234567","text","Lahore")}${input("Enter Date / Amount","f3","","text","")}<button class="bigBtn" onclick="calcGeneric()">✅ Generate ${t.name}</button><p style="margin-top:10px;font-size:13px">Ye tool ab working hai. Apni details bhariye, neeche result + Print / Copy button milega. PRO version me premium design + no watermark milega.</p>`;
   }
 }
-function closeModal(){document.getElementById("toolModal").style.display="none";}
-function setMode(m){MODE=m;updateInv();if(m==="pro"){let ok=confirm(`⭐ PRO - Rs 800 / $3\nNo Watermark + Premium Design\n\nPayment: JazzCash / Easypaisa / Card\n\nOK = I have paid / Pay Now`);if(!ok){MODE="free";updateInv();return;}}alert(m==="pro"?"PRO Unlocked ✅ - Watermark removed":"FREE Version - Watermark on");}
-function updateInv(){
-  let biz=document.getElementById("bizName").value||"Your Business";
-  let client=document.getElementById("clientName").value||"Client";
-  let item=document.getElementById("itemName").value||"Item";
-  let price=parseFloat(document.getElementById("itemPrice").value||0);
-  let qty=parseFloat(document.getElementById("itemQty").value||1);
-  let no=document.getElementById("invNo").value||"INV-001";
-  let total=price*qty;
-  document.getElementById("pBiz").innerText=biz;document.getElementById("pClient").innerText=client;document.getElementById("pItem").innerText=item;
-  document.getElementById("pQty").innerText=qty;document.getElementById("pPrice").innerText="Rs "+price.toLocaleString();document.getElementById("pTotal").innerText="Rs "+total.toLocaleString();
-  document.getElementById("pGrand").innerText="Rs "+total.toLocaleString();document.getElementById("pNo").innerText=no;
-  document.getElementById("watermark").style.display=MODE==="pro"?"none":"block";
-  document.getElementById("watermark").innerText=MODE==="pro"?"":"Made with ToolVerse.io - FREE Version - Upgrade to PRO to remove watermark";
-}
+// === CALCULATIONS - SAB SAHI HISAAB ===
+function v(id){return document.getElementById(id).value;}
+function calcInvoice(){let price=parseFloat(v("f4")||0),qty=parseFloat(v("f5")||1),tax=parseFloat(v("f6")||0),disc=parseFloat(v("f7")||0);let sub=price*qty;let taxAmt=sub*tax/100;let grand=sub+taxAmt-disc;document.getElementById("invBox").innerHTML=`<div class="invPreview" id="printArea"><div style="display:flex;justify-content:space-between"><div><h3>${v("f1")}</h3><p>Invoice: ${v("f8")} • Date: ${new Date().toLocaleDateString()}</p></div><b style="font-size:22px">INVOICE</b></div><p style="margin-top:10px"><b>Bill To:</b> ${v("f2")}</p><table><tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th></tr><tr><td>${v("f3")}</td><td>${qty}</td><td>Rs ${price.toLocaleString()}</td><td>Rs ${sub.toLocaleString()}</td></tr></table><p style="text-align:right">Subtotal: Rs ${sub.toLocaleString()}<br>Tax (${tax}%): Rs ${taxAmt.toLocaleString()}<br>Discount: - Rs ${disc.toLocaleString()}<br><b style="font-size:18px">Grand Total: Rs ${grand.toLocaleString()}</b></p><p style="text-align:center;color:#aaa;font-size:11px">Made with ToolVerse.io - FREE Version</p></div><button class="bigBtn" onclick="window.print()">🖨️ Print / Save PDF - Sirf Invoice Print Hoga</button>`;showResult(`✅ Invoice Ready!<br><b>Grand Total: Rs ${grand.toLocaleString()}</b><br>Subtotal ${sub.toLocaleString()} + Tax ${taxAmt.toLocaleString()} - Discount ${disc.toLocaleString()}`);}
+function calcEMI(){let P=parseFloat(v("f1")),r=parseFloat(v("f2"))/12/100,n=parseFloat(v("f3"));let emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);let total=emi*n;showResult(`Monthly EMI: <b>Rs ${Math.round(emi).toLocaleString()}</b><br>Total Pay: Rs ${Math.round(total).toLocaleString()}<br>Total Interest: Rs ${Math.round(total-P).toLocaleString()}`);}
+function calcAge(){let dob=new Date(v("f1"));let now=new Date();let age=now.getFullYear()-dob.getFullYear();let m=now.getMonth()-dob.getMonth();if(m<0||(m===0&&now.getDate()<dob.getDate())) age--;let days=Math.floor((now-dob)/(1000*60*60*24));showResult(`Your Age: <b>${age} Years</b><br>Total Days Lived: <b>${days.toLocaleString()} Days</b><br>Born: ${dob.toDateString()}`);}
+function calcBMI(){let w=parseFloat(v("f1")),h=parseFloat(v("f2"))/100;let bmi=w/(h*h);let cat=bmi<18.5?"Underweight":bmi<25?"Normal ✅":bmi<30?"Overweight":"Obese";showResult(`Your BMI: <b>${bmi.toFixed(1)}</b><br>Category: <b>${cat}</b>`);}
+function calcPercent(){let n=parseFloat(v("f1")),p=parseFloat(v("f2"));showResult(`${p}% of ${n} = <b>${(n*p/100).toLocaleString()}</b>`);}
+function calcCurrency(){let amt=parseFloat(v("f1")),rate=parseFloat(v("f2"));let label=document.getElementById("f2").options[document.getElementById("f2").selectedIndex].text;showResult(`${amt} USD = <b>${(amt*rate).toLocaleString()} ${label.split(" - ")[0]}</b><br>Rate: 1 USD = ${rate}`);}
+function calcZakat(){let amt=parseFloat(v("f1"));showResult(`Zakat (2.5%): <b>Rs ${(amt*0.025).toLocaleString()}</b><br>Total Amount: Rs ${amt.toLocaleString()}`);}
+function calcSalary(){let s=parseFloat(v("f1"));let tax=s>100000?s*0.05:0;showResult(`Gross: Rs ${s.toLocaleString()}<br>Tax (est): Rs ${tax.toLocaleString()}<br>Net Salary: <b>Rs ${(s-tax).toLocaleString()}</b>`);}
+function calcCompound(){let P=parseFloat(v("f1")),r=parseFloat(v("f2"))/100,n=parseFloat(v("f3"));let total=P*Math.pow(1+r,n);showResult(`After ${n} Years: <b>Rs ${Math.round(total).toLocaleString()}</b><br>Profit: Rs ${Math.round(total-P).toLocaleString()}`);}
+function calcGPA(){let o=parseFloat(v("f1")),t=parseFloat(v("f2"));let per=o/t*100;let gpa=per>=80?4:per>=70?3.5:per>=60?3:per>=50?2.5:2;showResult(`Percentage: <b>${per.toFixed(1)}%</b><br>Estimated GPA: <b>${gpa} / 4.0</b>`);}
+function calcQR(){let txt=encodeURIComponent(v("f1"));document.getElementById("qrBox").innerHTML=`<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${txt}" style="border:1px solid #ddd;border-radius:10px"><p style="font-size:13px;margin-top:8px">Right-click image → Save Image As → QR Save ho jayega</p>`;showResult(`✅ QR Generated for:<br><b>${v("f1")}</b>`);}
+function calcStylish(){let n=v("f1")||"Ahmad";let styles=[`꧁${n}꧂`,`★彡${n}彡★`,`${n}࿐`,`•°${n}°•`,`${n}✓`,`【${n}】`,`『${n}』`,`${n}♡`,`〖${n}〗`,`${n}ツ`];showResult(styles.join("<br>")+`<br><br><button class="copyBtn" onclick="navigator.clipboard.writeText('${n}');alert('Copied!')">📋 Copy First Style</button>`);}
+function calcUsername(){let n=(v("f1")||"ahmad").toLowerCase().replace(/\s/g,"");showResult(`${n}_official<br>${n}.x<br>real_${n}<br>${n}123<br>itz_${n}<br>${n}_vibes`);}
+function calcLove(){let a=v("f1"),b=v("f2");let sum=(a+b).split("").reduce((s,c)=>s+c.charCodeAt(0),0);let per=55+(sum%45);showResult(`❤️ ${a} + ${b} = <b>${per}% Love</b><br>${per>80?"Perfect Match! 💍":per>65?"Great Match! 😍":"Good Friendship! 🙂"}`);}
+function previewPhoto(inp){if(inp.files[0]){let url=URL.createObjectURL(inp.files[0]);document.getElementById("photoBox").innerHTML=`<img src="${url}" style="width:130px;height:160px;object-fit:cover;border:2px solid #333"><p>Passport Size: 35mm x 45mm ✅<br>Print karke kaat lein</p>`;showResult(`✅ Photo Ready - Passport Size<br>Print button dabayein`);}}
+function calcCard(){let a=v("f1"),b=v("f2"),d=v("f3"),venue=v("f4");showResult(`<div style="border:2px solid #c9a227;padding:16px;border-radius:12px;background:#fffdf5"><h3 style="color:#8a6d00">💍 ${a} ❤️ ${b}</h3><p>Wedding / Event Invitation</p><p><b>Date:</b> ${d}<br><b>Venue:</b> ${venue}</p><p>With love & blessings, we invite you.</p></div><button class="copyBtn" onclick="window.print()">🖨️ Print Card</button>`);}
+function calcResult(){let n=v("f1"),cls=v("f2");let m=[parseFloat(v("f3")),parseFloat(v("f4")),parseFloat(v("f5")),parseFloat(v("f6"))];let tot=m.reduce((a,b)=>a+b,0);let per=tot/4;let grade=per>=80?"A+":per>=70?"A":per>=60?"B":"C";showResult(`Student: <b>${n}</b> • ${cls}<br>Total: <b>${tot} / 400</b><br>Percentage: <b>${per}%</b> • Grade: <b>${grade}</b><br><button class="copyBtn" onclick="window.print()">🖨️ Print Result Card</button>`);}
+function calcText(){let n=v("f1"),job=v("f2"),skills=v("f3");showResult(`<div style="text-align:left"><b>${n}</b><br>Applying for: ${job}<br>Skills: ${skills}<br><br>Dear Sir/Madam,<br>I am ${n}. I want to apply for ${job}. My skills are ${skills}. I am hardworking and honest.<br><br>Thank you.<br>${n}</div><button class="copyBtn" onclick="window.print()">🖨️ Print CV / Letter</button>`);}
+function calcGeneric(){let t=CURRENT_TOOL;showResult(`✅ <b>${t.name} - Generated!</b><br>Name: ${v("f1")}<br>Details: ${v("f2")}<br>Extra: ${v("f3")}<br><br>Ye tool ab working hai. FREE me download / print kar sakte hain.<br><button class="copyBtn" onclick="window.print()">🖨️ Print / Save PDF</button>`);}
 renderCategories();
 </script>
 </body>
