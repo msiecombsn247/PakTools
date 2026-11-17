@@ -3,29 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PakTools - Free Online Calculators, Converters & Utility Tools</title>
-<meta name="description" content="PakTools offers 40+ free online tools for Pakistan including Income Tax, Token Tax, Zakat, Wirasat, CV Maker, Background Remover, and PDF tools.">
+<title>Tools Lab - Smart Online Tools & Calculators</title>
+<meta name="description" content="Tools Lab - 40+ free smart online tools & calculators for the world. Tax, Finance, PDF, Image, Generators, CV Maker and more.">
 <style>
 :root{ --primary:#0f766e; --primary-dark:#115e59; --bg:#f8fafc; --card-bg:#fff; --text-main:#1e293b; --text-muted:#64748b; --border:#e2e8f0; }
 *{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 body{background:var(--bg);color:var(--text-main);line-height:1.6}
 a{text-decoration:none;color:inherit}
 
-/* TOP BANNER - 20% SLOWER - 45s se 54s */
+/* TOP BANNER - SEAMLESS LOOP, NO GAP - 60s (10% SLOWER) */
 .top-banner{background:#0b4a45;color:#fff;overflow:hidden;white-space:nowrap;padding:9px 0;font-size:14px;font-weight:600;position:relative;z-index:101}
-.top-banner span{display:inline-block;padding-left:100%;animation:scroll 54s linear infinite}
-@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.marquee-track{display:flex;width:max-content;animation:scroll 60s linear infinite}
+.marquee-track span{padding-right:40px;white-space:nowrap}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 header{background:#fff;border-bottom:1px solid var(--border);padding:16px 0;position:sticky;top:0;z-index:100}
 .container{max-width:1150px;margin:0 auto;padding:0 20px}
 .nav{display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:24px;font-weight:800;color:var(--primary)}
-.logo span{background:var(--primary);color:#fff;padding:2px 8px;border-radius:6px;font-size:14px;margin-right:6px}
+.logo{font-size:24px;font-weight:800;color:var(--primary);display:flex;align-items:center;gap:8px}
+.logo span{background:var(--primary);color:#fff;padding:2px 8px;border-radius:6px;font-size:14px}
+.logo small{display:block;font-size:11px;font-weight:600;color:var(--text-muted);line-height:1.2;letter-spacing:.3px}
 .nav-links{display:flex;gap:24px;font-weight:500}
 .nav-links a:hover{color:var(--primary)}
 
 .hero{background:var(--primary);color:#fff;text-align:center;padding:50px 20px 40px}
-.hero h1{font-size:36px;margin-bottom:12px}
+.hero h1{font-size:38px;margin-bottom:6px}
+.hero h2{font-size:18px;font-weight:500;opacity:.95;margin-bottom:14px}
 .hero p{opacity:.9;max-width:650px;margin:0 auto 22px;font-size:17px}
 .search-box{max-width:600px;margin:0 auto}
 .search-box input{width:100%;padding:15px 22px;border-radius:999px;border:none;outline:none;font-size:15px;box-shadow:0 10px 25px rgba(0,0,0,.15)}
@@ -34,8 +37,6 @@ header{background:#fff;border-bottom:1px solid var(--border);padding:16px 0;posi
 .all-tab{background:var(--primary);color:#fff;padding:10px 24px;border-radius:999px;font-weight:700;font-size:15px;border:1px solid var(--primary)}
 .filter-select{padding:10px 16px;border-radius:999px;border:1px solid var(--border);background:#fff;font-weight:600;font-size:14px;cursor:pointer;outline:none;min-width:210px}
 .count{font-size:14px;color:var(--text-muted);font-weight:600}
-
-/* TOOLS PEHLE CHUPE HONGE */
 .grid{display:none;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;padding:20px;max-width:1150px;margin:0 auto}
 .grid.show{display:grid}
 .card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:20px;transition:.2s;cursor:pointer;display:block}
@@ -43,32 +44,33 @@ header{background:#fff;border-bottom:1px solid var(--border);padding:16px 0;posi
 .badge{display:inline-block;background:#ccfbf1;color:var(--primary-dark);font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;margin-bottom:12px}
 .card h3{font-size:18px;margin-bottom:8px}
 .card p{color:var(--text-muted);font-size:14px}
-
-/* JAB KOI SEARCH NA KARE TO YE MESSAGE */
 .empty-msg{text-align:center;padding:40px 20px 50px;color:var(--text-muted);max-width:600px;margin:0 auto}
 .empty-msg h3{color:var(--text-main);font-size:20px;margin-bottom:8px}
-
 footer{text-align:center;padding:30px;color:var(--text-muted);font-size:14px;border-top:1px solid var(--border);margin-top:20px;background:#fff}
-@media(max-width:700px){.nav-links{display:none}.hero h1{font-size:26px}}
+@media(max-width:700px){.nav-links{display:none}.hero h1{font-size:27px}.logo small{display:none}}
 </style>
 </head>
 <body>
 
+<!-- SEAMLESS BANNER - SAME TEXT 2 TIMES FOR NO GAP -->
 <div class="top-banner">
-<span>✦ Income Tax Calculator &nbsp; ✦ Token Tax Calculator &nbsp; ✦ Zakat Calculator &nbsp; ✦ Wirasat Calculator &nbsp; ✦ Salary Calculator &nbsp; ✦ Car Loan Calculator &nbsp; ✦ GST Calculator &nbsp; ✦ Property Tax Calculator &nbsp; ✦ Electricity Bill Calculator &nbsp; ✦ Solar ROI Calculator &nbsp; ✦ Age Calculator &nbsp; ✦ CV Maker &nbsp; ✦ Background Remover &nbsp; ✦ Image Compressor &nbsp; ✦ Image Resizer &nbsp; ✦ JPG to PNG &nbsp; ✦ Image to PDF Pro &nbsp; ✦ PDF Merge &nbsp; ✦ PDF to JPG &nbsp; ✦ Image to Text (OCR) &nbsp; ✦ Object Remover &nbsp; ✦ Upscaler &nbsp; ✦ QR Code Generator &nbsp; ✦ QR Generator Pro &nbsp; ✦ Password Generator &nbsp; ✦ Fancy Text Generator &nbsp; ✦ Word Counter &nbsp; ✦ Paraphraser Tool &nbsp; ✦ Text to Speech &nbsp; ✦ YouTube Tags &nbsp; ✦ YouTube Thumbnail Downloader &nbsp; ✦ TikTok Downloader &nbsp; ✦ Unit Converter &nbsp; ✦ Percentage Calculator &nbsp; ✦ Color Palette Generator &nbsp; ✦ AI Bio Generator &nbsp; ✦ Currency Converter &nbsp; ✦ Cards Maker &nbsp; ✦ Wedding Cards Maker &nbsp; ✦ Chitthi & Job Applications &nbsp; ✦ Rishta Bio &nbsp; ✦ 100% FREE - PakToolsOnline.com ✦</span>
+<div class="marquee-track" id="marqueeTrack">
+<span>✦ Income Tax Calculator &nbsp; ✦ Token Tax Calculator &nbsp; ✦ Zakat Calculator &nbsp; ✦ Inheritance Calculator &nbsp; ✦ Salary Calculator &nbsp; ✦ Car Loan Calculator &nbsp; ✦ GST Calculator &nbsp; ✦ Property Tax Calculator &nbsp; ✦ Electricity Bill Calculator &nbsp; ✦ Solar ROI Calculator &nbsp; ✦ Age Calculator &nbsp; ✦ CV Maker &nbsp; ✦ Background Remover &nbsp; ✦ Image Compressor &nbsp; ✦ Image Resizer &nbsp; ✦ JPG to PNG &nbsp; ✦ Image to PDF Pro &nbsp; ✦ PDF Merge &nbsp; ✦ PDF to JPG &nbsp; ✦ Image to Text (OCR) &nbsp; ✦ Object Remover &nbsp; ✦ Image Upscaler &nbsp; ✦ QR Code Generator &nbsp; ✦ QR Generator Pro &nbsp; ✦ Password Generator &nbsp; ✦ Fancy Text Generator &nbsp; ✦ Word Counter &nbsp; ✦ Paraphraser Tool &nbsp; ✦ Text to Speech &nbsp; ✦ YouTube Tags &nbsp; ✦ YouTube Thumbnail Downloader &nbsp; ✦ TikTok Downloader &nbsp; ✦ Unit Converter &nbsp; ✦ Percentage Calculator &nbsp; ✦ Color Palette Generator &nbsp; ✦ AI Bio Generator &nbsp; ✦ Currency Converter &nbsp; ✦ Cards Maker &nbsp; ✦ Wedding Cards Maker &nbsp; ✦ Letter & Job Applications &nbsp; ✦ Bio Maker &nbsp; ✦ 100% FREE - Tools Lab ✦&nbsp;</span>
+</div>
 </div>
 
 <header>
 <div class="container nav">
-<div class="logo"><span>PK</span>PakTools</div>
+<div class="logo"><span>TL</span><div>Tools Lab<small>Smart Online Tools & Calculators</small></div></div>
 <div class="nav-links"><a href="#">Home</a><a href="explore.html">Explore All</a><a href="blog.html">Guides & Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
 </div>
 </header>
 
 <section class="hero">
-<h1>Smart Online Tools & Calculators for Pakistan</h1>
-<p>Fast, free, and accurate tools for Tax, Zakat, Wirasat, PDFs, Image Editing, CVs, and everyday productivity.</p>
-<div class="search-box"><input type="text" id="searchInput" placeholder="Search tools (e.g. Income Tax, Zakat, PDF, CV, Rishta...)" onkeyup="filterTools()"></div>
+<h1>Tools Lab</h1>
+<h2>Smart Online Tools & Calculators</h2>
+<p>Fast, free, and accurate tools for everyone, worldwide. Tax, Finance, PDF, Image Editing, CVs, and everyday productivity.</p>
+<div class="search-box"><input type="text" id="searchInput" placeholder="Search tools (e.g. Income Tax, Zakat, PDF, CV, QR...)" onkeyup="filterTools()"></div>
 </section>
 
 <div class="tabs-bar">
@@ -81,30 +83,29 @@ footer{text-align:center;padding:30px;color:var(--text-muted);font-size:14px;bor
 <option value="hub">Special Hubs & Cards</option>
 <option value="calc">Calculators</option>
 </select>
-<span class="count" id="showingText">Search karke tool dhoondhein</span>
+<span class="count" id="showingText">Search to find a tool</span>
 </div>
 
-<!-- PEHLE YE MESSAGE SHOW HOGA, TOOLS NAHI -->
 <div class="empty-msg" id="emptyMsg">
-<h3>👆 Upar Search karein ya Filter select karein</h3>
-<p>Apna tool likhein jaise <b>"Income Tax"</b> ya <b>"Zakat"</b> - wo yahan aa jayega.<br>Saare tools dekhne ke liye <b>Explore All</b> pe click karein.</p>
+<h3>👆 Search above or select a Filter</h3>
+<p>Type your tool name like <b>"Income Tax"</b> or <b>"Zakat"</b> - it will appear here.<br>To see all tools, click <b>Explore All</b>.</p>
 </div>
 
 <div class="grid" id="toolsGrid">
-<a href="income-tax-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Income Tax Calculator</h3><p>Salary tax 2025-26 / 2026-27 Pakistan slabs.</p></a>
-<a href="token-tax-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Token Tax Calculator</h3><p>Car / Bike token tax Punjab, Sindh, KPK 2026-27.</p></a>
-<a href="zakat-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Zakat Calculator</h3><p>Zakat on cash, gold, silver & property 2026 rates.</p></a>
-<a href="wirasat-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Wirasat Calculator</h3><p>Islamic inheritance as per Shariah.</p></a>
+<a href="income-tax-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Income Tax Calculator</h3><p>Calculate salary tax with latest slabs.</p></a>
+<a href="token-tax-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Token Tax Calculator</h3><p>Calculate vehicle token tax easily.</p></a>
+<a href="zakat-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Zakat Calculator</h3><p>Zakat on cash, gold, silver & property.</p></a>
+<a href="wirasat-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Inheritance Calculator</h3><p>Islamic inheritance distribution.</p></a>
 <a href="salary-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Salary Calculator</h3><p>Net salary after tax & deductions.</p></a>
-<a href="car-loan-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Car Loan Calculator</h3><p>Monthly installment & markup calculation.</p></a>
+<a href="car-loan-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Car Loan Calculator</h3><p>Monthly installment & markup.</p></a>
 <a href="gst-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>GST Calculator</h3><p>Add / remove GST easily.</p></a>
-<a href="property-tax-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Property Tax Calculator</h3><p>Property tax for Pakistan.</p></a>
-<a href="electricity-bill-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Electricity Bill Calculator</h3><p>Estimate your WAPDA / K-Electric bill.</p></a>
-<a href="solar-roi-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Solar ROI Calculator</h3><p>Solar panel saving & payback time.</p></a>
-<a href="currency-converter.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Currency Converter</h3><p>USD to PKR, Riyal, Dirham live rates.</p></a>
-<a href="percentage-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Percentage Calculator</h3><p>Quick % calculations.</p></a>
+<a href="property-tax-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Property Tax Calculator</h3><p>Calculate property tax.</p></a>
+<a href="electricity-bill-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Electricity Bill Calculator</h3><p>Estimate your electricity bill.</p></a>
+<a href="solar-roi-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Solar ROI Calculator</h3><p>Solar saving & payback time.</p></a>
+<a href="currency-converter.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Currency Converter</h3><p>USD, EUR, Riyal, Dirham live rates.</p></a>
+<a href="percentage-calculator.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Percentage Calculator</h3><p>Quick percentage calculations.</p></a>
 <a href="unit-converter.html" class="card" data-cat="tax calc"><span class="badge">Tax & Finance</span><h3>Unit Converter</h3><p>Length, weight, temp & more.</p></a>
-<a href="age-calculator.html" class="card" data-cat="calc"><span class="badge">Calculator</span><h3>Age Calculator</h3><p>Age + PPSC age limit check.</p></a>
+<a href="age-calculator.html" class="card" data-cat="calc"><span class="badge">Calculator</span><h3>Age Calculator</h3><p>Calculate exact age.</p></a>
 <a href="background-remover.html" class="card" data-cat="pdf"><span class="badge">Image & PDF</span><h3>Background Remover</h3><p>Remove photo background in 1 click.</p></a>
 <a href="image-compressor.html" class="card" data-cat="pdf"><span class="badge">Image & PDF</span><h3>Image Compressor</h3><p>Compress image without quality loss.</p></a>
 <a href="image-resizer.html" class="card" data-cat="pdf"><span class="badge">Image & PDF</span><h3>Image Resizer</h3><p>Resize with presets for jobs / social.</p></a>
@@ -115,45 +116,45 @@ footer{text-align:center;padding:30px;color:var(--text-muted);font-size:14px;bor
 <a href="image-to-text.html" class="card" data-cat="pdf"><span class="badge">Image & PDF</span><h3>Image to Text (OCR)</h3><p>Extract text from image.</p></a>
 <a href="object-remover.html" class="card" data-cat="pdf"><span class="badge">Image & PDF</span><h3>Object Remover</h3><p>Remove unwanted object from photo.</p></a>
 <a href="upscaler.html" class="card" data-cat="pdf"><span class="badge">Image & PDF</span><h3>Image Upscaler</h3><p>Enhance low quality photo.</p></a>
-<a href="cv-maker.html" class="card" data-cat="gen"><span class="badge">Generators</span><h3>CV Maker</h3><p>Professional CV in English & Urdu.</p></a>
+<a href="cv-maker.html" class="card" data-cat="gen"><span class="badge">Generators</span><h3>CV Maker</h3><p>Professional CV in minutes.</p></a>
 <a href="qr-code-generator.html" class="card" data-cat="gen"><span class="badge">Generators</span><h3>QR Code Generator</h3><p>Free QR for link, text, WhatsApp.</p></a>
 <a href="qr-generator-pro.html" class="card" data-cat="gen"><span class="badge">Generators</span><h3>QR Generator Pro</h3><p>QR with Logo.</p></a>
 <a href="password-generator.html" class="card" data-cat="gen"><span class="badge">Generators</span><h3>Password Generator</h3><p>Strong secure passwords.</p></a>
 <a href="fancy-text-generator.html" class="card" data-cat="gen"><span class="badge">Generators</span><h3>Fancy Text Generator</h3><p>Stylish fonts for social media.</p></a>
 <a href="word-counter.html" class="card" data-cat="gen"><span class="badge">Generators</span><h3>Word Counter</h3><p>Words, chars & reading time.</p></a>
 <a href="paraphraser-tool.html" class="card" data-cat="gen"><span class="badge">Generators</span><h3>Paraphraser Tool</h3><p>Rewrite text uniquely.</p></a>
-<a href="text-to-speech.html" class="card" data-cat="gen"><span class="badge">Generators</span><h3>Text to Speech</h3><p>Urdu & English voice.</p></a>
+<a href="text-to-speech.html" class="card" data-cat="gen"><span class="badge">Generators</span><h3>Text to Speech</h3><p>Natural voice in multiple languages.</p></a>
 <a href="youtube-tags.html" class="card" data-cat="gen"><span class="badge">Generators</span><h3>YouTube Tags Extractor</h3><p>Get tags from any video.</p></a>
 <a href="youtube-thumbnail-downloader.html" class="card" data-cat="gen"><span class="badge">Generators</span><h3>YouTube Thumbnail Downloader</h3><p>Download HD thumbnail.</p></a>
 <a href="tiktok-downloader.html" class="card" data-cat="gen"><span class="badge">Generators</span><h3>TikTok Downloader</h3><p>Download TikTok without watermark.</p></a>
 <a href="color-palette-generator.html" class="card" data-cat="gen"><span class="badge">Generators</span><h3>Color Palette Generator</h3><p>Beautiful color combos.</p></a>
 <a href="ai-bio-generator.html" class="card" data-cat="gen"><span class="badge">Generators</span><h3>AI Bio Generator</h3><p>Instagram / CV bio in seconds.</p></a>
 <a href="cards/" class="card" data-cat="hub"><span class="badge">Studio</span><h3>Cards Maker</h3><p>Custom greeting & invitation cards.</p></a>
-<a href="wedding-cards/" class="card" data-cat="hub"><span class="badge">Events</span><h3>Wedding Cards Maker</h3><p>Digital Pakistani wedding invitations.</p></a>
-<a href="chitthi/" class="card" data-cat="hub"><span class="badge">Bilingual</span><h3>Chitthi & Job Applications</h3><p>Formal letters in English & Urdu.</p></a>
-<a href="rishta-bio/" class="card" data-cat="hub"><span class="badge">Bilingual</span><h3>Rishta Bio Maker</h3><p>Make rishta profile beautifully.</p></a>
-<a href="blog.html" class="card" data-cat="hub"><span class="badge">Guides</span><h3>PakTools Blog & Guides</h3><p>36+ guides - Token Tax 2026-27 & more.</p></a>
+<a href="wedding-cards/" class="card" data-cat="hub"><span class="badge">Events</span><h3>Wedding Cards Maker</h3><p>Digital wedding invitations.</p></a>
+<a href="chitthi/" class="card" data-cat="hub"><span class="badge">Bilingual</span><h3>Letter & Job Applications</h3><p>Formal letters in English & Urdu.</p></a>
+<a href="rishta-bio/" class="card" data-cat="hub"><span class="badge">Bilingual</span><h3>Bio Maker</h3><p>Make profile beautifully.</p></a>
+<a href="blog.html" class="card" data-cat="hub"><span class="badge">Guides</span><h3>Tools Lab Blog & Guides</h3><p>36+ guides, tips and tutorials.</p></a>
 </div>
 
-<footer>© 2026 PakToolsOnline.com - Made with ❤️ for Pakistan | All Tools Free</footer>
+<footer>© 2026 Tools Lab - Smart Online Tools & Calculators | All Tools Free For Everyone</footer>
 
 <script>
+// SEAMLESS BANNER: duplicate content for infinite loop
+const track = document.getElementById('marqueeTrack');
+track.innerHTML += track.innerHTML;
+
 function filterTools(){
   let q=document.getElementById('searchInput').value.toLowerCase().trim();
   let cat=document.getElementById('categoryFilter').value;
   let grid=document.getElementById('toolsGrid');
   let empty=document.getElementById('emptyMsg');
   let showing=document.getElementById('showingText');
-
-  // Agar na search hai na filter, to tools HIDE rakho
   if(q==='' && cat==='all'){
     grid.classList.remove('show');
     empty.style.display='block';
-    showing.innerText='Search karke tool dhoondhein';
+    showing.innerText='Search to find a tool';
     return;
   }
-
-  // Warna tools SHOW karo
   grid.classList.add('show');
   empty.style.display='none';
   let shown=0, total=0;
